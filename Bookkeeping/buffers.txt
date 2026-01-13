@@ -1,1 +1,105 @@
-aabb
+Om n+1 objekt placeras i n lådor innehåller en låda minst 2 objekt
+Om n*k+1 föremål placeras i n lådor så måste en låda innehålla minst k+1 föremål
+
+40 elever, 4 i samma månad (12 lådor, 40 elever), 40>12*3+1
+
+200000 hårstrå, 3 Göteborgare (500000) med exakt antal hårstrå, (200000 lådor (0-200000), 500000 Göteborgare
+
+5 punkter placeras i liksidig triangel längd 2a, (4 lådor, 5 punkter), 5=1*4+1
+
+-----
+
+Mängder: en uppsättning element
+P={1, 2, 3, 4, 5}
+P={n: n in \\Z & 1<=n<=5}, P={x: x^2, x in \\Z}
+Tom mämgd: {0}
+
+P={2, 4, 6, 8, 10}, Q={2, 6, 4}, R={6, 4, 2}
+Q=R
+Q as P, Q as R
+
+Antal delmängder: C(n, m), n: antal element i supermängd, m: antal element i delmängd
+
+Totalt antal: \\S{k=0, n, C(n, m)} = 2^n
+
+A={1, 2, 3, 5, 8}, B={5, 6, 7, 8}
+Intersection: A*B = {5, 8}
+Union: A+B = {1, 2, 3, 5, 6, 7, 8}
+A\\B={1, 2, 3}, A\\B!=B\\A
+
+Grundmängd: {x: x<10, x in \\N}
+!A=G\\A
+
+A*(B+C) = A*B+A*C
+
+Dissjunkta mängder: A*B = {0}
+
+Kardinalitet: Antal element i en mängd
+B={5, 6, 7, 8}, |B|=4
+|A+B| = |A|+|B|+|A*B|
+|A+B+C| = |A|+|B|+|C|-|A*B|-|A*C|-|B*C|+|A*B*C|: 19 1 10 6 3 4 8
+
+
+-----
+
+Linjär approximation:
+Maclaurinutveckling: x=0, \S{k=0, n, f^k'(x)/k!*x^k}
+
+-----
+
+Volymberäkning med tvärsnitt(vinkelrätt):
+\int{a, b, A(f(x))dx}, Kvadrat: A(x)=4x^2, Liksidig triangel: A(x)=sqrt(3)x^2, Halvcirkel: A(x)=\pi/2*x^2
+
+-----
+
+
+Differentialekvationer: y'-y=0 => y=Ce^x
+Homogen: y'+5y=0
+Inhomogen: y'+5y=3x+1 (y=y_h+y_p)
+
+y''-4y'+3y=0
+Karaktäristiska ekvationen: r^2-4r+3=0
+y''+2y'+y=6e^(3x)
+
+Newton avsvalning: C=95, t_0=20, t=4 y=70, y=50 -> t?
+
+Numeriska metoder
+y'=1-2x -> (0, 0), 0<=x<=2, Eulers stegmetod 0.5
+
+
+erik lindgren, eriklin@kth.se
+General questions: studentoffice@math.kth.se
+
+gränsväede, dericator(2 4) integral(56) serier(7) numeriska metoder
+
+7 modul(vecka) 3 föreläsning, 2 övningar + seminarieprov
+
+filmer föreslagna
+30 min lång seminariepriv
+nymble kårhuset räknestugor 1500 1800
+
+3 datorlaborationer, 3h
+
+
+
+Intervall: (stängd) {x: a<=x<=b}
+
+Funktion: regel till varje element x in A associerar precis ett f(x) in B, f: A -> B, funktion tar x och avbildar
+
+sqrt(x), (x>=0, f(x)>=0)
+1/(x-2), (x!=2, f(x)!=0)
+
+f+g, f-g, f*g, f/g, f(g(x)), f.g(x) -> translations, scaling
+udda/jämna funktioner
+
+begränsade funktioner: ett tal M>0 så att |f(x)|<M för alla x in D_f (f inte kan bli oändligt stor eller liten)
+
+1/x, x [-1, 1], 1/(x^2+1), cos(x), 1/x ...
+
+elementära:
+polynom, rationella, radikala, trigonometriska, exponent, logsritm, inverse trigonometriska, ...
+
+x^2-6x+8 factorize
+sin(t)=1/2
+e^(2x+5)=3
+(x^3+x+5)/(x+1)
