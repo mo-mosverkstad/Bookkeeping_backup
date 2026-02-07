@@ -1,0 +1,36 @@
+- Course activities:
+  - Year 1 period 3:
+    - Calculus in one variable ( + Algorithm and data structure)
+    - Algebra and geometry (+ Object oriented design and analysis)
+  - ...
+  
+- Private activities:
+  1. Bookkeeping software:
+    - Retroactive data convergence I: Bobasystem (Bobasystem + photo notes)
+    - Retroactive data convergence II: ZAYAH Folder
+    - Build Bookkeeping engine:
+      - Spreadsheet editor
+      - Simple plugin programs with parsers
+    - Build TUI + retained graphics wrapper
+    - Port to Rust, Java, Python
+    - Build web version (HTML+CSS+JavaScript)
+    - Build Android version
+    - Constructional source convergence: ZAYAH folder
+  2. Learning:
+    - Learn computer architecture/computer engineering from the digital design book
+    - Learn asm
+    - Check II1302 Project and project methods
+    - Learn to read/write/process thesis
+    - Leetcode practice
+  3. Building:
+    - Build a custom processor -> learning
+    - Build with e-ink display to raspberry pi -> practical application hardware
+  1*. Data convergence:
+    - Retroactive data convergence III: Convergence folder
+    - Fix repositories
+    - Compression for Bookkeeping ...
+  2*. Computer science learning:
+    - Reverse engineering (IDA pro)
+    - Build extensivelang with macro -> compiler as tool
+    - Semiconductor physics
+    - Analog circuits
