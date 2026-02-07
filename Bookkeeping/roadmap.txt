@@ -5,8 +5,12 @@
   - ...
   
 - Private activities:
+  - Leetcode practice
   1. Bookkeeping software:
-    - Retroactive data convergence I: Bobasystem (Bobasystem + photo notes)
+    - Retroactive data convergence I:
+      - Bobasystem (Bobasystem + photo notes)
+      - repos/convergence
+      - Sommarmatematik + sommarprogrammering
     - Retroactive data convergence II: ZAYAH Folder
     - Build Bookkeeping engine:
       - Spreadsheet editor
@@ -19,9 +23,9 @@
   2. Learning:
     - Learn computer architecture/computer engineering from the digital design book
     - Learn asm
-    - Check II1302 Project and project methods
-    - Learn to read/write/process thesis
-    - Leetcode practice
+    - Learn VHDL/Verilog
+    - Check II1302 Project and project methods (ii1302 folder)
+    - Learn to read/write/process thesis (Can reorder/paraell)
   3. Building:
     - Build a custom processor -> learning
     - Build with e-ink display to raspberry pi -> practical application hardware
