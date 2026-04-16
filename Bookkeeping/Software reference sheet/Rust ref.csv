@@ -1,0 +1,298 @@
+Structural,Unnamed: 1,Unnamed: 2
+,Structural program,"fn main() {
+    println!(""Hello, world!"");
+}"
+,,
+Borrow and ownership,Referencing,
+,Dereference,"let x = Box::new(10);
+*x ->
+let temp = Deref::deref(&x);
+*temp"
+,Dereference coercion,"Automatic deref conversion of &T into &U when trying to force-fit into a type
+&x -> &(*x) -> &x.deref()
+
+let string = String::from(""hello"");
+let string1 = &string; // &String type
+let string2: &str = &string; // &str type (Deref coercion)"
+,Borrow and ownership,"1. Each value has one owner (usually a variable)
+2. You can only have one owner at a time, unless you borrow it
+3. When the owner goes out of scope, the value is deleted"
+,Reassignment -> Copy (For primitive values/scalar types),"let a = 5;
+let b = a;
+println!(""a = {}"", a);  // Works
+println!(""b = {}"", b);  // Works"
+,Reassignment -> Ownership move (For vector types),"let a = String::from(""Hello"");
+let b = a;
+
+// println!(""{}"", a); Error: a no longer owns the value
+println!(""{}"", b); // Ok: b now owns the value"
+,Cloning,"let a = String::from(""Hello"");
+let b = a.clone(); // Now both have the same value
+
+println!(""a = {}"", a);  // Works
+println!(""b = {}"", b);  // Works"
+,Ownership out of scope,
+,Immutable borrow reference,"let a = String::from(""Hello"");
+let b = &a;
+println!(""a = {}"", a);
+println!(""b = {}"", b);
+
+let x = 5;
+let r = &a;
+println!(""x = {}, r = {}"", x, r);"
+,"Mutable reference
+Borrowing helps you reuse values safely, without giving them away.
+
+1. It lets you use values without taking ownership
+2. It avoids cloning, which can be slow for large data
+3. It makes your programs safer and faster","let mut a = 3;
+let b = &a;
+
+let mut name = String::from(""John"");
+let name_ref = &mut name;
+name_ref.push_str("" Doe"");
+
+println!(""{}"", name_ref); // John Doe, only use name or name_ref here"
+,,"Mutable references (&mut T):
+1. Only one mutable reference can exist at a time.
+2. While the mutable reference exists: The owner cannot be used, No other mutable or immutable references can exist.
+3. When the mutable reference goes out of scope, the owner becomes unlocked, and new references can be created.
+-> Guarantees exclusive, safe mutation without data races (Multiple writes can cause conflict in many circumstances)
+
+Immutable references (&T):
+1. Any number of immutable references can exist at the same time.
+2. While immutable references exist: The owner can be read but not mutated, You cannot create a mutable reference at the same time.
+-> Allows multiple read-only accesses safely (Multiple reads do not conflict, so it’s safe to allow as many as you want)"
+,,
+,,
+,,
+,,https://www.youtube-nocookie.com/embed/rQ_J9WH6CGk?playlist=rQ_J9WH6CGk&autoplay=1&iv_load_policy=3&loop=1&start=
+,,01:37:37
+,,
+Blocks,"blocks
+-> Local and global variables",
+,Variable overshadowing,"let x = 5;
+{
+    let x = 10;
+    println!(""Inside block: {}"", x);
+}
+println!(""Outside block: {}"", x);"
+,block expression (Treated as functions),"let x: i32 = {
+    let price: i32 = 5;
+    let qty: i32 = 10;
+    price * qty
+};"
+,if/else,"if <boolean_value>{
+    <expr>
+}
+else if <boolean_value>{
+    <expr>
+}
+else{
+    <expr>
+}"
+,Block expression if/else,"let greeting = if time < 18 {
+  ""Good day.""
+} else {
+  ""Good evening.""
+};
+
+// let result = if number < 10 { ""Too small"" } else { 100 }; // Cause error"
+,match,"match day {
+    1 => println!(""Monday""),
+    2 => println!(""Tuesday""),
+    3 => println!(""Wednesday""),
+    4 => println!(""Thursday""),
+    5 => println!(""Friday""),
+    6 => println!(""Saturday""),
+    7 => println!(""Sunday""),
+    _ => println!(""Invalid day.""),
+}
+
+match day {
+    1 | 2 | 3 | 4 | 5 => println!(""Weekday""),
+    6 | 7 => println!(""Weekend""),
+    _ => println!(""Invalid day""),
+}"
+,Block expression match,"let result = match day {
+    1 => ""Monday"",
+    2 => ""Tuesday"",
+    3 => ""Wednesday"",
+    4 => ""Thursday"",
+    5 => ""Friday"",
+    6 => ""Saturday"",
+    7 => ""Sunday"",
+    _ => ""Invalid day."",
+};"
+,Loop,"let mut count = 1;
+loop {
+  println!(""Hello World!"");
+  if count == 3 {
+    break;
+  }
+  count += 1;
+}"
+,Block expression loop,"let mut count = 1;
+let result = loop {
+  println!(""Hello!"");
+  if count == 3 {
+    break count; // Stop the loop and return the number 3
+  }
+  count += 1;
+};
+println!(""The loop stopped at: {}"", result);"
+,while-loop (use `continue` and `break` as usual),"let mut count = 1;
+while count <= 5 {
+  println!(""Count: {}"", count);
+  count += 1;
+}
+
+let mut num = 1;
+while num <= 10 {
+  if num == 6 {
+    break; // Premature break
+  }
+  println!(""Number: {}"", num);
+  num += 1;
+}
+
+let mut num = 1;
+
+while num <= 10 {
+  if num == 6 {
+    num += 1;
+    continue; // Skipped value
+  }
+  println!(""Number: {}"", num);
+  num += 1;
+}"
+,for-loop,"for i in 1..6 {
+  println!(""i is: {}"", i);
+}
+
+for i in 1..=10 {
+  if i == 3 {
+    continue; // skip 3
+  }
+  if i == 5 {
+    break; // stop before printing 5
+  }
+  println!(""i is: {}"", i);
+}"
+,,"for x in &some_collection {
+    println!(""{}"", x);
+}
+->
+let mut iter = &some_collection.into_iter();
+while let Some(x) = iter.next() {
+    println!(""{}"", x);
+}"
+,Functions,"Main function:
+fn main(){
+    <expr>
+}
+
+fn custom_function(var1: u16, var2: String, var3: [u32; 7}, …) -> u32 {
+    …
+}
+Omit arrow if void, last line without semicolon"
+Scalar types/Primitive data types,"Unsigned integers: u8, u16, u32, u64, u128, usize (size depend on CPU)","212 (u8), 128 (u8), 765 (u16), ... 212u8, 128u8, 756u16, 128753u32, 2217767778u64"
+,"Signed (2s complement) integers: i8, i16, i32, i64, i128, isize (size depend on CPU)","-66 (i8), 113 (i8), 16787 (u16), ... -72u8, 105u8, -20011u16, 1211187u32"
+,"Integer out of range causes compilation errors (not in range), but not when release",
+,"Float: f32 (single precision), f64 (double precision)","2.87 (f32), 76.21232972 (f64)"
+,Boolean,"true, false"
+,char,"a', 'A', …"
+Operators,Assignment,"let x: u32 = 3; // Immutable variable, can infer type
+let mut x: u32 = 3; // Mutable variable, can infer type
+const MINUTES_PER_HOUR: u16 = 60; // Constant, type required (no inference), can be declared in global scope (outside main fn)"
+,"+, -, *, /, %, +=, -=, *=, /=, %=","5+3, 5-3, 5*3, 11/2, 11%2, x+=2, x-=2, x*=2, x/=2, x%=2"
+,"==, !=, >, <, >=, <=",
+,"&&, ||, !",
+,,
+,,
+,,
+,,
+,,
+Vector types/Compound types,Arrays: [T; length] (Fixed size),"let a: [i32; 5] = [1, 2, 3, 4, 5];
+// let mix = [1, 2, ""apple"", true]; // Cause compilation error, cannot mix
+a[0]
+a[2] = 7;
+a.len()"
+,Vectors: Vec<T> (Growable),"let a = vec![1, 2, 3, 4, 5];
+a.push(6);"
+,String,"(Growable, mutable, owned string type, slow access)
+let string: String = String::new(""hello"");
+let string_slice: &str = &string[0..5];"
+,"Tuple: (T1, T2, T3, …)","let a: (&str, i32, bool) = (""Alice, 30, false)
+a.0, a.1, a.2
+
+// Tuple unpack
+let person = (""Jenny"", 45, false);
+let (name, age, active) = person;"
+,struct,"struct Person {
+  name: String,
+  age: u32,
+  can_vote: bool,
+}
+
+// Create a Person object
+let user = Person {
+  name: String::from(""John""),
+  age: 35,
+  can_vote: true,
+};
+
+// Access and print the values
+println!(""Name: {}"", user.name);
+println!(""Age: {}"", user.age);
+println!(""Can vote? {}"", user.can_vote);
+
+user.age = 36;"
+"DST (Dynamically sized types, unsized trailing field)
+Cannot exist by value only
+Fat pointer in borrow reference",str (Non existent),A UTF-8 holding sequence in memory without size
+,&str,"String slice (From slicing operators (&string[2..5]) or deref coercion)
+All string literals are string slices: let a: &str = ""hello"";"
+,[T] (Non existent),A holding sequence in memory without size
+,&[T],"Array slice (From array slicing operator (let slice = &arr[2..5]) or deref coercion)
+slice[0] is equivalent to arr[2], slice[1] equivalent to arr[3], slice[2] equivalent to arr[4]"
+,dyn Trait (Non existent),
+,&dyn Trait,
+Enums,,"enum Direction {
+  Up,
+  Down,
+  Left,
+  Right,
+}
+
+let my_direction = Direction::Left;
+match my_direction {
+  Direction::Up => println!(""Going up""),
+  Direction::Down => println!(""Going down""),
+  Direction::Left => println!(""Going left""),
+  Direction::Right => println!(""Going right""),
+}"
+,,"enum LoginStatus {
+  Success(String),
+  Error(String),
+}
+
+let result1 = LoginStatus::Success(String::from(""Welcome, John!""));
+let result2 = LoginStatus::Error(String::from(""Incorrect password""));
+
+match result1 {
+  LoginStatus::Success(message) => println!(""Success: {}"", message),
+  LoginStatus::Error(message) => println!(""Error: {}"", message),
+}"
+,,
+,,
+,,
+,,
+,,
+APIs,,
+macros,,"print!(format: String, T… element...)
+println!(format: String, T… element...)
+Format string:
+{}: Match the upcoming small type (integers, float, String)
+{:?}: Debug print type (arrays, tuples, struct)"
+,,"format!(format: String, T… element...) // String concatenation"

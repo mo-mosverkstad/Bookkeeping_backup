@@ -1,0 +1,170 @@
+Compound,Melting,Boiling,Color,Odour,Structure,Reactivity,Toxicity,Application
+Electrostatic forces,"Electrostatic Forces: Attraction or repulsion between charged particles.
+Shielding: Inner electrons reduce the attraction experienced by valence electrons.
+Effective Nuclear Charge: The net positive charge felt by valence electrons.
+Electronegativity: An atom's ability to attract electrons in a bond (influenced by nuclear charge, distance, and shielding).
+Ionization Energy: Energy required to remove an electron from an atom or ion.
+Phases:
+Phase I (Long distance, No effect)
+Phase II (Strong attraction, Attraction increases as distance decreases)
+Phase III (Lowest energy state, Minimum energy state – optimal bonding)
+Phase IV (Fusion, repulsion, Fusion – repulsive forces dominate) ",,,,,,,
+Intramolecular bonds,"Ionic Bond:
+ΔElectronegativity >= 2.
+Directed attraction between cations and anions.
+Properties: Brittle, forms crystalline structures.
+
+Metallic Bond:
+Delocalized, shielded electrons form an ""electron sea"" Properties: Electrical conductivity, thermal conductivity, malleability, high density.
+=> Elektrisk laddning
+=> Värmeledning (Fria elektroner)
+=> Formbara (Oriktad bindning, atomlagren kan flyttas)
+=> Hög densitet
+
+Kovalent bindning:
+Δ elektronegativitet < 2 (Icke-metaller)
+Elektronerna delas mellan atomer
+Dålig strömledning
+
+Electrons are shared between two atoms.
+Sp2 Hybridization: Involves S, Px, Py orbitals.
+Sp3 Hybridization: Involves S, Px, Py, Pz orbitals.
+
+Molecule polarity depends on geometry:
+Examples:
+XY2 (CO2): Polar bonds, nonpolar molecule.
+XY3 (NH3): Polar molecule.
+XY4 (CH4): Nonpolar molecule.
+
+Polära kovalenta bindningar:
+Δ elektronegativitet > 0.4
+X2 (I2, O2, N2) -> Opolär bindning, opolär molekyl
+XY (XF, HI, HCl) -> Polär bindning, polär molekyl
+XY2 (CO2, CS2) -> Polär bindning, opolär molekyl
+XY2 (SO2, H2O, H2S) -> Polär bindning, polär molekyl
+XY3 (BF3) -> Polär bindning, opolär molekyl
+XY3 (NH3, PCl3) -> Polär bindning, polär molekyl
+XY4 (CH4, CCl4) -> Polär bindning, opolär molekyl
+XY4 (CH3Cl, CH2Cl2) -> Polär bindning, polär molekyl
+
+Delokaliserade elektroner:
+Delocalized Electrons:
+Electrons move freely between atoms.
+Results in resonance and stability.",,,,,,,
+Intermolecular bonds,"Vätebindning:
+H -> N, O, F
+Mer elektronegativa atomen drar väteatomens elektron
+H2O H(δ+), O(δ-) (H-O), N(δ+), H(δ-) (H-N), DNA, Protein
+
+Dipol-dipolbindning:
+Nätverk mellan dipoler (Deltaladdningar)
+Between molecules with permanent dipoles (e.g., HCl).
+HCl H(δ+), Cl(δ-)
+
+Jon-dipol bindning (Hydratisering):
+Salter löses i vatten (O -> (+), H -> (-))
+Hydrofila, hydrofoba och amfifila molekyler
+Om jonbindning är svagare än vattenbindning löses saltet upp
+Ion-Dipole Bonding (Hydration):
+Salts dissolve in water.
+If the ionic bond is weaker than water's hydrogen bonding, the salt dissolves.
+
+Dispersionskraft/London-dispersionskraft:
+Tillfälliga dipol av slump av snedfördelade elektroner
+Större yta -> Starkare bindning
+Geckoödla hårstrå på utskott
+CO2, N2, O2, Ädelgaser
+Dispersion Forces (London Forces):
+Temporary dipoles due to electron movement.
+Examples: CO2, noble gases.",,,,,,,
+Metal oxides/Metalloxider,,,,,,,,
+Fe2+,,,RE1,,,,,
+Li+,,,\RE1,,,,,
+Na+,,,\YEL,,,,,
+K+,,,\PUR,,,,,
+Ba+,,,\GRE,,,,,
+Ca(2+),,,\ORA,,,,,
+Cu(2+),,,\BLU~GRE,,,,,
+Sr(2+),,,\RE1,,,,,
+Al2O3 (Sapphire/Safir),,,,,,,,
+Fe2O3,,,,,,,,
+Fe3O4,,,,,,,,
+Ag2O,,,,,,,,
+Metal sulfides/Metallsulfider,,,,,,,,
+K2S,,,,,,,,
+MgS,,,,,,,,
+Al2S3,,,,,,,,
+Metal nitrids/Metallnitrider,,,,,,,,
+K3N,,,,,,,,
+Mg3N2,,,,,,,,
+AlN,,,,,,,,
+MNO4-,,,VIO,,,,,
+MnO4 (2-),,,GRE,,,,,
+MnO2 (s),,,,,,,,
+Common small molecules,,,,,,,,
+CO,,,,Odorless,,,Mycket giftigt,Ofullständig förbränning
+CO2,,,,,,,,Fullständig förbränning växthuseffekten
+H2O,,,,,,,,
+SO2,,,,,,,,Ger sur regn
+NO,,,,,,,,Ger sur regn
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+Acids/Syror,"Släpper iväg vätejoner (Vattenlösning) (pH < 7)
+Spädning SIV (Syra I Vatten) och värme avges
+Leder ström, Smaksätter godis, emalj fräter
+Katalyserar reaktioner",,,,,,,
+Bases/Baser,"Baser tar upp vätejoner (Vattenlösning) (pH > 7)
+Bitter smakande, Tvåliga, Hala, Leder ström",,,,,,,
+Strong acids/Starka syror,,,,,,,,
+HCl,-,-,-,"Stinkande, rykande",,Flammable,-,"Magsäcken, Plast och färgindustrin, Metallrengöring"
+H2SO4 -> HSO4- <-> SO4 (2-),-,-,-,Odorless,"Viscous, heavy",,-,"Bilbatterier, konstgödsel, sprängämnen, läkemedel, stäkelse förkolnar"
+HNO3,-,-,-,"Stinkande, rykande",ljuskänslig,Flammable,Lung inflammation,"gulfärgar proteiner, Angriper alla metaller utom Au och Pt -> Konstgödsel, sprängämnen och färgämnen"
+Weak acids/Svaga syror,,,,,,,,
+H2CO3 <-> HCO3- <-> CO3 (2-),-,-,-,-,-,-,-,Läsk
+H3PO4 (H2PO4-) HPO4(2-) PO4(3-),-,-,-,-,-,-,-,-
+Strong bases/Starka baser,,,,,,,,
+NaOH,-,-,-,WHI,-,-,-,"Pappersmassa, tvål, konstfibrer, rengöring, propplösare"
+KOH,-,-,-,WHI,-,-,-,Såpa
+Ca(OH)2,-,-,-,-,-,-,-,"Kalkar sjöar, Murbruk"
+Weak bases/Svaga baser,,,,,,,,
+NH3 <-> NH4+,-,-,-,-,-,-,-,"Rengöring, Konstgödsel"
+NaHCO3,-,-,-,-,-,-,-,Bakpulver
+Solved salt/Lättlösliga salter,,,,,,,,
+NaCl,-,800,,,,,,
+NaF,-,-,,,,,,
+Salt precipitations/Fällningar,,,,,,,,
+Ca(OH)2,,,,,,,,
+Mg(OH)2,,,,,,,,
+Al(OH)3,,,,,,,,
+Mn(OH)2,,,,,,,,
+Zn(OH)2,,,,,,,,
+Fe(OH)2,,,,,,,,
+Fe(OH)3,,,,,,,,
+Cu(OH)2,,,,,,,,
+AgOH,,,,,,,,
+Pb(OH)2,,,,,,,,
+Ni(OH)2,,,,,,,,
+Co(OH)2,,,,,,,,
+AgCl,,,,,,,,
+Pb(Cl)2,,,,,,,,
+AgBr,,,,,,,,
+PbBr2,,,,,,,,
+BaSO4,,,,,,,,
+CaSO4,,,,,,,,
+PbSO4,,,,,,,,
+Ba2CO3,,,,,,,,
+CaCO3,,,,,,,,
+MgCO3,,,,,,,,
+Al2(CO3)3,,,,,,,,
+MnCO3,,,,,,,,
+FeCO3,,,,,,,,
+Fe2(CO3)3,,,,,,,,
+CuCO3,,,,,,,,
+Ag2CO3,,,,,,,,
+PbCO3,,,,,,,,
+NiCO3,,,,,,,,
+CoCO3,,,,,,,,
+FePO4,,,,,,,,
+AlPO4,,,,,,,,
+KNO3,,,,,,,,

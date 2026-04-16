@@ -1,0 +1,270 @@
+Name,SystemVerilog,VHDL,Presetted values
+"During synthesization, optimal solution will be synthesized
+Testbench code cannot be synthesized into hardware","Verilog was developed by Gateway Design Automation as a proprietary language for logic simulation in 1984. Gateway was acquired by Cadence in 1989, and Verilog was made an open standard in 1990 under the control of Open Verilog International. The language became an IEEE standard in 1995.
+The language was extended in 2005 to streamline idiosyncrasies and to better support modeling and verification of systems. These extensions have been merged into a single language standard, which is now called SystemVerilog (IEEE STD 1800-2009). SystemVerilog filenames normally end in .sv.","VHDL is an acronym for the VHSIC Hardware Description Language. VHSIC, in turn, stands for Very High Speed Integrated Circuits, a program initiated by the U.S. Department of Defense.
+VHDL was originally developed in 1981 by the Department of Defense to describe the structure and function of hardware. Its roots draw from the Ada programming language. The language was first envisioned for documentation but was quickly adopted for simulation and synthesis.
+The IEEE standardized VHDL in 1987 and has updated the standard several times since. This chapter is based on the 2008 revision of the VHDL standard (IEEE STD 1076-2008), which streamlines the language in various ways. At the time of this writing, not all VHDL-2008 features are supported by CAD tools; this chapter only uses those understood by Synplicity, Altera Quartus, and ModelSim.
+VHDL filenames normally end in .vhd.
+To use VHDL-2008 in ModelSim, you may need to set VHDL93 = 2008 in the modelsim.ini configuration file.",
+"Module
+A block of hardware with inputs and outputs","module <module_name>(input <logic/logic[3:0]> <name1>, <name2>, <name3>, ..., output <logic/logic[3:0]> <name1>, <name2>, <name3>, …);
+    assign <name> = <expr>;
+    <statements>;
+endmodule","library IEEE; use IEEE.STD_LOGIC_1164.all; (library use clause)
+
+(entity declaration: lists its inputs and outputs)
+entity <name> is
+    port(<name1>, <name2>, <name3>: in <STD_LOGIC/STD_LOGIC_VECTOR(3 downto 0)>;
+        <name4>, <name5>, <name6>, …: out STD_LOGIC <STD_LOGIC/STD_LOGIC_VECTOR(3 downto 0)>);
+end;
+
+(architecture body defines module functionality)
+architecture synth of <name> is
+begin
+    <name> <= expr;
+    <statement>;
+end;","<name1…> = [a, b, c], [y]
+<expr…>: y=(-a)(-b)(-c)+a(-b)(-c)+a(-b)c
+
+<name1…> = [a[3:0]], [y[3:0]]
+<expr…>: y= !a"
+Comments,"/* Comment code */
+// one line comment","/* Comment code */
+-- one line comment",
+Names,Case-sensitive,Non-case sensitive,
+Type declarations,"input logic …
+logic: logic: inputs and outputs Boolean variabes (may have floating/undefined variables)
+logic[3:0]: 4-bit vector/bus in little-endian order -> (a[3], a[2], a[1], a[0]), logic[0:3]: 4-bit vector/bus in big-endian order -> (a[0], a[1], a[2], a[3])","STD_LOGIC type in IEEE.STD_LOGIC_1164
+STD_LOGIC_VECTOR type to indicate buses, little-endian order: STD_LOGIC_VECTOR(3 downto 0) -> (a(3), a(2), a(1), a(0)), big-endian order: STD_LOGIC_VECTOR(0 to 3) -> (a(0), a(1), a(2), a(3))",
+Expressions,"Both single-bit and multi-bit types works for the operators (endianess matter for operators, as long as consistent endianess)
+~ for inverse, & for and, | for or, ^ for xor","Both single-bit and multi-bit types works for the operators
+not, and, or (DOES NOT FOLLOW PRECEDENCE ORDER, equations must be parenthesized)",
+Reduction operators,"Same expressions:
+assign y=&a
+assign y = a[7] & a[6] & a[5] & a[4] & a[3] & a[2] & a[1] & a[0]","Same expressions
+y <= and a;
+y <= a(7) and a(6) and a(5) and a(4) and a(3) and a(2) and a(1) and a(0)",
+Operator precedence,"~: NOT
+*, /, %: MUL, DIV, MOD
++, -: PLUS, MINUS
+<<, >>: LOGICAL LEFT/RIGHT SHIFT
+<<<, >>>: ARITHMETIC LEFT/RIGHT SHIFT
+<, <=, >, >=: RELATIVE COMPARISON
+==, !=: EQUALITY COMPARASION
+&, ~&: AND, NAND
+^, ~^: XOR, XNOR
+|, ~|: OR, NOR
+?: (CONDITIONAL)","not: NOT
+*, /, mod, rem: MUL, DIV, MOD, REM
++, -: PLUS, MINUS
+rol, ror, srl, sll: ROTATOR LEFT, ROTATOR RIGHT, LOGICAL RIGHT SHIFT, LOGICAL LEFT SHIFT
+<, <=, >, >=; RELATIVE COMPARASION
+=, /=: EQUALITY COMPARISON
+and, or, nand, nor, xor, xnor: Logical operations",
+Number literals,"<number of bits: decimal number>'<base: b (2), o (8), d (10), h(16)><raw literal>
+'<base: b (2), o (8), d (10), h(16)><raw literal>
+<raw literal>
+Signal values as 0, 1, x, z (Starting with z or x ar padded with leading z's or x's instead of 0's)","<number of bits: decimal number><base: B (2), O (8), D (10), H(16)>""<raw literal>""
+<base: B (2), O (8), D (10), H(16)>""<raw literal>""
+""<raw literal>""
+Signal values as '0', '1', 'z', 'x', 'u' (uninitialized outputs)",
+"Local variables
+Statement order does not matter
+(HDL assignment statements are evaluated any time the inputs, signals on the right hand side, change their value, regardless of the order in
+which the assignment statements appear in a module)","logic p, g;
+assign p = a^b;
+assign q = a&b;
+(Use then p and q)","architecture synth of <name> is
+  signal p, g: <type e.g. STD_LOGIC, …>;
+  begin
+  p <= a xor b;
+  q <= a and b;
+  (use p and q)
+end;",
+Conditional assignment,"assign y = s ? d1 : d0;
+assign y = s[1] ? (s[0] ? D3 : d2) : (s[0] ? d1 : d0);","y <= d1 when s else d0
+y <= d0 when s=""00"" else
+  d1 when s=""01"" else
+  d2 when s=""10"" else
+  d3;
+(switch case)
+with s select y <=
+  d0 when ""00"",
+  d1 when ""01"",
+  d2 when ""10"",
+  d3 when others;",
+Tristate buffer assignment,"module tristate (
+    input  logic [3:0] a,
+    input  logic       en,
+    output tri   [3:0] y
+);
+    assign y = en ? a : 4'bz;
+endmodule","library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity tristate is
+    port (
+        a  : in  STD_LOGIC_VECTOR(3 downto 0);
+        en : in  STD_LOGIC;
+        y  : out STD_LOGIC_VECTOR(3 downto 0)
+    );
+end tristate;
+
+architecture synth of tristate is
+begin
+    y <= a when en else (others => 'Z');
+end synth;",
+"Bit swizzling
+Concatenate signals to buses or slice a bus",,,
+,,,
+,,,
+,SystemVerilog,VHDL,Synthesized output
+Logic gates,"module gates(input logic[3:0] a, b, output logic[3:0] y1, y2, y3, y4, y5);
+    assign y1 = a&b;
+    assign y2 = a|b;
+    assign y3 = a^b;
+    assign y4 = ~(a&b);
+    assign y5 = ~(a|b);
+endmodule","library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity gates is
+    port (
+        a, b : in  STD_LOGIC_VECTOR(3 downto 0);
+        y1, y2, y3, y4, y5 : out STD_LOGIC_VECTOR(3 downto 0)
+    );
+end gates;
+
+architecture synth of gates is
+begin
+    -- Five different two-input logic gates acting on 4-bit buses
+    y1 <= a and b;
+    y2 <= a or b;
+    y3 <= a xor b;
+    y4 <= a nand b;
+    y5 <= a nor b;
+end synth;","a[3:0], b[3:0] -> (y1=ab, y2=a+b, y3=a^b, y4=(-y1), y5=(-y2)) -> y1[3:0], y2[3:0], y3[3:0], y4[3:0], y5[3:0]"
+Full adder,"module fulladder (
+    input  logic a, b, cin,
+    output logic s, cout
+);
+    logic p, g;
+
+    assign p    = a ^ b;
+    assign g    = a & b;
+    assign s    = p ^ cin;
+    assign cout = g | (p & cin);
+endmodule","library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity fulladder is
+    port (
+        a, b, cin : in  STD_LOGIC;
+        s, cout   : out STD_LOGIC
+    );
+end fulladder;
+
+architecture synth of fulladder is
+    signal p, g : STD_LOGIC;
+begin
+    p    <= a xor b;
+    g    <= a and b;
+    s    <= p xor cin;
+    cout <= g or (p and cin);
+end synth;",
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,"Hardware description language (HDL)
+Specify logic function using CAD (produces or synthesizes the optimized gates, most commercial designs built using HDLs)",,
+,"Faster simulation (input applied -> output checked for correction)
+HDL -> netlist (describing the hardware)
+Behavioral: Focused on circuit behavior
+Structural: Hierarchy of the circuit",,
+Simple module,"module example(input logic a, b, c, output logic y);
+    assign y = ~a & ~b & ~c | a & ~b & ~c | a & ~b & c;
+endmodule",,
+Combinational circuit,"module sevenseg(input logic [3:0] data, output logic [6:0] segments);
+    always_comb
+        case (data)
+            0: segments = 7'b111_1110;
+            1: segments = 7'b011_0000;
+            2: segments = 7'b110_1101;
+            3: segments = 7'b111_1001;
+            4: segments = 7'b011_0011;
+            5: segments = 7'b101_1011;
+            6: segments = 7'b101_1111;
+            7: segments = 7'b111_0000;
+            8: segments = 7'b111_1111;
+            9: segments = 7'b111_0111;
+            default: segments = 7'b000_0000;
+        endcase
+endmodule",,
+Multiplexers,"module example(input logic s, s0, s1, output logic y);
+    assign y = s ? S1 : s0;
+endmodule
+-> multiplexers if there are any",,
+Sequential,"idioms to describe latches, flip-flops and FSM
+always @(sensitivity list)
+    statement;",,
+,"module flop(input logic clk, input logic [3:0] d, output logic [3:0] q);
+    always_ff @(posedge clk)
+        q <= d // -> assignment (not smaller than equal)
+endmodule",,
+FSM implementation,,,
+Delays,"module example(input logic a, b, c, output logic y);
+    logic ab, bb, cb, n1, n2, n3;
+    assign #1 {ab, bb, cb} = ~{a, b, c};
+    assign #2 n1 = ab & bb & cb;
+    assign #2 n2 = a & bb & cb;
+    assign #2 n3 = a & bb & c;
+    assign #4 y = n1|n2|n3;
+endmodule",,
+Testbench,"a, b, c -> y timing diagrams
+Test module (not synthesizable) -> Different testing types: 1. simple, 2. self-checking, 3. self-checking without types
+
+module testbench1();
+    logic a, b, c;
+    logic y;
+    // instantiate device under test
+    sillyfunction dut(a, b, c, y);
+    // apply inputs
+    initial begin
+        a = 0; b = 0; c = 0; #10;
+        c = 1; #10;
+        b = 1; c = 0; #10;
+        c = 1; #10;
+        a = 1; b = 0; c = 0; #10;
+        c = 1; #10;
+        b = 1; c = 0; #10;
+        c = 1; #10;
+    end
+endmodule",,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+PLAs (Programmable logic arrays),"AND array followed by OR array, combinational logic only, fixed internal connections
+INPUTS -> (IMPLICANTS = AND_ARRAY(INPUTS), OUTPUTS = OR_ARRAY(IMPLICANTS)), DOT notation",,
+FPGA (Field programmable gate arrays),"Array of logic elements (Les), Combinational and sequential logic, programmable internal connections, memory and FPS (e.g. multiplicators)
+LEs (Logic elements): perform logic, composed of LUTs (Look-up tables, flip-flops, multiplexers connect LUT and flip-flops
+IOEs (Input/output elements): interface with outside world
+Programmable interconnections: connect LEs and IOEs
+INPUTS -> (A1, R1 = IOEs(INPUTS, O1),  O1 = LEs(...)) -> OUTPUTS",,
+Design flow,"Using a CAD tool (such as Altera's Quartus II)
+1. Enter the design using schematic entry or an HDL
+2. Simulate the design
+3. Synthesize design and map it onto FPGA
+4. Download the configuration onto the FPGA
+5. Test the design",,

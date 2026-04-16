@@ -1,0 +1,1151 @@
+Group,Functionality,Program structure,Conceptual structure/Complexity analysis
+,Complexity functions,"An estimate of the change in execution time when the data set grows large.
+A functions upper bound is limited by O(g(n)).
+Its lower bound is limited by Ω(g(n)).
+If a function is limited by O(g(n)) and Ω(g(n)) then it is limited by Θ(g(n)).
+
+Ordered by complexity - not execution time given a specific n
+O(n^4) O(n^2) O(n × lg(n)) O(n) O(\sqrt(n)) O(lg^2(n))) O(lg(n))
+\O(f(x)) -> Worse than or equal f(x)
+O(f(x)) -> Better than or equal f(x)
+\T(f(x)) = \O(f(x)) \intersect O(f(x))
+
+Tractable (Polynomial complexity) - Intractable (Exponential complexity) - Solvable problems - Unsolvable problems
+It’s not easy to determine the classification of a problem.
+If we have an algorithm at least we know the upper limit.
+We have problems where it’s easy to find an exponential algorithm, but no proof that there is no polynomial algorithm
+Polynomial P, Non-deterministic Polynomial problem NP",
+,Sum of elements,"int sum/prod(int * arr, int n) {
+    int sum = 0;
+    for (int i = 0; i < n, i++)
+        sum += arr[i]; (sum *= arr[i];)
+    return sum;
+}",
+,Linear search,"bool unsorted_search(int * array, int length, int key) {
+    for (int index = 0; index < length; index++) {
+        if (array[index] == key) {
+            return true;
+        }
+    }
+    return false;
+}","O(n), O(1)"
+,Binary search,"bool binary_search(int array[], unsigned int length, int key) {
+    if (length == 0) return false;
+    int first = 0;
+    int last = length-1;
+    while (true) {
+        // jump to the middle
+        int index = first + (last - first)/2;
+        if (array[index] == key) {
+            return true;
+        }
+        if (array[index] < key && index < last) {
+            first = index + 1;
+            continue;
+        }
+        if (array[index] > key && index > first) {
+            last = index - 1;
+            continue;
+        }
+        return false;
+    }
+}","O(log(n)), O(1)"
+,Recursive binary search,"bool recursive_binary_search(int array[], int key, unsigned int first, unsigned int last) {
+    if (first > last)
+        return false;
+    unsigned int index = first + (last - first) / 2;
+    if (array[index] == key)
+        return true;
+    if (array[index] < key)
+        return recursive_binary_search(array, key, index + 1, last);
+    return recursive_binary_search(array, key, first, index - 1);
+}
+
+bool wrapped_recursive_binary_search(int array[], unsigned int length, int key){
+    if (length == 0) return false;
+    return recursive_binary_search(array, key, 0, length-1);
+}","O(log(n)), stack growth in O(log(n))"
+,,-> search for duplicates between 2 arrays (one sorted and one unsorted),
+Sorting algorithms,Sort stability,"A sorting algorithm is stable if the given order is preserved when sorting two equal elements. (when two values are equal, the order of them are the same as the original one)
+stable algorithms: insertion sort, merge sort
+unstable algorithms: selection sort, quick sort",
+,Bubble sort,"public static void sort(String[] s) {
+    String temp;
+    int n = s.length;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (s[j].compareTo(s[j+1]) > 0) {
+                temp = s[j];
+                s[j] = s[j+1];
+                s[j+1] = temp;
+            }
+        }
+    }
+}",O(n^2)
+,Selection sort,"void selection_sort(int *arr, int n){
+    for (int i = 0; i < n; i++){
+        int min_index = i;
+        for (int j = i+1; j < n; j++){
+            if (arr[j] < arr[min_index]){
+                min_index = j;
+            }
+        }
+        if (min_index != i){
+            int temp = arr[i];
+            arr[i] = arr[min_index];
+            arr[min_index] = temp;
+        }
+    }
+}","O(n^2)
+Ideal for removing the first several
+
+How many compare operations?
+How many swap operations?
+Any special cases?
+
+few write operations
+useful when iteratively searching for the smallest elements"
+,Insertion sort,"
+void insertion_sort(int *arr, int n){
+    for (int i = 1; i < n; i++){
+        int hole_index = i;
+        int hole_element = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > hole_element){
+            arr[j + 1] = arr[j];
+            hole_index = j;
+            j--;
+        }
+        arr[hole_index] = hole_element;
+    }
+}","O(n^2) worst/O(n) best/O(n^2) average
+How many compare operations?
+How many swap operations?
+Any special cases?
+
+many write operations (in an array)
+useful when data set almost sorted
+always used when inserting a new element in a sorted data set"
+,Merge sort,"void copy_array(int * src, int * dest, int start, int end) {
+    for (int i = start; i < end; i++)
+        dest[i] = src[i];
+}
+
+void merge(int * org, int * aux, int lo, int mid, int hi) {
+    int i = lo;
+    int j = mid + 1;
+    for (int k = lo; k <= hi; k++) {
+        if (i > mid)
+            org[k] = aux[j++];
+        else if (j > hi)
+            org[k] = aux[i++];
+        else if (aux[i] <= aux[j])
+            org[k] = aux[i++];
+        else
+            org[k] = aux[j++];
+    }
+}
+
+void sort(int * org, int * aux, int lo, int hi) {
+    if (lo < hi) {
+        int mid = lo + (hi - lo) / 2;
+        sort(org, aux, lo, mid);
+        sort(org, aux, mid + 1, hi);
+        copy_array(org, aux, lo, hi + 1);
+        merge(org, aux, lo, mid, hi);
+    }
+}
+
+void mergesort(int * org, int n) {
+    if (n == 0) return;
+    int * aux = (int * ) malloc(n * sizeof(int));
+    copy_array(org, aux, 0, n);
+    sort(org, aux, 0, n - 1);
+}","If you can sort an array with up to n elements and can merge two sorted arrays then you can sort an array of up to 2 × n elements.
+Since an array with only one element is sorted then you can sort an array of arbitrary length."
+,Quick sort,"void quick_sort(int *arr, int start, int end){
+    if (start >= end) return;
+    if (end - start <= 1) return;
+    int pivot_index = (start + end)/2;
+    int pivot_value = arr[pivot_index];
+    int i = start;
+    int j = end - 1;
+    while (i < j){
+        while (arr[i] < pivot_value) i++;
+        while (arr[j] > pivot_value) j--;
+        if (i < j){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
+    quick_sort(arr, start, i);
+    quick_sort(arr, i, end);
+}","an O(nlg(n)) algorithm
+no additional space
+worst case scenario if array is sorted - O(n^2)"
+,,,
+,,,
+,,,
+,Abstract data structures,"An abstract data structure is defined by the operations we can perform on the structure.
+The opertions should be well defined and also implemented giving a predictable requirement of space and time.
+Exactly how the structure is implemented is up to the provider and should not be assumed by the user.
+Examples: array, set, vector, sequence, list, stack, tree, queue, priority queue, lock, map, ...",
+,Concrete data structure,"A concrete data structure is an description of how the structure is implemented in memory. We’re talkning about memory layout, pointers, encoding of values etc.",
+List data structure,Array,"Abstract: get(index) and put(index, value) operations in constant time, size proportional to number of items.
+Concrete: a consecutive segment of memory where each item can be indexed using the base adress, collection of data structures accessed by index, assumed constant time access, fixed size",
+,Static array,"typedef struct array{
+    unsigned int top;
+    unsigned int size;
+    int *array;
+} array;
+
+array *array_new(unsigned int size) {
+    static_array *arr = malloc(sizeof(array));
+    if (!arr) return NULL;
+    arr->array = malloc(size * sizeof(int));
+    if (!arr->array) {
+        free(arr);
+        return NULL;
+    }
+    arr->top = 0;
+    arr->size = size;
+    return arr;
+}
+
+void array_delete(array *arr) {
+    if (!arr) return;
+    free(arr->array);
+    free(arr);
+}",Static array structure …
+,,"bool array_append(array *arr, int val) {
+    if (arr->top >= arr->size) {
+        return false;
+    }
+    arr->array[arr->top++] = val;
+    return true;
+}",O(1)
+,,"Result array_remove_last(array *arr) {
+    if (arr->top == 0) {
+        return (Result){ .success = false, .value = 0 };
+    }
+    return (Result){ .success = true, .value = arr->array[--arr->top] };
+}",O(1)
+,,"void array_print(array* arr){
+    printf(""(%d)["", arr->size);
+    if (arr->top > 0){
+        for (unsigned int i = 0; i < arr->top-1; i++){
+            printf(""%d, "", arr->array[i]);
+        }
+        printf(""%d"", arr->array[arr->top-1]);
+    }
+    printf(""]\n"");
+}",Traversal O(n)
+,Dynamic array,"Dynamic size:
+Assume a stack of size 16, first 16 push operations are constant.
+you pay a price for copying 16 elements ...
+then its a constant cost for the next 16 push operations
+you pay a price for copying 32 element ...
+then its a constant cost for the next 32 push operations
+-> Amortized cost is constant",
+,,"bool array_append(array *arr, int val) {
+    if (arr->top >= arr->size) {
+        unsigned int new_size = arr->size * 2;
+        int *new_array = malloc(new_size * sizeof(int));
+        if (!new_array){
+            return false;
+        }
+        for (unsigned int i = 0; i < arr->top; i++){
+            new_array[i] = arr->array[i];
+        }
+        free(arr->array);
+        arr->array = new_array;
+        arr->size = new_size;
+    }
+    arr->array[arr->top++] = val;
+    return true;
+}",
+,,"Result array_remove_last(array *arr) {
+    if (arr->top == 0) {
+        return (Result){ .success = false, .value = 0 };
+    }
+    
+    int popped = arr->array[--stk->top];
+    if (arr->top > 0 && arr->top < arr->size/4 && arr->size > MIN_ARRAY_SIZE){
+        unsigned int new_size = arr->size / 2;
+        int *new_array = malloc(new_size * sizeof(int));
+        if (new_array){
+            for (unsigned int i = 0; i < arr->top; i++){
+                new_array[i] = arr->array[i];
+            }
+            free(arr->array);
+            arr->array = new_array;
+            arr->size = new_size;
+        }
+    }
+    return (Result){ .success = true, .value = popped };
+}",
+,Linked list (only first),"typedef struct cell {
+    int value;
+    struct cell *tail;
+} cell;
+
+typedef struct linked {
+    cell *first;
+} linked;
+
+linked *linked_create() {
+    linked *new = (linked*)malloc(sizeof(linked));
+    if (new == NULL) return NULL;
+    new->first = NULL;
+    return new;
+}
+void linked_free(linked *lnk) {
+    cell *nxt = lnk->first;
+    while (nxt != NULL) {
+        cell *tmp = nxt->tail;
+        free(nxt);
+        nxt = tmp;
+    }
+    free(lnk);
+}",
+,,"void linked_add_first(linked *lnk, int item) {
+    cell *new = (cell*) malloc(sizeof(cell));
+    if (new == NULL) return;
+    new->value = item;
+    new->tail = lnk->first;
+    
+    lnk->first = new;
+}",
+,,"void linked_append(linked *lnk, int item) {
+    cell *new = (cell*) malloc(sizeof(cell));
+    if (new == NULL) return;
+    new->value = item;
+    new->tail = NULL;
+    
+    if (lnk->first == NULL){
+        lnk->first = new;
+    }
+    else{
+        cell *nxt = lnk->first;
+        while (nxt->tail != NULL){
+            nxt = nxt->tail;
+        }
+        nxt->tail = new;
+    }
+}",
+,,"unsigned int linked_length(linked *lnk){
+    unsigned int length = 0;
+    cell* nxt = lnk->first;
+    while (nxt != NULL){
+        nxt = nxt->tail;
+        length++;
+    }
+    return length;
+}",
+,,"void linked_remove_last(linked *lnk, int item){
+    cell *nxt = lnk->first;
+    if (nxt == NULL) return;
+    if (nxt->value == item){
+        cell *after = nxt->tail;
+        free(nxt);
+        lnk->first = after;
+    }
+    else{
+        while (nxt->tail != NULL && nxt->tail->value != item){
+            nxt = nxt->tail;
+        }
+        if (nxt->tail != NULL){
+            cell *after = nxt->tail->tail;
+            free(nxt->tail);
+            nxt->tail = after;
+        }
+    }
+}",
+,,"void linked_concat(linked *a, linked *b) {
+    cell *nxt = a->first;
+    cell *prv = NULL;
+    while(nxt != NULL) {
+        prv = nxt;
+        nxt = nxt->tail;
+    }
+    if (prv == NULL){
+        a->first = b->first;
+    }
+    else{
+        prv->tail = b->first;
+    }
+    b->first = NULL;
+}",
+,Linked list,"bool linked_list_append(linked *l, int val){
+    cell *new_cell = (cell *) malloc(sizeof(cell));
+    if (new_cell == NULL) {
+        return false;
+    }
+    new_cell->value = val;
+    new_cell->tail = tl;
+
+    if (l->first == NULL) {
+        l->first = new_cell;
+        l->last = new_cell;
+    }
+    else{
+        l->last->tail = new_cell;
+        l->last = new_cell;
+    }
+    return true
+}",
+,,"bool linked_list_add_first(linked *l, int val) {
+    cell *new_cell = (cell *) malloc(sizeof(cell));
+    if (new_cell == NULL) {
+        return false;
+    }
+    new_cell->value = val;
+    new_cell->tail = tl;
+    l->first = new_cell;
+    if (l->last == NULL) {
+        l->last = new_cell;
+    }
+    return true;
+}",
+,,"void linked_list_append(linked *a, linked *b){
+    if (a->first == NULL){
+        a->first = b->first;
+    }
+    else{
+        a->last->tail = b->first;
+    }
+    a->last = b->last;
+    b->first = NULL;
+    b->last = NULL;
+}",
+,,"int linked_list_remove_first(linked *l) {
+    int res = 0;
+    if (l->first != NULL) {
+        node *nd = l->first;
+        res = l->value;
+        l->first = nd->next;
+        free(nd);
+    }
+    return res;
+}",
+,Stack,"A stack is an abstract data structure that provides two operations: push(val) and pop(). The push operation will add a new item to the stack and the pop operations will remove and return the last pushed item.
+stack_push -> Append
+stack_pop -> Remove last",
+,Linked-based queue,"queue_enqueue -> linked_append
+queue_dequeue -> linked_remove_first
+queue_empty",
+,Array-based queue,Wrap around approach,
+,,"typedef struct arrayqueue{
+    int *array;
+    unsigned int capacity;
+    unsigned int first;
+    unsigned int last;
+} arrayqueue;",
+,,"bool queue_empty(arrayqueue *aq){
+    return aq->first == aq->last;
+}",
+,,"void queue_enqueue(arrayqueue* aq, int v){
+    if ((aq->last + 1) % aq->capacity == aq->first){
+        // resize the array
+        unsigned int new_capacity = aq->capacity * 2;
+        int *new_array = (int*) malloc(sizeof(int) * new_capacity);
+        unsigned int old_index = aq->first;
+        unsigned int new_index = 0;
+        while (old_index != aq->last){
+            new_array[new_index] = aq->array[old_index];
+            old_index = (old_index + 1) % aq->capacity;
+            new_index++;
+        }
+        free(aq->array);
+        aq->capacity = new_capacity;
+        aq->first = 0;
+        aq->last = new_index;
+        aq->array = new_array;
+    }
+    aq->array[aq->last] = v;
+    aq->last = (aq->last + 1) % aq->capacity;
+}",
+,,"int queue_dequeue(arrayqueue *aq){
+    if (!queue_empty(aq)){
+        int result = aq->array[aq->first];
+        aq->first = (aq->first + 1) % aq->capacity;
+        return result;
+    }
+    return 0;
+}",
+Tree,,"typedef struct node {
+    int value;
+    struct node *right;
+    struct node *left;
+} node; 
+
+node *construct_node(int val) {
+    node *nd = (node*) malloc(sizeof(node));
+    if (nd == NULL) return NULL;    
+    nd->value = val;
+    nd->left = NULL;
+    nd->right = NULL;
+    return nd;
+}
+
+void free_node(node *nd) {
+    if (nd != NULL) {
+        free_node(nd->left);
+        free_node(nd->right);
+        free(nd);
+    }
+}",
+,,"typedef struct tree {
+    node *root;
+} tree;
+
+tree *construct_tree(void) {
+    tree *tr = (tree*) malloc(sizeof(tree));
+    if (tr == NULL) return NULL
+    tr->root = NULL;
+    return tr;
+}
+
+void free_tree(tree *tr) {
+    if (tr != NULL){
+        free_node(tr->root);
+        free(tr);
+    }
+}",
+,,"static node* add_node(node *nd, int value){
+    if (nd == NULL){
+        return construct_node(value);
+    }
+    if (value < nd->value){
+        nd->left = add_node(nd->left, value);
+    }
+    else if (value > nd->value){
+        nd->right = add_node(nd->right, value);
+    }
+    return nd;
+}
+
+void recursive_add(tree *tr, int value){
+    if (tr == NULL) return;
+    tr->root = add_node(tr->root, value);
+}",
+,,"void add(tree *tr, int value){
+    if (tr == NULL) return;
+    bool left = true;
+    node* parent = NULL;
+    node* nd = tr->root;
+    while (nd != NULL){
+        if (value < nd->value){
+            parent = nd;
+            nd = nd->left;
+            left = true;
+        }
+        else if (value > nd->value){
+            parent = nd;
+            nd = nd->right;
+            left = false;
+        }
+        else{
+            return;
+        }
+    }
+    node* new_node = construct_node(value);
+    if (parent == NULL){
+        tr->root = new_node;
+    }
+    else{
+        if (left){
+            parent->left = new_node;
+        }
+        else{
+            parent->right = new_node;
+        }        
+    }
+}",
+,,"static bool lookup_node(node *nd, int value){
+    if (nd == NULL) return false;
+    if (value < nd->value) return lookup_node(nd->left, value);
+    else if (value > nd->value) return lookup_node(nd->right, value);
+    return true;
+}
+bool recursive_lookup(tree *tr, int value){
+    if (tr == NULL) return false;
+    return lookup_node(tr->root, value);
+}",
+,,"bool tree_lookup_iterative(const tree *tr, int value) {
+    if (tr == NULL) return false;
+    const node *nd = tr->root;
+    while (nd != NULL) {
+        if (value == nd->value) return true;
+        nd = (value < nd->value) ? nd->left : nd->right;
+    }
+    return false;
+}",
+,,"node *promote(node *nd) {
+    if (nd->left == NULL) return nd;
+    node *nxt = nd;
+    while (nxt->left->left != NULL)
+        nxt = nxt->left;
+    node* leftmost = nxt->left;
+    nxt->left = nxt->left->right;
+    leftmost->right = nd;    
+    return leftmost;
+}",
+,,"node* node_delete(node *nd, int k){
+    if (nd == NULL) return NULL; // Value not found
+    if (nd->value == k){
+        node *left = nd->left;
+        node *right = nd->right;
+        if (left == NULL && right == NULL){
+            free_node(nd);
+            return NULL;
+        }
+        if (left == NULL){
+            node *ret = nd->right;
+            free(nd);
+            return ret;
+        }
+        else if (right == NULL){
+            node *ret = nd->left;
+            free(nd);
+            return ret;
+        }
+        else{
+            node *promoted = promote(nd->right);
+            promoted->left = nd->left;
+            free(nd);
+            return promoted;
+        }
+    }
+    if (nd->value < k && nd->right != NULL){
+        nd->right = node_delete(nd->right, k);
+        return nd;
+    }
+    if (nd->value > k && nd->left != NULL){
+        nd->left = node_delete(nd->left, k);
+        return nd;
+    }
+    return nd;
+}",
+,,"static void print(node *nd) {
+    if (nd != NULL) {
+        print(nd->left);
+        printf(""%d "", nd->value);
+        print(nd->right);
+    }
+}
+
+void print_tree(tree *tr) {
+    if (tr == NULL) return;
+    if (tr->root != NULL)
+        print(tr->root);
+    printf(""\n"");
+}",
+,,"void tree_print_inorder_stack(const tree *tr) {
+    if (tr == NULL) return;
+    stack *stk = stack_create();
+    node *nd = tr->root;
+    while (nd != NULL) {
+        stack_push(stk, nd);
+        nd = nd->left;
+    }
+    while (!stack_empty(stk)) {
+        node *nd = stack_pop(stk);
+        printf(""%d "", nd->value);
+        node *r = nd->right;
+        while (r != NULL) {
+            stack_push(stk, r);
+            r = r->left;
+        }
+    }
+    stack_free(stk);
+    printf(""\n"");
+}",
+,,"void breadth_first_print(const tree *tr){
+    if (!tr || !tr->root) return;
+    queue *queue = queue_create();
+    queue_enqueue(queue, tr->root);
+    while (!queue_empty(queue)) {
+        node *current = queue_dequeue(queue);
+        printf(""%d "", current->value);
+        if (current->left != NULL) 
+            queue_enqueue(queue, current->left);
+        if (current->right != NULL) 
+            queue_enqueue(queue, current->right);
+    }
+    queue_free(queue);
+    printf(""\n"");
+}",
+,Heap,"typedef struct node {
+    int value;
+    int size;
+    struct node *left;
+    struct node *right;
+} node;
+
+node *create_node(int value) {
+    node *n = (node *) malloc(sizeof(node));
+    if (!n) return NULL;
+    n->value = value;
+    n->size = 1;
+    n->left = NULL;
+    n->right = NULL;
+    return n;
+}
+
+void free_node(node *nd){
+    if (nd) {
+        free_node(nd->left);
+        free_node(nd->right);
+        free(nd);
+    }
+}",
+,,"typedef struct {
+    node *root;
+} heap;
+
+heap *create_heap(){
+    heap *hp = (heap *) malloc(sizeof(heap));
+    if (!hp) return NULL;
+    hp->root = NULL;
+    return hp;
+}
+
+void free_heap(heap* hp){
+    if (hp) {
+        free_node(hp->root);
+        free(hp);
+    }
+}",
+,,"node *insert_node(node *nd, int value, bool* status_ptr) {
+    if (nd == NULL) {
+        node *new_node = create_node(value);
+        if (!new_node) *status_ptr = false;
+        return new_node;
+    }
+    if (value < nd->value) {
+        int tmp = nd->value;
+        nd->value = value;
+        value = tmp;
+    }
+    if (get_size(nd->left) <= get_size(nd->right))
+        nd->left = insert_node(nd->left, value, status_ptr);
+    else
+        nd->right = insert_node(nd->right, value, status_ptr);
+
+    nd->size = 1 + get_size(nd->left) + get_size(nd->right);
+    return nd;
+}
+
+bool tree_heap_enqueue(heap *hp, int value) {
+    bool result = true;
+    hp->root = insert_node(hp->root, value, &result);
+    return result;
+}",
+,,"node *remove_node(node *root) {
+    if (!root) return NULL;
+    if (!root->left && !root->right) {
+        free(root);
+        return NULL;
+    }
+    if (root->left && root->right) {
+        if (root->left->value < root->right->value) {
+            swap_node_values(root, root->left);
+            root->left = remove_node(root->left);
+        } else {
+            swap_node_values(root, root->right);
+            root->right = remove_node(root->right);
+        }
+    }
+    else if (root->left) {
+        swap_node_values(root, root->left);
+        root->left = remove_node(root->left);
+    }
+    else if (root->right) {
+        swap_node_values(root, root->right);
+        root->right = remove_node(root->right);
+    }
+    root->size = 1 + get_size(root->left) + get_size(root->right);
+    return root;
+}
+bool tree_heap_dequeue(heap *hp, int *res_ptr) {
+    if (!hp->root) {
+        return false;
+    }
+    *res_ptr = hp->root->value;
+    hp->root = remove_node(hp->root);
+    return true;
+}",
+,,"int push(heap *hp, int incr) {
+    if (!hp->root)
+        return 0;
+    hp->root->value += incr;
+    node *current = hp->root;
+    int depth = 0;
+    while (1) {
+        node *smallest = current;
+        if (current->left && current->left->value < smallest->value)
+            smallest = current->left;
+        if (current->right && current->right->value < smallest->value)
+            smallest = current->right;
+        if (smallest == current)
+            break;
+        swap_node_values(current, smallest);
+        current = smallest;
+        depth++;
+    }
+    return depth;
+}",
+,Array heap,"typedef struct array_heap{
+    int* array;
+    unsigned int depth;   // capacity
+    unsigned int size;    // current number of elements
+} array_heap;
+
+array_heap* create_array_heap(unsigned int depth){
+    array_heap* new_heap = malloc(sizeof(array_heap));
+    if (!new_heap) return NULL;
+
+    new_heap->array = malloc(depth * sizeof(int));
+    if (!new_heap->array) {
+        free(new_heap);
+        return NULL;
+    }
+
+    new_heap->depth = depth;
+    new_heap->size = 0;
+    return new_heap;
+}
+
+void free_array_heap(array_heap* heap){
+    if (!heap) return;
+    free(heap->array);
+    free(heap);
+}",
+,,"static void bubble_up(array_heap* heap, unsigned int index){
+    int child_val = heap->array[index];
+    unsigned int parent = index == 0 ? 0 : (index - 1) / 2;
+    int parent_val = heap->array[parent];
+    while (index > 0 && child_val < parent_val) {
+        heap->array[index] = parent_val;
+        heap->array[parent] = child_val;
+        index = parent;
+
+        child_val = heap->array[index];
+        parent = index == 0 ? 0 : (index - 1) / 2;
+        parent_val = heap->array[parent];
+    }
+}
+
+bool array_heap_enqueue(array_heap* heap, int value){
+    if (heap->size >= heap->depth)
+        return false; // full
+
+    heap->array[heap->size] = value;
+    bubble_up(heap, heap->size);
+    heap->size++;
+    return true;
+}",
+,,"static void sink_down(array_heap* heap, unsigned int index){
+    while (1) {
+        unsigned int left = 2 * index + 1;
+        unsigned int right = 2 * index + 2;
+        unsigned int smallest = index;
+        if (left < heap->size && heap->array[left] < heap->array[smallest])
+            smallest = left;
+        if (right < heap->size && heap->array[right] < heap->array[smallest])
+            smallest = right;
+
+        if (smallest == index) break;
+        int tmp = heap->array[index];
+        heap->array[index] = heap->array[smallest];
+        heap->array[smallest] = tmp;
+        index = smallest;
+    }
+}
+
+bool array_heap_dequeue(array_heap* heap, int* res_ptr){
+    if (heap->size == 0)
+        return false; // empty
+
+    *res_ptr = heap->array[0];
+
+    heap->size--;
+    heap->array[0] = heap->array[heap->size];
+    sink_down(heap, 0);
+
+    return true;
+}",
+,Hash table (Buckets/separate chaining),Diagram here,
+,,"typedef struct node {
+    void *key;
+    void *value;
+    struct node *next;
+} node;
+
+typedef struct hashtable {
+    node **buckets;
+    int size;
+    unsigned int (*hash)(void *key);
+    int (*equals)(void *a, void *b);
+} hashtable;
+
+hashtable *ht_create(int size, unsigned int (*hash)(void *), int (*equals)(void *, void *)) {
+    hashtable *ht = malloc(sizeof(hashtable));
+    if (!ht) return NULL;
+    ht->buckets = calloc(size, sizeof(node *));
+    if (!ht->buckets) {
+        free(ht);
+        return NULL;
+    }
+    ht->size = size;
+    ht->hash = hash;
+    ht->equals = equals;
+    return ht;
+}",
+,,"void ht_insert(hashtable *ht, void *key, void *value) {
+    unsigned int index = ht->hash(key) % ht->size;
+    node *n = malloc(sizeof(node));
+    if (!n) return;
+    n->key = key;
+    n->value = value;
+    n->next = ht->buckets[index];
+    ht->buckets[index] = n;
+}",
+,,"void *ht_lookup(hashtable *ht, void *key) {
+    unsigned int index = ht->hash(key) % ht->size;
+    node *current = ht->buckets[index];
+    while (current) {
+        if (ht->equals(current->key, key)) {
+            return current->value;
+        }
+        current = current->next;
+    }
+    return NULL;
+}",
+,,"void ht_remove(hashtable *ht, void *key) {
+    unsigned int index = ht->hash(key) % ht->size;
+    node *current = ht->buckets[index];
+    node *prev = NULL;
+    while (current) {
+        if (ht->equals(current->key, key)) {
+            if (prev)
+                prev->next = current->next;
+            else
+                ht->buckets[index] = current->next;
+            free(current);
+            return;
+        }
+        prev = current;
+        current = current->next;
+    }
+}",
+,Hash table (Open adressing/Linear probing),"typedef struct entry {
+    void *key;
+    void *value;
+    int state;   // 0 = empty, 1 = occupied, 2 = deleted
+} entry;
+
+typedef struct hashtable {
+    entry *table;
+    int size;
+    int count;
+    unsigned int (*hash)(void *key, int size);
+    int (*equals)(void *a, void *b);
+} hashtable;
+
+hashtable *ht_create(int size, unsigned int (*hash)(void*, int), int (*equals)(void*, void*)) {
+    hashtable *ht = malloc(sizeof(hashtable));
+    if (!ht) return NULL;
+    ht->table = calloc(size, sizeof(entry));
+    if (!ht->table) {
+        free(ht);
+        return NULL;
+    }
+    ht->size = size;
+    ht->count = 0;
+    ht->hash = hash;
+    ht->equals = equals;
+    return ht;
+}",
+,,"void ht_resize(hashtable *ht) {
+    int new_size = ht->size * 2;
+    entry *new_table = calloc(new_size, sizeof(entry));
+
+    for (int i = 0; i < ht->size; i++) {
+        if (ht->table[i].in_use) {
+            void *key = ht->table[i].key;
+            void *value = ht->table[i].value;
+
+            int idx = ht->hash(key, new_size);
+            while (new_table[idx].in_use) {
+                idx = (idx + 1) % new_size;
+            }
+
+            new_table[idx].key = key;
+            new_table[idx].value = value;
+            new_table[idx].state = 1;
+        }
+    }
+
+    free(ht->table);
+    ht->table = new_table;
+    ht->size = new_size;
+}",
+,,"void ht_insert(hashtable *ht, void *key, void *value) {
+    if (ht->count >= ht->size * 0.7) ht_resize(ht);
+    int idx = ht->hash(key, ht->size);
+    int first_deleted = -1;
+    while (ht->table[idx].state != EMPTY) {
+        if (ht->table[idx].state == DELETED) {
+            if (first_deleted == -1) first_deleted = idx;
+        }
+        else if (ht->equals(ht->table[idx].key, key)) {
+            ht->table[idx].value = value;
+            return;
+        }
+        idx = (idx + 1) % ht->size;
+    }
+    if (first_deleted != -1) idx = first_deleted;
+    ht->table[idx].key = key;
+    ht->table[idx].value = value;
+    ht->table[idx].state = OCCUPIED;
+    ht->count++;
+}",
+,,"void *ht_lookup(hashtable *ht, void *key) {
+    int idx = ht->hash(key, ht->size);
+    int count = 0;
+    while (count++ < ht->size) {
+        if (ht->table[idx].state == EMPTY)
+            return NULL;
+        if (ht->table[idx].state == OCCUPIED && ht->equals(ht->table[idx].key, key))
+            return ht->table[idx].value;
+        idx = (idx + 1) % ht->size;
+    }
+    return NULL;
+}",
+,,"void ht_delete(hashtable *ht, void *key) {
+    int idx = ht->hash(key, ht->size);
+    int count = 0;
+    while (count++ < ht->size) {
+        if (ht->table[idx].state == EMPTY) return;
+        if (ht->table[idx].state == OCCUPIED && ht->equals(ht->table[idx].key, key)) {
+            ht->table[idx].state = DELETED;
+            ht->count--;
+            return;
+        }
+        idx = (idx + 1) % ht->size;
+    }
+}",
+,Graph,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,"Reversed polish notation to calculate using stack
+(1 + 2) * (4 + 5) -> 1 2 + 4 5 + * ->
+{1} -> {1, 2} -> pop two (1+2) push -> {3} -> {3, 4} -> {3, 4, 5} -> pop two (4+5) push -> {3, 9} -> pop two (3*9) push -> {27}",
+,,"bool apply_op(dynamic_stack *stk, char op) {
+    Result B = dynamic_stack_pop(stk);
+    Result A = dynamic_stack_pop(stk);
+    if (!A.success || !B.success) return false;
+    int result;
+    switch(op) {
+        case '+': result = A.value + B.value; break;
+        case '-': result = A.value - B.value; break;
+        case '*': result = A.value * B.value; break;
+        case '/': result = A.value / B.value; break;
+    }
+    dynamic_stack_push(stk, result);
+    return true;
+}",
+,,"int main() {
+    dynamic_stack *stk = dynamic_stack_new(16);
+    printf(""HP-35 pocket calculator\n"");
+    int n = 16;
+    char *buffer = malloc(n);
+    bool running = true;
+    while(running) {
+        printf("" > "");
+        fgets(buffer, n, stdin);
+        if (strcmp(buffer, ""\n"") == 0) {
+            running = false;
+        }
+        else if (strchr(""+-*/"", buffer[0]) && buffer[1] == '\n') {
+            if (!apply_op(stk, buffer[0])) {
+                printf(""PROBLEM: STACK PROBLEM\n\n"");
+                running = false;
+            }
+        }
+        else {
+            int val = atoi(buffer);
+            dynamic_stack_push(stk, val);
+        }
+        printf(""Stack: "");
+        dynamic_stack_print(stk);
+    }
+    Result final_result = dynamic_stack_pop(stk);
+    if (final_result.success){
+        printf(""SUCCESS: The result is: %d\n"", final_result.value);
+    }
+    else{
+        printf(""PROBLEM: STACK PROBLEM\n"");
+    }
+    free(buffer);
+    dynamic_stack_delete(stk);
+}",
+,,,
+,,,
+,,,
+Calculating algorithm,Naive multiplication,"algorithm naivemul(num1: BigInt, num2: BigInt) -> BigInt:
+    let n = max(num_digits(num1), num_digits(num2))  // Length of the largest number
+    if n == 1: return num1 * num2  // Base case: single-digit multiplication
+    let mid = n / 2  // Split the number at mid-point
+    let r = 10  // Radix constant, typically 10 for decimal
+    // Split num1 and num2 into two halves
+    let a = first_half(num1) = num1 // r^mid
+    let b = second_half(num1) = num1 - a * r^mid
+    let c = first_half(num2) = num2 // r^mid
+    let d = second_half(num2) = num2 - c * r^mid
+    // Recursively calculate the four products
+    let ac = naivemul(a, c)  // ac
+    let bd = naivemul(b, d)  // bd
+    let ad = naivemul(a, d)  // ad
+    let bc = naivemul(b, c)  // bc
+    // Combine the results to get the final product
+    let ad_plus_bc = ad + bc
+    return ac * r^n + ad_plus_bc * r^mid + bd",
+,Karatsuba algorithm,"1234*5678 = a[12]b[34]*c[56]d[78]
+(100a+b)(100c+d) = 10000(ac)+100(ad+bc)+bd (4 multiplications) = 10000(ac)+100((a+b)(c+d)-ac-bd)+bd (3 multiplications)
+algorithm karatsuba(x: BigInt, y: BigInt) -> BigInt:
+    let n = max(num_digits(x), num_digits(y))
+    if n == 1: return x * y
+    let mid = n / 2  // Split the number at mid-point
+    let r = 10  // Radix, typically 10 for decimal
+    // Split x and y into two halves
+    let a = first_half(x) = x // r^mid
+    let b = second_half(x) = x - a * r^mid
+    let c = first_half(y) = y // r^mid
+    let d = second_half(y) = y - c * r^mid
+    // Recursively calculate the three products
+    let ac = karatsuba(a, c)  // ac
+    let bd = karatsuba(b, d)  // bd
+    let ad_plus_bc = karatsuba(a + b, c + d) - ac - bd  // (a + b)(c + d) - ac - bd
+    // Combine the results to get the final product
+    return ac * r^(2 * mid) + ad_plus_bc * r^mid + bd
+n amount of digits in each number: log_2(n) depth (At recursive depth k: 3^k subproblems (Size: n/2^k, work: c))
+T(n) = \S{k=0, log_2(n), 3^k*n/2^k*c} = 3cn^log_2(3)-2cn -> O(n^log_2(3))",

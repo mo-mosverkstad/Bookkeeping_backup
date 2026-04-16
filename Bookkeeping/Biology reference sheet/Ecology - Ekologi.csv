@@ -1,0 +1,173 @@
+Group,Concept,Description
+Concepts,,"Samspel med levande organismer och levnadsmiljö
+62 (Rachel Carson) (Silent Spring)
+Biosfär (Allt levande)
+Ekosystem (Alla abiotiska faktorer)
+Samhälle (Alla populationer i område)
+Population (En grupp individer av samma art)
+Organism (Enskild art)"
+,Energi,"Flödar genom ekosystemet en gång
+Ljusenergi -> Kemisk energi -> Värme
+Utför olika arbeten -> Biologiska processer
+Fotosyntes -> Kolhydrater, fett och protein
+Binder 1e13 kg (C) på land och vatten"
+,Materia,"Växter tar upp oorganisk materia från marken
+Förs vidare till heterotrofer
+Återförs av nedbrytare eller avfall
+Materia recirkulerar"
+,Funktionella grupper,"Trofinivåer (Likartad funktioner organismer)
+Autotrofer (Producenter, tillverkar egen föda)
+Fotoautotrofer (Energi via solljus)
+Kemoautotrofer (Energi från kemiska oxidationer)
+Heterotrofer (Konsumeter, predation)
+Nedbrytare (Deteriusätare
+Parasitism (Konsumption utan att döda)
+Omnivorer (Allätare)
+Herbivorer (Växtätare)
+Karnivorer (Köttätare)"
+,Näringsväv/Näringskedja,"Betarkedja (Producent -> Toppkonsument)
+Nedbrytarkedjan (Nedbrytare -> Toppkonsument)"
+,Näringspyramid,"90% näring lämnar i varje trofinivå
+Förluster -> Nedbrytarkedjan
+Mineralisering (Organisk -> oorganisk)
+Assimilering (Oorganisk -> organisk)
+1. Dör utan att bli mat
+2. Avfall"
+,Biomassa,"Arter (8.7e6), massa (C) (5.5e17kg)
+Växter - 82%
+Bakterier - 13%
+Svampar - 2%
+Djur (inklusive människan) - 0.4%
+Övrigt - 2.6%"
+,Reglering,"Bottom-up (Näringsämne -> mer/mindre)
+Top-down (1 -> Mer - Mindre)"
+,Resiliens,"Motståndskraft och återhämtningförmåga
+Tröskeleffekt (Svårt att rubba)
+Blir helt annorlunda vid rubbningar"
+,Påverkningar,"Omgivning -> Organismer (Växttyper klimat)
+Organismer -> Omgivning (Beskogad -> Regn)
+Organismer -> Organismer (Predation)"
+Populationsekologi,Arters utbredning,"Resurser (Biotiska, abiiotiska)
+Miljöförhållande
+Toleransområde (Normalfördelning, Optimum)"
+,Nischer och habitat,"Nisch (Alla krav på resurs, biotop, miljöförhållande)
+Habitat (Områden fyller kraven)
+Generalister (Bred nisch)
+Specialister (Smal nisch)"
+,Metapopulation,"Lokala populationer med visst utbyte av individer
+Utbyte minskar -> metapopulation dör ut
+Naturladskapfragmentering splittrar habitat
+Spridningskorridorer underlättar (utbyte)"
+,Populationstillväxt,"Exponentiell tillväxt
+Population = (Nativitet + Immigration) - (Mortalitet + Emigration)
+Täthetsberoende (Livsstilstrategi, Predatorer, Sjukdomar)
+Täthetsoberoende (Abiotiska faktorer)
+Migration (Konkurrens, boplats, föda, hanar/honor)"
+,Inomartskonkurrens,"Brist på resurser
+Samma nischer -> Hårdare konkurrens
+Interferens (Konflikter, energikrävande)
+Exploatering (Bättre resursutnyttning, mindre energi)"
+,Bärkraft/bärförmåga (K),"Högst antal individer ekosystemet kan försöja
+Fler individ -> Hårdare konkurrens -> Färre avkomma"
+,Fortplantningstrategier,"Täthetsberoende (Avplaning)
+Täthetsoberoende (Avtar vid resursslut)"
+,Överlevnadskurvor,"Typ 1/K-selekterad (Mortalitet i hög ålder)
+Typ 2 (Mortalitet oberoende ålder)
+Typ 3 (Mortalitet i låg ålder)"
+,Population och samhälle,"Konkurrens
+Mutualism
+Paratism
+Predation (Jakt, Resursbrist)"
+Samhällsekologi,Artrikedom,"Landlevande kärlväxter (40%) i 1.5% yta
+Ökande (Resurser, stabil miljö, gammal ekosystem, variation, många specialister)
+Minskande (Mindre resurser)
+Ökande (Polar -> Ekvator)
+Minskande (Höjd över marken)
+Minskande (Djup i vatten)"
+,Nischdifferentering,"Gauses princip/kompetetiva exkluderings pricip
+Arter med likartade nischer inte samexistera
+=> Nischbegränsning
+Fundamental nisch
+Realiserad nisch"
+,Mellanartskonkurrens,"Negativ påverkan
+Leder till specialisering/nya arter"
+,Predation,"Minskar skador på habitatet
+Bibehåller dess bärkraft
+Påverkar mellanartskonkurrens -> Ökad artrikedom
+Ökad artrikedom (Tar bort de dominerande)"
+,Symbios,"Nära samspel mellan 2 arter
+Mutualism (Båda arter ömsesidig nytta)
+Amenalism (Enas tillväxt hämmar andra)
+Kommensalism (Ena drar fördel)
+Parasitism (Ena utnyttjar andra skadar)
+Parasit och värdsorganism
+Ektoparasit (Ytan), Endoparasit (Inuti)"
+Landekosystem,Landekosystemstruktur,"Trädskikt (> 5m)
+Buskskikt (Små träd)
+Fältskikt (Gräs, ris, blåbär, lingon, ört)
+Bottenskikt (Mossor, lavar, svamp)"
+,Berggrundstruktur,"Vegetation
+Förna
+Humus (Nedbrytarmat)
+Blekjord (Askgrå Fe (2+))
+Rostjord (Näringsämnen fällningar)
+Lerpartiklar (Vittring -> Positiva joner)
+Mineraljord
+Berggrund
+Organiska horizonten (Barr och löv, sura)"
+,Skogstyper,"Hällmarkstallskog (Tall, Lingon, Ljung)
+Blåbärsgranskog (Gran, Blåbär, Gräs)
+Alkärr (Al, Ormbunkar)"
+,Kalla (Polar),"Tundra (Fält och bottenskikt)
+Frostperioden (10 månader)
+Översta lagret av tjälen tinar i sommaren
+Permafrost, högst en meter i marken
+Stora växter som träd kan inte växa
+Mindre buskar, örter, gräs, mossor och lavar"
+,Kalltempererade,"Taigan
+Majoriteten av jordens barrskog
+Barrskogsbälte saknas i södra halvklotet"
+,Varmtempererade,"Maccia (Buskvegetariation mot torka efter avverkning)
+Lövskogar (Bladfällande)
+Odlingsmark
+Medelshavsklimat (Torra heta somrar, svala regniga vintrar)"
+,Torra (Arida),"Öken och stäpp (Torr, kall vinter)
+Öken består av sand eller sten utan växlighet
+Varma och kalla vintrar med negativ vattenbalans"
+,Tropiska,"Savann (Fält och bottenskikt)
+Tropisk regnskog (Bottenskiktet saknas)
+Hög gräs och glest utspridda buskar och träd
+Torr och tydlig regnperiod
+Tropiska regnskogar med jämn nederbörd året om
+Artrikedom i tropiska regnskogar
+Täcker bara 2% av landsytan"
+Vattenekosystem,Vattenekosystem,"Vår/Höst Omblandning 1°C 4°C
+Sommar 16°C (Språngskiktet)
+Vintern 4°C"
+,Sötvattensekosystem,"Salthalt (< 0.5%)
+Sjöar, Floder, Älvar, Åar
+Täcker 0.8% av jordens yta"
+,Brackvattenekosystem,"Salthalt (0.5% ~ 3%)
+Där floder mynnar ut i havet
+Östersjön"
+,Marina ekosystem,"Salthalt (> 3%)
+Ca 70% av jordens yta"
+,Kontinentalsocken,"Fiskeverksamhet
+Tropiska korallreven"
+,Litoralen,"Intill stranden växer vass och säv
+Näckrosor, vattenpest, gäddnate och notblomster
+Följa tidsvatten eller överleva torrläggning
+Havsbotten mellan låg och högvatten
+Sågtång under, spiraltång över (lågvattenlinje)"
+,Limniska zonen (Pelagialen),"Ovanför ljuskompensationspunkten
+Växtplankton, djurplankton och småfiskar"
+,Profundalen (Pelagialen),"Under ljuskompensationspunkten
+Inga fotosyntesorganismer kan leva
+Större fiskar -> ända ner till botten
+Bottenkräftdjur, musslor och insektslarver
+Grumliga sjöar är näringsrikare"
+,Strömmande vatten,"v > 0.2 m/s
+Näring från andra ekosystem
+Påverkar organismerna
+Största stenarna erbjuder mikrohabitat
+Anpassade arter mot strömmen"

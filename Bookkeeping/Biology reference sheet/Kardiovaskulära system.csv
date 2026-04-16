@@ -1,0 +1,69 @@
+Unnamed: 0,Unnamed: 1,"Transport av ämnen till och från kroppens vävnader (förgrenade kärl med blod), Kan även dra ihop sig, ger homeostas (Olika organ/vävnader för blodförsörjning), Regleras av volym utupumpad blod, blodmotstånd
+Reglering av blodförsörjning regleras/styrs av autonoma nervsystemet, hormonsystemet och självständighetsreglering"
+Olika lösningar,Öppna system,"(Leddjur, snäckor, musslor)
+Ingen skillnad mellan blod och vävnad, Blod strömmar ut -> samlas i blodkärl (långsam)
+<image>"
+,Enkel kretslopp,"(Broskfisk, benfisk)
+Blodet passerar hjärtat 1 gång 
+<image>"
+,Slutna system,"(Tidigaste/Enklaste form): Blod pressade fram genom ihopdragning av kärl, syrefattig hjärta
+(Bläckfisk, ryggradsdjur, ringmask)
+Vävnadsvätska utanför kärl, sammanhängande kärlsystem
+<image>"
+,Dubbel kretslopp,"(Groddjur och amnioter) (Däggdjur, fåglar, kräldjur)
+Blodet passerar hjärtat 2 gånger (En syreladdande kretslopp, en syreanvänd kretslopp)
+<image>"
+,2 rummig,"(Fiskar)
+1 förmak + 1 kammare, klaffar hindrar bakåtpress
+<image>"
+,3 rummig,"(Grodor, sköldpaddor, ödlor, ormar)
+2 förmak + 1 kammare, veck i kammare -> Minimal blandning
+<image>"
+,4 rummig,"(Fåglar, däggdjur, krokodiler)
+2 förmak + 2 kammare, endoterma -> Aktiv livsstil -> Kräver god tillgång av syre
+<image>"
+Blodceller,Blodplasma,"Vatten (90%), proteiner (6~7%), socker, hormoner, fetter, salter, vitaminer
+Utgör 55% av blodet"
+,Erytrocyt (Röda blodkroppar),"(2.5e13 st) Runda platta/Inga cellkärna, mitokondrie, ribosomer
+Hemoglobin (3e8 st) (Hemgrupp med järn -> Binder syre"
+,Leukocyt (Vit blodkropp),"Immunförsvar, ökar vid infektion mot främmande patogen, defekta celler, mycket mindre än erytrocyt"
+,Trombocyt (Blodplättar),"Små delar av celler, många organeller, ingen cellkärna
+Levrar sig vid skada (-> Aktiveras av enzym -> Formändring -> Koagulering (Fibrinogen -> Fibrintrådar))"
+Blodkärl,,"(Utvidgning, sammandragning) -> reglering av blodtryck"
+,Artär,"Epitel (Endotelcell), tjock glatt muskelatur, bindväv => tjock, elastisk vägg (fiber) -> klarar tryck
+(Utvidgning, sammandragning) -> Reglerar blodtryck
+<image>"
+,Arterioler,"Mindre elastisk, mer glatt muskelatur (sfinktrar) -> stänga till muskelstrukturer -> Kontrollera/begränsa blodflöde, (utvidgning/sammandragning) -> Reglera blodtryck (Autoreglering)"
+,Vener,"Tunnare och mjukare väggar med mindre glatt muskelatur, större, låg trck, muskelpump, klaffer"
+,Venoler,Mindre av vener
+,Kapillärer,"Tunna (8µm), blodkroppens diameter, 1 cellager kärlvägg, endast endotelceller
+Porer, tunna väggar -> Transport(Små opolär -> diffusion, små polär -> pressas ut, jonkanal, stora -> (porer/Aktiv transport))"
+,Reglering av blodet,"Blodet styrs till olika delar av kroppen (där det behövs) genom sfinktrar, regleras av nervsystemet (värmereglering)
+Blod torkas inte ut (albumin kan inte läcka ut) -> insugning av vatten genom osmos"
+Hjärtat och cirkulation,,<image>
+,Hålven,Syrefattig blod
+,Höger förmak,Kontraktion -> Segelklaffar
+,Höger kammare,Kontraktion -> Fickklaffar
+,Lungpulsåder,Syrefattig blod
+,Lungven,Syrerik
+,Vänster förmak,Kontraktion -> Segelklaffar
+,Vänster kammare,Kontraktion -> Fickklaffar
+,Aorta,Syrerik
+,Hjärtsäck,Dubbel bindvävshinna
+,Sinusknutan/SA noden,"Hjärtmuskelceller extra bra att skapa aktionspotential (pacemaker)
+Påverkas av sympatisk/parasympatisk, hormon, temperatur
+-> Kamrar, förmak, kontraktion"
+,AV-knutan,Impulsen fördröjs i 0.1s -> Förmaken tömmer på blod (kamrar: isolator)
+,His bunt,Mellan 2 kamrar
+,Skiljevägg,"Delar i halvor, hjärtspets, kamrar kontraherar (hjärtspets -> kammare) -> lungartär/aorta"
+Blodomlopp egenskap,EKG (Elektrokardiogram),"Elektriska signaler avläses med elektrod, Undersöker onormal hjärtrytm"
+,Puls,"Mått på hjärtsammandragning (aktivitet, ålder, hälsa)"
+,Maxpuls,"Högsta puls (påverkas ej av träning) (= 220 - <ålder>), 50% maxpuls som god konditino"
+,Vilopuls,"Puls vid vila (ej fysisk aktivitet) -> Indikator på hälsa
+Träning  -> starkare hjärta -> samma blod, färre slag"
+,Minutvolym,"Volym hjärtat pumpar ut (1 min) (Slagvolym, hjärtfrekvens)"
+,Slagvolym,Volym hjärtat pumpar ut varje slag
+,Hjärtfrekvens,Hur ofta hjärtat slår
+,Hjärtcykel,"Systolisk (kamrar kontraherar), diastolisk (kamrar slappnar av)"
+,Blodtryck,"Tryck i artärer(Systolisk, diastolisk)
+Faktorer: Autonom nervsystem -> (Minutvolym, kärldiameter), njurar -> blodvolym"

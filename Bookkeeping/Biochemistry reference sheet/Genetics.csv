@@ -1,0 +1,325 @@
+General,Unnamed: 1,"Arv iakttagelser (Gamla släkttavlor)
+(5000~) Sumerer Mesopotamien (Hästavel)
+Antikens Grekland (Blodet arvsubstans) (400 f.kr)
+Arabiske läkaren Abu al-Kasim Arvet om blödarsjuka (1000)
+Charles Darwin (evolutionsteori pangenesteori gemmulae) (1859)
+Gregor Mendel (Genetikens fader (Ärtväxter)) (1865 -> 1900)
+Cellkärnans byggstenar (1869)
+Thomas Morgan (studier arvet bananflugor) (nobelpris 1933)
+Francis Crick och James Watson (1953) (nobelpris 1962)
+Oswald Avery (DNA-molekylen bär arvet) (1954)
+60-talet kartlades gentiska koden till aminosyror
+70-talet utvecklades klipp och sammansättning av DNA
+80-talet utvecklades PCR-teknik
+90-talet HUGO-projektet (90~00)
+2000 Reglering av gener, dess samverkan, genetiska sjukdomar kartläggs, evolutionär forskning
+2012 CRISPR/Cas9 beskrivs"
+,,
+,,
+,,"DNA (2m, 1/40000 hårstrå) -> Lagring
+RNA (Transkriptioner för proteiner)
+mRNA (Arbetskopia) -> messager
+rRNA (Ribosomal) -> Ribosomal
+tRNA (Transport) -> Transfer (Aminosyra laddad) (3`->5`)
+
+Icke-kodade (Skräp-DNA)
+Telomer (Ändan som skyddar från skador men nöts bort)
+MikroDNA/MiDNA (Proteintillverkning)
+Locus (Bestämd genplats)
+Gen (Avsnitt med protein information)
+
+Arvsmassa (Samlade mängden DNA)
+Genom (samlade informationen)
+
+Kromatin:
+Kombination/komplex av DNA-molekyl
+Nukleosom (Positiva) packar proteiner (8 Histoner 2 gånger)
+Triplett (Grupp av 3 nukleotider)
+Antiparaella komplementära nukleotidkedja
+Nukleotider (Fosfatgrupp + Socker + [Kvävebas])
+(Adenin, Tymin), (Guanin, Cytosin)
+
+Kromosomer
+Autosomer (Homologa)
+Könskromoser (Heterologa)
+Somatisk (Diploid)
+Könsceller (Haploid)
+Uppsättning (..., Triploid, Polyploid(Växter))
+Allel (Genvarianter)
+
+Delningskromosomer (Kondenserad, Centromer/Enkromatidkromosomer, Kromatid (2 Systerkromatider), Systerkromatider (2 identiska kopior), Dotterkromatid)"
+Replication,,"DNA-syntes
+DNA öppnas upp (Helikas + DNA-polymeras) (Primer)
+Frilagda kedjor, Replikationsbubbla
+Leading strand (3` -> 5`) (Utan avbrott)
+Lagging strand (5` -> 3`) (Avbrott -> Okazaki-fragment)
+Fragment -[DNA-ligas]-> komplement"
+Transcription,,"DNA separeras av enzym helikas
+RNA-polymeras (binds) bildar pre mRNA
+Post transcriptional modification
+RNA-splitsning
+1 pre mRNA -> flera mature mRNA
+Exportera mature mRNA -> cytoplasma
+1 mRNA återanvänds flera gånger"
+Translation,,"Aminosyror -> Protein enligt mRNA
+mRNA binds till en ribosom
+Exit (E), Peptidbindning (P), Arrival (A)
+1. (A) Ny laddad tRNA verkställer
+2. (P) kopplar protein till (A), (E) lämnar
+3. (P) klipper isär från (A)
+4. Flyttas ett steg åt 3`
+Produktionen viks och omformas
+Post-translational modifications"
+Kodon tabell,,"UUU, UUC -> Phe (Fenylalanin)
+UUA, UUG, CUU, CUC, CUA, CUG -> Leu (Leucin)
+UCU, UCC, UCA, UCG -> Ser (Serin)
+UAU, UAC -> Tyr (Tyrosin)
+UGU, UGC -> Cys (Cystein)
+UGG -> Trp (Tryptofan)
+CCU, CCC, CCA, CCG -> Pro (Prolin)
+CAU, CAC -> His (Histidin)
+CAA, CAG -> Gln (Glutamin)
+CGU, CGC, CGA, CGG, AGA, AGG -> Arg (Arginin)
+AUU, AUC, AUA -> Ile (Isoleucin)
+ACU, ACC, ACA, ACG -> Thr (Tyrosin)
+AAU, AAC -> Asn (Asparagin)
+AAA, AAG -> Lys (Lycin)
+AGU, AGC -> Ser (Serin)
+GUU, GUC, GUA, GUG -> Val (Valin)
+GCU, GCC, GCA, GCG -> Ala (Alanin)
+GAU, GAC -> Asp (Asparaginsyra)
+GAA, GAG -> Glu (Glutaminsyra)
+GGU, GGC, GGA, GGG -> Gly (G)
+AUG -> Start (Met (Metionin))
+UAA, UAG, UGA -> Stop"
+Mitosis/Mitos,,"Modercell -> Dottercell
+46 -> 92 -> 2*(46) (24h)
+Fosterutveckling, Uppväxt, Cellutbyte
+Snabb takt vid sårläkning"
+,Normalfas G0,"Ingen celldelning, cellen utgör uppgifter"
+,Tillväxtfas G1,"Startas vid Tillväxtfaktorer/Hormoner
+Proteinsyntes och organeller fördubblas"
+,Syntesfas S,"⅓ av cellcykeln (Komplex och krävande process)
+DNA-syntes (Replikation)"
+,Kontrollfas G2,"Forsatt tillväxt
+Kontrollera ny DNA
+Reparationsenzymer fixar fel"
+,Mitos M,"Mikroskopsynliga, Tydliga delningsfaser"
+,Profas,"Kondensation, Mikroskopsynliga Packning -> Separata strängar
+Cellmembran upplöses
+Centriol (Organell för förflyttning av kromosomer)
+Centrosomer vandrar till sin ände"
+,Metafas,"Kärnspolar
+Delningskromosomer i metaplan (Cellens mittplan)
+Vänder mot var sin cellände"
+,Anafas,"Systerkromatider separeras
+Kromatider transporteras med kärnspolar"
+,Telofas,"Kromosomer packas -> Löst organiserad
+Ny cellmembran
+Halvdelad"
+,Cytokines,Avsnöring av aktin -> 2 dotterceller
+Meiosis/Reduktionsdelning,,"(46 -> 92 -> 2*(46) -> 4*(23))
+Modercell -> 4 gameter (könsceller)
+Sammansmältning av gameter -> zygot
+Genetisk variation
+Mutationer, Slumpmässig fördelning och överkorsning
+Antal kombinationer -> 2^([n kromosom]/2)
+Män (Puberteten), kvinnor (Fosterlivet ...)"
+,Profas I,"Homologa kromosomer placeras bredvid varandra (Kärnspolarna)
+Kromosomer kondenseras
+Kärnmembranet löses upp
+Centrioler migrerar"
+,Metafas I,"Överkorsning (Enzymer)
+Kromosompar i cellens mittplan"
+,Anafas I,"Slumpmässig fördelning av kromosomer
+Kromosomer dras till var sin sida"
+,Telofas I,Nytt kärnmembran
+,Cytokines I,"Mutationer
+2 Haploida celler"
+,Profas II,"Kärnmembran löses upp
+Centrioler migrerar"
+,Metafas II,Kromosomer i cellens mittplan
+,Anafas II,Kärnspolarna drar isär
+,Telofas II,
+,Cytokines II,4 gameter med unika genuppsättning
+Gene regulation,Epigenetisk förändring,"Histoner kan låsas (Hårt packat)
+Metylgrupper hindrar transkription
+Genomisk prägling (Aktiva gener i avkomman uttrycks olika)
+Epigenetiska förändringar tas bort i könsceller"
+,RNA-splitsning,Introner/Vissa exoner tas bort
+,Protein reglerar transkription,"Hormoner, proteiner, näringsämnen
+Cellen får signaler som stimulerar eller inhiberar transkription
+Promotor (Sekvens där RNA-polymeras binds)
+Operator (Sekvens som kontrollerar transkription)
+Reglerande protein (Hindrar och möjliggör transkription)"
+,Yttre miljöfaktorer,"Påtvingade produceringar
+Tillväxtmiljön påverkar olika signalämnen
+Särskilda gener aktiveras
+Miljöbetvingad
+Kost, svält, läkemedel, träning, stress, åldrande
+Celldifferentiering -> Olika celltyper
+Hertabilitet (Andel gener, ...)"
+,Annat,"Solande ger melanin som producerar pigment
+Vaccin får kroppen att producera antikroppar
+Kroppslängdhertabilitet (100 år)
+Blödarsjuka"
+Mutationer,,"Kopieringsfel vid 10th celldelning
+Radioaktivitet, strålning, kemikalier, rökning, alkohol, sömnbrist
+Enda sättet att skapa nya gener"
+,Punktmutation/Genmutation,"Enstaka kvävebaser (Vanligast)
+Duplikation
+Translocation
+Substitutioner
+Insertion/Deletion (Frameshift)
+Tyst (Samma aminosyra)
+Missense (Annan aminosyra)
+Konservativ (Samma kemiska egenskaper)
+Nonsense (-> Stop kodning)"
+,Blockmutationer,
+,Kromosomavvikelser,"Uppstår vid celldelning
+Oftast missfall/Svår sjukdom
+Växter -> Ny art"
+DNA kartläggning,,"Människan (46)
+Chinchilla/Häst (64)
+Bagerijäst/Daggmask (32)
+Silkesfjäril/Får (54)
+Potatis/Schimpans/Orangutang (48)
+Vete (42)
+Brunbjörn (74)"
+,Antal koromosomer,"Människan (2e4)
+Eukaryota (1e4~2.5e4)
+Bakterier (~2e2~6e3)
+Växter (2.7e4)
+Virus (>2e2)
+Mitokondrie (37)"
+,Människans kromosomer,"99.5% Chimpans
+88% Mus
+75% Kyckling
+60% Bananfluga
+Kromosom 1 (2000 gener)
+Kromosom 7/8 (800 gener)
+Kromosom 22 (400 gener)
+X-kromosom (800 gener)
+Y-kromosom (40 gener)"
+,Egenskaper -> Gener,"Blodgrupp locus sitter på kromosom 9
+Tungrullning
+Ögonfärg
+Örats form
+Tummens utseende
+(Polygen) kroppslängden, pigmenthalt i håret eller i huden, ögonfärg"
+Genetiska sjukdomar,Huntingsons sjukdom (4 D),"Rörelse och beteende (Danssjuka)
+Påverkar hjärnsignalering
+Visar sig vid 30~50 år
+Huntingson gen (HTT)"
+,Albinism (R),
+,Cytisk fibros (R),"Lungor, matsmältningsystem skador"
+,Fenylketonuri/PKU (7 R),"Psykisk funktionsnedsättning
+Nedsatt pigment
+Okontrollerbara rörelser
+Kronisk lunginflammation
+Nedsatt bukspott
+Slemförtjockningar i tarmen
+Ingen Fenylalanin -> Tyrosin och melanin"
+,Sicklecellanemi ( 508 R),"Sickelceller blodkroppar
+Slem, svett och magsafter
+Andningsvårighet och infektionsrisk
+Heterogen -> Skydd mot malaria
+ΔF508"
+,Blödarsjuka (23),Ingen blodkoagulation
+,Tumörhämmade genen p53,Cancerutveckling
+,Prader-Willis syndrom (15),"Kortväxthet
+Onormal matfixering, fetma
+Sned rygg
+Skelning, förståndshandikapp
+Försenad pubertet
+6~8 barn årligen i Sverige"
+,Downs syndrom (Trisomi 21),"Inlärningsvårighet
+Syn, hjärt, hörselproblem"
+,Klinefelters syndrom (23 (XXY)),"Testosteronbrist
+Starkt nedsatt fertilitet
+Språk och koncentrationssvårigheter
+Behandlas av könshormoner"
+,Turners syndrom (23 (X0)),"Kortvuxenhet
+Ingen pubertet, graviditet"
+,Dödliga sjukdomar,13 och 18 trisomer
+,Röd-grön färgblindhet (23 R),
+,Duchennes muskeldystrofi (musklerna förtvinar),
+,,
+Klassisk genetik,,"Genotyp (Genform)
+Fenotyp (Utseende)
+Dominanta gener (R)
+Recessiva gener (r)
+Homozygot (RR eller rr)
+Heterozygot (Rr)
+P-generation (Parental)
+F-generation (Filia)
+F1, F2, F3, ...
+Genetisk penetrans
+
+Släktträd/Pedigrees (Hane (Fyrkant), Hona (Cirkel), Egenskap (Fylld), Bärare (Diagonal halvfylld))
+
+Mendels 2 lagar:
+Arvsanlag är självständiga enheter
+Arvsmassan är uppdelade i mindre och oberoende enheter"
+,Monohybrid korsning,"(R, r)"
+,Intermediär korsning,(I^R)
+,Kodominanta,"Blodtyper (I^A, I^B, I^0)"
+,Polygener (Dihybrid korsning),"AaBb + Aabb
+Primär (AB, Ab, aB, ab)
+Sekundär (Ab, ab)
+=> Korsningschema
+Klyvningstal"
+,Epistasi,En gen förhindrar/modifierar uttryck av annan
+,Pleiotropi,En gen -> Flera egenskaper
+,,
+,,
+Genetiska applikationer,Genanalys,"Genreplika
+Gel electrophoresis"
+,PCR (Polymerase Chain Reaction),"Kary Mullis (PCR => HUGO-project)
+Masskopiera DNA
+DNA -> 95° (Delning)
+Primer binds in (50~70°)
+DNA polymeras (68~72°)"
+,DNA-sekvensering,"70-talet
+Sekvensera mänskliga genom
+Dataanalys stor utmaning"
+,RNA-förekomst,"Mätning förekomst RNA
+Diagnostik/Sjukdomsanalys
+mRNA -> PCR"
+,Genöverföring,"70-talet
+Hybrid-/rekombinant DNA-teknik
+GMO/Transgen organism"
+,Applikationer,"Gentester
+Medicin och läkemedel
+Fosterdiagnostik
+Genmodifierade bakterier
+GMO Växter, djur, Gyllene riset
+Medicinsk kartläggning
+Brottslingspårning
+Genterapi (Inserting random gene)
+Arkeologi"
+,Hardy-Weinberg,"Godfrey Harold Hardy , Wilhelm Weinberg
+Jämvikt
+1. Slumpmässig korsning i populationen
+2. Population med oändligt många individer
+3. Ingen in- eller utvandring
+4. Inga mutationer
+5. Inget urval
+Allelfrekvens AA + Aa + aa = (A+a)² = 100%"
+,Etiska dilemma,"Rätt eller fel?
+Företag patent på liv?
+Myndigheter kontrollerar personliga DNA?
+Starkare, friskare, dugligare?
+Kloningsproblemet
+Miljövärden (Mångfald, Hållbarhet, Klimatpåverkan)
+Hälsovärden
+Religiösa och existentiella världen
+Vetenskapliga värden
+Ekonomiska värden
+Rättvisa och valfrihet
+=> Samhällsproblem"
+,Etiska skolor,"Nyttoetiska och utilitaristiska skolan (Nytta)
+Pliktetik (Moral)
+Miljöetik
+Svensk lag (Särskild granskning, säkerhetsbedömning)
+Försiktighetsprincip"

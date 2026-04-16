@@ -1,0 +1,38 @@
+Name,Basic relationship,Presetted values
+Series,"Infinite sum (\S{k=0, \inf, a_k})",
+Linear approximation/Linjär approximation,f(x)\approx=f(a)+f'(a)(x-a),
+Maclaurin series definition/Maclaurinserie definition,"f(x)=\S{k=0, \inf, f^(k')(0)/k!*x^k} (Requires only n-th derivative and last continous)
+
+f(x)=…, f'(x)=…, f''(x)=…, f'''(x)= …
+f(0)=…, f'(0)=…, f''(0)=…, f'''(0)= …",
+,"f(x)=\int{0, x, g(x)), f'(x)=g(x), f''(x)=g'(x)",
+Lagrange remainder/Lagranges restterm,"R_n(x) = f^((n+1)')(c) / (n+1)! * x^(n+1), 0<c<x, x>0","(f(x)=e^x, n=4), (f(x)=ln(1+x), n=3), (f(x)=tan(x), n=1), (f(x)=e^x+e^(-x), n=3), (f(x)=e^(-x^2), n=3)
+(f(x)=sin(x)/x -> f(x)=sin(x), n=3)"
+,"|f(x)-(+{k=0, n, f^(k')(0)/k!*x^k})|<S ->  |R_n(x)|<S",
+Taylor expansion/Taylor series/Taylorserie,"f(a)=\S{k=0, \inf, f^(k')(a)/k!*(x-a)^k}
+
+f(x)=…, f'(x)=…, f''(x)=…, f'''(x)= …
+f(0)=…, f'(0)=…, f''(0)=…, f'''(0)= …",
+Common Maclaurin series,"e^x=\S{k=0, \inf, x^k/k!}",
+,"sin(x)=\S{k=0, (-1)^k*x^(2k+1)/(2k+1)!}",
+,"cos(x) = \S{k=0, \inf, (-1)^k * x^(2k) / (2k)!}",
+,tan(x)= x + x^3/3 + 2*x^5/15 + 17*x^7/315 + ...,
+,"arctan(x) = \S{k=0, \inf, (-1)^k * x^(2k+1) / (2k+1)}",
+,"arcsin(x) = \S{k=0, inf, ((2k)! / ( (4^k) * (k!)^2 * (2k+1) ) ) * x^(2k+1)}",
+,"arccos(x) = \pi/2 - \S{k=0, inf, ((2k)! / ( (4^k) * (k!)^2 * (2k+1) ) ) * x^(2k+1)}",
+,"ln(1+x) = \S{k=1, inf, (-1)^(k-1) * x^k / k}
+ln(1-x) = -\S{k=1, inf, x^k / k}",
+,"(1+x)^n = \S{k=0, inf, C(n,k) * x^k}
+with C(n,k) = n*(n-1)*(n-2)*...*(n-k+1) / k!
+
+1/(1-x) = \S{k=0, inf, x^k}",
+,"sinh(x) = \S{k=0, inf, x^(2k+1) / (2k+1)!}",
+,"cosh(x) = \S{k=0, inf, x^(2k) / (2k)!}",
+,"arctanh(x) = \S{k=0, inf, x^(2k+1) / (2k+1)}",
+Maclaurin product,"(+{k=0, n, A[k]*x^k})*x^m = (+{k=0, n, A[k]*x^(k+m)})","xsin(x), x(cos(x)-1)"
+,"(+{k=0, n, A[k]*x^k})*(+{k=0, m, B[k]*x^k}) = +{k=0, n, A[k]*x^k*(+{l=0, m, B[l]*x^l})} = +{k=0, n, A[k]*[Trunc(x^k*(+{l=0, m, B[l]*x^l}))]}
+= +{j=0, n+m, C[k]x^k}, C[k] = +{i=0, k, A[i]*B[k-i]}","e^x^2*cos(x), sin(x)arctan(x)"
+Maclaurin chain,"+{k=0, n, A[k]*(x^m)^k} = +{k=0, n, A[k]*x^(km)}",e^x^2
+,"+{k=0, n, A[k]*(+{l=0, m, B[l]*x^l})^k} = +{k=0, n, A[k]*[Trunc(+{l=0, m, B[l]*x^l})]}","ln(1+cos(x)), e^sin(x)"
+,Put constant out,e^cos(x)
+Limits using Maclaurin series,"lim{x->0, P(x)/Q(x)} = lim{x->0, [Maclaurin(P(x))]/[Maclaurin(Q(x))]}",(cos(x)-e^x^2)/(x*sin(x))

@@ -1,0 +1,50 @@
+Digital logic,"PLD (Programmable logic devices)
+1. Widely used in practice
+2. Circuits implemented by end-user programming (2 types: Complex- (CPLD), Field- (FPLD))"
+,Modern way of designing logic circuits using CAD
+Digital hardware,"60s -> constructed with bulky components, transistors in integrated circuits (chips)
+70s -> Microprocessor
+Gordon Moore (Intel) Moore's law: double transistor amount every 2 years"
+,Silicon waver cut into individual chips -> to PCB (Printed circuit boards)
+Types of digital hardware design,"1. Standard chips -> 1 single function, connected to larger logic circuits
+Drawbacks: (Large chip - inefficient, circuit becomes smaller), Unchangable/Fixed functionality"
+,"2. Programmable Logic Devices (PLD)
+Programmable switches -> Different configurations -> Different functions
+Most common using Field-, FPLD
+Drawbacks: Consume area, lower performance, all due to too general/abstract"
+,"3. Custom designed chips (Desined -> Manifactured), some semi-custom -> ASIC (Application-specific integrated circuits)
+Advantages: Higher performance
+Drawbacks: Costly (except in large qunatities), time consuming"
+Design flow,"Required product
+Define specifications (Essential features +Acceptable method, tight enough), General: Function properly, expected level of performance, low cost
+Inital design
+Simulation
+Design correct? -No-> Redesign -back-to-> Simulation
+Prototype implementation
+Testing
+Meets specifications? -No-> Minor errors -Yes-> (Make corrections -back-to-> Prototype implementation) -No-> Redesign
+Finished product"
+Circuit structure,"Motherboard connected to power supply, with additional PCB, storage units, etc.
+Chip -> Subcircuit… (Recursive unit) -> Logic gates -> Transistor circuit -> Transistor on a chip
+Application software  (Programs)
+Operating systems (Device drivers)
+Architecture (Instructions, registers)
+Microarchitecture (Datapaths, controllers)
+Logic (Adders, memories)
+Digital circuits (AND/OR/NOT gates, restricted in discrete ranges of voltage)
+Analog circuits (Amplifiers/filters, continous range of voltage)
+Devices (Transistors/diodes, vaccum tubes (terminals, modeled by relationship of voltage and current) -> transistors)
+Physics (Electrons)"
+Circuit basics,"Verilog hardware description language, CAD software (Altera, Cadence, ...)
+Binary numbers, ASCII-encoding (American Standard Code for Information Interchange), other encoding format for binary interpretations…"
+,D/A converter (Digital to analog converter) -> Analog voltage circuit
+,
+,
+,
+,
+,"KTH Courses to explore:
+IL2240
+IE1206
+IE1204
+IS1200
+ID1206"

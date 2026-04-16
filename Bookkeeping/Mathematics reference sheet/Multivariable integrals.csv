@@ -1,0 +1,5 @@
+Name,Basic relationship,Presetted values
+Double integrals,dxdy=rdrd\t,
+,"\int{-\inf, \inf, e^(-x^2)dx}
+I = \int{-\inf, \inf, e^(-x^2)dx}, I^2 = \int{-\inf, \inf, e^(-x^2)dx}*\int{-\inf, \inf, e^(-y^2)dy}",
+,"\int{0, \inf, \int{0, \inf, xy*e^(-x^2-y^2)dxdy}}",

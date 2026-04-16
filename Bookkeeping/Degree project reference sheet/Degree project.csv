@@ -1,0 +1,408 @@
+Unnamed: 0,"Examensarbete (Målet i stället för order i bokstavlig tolkning):
+1. Chef order: Bygg en AI som letar upp och förklarar våra interna dokument
+2. Frågor med användare: Hur använder ni de interna dokumenten? Vad kan bli bättre?
+3. Sökfråga -> AI svar/Dokument som svaret bygger på ->
+4. Jämförelse med användningsområden
+
+Självständigt arbete, delvis i grupper med handledare"
+,"Examensarbete/Arbete: Ingenjörer arbetar i gruppprojekt (projektarbete), muntlig presentation, intervju, rapport "
+Grupp projektarbete,"Reflektera över ingenjörens yrkeroll och förhållandesätt, tillämpa ingenjörsmetoder för att i grupp planera och genomföra ett mindre projekt inom informationsteknik
+Kunna reflektera över gruppdynamiska skeenden i en projektgrupp"
+Tolkning av instruktioner,"e.g. Kursrapporten SKA vara minst 4 sidor lång, och FÅR inte vara längre än 15 sidor. ... Skriv cirka 5-10 sidor ..."
+Projekt,"Start -> Mål, är målinriktat och av engångskaraktär, har avgränsad tid (e.g. 4 september till 6 oktober), har avgränsad omfattning (e.g. bygg en robot), har begränsade resurser (en lego-box), är uppbyggt kring en tillfällig organisation (en projektgrupp)
+I motsats till linjeorganisation -> I verkligheten smälter de ihop
+Gruppen eller teamet -> bemannat att lösa en uppgift
+Hur (individen, gruppen och ledaren) + Vad (Projekt och utvecklingsmodeller, projekthanteringsverktyg) + Projekt"
+Resultatmål och effektmål,"Resultatmål: Vad ska göras, (synligt resultat, konkret), (e.g. gruppen ska bygga en leveransrobot)
+Effektmål: Varför görs det, motiv för projektet (abstrakt), (e.g. Leveransroboten minskar arbetet med internposten, att bli en bättre ingenjör)"
+Polyas metod för problemlösning,"1. Förstå problemet (Mål, behov (råvaror), krav (skriv specifikation), projektdefinition (översiktsdokument)
+2. Skapa en plan
+3. Utför planen
+4. Utvärdera resultatet
+George Polyas bok How to solve it: a new aspect of mathematical method (1945)
+
+Eklunds projektmodell: 1. Definition, 2. Planering, 3. Utförande, 4. Utvärdering
+Unified process: 1. Inception, 2. Elaboration, 3. Construction, 4. Transition
+Project base: 1. Förstudie, 2. Planering, 3. Genomförande, 4. Avslut -> Effekthemtagning"
+MoSCoW-modell,"Must: Krav som måste uppfyllas
+Should: Egenskaper som bör finnas (motivera om någon inte är med)
+Could: Kan läggas till
+Won't: Kommer inte att vara med"
+Polya 1. Projektdefinition/översiktsdokument,"Social kontrakt, Kontaktmetoder (minst 2 olika, om en inte funkar), metod för planering av arbetspass, metod för tidsredovisning - separat från planering, Work Breakdown Structure"
+Polya 2. Plan,"[1. Precis innan ett uppdrag får gruppen instruktion om vilket av uppdragen det gäller], [2. Sedan placerar en lärare roboten på golvet, i närheten av en vägg -> Läraren ställer roboten i en slumpmässig riktning (som ni i gruppen inte får välja själva)], [3. Sedan får en person ur projektgruppen lasta varan på roboten och starta roboten med lämpliga knapptryckningar -> ??Vad ska roboten göra först]"
+Work breakdown structure,"Hela roboten -> (Hitta -> 1, Köra -> 2 -> 5, Lämna -> 3, Retur -> 4) <- Saker att göra/aktiviteter
+-> Skapa en plan (start -> slut med delmål/milstolpar)"
+Planeringsdiagram,Gantt-schema
+Vattenfallsmodellen,"(1970)
+System requirements -> Software requirements -> Analysis -> Program design -> Coding -> Testing -> Operations"
+V-modellen,"Övergripande mål -down-> Kravspecifikation -down-> Detaljkrav -down-> Design av delar -down-> tillverkning av prototypdelar -up-> test av delar -up-> Sammansättning -up-> Test av helt system -up-> Driftsättning
+(High/low abstraction levels)"
+Iterativ och inkrementell utveckling,"Implementation[1] -> Testning[2] -> leverans[3] (-> Analys[4] -> [1]) ->
+Kunden kan använda varje leverans och kunden ger feedback som styr fortsättning"
+Scrum programutveckling,"Planera[1] -> Utveckla[2] -> Granska[3] -> Anpassa[4] -> Upprepa[1]
+Iterativ och inkrementell metod
+Alla delar ska vara med (det går att lägga till metoder e.g. kanban)
+Tar man bort något så är det inte Scrum (många kallar ändå sitt arbetssätt för scrum)
+-> scrumguides.org"
+Scrum usually addon,"Timeboxing - maxtid för varje möte, begreppet kan utvidgas
+Pararbete (Pairing)
+Parprogrammering (Pair programming)"
+Kanban,"Ser till att det som ska göras är synligt för alla, sätt en gräns för samtidigt utveckling
+1. Att göra -> 2. I arbete (max 2) -> 3. Uppklarade arbeten"
+Mötesteknik,"Kalla till mötet i god tid så att alla hinner förbereda sig
+Bestäm ett tydligt syfte med varje möte
+Alla kommer i god tid och väl förberedda
+För varje fråga, bestäm mål som kan följas upp
+Timeboxing - start och slut på bestämd tid
+Följ mötets planerade ordning
+Alla deltagare ansvarar för resultatet
+Sammanfatta varje punkt innan nästa
+Följ upp efter mötet
+
+Gå rundan:
+Utse någon som antecknar, ställ en fråga, låt var och en ge sin åsikt utan diskussion, all diskussion sparas tills alla sagt sitt -> då är anteckningar till hjälp"
+"Processfrågor, gruppdynamik","Reflektion: (Diskussion och funderingar) som viktig utvecklingssätt av grupp -> vad var bra (fortsätta), vad borde har gjort mer av och vad alldeles för mycket av (ta bort) 
+Vad och hur: (process och innehåll, var gruppen överens om målen, tog tid att fråga varför? Diskuterade hur innan började?
+Samarbete: Överens om samarbete eller konkurrens, gynnsamt för arbetet mot målen och för processen?
+Kommunikation: Alla fick uttrymme att berätta och lyssna? Fråga varandra?
+Ledarskap: Vem leder gruppen? Hur tog det sig uttryck? Mer eller mindre ledning?
+Beslut: Hur hanterades åsikter -> hur togs besluten, var alla aktiva i esluten, vem påverkade besluten mest
+Stress-tidspress - konflikt: Hur hanterades stress/tidsbrist -> hur förändrades beteendet, konflikter?
+Engagemang och delaktighet: Var alla lika engagerade och delaktighet? Hur märktes? Krävdes delaktighet
+Arbetsfördelning: Effektiv? Hur fick/tog ni arbete och roller?
+Känslor: Vilka upplevda känslor och anledning? Hur är de kopplade till tankar och upplevda beteende"
+"Projekt, grupp och team",
+Individen,Vad händer med en själv och andra
+Gruppen,"Sammanhängande beteende av grupp
+-> Teorier och erfarenhe som beskriver och förklarar individen/gruppens skeenden, tillstånd och utveckling
+Med teorikännedom kan man observera, analysera och reflektera, diskutera -> agera"
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+Muntlig presentation,"Egen presentation, presentation om ..."
+Presentation om själv,"5 enkla bilder, varav 2 start och slutbilder (innehåll som startbild, sammanfattning i slutet)
+Bilder: Egna foton (undviker upphovsrättsproblem) (Introducera, utveckla och sammanfatta)
+  -> Andra bilder (Kräver tillstånd, fria bilder finns men läs det finstilta, e.g. ""Foto: Julia Kadel på Unsplash, Länk ..."" efter tillåtelse)
+Kan kortas ned delar när tiden rinner slut
+
+Introduktion: Lockar lyssnare att fortsätta lyssna, förbereder lyssnare på ämnet, förbereda kort första mening eller ett ord (en mening om vad presentationen handlar om eller ett exempel)
+Sammanfattning: En lista med få punkter, varje punkt på listan om presentations huvudpunkter
+
+Lyssnare ser klädsel (första lyssnare ser, påverkar medvetet och omedvetet), kroppsspråk (lyssnare ser direkt efter klädsel) -> hållning, rörelser, ögonkontakt och presentationsbilder
+Tonfall och röstläge, ordval
+
+Skriva på tavla (rita upp hur det ska se ut, exakt vad det ska stå, var på tavlan, reservalternativ om tavlan blir full), fungerande pennor, sudda hela tavlan innan man börjar (gamla krumelurer på tavlan stör lyssnare)"
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+Intervju,"Hitta ett företag men ingen person -> kontakta företagets HR-avdelning
+Ringa och mejla -> personlig kontakt ger mer, förbered hur man tar första kontakten
+
+Att komma i tid, behöv anmälan i receptionen?
+Att vara påläst om företaget
+Att visa vilken organisation man står för
+Att visa trevligt bemötande
+Klädsel
+Att anteckna, spela inte in utan att fråga
+Att något kan vara konfidentiellt eller känsligt, kan man uppge namn och företag i presentation och rapport?
+Attt bestämma vem som är intervjuledare när ni är flera"
+Bearbeta material,"Gå igenom allt i färskt minne -> utvärdera engen insats
+- Fick ni en bra början?
+- Fick ni veta allt ni ville? Vilken ytterligare information skulle varit bra att ha?
+- Vet ni vilken intryck ni gjorde på intervjupersonen?
+- Visade ni ett uppriktigt intresse för intervjupersonen och företaget?"
+Förberedelser före första kontakt,"Vem är en själv? Vad läser en själv?, Informera om det redan innan intervjun
+Varför kontaktas personen/företaget? -> Mål med intervjun, mål med uppgiften
+Varför är just den här personen/företaget intressant"
+Samla information,"Ställ kvantitativa frågor:
+- Vad gör du en vanlig dag på jobbet?
+- Vilken utbildning har du? Vilken betydelse har din utbildning haft?
+- Vad bör man vara bra på för att lyckas?
+- Vilka kvaliteter uppskattar arbetsgivaren och kollegorna?
+- Hur fick du jobbet?
+- Vad spelar personliga nätverk för roll i arbetslivet?
+- Hur ser utvecklingsmöjligheterna ut?
+- Vad krävs för att du ska trivas på jobbet?
+- Vilken roll spelar hållbar utveckling för dig i jobbet?
+- Har du några etiska aspekter som kan påverka din yrkesroll?
+Även följdfrågor:
+Får du ett svar som du undrar över (eller är tveksam till) -> ställ en följdfråga (behöver inte betyda kritik, kan vara nyfiken och vill veta mer
+e.g. du säger att xxx är viktigt i ditt arbete. Kan du berätta lite mer om vad det betyder?"
+Frågor att reflektera över efter intervjun,"Vilken betydelse har utbildningen i din framtida yrkesroll?
+Vilka personliga egenskaper är viktiga för dig för att få anställning och framgång i arbetslivet? Hur kan du öva dessa egenskaper under utbildningen, och hur kan du visa upp dem efter?
+Ge exempel på hur du kan hitta sökvägar eller kanaler som leder till jobb
+Vad kommer att krävas för att du ska trivas i ditt framtida yrke?
+Vad spelar utvecklingsmöjligheterna för roll i ditt yrkesliv?
+Beskriv vad din intervju kan leda till på sikt?
+Vilken betydelser har hållbar utveckling för yrkesrollen?
+Vilka moraliska/etiska aspekter är viktiga att ta hänsyn till inom yrkesområdet?
+Vad betyder mängden skrivande och muntlig presentation i arbetet för dig?"
+Rapport,
+,"Abstract:
+Sammanfattar rapporten med ett viss antal ord (e.g. max 150 ord, vissa språkkrav i engelska)
+Ge information om:
+1. Teoretisk bakgrund till undersökning (1-3 meningar)
+2. Frågeställning och eventuellt syfte
+3. Metoder (1-2 meningar)
+4. De viktigaste resultaten (1-3 meningar)
+5. Slutsatser som går att dra från resultaten (1-3 meningar)
+6. Eventuellt ett förslag på vidare studier (1-2 meningar)
+
+e.g.
+Kamouflage är en anpassning där djurets färg och form sammansmälter med omgivningens. I den här undersökningen frågar vi hur smådjurens färgteckning samverkar med färgen i den miljö djuren lever i. Vi slaghävade efter smådjur i två habitat, ett grönt buskage och en äng med gulnat gräs. Andelen djur i olika färgkategorier beräknades. Resultaten visade att gråa och bruna djur var vanligast i båda habitaten, medan gröna och gula djur var ovanliga. Resultaten tyder på att oansenliga färger kan ge ett bättre kamouflage än att ha exak samma färg som bakgrunden. En hypotes som bör testas vidare är om grå och bruna färger särskilt gynnar djur som utgör föda åt nattaktiva predatorer."
+,"Inledning (allmänt -> specifikt) (Utgå från tidigare kunskap, formulera en frågeställning)
+Rapport:
+- Bakgrund: Introduktion till det undersökta problemet (fakta, teorier, observationer)
+- Resonemang leder till frågeställningen och eventuella hypoteser och förutsägelser
+- Källhänvisningar: Artiklar, faktaböcker, internetsidor, forskare, etc.
+
+Språkliga drag:
+Beskriver och förklarar fakta, teorier, observationer
+Argumenterar och motiverar frågeställningen och eventuella hypoteser"
+,"Material och metod (Planera en metod för insamling och analys av data, Samla in och analysera data)
+Rapport:
+Materiel: i sammanhang
+Metod: Beskrivning av metoder för datainsamlig och förhållanden ... = empirisk metod
+Beräkningar; beskrivningar av analysmetoder e.g. vilka formler eller statistiska tester som använts = analytisk metod
+
+Språkliga drag:
+Beskrivning, skrivs i dåtid, Aktiv eller passivform
+
+e.g.
+1. Efter en tid kunde vi inte se några tydliga skillnader i färg mellan olika behandlingar
+2. Efter en tid gick det inte att se några tydliga skillnader i färg mellan olika behandlingar
+3. Efter en tid syntes inte några tydliga skillnader i färg mellan olika behandlingar
+4. Efer en tid observerades inte några tydliga skillnader i färg mellan olika behandlingar"
+,"Resultat (Sammanställa resultaten)
+Rapport: Beskriver resultaten utan värderingar med hänvisningar till bilder, figur, diagram, grafer, tabeller
+Språkliga drag: Beskrivning, skrivs i dåtid"
+,"Diskussion (Specifikt -> allmänt) (Tolka resultaten, Dra slutsatser baserade på egna resultat och vad som redan är känt)
+Rapport:
+Svarar på frågeställningen
+Jämför egna resultat med det man redan vet (kopplingar till teorin i inledningen)
+Argumenterar för slutsatserna utifrån egna resultat och tidigare fakta/teorier (källhänvisningar)
+Källhänvisningar
+
+Språkliga drag:
+Argumenterande: analyserar och diskuterar resultaten samt övertygar om deras giltighet
+Skrivs i huvudsak i nutid
+Bindeord
+
+De slutsatser vi kan dra av resultaten är beroende av det vi vet sedan tidigare"
+,Källförteckning
+,
+,...
+,"Att integrera källor i en mening: IEEE
+Det är mindre vanligt att nämna författaren i texten när man använder en numrerad stil:
+Miralles, for instance, discuesses computer vision approaches [1] whereas Mu et al. compare radar, aerial and laser scanning methods [2].
+
+Börja inte en mening med en siffra, siffran kan inte vara subjekte i meningen:
+[1] discusses computer vision approaches -> Felaktigt
+
+Källor introduceras ofta med In ...
+In [1], for instance, computer vision approaches are discussed whereas other studies contain a comparasion of radar, aerial and laser scanning methods [2], [3]."
+Refereratmarkörer,"Visa författarens process (författaren diskuterar, definierar, reflekterar över, intresserar sig för, analyserar, drar slutsatsen att)
+Betona något som författaren skriver (författaren framhåller, lyfter fram, poängterar, understryker)
+Hålla distans till förfatarens åsikter (påstår, ger intrycka av, tycks mena)
+Förhåller neutral (författaren behandlar, nämner, skriver, tar upp)"
+Redovisa resultat av intervjuer,"En fråga i taget?
+En intervju i taget?
+[Sammanhängande text?]
+- Obserera att intervjuerna är eget material som data och behandlas samt analyseras för att kunna bli ett resultat.
+- Tematisera efer rapportens frågeställningar
+- Tala om för din läsare vad intervjun gav för svar, inte vad varje intervjuperson svarade på varje fråga"
+Texters kommunikativa situation,"Innehållet
+Struktur och stil i hel text
+Stycken
+Meningar
+Ordval
+Detaljer
+
+Vilka yttre krav/ramar syr texten? Praxis, mallar, tid, plats, omfång, betygskriterier, instruktioner
+Vem är läsaren? Förkunskaper, attityder, förväntningar
+Vad ska texten ""göra""?"
+Inledning,"Inledningen ska tydliggöra och motivera textens handling, typ av text, vilken attityd skribenten till ämne och vad den ska visa att man har uppnått för kunskap inom olika områden
+Inledningen ska ""trattas"" från det stora generella och gå vidare på detaljer. Låt kärnan eller frågan komma längs ned i tratten"
+Förbättringar,"Källor: Sitter källorna på rätt plats och bearbetas information från källor tillräckligt?
+Inledning vs diskussion och slutsats: Kan man förtydlig mål, syfte och frågeställning? Svarar man på frågeställningen i en slutsats?
+Rubriker: Ger rubrikerna information som avhandlas i löpande text?
+Citat: Varje citat ska ge en betydelse som man själv som författare inte kan förmedla med egna ord. Färemot ska man visa vad citatet betyder genom egen löptext
+Metatext: Skulle texten lyfta innehållet med hjälp av metatext?
+Begrepp: Är samtliga begrepp tydliga och har man angett vilken definition som används?"
+,"Metod:
+Denna studie bygger primärt på intervjuer och besök hos företag, dels inom återvinningsbranschen men även också andra företag inom olika branscher som anses relevanta och förhållandevis representativa ur avfallshanterings- och återvinningssynpunkt. Intervjuerna har kompletterats med övrig tillgänglig information om de berörda företagens verksamhet och avfallshantering. Fyra intervjuer gjordes, varav tre besök på intervjupersonernas arbetsplats och en via telefon. Alla intervjuobjekt har sin hemvist i Storstockholmstrakten. Företagen som besöktes var mejeriföretaget Arla, återvinning- och avfallshanteringsbolaget IL Recycling och Merox, vilket är ett företag som ingår inom SSAB-koncernen med uppdrag att optimera SSAB:s biprodukts-, skrot- och avfallshantering. Telefonintervjun gjordes med lastbils- och busstillverkaren Scania i Södertälje. Längden på intervjuerna har varierat mellan 40 och 120 minuter.
+
+De företag som intervjuades valdes med anledning av att de ansågs ha relevant information och vara tillräckligt representativa för frågeställningen. Specifikt IL Recycling var ett för rapporten viktigt besök, eftersom det är ett företag som verkar i avfallsbranschen. Arla och Scania intervjuades eftersom de är större industriföretag där avfallshantering spelar en stor roll för deras produktion. Besöket hos Merox sågs som relevant eftersom de utgör ett bra exempel på hur företag kan ta tillvara på avfall och biprodukter på ett effektivt sätt."
+,"Intervjuerna följde en semistrukturerad form, då frågorna utgick från en mall men var anpassade efter varje intervjuobjekt, då den eftersträvade informationen varierade mellan de olika intervjuobjekten.
+
+Utöver intervjuerna bygger rapporten på granskning och tolkning av tidigare studier inom de områden denna studie berör, samt en jämförelse mellan dessa och det från intervjuerna inhämtade materialet. Informationen söktes brett på internet, ibland annat databaser som KTH:s publikationsdatabas DiVA, KTHB Primo samt studier hos relevanta aktörer inom den svenska avfallshanteringen som Avfall Sverige och Naturvårdsverket. För information om miljöbrottslighet har information sökts och hämtats från Polismyndigheten och Brottsförebyggande rådet, BRÅ.
+
+Valet av metod motiveras av att tillvägagångssättet ansågs mest optimalt för att samla ihop den eftersträvade informationen inom ramarna för den tid och de resurser som fanns tillgängliga.
+
+
+Besvarande på frågorna:
+Hur genomfördes intervjuerna?
+Vilken kompletterande information/data har använts?
+Varför var detta lämpligt?"
+,"7. Diskussion och slutsats
+
+Denna rapport lutar sig till stor del mot intervjuer med industrier som har avfallshantering som ett betydande verksamhetsområde. Intervjuunderlaget är litet vilket också gör resultatet mer osäkert. Det hade varit önskvärt med ett bredare och större underlag bland intervjuerna.
+
+De intervjuobjekt som användes kan i hög grad anses vara representativa för sina respektive företagsgrupper i avseende på bransch och företagsstorlek. Ett problem är dock att alla företag som intervjuades är stora, väletablerade och välkända. När det gäller exempelvis miljöbrott är det ett rimligt antagande att den allra största andelen företag som begår miljöbrott är företag som är små och inte är speciellt välkända. Det är ett antagande som styrks av såväl intervjupersonerna som BRÅ:s och Polismyndighetens rapporter. Små företag är inte heller i lika hög grad måna om att samarbeta med en väletablerad och seriös avfallsentreprenör, eftersom de inte alls i samma utsträckning blir granskade av såväl konsumenter, media eller myndigheter i avseende på miljöarbete. Således kan det konstateras att miljön gynnas av att större företag hanterar de större avfallsmängderna, och att detta samband inom industrin korrelerar positivt. En annan slutsats är att en ökad medial granskning, både inom större och mindre företag, skulle ha positiv effekt på avfallshanteringen.
+
+Från KEX-rapport: Andersson, A & Günther-Hanssen (2016) ""Incitament hos industriföretag att avfallshantera"""
+,
+,
+Projektplan (används för gymnasiearbete),
+Titel och författare,"Titel anger tydligt vad rapporten handlar om, författare i alfabetisk ordning efter efternamn:
+e.g.
+Användning av Azospirillum basilense på grobarhet och tillväxt hos havre och gräslök
+Kinetisk resolution av en tertiär alkohol med enzymet Candida Antartica lipas A
+Radonhalter i icke-kommunalt vatten
+e.g.
+David G., Almlöv M., Petterson T. och Arvanitis"
+Teoretisk bakgrund,"(Börja med en problemformulering som sätter in er undersökning i ett större sammanhang), (sammanfatta, resonera och källhänvisa)
+Syfte:
+Beskriva syfte med undersökning, vad att uppnå med resultaten eller hur resultaten kan bidra till förståelse av generella problem i teoretiska bakgrunden
+e.g. Syftet med vårt gymnasiearbete är att beskriva/förklara/utvärdera/förstå
+Beskriva kort planering att uppnå syftet med arbetet
+e.g. I det här arbetet kommer vi att undersöka
+
+Frågeställning:
+e.g. I det här arbetet frågar vi om..., Vår frågeställning är ...
+e.g. I det här arbetet frågar vi 1) hur mycket salt tomater tål innan deras tillväxt minskar och 2) om det finns skillnader i salttolerans mellan olika sorters tomater?
+
+Hypotes och förutsägelser (Ofta går det inte att ställa hypoteser):
+1. Formulera hypotesen som ett möjligt svar på frågeställningen (Vår hypotes är .../Vi har hypotesen att)
+2. Beskriv hur man resonerar fram till hypotesen med hjälp av den kunskap som redan finns om ämnesområdet. Använda ord som visar orsakssamband
+e.g. Eftersom blodrycket ökar efer ansträngningen (källhänvisning), ställde vi hypotesen att ...
+3. Om hypotesen inte går att testa direkt, formulera en testbar förutsägelse.
+e.g. Om vår hypoes stämmer, borde undersökningen visa att ..."
+Metod,"Empirisk metod:
+Beskriv:
+- Steg för steg genomförandet av undersökning
+- Vad ni kommer att observera eller mäta
+- Eventuella beroende och oberoende variabler
+- Material ni planerar att använda
+- Om, och i så fall hur, ni tänker använda kontroller
+- Hur många upprepningar, replikat, ni kommer att ha
+
+Skriv i löpande ext, skriv om olika metoder under var sin underrubrik, källhänvisa om hittad metod i annans arbete
+e.g. Dos/respons kurva (OBV=Dos: salthalt mellan 0-35%, BV=Respons: tillväxt, Kontroll: Avjonat vatten, Replikat: 3 per koncentration, Material: Tomatfrön, petriskålar)
+
+Analytisk metod:
+Beskriv: Hur man planerar att analysera data man samlat in, vilka beräkningar och formler man kommer använda (statistiska analyser)
+Källhänvisa hittade analysmetoder i annans arbete
+e.g. Tillväxt som % av kontrollen, effektiv koncentration då tillväxten miskar med 50% (EC50)"
+Tidsplan,
+Källförteckning,
+,
+,
+,
+Naturvetenskaplig undersökning,"Undersökning börjar alltid med en välgrundad och genomtänkt frågeställning som inte nödvändigtvis testar en hypotes
+Frågeställning förankrad i teorin och styr valet av metoder -> påverkar tolkning av resultat
+Slutsatsen bygger på resultaten och det redan är känt
+
+e.g. 
+Frågeställning: Hur påverkar nikotin frögroningen hos olika växtarter?
+Metod:
+- Gör stamlösning: samla fimpar, blötlägg dem och filtrera
+- Gör spädningsserie av stamlösning
+- Testa hur bra fröna gror i olika koncentrationer
+
+Resultat: Frön gror lika bra i alla koncentrationer?! Frön gror sämre i höga koncentrationer men det betyder inte att nikotin är giftigt för växter"
+,
+,
+,
+,
+,
+,
+,
+,
+Källor,"Vad man ska söka
+Hur man ska söka effektivt
+Hur man ska värdera källor
+Hur man ska referera till källor
+
+-> Greppa forskningsläget, tidigare formulerade frågeställningar, experiment och analyser"
+,"Hur hittar man information som behövs?
+Enorm information, hitta rätt information och tolka
+
+Sökprocessen:
+Definera sökfråga -> Identifiera söktermer -> Kombinera söktermer -> Sök i lämplig databas -> Utvärdera sökresultat -> Spara användbara källor eller justera söktermer och börja om
+
+e.g. 
+Ämne: Jämställdhet
+Mer avgränsat: Jämställdhet och ingenjörsrollen
+Söktermer: jämställdhet, ingenjör
+Översättning av söktermer: gender equality, engineer
+Sökning: ""gender equality"" AND engineering
+Modifierad sökning ""gender equality"" AND (programming OR ""software engineering"")
+
+1. Utgå ifrån något ämne du ska skriva om i kursrapporten. Till exempel ingenjörsrollen och etik
+2. Identifiera nyckelbegrepp och sök i Primo - vad hittar du?
+3. Sök i Google och i Google Scholar och jämför resultaten med det du hittade i Primo
+4. Resonera kring skillnader i de olika söktjänsterna. Vilka fungerade bäst för projektet? När tror du att du kan ha nytta av de andra?"
+Flera användbara informationskällor,"Google Scholar: Googles sökmotor för vetenskapligt material. Artiklar, doktorsavhandlingar, böcker, uppsatser, mm
+Diva: Uppsatser och avhandlingar
+Open access: Vetenskaplig publicering på internet, (läsa, ladda ner, sprida, framföra), DOAJ (Dirctory of Open access journals)
+SwePub
+IEEE Xplore digital library: Vetenskaplig och teknisk information inom elektroteknik, elektronik och datavetenskap
+Scopus och Web och Science: Stora multidisciplinära bibliografiska databaser
+(Libris: Böcker och digitalt matieral, formatera referenser enligt formatet, fjärrlån med libris: lån från andra bibilotek)"
+Grundläggande källkritik,"Aktualitet: Har det tillkommit ny kunskap sedan källan publicerades?
+Referenser: Finns det tydliga referenser? Verkar referenserna ha hög kvalitet? Är det en variation i referenserna eller är allt från samma person?
+Syfte och målgrupp: Varför är det här publicerat? Vem har finansierat forskningen? Vem är den avsedda mottagaren?
+Vetenskaplighet: Är detta en vetenskaplig publikation?
+Författare: Är det rimligt att den här författaren vet vad han pratar om? Är det till exempel en forskare?
+Metod: Går det att förstå hur resultatet som presenterats har nåtts?"
+Referenser - varför är det viktigt?,"Så att läsaren vet var informationen kommer ifrån?
+Gör det möjligt för läsaren att själv utvärdera vad som står i dina källor
+För att stärka dina argument
+För att sprida forskningsresultat och data
+Vetenskaplig hederlighet - ära den som äras bör"
+Använda information i eget arbete,"Referera till dina källor på ett korrekt sätt
+Skriv om med egna ord eller använd citattecken (""exakt återgivelse"")
+
+När behöver man hänvisa till en källa? Varje gång när man påstår något som inte baseras på eget arbete behöver man referera till en källa, undantag för fakta som anses vara ""allmän kunskap"" hos läsaren
+Underlåtenhet att källhänvisa kan bedömas som en plagiat
+
+IEEE referenser exempel:
+[1] A. Somek, Engineering equality: an essay on European anti-discrimination law. Oxford; Oxford University Press, 2011.
+[2] S. M. Hyrynsalmi ""The underrepresentation of women in the software industry: thoughts from career-changing women,"" presented at the Proceedings of the 2nd International Workshop on Gender Equality in Sofware Engineering, Montreal, Quebec, Canada, 2+19, doi:
+..."
+,
+,
+Delar från gymnasiearbete,"Redovisning, både muntligt och skriftligt (Rapporter och presentation)
+Ta emot och ge respons (Veenskaplig diskussion med konstruktiv kritik)"
+,"Kriterier:
+Fakta och förståelse:
+Relevanta kunskaper i valt kunskapsområde
+Kunskap om relevana teorier, metoder och modeller
+Kunskaper om relevanta källor
+
+Avgränsa sin frågeställning
+Använda relevanta begrepp, teorier, modeller och metoder
+Använda lämplig teknik och metod
+Presentera resultatet i en skriftlig rapport
+Muntligt sammanfatta och presentera
+Sammanfatta skriftligt på engelska"

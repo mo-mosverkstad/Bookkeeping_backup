@@ -1,0 +1,158 @@
+Group,Name,General structure,Presetted values
+,,"             0 1 2 3 4 5 6 7 8 9 a b c d e f
+00000000  4*[int] 8*[double] [short] [byte] [byte]
+…
+heap growth -> <- stack growth",
+,Value type,"<unsigned/default (2s complement)> byte/char: 1 byte, short: 2 bytes, int: 4 bytes, long: 8 bytes
+float (4 bytes float), double (8 bytes float)",
+,Pointer type (carry an adress),"byte */char *, short *, int *, long *, float *, double *, void *: 8 bytes
+NULL (special pointer, usually (void *) 0)",
+,Retrieve adress from variable,"&a, int *ptr= &a;",
+,Write to adress value,*a = 3,
+,Read from adress value,*a,
+,,"a = b (Copy value (if value/value struct), copy adress (if pointer) and does not depend on value inside the adress)","int x = 1;
+int a = x;
+x = 11;
+-> a: 1, x:11
+
+int y = 1;
+int *p = &y;
+*p = 12;
+-> y: 12, p: 12"
+,,Copy assignment during parameter parse,"void test(foo_t f) {
+    f.a = 22; // f is a full shallow copy of x, doesn't affect x
+}
+foo_t x;
+x.a = 11;
+x.b = x.a + 1;
+test(x);
+-> x: {a: 11, b: 12} (in stack)
+
+void test(foo_t *f) {
+    f->a = 22;
+}
+foo_t *p = &x; // p is a pointer to x
+p->a = 21;
+p->b = 22;
+test(&x);
+(The component of a struct can be reached using a pointer and the -> notation)"
+,,,"foo_t *test() {
+    foo_t f;
+    f.a = 21;
+    f.b = 22;
+    return &f; // nooooo!!!!!
+}
+
+foo_t *p = test();
+(*p becomes a dangling pointer -> causes undefined behavior/segmentation fault, f lives only inside the stack frame of test() the moment test() returns, that stack frame is gone.)"
+,Common operations,"if, else, while, for
++, -, *, /, …","unwrapping:
+col, i, u[i] = b[i][col]
+3, 0, u[0] = b[0][3]
+2, 1, u[1] = b[1][2]
+1, 2, u[2] = b[2][1]
+0, 3, u[3] = b[3][0]"
+,Struct,"struct compound{
+    int x;
+    int y;
+    int z;
+}",
+,Union,,
+,Array,"int a[] = {2, 3, 5, 8, 11};
+int* a[] = … (pointers/adresses)
+int a[10]; // empty 10, `int buffer[10]` equivalent to `int *ptr = buffer;`
+a -> decay to pointer (adress) to first element","// Variant 1
+void test1(int f[]) { f[1] = 21; }
+// Variant 2
+void test2(int *f) { f[1] = 21; }
+// Variant 3
+void test3(int *f) {*(f + 1) = 21;}
+int foo[5] = {0,1,2,3,4};
+test(foo);
+-> foo = {0, 21, 2, 3, 4}"
+,,"Index: a[b], equivalent to *(a + b)","int a[10];
+a[2] = 3; // writing to offset 2
+foo[20] = 666; // writing to offset 20, maximum is 10 and does not belong to its intended allocation"
+,C-strings (special case of array),"char str[6] = {'H', 'e', 'l', 'l', 'o', '\n'} (Terminated with null), str[0]='H', ..., str[4]='o', str[5]='\0'
+char str[6] = ""Hello""; (Alias using double quotes)",
+,,"The conceptual stack frame contains:
+1. the arguments of the procedure
+2. place to hold local variables
+3. magic information to be able to return from a call
+
+Implementation of stack:
+The CPU can be described by:
+the instruction pointer (IP): a reference to the next instruction to execute
+a stack pointer (SP): a reference to the top of the stack
+a base pointer (BP): a reference to the current stack frame
+general purpose registers: used by a process to store data
+
+Data structures placed on the stack will not be available once we return from a call.
+The space required to store the structures can be reused immediately.
+Not all data structures could be allocated on the stack (not the ones that should live for longer).
+Data structures that should survive a return should be placed on the heap.",
+,Call stack,"int foo(int x, int y) {
+    return x + y;
+}
+int bar() {
+    int z;
+    z = foo(3, 4)
+    return z;
+}
+
+-> {(stack frame of bar)} -> {(stack frame of bar) -> (stack frame of foo)} -> {(stack frame of bar)} ",
+,Process,"Simplistic view: (code, data, heap -> (growth) (growth) <- stack, OS)",
+,Functions,"The arguments to a procedure are provided as copies of the value, i.e. ""call by value"".
+int foo(int a, int b) {
+    return a + b;
+}
+
+int * this_is_the_way() { // Can include pointers as return values
+    int * foo = (int * ) malloc(4 * sizeof(int));
+    for (int i = 0; i < 4; i++) {
+        foo[i] = i;
+    }
+    return foo;
+}
+int main() {
+    int * ret = this_is_the_way();
+}",
+,Generics function type,"int generic(int * arr, int n, int init, int (*op)(int, int)) {
+    int gen = init;
+    for (int i = 0; i < n; i++)
+        gen = op(gen, arr[i]);
+    return gen;
+}
+
+int add (int x , int y ) {
+    return x + y ;
+}
+int mul (int x , int y ) {
+    return x * y ;
+}
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    printf("" sum : %d \n "", generic(arr, 5, 0, add));
+    printf("" product : %d \n "", generic(arr, 5, 1, mul));
+    int(*x)(int, int) = add; // function as type
+    printf(""x(3,4) = %d\n "", x(3, 4));
+}",
+,,,
+,,,
+,,,
+,,,
+APIs,,,
+<stdlib.h>,Malloc and free (Heap allocation offered by OS),"malloc (allocate, contains garbage data)
+realloc (allocate by copying the existing data)
+calloc (clear and allocate)
+
+If you forget to do free, you will have a memory leak.
+If you do free twice, undefined behavior.
+If you access a structure after free, undefined behavior.","foo_t *test() {
+    foo_t *f = (foo_t*) malloc(sizeof(foo_t));
+    f->a = 51;
+    return f;
+}
+
+foo_t *p = test();
+free(p); // When the strcuture is no longer needed, call free."

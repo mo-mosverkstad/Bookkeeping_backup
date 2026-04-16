@@ -1,0 +1,8 @@
+MVC pattern,"Model: all logic -> store data to file
+View: GUI or TUI elements as objects, interact with model about logic
+Controller: Handle user nputs, action listeners, mouse events
+
+e.g. Othello game
+Model: All gamelogic -> store game data/history to file
+View: GUI elements, update GUI, , inform model about logic
+Controller: "

@@ -1,0 +1,7 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2
+,Regular,"(...) WHERE <condition>;
+(...) GROUP BY <coloumnnames>;
+(...) ORDER BY <coloumnnames>;
+(...) LIMIT <number>;"
+,Select/Insert,"SELECT * FROM <database>.<tablename>;
+INSERT INTO <database>.<tablename> VALUES <values>;"

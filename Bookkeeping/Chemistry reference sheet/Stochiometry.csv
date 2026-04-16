@@ -1,0 +1,117 @@
+Name,Basic relationship,Presetted values
+,"1 mol = 1NA = 6.022e23(Avogadro)
+Atom/Formelmassa(M(AB)=MA+MB)
+Balanserad formel",
+"Stochiometry map
+Stökiometri","<kA1><A1> + <k2><A2> + … -> <kB1><B1> + <kB2><B2> + …
+m[m(A1), m(A2), … -> m(B1), m(B2)]
+M[M(A1), M(A2), … -> M(B1), M(B2)]
+n[n(A1), n(a2), … -> n(B1), n(B2)]
+-> MAP((<m>), (<M>), (<n>))","Given value: <>, Expected value: []"
+,"MAP...
+(n(A1)/<kA1> = n(A2)/<kA2> = … = n(B1)/<kB1> = n(B2)/<kB2> = …)","Fe3O4 (s) + 4C (s) -> 3 Fe (s) + 4CO (g)
+MAP((-, <2.87e4>, [1.00e5], -), (-, 1.20e1, 5.59e1, -), (-, 2.39e3, 1.79e3, -)) -> 1.00e5 g"
+,m(A1) + m(A2) + … = m(B1) + m(B2) + …,"(x)Cu (s) + (y)S (s) -> Cu(x)S(y) (s)
+MAP((<2.52e-1>, 6.40e-1, <3.16e-1>), (6.35e1, 3.2e1, -), (3.97e-3, 2e-3, -)) -> y/x = n(S)/n(Cu) = 2.00e-3/3.97e-3 = 2/1 = CuS2"
+"Equilibrium equation
+Jämviktsreaktion","<kA1><A1> + <k2><A2> + … -> <kB1><B1> + <kB2><B2> + …
+n_0[n_0(A1), n_0(A2), … -> n_0(B1), n_0(B2)] (n_before)
+Δn[Δn(A1), Δn(A2), … -> Δn(B1), Δn(B2)] (n_change)
+n_1[M(A1), M(A2), … -> M(B1), M(B2)] (n_after)
+c[n(A1), n(a2), … -> n(B1), n(B2)]
+-> MAP((<n0>), (<Δn>), (<n_1>), (<c>))",
+,K = ([B1]^<kB1>*[B2]^<kB2>*…)/([A1]^<kA1>*[A2]^<kA2>*…),"N2 (g) + 3H2 (g) <-> 2NH3 (g)
+MAP((<9>, <24>, 0), (-6, -18, 12), (<3>, 6, 12), (0.6, 1.2, 2.4))
+K=[NH3]^2/([H2]^3*[N2]) = 5.56 M^-2"
+,,"2NO (g) + O2 (g) <-> 2NO2 (g)
+MAP((0, 0, 0.5+x), (x, x/2, -x), (x, x/2, <0.05>), (2x, x, 0.1))
+K=[NO2]^2/([NO]^2*[O2]^2) = 0.0926 -> x = 0.30 mol"
+"Acid base reaction
+Syra-bas reaktion","H(A) + H2O <-> H3O+ (aq) + A- (aq)
+
+Acid: K = ([H3O+][A-])/([HA][H2O]) -> K_a = [H2O]K = [H3O+][A-]/[HA]
+Base: K = ([HA][OH-])/([A-][H2O]) -> K_b = [H2O]K = [HA][OH-]/[A-]
+Water: K = ([H3O+][OH-])/[H2O]^2 -> K_w = [H2O]^2*K = [H3O+][OH-] = 1e-14
+K_a*K_b = K_w = 1e-14 -> pK_a + pK_b = 14",
+"Salt reaction
+Saltreaktion","AB (s) <-> A+ (aq) + B- (aq)
+K = [A+][B-]/[AB] -> K_s = [AB]K = [A+][B-]",AgCl (s) <-> Ag+ (aq) + Cl- (aq)
+"Titration
+Titrering","<titration curve>
+Equivalence point/Ekvivalenspunkt (Neutralization/Neutralisering) in inflection point",
+,"Strong acid + base -> pH=7, [H3O+] = [OH-]",HCl (aq) + NaOH (aq) -> H2O (l) + NaCl (aq)
+,"Weak acid or base -> HA (aq) + OH- (aq) -> H2O (l) + A- (aq)
+pH != 7, Equivalence point: V_E, Half titration point: V_H = V_E / 2 -> [HA] = [A-]
+K_a = [H3O+][A-]/[HA] = [H3O+] -> pKa = pH",HAc (aq) + NaOH (aq) -> H2O (l) + NaAc (aq)
+"Buffer solution
+Buffertlösning","The solution’s pH is not affected by moderate additions of acid or base; it consists of a weak acid and its corresponding base.
+1. HA + H2O <-> H3O+ + A-
+2. A- + H3O+ <-> HA + H2O
+3. HA + OH- <-> A- + H2O",
+,,
+"Enthalpy (H) and entropy (\1S)
+Entalpi och entropi","E = 
+E_mk (Inner kinetic energy, inre rörelseenergi)
+E_mp (Inner potential energy, fastillstånd)
+E_electron
+E_binding (Binding energy, Bindningsenergi)",
+,"\DU = \1Q + (-W) -> \DU + W = \1Q -> \DU + W = \DH
+\DH = H(Products) - H(Reactants)
+Activation energy (EA)",
+"Gibbs free energy
+Gibbs fri energi",\DG = \DH-T\DS,
+Chemical reactions,"Collision theory/Kollisionsteori: <image> random collision of elements, geometrical orientation
+Transition theory/Övergångsteori: Activated complex/Aktiverad komplex: Shortlived intermediatery with high energy level
+(Intermediatery/Intermediär, transition state/övergångstillstånd)",
+,"G° = -RT*ln(K)
+ΔG = ΔG°+RT*ln(Q) = RT*ln(Q/K)
+ln(K) ~ -1/T (ΔT>0, ΔK>0)(ΔH>0)
+ln(K) ~ -T (ΔT<0, ΔK>0)(ΔH<0)",
+Exoterm,"2H2 + O2 -> 2H2O(g)
+(ΔH<0)(ΔS>0)
+ΔG<0 -> Spontan
+Q1 -> Q2(H)(Aktivering) -> Q3(L)",
+Endotermisk (ΔH>0)(ΔS<0),"2HI(g) -> H2(g) + I2(g)
+ΔG<0 -> Icke-spontan
+Q1(L) -> Q2(H)(Aktivering) -> Q3",
+Jämvikt 1 (ΔH>0)(ΔS>0),"H2CO3(aq) <-> H2O(l) + CO2 (g)
+Spontan ΔG->(TH+ TL-)",
+Jämvikt 2 (ΔH<0)(ΔS<0),"N2(g) + 3H2(g) -> 2NH3(g)
+ΔG -> (T_H Icke-spontan, T_L Spontan)",
+"Reaction rate
+Reaktionshastighet","\\v = \Dn/\Dt = \Dc/\Dt, v = dn/dt = dc/dt",
+,"Factors affecting reaction rate:
+1. The substances that react
+2. Type of bond (Strong bonds: difficult to react -> slower)
+3. Temperature (Higher temperature -> faster particle motion -> faster reaction)
+4. Surface area/particle size (Larger surface area -> more collisions -> faster reaction)
+5. Concentration (Higher concentration -> more collisions -> faster reaction)
+6. Particle mobility (Higher internal kinetic energy of particles -> stronger collisions -> faster reaction)
+7. Catalyst (Lowers activation energy and provides an alternative reaction pathway)",
+Chemical equilibrium/kemisk jämvikt,"Reactants/Reaktanter, Products/produkter, Dynamic equilibrium/Dynamisk jämvikt
+At the onset of the reaction, only reactants are present.
+Initially, the forward reaction rate is high, while the reverse reaction rate is negligible since no products (C and D) have yet formed.
+As the reaction proceeds, the concentration of reactants decreases, leading to a reduction in the forward reaction rate.
+Simultaneously, the concentration of products increases, which causes the reverse reaction rate to rise.
+Eventually, the rates of the forward and reverse reactions become equal, and a state of dynamic equilibrium is established.",
+Equilibrium system,"Homogen (Samma fas)
+Heterogen (Olika faser) (Mättad lösning)
+Kopplade (1+ ämnen i 2+ jämvikter)",
+Solution and solvents,"Lösning (Homogen blandning)
+Lösningsmedel (Mesta av i lösning)
+Löslighet (Massa av ämne som löses) (gas högre rörelseenergi, bindning mellan lösta och vatten blir svagare och bryts lättare)
+Jämviktssystem mellan löst och olöst
+Hydratisering av joner
+Salters lösning(Ks)
+Fördelningsjämvikt KD = [(Heptan)]/[(aq)]
+TH Gas (Emk+ -> löslig-)
+TH Joner (Endoterm -> löslig+)",
+Soil environment,"Morän (Vanlig i Sverige av vittring)
+Jämvikt för mineralämnen
+Försurning urlakning ([H+] förskjutning)",
+Marine environment,"¼ av CO2 tas upp i hav, Viktig del i kolets kretslopp, CO2, H2O och H2CO3 (Jämvikt)",
+Human body,…,
+Equilibrium shift/Jämviktsförskjutning,"Le Chatelier’s principle
+1. Change in concentration/Koncentrationsförskjutning: Adding or removing reactants/products shifts equilibrium to counteract the change (H2 (g) + I2(g) <inc> <-> 2HI(g), -> forward shift), +c(H->L)
+2. Change in pressure/Tryckförändring: For reactions involving gases, increasing pressure favors the side with fewer gas molecules (increase pressure -> decrease volume) (increase pressure, 3H2 (g) + N2 (g) <-> 2NH3 (g), \Sn=3+1=4, \Sn=2, -> forward shift), +p(nΣH->nΣL)
+3. Change in temperature/Temperaturförändring: Raising temperature favors the endothermic direction, lowering favors the exothermic direction (may alter K constant) (3H2 (g) + N2 (g) <-> 2NH3 (g) + 92.4 kJ, -> backward shift), +T(ΔH>0)",

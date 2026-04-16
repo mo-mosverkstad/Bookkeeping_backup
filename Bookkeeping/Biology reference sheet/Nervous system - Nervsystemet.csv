@@ -1,0 +1,119 @@
+Nervsystemets funktion,Egenskaper,"Endast djur
+Skillnad i komplexitet beroende på levnadssätt (Aktiva djur har mer advancerad/större hjärna än passiva)"
+,Funktioner,"Upprätthåller homeostas
+Anpassning till miljö (omfatar reaktion till omgivningen)
+Kommunikation och samordning
+Tar emot och bearbetar information (sinnesceller -> ... -> respons)
+Styr utveckling, beteende och reproduktion"
+Indelning av nervsystem (översikt),,"Nervsystemet:
+Centrala nervsystemet/CNS(Hjärna + Ryggmärgen, Samordning och styrning, Skyddat innanför skalle och ryggrad, Tar emot signaler/information från perifiera (Omgivning/kroppen), Bearbetar informationen -> Styr muskel och körtlar, Interneuroner), perifera nervsystemet (Nerver ute i kroppen, motoriska och sensoriska nervceller mellan CNS och kroppen, Leder signaler till och från hjärnan och ryggmärg)
+Somatiska nervsystemet(medvetet, Sensorisk e.g. 5 sinnen, Motorisk e.g. Skelettmuskler) -> Sympatiska nervsystemet (vakenhet och energi, förbereder kroppen för aktivitet, inhiberar ej nödvändiga system e.g. matspjälkning), autonoma nervsystemet (omedvetet, Sensorisk e.g. pH, blodtryck, salthalt/Motorisk e.g. Körtlar, glatt muskelatur i tarmen, blodkärl och luftvägar, hjärtmuskelatur, livmoder) -> Parasympatiska nervsystemet (Vid normala funktioner, bevarar och återuppbygger, sparar energi, tar upp mer energi)
+
+Sympatiska (Stress, vakenhet och energi, förbereds för aktivitet, inhibera onödig system, kamp eller flykt, förstorade pupiller, hjärtat ökar, luftvägar vidgas, glykos ökar)
+Parasympatiska (Read and digest, tröttare, minskar pupillens storlek, sänker pulsen och blodtryck, ökar magsäck och tarmars beteende, uppbyggande och reparation, återhämtning och matspjälkning)
+Sympatiska/parasympatiska nervsystemet arbetar i balans (vidgad pupill, höjd hjärtfrekvens, höjd blodtryck, höjd blodsockernivå, mindre blod till matspjälkning)
+"
+Nervceller,Neuron,"Nervsystemets grundläggande enhet (tar emot, bearbetar och skickar aktionspotential vidare)
+-> Bildar buntar med flera axoner (Nervsignalers fortplantning)
+Axoner inbäddade i skyddande struktur
+Afferenta (-> Sensorisk), Efferenta (-> Motorisk), Blandade
+Nervsystemsnätverk
+Sensorisk (från ytter) och motoriska signaler (från hjärnan)"
+,Sensorisk neuron,Från receptorcell (känselkörtel) till CNS
+,Interneuron,"Kopplar samman nervsystemet, 1e10 i hjärnan och ryggmärgen -> Snabba reflexomkopplingar, advancerad beslut"
+,Motorisk neuron,Från CNS till målcell
+,Gliacell,"Olika typer, alstrar inte aktionspotential, främst understödjande funktion"
+,Oligodendrocyt,(CNS) Bildar myelin runt axoner
+,Schwanncell,(PNS) Bildar myelin runt axoner
+,Astrocyter,"Stjärnformade, tar bort neurotransmittorer från synapser, skydd, barriär mellan blod och CNS, ärrvävnad"
+,Mikrogliaceller,"Nervcellers försvarsceller, tar bort döda/skadade celler, angriper inkräktare"
+,Ependymcell,"Producerar celebrospinalvätska, avgränsar centrala hålrummen/centralkanal i ryggmärgen"
+Nervcellens delar,,"DEN, KER -> AGC -> AXO (MYE, RAN, SCH/OLG) -> ATE/SYN"
+,Cellkärna (KER),
+,Dendriter (DEN),"Tar emot signal, leder in mot cellen (fungerar som startpunkt), tunna utlöpare"
+,Cellkropp/Soma (CEB),"Cellkärna, mitokondrie, organeller, receptor+mekaniskstyrd"
+,Ranviers nod (RAN),Hål(Oisolerat) mellan myelinskidorna där axonet är blottlagt
+,Axonterminal (ATE),Koppling till nästa cell
+,Synaps (SYN),Till muskel/andra celler/andra neuroner
+,Myelinskida (MYE),"Elektriskt isolerande, Fettrik sybstans med isolerande förmåga för att nervimpuls kan fortplanta snabbare, Bildas av speciella gliaceller som virar sig runt en nervcells axon.
+(Större än 1 µm med isolerande lager av fettrik gliacell)
+Hål som Ranviers noder -> hoppande nervsignaler (Utan myelin(0.1m/s), med (120m/s))"
+,Axon (AXO),"Leder signal, Lång nervtråd från cellkroppen, Kan vara > 1m lång"
+,Axonkägla (AGC),"Område med spänningskänsliga jonkanaler, Avgör om nervimpuls startar, spänningskänsliga, pågår retningssummation"
+"Nervimpulsen (Snabb, specifik och kortvarig)","Elektrisk nervimpuls
+Allt eller inget signal (intensiteten bestämmer upplevda styrkan)","Enkelriktad nervimpuls (Na+ längs insida -> Förändrad membranpotential, Na+ mot cellkropp ingen effekt på grund av tidigare refraktärperiod)
+Små skillnader i fördelning av +/- joner (Utsida mer[Na+] [Ca2+] [Cl-], Insida mer[K+])
+Na+/K+ pumpen (3Na+ in och 2K+ ut)
+Receptorstyrd(Öppnas vid bindning till ligand), Mekanisk styrd (Öppnas av mekanisk påverkan), Spänningskänsliga(Öppnas vid potentialförändring)
+Mer/mindre signal (Antalet och typ av jonkanal som öppnas påverkar förändringen av membranpotentialen)
+Allt/inget signal (Tillräckligt många natriumkanaler öppnas i axonkäglan -> Nå tröskelvärde)
+1. Vilopotential (-70mV) Cellen i vila
+2. Potentialförändring (-70 -> -55 mV) Förändring i potential
+3. Tröskelvärde (-55 mV) Na+ kanal öppnas
+4. Depolarisering (+40mV) Fler Na+ kanaler öppnas -> Na+ kanaler gradvist stängs
+5. Repolarisering (-70mV ~ -90 mV) K+ rusar ur nervceller
+6. Hyperpolarisering (-90 mV) K+ kanaler stängs långsamt
+7. Refraktärperiod (-70 mV) Inget nytt aktionspotential kan inledas"
+,Kemisk signal genom neurotransmittorer,"Kemisk substans/Neurotransmittorer/transmittorsubstans -> Bindning till receptor (Förändring av mottagarens aktivitet)/Annan nervcell -> Vidare impuls
+1. Aktionspotential når axonterminal
+2. Ca (2+) kanaler öppnas -> Ca (2+) strömmar in i nervcellen
+3. Vesiklar med neurotransmittorer frisätts genom exocytos
+4. Neurotransmittorer diffunderar till receptorstyrd jonkanal
+5a. (Na+ kanal) Stimulering/Depolarisering, ökad sannolihet för depolarisering
+5b. (K+/Cl- kanal) Inhibering/Hyperpolarisering, minskad sannolikhet för depolarisering, aktionspotential i axonkäglan
+6. Avslutning av aktivitet(återupptag(nedbrytning, ompaketering till vesiklar), Återupptag i presynapisk terminal/gliacell -> Enzymatisk nedbrytning"
+,Neurotransmittorer,"Molekyler som förmedlar kemiska signaler från en nervcell till en annan, (Fler än 50(>100))
+Lagras i vesiklar i den presynaptiska neuronen, Olika klasser av neurotransmittor
+
+Aminosyror (Glutamat, GABA, Glycin)
+Monoaminer (Noradrenalin, Dopamin, Serotonin)
+Gaser (NO, CO)
+Acetylkolin
+Neuropeptider (Endorfin, oxytocin, GH-releasing-hormone)
+Aktiverande(Glutamat*, Asparat, NO)
+Hämmande(GABA*, Dopamin*, Glycin, Serotonin)
+Båda(Acetylkolin*, Noradrenalin*)"
+,Retningssummationen,"Effekten på mottagarcellen beror på summan av alla delimpulser från synapser
+Aktiverande (Depolariserar) postsynaptiska membranet
+Inhiberande (Hyperpolariserar) postsynaptiska membranet
+-> Den förändrade membranpotentialen sprider sig över cellkroppen och närmar sig axonkäglan ->  Axonkäglan (Summering = stimulerande - inhiberande)
+Aktionspotentialens styrka förändras inte, nervimpulsens upplevelse beror på intensitet/frekvens"
+Centrala nervsysemet,,"Tar emot information från sinnesorgan från PNS, bearbetar information och skickar iväg till/styr delar av nervsystemet
+Lagrar information i form av minnen, Olika funktioner ofta samlade i olika centra som är sammankopplade med varandra
+Väger 1.3 kg men kräver 20% av energi och syre (kan inte lagras som muskler) -> Skadas/Känslig vid syrebrist
+Hjärnans utveckling: Vissa fullt fungerande hos nyfödda barn (andning, cirkulation, hunger), andra fortsätter till 25 år (riskbedömning), utveckling återspeglar evolutionen (Använda nervceller -> utvecklas, oanvända -> tillbakabildas)"
+,Storhjärnan,"2 halvor med lober (hjärnbalken), styr medvetna sinnesupplevelser, tankar och viljestyrd rörelse
+- Grå substans (Hjärnbark): Veckad, yttre lager, 3~5 mm, 6 lager nervcell
+- Vit substans: Axoner omgivna av myelin
+Ventriklar: Sammanhängande hålrumssystem cerebrospinral
+
+1. Pannlob: (Rörelsecenter) Motoriska barken, problemlösning, koncentration, personlighet, stämningsläge, omdöme, känslor
+2. Hjässlob: (Känselcenter) Sensoriska barken, sinnesintryck (hörsel), kroppsuppfattning, uppmärksamhet, språk, innehåll, rumorientering
+3. Tinninglob: (hörsel och balans) Språk, hörsel, lukt, minne, tal, ansikt/föremåligenkänning, musik
+4. Nacklob: Synbark, drömmar
+5. Limbiska systemet: Känslor, lukt, minne, ""primitiva känslor"" kopplade till lukt"
+,Mellanhjärnan,"Uttrymme mellan storhjärna och hjärnstam, hopväxt med storhjärnan, övergår nedåt i hjärnstammen, upprättar homeostas, inkopplad till hormonsystem
+
+1. Talamus: (Omkopplingscentra)/Ingång till storhjärnan, sinnessignaler (förutom lukt)
+2. Hypotalamus: Grundläggande biologiska behov, styr hormonsystem med hypofys
+3. Epitalamus: Tallkottskörteln; Påverkar dygnsrytm med melatonin, förbindelse till limbiska systemet
+4. Basala ganglier: Väljer ut, förändrar, koordinerar flöde av beteendesignal, initierar/avslutar ..."
+,Lillhjärnan,"Stor som citron, baksida av hjärnstammen 50% av nerver, 1/10 volym av stor hjärna, stark veckad -> kroppskoordination, rörelse, muskelsinne, balans (färdigutvecklad hos nyfödd)
+Information från balansorgan, muskelsinne och ögon -> Muskelkoordination, kroppshållning (muskelsinne), balans"
+,Hjärnstammen,"Under mellanhjärnan och ryggmärg. Icke-viljestyrda funktioner, huvudled för kommunikation mellan storhjärnan och CNS (vänster/höger nervbana korsning)
+1. Mitthjärna: Höst upp på hjärnstam, styr ögonmuskler, dopaminproducerande celler
+2. Hjärnbrygga: (Genomfartsled mellan CNS, PNS (Bark <-> PNS, Bark <-> lillhjärna), andning)
+3. Förlängda märgen: Puls, andning, alla signaler passeras, överkorsning"
+,Ryggmärgen,"Nedre delen av nervsystemet, cylindrisk (tjock som lillfinger), Inne i kotpelaren (främre/bakre rot)
+Förmedlar nervimpuls mellan kroppens organsystem och hjärnan, motoriska/sensoriska nervfiber"
+Perifiera nervsystemet,,"12 par kranialnerv (hjärnnerv)
+31 par ryggmärgsnerv (förgreningar)
+-> Leder till och från hjärnan
+-> e.g. Synnerv och luktnerv
+Förgreningar av dessa nerver ute i kroppen"
+,Reflex/reflexbågen,"Standardiserat mönster som ofrivilligt sätts igång av ett specifikt stimulus, ryggmärgen agerar på egen hand
+En impuls -> Ryggmärgen för att kroppen reagerar (Snabbare beslut)
+Reflex kräver inte den sensoriska först tolkas i hjärnan, signalen kommer i efterhand"
+,,"Sträckreflex(Reflex som ger muskulaturen en grundspänning och håller längden på muskeln konstant, 1 omkoppling mellan sensorisk och motorisk nervcell)
+Knäreflex (Stimulus(slag på knäskålssenan) -> Muskel på lårets framsida förlängs -> Signaler att förkortas)
+Skyddar kroppen från skador, sträckreflex, vid slag"

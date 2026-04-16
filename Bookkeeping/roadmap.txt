@@ -1,17 +1,28 @@
 - Course activities:
   - Year 1 period 3:
-    - Calculus in one variable ( + Algorithm and data structure)
     - Algebra and geometry (+ Object oriented design and analysis)
   - ...
   
 - Private activities:
-  - Leetcode practice
-  1. Bookkeeping software:
+  1. Convergence:
     - Retroactive data convergence I:
       - Bobasystem (Bobasystem + photo notes)
       - repos/convergence
-      - Sommarmatematik + sommarprogrammering
+      - Sommarmatematik/fysik (https://mattefysik.rcn.kth.se/course/view.php?id=17) + sommarprogrammering
     - Retroactive data convergence II: ZAYAH Folder
+    - KTH academic pathway map
+    - Constructional source convergence: ZAYAH folder
+  2. Learning:
+    - Learn computer architecture/computer engineering from the digital design book
+    - Learn asm
+    - Learn VHDL/Verilog
+    - Leetcode practice
+    - Check II1302 Project and project methods (ii1302 folder)
+    - Learn to read/write/process thesis (Can reorder/paraell)
+  3. Building:
+    - Build a custom processor -> learning
+    - Build with e-ink display to raspberry pi -> practical application hardware
+  4*. Bookkeeping engine:
     - Build Bookkeeping engine:
       - Spreadsheet editor
       - Simple plugin programs with parsers
@@ -19,16 +30,9 @@
     - Port to Rust, Java, Python
     - Build web version (HTML+CSS+JavaScript)
     - Build Android version
-    - Constructional source convergence: ZAYAH folder
-  2. Learning:
-    - Learn computer architecture/computer engineering from the digital design book
-    - Learn asm
-    - Learn VHDL/Verilog
-    - Check II1302 Project and project methods (ii1302 folder)
-    - Learn to read/write/process thesis (Can reorder/paraell)
-  3. Building:
-    - Build a custom processor -> learning
-    - Build with e-ink display to raspberry pi -> practical application hardware
+    - Plugins Quine-McCluskey and hardware CAD software
+  5*. Calendar software:
+    - Gantt view
   1*. Data convergence:
     - Retroactive data convergence III: Convergence folder
     - Fix repositories
@@ -36,5 +40,6 @@
   2*. Computer science learning:
     - Reverse engineering (IDA pro)
     - Build extensivelang with macro -> compiler as tool
+    - CAD functionalities
     - Semiconductor physics
     - Analog circuits

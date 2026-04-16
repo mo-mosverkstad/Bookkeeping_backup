@@ -1,0 +1,176 @@
+Short name,Name,Structure,Contains in,Description
+"Molecules formed in living cells and involved in life processes
+The cell's organic macromolecules build up the cell's structure, preserve the cell's genetic information, catalyze the cell's chemical reactions, and function as an energy reserve.
+The molecules are in the form of polymers made up of several monomers. Their mutual order and placement give the cell its properties. The composition varies between different cells.",,,,
+Carbohydrates [CAH],,,,"Energy source/reserve, cell wall, most common in food, 1% in the body"
+(1),Monosaccharide,-,-,Solid+soluble+sweet
+60,Glucose,C6H12O6,Plants/Blood_sugar,Reducing
+,Alpha-D-glucose (Ring-formed),(HO-)1C-C(-OH)-(OH-)C-C(-OH)-C(-OH)-O1,,
+,Beta-D-glucose (Ring-formed),(HO-)1C-C(-OH)-(OH-)C-C(-OH)-(HO-)C-O1,,
+50,Fructose,C6H12O6,Plants,Non-reducing
+61,Galactose,C6H12O6,Milk,Reducing
+51,Ribose,C5H10O5,RNA,-
+52,Deoxyribose,C5H10O4,DNA,-
+(2),Disaccharide,-,-,Sweet
+S/60+50,Sucrose,α12,Sugarcane&beets,-
+L/60+61,Lactose,α14,Milk,Less_sweet
+M/2*60,Maltose,α14,-,-
+C/2*60,Cellubios,β14,-,-
+,Starch/Stäkelse,-,,"Paper, cosmetics, plastic, glue, textile, medicine"
+n*M,Starch/Stäkelse(Amulose),α14,Plants(food/potatoes/flour/groat),Straight
+n*M,Starch/Stäkelse(Amylopectine),α16,Plants(food),Branched
+n*60,Glucogen,-,"liver, muscles, kidneys (animal cells, higher mass)",Branched
+n*C,Cellulose,-,"Cellulose Dietary fiber Plant structure Plant skeleton Wood, paper, cotton Wheat bran, whole grains, vegetables, and fruits",Crumbled chains due to hydrogen bond -> durability
+n*6,Inulin,-,fiber+Jerusalem_artichokes,-
+Lipids [LIP],,,,"Categorize as biological hydrophobic material, Energy storage (rich) Animals (fat cells)"
+nCOOH,Fatty-acids,,,"Saturated (single bond, solid, animal fat), Unsaturated (double bond, liquid, plant, fish)
+-> Cis -> crooked chain -> lowering melting point"
+3+nCOO,Triglyceride,,,"Animal fat contain 16~20 carbon atoms
+Unsaturated -> Monounsaturated -> Polyunsaturated (-> higher boiling point)"
+...,Wax,,,Monovalent alcohol (long chain) + fatty acids
+PO4+2*nCOOH,Phospholipid,,,"Cellmembrane -> Polar head (hydrophilic)
+6~10 nm -> hydrophobic effect"
+…,Steroid,,,Stabilization function
+,Testosterone,,,
+,Estrogen,,,
+,Hormones,,,
+,Signal molecules,,,
+,"cholesterol, cortisol, vitamin D",,,
+...,Caretenoid,"Color pigment (light-absorbing, orange-red)",Carrots,-> Retinole
+Amino acids [AMA],,"Non-protolyzed: NH2-(H-)C(-R)-COOH
+Zwitterion: [NH3+]-(H-)C(-R)-[COO-]
+((Structure, total charge), ([NH3+]-(H-)C(-R)-(COOH), +1), ([NH3+]-(H-)C(-R)-[COO-], 0), (NH2-(H-)C(-R)-[COO-], -1) -> pH)",,"Amino acids are ampholytes with a weak acidic group (COOH) and a weak basic group (NH2).
+The charge of amino acids depends on the pH of the solution. The isoelectric point (Ip) is defined at a total charge of 0."
+G/Gly,Glycine,-H,,
+A/Ala,Alanine,-CH3,,
+V/Val,Valine,-CH2(-CH3)-CH3,,
+C/Cys,Cystein,-CH2-SH,,
+P/Pro,Proline,-CH2-CH2-CH2-1*NH2,,
+L/Leu,Leucine,-CH2-CH(-CH3)-CH3,,
+I/Ile,Isoleucin,-CH(-CH3)-CH2-CH3,,
+M/Met,Metionin,-CH2-CH2-S-CH3,,
+W/Trp,Tryptophane,-CH2-1CH2~2CH2(~3CH2~CH~OH~CH2~1)~CH2~CH2~CH2~CH2~3,,
+F/Phe,Phenylealanine,-CH2-CH2~1CH2~CH2~CH2~CH2~CH2~CH2~1,,
+S/Ser,Serine,-CH2-OH,,
+T/Thr,Treonine,-CH2(-CH3)-OH,,
+Y/Tyr,Tyrosine,-CH2-1CH2~CH2~CH2~CH2(-OH)~CH2~CH2~1,,
+N/Asp,Asparagine,-CH2-C(=O)-NH2,,
+Q/Gln,Glutamine,-CH2-CH2-C(=O)-NH2,,
+D/Asp,Asparagine_acid,-CH2-COOH,,
+E/Gly,Glutamine_acid,-CH2-CH2-COOH,,
+K/Lys,Lysine,-CH2-CH2-CH2-CH2-NH2,,
+R/Arg,Arginine,-CH2-CH2-CH2-N(-H)-C(-NH2)=NH,,
+H/His,Histidine,-CH2-1C=CH-NH-CH=N-1,,
+Polypeptides [PPD],,,,"Chain/pearl necklace of linked amino acids (dipeptides/polypeptides), often 20-50 amino acids
+H2N-(H-)C(-CH(-CH3)-CH3)-COOH + H2N-(H-)C(-CH3)-COOH <-> [H2N-(H-)C(-CH(-CH3)-CH3), N-terminal]-[(O=)C-N(-H), peptide bond]-[(H-)C(-CH3)-COOH, C-terminal]
+Peptide bond: [R1-[1]-([1>]O=)C-N(-H)-R2 <-> R1-([O-]-)[C+]-[1<-]N(-H)-R2 <-> R1-([O-]-)C=[N+](-H)-R2]
+The bond between C-N is a double bond -> Rigid -> Non-rotatable -> Important in protein folding"
+,,,,
+,,,,
+Proteins [PRO],,,,"Multiple polypeptides (>50 amino acid residues)
+Building material, catalyst, immune system, transport, movement, structure, nutrition
+Protein coagulates when heated, 8e4~4e5 proteins (5e1~3.4e4 amino acids)"
+Protein structure,,,,
+Primary,"The order of amino acids in the chain (sequence/amino acid sequence), strong covalent bonds",,,
+Secondary,"Alpha helix or beta sheet, Alfa-spiral eller beta-flak (hydrogen bonds between polypeptides)",,,
+Tertiary,"3D structure (different bonds between secondary structures -> spatial structure (released energy) -> stable, ionic bond, sulfur bridge, hydrogen bond) -> R-groups",,,
+Quatery,"Location of sybes (interaction of different polypeptide chains), different bonds between secondary structures -> R-groups",,,
+Solvent,"Water-soluble (globular proteins, hydrophile R-groups outward), non-water-soluble (membrane-bound proteins, hydrophobic R-groups outward),",,,
+Denaturation,"Destruction of a protein's structure, the opposite of protein folding (often irreversible), secondary/tertiary dissolution, loss of protein function",,,
+Salt addition,Disrupts bonds between charged R groups. Ions bind to charged R groups -> different structure -> precipitates (can be redissolved at lower salt concentrations),,,
+pH value,Disrupts bonds between charged R groups. H+/H3O+ is absorbed by negative R groups -> disrupts ionic bonds (tertiary structure),,,
+Heat,Dissolves all types of bonds except primary bonds; bonds that stabilize secondary/tertiary bonds are broken,,,
+Heavy metals,"Forms insoluble precipitates with sulfur, disulfide bridges are broken (Pb, Cu, Hg, Cd, Zn, ...) not Fe",,,
+,Globular proteins,"Spherical, hydrophobic inside, hydrophilic inside",,e.g. hemoglobin
+,Fibrous proteins,"Long alpha-helix fibers, amino acids with hydrophobic R chains",,e.g. collagen
+,,,,
+,,,,
+,,,,
+KE,Keratine,,Hair/Nails,
+AK,Actine,,Muscles,
+TB,Tubiline,,,
+H1,Hemoglobine,,"Blood, transport O2",
+CL,Collagen,,"Skin, hair, nail, bones, cartilage, joints",
+INS,Insuline,,,
+KIN,Kinesine,,,
+DYN,Dyneline,,,
+MYS,Myosine,,,
+\{ST},Structure,,Building Material,
+\{F0},Defense,,Defense Recognition & Destruction of Harmful Substances,
+\{SI},Signal,,Signal Hormones,
+\{R0},Receptor,,Receptor of hormones,
+\{L0},Storage,,Storage Amino Acid,
+\{T0},Transport,,Active Transport,
+\{G0},Gene regulating,,Gene regulation,
+Enzymes [ENZ],,,,"Catalyst of life (1e3~1e6 faster)
+Enzyme-substrate complex (active center binding)
+Cofactor (heme group in hemoglobin/coenzyme certain vitamins)"
+Enzyme function,"Substrate fits perfectly into active surface: (1: BLOB(0, 0, 4, 4), 2: CIRC(0, 0, ), 3: )
+Enzyme-substrate complex (specific enzyme -> specific substrate)
+Enzyme-product complex
+Products are released
+The active center of the enzyme",,,
+Enzyme working capacity/Enzyme activity,"Working capacity of enzymes (number of substrates/second): W = n_sub/t
+...",,,
+Inhibitor,,,,
+Competitive inhibitor,"Molecule that prevents the substrate from binding to the enzyme, similar to the substrate -> blocks the active site",,,
+Non-competitive inhibitor,"Molecule that prevents the substrate from binding to the enzyme, binds to other parts -> changes the active site",,,
+Coenzyme,"Cofactor of organic substance, binds to enzyme only during reaction",,,
+Cofactor,"Auxiliary substance to an enzyme, e.g. metal ion, organic molecule",,,
+Prosthetic group,"Firmly bound in protein molecule, organic molecule tightly bound to protein",,,
+,,,,
+,,,,
++^,Syntase,ATP+^,,e.g. ATP-syntase
+-^,Lysase,PRO^ PEP^,,
+AMY^,Amylase,n*60 = 60+50,,
+LIP^,Lipase,[LIP]->nCOOH,,
+,Phospholipase,,,
+LAK^,Lactase,Lactose/Pepsine->(Peptide bonds),,
+,Peptidase,,,
+PEP^,Pepsine,,,
+PRO^,Protease,[PRO]->[AMI],,
+,DNA-polymerase,,,
+,Glycogene synthase,,,
+,Alcohol dehydrogenase,,,
+,Helicase,,,
+,Catalase,,,
+,Decarboxylase,,,
+,Sackarase,,,
+,Cellulase,,,
+Nucleic acids [NUC],,,,
+A,Adenine,(1ring),,
+G,Guanine,(1ring),,
+C,Cytosine,(2ring),,
+T,Tymine,(2ring),,
+U,Uracile,(2ring),,
+AMP,Adeninmonophosphate,...,,
+ADP,Adenindiphosphate,...,,
+ATP,Adenintriphosphate,...,,
+,Adenosine,,,
+NG,Guanosine,,,
+NC,Cytidine,,,
+NT,Tymidine,,,
+NU,Uracile,,,
+n(N4)',RNA,(1string)+(AUCG)+Ribose,,
+n(N4)1,mRNA,Messager,,
+n(N4)1,rRNA,Ribosome,,
+n(N4)1,tRNA,Transport,,
+"n(N4)""",DNA,(2string)+(ATCG)+Deoxyribose,,
+,,,,
+,,,,
+Vitamines [VIT],,,,
+A,,,,Contribution to vision
+D,,,,Help hormone production
+Cell substance,,,,
+,Hormone suppressants,,,
+,Pain-relieving medicines,,,
+,Cytotoxin,,,
+,Toxines,,,
+,,,,
+Medicines,,,,
+,Ibuprofen,,,
+,Paracetamol,,,
+,Aspirin,,,
+,Vaccin,,,
+,Antibiotics (Penicillin),,,
+,,,,Alexander Fleming (1928)

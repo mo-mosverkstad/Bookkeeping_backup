@@ -1,0 +1,87 @@
+ATP-ADP cycle,"ATP: [Triphosphate, HO-([O-]=)P(-OH)-O-([O-]=)P(-OH)-O-([O-]=)P(-OH)-O]-[Ribose, 1CH-CH(-OH)-CH(-OH)-2CH-O-1]2-[Adenine, 2N-3C(=C(-N=CH-2)-C=N-CH=N-3)]
+ADP: [Diphosphate, HO-([O-]=)P(-OH)-O-([O-]=)P(-OH)-O]-[Ribose, 1CH-CH(-OH)-CH(-OH)-2CH-O-1]2-[Adenine, 2N-3C(=C(-N=CH-2)-C=N-CH=N-3)]
+
+TL((1 ATP), (2 ADP))
+EDGES((1, 2, 4 PO4 (3-)\, energy release), (2, 1, 3 PO4 (3-)\, energy supplied))
+ATP(4-)+H2O <-> ADP(3-)+HPO4(2-)+(H+)+30.5kJ"
+Reducing equivalent carrier/Vätebärare,"Temporary electron acceptors, oxidizing agents, coenzymes that carry protons and electrons in metabolism, participate in redox reactions
+B2: Riboflavine, B3: Niacine
+((1[R-H], -, 2[R-H]), (-, 3[NAD+\, NADHP+\, FAD], -), (-, 4[NADH\, NADPH \, FADH2], -), (5[[R]+], -, 6[[R]+]))
+EDGES((1 3, 5 4), (4 6, 3 2))"
+General metabolic pathways,"Catabolic reactions -> down, anabolic reactions -> up
+LINEAR(BRANCH(LINEAR([MEM: (Fat), (Fatty acid)], [MIT: (BOX), (Acetyl CoA)]), LINEAR([MEM: (Carbonhydrates), (Glucose)], [CYT: (GLY), (PYO), (Acetyl CoA)]), LINEAR([MEM: (Protein), (Amino acid)], [CYT: TRA], [MIT: (Carboxylic acid)])), KRE)"
+Cellular respiration,"GLY + KRE + ELC
+C6H12O6 + 6O2 + 38ADP + 38P_i -> 6CO2 + 6H2O + 38ATP
+GLY: Glucolysis -> 2 ATP + 2NADH
+PYO: 2(Pyrovate -> Acetyl CoA + NADH) -> 2 NADH
+KRE: 2(Acetyl CoA -> 3 NADH + FADH2 + ATP + 2CO2) -> 2 ATP, 6NADH, 2FADH
+10NADH -> 10*3ATP=30ATP, 2FADH2 -> 2*2ATP = 4ATP
+
+Regulation of cellular respiration
+High levels of ATP -> Inhibit enzyme -> Slow down
+Low levels of ATP -> Activate enzyme -> Accelerate
+High levels of citric acid -> Activate fatty acid synthesis"
+"Glycolysis
+GLY","LINEAR([-2ATP\, Energy investment stage, (C6, 6~', Glucose), T(ATP -> ADP), (C6-P, 6~'PO4(3-) Glucose-6-phosphate), (C6-P, 5~'PO4(3-), Fructose-6-phosphate)], T(ATP -> ADP), [+4ATP\,Energy harvesting stage, (2*(P-C3), [2*OH]-3COH-PO4(3-), Fructose 1\,6 diphosphate/glyceraldehyde 3-phosphate), T(2NAD+, 2PO4(3-) -> 2NADH), (2*(P-C3-P), [(2\,3)PO4(3-)]3COOH, 2\,3-diphosphoglycerate), T(2ADP -> 2ATP), (2*(P-C3), [2-OH 3-PO4]3COOH, 3-phosphoglycerate), T(->H2O), (2*(P-C3), [3-PO4(3-)]3COOH', Phosphenolpyrovate), T(2ADP -> 2ATP), (2*C3, [2-O]3COOH, Pyrovate)])
+1 glucose + 2ADP + 2P_i + 2NAD+ -> 2 Pyvovate + 2ATP + 2NADH + 2(H+) + 2H2O"
+"Pyrovate oxidation
+PYO","LINEAR((2*C3, [2-O]3COOH, Pyrovate), T(NAD+ -> NADH, -> CO2), (C2, 2-COO-CoA, Acetyl CoA))
+1 Pyrovate -> 1 Acetyl CoA + 1 CO2 + 1 NADH"
+"Citric acid cycle/Krebs cycle
+KRE","RING((C2, 2-COO-CoA, Acetyl CoA), T(H2O -> CoA + (H+)), (C6, Citrate/Isocitrate), T(NAD+ -> NADH), (C5, Ketoglutarate), T((NAD+) -> NADH, ADP -> ATP, -> CO2), (C4, Succinate), T(FAD -> FADH2), (C4, Fumarate), T(-> H2O), (C4, Malate), T((NAD+) -> NADH), (C4, Oxalacetate), T(CoA ->))
+1 Acetyl CoA -> 3NADH + FADH2 + ATP + 2CO2"
+"Electron transport chain/Elektrontransportkedja, andningskedja
+ELC","1 NADH -> 3 ATP, 1 FADH -> 2 ATP"
+Fermentation,"Ability to produce ATP anaerob, produce less ATP in return"
+"Alcohol fermentation
+AFE","LINEAR((C3, [2-O]3COOH, Pyrovate), T(NADH -> NAD+, Lactate dehydrogenase), (C3, [2-OH]3COOH, Lactic acid))"
+"Lactic acid fermentation
+LFE","LINEAR((C3, [2-O]3COOH, Pyrovate), T(-> CO2), (C2, 2COH, Acetaldehyde), T(2NADH -> 2NAD+, Alcohol dehydrogenase), (C2, 2OH, Ethanol))"
+"Beta oxidation
+BOX","Fatty acids even number of carbon, broken down in the mitochondria
+LINEAR((Cn, nCOOH, Fatty acid), T(Esterification, HS-CoA -> H2O), (Cn, nC=O-SCoA, Acyl CoA), T(FAD -> FADH2), (Cn, n=(2)=C=O-SCoA, Trans-enoyl-CoA), T(H2O ->), (Cn, [3OH]-nC=O-SCoA, Hydroxy acyl-CoA), T((NAD+) -> NADH + (H+)), (Cn, n[1\,3]C=O-SCoA, 3-ketoacyl CoA), T(HS-CoA), BRANCH(C(n-2), (n-2)Co-SCoA, Acyl-CoA), (C2, 2COO-S-CoA, Acetyl CoA))
+Fatty acid -> (n/2-1) turns -> (n/2-1) FADH2 + (n/2-1) NADH + n/2 ATP = 17n/2-5 ATP"
+Photosynthesis,LRE + CAC
+"Light reaction
+LRE",
+"Calvincycle
+CAC","RING(T(-> CO2), (P-C3, [2-OH 3-PO4]3COOH, 3-phosphoglycerate), T(ATP -> ADP), (2P-C3, [2(2\,3)-PO4(3-)]3COOH, 2\,3-diphosphoglycerate), T(NADPH -> NADP+, PO4(3-)), (P-C3, [2*OH]3COH-PO4(3-), Glyceraldehyde 3-phosphate), (P-C5, Ribulose 5-phosphate), (P2-C5, Ribulose 1\,5 diphosphate))"
+Cellular communication,"Förutsättning till ett flercelligt liv
+Cellen svarar på abiotiska faktorer e.g. pH, [O2], [CO2], ljus
+Kommunicerar med signalmolekyler -> Påverkar 1+ celler
+Signalerande cell -> Mplcell
+Binder till receptor-protein på målcellen
+Kan vara vid yta/inne i cellen
+Nervtransmittor -> Korta avstånd
+Hormoner -> Längre avstånd
+Kan sitta på cellyta -> Kräver cell-kontakt
+
+Stora/polära signalmolekyler binder till receptorer på mottagarens yta
+Receptor -> Cellmembran & signalmolekyl binder till receptorn (ändrar form)
+-> Receptor ändrar form
+-> Aktiverar sekundära budbärare
+-> Litet antal signalmolekyler påverkar stort antal målmolekyler
+1. Reception
+2. Transduction
+3. Cellular response
+Signalmolekyl -> Receptor -> G-protein -> Adenylyl Cyclase -> ATP -> CAMP
+
+Fettlösliga:
+Kan passera cellmembran
+Binder till receptor i cellen (Intracellulära receptor)
+Receptorprotein tar sig in i cellkärnan
+Påverkar genreglering
+
+Organiska små molekyler:
+e.g. CO & NO
+Passerar cellmembran
+Binder till receptor i cellen
+Kaskad av sekundära budbärare
+Effekt inne i cellen
+
+Signalmolekyl:
+Olika celler producerar olika signalmolekyler
+Innunceller, nervceller, hormonkörtlar
+1 signalämne -> 1/2+ effekter
+1+ signalämne -> 1 effekt
+1 signaleffekt -> olika effekt i olika celler"

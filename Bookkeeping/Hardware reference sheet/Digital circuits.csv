@@ -1,0 +1,450 @@
+Group,Name,Description,Implementation
+Basic,Logic circuits,"Logic circuits: Electronic voltage signals with discrete values as input and output, Binary logic circuits - only 2 discrete values (0, 1)
+Static discipline: Usage of logic 0 and logic 1 mapped to values
+Multiple signals as a bus",
+,,Analysis of logic network: Determine the function of network,
+,,"Synthesis of logic network: Reversed, design circuit board basedon function (More straightforward)",
+,,Functionally equivalent networks: Same functions different networks -> Optimization of cost/Minimal cost realization,
+Building blocks,Logic gates,"Logic gates can be written to handle more than two inputs (NAND and NOR preferred over AND and OR in CMOS)
+Buffer (A): No use, deliver large amounts of current to a motor or quickly send output to many gates
+Tristate buffer (A.E): Result in high impedance when E=0
+NOT gate (-A): inverse the input
+AND gate (AB): AB, A=1, B=1 => 1
+OR gate (A+B): A+B, A=0, B=0 => 0
+XOR
+NAND
+NOR
+NXOR
+Precedence order: NOT > AND/NAND/XOR/XNOR > OR",
+,Gates fan-out,"Number of other gates a specific gate can drive, assume > 10, each of driven gates increase the capacitive load on f
+x -> Gate -> f -> Multiple gates (First gate driving n other gates)
+x -> Gate -> V_f (-> capacitor, C_n = NC), (-> Multiple gates)
+Gates with more than four inputs are rarely used due to too large internal resistance and gates too slow, long line of transistors long delay",
+,Noise,"Elements causing signal degradation (resistance, power supply noise, coupling to neighboring wires, etc.)",
+,,"Logic levels: Lowest voltage as ground/GND, highest voltage as supply voltage (from power supply) as V_DD (generally 5V, some as 3.3, 2.5, 1.8, 1.5, 1.2 V or lower)
+Noise margins: Driver not gate -> Reciever not gate (due to noise)
+Logic low output range (0-V_OL), Logic high output range (V_OH-V_DD)
+Logic low input range (0-V_IL), Logic high output range (V_IH-V_DD)
+NM_L=V_IL-V_OL
+NM_H=V_OH-V_IH
+Inverter implementing DC transfer characteristics: V(A) -> V(Y), V_OH and V_OL are marked on unity gain points slope = -1 (dV(Y)/dV(A)=-1)",
+,,"Logic levels: (V_DD, V_IL, V_IH, V_OL, V_OH)
+V_DD not always 5V (traditional value 70s, 80s), dropped to save power and burning transistors (3.3V, 2.5V, 1.8V,1.2V, 1.0V(common in CPU))
+TTL (Transistor-Transistor logic) (5 (4.75-5.25), 0.8, 2.0, 0.4, 2.4)
+CMOS (Complementary Metal-Oxide-Semiconductor Logic) (5 (4.5-6), 1.35, 3.15, 0.33, 3.84)
+LVTTL (Low voltage TTL) (3.3 (3-3.6), 0.8, 2.0, 0.4, 2.4)
+LVCMOS (Low voltage CMOS) (3.3 (3-3.6), 0.9, 1.8, 0.36, 2.7)",
+,,"Compatibility between:
+Driver X to reciever (TTL, CMOS, LVTTL, LVCMOS)
+TTL (ok, no, maybe, maybe)
+CMOS (ok, ok, maybe, maybe)
+LVTTL(ok, no, ok, ok)
+LVCMOS(ok, no, ok, ok)
+Reason for no: V_OH < V_IH",
+,Gates NAND/NOR Implementations,"NOT: NAND A = NOR A
+AND: NAND (A NAND B), (NOR A) NOR (NOR B)
+OR: NOR (A NOR B), (NAND A) NAND (NAND B)
+NAND: NOR((NOR A) NOR (NOR B)), NOR: NAND((NAND A) NAND (NAND B))
+3AND: (A AND B) AND C, 4AND: (A AND B) AND (C AND D)
+3NAND: NAND(A NAND B) NAND C, 4NAND: NAND(A NAND B) NAND NAND(C NAND D)
+3OR: (A OR B) OR C, 4OR: (A OR B) OR (C OR D)
+3NOR: NOR(A NOR B) NOR C, 4NOR: NOR(A NOR B) NOR NOR(C NOR D)
+XOR: (A NAND (A NAND B)) NAND (B NAND (A NAND B)), (A NOR (A NOR B)) NOR (B NOR (A NOR B))",
+,Multiplexer elements,"MUX: (Gates) MUX2-1: (A[1:0], S) -> (Y=A[0](-S)+A[1]S) -> Y, (A[1:0], S) -> (Y=(A[0].S, A[1].S)) -> Y
+MUX4-1: (A[3:0], S[1:0]) -> (Y=A[0](-S[1])(-S[0])+A[1](-S[1])S[0]+A[2]S[1](-S[0])+A[3]S[1]-S[0]) -> Y, (A[3:0], S[1:0]) -> (Y=MUX2-1([MUX2-1(A[0:1], S[0]), MUX2-1(A[2:3], S[0])], S[1]) -> Y, (A[1:0], S) -> (Y=(A[0].(!S[1])(!S[0]), A[1].(!S[1])S[0], A[2].S[0](!S[1]), A[3].S[0]S[1])) -> Y
+(Tristate buffers) ...
+DMUX: ...
+Encoder: ...
+Decoder/One-hot converter: DEC4-1: A[0:1] -> (Y[0]=(!A[0])(!A[1]), Y[1]=(!A[0])A[1], Y[2]=A[0](!A[1]), Y[3]=A[0]A[1]) -> Y[0:3]
+Priority circuit: A[3:0] -> (Y[3:0]=A[3]+(-A[3])A[2]+(-A[3])(-A[2])A[1]+(-A[3])(-A[2])(-A[1])A[0]) -> Y[3:0]",
+,,Tristate buffer (Bus implementation with decoder to each tristate buffer),
+,Contention,"A and B both flowing into same wire. Often causing into fobidden zone, large amounts of power flow between fighting gates -> hot and possibly damaged",
+,Build circuit,"1. Draw with actual gates, e.g. 3 x 2 input OR = 4 input OR
+2. Use pin numbers
+3. Include VCC and GND
+4. Save inverters by using one for each inverted literal
+5. Check off connections as they are made",
+,,,
+,,,
+Combinational logic circuits,Combinational logic circuits,"Memoryless, does not depend on memory
+Input -> (Functional specification (relationship) described as logic function e.g. F(A, B)=A+B, timing specification (delay)-> outputs
+- Every circuit elment itself is combinational
+- Every node is either designed as input to circuit or connects to exactly one output terminal of a circuit element 
+- Circuit contains no cyclic paths, every path visit each circuit at most once",
+,"Karnaugh maps
+Maurice Karnaugh 1924-2022 (Telecommunications engineer at Bell Labs), up to 4 variables","Rectangular blocks as few and large as possible with length power of two, can wrap around, overlap -> read the implicants
+Fill in don't cares, treat as either 0 or 1
+SOP (Sum of products): Minterms block, POS (Product of sum): Maxterm block
+3KMAP:
+  00 01 11 10 (BC)
+0
+1
+(A)
+
+4KMAP:
+  00 01 11 10 (CD)
+00
+01
+11
+10
+(AB)
+
+5KMAP:  (Symmetrical layer)
+  000 001 011 010 | 110 111 101 100 (CDE)
+00
+01
+11
+10 [!B!D!E] [!B!C!E]
+(AB)",
+,Quine McCluskey algorithm,…,
+,De Morgan implementations,"Inversion circle pushed backward (Bubble pushing)
+- Begin at the output of the circuit and work toward the inputs.
+- Push any bubbles on the final output back toward the inputs so that you can read an equation in terms of the output (for example, Y) instead of the complement of the output (-Y).
+- Working backward, draw each gate in a form so that bubbles cancel. If the current gate has an input bubble, draw the preceding gate with an output bubble. If the current gate does not have an input bubble, draw the preceding gate without an output bubble.
+Only NAND implementation: Use SOP (AB+BC+CD = -((-(AB))(-(BC))(-(CD))))
+Only NOR implementation: Use POS ((A+B)(B+C)(C+D) = -(-(A+B)+(-(B+C))+(-(C+D))))
+BEWARE: INVERT SINGLE LITERAL e.g. A to -A",(-((-((-(AB))(-(CD))))E))=(-A)(-C)+(-A)(-D)+(-B)(-C)+(-B)(-D)+(-E)
+,,"Programmable logic array (PLA)
+- Inputs are on the left (or top) side of a schematic.
+- Outputs are on the right (or bottom) side of a schematic.
+- Whenever possible, gates should flow from left to right.
+- Straight wires are better to use than wires with multiple corners (jagged wires waste mental effort following the wire rather than thinking of what the circuit does)
+- Wires always connect at a T junction.
+- A dot where wires cross indicates a connection between the wires.
+- Wires crossing without a dot make no connection",
+,Synthesization,Truth table -> MULTIPLE[(Zigzag feed) K-map -> Boolean algebra -> gates],"[xxx0 0x0x 10x1 11x1] = KMAP(xx0x 0xx0 111 101x) = AB+AC+A(-D)
+[01xx 0xxx 1001 01x1] = KMAP(01xx 0xxx 011x 1010) = (-A)D+BD+CD+A(-B)(-C)(-D)
+KMAP(1111 1101 1011 111x) = (-B)+(-D)+(-A)(-C)+AC = ((-A)+(-B)+C+(-D))(A+(-B)+(-C)+(-D))
+(A[1:0]B[1:0] -> P[3:0])[(0000) (0000) (0000) (0000) (0000) (0001) (0010) (0011) (0000) (0010) (0100) (0110) (0000) (0011) (0110) (1001)] -> P=(KMAP(0000 0000 0010 0000), KMAP(0000 0000 0001 0011), KMAP(0000 0011 0101 0110), KMAP(0000 0110 0110 0000))=(A[1]A[0]B[1]B[0], A[1](-A[0])B[1]+A[1]B[1](-B[0]), (-A[1])A[0]B[1]+A[0]B[1](-B[0])+A[1](-B[1])B[0]+A[1](-A[0])B[0])"
+,Simplification,(SOP/POS identification) -> K-map -> Boolean algebra,"(-A)(-B)(-C)+(-A)B(-C)+A(-B)(-C)+A(-B)C+ABC=(-A)(-C)+(-B)(-C)+AC
+(-(A+B+C))D+AD+B=B(-A)(-C)D+AD
+A(-B)+(-A)BC+B(-C)D+(-A)BD+A(-C)D = KMAP(0000 0111 0100 1111) = A(-B)+B(-C)D+(-A)BC"
+,,,"(-A)(-B)(-C)(-D)+(-A)(-B)(-C)D+(-A)(-B)C(-D)+(-A)(-B)CD+A(-B)(-C)(-D)+A(-B)C(-D)+ABC(-D)=(-(A XOR B)) XOR (-(C XOR D))
+ABCD+(-A)B(-C)D+(-((-B)+D))E=ABCD+(-A)B(-C)D+B(-D)E=B(-(A XOR (-C))D+(-D)E)"
+,,,"(-A)(-B)(-C)(-D)+A(-B)(-C)+A(-B)C(-D)+ABD+(-A)(-B)C(-D)+B(-C)D+(-A)=(-A)+(-B)(-C)+(-B)(-D)+BD
+ABC(-D)+A(-(BCD))+(-(A+B+C+D))=ABC(-D)+A(-B)+A(-C)+A(-D)+(-A)(-B)(-C)(-D)=A(-(BCD))+(-B)(-C)(-D)
+(-A)D+A(-C)D+A(-B)C+ABCD = KMAP(ABCD, 0110 0110 0110 0111) = D+A(-B)C
+ABC+ABD+ABE+ACD+ACE+(-(A+D+E))+(-B)(-C)D+(-B)(-C)E+(-B)(-D)(-E)+(-C)(-D)(-E) = KMAP(ABCDE, 11110001 11000001 11111111 11111111) = A+(-D)(-E)+(-B)(-C)"
+,Analysis,Gates -> MULTIPLE[Boolean algebra -> (SOP/POS identification) -> K-map (Zigzag source)] -> Truth table,
+,Multiplexer implementation,"(Lookup-table implementation, LUT)[1, 0, 0, 1, 1, 1, 0, 0] => (A, B, C) -> (Y=MUX8-1([1, 0, 0, 1, 1, 1, 0, 0], [A, B, C])) -> Y","MUX([10011111], [ACD]) = A+(-(C XOR D))
+MUX([10000001], [ABC]) = MUX([-C, 0, 0, C], [AB]) = MUX([-(B+C), BC], A)
+BC+(-A)(-B)(-C)+B(-C) = MUX([10110011], [ABC]) = MUX([1, B, B, B], [A, C]) = MUX([-(A+C), 1], B)
+KMAP(ABCD -> Y 0010 0111 1001 0111) -> MUX([(0001) (0110) (0111) (1110)] = [AB, A XOR B, A+B, -(AB)], CD)"
+,Standard reduced multiplexer (variable inputs),"Truth table (Zigzag feed) -> MULTIPLE[K-map -> Mini truth table with selection bits (AB or CD) (00, 01, 10, 11-order) (or truth table annotation but harder to read) -> Layout gates]
+[0, 1, 1, 0] => (A, B) -> (Y=MUX2-1([B, (-B)], A)) -> Y
+[1, 0, 0, 1, 1, 1, 0, 0] => (A, B, C) -> (Y=MUX4-1([(-C), C, 0, 1], [A, B]) -> Y
+Use mini-truth-table: MUX4-1([-(CD), C(-D), (-C)(-D+D), (-D)D] = [(1110), (0010), (1100), (0000)], [A, B]) -> KMAP(1101 0001 0000 1100)
+Use mini-truth-table: KMAP(0110 1110 0000 1011) -> MUX4-1([(0110), (1100), (0010), (1110)] = [A XOR B, (-A), A(-B), -(A+B)], [A, B])",
+,Non-standard reduced multiplexer,"Selection bits compound, etc.
+Reduced MUX -> Boolean algebra -> (SOP/POS identification) -> K-map -> (Zigzag source) -> Truth table
+MUX2-1([-(A+B), AB], C XOR D) = -(A+B)(-(C XOR D)) + AB(C XOR D) = (-A)(-B)((-C)(-D)+CD)+AB(C(-D)+(-C)D) = (-A)(-B)(-C)(-D)+(-A)(-B)CD+ABC(-D)+AB(-C)D -> KMAP(1010 0000 0101 0000)",
+,Decoder implementation,"A, B -> (Y[0:3]=DEC4-1([A, B]), Y=A[0]+A[3]) -> Y",
+,Diode implementation,"Poor isolation between gates -> Poor noise margins, no inverter
+OR gate: (in 1 -> + diode -), (in 2 -> diode) -> (out), (R_L -> GND)
+AND gate: VCC -> R_L (in 1 <- - diode +), (in 2 <- diode) -> Out",
+,,,
+,,"Pull up network and pull down network
+nMOS/Pull down network: pass good 0s -> source to GND
+pMOS/Pull up network: pass good 1s -> Connect source to VCC
+Connect drain to output
+Cannot let current flow from VCC -> nMOS -> pMOS -> GND, cause short circuit
+Implementation 1: Pull up: Invert the literals, pull down: Invert the function
+Implementation 2: Pull down: Make function with inverted result, Pull up: Replace AND to OR and OR to AND while preserving the original precedence order","Function -> CMOS(Pull up, pull down)
+Y=-A+(-B)C -> CMOS(A+B(-C), A(B+(-C))
+Y=(A+C)(-B) -> CMOS(((-A)+(-C))B, B+(-A)(-C))
+Y=-(AB+C) -> NMOS(AB+C), CMOS((A+B)C, AB+C)
+Y=AB+C=-(-(AB+C)) -> (D=NMOS(AB+C), NMOS(D)), (D=CMOS((A+B)C, AB+C), CMOS(D, D))
+XOR: CMOS(A(-B)+(-A)B, AB+(-A)(-B)), NMOS(NMOS(A+B)+AB), (C=CMOS(AB, A+B), CMOS((A+B)C, AB+C))
+Tristate buffer: CMOS(A*EN, EN*A)"
+,TTL implementation,Composed of both nMOS + pMOS -> cMOS (Complementary),
+,RTL (Resistor-transistor logic),,
+,Timing,"Propagation delay (t_pd): Sum of propagation delay of each gate in critical path (longest path)
+Contamination delay (t_cd): Sum of contamination delay of each gate in shortest path","((A NAND B) NAND (C NAND D)) NAND E -> t_pd = 3*t_pd_NAND = 3*20 = 60ps, t_cd = t_cd_NAND = 15ps
+NAND(((A NAND B NAND C) NAND D) NOR (E NAND (F AND G))) (t_pd_NAND = 20, t_cd_NAND = 15, t_pd_3NAND = 30, t_cd_3NAND = 25, t_pd_OR = 30, t_cd_OR = 25, t_pd_AND = 30, t_cd_AND = 25) -> 30+30+30+20 = 110ps, t_cd = 15+25+15 = 55ps"
+,Timing diagram,"Timing diagram, if compund combinational circuits use helper signals
+
+Transient response for circuit delay, rising edge (LOW -> HIGH), falling edge (HIGH -> LOW)
+Propagation delay (of critical path) and contamination delay (of shortest path)
+Glitches
+A=X+YZ
+X ...
+Y ...
+Z ...
+YZ ...
+A=X+YZ …",
+,,,
+Sequential logic circuits,Sequential logic circuits,"With memory, output depend on previous state (explicitly remember certain previous inputs or walking through states -> set of bits called state variables)
+Basically all circuits that are not combinational
+State: Information about a circuit necessary to explain future behavior",
+,Asyncronous sequential circuits ,"(Contains cyclic paths, output directly fed back to inputs) -> Always settle to correct value within a propagation delay in combinational circuit, Undesirable races/unstable behaviour in sequential circuits",
+,"Astable circuits (Ring oscillator)
+Circuits that oscillates in time","X -> (Y=(-X), Z=(-Y), X=(-Z)) -> X => X=0[0, 3, 6, 9], Y=1[1, 4, 7], Z=0[2, 5, 8]",
+,Circuit race conditions,"D, CLK -> (N_1=CLK*D, N_2=(-CLK)*Q_prev, Q=N_1+N_2) -> Q",
+,Latches and flip-flops,"State elements that store one state bit
+Clock (CLK): (described by Professor Jan Rabaey) trigger start of computation by combinational logic, set limit on combinational logic completion time",
+,Bistable circuit,"Store 1 bit of state, but no input to control the state (Using serial NOT gates)",
+,"Latches (bistable element with 2 stable states, cyclic)
+Q=0 -> Q_inv=1 -> Stable values
+Q=1 -> Q_inv=0 -> Stable values","_ -> (Q=(!Q_inv), Q_inv=(!Q)) -> Q, Q_inv (cross-coupled)",
+,"SR Latch
+R as reset, S as set
+NOR -> Inverter using active high, NAND -> Inverter using active low","SR-L (NOR): R, S -> (Q=R(!+)Q_inv, Q_inv=Q(!+)S)) -> Q, Q_inv => (R, S -> Q, Q_inv) -> (0, 0, Q_prev, -Q_prev) (1, 0, 0, 1), (0, 1, 1, 0), (1, 1, 0, 0)
+SR-L (NAND): -R, -S -> …
+Improper operation S=R=1 -> Q=Q_inv, releasing S=R=0 cause oscillation to 0 and 1 sometimes (undesired behavior)",
+,D Latch,"D-L: D, E -> ((Q, Q_prev) = SR-L((-D)*E, D*E)) -> Q, Q_prev => ((E, D) -> (-D, S, R) -> (Q, -Q)), (0, X, -X, 0, 0, Q_prev, -Q_prev), (1, 0, 1, 0, 1, 0, 1), (1, 1, 0, 1, 0, 1, 0)",
+,CT-circuit,"CT-circuit with gated latch -> flip-flop (SR-latch -> (SR-flip-flop, JK-flip-flop), D-latch -> D-flip-flop), using timing propagation
+CTC",
+,"D Flip-Flop
+(Master-slave/leader-follower flip-flop, (positive) edge-triggered flip-flop)","D-FF: D, CLK -> ((Q_1, _) = D-L(D, -CLK), (Q, Q_inv) = D-L(Q_1, CLK)) -> Q, Q_inv
+...
+One latch transparent and one opaque (Implement set and reset on all latches)
+Excitation table: (Q_n, Q_(n+1), D), (0, 0, 0), (1, 0, 0), (0, 1, 1), (1, 1, 1)",
+,Register,"REG4: D[0:3], CLK -> (Q[0:3] = [D-FF(D[0], CLK), D-FF(D[1], CLK), D-FF(D[2], CLK), D-FF(D[3], CLK)]) -> Q[0:3]",
+,Enabled flip flop,"E-FF: D, E, CLK -> (D_1 = MUX2-1([Q, D], E), (Q, _) = D-FF(D_1, CLK)) -> Q
+D, E, CLK -> ((Q, _) = D-FF(CLK*E, D)) -> Q",
+,Resettable flip flop (Syncronized),"R-FF: D, R, CLK -> ((Q, Q_inv)=D-FF(D*R, CLK)) -> Q",
+,"Asyncronous set/reset (independent of clock, set/unset behave as ordinary flip flop)",,
+,T-flip-flop,"T=0 -> Previous Q, T=1 -> Toggle Q
+T-FF: T, CLK -> (D = T xor Q), (Q, Q_inv) = D-FF(D, CLK) -> Q, Q_inv",
+,JK-flip-flop,"J as set, K as reset, J=K=1 -> Toggle Q
+JK-FF: J, K, CLK -> (D = (J * Q_inv) + (-K * Q)), (Q, Q_inv), (Q, Q_inv) = D-FF(D, CLK) -> Q, Q_inv
+JK-FF; J, K, CLK -> (C=CTC(CLK), (Q, Q_inv) = SR-L(Q*K*C, Q_inv*J*C)) -> Q, Q_inv
+Excitation table: (Q_n, Q_(n+1), J, K), (0, 0, 0, X), (1, 0, X, 1), (0, 1, 1, X), (1, 1, X, 0)",
+,Arbitrary flip-flop type switching,"D -> T flip-flop: T = (QD -> T 0110)=Q XOR D, JK -> T flip-flop: T = (QJK -> T 00110101) = MUX([J, K], Q)
+D -> JK flip-flop: D=(QJK -> D 00111010)=MUX([J, -K], Q), JK-flip-flop -> D: (QD -> JK (01) (10) (01) (10)) = (J=D, K=-D), JK-flip-flop -> T: (QT -> JK 00 11 00 11) = (J=T, K=T)",
+,Muller C element,"CMOS(A*B, A*B) -> NOT <-> NOT -> NOT (C)",
+,Timings …,,
+,Synchronous sequential circuits,"Breaking cyclic paths by inserting register in path -> Collection of conbinational logic and registers (containing system state, change only at clock edge)
+Inputs to all registers settle before the next clock edge to eliminate all data races, state changes at clock edge/synchronized to clock
+- Every circuit element is either a register or a combinational circuit
+- At least one circuit element is a register (D-flip-flop, NOT LATCHES!!!)
+- All registers receive the same clock signal
+- Every cyclic path contains at least one register.
+-> commonly using FSM and pipelines",
+,Importance of clean clock signal,"Normal switches causes mutliple rising edges due to oscillating voltage signal at a threshold (without hysteresis)
+With hysteresis (Schmitt triggers) of a switch creates cleaner clock signal",
+,Finite state machines,"A circuit with k register in finite number (2^k) of unique states, M inputs, N outputs and k bits for state.
+On each clock edge FSM advances to next state based on current state + current inputs
+Make sure to lead unused states to used states otherwise dangerous transition (machine hangs) (If machine falls in the state, move to another state as soon as possible)",
+,"Moore machines
+Edward F. Moore (1925 - 2003)","Output depend only on current state
+M[:] -> (k[:] = <next state logic>(M[:], k_1[:]), k_1[:] = REG-N(k[:]), N[:]=<output logic>(k_1[:]) -> N[:]
+Input sequence: [In 1, In 2, In 3, …] -> [-, Out 1, Out 2, …], Output visible after the state has changed",
+,Synthesization,"FSM -> State table -> Multiple combinational Synthesization (Truth table/Kmap -> boolean algebra -> gates)
+FSM(S[1:0] -> (AB Q) (00 00 01 01 0) (00 10 00 10 0) (00 00 00 00 1) (xx xx xx xx x)) = (S[1]+ = (-S[1])S[0]B, S[0]+ = (-S[1](-S[0])A, Q=S[1])
+
+(S0=000, S1=001, S2=010, S3=100, S4=101, S5=110, green=00, yellow=01, red=10) FSM(S[2:0](S0-5) -> (T[A]T[B] L[A]L[B]) (S1 S1 S0 S0/green red) (S2 S2 S2 S2/yellow red) (S3 S3 S3 S3/red red) (S4 S3 S4 S3/red green) (S5 S5 S5 S5/red yellow) (S0 S0 S0 S0/red red)) = (S[2]+ = S[2] XOR S[1], S[1]+ = (-S[1])S[0], S[0]+ = (S[2](-T[B])+(-S[2])(-T[A]))(-S[1])(-S[0]), Y[A1]=S[2]+S[1], Y[A0]=(-S[2])S[0], Y[B1]=(-S[2])+S[2]S[1], Y[B0]=S[2]S[0])
+
+FSM((001) (010) (011) (100) (101) (110) (111) (000)) = (Q[2]+ = Q[2] XOR (Q[1]Q[0]), Q[1]+ = Q[1] XOR Q[0], Q[0]+ = -Q[0])
+FSM(S[2:1] -> (S[0]U -), (100 001 000 011) (011 110 001 010) (101 000 111 100) (010111 110 101)) = (S[2]+ = S[2]S[0]+S[1](-S[0)U+(-S[1])(-S[0])(-U), S[1]+ = S[1](-S[0])+(-S[2])S[0]U+S[2]S[0](-U), S[0] = S[2] XOR S[1] XOR U)
+FSM(Q[3:0] -> (Q[3:0] Y), (xxxx 0) (xxxx 0) (xxxx 0) (xxxx 0) (xxxx 0) (0110 1) (0111 1) (1000 1) (1001 1) (1010 1) (1011 1) (1100 1) (0101 1) (xxxx 0) (xxxx 0) (xxxx 0)) -> Q[3:0]Y(KMAP(xxxx x010 0xxx 1111), KMAP(xxxx x101 1xxx 0010), KMAP(xxxx x101 0xxx 0101), KMAP(xxxx x001 1xxx 1001), KMAP(0000 0111 1000 1111)) = (Q[2]+Q[1]Q[0], Q[2](-Q[1])+Q[2]Q[0], (-Q[1])Q[0]+Q[1](-Q[0]), -Q[0], Q[3](-Q[2])+Q[3](-Q[1])(-Q[0])+(-Q[3])Q[2]Q[0]+(-Q[3])Q[2]Q[1])",
+,Analysis,"Multiple combinational analysis (Gates -> Boolean algebra -> Kmap/truth table) -> State table -> FSM
+(Q[2]+ = Q[1], Q[1]+ = Q[0], Q[0]+ = -Q[2]) = FSM((001) (011) (101) (111) (000) (010) (100) (110))
+(Q[1]+ = MUX([-Q[1], Q[1], -(Q[1] XOR Q[0]), Q[1] XOR Q[0]], AB), Q[0]+ = MUX([Q[1]+Q[0], Q[1](-Q[0]), (-Q[1])+Q[0], -(Q[1]+Q[0])], AB)) = (KMAP(1001 1010 0101 0110), KMAP(0011, 1001, 1001, 1100)) = FSM(Q[1:0] -> (AB) (10 00 11 01) (11 00 01 10) (01 11 00 10) (01 10 11 00))
+(S[2]+ = A(S[1]+S[2], S[1]+ = S[0]A, S[0]+ = -A) = (KMAP(0000 0110 0110 0110), KMAP(0010 0010 0010 0010), KMAP(1001 1001 1001 1001)) = FSM(S[2:1] -> (S[0]A) (001 000 001 010) (001 100 001 110) (001 110 001 110) (001 100 001 110)) = (Remove isolated states) = FSM(Onehot(S[2:0]) -> (A Onehot(S[2:0])) (001 010) (001 100) (001 100))",
+,"Mealy machines
+George H. Mealy (1927 - 2010)","Output depend on both current state and current inputs, often need fewer states but not synchronized with clock -> output register often added
+M[:] -> (k[:] = <next state logic>(M[:], k_1[:]), k_1[:] = REG-N(k[:]), N[:]=<output logic>(M[:], k_1[:]) -> N[:]",
+,Synthesization,"FSM -> State table -> Multiple combinational Synthesization (Truth table -> Kmap -> boolean algebra -> gates)
+FSM(S[1:0] -> (AB/Q) (00/0 00/0 01/0 01/0) (00/0 10/0 00/0 10/0) (00/0 00/0 00/0 10/1)) = (S[1]+ = S[0]B+S[1]AB, S[0]+ = (-S[1])(-S[0])A, Q=S[1]AB)",
+,Analysis,"Multiple combinational analysis (Gates -> Boolean algebra -> Kmap/truth table) -> State table -> FSM
+(MUX([Q[1], Q[1] XOR Q[0], -(Q[1] XOR Q[0]), -Q[1]], [A, B]), MUX([Q[0], -Q[0], -Q[0], -Q[0]), [A, B]) = (KMAP(0011 0110 1001 1100), KMAP(0111 1000 1000 0111))
+-> FSM(Q[1:0] -> (AB Y), ((00 01 11 11 0) (01 10 00 10 1) (10 11 01 01 1) (11 00 10 00 0)))",
+,Pattern identifier,"1101, 1110 -> 1, FSM(S[2:1] -> (S[0]A/Q) (000/0 001/0 000/0 010/0) (100/0 011/0 100/1 011/0) (000/0 001/1 xxx/x xxx/x) (xxx/x xxx/x xxx/x xxx/x)) = (S[2]+ = S[1](-A), S[1]+ = A(S[0]+S[1]), S[0]+ = A((-S[0])+S[1]), Q=S[2]A+S[1]S[0](-A))
+At least 3 ones ->  FSM(S[1:0] -> (A X) (00 01 0) (01 10 0) (10 11 0) (11 11 1))
+At least 2 ones consecutive -> FSM(S[1:0] -> (A Y) (00 01 0) (00 10 0) (00 10 1) (xx xx x))",
+,Binary encoding,"00, 01, 10, 11",
+,Gray encoding,"00, 01, 11, 10",
+,Hot-one encoding,"As 001, 010, 100 with a separate bit of one -> More flip-flops than compact binary but fewer gates in next state logic and output logic
+Onehot(S0 S5 S10 S15 S20 S25 S30 S35 S40 S45) Onehot(-: 000, N (Nickel): 100, D (Dime): 010, Q (Quater): 001) Onehot(-: 000, N(Nickel): 001, D (Dime): 010, T (Two dimes): 100) FSM((S0-45 -> -NDQ/NDT) (S0/- S25/- S10/- S5/-) (S5/- S30/- S15/- S10/-) (S10/- S35/- S20/- S15/-) (S15/- S40/- S25/- S20/-) (S20/- S45/- S30/- S25/-) (S0/- S0/- S0/- S0/-) (S0/N S0/N S0/N S0/N) (S0/D S0/D S0/D S0/D) (S0/T S0/T S0/T S0/T))",
+,FSM factorization,,
+,Sequential timing,"Aperture time around clock edge -> Discrete units of clock cycles, clock period must be long enough for all signals to settle
+inputs: t_setup (stabilized during setup time), t_hold (stabilized for at least some hold time), both makes up aperture time of circuit
+outputs: t_ccq: clock to Q contamination delay, t_pcq: clock to Q propagation delay
+(T_c: Clock period or cycle time, f_c=1/T_c: Clock frequency)
+The dynamic discipline states that the inputs of a synchronous sequential circuit must be stable during the setup and hold aperture time around the clock edge. By imposing this requirement, we guarantee that the flip flops sample signals while they are not changing. 
+T_skew as clock skew time, treated as a burden (Usually a clock tree from central clock, branch to each hierarchy due to time latency)",
+,Setup time constraint,t_pcq + t_pd + t_setup + t_skew <= T_c (t_pcq+t_setup: sequencing overhead),"40 210 50 T_c, 70 (100+100+100) 60 T_c -> f"
+,Hold Time constraint,t_ccq + t_cd >= t_hold + t_skew,20 40 25 0 -> equation
+,Metastability,"During aperture time, resolution titme to reach stable state is unbounded
+Outside aperture time: t_res = t_pcq, Inside aperture time t_res can be longer and happens random
+Propability resolution time t_res exceeds some arbitrary time t: P(t_res > t)=T_0/T_c*e^(-t/\t), T_0/T_c: Probability input changes at a bad time (during aperture time), \t a time constant how fast flipflop moves away from metastable state (delay through cross-coupled gates in flip flop)",
+,Synchronizer,"Making asyncronous input small metastable propability
+SYN (general): D, CLK -> (…) -> Q (D stable during aperture -> Q same values as D, D unstable during aperture -> Q must either 1 or 0 not metastable.
+SYN (simple): D, CLK -> (D_2=D-FF(D, CLK), Q=D-FF(D_2, CLK)) -> Q => P(failure)=T_0/T_c*e^(-(T_c-t_setup)/\t), P(failure)/s = N*T_0/T_c*e^(-(T_c-t_setup)/\t), MTBF = T_c/(N*T_0)e^((T_c-t_setup)/\t)",
+,,,
+Building blocks,Combinational building blocks,,
+,Binary number system,"(Most significant bit/byte -> Least significant bit/byte) (1/2 byte as nibble, 32-bit word: 4 bytes, 64-bit word: 8 bytes)","Binary number capacity: 1 -> 2, 2 -> 4, 3 -> 8, 4 -> 16, 5 -> 32, 6 -> 64, 7 -> 128, 8 -> 256, …
+(Total size to fit) 48 -> 32 (5bits)"
+,Unsigned numbers,"Unsigned numbers (Always positive) [0, 2^N-1]","Min/Max number of unsigned/2s complement number
+11110000_2 = 128+64+32+16 = 240, 3047_8=3*8^3+4*8^1+7=1575, 403FB001_16 = 4*16^7+3*16^5+15*16^4+11*16^3+1=1077915649, 845=34D_16, 88=130_8, 711=1307_8, 011|1010|1010|0100_2 = 3AA4_16, 01|101|010 = 152_8, 2560_8 = 101|0111|0000_2 = 570_16
+1001100_2 - 25_8 + 10_10 - 23_16 -> Decimal number"
+,Signed sign/magnitude numbers,"(NOT USED) Range [-2^(N-1)+1, 2^(N-1)-1]: most significant bit as sign, remaining as magnitude), hard to add/subtract numbers, both +0 and -0 exist",
+,Two's complement numbers,"Range [-2^(N-1), 2^(N-1)-1]: (most significant bit 0 as positive, 1 as negative, magnitude will be inverted if negative), sign extension as copying the most significant bit to upper bits, negation by inverting and add 1, overflow when same operand sign but opposite result sign
+Subtraction as addition one operand and another negated operand","10110101_2 = -128+32+16+4+1 = -75, -63 = 11000001_2, 0101_2 = 00000101_2, 1001 = 11111001_2"
+,BCD/Binary coded decimals,In connection to seven segment display,"289 = 0011|1000|1001_BCD, 1001|0101|0001_BCD = 951, 1001|0101_BCD = 95 = 1011111_2"
+,Excess-3 code,Weighted BCD code by 3,
+,Fixed point numbers,Similar as signed/unsigned numbers with factor offset,
+,Floating point numbers,"Floating point numbers (1.<fraction>*10^<exponent>):
+  - 16-bit half-precision (rarely used)
+  - 32-bit single-precision (1 sign bit + 8 exponent (127-biased) + 23 fraction)
+  - 64-bit double-precision (1 sign bit + 11 exponent (biased) + 52 fraction)
+  (Denormalized floating numbers: exponent = 00000000 -> 0.<fraction>*10^(10000010) (exponent as -126, 2s complement), sign = 0 exponent = 11111111 fraction = 0 -> Infinity, sign = 1 exponent = 11111111 fraction = 0 -> -Infinity, exponent = 1111111 fraction != 0 -> NaN)
+Default as rounding towards nearest -> The one with 0 in least significant position, can round up, round down, round towards zero",
+,Arithmetic circuits,"Adder, subtractor, compararators, multiplication, division",
+,Half adder,"HA: A, B -> (S = A^B, C = AB) -> S, C",
+,Full adder based on half adder,"FA: A, B, C_in -> ((S1,C1)=HA(A,B), (S,C2)=HA(S1,C_in), C_out=C1+C2) -> S, C_out",
+,Full adder,"FA: (A, B, C_in) -> (S1=A^B, S=S1^C_in, C_out=S1*C_in+A*B) -> (S, C_out)",
+,Adders,"ADD: A[:], B[:], c_in -> (RCA/CLA(A[:], B[:], c_in)) -> S[:]
+RCA (ripple carry adder): A[:], B[:], c_in -> ({k=0, n, (S[k], c[k])=FA(A[k], B[k], (c[k-1], c_in)) -> S[31:0] (Ripple through carry chain, slow) t_RCA = N*t_FA (N=32)
+CLA (carry lookahead adder): 
+1. Bit-level G_i and P_i: G_i","Unsigned/Signed number addition/subtraction: (Hex, Oct, Bin -> Direct addition, may carry over/borrow from extra 1)  0x17 + 0x29 = 0x40, 0x39-0x79=0x139-0x79=0xC0, 011111_2+110010_2=1|010001_2=010001_2, 100100_2-000011=100001_2"
+,Subtractor,"(INV: A[:] -> ({k=0, n, I[k]=(-A[k])}) -> I[:])
+SUB: A[:], B[:] -> (D[:]=ADD(A[:], INV(B[:]), 1)) -> D[:]",
+,Comparator,"EQC (Equality comparator): A[:], B[:] -> (R=*{k=0, n, A[k](-^)B[k]}) -> R (implemented using subtractor -> flags Z (zero), N (negative) and V (overflow))
+MGC (Magnitude comparator): A[:], B[:] -> (…) -> eq, neq, gt, lte, lt, gte",
+,Multiplication,"MUL: [TOP: A[3:0]], [LEFT: B[3:0]] -> (TBL[(-), (-), (R[2], R[3])=ADD(0, A[3]*B[1], C[2]), (R[1], C[2])=ADD(A[3]*B[0], A[2]*B[1], C[1]), (R[0], C[1])=ADD(A[2]*B[0], A[1]*B[1], C[0]), (P[1], C[0])=ADD(A[1]*B[0], A[0]*B[1], 0), P[0]=A[0]*B[0]], [(-), (S[2], S[3])=ADD(A[3]*B[2], R[3], C[2]), (S[1], C[2])=ADD(A[2]*B[2], R[2], C[1]), (S[0], C[1])=ADD(A[1]*B[2], R[1], C[0]), (P[2], C[0])=ADD(A[0]*B[2], R[0], 0), (-), (-)], [(P[6], P[7])=ADD(A[3]*B[3], S[3], C[2]), (P[5], C[2])=ADD(A[2]*B[3], S[2], C[1]), (P[4], C[1])=ADD(A[1]*B[3], S[1], C[0]), (P[3], C[0])=ADD(A[0]*B[3], S[0], 0), (-), (-), (-)]) -> P[7:0]","        01110111
+        01110100
+        --------
+      01110111  
+    01110111    
+    ------------
+    100101001100
+   01110111     
+   -------------
+   1100000101100
+  01110111      
+  --------------
+  11010111101100"
+,Division,,"         1001
+     --------
+1101/01111111
+      1101   
+      -------
+        10111
+         1101
+        -----
+         1010"
+,Arithmetic/Logic unit (ALU),"ALU: [TOP: A[:], B[:], C[:]] (C[:]: Control, 00: ADD (Addition), 01: SUB (Subtraction), 10: AND (Bitwise AND), 11: OR (Bitwise OR)) -> (TBL[(V=XNOR(A[len(A)-1], B[len(B)-1], C[0])*XOR(A[3], S[3])*(-C[1]), C=(-C[1])*C_out), (T[:]=MUX([B, -B], C[0]), (S[:], C_out)=ADD(A, B, C[0]), R=MUX([T, T, A*B, A+B], C), Z=AND(-R), N=R[len(R)-1])]) -> R[:] (Result), ALU_FLAGS(N (Negative), Z (Zero), C(Carry), V(Overflow))",
+,Float addition,"(10000001, 1.111 1100 0000 0000 0000 0000) + (01111100, 1.100 0000 0000 0000 0000 0000) -> Shift amount: 10000001 - 01111100
+(10000001, 1.111 1100 0000 0000 0000 0000) + (10000001, 0.000 0110 0000 0000 0000 0000) (Shifting the one with lower biased exponent)
+(10000001, 10.000 0010 0000 0000 0000 0000) (Keep the exponent, add the shifted fractions)
+(10000001+1, 1.000 0001 0000 0000 0000 0000) (Eventually shift fraction right and add 1 to biased exponent if fraction bigger than 10_2)
+Eventual rounding, not in this example",
+,Floating point unit (FPU),…,
+,Encoders,,
+,Priority encoder (First MSB),"[(1xxxxxxxx -> 1110) (01xxxxxx -> 1100) (001xxxxx -> 1010) (0001xxxx -> 1000) (00001xxx -> 0110) (000001xx -> 0100) (0000001x -> 0010) (00000001 -> 0001)] -> (A[7]+A[6]+A[5]+A[4], A[7]+A[6]+(-A[5])(-A[4])(A[3]+A[2]), A[7]+(-A[6])A[5]+(-A[6])(-A[4])A[3]+(-A[6])(-A[4])(-A[2])A[1], (-A[7])(-A[6])(-A[5])(-A[4])(-A[3])(-A[2])(-A[1])(-A[0]))",
+,Second MSB,"[A[7:0] -> Z[2:0] (00000000 -> 000) (00000001 -> 000) (00000010 -> 000) (00000011 -> 000) (00000100 -> 000) (00000101 -> 000) (0000011x -> 001) (00001001 -> 000) (0000101x -> 001) (000011xx -> 010) (00010001 -> 000) (0001001x -> 001) (000101xx -> 010) (00011xxx -> 011) (00100001 -> 000) (0010001x -> 001) (001001xx -> 010) (00101xxx -> 011) (0011xxxx -> 100) (01000001 -> 000) (0100001x -> 001) (010001xx -> 010) (01001xxx -> 011) (0101xxxx -> 100) (011xxxxx -> 101) (10000001 -> 000) (1000001x -> 001) (100001xx -> 010) (10001xxx -> 011) (1001xxxx -> 100) (101xxxxx -> 101) (11xxxxxx -> 110)] = (A[1](A[2]+A[3]+A[4]+A[5]+A[6]+A[7])+A[3](A[4]+A[5]+A[6]+A[7])+A[5](A[6]+A[7]), A[2](A[3]+A[4]+A[5]+A[6]+A[7])+A[3](A[4]+A[5]+A[6]+A[7])+A[6]A[7], A[4](A[5]+A[6]+A[7])+A[5](A[6]+A[7])+A[6]A[7])",
+,Binary to thermometer code,"[A[2:0] -> Y[6:0] (0000000) (0000001) (0000011) (0000111) (0001111) (0011111) (0111111) (1111111)] = (A[2]A[1]A[0], A[2]A[1], A[2](A[1]+A[0]), A[2], A[2]+A[1]A[0], A[2]+A[1], A[2]+A[1]+A[0])",
+,Binary to Gray code,"(B[3:0] -> G[3:0] (0000) (0001) (0011) (0010) (0110) (0111) (0101) (0100) (1100) (1101) (1111) (1110) (1010) (1011) (1001) (1000)) = (B[3], B[3] XOR B[2], B[2] XOR B[1], B[1] XOR B[0])",
+,Gray code to binary,"(G[3], G[3] XOR G[2], G[3] XOR G[2] XOR G[1], G[3] XOR G[2] XOR G[1] XOR G[0])",
+,Display circuits,,
+,"Seven segment display
+(BCD -> Seven segment)","[(abcd -> ABCDEFG)(1111110) (0110000) (1101101) (1111001) (0110011) (1011011) (1011111) (1110000) (1111111) (1111011) (xxxxxxx) (xxxxxxx) (xxxxxxx) (xxxxxxx) (xxxxxxx) (xxxxxxx)] = (ABCDEFG, KMAP(1001 0001 xxxx 11xx), KMAP(1111 1010 xxxx 11xx), KMAP(1110 1111 xxxx 11xx), KMAP(1011 0101 xxxx 11xx), KMAP(1001 0001 xxxx 10xx), KMAP(1000 1101 xxxx 11xx), (0011 1101 xxxx 11xx)) = (A+C+BD+(-B)(-D), (-B)+(-C)(-D)+CD, B+(-C)+D, A+C(-D)+(-B)(-D)+(-B)C+B(-C)D, C(-D)+(-B)(-D), A+(-C)(-D)+B(-C)+B(-D), A+B(-C)+C(-D)+(-B)C)",
+,Double dabble,"[(abcd -> ABCD) (0000) (0001) (0010) (0011) (0100) (1000) (1001) (1010) (1011) (1100) (xxxx) (xxxx) (xxxx) (xxxx) (xxxx) (xxxx)] = (ABCD, KMAP(0000 0111 xxxx 11xx), KMAP(0000 1000 xxxx 01xx), KMAP(0011 0010 xxxx 10xx), KMAP(0110 0001 xxxx 10xx)) = (A+BD+BC, B(-C)(-D)+AD, CD+A(-C)(-D)+(-A)(-B)C, (-A)(-B)D+A(-C)(-D)+BC(-D))",
+,Sequential building blocks,,
+,Shifters,,((((11000011 LSL 1) ASL 1) ASR 1) LSR 1) = 00000011
+,Logical shifter (Barrel shifter),"shifts the number to the left (LSL) or right (LSR) and fills empty spots with 0’s
+LSL (Logical shift left): A[3:0], S[1:0] -> (Y[3:0] = [MUX4-1([A[3], A[2], A[1], A[0]], S[1:0]), MUX4-1([A[2], A[1], A[0], 0], S[1:0]), MUX4-1([A[1], A[0], 0, 0], S[1:0]), MUX4-1([A[0], 0, 0, 0], S[1:0])]) -> Y[3:0]
+LSR (Logical shift right): A[3:0], S[1:0] -> (Y[3:0] = [MUX4-1([A[3], 0, 0, 0], S[1:0]), MUX4-1([A[2], A[3], 0, 0], S[1:0]), MUX4-1([A[1], A[2], A[3], 0], S[1:0]), MUX4-1([A[0], A[1], A[2], A[3]], S[1:0])]) -> Y[3:0]",
+,Arithmetic shifter (Barrel shifter),"same as a logical shifter, but on right shifts fills the most significant bits with a copy of the old most significant bit (msb)
+ASL (Arithmetic shift left, same as logic shift left): A[3:0], S[1:0] -> (Y[3:0] = LSL(A[3:0], S[1:0])) -> Y[3:0]
+ASR (Arithmetic shift right): A[3:0], S[1:0] -> (Y[3:0] = [MUX4-1([A[3], A[3], A[3], A[3]], S[1:0]), MUX4-1([A[2], A[3], A[3], A[3]], S[1:0]), MUX4-1([A[1], A[2], A[3], A[3]], S[1:0]), MUX4-1([A[0], A[1], A[2], A[3]], S[1:0])]) -> Y[3:0]",
+,Rotator (Barrel shifter),"rotates number in a circle such that empty spots are filled with bits shifted off the other end
+ROL (Rotate left): A[3:0], S[1:0] -> (Y[3:0] = [MUX4-1([A[3], A[2], A[1], A[0]], S[1:0]), MUX4-1([A[2], A[1], A[0], A[3]], S[1:0]), MUX4-1([A[1], A[0], A[3], A[2]], S[1:0]), MUX4-1([A[0], A[3], A[2], A[1]], S[1:0])]) -> Y[3:0]
+ROR (Rotate right)",
+,Counters,"Ripple counter: CLK -> (Q[0] = D_FF(-Q[0], CLK), Q[1] = D_FF(-Q[1], Q[0]), Q[2] = D_FF(-Q[2], Q[1]), Q_3 = D_FF(-Q[3], Q[2])) -> Q[3:0]
+N[:] -> (Q[:]=D-FF(ADD(Q[:], [0…01]), CLK)) -> Q[:] (D-FF or 4-bit counter 74HC161)",
+,,"Counter(<start>, <count/(-load)>)
+Counter(<start>, L[:]) -> Q[:], L[:]=\P{k=0, n, {<end>[k]==1, Q[k], 1}}","<start>=0011, <end>=1001; <start>=0101, I=Q[3]Q[2]
+"
+,"Shift registers
+Paraell to serial converter","SHR: S_in, CLK -> (Q[0]=D-FF(S_in, CLK), {Q[k]=D-FF(Q[k-1], CLK)}) -> Q[:], S_out (Serial to paraell)
+SHR: S_in, D[:], CLK, LOAD -> (Q[0]=D-FF(MUX([S_in, D[0]]), CLK), {Q[k]=D-FF([Q[k-1], D[k]], CLK)}) -> Q[:], S_out (Paraell to serial)",
+,"Scan chains
+Test sequential circuits",(N-bit scannable register),
+,ASCII/Unicode encodings,,
+,,,
+Memory arrays,Memory arrays,"Adress[N:] -> (<Array>) -> Data[M:] (N-bit adress to M-bit data) (M-bit data width as a word, N-bit row depth)
+Wordline: Enabling a word, single row in memory array read/written, correspond to unique adress, only one wordline HIGH at once)
+Adress decoder turns on appropriate word line -> aselects the word to be read/written
+Bit cells: Intersection matrix of wordline and bitline, wordline 1 -> take input from or give output to certain bitline, read (initially left floating as Z)
+Adress to wordline using decoder, to further branch into a matrix
+Each port give read/write access (only read access, only write access, both read and write access)
+Adress[N:], D[:] -> (E[N:] = DEC(Adress[N:]), R[N:], {k=0, n, R[k] = Registor(D[:], E[k])}, RES[:] = MUX(R[k], Adress[N:])) -> RES[:]",
+,Common layout,"CELL_LAY: I(Input/Output), WE(Write enable), RE(Read enable) -> (R=ST(I, EN), TRANS(R, RE, I)) -> I
+MEM_LAY: I[:], WE, RE -> ({k=0, LEN(I), I[k] = CELL_LAY(I[k], WE, RE)}) -> I[:]",
+,Random access memories,"(RAM, random accessing than fixed sequential access e.g. tape)",
+,Volatile RAM,"volatile, lose data when power turned off, no physical stress",
+,Static RAM (SRAM),"Cell: (WL: Word line, BL: Bit line), (WL, BL, BL_INV) -> (TRANS(A, WL, BL_INV), B=-A, A=-B, TRANS(BL, WL, B)) -> (BL, BL_INV)
+Stand-by: WL=0, BL, BL_INV -> (B=-A, A=-B) -> BL, BL_INV
+Read: WL=1, BL=1, BL_INV=1 -> (A -TRANS-> BL_INV, B=-A, BL -TRANS-> B) -> BL=0, BL_INV=1
+Write: WL=1, BL=1, BL_INV=0 -> (BL -TRANS-> B, A=-B, A -TRANS-> BL_INV) -> BL=1, BL_INV=0",
+,Register file,"Registers using small multiported SRAM array to store temporary variables e.g. A1[4:], A2[4:], A3[4:], CLK, WE3, WD3[32:] -> (…) -> RD1[32:], RD2[32:]",
+,,,
+,"Dynamic RAM (DRAM)
+Each read destroy the bit, need to be rewritten","Cell: (WL: Word line, BL: Bit line), WL, BL -> (TRANS(BL, WL, C), CAP(C, 0))",
+,,"Robert Dennard (1932-)
+Invented DRAM in 1966 at IBM, others skeptical that idea would work, mid-1970's DRAM in virtually all computers
+DRAM readout is destructive, bitline as 0/1 to write to capacitor, capacitor to bitline readout (discharge the capacitor)
+V_s = (V_node - V_dd/2)*(C_cell)/(C_cell + C_bitline), typically C_Cell = 30 fF at 1 V operation Q=CU -> 200000 electrons per bit
+C_cell = \e_0*\e_r*A/l (l: thickness)
+Stacked DRAM cell
+
+Read: Charging each bitline to half of V_dd, using sense amplifiers to denote increase/decrease voltages and backwriting -> Multiplexor using bitline adress -> 0/1
+Pre-charge the bitlines
+Activate a wordline, allowing capacitors to charge or discharge, which modifies the voltage of the bitlines
+Sensor amplifiers detect these voltage changes and record the values in their latches
+[The multiplexer routes the adressed value to the output data line]
+Adjust the bitlines to reflect the voltage that corresponds to the value in the latches
+Allow the capacitors time to stabilize at their new charge or discharge state to ensure the value are memorized
+
+Write: Charging the bitline using sense amplifier, additional circuitry (decoder) is needed to activate only the write enable signal (RE) of the latch to be adressed
+Pre-charge the bitlines
+Activate a wordline, allowing capacitors to charge or discharge, which modifies the voltage of the bitlines
+Sensor amplifiers detect these voltage changes and record the values in their latches
+[Input the desired value via the demultiplexer to target a specific latch. Overwrite the latch associated with the addressed row with the new value]
+Adjust the bitlines to reflect the voltage that corresponds to the value in the latches
+Allow the capacitors time to stabilize at their new charge or discharge state to ensure the value are memorized
+
+Frequent refresh rate since capacitors can drain its charge spontaneously",
+,,Adress -> Decoder -> Bitline/wordline matrix -> Sense amplifiers (comparators) <-> MUX-DEMUX <-> Data input/output,
+,Non-volatile RAM,,
+,FeRAM,,
+,FeFET,,
+,Nanodot memories,,
+,MRAM,,
+,Phase-change RAM (OUM),,
+,Hysteretic MIM,,
+,Molecular & CNT RAM,,
+,"Read only memory (ROM)
+Unwritable in past, writable by modern standard but uses write cycles","Non-volatile, retain data indefinetly without power dependency, quick write, physical stress during write (if writable)
+Written in dot notation across matrix where dot represent 1
+1. Bitcell with 0 presense of transistor, bitcell with 1 absense of transistor. When wordline activates, bitline is slowly charged to weakly high. Transistor drain high and remains low
+2. Using multiple or gates",
+,,"ROM using transistors activated by wordlines, drained to GND with weak pseudo-nMOS pullups",
+,Once programmable ROM,,
+,Diode ROM implementation,"(A: Adress), (A[2:0]) -> (Y[7:0] = DEC(A[2:0]), 5V -> B[3:0], [B[3:0]*Y[7:0]], DIODE(B[3], Y[0]), DIODE(B[2], Y[0]), DIODE(B[0], Y[0]), DIODE(B[3], Y[1]), DIODE(B[2], Y[1]), DIODE(B[1], Y[1]), DIODE(B[0], Y[2]), DIODE(B[1], Y[3]), DIODE(B[0], Y[3]), DIODE(B[1], Y[4]), DIODE(B[0], Y[4]), DIODE(B[2], Y[5]), DIODE(B[1], Y[5]), DIODE(B[0], Y[5]), DIODE(B[3], Y[6]), DIODE(B[2], Y[6]), DIODE(B[0], Y[6]), DIODE(B[3], Y[7]), DIODE(B[2], Y[7]), DIODE(B[1], Y[7]), B[3:0]=-B[3:0]) -> B[3:0]","1101 -> (13) D
+1110 -> (14) E
+0001 -> 1
+0011 -> 3
+0011 -> 3
+0111 -> 7
+1101 -> (13) D
+1110 -> (14) E"
+,Mask-based ROM,"Hardwired, no write cycles",
+,Programmable ROM (PROM),"1 write cycle with high-voltage programming (burn ROM)
+Include a fuse aside of transistor, programming using high voltage blow the fuse. Blown fuse: 1, intact fuse: 0",
+,Reprogrammable ROM,,
+,Erasable PROM (EPROM),"usually thousands write cycle, erased with UV light and reprogrammed
+Erasable PROMs replace the PROM transistor and fuse with a floating-gate transistor (not physically attached to any other wires). When suitable high voltages are applied, electrons tunnel through an insulator onto the floating gate, turning on the transistor and connecting the bitline to the wordline (decoder output). Exposed to intense ultraviolet (UV) light for about half an hour, the electrons are knocked off the floating gate, turning the transistor off.",
+,EEPROM/Flash memory,"10000-100000 write cycles, electrically erasable and programmable
+FTRANS(Floating transistor, Using injected charge between floating gate and transistor source/drain):
+FTRANS(A, B, C)=TBL[15*15]((7M, 7M, ""$A""), RECT(5, 3, 5, 2), RECT(5, 7, 5, 1), RECT(0, 9, 15, 6), RECT(0, 9, 5, 3, ""S (Source)""), RECT(10, 9, 5, 3, ""D (Drain)""), (12, 7, ""$B""), (2M, 7, ""$C""), RECT(7, 7, 1, 1, d""Stored bit""); LINET([1, 0]), LINET([5, 6]), LINET([4, 7]))",
+,Floating transistor NOR array,"CELL(A, B, C)=((WL: Word line, CSL: Common source line, BL: Bitline), [LEFT: WL[0][""$A""], CSL[""$C""], WL[1][""$A""]], [TOP: BL[0](""$B""), BL[1](""$B"")]) -> (FTRANS(CSL, WL[0], BL[0]), FTRANS(CSL, WL[0], BL[1]), FTRANS(CSL, WL[1], BL[0]), FTRANS(CSL, WL[1], BL[1]))
+Write: FTRANS, CELL(""12V"", ""6V"", ""0V"", LINEP(10, 9, 8, 8))
+Read: FTRANS, CELL(""5V"", ""1V"", ""0V"")
+Erase: FTRANS, CELL(""0V"", ""Open"", ""12V"", LINEP(5, 8, 2, 9))",
+,Floating transistor NAND array,"CELL: ((BL: Bitline, SG: Select gate, WL: Word line, S: Source), [TOP: BL], [LEFT: SG[0], WL[0], WL[1], WL[2], WL[3], SG[1]], [BOTTOM: S]) -> (TRANS(BL, SG[0], A), FTRANS(A, WL[0], B), FTRANS(B, WL[1], C), FTRANS(C, WL[2], D), FTRANS(D, WL[3], E), TRANS(E, SG[1], S)))
+3D NAND Architecture: TBL[8*4*25]([LINE(0, 0, 1, 0, 0, 25), LINE(2, 0, 1, 2, 0, 25), ..., LINE(6, 2, 1, 6, 2, 25); d""Memory cell (SGD -> WL -> SGS""], PLANE(0, 0, 24, 8, 4, 1, d""Memory holes""), PLANE(0, 0, 0, 8, 4, 1, ""BL (Bit line)""), (0, 0, 1, 8, 4, 3, ""BL contact""), [PLANE(0, 0, 5, 8, 4, 1), PLANE(0, 0, 7, 8, 4, 1), PLANE(0, 0, 9, 8, 4, 1), ..., PLANE(0, 0, 25, 8, 4, 1); d""Source plate""])",
+,Logic using memory arrays,Use memory as a lookup table from truth table. Adress as inputs,

@@ -1,0 +1,50 @@
+Name,Basic relationship
+Boolean algebra,"Venn diagrams using set using only 0 and 1
+Completent of a variable A is inverse
+Literal: true form A, complementary form -A
+Product/Implicant: (-A)B, A(-B)(-C)
+Sum: A+B
+Minterm: product involving all inputs A(-B)(-C)
+Maxterm: sum involving all inputs A+(-B)+C
+Precedence order: NOT, AND, OR
+X: illegal value in circuit, don't care in truth table, sometimes due to contention
+Z: floating, high-impedance, 0 or 1 or between, does not mean circuit error, so long as other circuit element drive the node to valid logic level, commonly forgetting to connect a voltage to circuit input/assume unconnected input as 0, does not cause contention with other wires"
+"Identities, proven by perfect induction",x*0 = 0 (Null element)
+,x+1 = 1  (Identity)
+,x*1 = x
+,x+0 = x
+,x*x = x
+,x+x = x (Idempotency)
+,x(-x) = 0 (Complement)
+,x+(-x) = 1
+,-(-x) = x (Involution)
+Associativity,xy = yx (Communicative)
+,x+y = y+x
+,x(yz) = (xy)z (Associative)
+,(x+y)+z = x+(y+z)
+,x(y+z) = xy+xz (Distributive)
+,x+yz = (x+y)(x+z)
+,x+xy = x
+,x(x+y) = x (Absorption)
+,xy+x(-y) = x (Combining)
+,"-(xy) = (-x)+(-y) (De Morgan I, Augustus De Morgan …-1871)"
+,-(x+y) = (-x)*(-y) (De Morgan II)
+,x+(-x)*y = x+y
+,x((-x)+y) = xy
+,xy+yz+(-x)z = xy+(-x)z (Consensus I)
+,(x+y)(y+z)((-x)+z) = (x+y)((-x)+z) (Consensus II)
+"Canonial sum of product
+Simpler when TRUE on few rows","(A, B, Y, minterm, name)
+(0, 0, 0, (-A)(-B), m_0)
+(0, 1, 1, (-A)B, m_1)
+(1, 0, 0, A(-B), m_2)
+(1, 1, 1, AB, m_3)
+=> F(A, B)=\S(m_1, m_3)=\S(1, 3)=(-A)B+AB=B"
+"Canonical product of sum
+Simpler when FALSE on few rows","(A, B, Y, maxterm, name)
+(0, 0, 0, A+B, M_0)
+(0, 1, 1, A+(-B), M_1)
+(1, 0, 0, (-A)+B, M_2)
+(1, 1, 1, (-A)+(-B), M_3)
+=> F(A, B)=\P(M_1, M_3)=\P(1, 3)=(A+(-B))((-A)+(-B))"
+Simplifications,(-A)(-B)(-C)+A(-B)(-C)+A(-B)C = (-A)(-B)(-C)+A(-B)(-C)+A(-B)(-C)+A(-B)C = (-B)(-C)+A(-B)

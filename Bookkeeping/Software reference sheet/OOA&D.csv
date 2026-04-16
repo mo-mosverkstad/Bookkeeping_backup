@@ -1,0 +1,221 @@
+Basic OOP,Unnamed: 1,"Categories of an Object’s Methods:
+  Accessors (Inspectors) – methods that retrieve information from the object, Include getters
+  Mutators – methods that modify the object’s state, , Include setters
+  Combinators – methods that combine this object with others to produce a result, Does not modify current object
+  Comparators – methods that compare objects (e.g., equals, compareTo)
+  Predicates – methods that test a condition and return a Boolean (isDigit...)
+  Transformers (Converters) – methods that produce a transformed version of the object or its data (toString)",Unnamed: 3
+,,"Procedural programming is about writing procedures or methods that perform operations on the data, while object-oriented programming is about creating objects that contain both data and methods.
+Advantages:
+OOP is faster and easier to execute
+OOP provides a clear structure for the programs
+OOP helps to keep the Java code DRY ""Don't Repeat Yourself"", and makes the code easier to maintain, modify and debug
+OOP makes it possible to create full reusable applications with less code and shorter development time",
+,,,
+,,,
+,,,
+,,,
+,Kapitel 1 (Metod): ,"Syfte:Att bestämma systemkraven, att skapa en systemdesign utan väsentliga osäkerheter, (att förstå ett system, dess omgivning och villkoren för dess implementering)
+Objektorienterad design (Objekt, tillstånd och beteende): mer generella begrepp, lämpliga att beskriva flesta fenomen som uttrycks i naturligt språk (objekt som substantiv, beteende som verb) jämfört med funktion, data och dataflöde
+- Tydlig information om systemets omgivning, individuell problemlösning, kommunikation och samordning (även distribuera specialiserade data i organisationen) jämfört med (tidiga system med automatisera arbetskrävande informationsbehandlingsuppgifter)
+- Nära sambandet mellan objektorienterad analys, objektorienterad design, objektorienterad användargränssnitt och objektorienterad programmering -> modellera sociala, ekonomiska och organisatoriska tillstånd (systemens gränssnitt, funktioner, processor, komponenter), (Analysen: objekt för att bestämma systemkraven, designen objekt för att bestämma själva systemet)",
+,Objekt och klasser,"Begrepp: 
+Objekt: En entitet med identitet, tillstånd och beteende (Mest grundläggande byggsten, Analysobjekt: abstraktion av fenomen i systemets omgivning (fenomen utanför systemet och är vanligen oberoende av varandra), Designobjekt: en del av systemet e.g. en kund) (fenomen inom systemet som kan utföras)
+Identiteten hos ett analysobjekt uttrycker hur användaren skiljer det från de andra objekten i omgivningen
+Identiteten hos ett designobjekt uttrycker hur andra objekt i systemet kan känna igen det, och därigenom få åtkomst till det. Designen ger också upphov till nya klasser
+
+I analysen uttrycks objektets beteende genom de händelser som det deltar i eller upplever (e.g. kundobjekt inblandning i beställning/frakt av gods) -> hjälper att förstå hur och när systemets representation av ett objekt ska förändras
+I designen uttrycks objektets beteende genom operationer den kan utföra och tillgängliga för andra objekt i systemet (e.g. lägg till beställning, ta bort beställning) -> låter systemet uppdatera tillståndet hos kundobjekt när fysiska världen förändras, inkapslar den interna representationen av objektets tillstånd",
+,,"Klass: En beskrivning av en samling objekt som delar struktur, beteendemönster och attribut",
+,Modellera omgivningen,"Problemområde: Den del av en ordning som administreras, övervakas eller styrs av ett system
+Användningsområde: Den organisation som administrerar, övervakar eller styr ett problemområde, 
+[[Problemområde: Systemets syfte, administrerad, övervakad, styrd, systemet modellerar], [Användningsområde: Untyttjas av användare [Användare <-> datasystem]]]
+e.g. lönesystemet: Användningsområde: personalavdelning, problemområdet: anställda, deras kontrakt och deras arbetstider
+
+-> Huvuduppgift att modellera det som systemet ska administrera, övervaka eller styra
+->Modellera hur systemet samverkar med användare inom användningsområdet (Utpeka användargrupper och förstå användningen av systemet)
+
+Problemområdet och systemets modell av problemområdet måste överensstämma fullständigt, systemets modell organiserad i enlighet med hur problemområdets struktur uppfattas (Både för att förstå systemets omgivning och föra att lära sig hur ett använtbart sätt ska representera för systemets användare)
+Oenighet i praktiken (Användare och systemutvecklare tolkar på olika sätt, användare oeniga inbördes), växling mellan nutid och framtid (existerande och nya)",
+,Arkitektur,"System: En samling av komponenter som implementerar modelleringskrav, funktioner och gränssnitt)",
+,,"4 allmänna principer för analys och design (som metod baseras på):
+- Modellera systemets omgivning
+- Betona arkitekturövervägande
+- Återanvänd mönster som inrymmer etablerade designideer
+- Anpasssa metoden till varje utvecklingssituation/till enskilda projekt
+Resultat: Ett analysdokument och ett designdokument",
+,,,
+,,,
+,,,
+,,,
+Analysis,,Translate a requirement specification into DM and SSD,
+,Domain model (DM),"The domain model represents real‑world entities, not program classes. Drawn using UML class diagram
+-> Good tool for discussing the developing program, ensure all parties (developers, clients, users, etc) share a common view and nomenclature of the tasks of the program
+The software should be quite similar to DM",
+,,"DM diagram …
+right to left, or bottom up",
+,,"1. Use Noun Identification to Find Class Candidates
+Avoid too few classes, since removing existing classes is easier than finding new ones. DO NOT IDENTIFY PROGRAM/SYSTEM/ETC.
+2. Use a Category List to Find More Class Candidates
+<category list...>
+3. Choose Which Class Candidates to Keep
+Unclear if class removed or not, keep it
+4. Decide Which Classes Fit Better as Attributes
+- An attribute is a string/number/time/boolean value. A class that only contain such value -> use attribute instead
+- An attribute can not have an attribute.
+- Cannot descide attribute or class -> remain a class
+5. Add associations:
+Relationships telling what customer is doing are avoided, shown instead in SSD (e.g. Customer takes Receipt)
+Classes for grouping data e.g. Date, RepairOrderState, TelephoneNumber does not need associations
+6. Anything To Change?","* telephone number -> class: cc, ac, sn (telephoneNumberDTO)?
+* email address -> class: username@domainname / string?
+* name -> string ~~class: first name, middle name and family name~~ Unless it is relevant to split it into first name and last name, it can be an attribute of Customer. It can also be an attribute of Receptionist and Technician, if needed
+* bike brand -> enum class / string?
+* bike model -> enum class / string?
+* Cost is a number, and could become an attribute of ProposedRepairTask. But then what about **Currency**? Is that not a string that should be an attribute of Amount? This is something that should be discussed with the customer, but now let’s just decide we do not need to keep track of currencies. Therefore, **Currency is removed (currency is SEK by default)** and Amount becomes attribute of ProposedRepairTask, and it is same as totalCost, which is the attribute of RepairOrder."
+,System sequence diagram (SSD),"Not a part of analysis (strictly), belong to gathering requirements
+Reflect the interactions of the requirements specification, no less and no more.
+Requirements  happening ""outside"" the actor are dropped, since no interaction between actor (cachier) and the system, (e.g. The customer arrives and asks to rent a car., The customer describes the desired car.)
+A system operation shall have a name that starts with a verb, and describes what is done. (e.g. The cashier registers the customer’s wishes., The program tells that such a car is available. -> searchMatchingCar) ",
+Design,Design concepts,"Encapsulation:
+visibility: public / private, static, final (it is safest to consider the final modifier to be part of the public interface because the final value could not be changed.)  
+
+High Cohesion:
+A class shall represent one single abstraction, which is clearly identified by the class name. The class shall have knowledge about that abstraction and not about anything else and perform tasks related to that abstraction, not to anything else.
+
+Low Coupling:
+As few dependencies/interaction in class diagrams as possible in the program. No strict maximum allowed number, but remove dependencies that can be avoided",
+,Architecture,Apply architecture pattern with each package for each layer,
+,,"MVC (Model-View-Controller) architecture pattern:
+Controller: + systemOperation1(), + systemOperation2(), etc
+…",
+,,"Layered-MVC:
+Main method: start the program, not related to any applicational layer.
+Ccontroller layer -> model layer (Model shall only be called by controller)
+dbhandler/integration layer -> database layer (data shall only be called by dbhandler)
+controller layer -> dbhandler layer (Layers may be bypassed. It is for example perfectly fine to call dbhandler directly from controller, cannot bypass from view to other layer)",
+,,"DTO (Data Transfer Object) Design Pattern: grouping a long parameter list means a large public interface with big risk for change
+Read-only and immutable (only get methods). Cannot change state (no history), only a snapshot of an entity at particular instance",
+,Main design (Interaction diagrams),"1. Design one system operation at a time, translate each system operation from SSD into each interaction diagram (sequential/communication diagram), with time/execution flow
+2. Follow design pattern guidelines
+  - DM helps to find new classes that can be introduced. If the DM is changed, all involved parties must agree on that change.
+  - Favor objects over primitive data and avoid static members, since neither primitive data nor static members are object oriented. When using these, the entire object concept is completely ignored, and the prime tool (objects) to handle encapsulation, cohesion and coupling is thrown away.","Follow guideline principles:
+  - What is the type of parameter searchedCar and return value foundCar: searchedCarDTO only getter methods without business logic -> DTO, located in dbhandler/integration layer.
+  - Same name is used -> very same object in all three places
+  - Data can not appear out of nothing, since searchedCar is a parameter in method call two, it must be clear from where this object comes.
+  - For now (simplest solution), let Car be a DTO in dbhandler/integration, and not add an entity. This decision might have to be changed later.
+  - No database -> CarRegistry will just look in an array of available cars."
+,,"3. Maintain a class diagram (some parts can be omitted e.g. DTO classes, setters and getters)",
+,,,"Evaluation:
+Encapsulation:
+  - All methods in searchMatchingCar are public, not ideal but acceptable early in design.
+  - Public methods are necessary because layers must communicate and the system still has few methods.
+  - All fields are private, which is considered good encapsulation practice.
+Cohesion (Each class performs exactly its intended responsibility):
+  - Main: starts the program.
+  - View: delegates calls to the controller.
+  - Controller: executes a system operation that triggers the search in CarRegistry.
+  - CarRegistry: contains only the search method.
+  - CarDTO: contains no methods (pure data holder).
+Coupling:
+  - Dependencies follow the expected layer structure: View -> Controller -> DBHandler. (unidirectional, follow layer pattern)
+  - Main is allowed to depend on classes in other layers because its role is to initialize the system.
+  - Coupling in Main is low since it references only one class per layer.
+  - Excessive references within the same layer would indicate too high coupling, but that is not the case here.
+  - Overall cohesion is high: every class focuses on one task."
+,,"Both entity class living in model as well as DTO classes transferring across layers
+…",
+,Common mistakes,"Spider-in-the-web class: A central class (often the Controller) becomes overly connected to many peripheral classes.
+Fix by reducing its associations and letting peripheral classes communicate directly.",
+,,Too much primitive data: Excessive use of primitive parameters instead of proper objects/Long parameter lists or many attributes suggest missing abstractions,
+,,"Unwarranted static methods or fields: Static members should only exist for strong, justified reasons.",
+,,"Too few classes: A model with only one or very few classes often has poor cohesion.
+Each class should represent one responsibility; too few classes suggests overloaded classes.",
+,,"Too few layers: A missing layer (View, Controller, Model, Startup, Integration) requires justification. Names may vary, but roles must exist. Missing layers makes responsibility separation unclear.",
+,,"Too few methods: Even if existing methods have high cohesion, some required system tasks may simply be missing. If functionality isn’t implemented, new methods must be added.",
+,,Data appears out of nothing: a method cannot be called with parameters the caller cannot possibly know.,
+,,Calling an object without a reference: An object must have a reference to another before making a call to it. The design must show how the reference was obtained.,
+,,"Wrong message numbering: Using sequential unrelated numbers (1, 2, 3, 4) suggests unclear causality. Must be: Call 1 -> calls 1.1 -> calls 1.1.1, etc. when chaining calls",
+,,Objects not named when required: Any object appearing more than once in a communication diagram needs a name. Otherwise unclear reference to the same instance,
+,,"Erroneous constructor: Constructor must:
+ - Have the same name as the class.
+ - Return the class type.
+ - Have the <<create>> stereotype in design diagrams.",
+,,"Too large class diagram: Can become unreadable if overly detailed or too condensed.
+- Split into multiple smaller diagrams.
+- Remove unnecessary details (e.g., DTOs, private members).
+- Full class design must still exist somewhere for coding.",
+,,"Too large communication diagram: Becomes messy when too many system operations are included/too many alternative flows are shown at once.
+Split into multiple diagrams for clarity.",
+Programming/Implementation,,Implementation of each system operation from interaction diagram + test the relevant parts,
+,Dividing code in packages,"One layer -> One package with files, Structured package naming hierarchy
+Utility classes (string parsing/file handling) does not belong to any layer and are placed in a separate package called util.",
+,Code conventions,"Package name: reversed internet domain -> product name -> specific package, se.kth.iv1350.rentcar.model
+Class/interface: Full descriptive name, PascalCase
+Method: Full description, camelCase
+Variable/Field/Parameter: full description/camelCase
+Constant (final static field): All uppercase, separated by underscore, MILES_PER_KM",
+,"Javadoc, API documetnation","Logical behavior of a class/method, not internal/physical level mechanism
+method behavior, parameters, and return values
+Avoid comments inside methods -> signal to refactor long methods",
+,Code smells and refactoring,"Code smell: Poor design, must be removed through refactoring
+Refactoring: Improve code quality, remove code smell without changing behavior",
+,,"Duplicated code: Severe, error-prone, inefficiency and maintenance disaster",
+,,"Long method: Its name cannot fully explain it
+-> Split into smaller methods, reducing method calls does not meaningfully improve performance ",
+,,Large class: Low class cohesion -> splitting class with related fields,
+,,"Long parameter list: 
+1. Replace primitive parameters with objects -> improve cohesion, encapsulation and maintainability
+2. Remove unnecessary parameters by letting method obtain data instead of parameter passing",
+,,"Excessive Use of Primitive Variables/Primitive Obsession:
+1. Group primitives using objects instead of excessive primitive fields -> improve cohesion, ensure valid data, encapsulation, and overall design quality
+2. Never use arrays to store unrelated primitive values, objects so each piece of data has a clear, meaningful name.
+3. Use enumerations instead of strings/integers -> avoid errors and make code meanings explicit",
+,,"Meaningless names: All declared program elements must have meaningful names. (packages, classes, interfaces, methods, fields, parameters, local variables, etc.)
+1. Avoid 1‑letter identifiers (p for Person), except abstraction is naturally 1 letter (coordinate x, loop variable i, j, k)
+2. Short-lived variables during swap as tmp/temp
+3. fromAccount/toAccount instead of account1/account2
+4. long names -> clarity",
+,,"Anonymous values/Literals: Hard to understand and maintain, use named constants, Named values are safer
+No numeric values, use expression (CONNECT_TIMEOUT_SECS * MILLIS_PER_SECOND)
+String using String.format
+Method for if-statements -> ""if (isUnixEol(ch))"" instead of ""if (c == 10)""",
+,,"Complicated Flow Control: Poorly structured/deeply nested if statements with unecessary flags -> hard to understand logic
+Use guard statements",
+,Common mistakes,"Incomplete comments: Every public class, method, etc. must have a Javadoc comment, including setts and getters",
+,,"Excessive comments: Only Javadoc comments should be used, If extra comments seem necessary, the code is likely too complex or has low cohesion.",
+,,"Comments written too late: Write comments together with the code (or before), early commenting clarifies intent and ensures comments remain useful and accurate.
+Writing comments last makes it burdensome and more likely to be skipped.",
+,,"Design mistakes introduced during coding: Even if avoided in design, mistakes can reappear in implementation.
+e.g. Using primitives where objects should be used, Overuse of `static`, Placing input/output outside the view layer.",
+Testing,,"Ongoing during programming, after each system operation developed
+Unit tests verify that individual pieces of code (methods) produces intended behavior in isolation. ",
+,JUnit,"Reusable functionality, controls program flow -> calling application code at correct times
+Each test method runs with fresh setup and cleanup, and JUnit executes them by following a standard pattern: prepare objects, define the expected result, call the method under test, and compare expected with actual.
+NetBeans, IntelliJ, Maven",
+,JUnit annotation (place before methods),"@Test -> Marks a method as test method, method will run when test suite is executed",
+,,"@Disabled(""<reason>""): Skips the annotated test, useful for tests not yet implemented or temporarily turned off.",
+,,"@BeforeEach: Runs before every test method, Used to prepare or reset test state.",
+,,"@AfterEach: Runs after every test method, Used for cleanup tasks.",
+,,@BeforeAll: Runs once before all tests in the class. (Expensive setup),
+,,@AfterAll: Runs once after all tests in the class. Used for global cleanup (also usually static).,
+,Assertion methods,"fail(""explanation""): Forces the test to fail unconditionally at code locations that should never be reached.",
+,,"assertTrue(condition, ""explanation""): Passes if the condition is true.",
+,,"assertFalse(condition, ""explanation""): Passes if the condition is false.",
+,,"assertEquals(expected, actual, ""explanation""): Passes if expected and actual are equal, Works for any Java type.",
+,,"assertNull(object, ""explanation""): passes if the object is null.",
+,,"assertNotNull(object, ""explanation""): Passes if the object is **not null",
+,Best practices,Writing unit tests early: Improve them over time rather than delaying until too burdensome to write.,
+,,"Lots of tests, never rely on manual testing and keep all tests (disable them instead of deleting) so your test suite continuously grows and remains useful over time.",
+,,"Tests for every known bug: Discover bug -> create failing test before fix code, ensuring every known failure condition is permanently covered by a test.",
+,,"Not over-designed: Write simpler, flexible code and small hacks in tests, not same level of structure as production code",
+,,"Organization: Place test classes in the same package as production code, parallel test directory. Each class should have a corresponding test class named with ""Test"" appended, with test methods starting with ""test"" and containing only a few assertions to keep results clear and easy to interpret.",
+,,"Independent and self-evaluating: Tests run with single command, automatic self-evaluate, never depend on test execution order, should not produce behavior to System.out",
+,,"Test public, protected, package private, avoid private and trivial methods (setters/getters)
+Cover branches, boundary cases, invalid inputs and correct failure behavior",
+,,"Input from files, databases, complex object structures: create -> test -> clean up",
+,,void methods/methods changing state -> test observable effects through related operations (use other functions) -> verify correct behavior,
+,,Complex dependencies: Higher-layer classes depend on lower-layer components -> Test entire stack and identify the lowest failing cases. Test cases written bottom-up (from no dependencies -> moving upward),
+,,Production code MUST NOT be modified to simplify testing,
+,Common mistakes,"Too many assertions in the same test method: Place as few assertions as possible in each test method—ideally one—because clearer, smaller tests are easier to name and understand, and they allow more assertions to run before a failure stops execution.",
+Handling exceptions,,,

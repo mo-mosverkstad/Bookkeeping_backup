@@ -1,0 +1,82 @@
+Reaction name,Unnamed: 1,Unnamed: 2
+,H(A)+(B)OH->H2O+(BA),
+,(A)+(BC)->(B)+(AC),
+,(A)On+H(B)->H2O+(AB),
+,(AB)+(CD)->A++C-+BD,
+Syra-bas reaktion,,
+Protolys (Exoterm reaktion),"HA + H2O <-> H3O+ + A-
+Metal protolysis: Al(H2O)6 3- + H2O <-> AlOH(H2O)5 2+ + H3O+, AlOH(H2O)5 2+ + H2O <-> Al(OH)2(H2O)4 2+","CH3COOH, CH3COO-, HAc, Ac-, NH4+, NH3, H2CO3, HCO3-, CO3 (2-), Al((H2O)6) (3+), AlOH(H2O)5 (2+)
+Totalfosfor: H3PO4, H2PO4-, HPO4 (2-), PO4 (3-)"
+Protonering,A- + H2O <-> HA + OH-,
+Vattnets autoprotolys,"H2O + H2O <-> (H3O+) + (OH-)
+c_(H3O+) = c_(OH-) = 1*10^-7 M",
+Fällningsreaktion,"2 jonlösningar blandas -> Fasta jonföreningar/fällning
+A+ + B- -> AB(s)
+AgNO3 + NaCl -> AgCl (s) + NaNO3 (aq), Na+, NO3- som åskådarjoner","FePO4, CaCO3, AgCl, BaSO4, Fe(OH)2, Fe2(OH)3, AlPO4"
+Neutralisation,"Metall(+) + icke-metall(-) -> Jonförening (Salt)
+HCl + NaOH -> NaCl + H2O",
+Syra + metall,H2SO4 + Mg -> MgSO4 + H2,
+Oxidreaktion,CuO + H2SO4 -> CuSO4 + H2O,
+Metall oxidation,"Mg + O2 -> 2MgO
+2Mg + CO2 -> 2MgO + C
+2Fe + 3O2 -> 2Fe2O3
+3Fe + 2O2 -> Fe3O4
+CuO + H2 -> Cu + H2O",
+Redoxreaktion,"Alla reaktioner som ger elektrisk ström
+Oxidationstal:
+Bookkeeping (Elektronegativa atomen äger alla elektroner)
+Grundämnen (=0)
+Joner (=[Laddning])
+Molekyl (Σ=0)
+Sammansatt jon (Σ=[Laddning])
+Molekylatom (=[Valenstal])
+Undantag (HCs Cs>H)
+
+Balansering av redoxreaktioner: 
+1. Sätta ut reduktionstal, jämföra elektronvandring och komplettera
+2. Jämföra laddning och komplettera
+3. Jämföra atomslag och komplettera
+Elektrokemi -> Galvanic cell, electrolytic cell, korrosion som oönskad reaktion med omgivning
+Elektrolys: Omvänd process av elektrisk ström
+",
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+Principle reactions/Principala reaktioner,,
+,N2+3H2<->2NH3,(Fritz-Haber metoden) -> Konstgödsel (1918)
+,2NO2<->N2O4,
+,H2+CO2<->H2O+CO,
+,2HI<->H2+I2,
+,CoCl4(2-) (BLU)+6H2O<->Co(H2O)6(2+)(PIN)+4(Cl-),
+,Co(H2O)6(2+)+HCl<->CoCl4(2-)+6H2O,
+,Fe3+(YEL)+3SCN-<->Fe(SCN)3(ORA),Cyanater
+,Ag++SCN-<->AgSCN-(s)(WHI),
+,CaO (Bränd kalk -> Cemen-.t och murbruk),Kol och karbonater
+,CaCO3(s) + H2CO3(aq) <-> Ca(2+)(aq) + 2HCO3-(aq) + heat,
+,Ca(2+) (aq) + 2HCO3- (aq) <-> CaCO3(s) + H2O (g) + CO2 (g),
+,CaCO3(s) <-> CaO(s) + CO2(g),Bränd kalk->Cement och murbruk
+,2SO2 + O2 + 2H2O -> H2SO4,Försurningsreaktion
+,4NO2 + O2 + 2H2O -> 4HNO3,
+,Ca5(PO4)3OH(s) + 4H3O+ (aq) <-> 5Ca+ + 3HPO4(2-) + 5H2O,Kroppens reaktioner
+,Ca5(PO4)3OH(s) + F- (aq) <-> Ca5(PO4)3F(s) + OH-,Kroppens reaktioner
+,HHb + O2 + H2O <-> HbO2- + H3O+,Kroppens reaktioner
+,2NaHCO3->Na2CO3+H2O+CO2,
+,Fe(2+)+MnO4-+H+->Fe(3+)+Mn(2+)+H2O,
+,CO2 + 2I2 -> Cl4 + O2,
+,H2 + O2 -> H2O,
+,2H2S + SO2 -> 3S + 2H2O,
+,K2Cr2O7 + 6C2H5OH + 3H2SO4 -> 6CH3CHO + Cr2(SO4)3 + 9H2O,
+,Ca + 2(H+) -> Ca (2+) + H2,
+,2(MnO4-) + 5 SO3 (2-) + 6 (H3O+) -> 2Mn (2+) + 5SO4 (2-) + 9H2O,(Permaganat reaktion)
+,2(MnO4-) + SO3 (2-) + 2(OH-) -> 2 MnO4 (2-) + SO4 (2-) + H2O,
+,2(MnO4-) + SO3 (2-) + H2O -> 2MnO2 (s) + 3 SO4 (2-) + 2(OH-),
+,Ca10(PO4)6(OH)2 + 6(PO4)(3-) + 20(H3O+) -> 10(Ca(2+)) + 6PO4 (3-) + 2(OH-) + (H3O+) -> Ca(2+) + 6H3PO4 + 22H2O,Hydroxiapatit (Bakterier (syraattack) på tänder)
+,10Ca(2+) + 6(PO4)(3-) + 2(Na+) + 2(F-) -> Ca_10(PO4)_6F_2 (s) + 2(Na+),
+,2Na3PO4 + Al2(SO4)3 -> 2AlPO4 (s) + 3Na2SO4,Vattenrening (NO3- och PO4 (3-) är miljöfarliga)
+,CuSO4 + BaCl2 -> BaSO4 (s) + CuCl2,
+,2AgNO3 + CuCl2 -> 2AgCl (s) + Cu(NO3)2,

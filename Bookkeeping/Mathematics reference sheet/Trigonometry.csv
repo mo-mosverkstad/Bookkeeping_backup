@@ -1,0 +1,159 @@
+Name,Basic relationship,Presetted values
+General definition,"a: opposite side, b: adjacent side, c: hypotenuse
+sin v = a/c, cos v = b/c, tan v = a/b, cot v = b/a
+arcsin a/c = v [-\pi/2, \pi/2], arccos b/c = v [0, \pi], arctan a/b = v [-\pi/2, \pi/2], arccot b/a = v [-\pi/2, \pi/2]",
+,"sin v = a/c => a=c*sin(v), c=sin(v)/a","v=65\deg, a=x, c=100 => x"
+,"cos v = b/c => b=c*cos(v), c=cos(v)/b","v=28\deg, b=30, c=x => x"
+,"tan v = a/b => a=b*tan(v), b=tan(v)/a","v=58\deg, a=8, b=x => x"
+,"Trigonometric functions are not injective, need to restrict the function for a new one to make them injective
+arcsin a/c = v (from f(x)=(sin(x):-\pi/2<=x<=\pi/2))
+arccos b/c = v (from f(x)=(cos(x):0<=x<=\pi))
+arctan a/b = v (from f(x)=(tan(x):-\pi/2<x<\pi/2))
+arccot b/a = v (from f(x)=(cot(x):-\pi/2<x<\pi/2))",
+,"Radians: 360\deg, Radians: 2\pi, 1\deg=\pi/180 rad, 1 rad = 180/\pi \deg (In unit circle, radian value is the same as arc length)
+
+rad: 0 \pi/6 \pi/4 \pi/3 \pi/2
+deg: 0 30\deg 45\deg 60\deg 90\deg
+sin: 0 1/2 sqrt(2)/2 sqrt(3)/2 1
+cos: 1 sqrt(3)/2 sqrt(2)/2 1/2 0
+tan: 0 1/sqrt(3) 1 sqrt(3) -
+
+30\deg 60 \deg half equilateral triangle
+45\deg half square",
+"Reduction formula
+(Based on unit circle)","sin v, cos v, tan v
+-v: -sin, cos, -tan
+\pm\pi/2: cos, \mp*sin, \mp*cot
+\pm\pi: \mp*sin, -cos, \pm*t
+\pm*3\pi/2: -cos, \pm*sin, \mp*cot
+\pm*2\pi: \pm*sin, cos, \pm*t","sin(3\pi/4)=sin(\pi/4)
+cos(-\pi/6)=cos(\pi/6)
+tan(-5\pi/3)=tan(\pi/3)"
+Laws of sines,sin(A)/a=sin(B)/b,"a=10, b=8, B=30\deg
+a=10, B=30\deg -> no solutions, 1 solution, 2 solutions"
+,a/sin(A)=b/sin(B),"A=75\deg, B=77\deg, b=6
+A=70\deg, B=60\deg, b=10"
+Laws of cosines,c^2=a^2+b^2-2ab*cos(C),"a=48, b=61, C=30\deg -> c
+a=40, b=58, c=70 -> C"
+Combined,,"a=21, c=25, C=55 (5064, 5065)"
+Trigonometric functions,f(x)=A*sin(k(x-x_0))+y_0 -> sine curve,
+,f(x)=A*cos(k(x-x_0))+y_0 -> cosine curve,
+,f(x)=A*tan(k(x-x_0))+y_0 -> tan curve,
+,Origin: ,
+Expand functions,f(x)=C*sin(x+\ph)=C(sin(x)cos(\ph)+cos(x)sin(\ph))=C*cos(\ph)*sin(x)+C*sin(\ph)*cos(x),"C=sqrt(2), \ph=pi/4
+C=2, \ph=-\pi/3"
+Auxillary angle method,"f(x)=A*sin(x)+B*cos(x)=Csin(x)cos(\ph)+Ccos(x)sin(\ph)=Csin(x+\ph)
+(C=sqrt(A^2+B^2), \ph=arctan(b/a))",
+,f(x)=A*cos(x)-B*sin(x)=C(cos(arccos(A/C))cos(x)-sin(arccos(A/C))sin(x))=C*cos(arccos(A/C+x),
+Formula,sin^2(x)+cos^2(x)=1,"sin^2(12\deg)+cos^2(12\deg)=1
+sin^2(12\deg)+sin^2(78\deg)=sin^2(12\deg)+cos^2(12\deg)=1"
+,"cos(x)=\pm*sqrt(1-sin^2(x))
+sin(x)=\pm*sqrt(1-cos^2(x))","cos(x)=sqrt(1-(3/5)^2)=4/5, (0<=x<=\pi/2)"
+,sin(x+y)=sin(x)cos(y)+cos(x)sin(y),"sin(75\deg) => {x=45\deg, y=30\deg}
+x=x, y=30\deg"
+,sin(x-y)=sin(x)cos(y)-cos(x)sin(y),"sin(15\deg) => {x=45\deg, y=30\deg}
+x=x, y=45\deg"
+,cos(x+y)=cos(x)cos(y)-sin(x)sin(y),"cos(75\deg) => {x=45\deg, y=30\deg}
+x=x, y=60\deg"
+,cos(x-y)=cos(x)cos(y)+sin(x)sin(y),"sin(15\deg) => {x=45\deg, y=30\deg}
+x=x, y=15\deg"
+,sin(2x)=2*sin(x)cos(x),"x=60\deg
+sin(4x)/sin(2x) = sin(2*2x)/sin(2x) => {x=2x} => 2cos(2x)"
+,"cos(2x)=cos^2(x)-sin^2(x)
+=2cos^2(x)-1
+=1-2sin^2(x)","x=10\deg
+cos^2(15\deg)-sin^2(15\deg) => {x=15\deg}
+sin(v)=4/5, cos(2v)=1-2(4/5)^2"
+,tan(x+y)=(tan(x)+tan(y))/(1-tan(x)tan(y)),
+,"b=cos(v) -> sin(v+pi/4)=sin(v)cos(\pi/4)+cos(v)sin(\pi/4)=[sin(v)->sqrt(1-b^2), cos(v)->b]",
+,sin(x)sin(y)=(-cos(x+y)+cos(x-y))/2,
+,cos(x)cos(y)=(cos(x+y)+cos(x-y))/2,
+,sin(x)cos(y)=(sin(x+y)+sin(x-y))/2,
+,cos(x)sin(y)=(sin(x+y)-sin(x-y))/2,
+,"Using variable substitute
+cos(s+t)+cos(s-t)=2cos(s)cos(t)
+x=s+t, y=s-t => s=(x+y)/2, t=(x-y)/2 => cos(x)+cos(y)=cos((x+y)/2)cos((x-y)/2)",
+,sin(x)+sin(y)=2sin((x+y)/2)cos((x-y)/2),
+,sin(x)-sin(y)=2cos((x+y)/2)sin((x-y)/2),
+,cos(x)+cos(y)=2cos((x+y)/2)cos((x-y)/2),
+,cos(x)-cos(y)=-2sin((x+y)/2)cos((x-y)/2),
+Simplifications,,sin(x)(1/sin(x)-sin(x))=sin(x)*1/sin(x)-sin(x)sin(x)=1-sin^2(x)=cos^2(x)
+,,1-cos^2(x)/(1+sin(x))=1-(1-sin^2(x))/(1+sin(x))=1-(1+sin(x)(1-sin(x))/(1+sin(x))=1-1+sin(x)=sin(x)
+,,(1-sin(x))/cos(x)=(1-sin(x))(1+sin((x))/(cos(x)(1+sinn(x))=(1-sin^2(x))/(cos(x)(1+sin(x))=cos^2(x)/(cos(x)(1+sin(x))=cos(x)/(1+sin(x))
+,,1/sin(x)-1/tan(x)=1/sin(x)-cos(x)/sin(x)=(1-cos(x))/sin(x)=(1-cos(x))(1+cos(x))/(sin(x)(1+cos(x))=sin(x)/(1+cos(x))
+,,(1+tan(x))/(sin(x)+cos(x))=(1+sin(x)/cos(x))/(sin(x)+cos(x))=(sin(x)+cos(x))/cos(x)/(sin(x)+cos(x)=1/cos(x)
+,,(tan(x)-sin(x))/sin^3(x)=(sin(x)/cos(x)-sin(x))/sin^3(x)=(sin(x)-sin(x)cos(x))/cos(x)/sin^3(x)=sin(x)(1-cos(x))/sin^3(x)
+,,sin(x)(cos(x)/(cos^2(x)-sin^2(x))=(sin(x)cos(x))/cos^2(x)/((cos^2-sin^2(x))/cos^2(x))=tan(x)/(1-tan^2(x))
+,,1/(1-sin(2x))+1/(1+sin(2x))=(1+sin(2x)+1-sin(2x))/((1+sin(2x))(1-sin(2x)))=2/(1-sin^2(2x))=2/cos^2(2x)
+,,1+tan^2(x)=1+sin^2(x)/cos^2(x)=(cos^2(x)+sin^2(x))/cos^2(x)=1/cos^2(x)
+,"sin(x)=sin(A) => x=A+2\pi, x=\pi-A+2\pi",A=380
+,"cos(x)=cos(A) => x=A+2\pi, x=-A+2\pi",A=3700
+,sin(x)=cos(A) => cos(\pi/2-x)=cos(A),
+"Basic equations
+Reminder list:
+1. Add the period 2\pi and second angle after arcsin/arccos
+2. Add the period \pi directly after arctan
+3. Constants in front of sin/cos/tan should be divided away
+4. Constants inside sin/cos/tan should be divided by the angle","Use reduction formula to equivalent domain
+sin(v)=sin(A)
+cos(v)=cos(A)
+tan(v)=tan(A)",A=7\pi/5
+,,
+,,
+,,
+,,
+,,
+,"a*sin(kx+b)+c=d => a*sin(kx+b)=d-c => sin(kx+b)=(d-c)/a
+=(1)=> kx+b=arcsin((d-c)/a)+2\pi*n => x = (arcsin((d-c)/a)-b+2\pi*n)/k
+=(2)=> kx+b=\pi-arcsin((d-c)/a)+2\pi*n => x = (\pi-arcsin((d-c)/a)-b+2\pi*n)/k","a=2, k=1/2, b=-10\deg, c=-0.2, d=1.342
+a=1, k=5, b=-1, c=0, d=0"
+,"a*cos(kx+b)+c=d => a*cos(kx+b)=d-c => cos(kx+b)=(d-c)/a
+=(1)=> kx+b=arccos((d-c)/a)+2\pi*n => x = (arccos((d-c)/a)-b+2\pi*n)/k
+=(2)=> kx+b=-arccos((d-c)/a)+2\pi*n => x = (-arccos((d-c)/a)-b+2\pi*n)/k
+[=(2')=> kx+b=2*\pi-arccos((d-c)/a)+2\pi*n => x = (-arccos((d-c)/a)-b+2\pi*n)/k]","a=3, k=5, b=8.1\deg, c=6, d=7.812"
+,"a*tan(kx+b)+c=d => a*tan(kx+b)=d-c => tan(kx+b)=(d-c)/a
+=> kx+b=arctan((d-c)/a)+\pi*n => x = (arctan((d-c)/a)-b+\pi*n)/k","a=7, k=8, b=19\deg, c=10, d=28.4"
+,(4sin(x)+1)/(sin(x)+1)=2 => 4sin(x)+1=2(sin(x)+1) => 2sin(x)=1,
+,A*cos(x)+B*sin(x)=D => =C*cos(x-\ph)=D,"A=3, B=4, C=5, D=3, \ph=arccos(3/5)
+A=2, B=5, C=sqrt(29), D=-4, \ph=arccos(2/sqrt(29))
+A=5, B=-21, C=13, D=13, \ph=arccos(5/13)
+A=1/3, B=2sqrt(2)/3, C=1, D=1/sqrt(2), \ph=arccos(1/3)"
+,sin^2(x)=1/2 => (sin(x)+1/2)(sin(x)-1/2)=0,
+,cos^2(x)=1/2 => (cos(x)+1/2)(cos(x)-1/2)=0,
+,(sin(x)-1)(sqrt(2)cos(x)-1)=0,
+,,2sin(x)cos(x)-4cos(x)=0 -> cos(x)(sin(x)-2)=0
+,,"sin(x)*cos(3x)-2sin(x)=0 => sin(x)(cos(3x)-2)=0
+2sin(x)cos(3x)-sin(x)=0 => sin(x)(2cos(3x)-1)=0"
+,f(sin(x))=0 => (t=sin(x)),
+,f(cos(x))=0 => (t=cos(x)),t^2-1/4t-3/8
+,,"2cos(t)-3sin^2(t)+2=0 => 2cos(t)-3(1-cos^2(t))+2=0
+3cos^2(t)+5sin(t)=1 => 3(1-sin^2(t))+5sin(t)-1=0
+3sin^2(x)-5cos(x)=0 => 3(1-cos^2(x))-5cos(x)=0"
+,,cos(2x)-4cos(x)+3=0 -> (2cos^2(x)-1)-4cos(x)+3=0
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+Hyperbolic trigonometric functions,cosh(x)=(e^x+e^(-x))/2,
+,sinh(x)=(e^x-e^(-x))/2,
+,tanh(x)=sinh(x)/cosh(x)=(e^x-e^(-x))/(e^x+e^(-x)),
+,cosh^2(x)-sinh^2(x)=1,
+,sinh(x+y)=sinh(x)cosh(y)+cosh(x)sinh(y),
+,sinh(x-y)=sinh(x)cosh(y)-cosh(x)sinh(y),
+,cosh(x+y)=cosh(x)cosh(y)+sinh(x)sinh(y),
+,cosh(x-y)=cosh(x)cosh(y)-sinh(x)sinh(y),
+,sinh(2x)=2sinh(x)cosh(x),
+,cosh(2x)=cosh^2(x)+sinh^2(x),
+,sinh^2(x)=(-1+cosh(2x))/2,
+,cosh^2(x)=(1+2cosh(2x))/2 = 1+2sinh^2(x) = 2cosh^2(x)-1,
+Inverse hyperbolic trigonometric functions,"arcsinh(x)=ln(x+sqrt(x^2+1)), x in (-\inf, \inf)",
+,"arccosh(x)=ln(x+sqrt(x^2-1)), x in [1, \inf)",
+,"arctanh(x)=1/2*ln((1+x)/(1-x)), x in (-1, 1)",
+,"arccoth(x)=1/2*ln((x+1)/(x-1)), x in (-\inf, 1) \union (1, \inf)",
+,"arcsech(x)=ln((1+sqrt(1-x^2))/x), x in (0, 1]",
+,"arccsch(x)=ln(1/x+sqrt(1-x^2)/|x|), x != 0, x in (-\inf, 0) \union (0, \inf)",

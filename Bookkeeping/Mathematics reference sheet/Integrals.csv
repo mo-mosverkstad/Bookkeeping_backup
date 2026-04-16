@@ -1,0 +1,234 @@
+Name,Basic relationship,Presetted values
+Definition of integrals,"\int{a, b,f(x)dx} ~= lim n->\inf \\S{k=0, n, f(x_k)*\Dx}
+F(x) = \int{f(x)dx} + C (C is an arbitrary constant)",
+"Common integral functions
+Through antiderivation:
+F(x) = \int{f(x)dx} => F'(x) = f(x)",\int{kx^n*dx} = kx^(n+1)/(n+1),
+,"\int{+{i=0, N, k_i*x^n_i*dx}} = +{i=0, N, k_ix^(n_i+1)/(n_i+1)} (Polynomial equation)","(k=[4, 6, -2], n=[3, 2, 1]), (k=[1, 3, 4], n=[-2, 1/2, 1/3])"
+,"\int{|f(x)|*dx} = {\int{f(x)dx} f(x)>=0, \int{-f(x)dx f(x)<0}}",f(x)=x-1
+,\int{e^(kx)*dx} = e^(kx)/k,"k=2, k=-2"
+,\int{a^x*dx} = a^x/ln(a),
+,\int{1/x*dx} = ln(x),
+,\int{ln(x)*dx} = \int{1*ln(x)*dx} = xln(x)+x,
+,\int{sin(kx)*dx} = -cos(kx)/k,k(x)=2x+5
+,\int{cos(kx)*dx} = sin(kx)/k,k=3
+,\int{tan(x)*dx} (= \int{sin(x)/cos(x)*dx}) = -ln|cos(x)|,k=3x+\pi/4
+,\int{cot(x)*dx} (= \int{cos(x)/sin(x)*dx}) = ln|sin(x)|,
+,\int{1+tan^2(x)*dx} = tan(x),
+,\int{1+cot^2(x)*dx} = -cot(x),
+,\int{1/cos^2(x)*dx} = tan(x),
+,\int{1/sin^2(x)*dx} = -cot(x),
+,\int{1/\sqrt(1-x^2)*dx} = arcsin(x),
+,\int{-1/\sqrt(1-x^2)*dx} = arccos(x),
+,\int{1/(x^2+1)*dx} = arctan(x),
+,\int{1/(x^2+a^2)*dx} (= 1/a\int{1/((x/a)^2+1)*1/a*dx} ) = 1/a*arctan(x/a),4/(2x^2+3)=2/(x^2+sqrt(3/2)^2)
+,\int{1/(x*sqrt(x^2-1))*dx} = arcsec(x),
+,\int{sinh(x)*dx} = cosh(x),
+,\int{cosh(x)*dx} = sinh(x),
+,\int{tanh(x)*dx} = ln(cosh(x)),
+,\int{coth(x)*dx} = ln|sinh(x)|,
+,\int{1/\sqrt(1+x^2)*dx} = arcsinh(x) = ln|x+sqrt(x^2+1)|,
+,\int{1/\sqrt(1-x^2)*dx} = arccosh(x) = ln|x+sqrt(x^2-1)|,
+,\int{1/(1-x^2)*dx} = arctanh(x),
+Integration rules,\int{(f(x)+g(x))*dx} = F(x) + G(x) + C,
+,"\int{f(x)g(x)*dx} = F(x)g(x) - \int{F(x)g'(x)} + C (Integration by parts, may recurse)","(f=x, g=cos(x)), (f=x, g=sin(x)), (f=x^2, g=sin(x)), (f=x, g=sinh(x)), (f=e^x, g=x^3+1), (f=x^2, g=e^x), "
+,(Spontanous product): \int{f(x)dx} = \int{1*f(x)dx} = x*f(x)-\int{x*f'(x)*dx},"f=ln(x), f=ln(sqrt(x)), f=ln(sqrt(x)), f=arctan(x), f=arcsin(x)"
+,\int{f(x)g(x)*dx} = F(x)g(x) - \int{F(x)g'(x)} + C (g(x) for non-integral),"(f=x^3, g=ln(x)), "
+,I(x)=\int{f(x)g(x)*dx} = F(x)g(x)-\int{F(x)g'(x)} = F(x)g(x)-…(I(x)) -> I(x) = …,"(f=sin(x), g=cos(4x)), (f=e^x, g=sin(x))"
+,\int{f(g(x))g'(x)*dx} = F(g(x)),
+,"Substitution: \int{f(g(x))g'(x)*dx} = (t=g(x), dt/dx=g'(x) -> dx=dx/g'(x)) = f(g(x))",
+Compound integrations,\int{f(x)*dx}=…,"x+cos(x), 2e^x-4, 1/cos^2(x)+sin(x)"
+Absolute value integrals,"\int{a, b, […|f(x)|]dx} = \int{a, 0, […|f(x)|]dx} + \int{0, b, […|f(x)|]dx}",
+Rational expressions,"\int{+{k=0, len(a, b), a[k]*x^(b[k])}/(cx^d)*dx} = \int{+{k=0, len(a, b), a[k]*x^(b[k])/(cx^d)}*dx}","(a=[6, -2], b=[2, 0], c=1, d=2)"
+,"\int{+{k=0, n, a_k(x)}/b(x)*dx} = \int{+{k=0, n, a_k(x)/b(x)}*dx}","(cos^3(x)+1)/cos^2(x), (e^(2x)+1)/e^x"
+,\int{ax/(bx+c)*dx}=\int{1-((b-a)x-c)/(bx+c)*dx},(x^2-1)/(x^2+1)=1-(2/(x^2+1))
+,Substitution for rational: \int{f'(x)/f(x)*dx}=ln|F(x)|,"2x/x^2+1, 4x/(x^2+1), x/(4-x^2), x^4/(x^5+1), e^r/(2e^r+1), (2x+2)/(x^2+2x+3), (x+1)/(x^2+2x+3)=1/2*(2x+2)/(x^2+2x+3)"
+,"\int{p(x)/g^n(x)*dx}=(t=g(x), dt/dx=g'(x))=…","(4x-2)/(2x+1)^2*dx=(t=2x+1, dt/dx=2)=(t-2)/t^2*dt"
+,,(9x+6)/(3x+1)^3=3(3x+1)/(3x+1)^3+3/(3x+1)^3
+Rational partial fraction decomposition,\int{PFD(p(x)/q(x))*dx},"(p=5x-11, q=x^2-5x+4), (p=x+7, q=x^2+2x-3), (p=8x^3+16, q=(x+1)^3(x-1)^2)"
+,With polynomial division: \int{PD(PFD(p(x)/q(x)))dx},"(p=x^2, q=x-1), (p=x^3+2x^2+3x+4, q=x^2+1)"
+,"Reduce header numerator degree if numerator and denominator same degree:
+\int{1+PFD((p(x)-q(x))/q(x))dx}","(p=x^2+x+2, q=x^2+2x-3), (p=x+1, q=x^3-6x^2+5x)"
+,"Hermites method:
+\int{+{k=0, n, A[k]*x^k}/*{k=0, len(B), +{l=0, m, B[k][l]*x^l}^len(B)}dx}=…+\int{+{}/*{}}","(p=x^3, q=(x^2+2x+2)^2)"
+Radical expression,"Linear: \int{p(x, [...root{n, (ax+b)/(cx+d)})*dx]}= [t=root{n, (ax+b)/(cx+d)}]","(x+2)/cbrt(x+1), 1/(x+sqrt(x)), (7x+10)cbrt(x+2), (x*sqrt(x-1))/(1-sqrt(x-1))"
+,Radical chains: \int{A*sqrt(f(x))*f'(x)*dx} = 2/3*A*(f(x))^(3/2),sqrt(x^4+1)*x^3
+,"\int{sqrt(x^2+1)*dx}=[x=sinh(t), dx/dt=cosh(t)]=\int{sqrt(cosh^2(t))*cosh^2(t)*dt}",
+,"Eulersubstitution: t=x+sqrt(x^2+1)
+\int{1/sqrt(x^2+1)*dx} = ln(x+sqrt(x^2+1))",
+,\int{x/sqrt(x^2-2x+3)} -> … -> \int{x/sqrt(x^2+1)*dx} + \int{1/sqrt(x^2)+1},
+,\int{sqrt(x^2-2x+3)*dx} = \int{1*sqrt(x^2-2x+3)*dx} = x*sqrt(x^2-2x+3)-\int{sqrt(x^2-2x+3)*dx}+\int{…*dx},
+,"sqrt(1-x^2)=(x=sin(t)), dx/dt=cos(t))=sqrt(cos^2(x))*cos(x)*dt",
+Exponential expressions,\int{1/(e^x-e^(-2x)+2)dx} = [t=e^x] = \int{e^x/((e^x)^2-e^(-2)+2e^x)*dx},
+,Chains: \int{x^(n-1)*e^x^n*dx}=\int{1/n*e^x^n*nx^(n-1)*dx} = e^x^n/n,
+,\int{ln(1+e^x)/e^x*dx} -> PARTIALINT,
+Logarithmic expressions,"\int{ln(+{k=0, n, A[k]*x^k})dx} = \int{ln(A*(*{k=0, n, x-r[k]}))dx} = \int{(ln(A)+(+ln({k=0, n, x-r[k]})))dx}
+(+{k=0, n, A[k]*x^k}=0 => {k=0, n, r[k]})","A=[1, -3, 2] -> A=1, r[1, 2]"
+,\int{ln(A(x)/B(x)dx} = \int{(ln(A(x))-ln(B(x)))dx},
+Trigonometrical expressions,\int{sin^2(x)dx} = \int{(1-cos(2x))/2*dx},
+,\int{cos^2(x)dx} = \int{(1+cos(2x))/2*dx},
+,\int{sin^(2n)(x)dx} = \int{(sin^2(x))^n*dx} = EXPAND[\int{((1+cos(2x))/2)^n*dx}],
+,\int{cos^(2n)(x)dx} = \int{(cos^2(x))^n*dx} = EXPAND[\int{((1-cos(2x))/2)^n*dx}],
+,\int{sin^(2n+1)(x)dx}=\int{-(1-cos^2(x))^(2n)*(-sin(x))*dx},
+,\int{cos^(2n+1)(x)dx}=\int{(1-sin^2(x))^(2n)*cos(x)*dx},"2n+1=3 (n=1), 2n+1=5 (n=2)"
+,"\int{cos^n(x)*sin^m(x)*dx}=…
+\int{sin^4(x)*cos^2(x)*dx} = \int{sin^4(x)*(1-sin^2(x))*dx} = \int{(sin^4(x)-sin^6(x))dx}
+\int{sin^3(x)cos^4(x)dx} = \int{(1-cos^2(x))cos^4(x)*sin^4(x)dx}",
+,"Tangentification [t=tan(x/2)]
+sin(x) = 2t/(1+t^2)
+cos(x)=(1-t^2)/(1+t^2)
+dx=2/(1+t^2)*dt","\int{1/(1+cos(x)+sin(x))dx}=(x=2v, dx=2dv)=\int{1/(1+(1-tan^2(v))/(1+tan^2(v))+2tan(v)/(1+tan^2(v)))2dv}=\int{(1+tan^2(v))/(1+tan(v))dv}=(t=tan(v), dv=1/(t^2+1)dt)=…
+\int{1/(5-4cos(v)dv}=…
+\int{sin(v)/(1+sin(v))dv}=\int{(1-1/(1+sin(v)))dv}"
+,Other tangentifications,"\int{1/(1+cos^2(v))dv}=\int{(tan^2(v)+1)/(tan^2(v)+2)dv}=(t=tan(v), dv=1/(t^2+1)}=…"
+,"Tangent target
+\int{(tan^3(x)+tan^4(x))*dx} = [t=tan(x)] = \int{(t^3+t^4)/(t^2+1)dt}",
+,Simplifications tan(x) -> sin(x)/cos(x),"tan(x)+1/tan(x)=sin(x)/cos(x)+cos(x)/sin(x)
+(1-tan(x))/(1+tan(x)) = (cos(x)/cos(x)-sin(x)/cos(x))/(cos(x)/cos(x)+sin(x)/cos(x))"
+,,
+,\int{sin(Ax)*cos(Bx)*dx} = \int{(sin(Ax+Bx)+sin(Ax-Bx))/2*dx},
+,"\int{cos(x^(1/n)*dx} = [t=x^(1/n), dx=nt^(n-1)*dt] = PARTIALINT[\int{n*t^(n-1)*cos(t)*dt}, \int{cos(t)dt}]",
+,\int{sqrt(1+cos(x))dx} = \int{sqrt(2cos^2(x/2)dx},
+,\int{sqrt(1-cos(x))dx} = \int{sqrt(2sin^2(x/2)dx},
+,\int{sqrt(1+sin(x))dx} = \int{sqrt((sin(x/2)+cos(x/2))^2)dx},
+,\int{sqrt(1-sin(x))dx} = \int{sqrt((sin(x/2)-cos(x/2))^2)dx},
+,"Chains:
+\int{(4sin(x)/(1+cos(x))^2*dx}
+\int{sin^3(x)/cos^5(x)*dx}=\int{tan^3(x)*1/cos^2(x)*dx}
+\int{e^sin(x)*sin(2x)*dx} = \int{2*sin(x)*e^sin(x)*cos(x)*dx}",
+,"\int{e^(2x)*cos(x)*dx}, \int{x/cos^2(x)*dx} -> PARTIALINT",
+Inverse trigonometrical expressions,"\int{arcsin^2(x)*dx} = [t=arcsin(x)] = \int{t^2*cos(t)*dt}
+\int{x*sqrt(1-x^2)*arcsin(x)*dx} = [t=arcsin(x)] = \int{sin(t)*sqrt(1-sin^2(t))*t*cos(t)*dt}",
+Hyperbolic trigonometrical expressions,\int{1/cosh(x)*dx} = \int{1/((e^x+e^(-x))/2)*dx} = \int{2/(e^x)^2+1*e^x*dx} = [2arctan(e^x)],
+Primitive function with condition,,
+Areas,"A = \int{a, b, f(x)} (if above x-axis)
+A = -\int{a, b, f(x)} (if below x-axis)",
+Area between two curves,"A = \int{a, b}(f(x)-g(x)) (f is above g)",
+Definite integral,"\int{a, b, f(x)dx} = {[F(x)], a, b} = F(b)-F(a)
+Integral as the area under the curve. Curve above x-axis has positive integral while curve below x-axis has negative integral",
+Integral of stepcase function,"D_s = [a, b] -> a=x_0 < x_1 < … < x_(k-1) < x_k < ... < x_n
+s(x) = h_k (x_(k-1) <= x < x_k, k=1..n)
+\int{a, b, s(x)dx} = \S{k=1, n, h_k(x_k-x_k-1)}",
+Addition,"\int{a, b, (s(x)+t(x))dx} = (s(x) = h_k , t(x) = l_k (x_(k-1) <= x < x_k, k=0..n), \S{k=1, n, h_k(x_k-x_(k-1))} + \S{k=1, n, l_k(x_k-x_(k-1))}) = \int{a, b, s(x)dx} + \int{a, b, t(x)dx}",
+Constant multiplication,"\int{a, b, k*s(x)dx} = (\S{k=0, n, k*h_k}) = k\int{a, b, s(x)dx}",
+Interval linking,"\int{a, c, s(x)dx} + \int{c, b, s(x)dx} = (a=x_0 < x1 < … < x_(m-1) <= c < x_m < … < x_n, \S{k=1, m-1, h_k(x_k-x_(k-1)} + h_m(c-x_(m-1)) + h_m(x_m-c) + \S{k=m+1, n, (x_k-x_(k-1))} = \S{k=1, n, h_k(x_k-x_(k-1))}) = \int{a, b, s(x)dx} (a <= c <= b)",
+Integral comparasion,"s(x) <= t(x), a<=x<=b -> \int{a, b, s(x)dx} <= \int{a, b, t(x)dx}",
+Riemann-integral/Riemann-integrable,"int{a, b, f(x)dx} -> \int{a, b, l(x)dx} <= I <= \int{a, b, u(x)dx} -> I_l = I_u = I
+(Arbitrary u(x) to f(x), \int{a, b, l(x)dx} <= \int{a, b, u(x)dx} for any l(x)) -> SET(l(x)) Upper bound, minimum majorant I_u, SET(u(x)) largest minorant I_u -> I_l = I_u = I",
+,"f(x) Riemann-integrable [a, b] -> \int{a, b, u(x)dx} - \int{a, b, l(x)dx} < \e (\e >0)
+(f not Riemann-integrable) -> \int{a, b, l(x)dx} <= I_1 < I_2 <= \int{a, b, u(x)dx} -> \int{a, b, u(x)dx} - \int{a, b, l(x)dx} >= I_2 - \int{a, b, u(x)dx} >= I_2 - I_1 > 0 -> (I_2-I_1 not arbitrary small)",
+,"f continous [a, b] -> f integrable in [a, b]
+<Proof missing>",
+Riemann-sums/Riemann-summa,"\int{a, b, f(x)dx} = lim{n->\inf, (b-a)/n*\S{k=1, n, f(a+k(b-a)/n)}}
+\S{k=1, n, f(S_k)(x_k-x_k-1)} -> \S{k=1, n, m_k(x_k-x_k-1)} <= \S{k=1, n, f(S_k)(x_k-x_k-1)} <= \S{k=1, n, M_k(x_k-x_k-1)} -> d=max{k=1..n, x_k-x_(k-1)}, d->0",
+Approximations,,"f(x) = 1/x, a=1, b=5, c=3"
+Integral mean-value theorem/Integralens medelvärdesats,"(f, g continous [a,b], g not changing sign [a, b]) \int{a, b, f(x)g(x)dx} = f(S)\int{a, b, g(x)dx} (S in [a, b])
+g(x)=0 [a, b]
+g(x)>=0 [a, b], g(x)!=0 x in [a, b] -> m\int{a, b, g(x)dx} <= \int{a, b, f(x)g(x)dx} <= M\int{a, b, g(x)dx} -> (A = \int{a, b, g(x)dx}) m <= 1/A\int{a, b, f(x)g(x)dx}  <= M -> f(S)=1/A\int{a, b, f(x)g(x)dx}
+g(x)<=0 -> g(x)=-g(x)",
+,"\int{a, b, f(x)dx} = f(S)(b-a)","(f=x^3, a=0, b=1)"
+,"lim{n->\inf, \int{A(n), B(n), f(x)dx}} = lim{n->\inf, S->\inf, f(S)(B(n)-A(n))}","(f=e^(1/x), A=n, B=n+1)"
+The fundamental theorem of calculus/Integralkalkylens huvudsats,"(f continous in [a, b]), F(x)=\int{a, x, f(t)dt}, x in [a, b], derivable and F'(x)=f(x)
+
+F(x+h)-F(x)=\int{a, x, f(t)dt} + \int{x, x+h, f(t)dt} - \int{a, x, f(t)dt} = f(S)(x+h-x), F'(x)=lim{h->0, (F(x+h)-F(x))/h}=lim{S->x, f(S)=f(x)}
+d/dx(\int{a, x, f(t)dt}) = lim{h->0, (\int{a, x+h, f(t)dt}-\int{a, x, f(t)dt})/h} = lim{h->0, \int{x, x+h, f(t)dt}/h} = lim{h->0, (f(c)*(x+h-x))/h} [x<c<x+h] = f(x)",
+Integration formula/Insättningsformel,"\int{a, b, f(x)dx} = {[F(x)], a, b} = F(b)-F(a)
+\int{a, a, f(t)dt} = -\int{a, a, f(t)dt} -> 2\int{a, a, f(t)dt}=0 -> \int{a, a, f(t)dt}=0 -> \int{a, a, f(t)dt}=F(a)+C=0 -> C=-F(a)
+-> \int{a, x, f(t)dt} = F(x)-F(a)","(f=3x^2, a=-3, b=6), (f=cos(x), a=pi/2, b=0), (f=|x|, a=-1, b=3)"
+,,"\int{0, pi/2, cos^n(x)} = [t=pi/2-x, dx=-dt] = \int{pi/2, 0, cos^n(pi/2-t)(-dt)} = \int{sin^n(t)dt}"
+"Integral with variable limits, Integraler med variabla gränser","S(x) = \int{v(x), u(x), f(t)dt}, s'(t) = f(u(x))u'(x)-f(v(x))v'(x)","(f=sin(t)/t, v=x^2, u=x^3), (f=e^(2t)/t, v=1/2, u=ln(x))"
+Approximations,,
+"Midpoint Rule, Mittpunktsformeln","\int{a, b, f(x)dx} = (b-a)/n*\S{k=1, n, f(1/2(x_(k-1)+x_k))} = (b-a)/n*\S{k=1, n, f(a+(2k-1)/(2n)(b-a)}",
+"Error in midpoint rule, felet i mittpunktsformeln","\e_M_n = \int{a, b, f(x)dx}-M_n = (b-a)^3/(24n^2)f''(S), S in [a, b], f''(x) continous in [a, b]",
+"Trapezoid rule, Trapetsformeln","\int{a, b, f(x)dx} = (b-a)/n(1/2f(a)+\S{k=1, n-1, f(a+k(b-a)/n)+1/2f(b))",
+"Error in trapezoid rule, Felet i trapetsformeln","\e_T_n = \int{a, b, f(x)dx-T_n = -(b-a)^3/(12n^2)f''(S)",
+"Simpsons rule, Simpsons formel","\int{a, b, f(x)dx} = (b-a)/(3n)(1/2f(x_0)+2\S{k=1, n, f(x_(2k-1))+\S{k=1, n-1, f(x_(2k))}+1/2f(x_(2n)))",
+"Error in Simpsons rule, felet i Simpsons formel","\e_S_2n = \int{a, b, f(x)dx}-S_(2n) = -(b-a)^5/(180(2n)^4)*f^(4')(S), (S in [a, b], f^(4')(S) continous in [a, b])",
+Generalized integral/Generalized integral,"Undefined values of start/end points: \int{0, 1, ln(x)dx}, \int{0, pi/2, tan(x)dx} -> lim{l->0+, \int{l, 1, ln(x)}}
+Unlimited integration interval: \int{-\inf, \inf, 1/(x^2+1)}
+Both: \int{1, \inf, 1/(x-1)dx}
+
+Suppose that the function f is continuous on a < x < b, where a and b may be finite or infinite, if both limits exists, the integral is convergent, otherwise divergent
+\int{a, b, f(x)dx} = lim{x->b-, F(x)} - lim{x->a+, F(x)}",
+,"\int{0, 1, x^pdx}, \int{1, \inf, x^pdx}, …",
+,"\int{1, \inf, 1/(x-1)dx} = lim{t->\inf-, ln|t-1|} - lim{x->1-, ln|t-1|} = \inf",
+,"\int{0, 1, ln(x)} = 1ln(1)-1-lim{x->0, xln(x)-x} = (x=e^(-y), y=-ln(x)) = -1-lim{y->\inf, e^(-y)(-y)}-0",
+,"\int{a, b, f...(x)} = {a, b, [F(x)]} = ...
+\int{f…(x)} = … = F(x)","a=2, b=\inf, f=(8x+8)/(x^4+4x^2) -> F=ln|x^2/(x^2+4)|-2/x-arctan(x/2)+C, 1+ln(2)+pi/4
+a=0, b=pi/2, f=2/(1+tan(x)) -> F=ln|tanx+1|-1/2ln|tan^2(x)+1|+arctan(tan(x))+C, \pi/2"
+,"Others: \int{…, f(x)dx} -> Indefinite integral -> …",
+Integral applications,,
+Integral areas,"The integral of the area forms the ordinate set. In a pair (x, y) of orthorectified coordinates (ortonormerade koordinater) on the plane, the first horizontal coordinate x is called the abscissa (abskissa) and the second vertical coordinate y is called the ordinate (ordinata).
+Y_f = {(x, y): a <= x <= b, 0 <= y <= f(x)} -> A=m(Y_f)=\int{a, b, f(x)dx}
+m(Y_(-f)) = \int{a, b, -f(x)dx} = -\int{a, b, f(x)dx} = -m(D)",
+Cropped area,"f and g are continous and f(x) >= g(x) on [a, b], D: {(x, y): a <= x <= b, g(X) <= y <= f(x)}
+m(Y_f\Y_g) = m(Y_f)-m(Y_g) = \int{a, b, f(x)dx}-\int{a, b, g(x)dx} =\int{a, b, (f(x)-g(x))dx}
+A=m(D)-m(E) = m(Y_(f+k))-m(Y_(g+k)) = \int{a, b, (f(x)+k)dx} - \int{a, b, (g(x)+k)dx}",
+,"f(x) >= g(x) -> f(x) - g(x) >= 0 -> FAC[f(x) - g(x)] >= 0 -> SIGN[f(x)-g(x)] -> x1<x<x2
+A = \int{a, x1, f(x)-g(x)} + \int{…} + \int{…}","f(x) = 2x^2-3x-2, g(x)=-x^2+6x-2
+f(x)=x^3, g(x)=x"
+Function symmetry,"Odd function: f(-x)=-f(x)
+Even function: f(-x)=f(x)
+even*even = even, even*odd = odd, odd*odd=even",
+,"f(x) even -> F(x)=\int{0, x, f(t)dt} odd
+F(-x) = \int{0, -x, f(t)dt} = [t=-u, dt/du=-1] = \int{0, x, -f(-u)du} = -\int{0, x, f(u)du}=-F(x)",
+,,"\int{-a, a, xsin(x)dx} = 2\int{0, a, xsin(x)dx}"
+,,"\int{-\pi/6, \pi/6, (x^3sin^2(x)-cos(x))/cos^3(x)dx} = \int{-\pi/6, \pi/6, (x^3sin^2(x))/cos^3(x)-cos(x)/cos^3(x)dx} = \int{0, \pi/6, -2/cos^2(x)}
+\int{-\pi/3, \pi/3, x^9sin^4(x)/cos^5(x)dx}
+\int{-1, 1, 2z^97/(z^2+1)+1/(z^2+1)dx}
+\int{-\pi/3, \pi/3, (cos(x)/cos^3(x)+sin(x)/cos^3(x))dx}"
+Parameterized,"K={x=x(t), y=y(t), t in I}
+K={x=R*cos(t), y=R*sin(t)}",
+Multiple point/Multipelpunkt,Multiple parameter values give the same point on the curve,
+,"x(t_1)=x(t_2) -> REMOVE[t_2=t_1], t_2 = A[:](t_1)
+y(t_1)=y(t_2) -> y(t_1)=y(A(t_1)) -> t_1, t_2=A(t_1)","x=t^2, y=t^3-4t, A=-t_1 -> t_1=-2, 2, 0"
+Parameterized tangent,"K{x=x(t), y=y(t), t in I}, x'(t), y'(t) continous, x'(t)>0 or x'(t)<0
+y'(x)[=(dy/dt)/(dx/dt)]=y'(t)/x'(t)",
+,y'(x)=0,"{x=t^2, y=FAC[t^3-4t]} -> t=2/sqrt(3), -2/sqrt(3)"
+Area of parameterized function,"K{x=x(t), y=y(t), t in I}, x'(t), y'(t) continous [a, b], x'(t)>0 on (a, b), f(t)>=0 on [a, b]
+A=\int{a, b, f(t)g'(t)dt}
+Y_K = {(x, y): g(a)<=x<=g(b), 0<=y<=f(g^(-1)(x))}
+m(Y_K)=\int{g(a), g(b), f(g^(-1)(x))dx} = [t=g^(-1)(x), x=g(t), dx/dt=g'(t), x=g(a) -> t=a, x=g(b) -> t=b] = \int{a, b, f(t)g'(t)}","{x=e^t, y=2t}, t in [0, 1]"
+,"(Counterclockwise curve): x'(t)<0 on (a, b) -> m(Y_K)=\int{b, a, f(t)g'(t)dt} = -\int{a, b, f(t)g'(t)dt}",
+Rotational volume/Rotationsvolym,,
+Disc method/Skivmetoden,"Y_f={(x, y): a<=x<=b, 0<=y<=f(x)}, V=\int{\pi*y^2*dx} = \int{\pi*f^2(x)*dx}
+a=x_0<x_1<…<x_(k-1)<x_k<…<x_n=b, \Dx_k = x_k-x_(k-1), d=max{k=1,2…n, \Dx_k}, f continous [x_(k-1, x_k], max M_k=f(\b_k), min m_k=f(\a_k), \a_k, \b_k in [x_(k-1), x_k]
+\S{k=1, n, \pi*f^2(\a_k)\Dx_k} <= \S{k=1, n, m(D_k)} <= \S{k=1, n, pi*f^2(\b_k)\Dx_k} (lim d->0) -> V_x = \int{\pi*f^2(x)*dx}","Cone volume: y=x, a=0, b=3 -> x-axis
+Sphere: y=sqrt(R^2-x^2), a=-R, b=R -> x-axis -> =4/3\piR^3
+Hyperbola: y^2=b^2(x^2/a^2-1), a=a, b=2a -> x-axis -> 4/3\pi*ab^2"
+,"Y_f={(x, y): a<=x<=b, 0<=y<=f(x)}, V=\int{\pi*x^2*dy} = \int{\pi*(f^(-1)(y))^2*dy}","Arbitrary: y=sqrt(x), 0<=x<=a -> a=0, b=sqrt(a) -> y-axis"
+,"{x=x(t), y=y(t)}, V=\int{x(a), x(b), y^2(x^(-1)(x))dx}=\int{a, b, y^2(t)x'(t)dt} ","x=2t^2-1, y=3t^3-3t, a=0, b=1"
+Shell method/Skalmetoden/Hålcylindermetoden,"Y_f={(x, y): a<=x<=b, 0<=y<=f(x)}, V=\int{a, b, 2\pi*xydx}=\int{a, b, 2\pi*xf(x)dx}
+[x, x+\Dx] (\Dx>0) -> max: M_k = f(d_k), min: m_k=f(c_k), c_k, d_k in [x, x+\Dx], \DV(x) = V(x+\Dx)-V(x), B=\pi(x+\Dx)^2-\pi*x^2=\pi(2x+\Dx)\Dx
+Bm_k <= \DV(x) <= BM_k -> lim{x->0, \pi(2x+\Dx)f(c_k) <= \DV(x)/\Dx <= \pi(2x+\Dx)f(d_k)} -> \pi*2x*f(x) <= dV/dx <= \pi*2x*f(x)","Torus: y=\pm\sqrt(R^2-(x-x_0)^2), a=x_0-R, b=x_0+R -> 2\int{x_0-R, x_0+R, 2\pi*x\sqrt(R^2-(x-x_0)^2)dx} = [u=x-x_0] = \int{-R, R, 4\pi*u\sqrt(R^2-(x-x_0)^2)du} + \int{-R, R, 4\pi\sqrt(R^2-(x-x_0)^2)du} = 0+2\pi^2x_0R^2
+Arbitrary: y=sqrt(x), a=0, b=a"
+Arc length/Båglängd,"f continous derivable in [a, b], a<=x<=b, l=\int{a, b, sqrt(1+f'(x))dx}
+\Ds_x=sqrt((x_k-x_(k-1))^2+(f(x_k)-f(x_(k-1))), [f(x_k)-f(x_(k-1))=f'(S_k)(x_k-x_(k-1))], \Ds_x=sqrt(\x_k^2+f'(S_k)^2\Dx_k^2)=sqrt(1+f'(S_k)^2)\Dx_k, l=\S{k=1, n, \Ds_x}...","f(x)=ln(x), a=sqrt(3), b=sqrt(8)"
+,"K={x=x(t), y=y(t)}, a<=<=b, l=m(K)=\int{a, b, sqrt((x'(t))^2+(y'(t))^2)dt}
+\Ds=sqrt((x(t+\Dt)-x(t))^2+(y(t+\Dt)-y(t))","{x=a*sin(t), y=b*cos(t)}, a=-\pi, b=\pi -> \int{-\pi, \pi, sqrt(a^2-(a^2-b^2)sin^2(t)dt} = \int{-\pi, \pi, a*sqrt(1-(a/c)^2*sin^2(t))dt}"
+Surface of revolution/Rotationsarea,"A = 2\pi\int{a, b, f(x)sqrt(1+f'(x)^2)dx}
+(Cone s_1, r_1, s_2, r_2) -> r_2/s_2=r_1/s_1, s_1=s_2+\Ds, A = \pi*r_1*s_1-\pi*r_2*s_2 = \pi(r_1*s_1-s_2/s_1*r_1*s_2) = \pi*r_1(s_1^2-s_2^2) = \pi*(r_1+s_2/s_1*r_1)\Ds = \pi(r_1+r_2)\Ds=\pi(f(x)+f(x+\Dx))\Ds",
+,"A = 2\pi\int{a, b, y(t)sqrt(x'(t)^2+y'(t)^2)dt}",
+Volume with cross‑sectional area/Volym med tvärsnittsarea,"\int{0, n, A(x)dx}
+A(x)=… (Shape area with x), A(x)=2xh/2",
+Volume of sphere,,
+Volume of cone,,
+Volume of torus,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+Mass,m=\int{dm} = \int{\'1r(x)*dx},
+,m=\int{dm} = \int{\r(x)*A(x)*dx},
+Tyngdpunkt,x_m = 1/m*\int{x*dm},
+,"x_m = 1/(\r*A*h)*\int{x*\r*f(x)*h*dx}
+y_m = 1/(\r*A*h)*\int{f(x)*\r*f(x)*h*dx}",

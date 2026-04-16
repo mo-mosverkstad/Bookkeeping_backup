@@ -1,0 +1,76 @@
+Name,Basic relationship,Presetted values
+General function definition,"f: A (Domain, definitionsmängd) -> B (Range, Värdemängd) is a rule that to every x in A yields one function value f(x) in B
+Function graph/Funktionsgraf/Funktionskurva: {point(x, y): y=f(x)}
+Domain D_f (set, allowed x values) -> Range V_f (set, based on allowed domain values)
+Algebraic form of function: f(x) = <rule> <bound>, function contains expression and bound (as domain D_f), to every x in domain map to one y in range.
+(<bound> can be omitted, and implicitly defined as the largest possible set of real numbers) e.g. f(x)=1/sqrt(x), <bound> infers to x>=0
+Continous: The function is continuous for all x in the domain.","f(x) = x^2-3x
+Value table:
+-2, 10
+-1, 4
+0, 0
+1, -2
+2, -2
+3, 0
+4, 4
+5, 10"
+,f(x)=…,"f(x)=-x^3-2x^2, x=3, x=-5"
+,f(x_1)-f(x_2)=…,"f(x)=x/(2x+1), x_1=2, x_2=1/2
+f(x)=3x^2-4x, x=2a"
+,(f+g)(x)=f(x)+g(x),
+,(f+g)(x)=f(x)+g(x),
+,(fg)(x)=f(x)g(x),
+,(f/g)(x)=f(x)/g(x),
+,(f.g)(x)=f(g(x)),"f(x)=x+5, g(x)=x^2, x=2"
+,"f(x)=1/x, D_f: x!=0","x-3, x^2-4=(x+2)(x-2)"
+,"f(x)=1/g(x), g(x)>0 => D_f: x",g(x)=x^2+1
+,"f(x)=kx^(2n)+b, n \\e \\Z, V_f >= b","k=1, n=1, b=2
+k=-1, n=2, b=5"
+,"f(x)=k*sqrt(g(x))+b, D_f: g(x)>0, V_f: f>b","g(x)=7-2x, b=0
+f(x)=sqrt(5+x)+sqrt(12-3x)"
+,f(x)=a,"f(x)=(x+6)/(x-2), a=0
+f(x)=(x+5)/(x+3), a=2"
+Sign table,f(x)=*{},x(x+3)(x-3)
+,,"Use as sign table
+x^2(x-2)+x+1
+x^3-4x^2+x-3=x^2(x-4)+x-3
+x^4-4x^2+x-3=x^2(x^2-4)+x-3"
+Injective function (one-to-one mapping function)/Injektiv funktion,"One to one mapping function, (x_1, x_2 in D_x)
+f: A->B
+\\A x_1!=x_2 -> f(x_1) != f(x_2) or f(x_1)=f(x_2) -> x_1=x_2","f(x)=x+1, f(x_1)=f(x_2) <=> x_1+1=x_2+1 <=> x_1=x_2"
+Surjective function/Surjektiv funktion,"f: A->B, \\A y in B \\E x in A -> f(x)=y",
+Bijektiv funktion,Both injective and surjective,
+Increasing/Växande,x_1<x_2 => f(x_1) <= f(x_2),
+Strictly increasing/Strängt växande,x_1<x_2 => f(x_1) < f(x_2),
+Decreasing/Avtagande,x_1<x_2 => f(x_1) >= f(x_2),
+Strictly decreasing/Strängt avtagande,x_1<x_2 => f(x_1) > f(x_2),
+Strictly monotone function/Strängt monotona funktioner,"Strictly increasing and strictly decreasing functions
+f injective <=> f strictly monotone",
+Inverse function,"Bijective function, f: A->B, f^(-1): B->A, f (D_(f^(-1)) = V_f, V_(f^(-1)) = D_f)
+f^(-1)(y)=x -> y=f(x), f^(-1)(f(x)) = x, f(f^(-1)(y))=y
+For every y in V_f gives x in D_f -> f^(-1) inverse to f
+Geometrical interpretation: mirroring in y=x",
+,y=f(x) <=> f^(-1)(y)=x,
+,"f^(-1).f(x)=x, \\A x in D_f",
+,"f.f^(-1)(x)=x, \\A x in R_f",
+,f(x)=(x^2: x>=0) -Inverse-> sqrt(x),
+,"root(x, n) as inverse function to f(x)=x^n if odd, f(x)=(x^n:x>=0) if event, n in N, n>=0
+x^(1/n)=root(x, n)
+x^(m/n)=(x^(1/n)^m \\A m",
+Calculate inverse function,"Check f injective
+f(x)=y => x=g(y) => f^(-1)(x)=g(x)
+Verification: f(f^(-1)(x))=x",f=1/2x+1 -> f^(-1)=2y-2
+,,
+,,
+,,
+,,
+Find domain and range,f(x) = 2+3x/sqrt(x^2+1)+3x^3,
+Polynomial function,"f(x) = \\S{k=0, n, a_k*x^k}
+Degree: The highest exponent of a variable in a polynomial indicates the degree of the polynomial.
+Standard form: f(x) = \\S{k=0, n, a_k*x^k}
+Intercept form: f(x) = a*\\P{k=0, n, x-r_k}","f(x) = -0.6x^3+0.4x^2+2.1x-6.52
+Standard form: f(x) = x^3/4-9x^2/5+13x/2-6
+Intercept form: f(x) = 1/4(x+3)(x-2)(x-4), f(x)=0 => x_1=-3, x_2=2, x_3=4"
+Linear,,
+Quadratic,,
+Cubic,,

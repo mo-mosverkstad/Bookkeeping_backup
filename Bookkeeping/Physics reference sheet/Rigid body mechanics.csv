@@ -1,0 +1,9 @@
+General,"Physics is the study of how nature behaves, using mathematics as a precise language to describe, predict, and explain that behavior.
+Physics builds conceptual models of natural phenomena, while mathematics serves as the formal system humans use to express, analyze, and test those models. These models approximate natural behavior rather than representing nature itself.
+
+Direct behavior is described by kinematics: changes in position are represented by a position function, whose derivatives define velocity and acceleration.
+
+Causes of behavior address why motion changes. These are modeled using concepts such as force (which connects motion to causes), energy (which can be stored as potential energy or associated with motion as kinetic energy and is conserved in closed systems), and momentum (which governs interactions such as collisions).
+
+Newtonian mechanics works extremely well under everyday conditions but exhibits significant and intolerable discrepancies at relativistic speeds, quantum scales, cosmological scales, or in highly complex systems such as turbulent fluids. Consequently, physics employs multiple models, each optimized for specific regimes and purposes, rather than a single universally practical framework.",Unnamed: 2
+Linear motion,s(t)=vt,…

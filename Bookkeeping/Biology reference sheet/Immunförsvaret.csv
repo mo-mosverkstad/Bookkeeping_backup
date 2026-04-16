@@ -1,0 +1,123 @@
+Grundläggande,Unnamed: 1,"System av barriär, molekyl och celler som skyddar oss
+Smittämnen: Sjukdomsframkallande mikroorganismer och 
+Patogen: Sjukdomsframkallande organismerInfektion
+Inflammation: Skyddsmekanism mot alla patogener (Skadad vävnad -> Cytokin av makrofag/mastceller -> Immuncell) -> Vävnad, rodnad, svullnad, smärta, funktionsbrist -> Förändring i blodkärl runt skadan, Lockar till sig immunceller (Lokal inflammation nödvändigt försvar, men systematisk inflammation kan ge eventuella biverkningar)
+Flesta organismer har försvar mot infektioner, Flercelliga organismer har ett försvar (Barriärer, speciella celler och proteiner)
+Alla djur har ett medfött immunförsvar
+Alla ryggradsdjur har ett adaptivt försvar"
+,Medfödd immunförsvar,"Kan skilja på kroppsegna och kroppsfrämmande ämnen
+Känner igen strukturer som är vanliga bland olika grupper av patogena
+Medfödda immunsystemet celler har olika receptor på sin yta
+PRR (Patogen recognition receptors)
+Utvecklats tidigt under evolutionen
+Alla flercelliga organismer kan knna igen och eliminera patogen
+Komplementproteiner som cirkulerar i blodet kan aktiveras av vissa strukturer e.g. Virus och arvsmassa"
+"Första försvarslinjen (Yttre, Medfödd)",,"Fysiska, kemiska och biologiska barriär, försvårar patogener
+Består av hud, slemhinnor, normalflora och sekret (Saliv, svett, tårar, magsaft)
+Hud: Hornlager av döda celler (tät), melanocyter/pigmentceller (mot UV), talg (smidig, inga tomrum, vattenavstötande), svett och talg (sekret, enzym som bryter ned mikroorganismers cellvägg)
+Slemhinnor (Mukosa): Tunnare än huden, täckt av segt slem, täcker många hålrum i kroppen, segt slem som skyddar mot omgivning, högt/lågt pH, lysosomer, mastceller (substanser hindrar patogen/kallar immunsystemet (histamin)), Flimmerhår transporterar patogener -> svalget
+Normalflora: Mikroorganismer anpassad till kroppsmiljö (~1.5 kg på slemhinnor, ~0.5 kg på hud), tar upp lediga nischer (utan patogener), bestämda platser och roller (stimulerar immunsystem, tillverkar fettsyror, vitamin(B/K), matspjälkning)"
+"Andra försvarslinjen (Inre, medfödd)",,"Igenkännande av främmande ämnen, dödar patogener, aktiv immunceller (snabbt)
+Lokal inflammation, inflammatoriska svaret (akuta fall)"
+,Inflammatoriska svaret,"<image>
+1. Skadan + patogen -> Mastcell + makrofag … (Skadan påverkar även kapillärer) Immunceller -> Blodet och skadad vävnad
+2a. Mastceller frisätter histamin
+2b. Mastceller frisätter cytokiner
+3. Histamin orsakar vidgning av blodkärlen (vasodilatation) och ökad kapillärpermeabilitet, vilket leder till ökad genomsläpplighet för immunceller.
+4. Cytokiner lockar immunceller till området (neutrofiler och monocyter).
+5. Neutrofiler aktiveras av histamin -> vävnad, fagocytos av patogener, dödar patogen med anti-mikrobiella ämnen
+6. Monocyter utvecklas till makrofager
+7a. Makrofager + neutrofiler fagocyterar patogener
+7b. Makrofager frisätter signalämne
+8. Komplement stimulerar ytterligare frisättning av signalämne, ökar blodflöde/attack-komplex, fler leukocyter -> effektiv fagocytos
+9. Vätska (antimikrobiella ämnen)vävnad
+10. Vävnaden börjar läka"
+,Feber,"Systemisk inflammation
+Cytokiner påverkar hypotalamus -> Prostaglandiner -> Feber
+Immunsignaler registreras av CNS
+Feber - minskar bakteries och virus förmåga att föröka sig
+Påverkar hormoninsöndring
+Ökad tillverkning av inflammatoriska proteiner i lever (som kan mätas i blodet och ge information om allmäntillstånd)
+Ökad produktion av immunceller i benmärgen
+Acetylsalicylsyra stoppar syntesen av prostaglandiner"
+Komplementsystemet,,"Viktig del inom medfödd immunförsvar, 30 protein från framför allt levern"
+,,"<image komplement av fagocytos, antikropp, komplementprotein, vatten strömmar in i främmande cell via aktiv pumpning till lysering>
+1. Proteiner cirkulerar i blodet i inaktiv form
+2. Aktivering -> (Flera olika protein) -> Kedjereaktion (e.g.  C3 -> C3A + C3B -> Aktivera Faktor B -> Komplex av protein)
+3. Binder till patogen och stimulerar fagocytos
+4. Bildar membranattackkomplex MAC (Göra hål i väggen av komplementprotein (Membranattackkomplex (MAC) som direkt lyserar vissa patogener))
+5. Fungerar som inflammatoriska signaler som aktiverar immunceller
+6. Rester fagocyteras av komplement av makrofag
+Regulatorprotein hindrar komplementsystemet när patogener är bekämpade. Kroppsegna celler avger substanser som dämpar angreppet av kompelementsystem"
+Cytokiner,,"Proteiner och peptider som fungerar som signalämnen
+Frisätts av immunceller/andra celler (endast av behov)
+Påverkar målceller med rätt receptor
+Olika cytokiner har olika funktioner/flera/överlappande funktioner
+Kan påverka varandras frisättning
+Nyanlända celler vandra längs koncentrationsgradient av cytokiner"
+,Interleukiner,"Stimulerar immuncellens olika funktioner (ökad genomsläpplighet i blodkärl, fagocytos, celldelning, cytokinproduktion), feber"
+,Interferoner,"Frisätts av virusinfekterade celler, signalerar andra celler att vara motståndskraftig, skyddar andra celler från infektion, effektiv immuncell mot virus, attraherar immunceller till det påverkade området"
+,Kemokiner,Bildar koncentrationsgradient som visar vägen för anländande celler: Kemotaxis
+,,"Feber - systematisk inflammation (Minskad förmåga för bakterier att fortplanta sig) (Cytokiner -> hypotalamus -> prostaglandier -> Feber)
+Immunsignaler registreras av CNS, påverkar hormonsöndring, ökad tillverkning av inflammatoriska proteiner i lever, immunceller i märgen"
+Lymfsystemet,,Nätverk med lymfkärl som transporterar lymfa/lymfvätska (vävnadsvätska utanför blodkärl)
+,,"<image> Blodkärl -> lymfkapillärer (peptid, salt, fett), leukocyter, inga röda blodkroppar -> Muskler, klaffar -> Lymfknut/lymfkörtel/lymfnod -> hjärta
+Lymfknutar: Tonsiler, halsmandlar, brässen, mjälten"
+,,"1. Lymfvätska läcks ut ur blodkärl -> (10%) lymfkärl
+2. Lymfan pressas fram med hjälp av muskler (skelettmuskel som pump)
+3. Lymfkärl innehåller klaffar -> Enkelriktat flöde
+4. Lymfknutar innehåller lymfocyter med receptor för patogen
+5. Lymfkörtlar/lymfnoder filtrerar lymfan av immuncell -> patogen
+6. Aktiverande celler delar sig -> Bekämpning
+7. Lymfan töms vid blodkärl nära hjärtat
+Endast blodplasma läcker ut ur porer i kapillärer och samlas i vävnad (10%)"
+Immunförsvarets celler,,<image>
+,Granulocyter (Medfödda),"Granula (enzymer som frisätts vid infektion, färglösa korn) (Bildas kontinuerlig, lever endast några dagar)"
+,Neutrofila,"Vanligaste leukocyter (50%~70%), bildas 1e11 varje dag, Aktiva granulocyter, 1/2 av alla granulocyter, stimulerar inflammation, fagocyterar mikrooganismer (kortlivat, dör efter fagocytos, ökar snabbt i antal)"
+,Eosinofila,"Inte lika vanlig, 5% av alla granulocyter, dödar eukaryota parasiter/markerad med antikroppar av basofila"
+,Basofila,Frisätter inflammatoriska ämnen (histamin) vid infektion i blodet -> Vidgad blodkärö + ökad blodgenomströmning (skadad)
+,Mastceller,"Viktig vid start av inflammation, innehåller granula med enzymer och histamin, frisätter histamin i skadade vävnad, startar inflammation och bekämpar patogener med enzymer (bindväv, blod/lumfkärl, under hud/slemhinna)
+Aktiveras vid vävnadsskada och infektion frisätter ämnen som lockar till sig fler immunceller, Frisätter histamin"
+,Monocyter,"Frisätter signalämne som lockar till leukocyter, utvecklas till makrofag och dendritcell"
+,Makrofager,"Storätare, fagocytos efter främmande kemiska signaler, aktiverar T-lymfocyt (Slemhinna, lever, njurar, lungor, lymfknut), Långlivad, dör inte efter fagocyt
+Endocytos av patogener -> Fuserar i lysosom -> Bryter ner i lysosomer"
+,Dendritceller,"Rikt förgrenad cellmembran (Infekterad område <-> Nämnast lymfknut), presentera ämne för adaptiva försvarets celler"
+,Lymfocyter (Adaptiva),"Receptor -> Epitop, kroppsrämmande struktur, reagerar på antigener, producerar antikroppar, förstör främmande cellers membran, reglerar immunförsvaret"
+,T-lymfocyter,"Hjälparceller/angriper virusinfekterade/cancerceller med cellupplösande ämnen, samordna andra leukocyt, bilda minnesceller (Mognar i thumus)"
+,B-lymfocyter,"Producerar och frisätter antikroppar -> Plasmaceller, bildar minnesceller (10e8 st), (Mognar i benmärg)"
+,NK-celler,"Natural killer cells, dödar antikroppsmarkerad cell/infekterad cell/tumörcell
+känner igen och dödar kroppens egna infekterade celler, tumörceller, patrullerar, (dödsmolekyl och bromsmolekyl -> om celler har bromsmolekylreceoptor (fönster) -> Överlever)"
+,T-hjälparcell,"Bekämpar extracellulära patogener, samordnar B, T-mördar och makrofager"
+,T-mördarcell,"Bekämpar intracellulära patogener, infekterade kroppsegna celler, cancerceller"
+,Regulatoriska T-celler,"Dämpar immunförsvarets aktivitet efter infektion, avslutar immunsvar"
+,Plasmacell,Producerar antikroppar (Proliferation + differentiering -> plasmacell) -> Blodet/slemhinnor i inflammatorisk område
+,Naiva T-celler,"T-cellen som aldrig aktiverats (Rörelsemönster: Blod <-> Lymfkärl/lymfknutor), kan aktiveras av monocyter"
+Lymfocyters receptorer,,"Proteiner som känner igen en viss epitop (Från slumpmässig kombination av gensegment)
+En cell har en sorts receptor men kan ha tusentals kopior (Variabel region -> receptor patogen, konstant -> komplement/receptor)"
+,BCR,2 antigenbindande delar (10e3 st av varje sort)
+,TCR,1 antigenbindande del
+Antikroppar,,"Binder till strukturer/antigen på patogener (Tuna och lätta kedjan, svavelbryggor)
+Neutralisation av toxiner/patogeners möjlighet att infektera kroppsceller
+Markera patogenen för fagocytos (Opsonisering)
+Antikroppar aktiverar komplement -> Attackkomplex -> Lysering av patogen
+Neutralisation, klumpbildning, samverkan med komplement"
+,IgA,"Hindrar bakterier/virus från att tränga in i slemhinnor, kan passera slemhinnor (saliv, tårar, tarm)"
+,IgD,"Funktion till viss del okänd, aktivera basofila/mastceller"
+,IgE,"Binder till konstanta delen av mastcell -> aktivering, skyddar mot eukaryota parasiter, inblandad i allergiska reaktion/astma"
+,IgG,"Viktigast antikroppsklass, mindre, mer flexibel, senare delen av en infektion, starkare än IgM, aktiverar komplement/fagocytos"
+,IgM,Frisätts tidigt under immunförsvar/vanligast i blodet
+Tredje försvarslinjen (Inre adaptiv),,"Igenkänning av strukturer hos speciella patogener, igenkänning och dödar speciella patogener (långsam), kraftfull
+Antikroppar, lymfocyter, immunologisk minne
+Långsammare men kraftfullt"
+,,"Aktivering -> Differentiering -> Effektorfunktion -> Apoptos -> minnesceller
+Effektivt och kraftfullt vid minnesceller
+Dominerande koncentration av IgM vid början, senare dominerande koncentration av IgG"
+,Aktivering av immunceller,"Klonal selektion: Bindning mellan BCR/TCR aktiverar lymfocyten -> Delning
+Klonal expansion: (Efter några dagar) Många dotterceller med identisk BCR/TCR
+Differentiering: Dotterceller -> effektorcell -> Bekämpning av patogen"
+,Antigenpresentation,"1. Virusprotein i ribosom
+Virusprotein bryts ned till peptider
+ER -(+MHC/HLA)->
+Transport till cellyta
+TK (Igenkänning)"
+,,Other pathways here…

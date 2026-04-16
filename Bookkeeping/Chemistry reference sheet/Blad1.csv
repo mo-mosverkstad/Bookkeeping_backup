@@ -1,0 +1,15 @@
+Substance class,General formula,Prefix,Suffix,Example,Electronegativity
+Alkane,R,Alkyl-,-ane,Ethane CH2CH3,Non-polar
+Alkene,RC=CR',Alkenyl-,-ene,Ethene CH2=CH2,Non-polar
+Alkyne,RC≡CR',Alkynyl-,-yne,Ethyne CH2≡CH2,Non-polar
+Alkylhalogenide,,,,Chloroethane CH3CH2Cl,
+Alcohol,R-OH,Hydroxi-,-ole,Ethanol CH3CH2OH,Polar (only small)
+Phenol,,,,Phenol C6H5OH,
+Ether,R-OR',Alkoxy-,-ether,Diethyl ether CH3CH2OCH2CH3,
+Thiole,R-SH,Sulfhydryl-,-thiole,Ethanthiol CH3CH2SH,
+Disulfide,R-SS-R,,-disulfide,Diethyl disulfide CH3CH2SSCH2CH3,
+Amine,R-NH2,Amino-,-amine,Methylamine CH3NH2,
+Aldehyde,RHC=O,Oxo-,-al,Acetaldehyde CH3CHO,
+Ketone,R-(R'C=)O,"Keto-, oxo-",-one,2-Propanone/Acetone CH3C(=O)CH3,
+Carboxylic acid,R-COOH,Karboxyl-,-acid,Ethanoic acid/Acetic acid (CH3COOH),Polar (only small)
+Esters,R-CO(=O)-R',,-oate,Methyl ethanoate/Methyl acetate (CH3-CO(=O)CH3,Non-polar

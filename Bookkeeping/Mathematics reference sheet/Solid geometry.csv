@@ -1,0 +1,20 @@
+Name,Basic relationship,Presetted values
+Point,"P(L1(α))
+L+P>α
+α(L1~L2)",
+Line // Line,"L∥α(Ln)
+(L1⊥)∥(L2⊥)
+L1((α)∥β)∥L2(α/β)",
+Plane // Line,"α(L1)∥L
+L(α)∥β",
+Plane ⊥ Line,"(α∥β)⊥L
+α(m/n)⊥L
+(l1⊥α)⊥α",
+Plane // Plane,α(L1/L2)∥β,
+Plane ⊥ Plane,β(L)⊥α,
+,,
+,,
+Pyramid,V=Bh/3,
+Prism,V=Bh,
+Sphere,"V=4/3*\pi*r^3, A=4\pi*r^2",
+Ellipsoid,V=4/3*\pi*a*b*c,

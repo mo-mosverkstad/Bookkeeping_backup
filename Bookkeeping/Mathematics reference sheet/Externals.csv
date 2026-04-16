@@ -1,0 +1,7 @@
+Unnamed: 0,"Knots: (k: cross, s: rotate \pi/2 rad clockwise)
+
+My approach:
+Basic operators: k: cross, s: rotate \pi/2 rad clockwise
+Inversed operators (based on basic operators): k^(-1) = (sk)^2, s^(-1)=s^3
+
+k^3sk^2sk -> k^(-1)*s^(-1)*k^(-2)*s^(-1)*k(-3) = …"

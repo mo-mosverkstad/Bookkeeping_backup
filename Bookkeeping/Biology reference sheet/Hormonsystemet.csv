@@ -1,0 +1,58 @@
+Grundläggande,Unnamed: 1,"Även kallad endokrina systemet
+Signalämne mellan celler, når långa avstånd
+Startar och upprätthåller utveckling, tillväxt, mognad, fortplantning och åldrande
+Upprätthåller homeostas i kroppen (Joner, vatten, näring, avfallsprodukter, pH, värme, hunger&mättnad)
+(Sjukdomar kopplade till hormonsystemet beror ofta på över eller underproduktion av olika hormoner)",Unnamed: 3
+,Struktur/delar,Ett antal endokrina körtlar (insöndring av hormon) samt även 3 regioner i hjärnan,
+,Hormonfunktion,"Insöndras i vävnadsvätskan, diffunderar ut i blodet, celler med rätt receptor påverkas av hormonet (Hormonproducerande celler -> Blodkärl -> Målcell)
+(Hormoner har flera effekter beroende på vävnadsreceptorer, kan ha flera aktiverande receptorer)
+Fettlösliga: Långsam transport men långvarig (Transportprotein -> Tränger in genom membran -> Receptor på kärnmembranet (aktiverar/blockerar gener))
+Vattenlösliga: Snabba men kortvariga (Utan transportprotein -> Kan inte tränga genom membran, receptor på cellmembran -> Snabb biokemisk reaktion (kaskadeffekt i cellen))",
+,Hormonreglering,"1. Inre/Yttre stimuli: Förändringar i inre miljön som upptäcks av omedvetna sinnen -> hormonproduktion, både inre och yttre stimuli påverkar hormonfrisättning
+2. Kroppens medfödda rytmer: Cyklisk frisättning av hormoner över bestämda perioder -> (Koncentration enligt rytm) e.g. dygnsrytmen
+3. Hypotalamus och hypofysen: Styrandet av återkoppling
+  - Positiv återkoppling -(+)->: Frisättning stimulerar ytterligare hormoner
+  - Negativ återkoppling -(-)->: Frisättning hämmar andra hormoner -> Reglering av hormonkoncentrationer
+
+(1: Hypotalamus) -(+)-> ((2: Hypofys) -(-)-> 1) -(+)-> (3: Endokrin körtel) -(+)-> ((4: Hormon) -(-)-> 1, 2) -(+)-> (5: Målvävnad)",
+Hormonsystemets körtlar,Hypotalamus,"Länk mellan nerv- och hormonsystemet. Får information från kroppens inre sinnesceller, 
+Insöndrar neurohormoner (=hormoner som bildas av nervceller)
+Neurohormoner styr produktion av hormoner från hypofysens framlob
+Hypotalamus tillverkar även andra hormon som lagras i hypofysens baklob",-> Neurohormon
+,Hypofys,"Hormonproducerande körtel. Står över andra endokrina körtlar
+Körtelcellerna stimuleras att producera egna hormon
+Hypofysens hormoner insöndras i blodbanan
+Hormonerna påverkar sedan olika körtlar ute i kroppen (t.ex. binjurar, sköldkörteln, testiklar/äggstockar)
+(baklob som lagringsplats för fåtals neurohormon (vassopressin, oxytocin), ingen endokrin körtel)",
+,Epifys/Epitalamus/Tallkottskörteln,Styr dyngsrytmen,Melatonin
+,Sköldkörteln,Styr ämnesomsättningen,"T3, T4"
+,Binjurar,"Reglerar blodtryck, saltbalans, omsättning av fett, socker och proteiner","Adrenalin, kortisol"
+,Bukspottskörtel,Påverkar blodsockernivåer,"Insulin, glukagon"
+,Testiklar,Producerar könshormoner,Testosteron
+,Äggstockar,Producerar könshormoner,Östrogen
+,Vit fettvävnad,"Upprättar homeostas i kroppen e.g. bildning av blodkärl, metabolism, hunger och mättnad
+(White Adipose Tissue, e.g. leptin)",Leptin
+Olika typer av hormon,Hormon,(Produktionscell -> Målcell) Huvudeffekt,(Frisättning styrs av)
+,Insulin,"(Bukspottskörteln (β-celler) -> Skelettmuskelatur, fettväv, lever) Sänker blodsocker genom ökad upptag i celler, ökar glykogenlagring, proteinsyntes (normal koncentration: 4~6 mmol/L)",Hög blodsockernivå (av langerhanska öarna)
+,Glukagon,(Bukspootskörteln (α-celler) -> lever) Höjer blodsockret genom att bryta ned glykogen i lever (frisätta glykos i blodet),Låg blodsockernivå
+,GH (Tillväxthormon),"(Hypofysens framlob -> skelettmuskelatur, skelett, fettväv, lever) stimulerar tillväxt under puberteten, ökar ämnesomsättning och blodsockernivå","Hypotalamus, dygnsrytm, stress, sänkt blodsockernivå"
+,"IGF-1 (GHRH)
+Insulinliknande tillväxtfaktor","(Alla, lever* -> skelettmuskelatur, skelett (tillväxtplatta)) Stimulerar tillväxt, reglerar blodsockernivå",GH
+,LH (Luteriserande hormon),(Hypofysens framlob -> Äggstockar) Stimulerar ägglossning och testosteronproduktion,"Hypotalamus, dygnsrytm
+- (Progesteron)"
+,FSH (Folikelstimulerande hormon),(Hypofysens framlob -> Äggstockar) Stimulerar mognad av äggfolliker och spermieproduktion,"Hypotalamus
+- (Östrogen/testosteron)"
+,Oxytocin,"(Hypofysens framlob -> Bröstkörtelgångar, livmoder) Stimulerar frisättning av mjölk och spermieproduktion","Spädbarnsskrik, beröring
++ (värkarbete)"
+,ADH/Vasopressin,"(Hypofysens framlob -> Njurar) Minskar urinproduktionen, reabsorbering av vatten från primärurin i njurar","Vätskebrist, hög saltkoncentration"
+,EPO (-> Kortisol) (CRH -> ACTH),(Njurar -> Benmärg) Stimulerar bildning av röda blodkroppar -> Ökar blodvärde,Låg syretillgång
+,Melatonin,(Epifys -> Hjärna) Reglerar dygnsryttmen (trötthet) (cirkadisk rytm av klockgener som aktiveras cykliskt under dygnet),Klockgener (Epifys)
+,Adrenalin,"(Binjuremärgen -> Hjärta, blodkärl, fettvävnad) Stärkt hjärtsammanslag, puls, blodtryck, blodsockernivå, nedbrytning av glukogen","Stress, lågblodsocker, syre, blodtryck"
+,Noradrenalin,"(Binjurebarken -> Blodkärl, hjärta) Ökad blodtryck, ihopdragen blodkärl, nedbrytning av triglycerid",
+,Testosteron,"(Testiklar -> Skelettmuskelatur, skelett, stämband) Ökad muskel, skelettmassa, manliga könkaraktärer","Hypotalamus, FSH, LH från hypofysen"
+,Östrogen,"(Äggstockar -> Bröstvävnad, fettväv, andra vävnad) Uppbyggnad av livmoderslemhinna, kvinnliga karaktärsdrag",
+,Progesteron,"(Gulkroppen -> Bröstkörtlar, livmoder) Förberedelser för graviditet, bygger upp slemhinnan",
+,Kortisol,"(Binjurebarken -> Flesta vävnader) Motverkar inflammation, hämmar proteinsyntes",Hypotalamus + ACTH
+,"Tyroxin
+Trijodtyronin","(Sköldkörteln -> Flesta vävnader) Reglerar basala ämnesomsättningar, bidrar till hjärnans tidiga utveckling",Hypotalamus + TSH
+,D-vitamin,"(Hud, lever, njurar -> Tunntarm, skelett, njurar) Påverkar Ca (2+) upptag och stimulerar inlagring i skelettet","UV-strålning, intag från födan"

@@ -1,0 +1,51 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+…,,
+Circuits,,
+Switches,,"Type of contact: SPST (single pole, single throw), SPDT (single pole, double throw -> forked switch), DPST (double pole, single throw -> double wire control), DPDT (double pole, double throw)
+Ratings for voltage/Current, method of operation (toggle/slide)"
+Semiconductors,,"Metals as conductors (valence electrons, no energy bandgap, conduct current well, microohm resistance)
+Semiconductors (no valence electrons, low energy bandgap 0.5-3V, conduct little current, milliohm to megaohm resistance depends on doping)
+Isolators (No valence electrons, energy bandgap > 7eV, Conduct no current, gigaohm resistance)"
+,Doping by adding impurity,"Group V dopant (N-type dopant (negative charge) e.g. As) -> Extra electron not involved in bonds
+More dopant in crystal -> lower resistance (1PPM - 1%)
+n-type: extra electron in Si (N, P, As, Sb)
+p-type: Missing electron in Si -> hole (B, Al, Ga, In)"
+Transistors,N-type silicon,Free electrons after adding negative dopants
+,P-type silicon,Electron holes after adding positive dopants
+,Diode/p-n-junction (p-n-övergång),"Anode with p-type cathode with n-type -> cathode (+), anode (-), depletion region between, Only one direction
++ ((+)D1(-)*R1) - -> Current, + ((-)D1(+)*R1) - -> No current
+Forward voltage (+), Breakdown voltage (reversed voltage too high to burn diode)"
+,Light emitting diode (LED),Converts electric current to light photons in forward bias
+,Bipolar Junction Transistor,"NPN: + (Collector (n-dopant), base (active HIGH voltage), emitter (p-dopant)) - (np and pn junction together)
+PNP: …"
+,Field Effect Transistor (FET),
+,"Junction FET (JFET)
+J-channel and p-channel",
+,Metal oxide semicoductor FET (MOSFET),"n (source) - gate (p substrate) - n (drain), gate: polysilicon as gate inlet + silicon dioxide insulator
+nMOS: (Drain) n - p (Gate and substrate, active HIGH voltage) - n (Source, GND), electrons attract to gate, creating electron n-channel
+pMOS: (Drain) p - n (Gate and substrate, active LOW voltage) - p (Source, VCC), electrons repel from gate, creating electron p-channel
+Usually created together to form CMOS (Complementary MOS)"

@@ -1,0 +1,45 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2
+,Single cycle computer,"F: Acc, I, C, D, N -> (A[3:0] = MUX(Acc, 0, C[1]), S=C[1]*C[3], B[3:0] = MUX(D, I, C[0])^Bitextend(4, S)) -> S, A[3:0], B[3:0]
+G: C, N -> (P=C[2]*(C[3]+!N), Q=!C[2]) -> P, Q
+
+(Address)[3:0] = Counter(CLK, R, load=P)
+(Acc)[3:0] = Register(CLK, R, Write=Q)
+[C[3:0], D[3:0]] = ROM(Adress)
+S, A[3:0], B[3:0] = F(Acc, I, C, D)
+P, Q = G(C, D-FF(CLK, N))
+N, R[3:0] = ADD(A, B, S)
+
+Imm: D[3:0], A: Accumulator (Registor), SW: Switch input (external user input), JNC: Jump no carry to adress
+(C[3:0]: Instruction, 0: A=0+Imm+0, 1: A=0+SW, 2: A=A+Imm, 3: A=A+SW, 4: JNC 0+Imm, 5: JNC 0+SW, 6: JNC A+Imm, 7: JNC A+SW, 8: A=0+Imm, 9: A=0+SW, A: A=A-Imm, B: A=A-SW, C: JMP 0+Imm, D: JMP 0+SW, E: JMP A-Imm, F: JMP A-SW)
+e.g. [00 21 41 05 0A C3]"
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+Logic arrays,Logic arrays,"Gates organized into regular array/matrix without reconfiguring wires -> Design simplification, reconfigurabiity, especially during development"
+,PLA (Programmable logic arrays),"Older, only combinational logic functions
+Inputs -> And array -(Implicants)-> Or array -> output using dot notation for interconnection
+ROM as a special case of PLA (Decoder as AND-array, ROM array as OR-array)
+Simple programmable logic devices (SPLDs) are souped-up PLAs that add registers and various other features to the basic AND/OR planes."
+,FPGA (Field-Programmable Gate Array),"Both combinational and sequential logic, multilevel logic functions
+array of reconfigurable gates, either programming on HDL or schematic
+General structure: TBL[[(IOE), (IOE), (IOE), (IOE), (IOE)], [(IOE), (LE), (LE), (LE), (IOE)], [(IOE), (LE), (LE), (LE), (IOE)], [(IOE), (LE), (LE), (LE), (IOE)], [(IOE), (IOE), (IOE), (IOE), (IOE)]]"
+,Xilinx Zync 7000,"General structure: (Programmable logic[2*2](Processing system[1*1] <-AXI Interfaces-> Programmable logic[2*2]))
+APU: TOP[TBL[[-, ""NEON/FPU (Floating point extensions)""*[2*1]], [""MMU (Memory management unit)""*[1*2], ""ARM Processor/ARM Cortex-A9 processing core""*[2*2]], [-, ""Level 1 cache(D)"", ""Level 1 cache (I), (32KB each, data + instructions)""]] <-> [""Snoop control unit(SCU)""] <-> [[""Standard Level 2 cache memory 512 KB data+ instructions"", ""OCM (On chip memory, 256 KB)""]]]
+Logic fabric + Switch matrix
+CLB (Configurable logic block): (LEFT[Switch matrix[1*2] -> CLB(LEFT[BOTTOM[C_in -> Slice 1 -> C_out], BOTTOM[C_in -> Slice 0 -> C_out]])])"
+,Altera Cyclone IV Logic Element LE,…
