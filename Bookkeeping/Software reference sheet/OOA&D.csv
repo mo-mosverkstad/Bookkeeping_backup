@@ -73,6 +73,21 @@ Classes for grouping data e.g. Date, RepairOrderState, TelephoneNumber does not 
 * bike brand -> enum class / string?
 * bike model -> enum class / string?
 * Cost is a number, and could become an attribute of ProposedRepairTask. But then what about **Currency**? Is that not a string that should be an attribute of Amount? This is something that should be discussed with the customer, but now let’s just decide we do not need to keep track of currencies. Therefore, **Currency is removed (currency is SEK by default)** and Amount becomes attribute of ProposedRepairTask, and it is same as totalCost, which is the attribute of RepairOrder."
+,,"Category list:
+- Transactions, selling or buying a product or service
+- Products or services, what is sold or bought in the transaction
+- Roles of peoples and organizations involved in the transaction
+- Places, maybe where a transaction is performed
+- Records of a transaction, for example contract, receipt
+- Events, often with a time and place
+- Physical objects
+- Devices, are probably physical objects
+- Descriptions of things
+- Catalogs, where the descriptions are stored
+- Systems, software or hardware that is collaborating with the system for which we are
+creating the DM
+- Quantities and units, for example length, meter, currency, fee
+- Resources, for example time, information, work force",
 ,System sequence diagram (SSD),"Not a part of analysis (strictly), belong to gathering requirements
 Reflect the interactions of the requirements specification, no less and no more.
 Requirements  happening ""outside"" the actor are dropped, since no interaction between actor (cachier) and the system, (e.g. The customer arrives and asks to rent a car., The customer describes the desired car.)
@@ -94,6 +109,9 @@ Main method: start the program, not related to any applicational layer.
 Ccontroller layer -> model layer (Model shall only be called by controller)
 dbhandler/integration layer -> database layer (data shall only be called by dbhandler)
 controller layer -> dbhandler layer (Layers may be bypassed. It is for example perfectly fine to call dbhandler directly from controller, cannot bypass from view to other layer)",
+,,"Domain-Driven design (DDD):
+Domain model directly becomes the system's class diagram, offering deeper insight and solutions to complex design problems",
+,,"MVVM, MVP",
 ,,"DTO (Data Transfer Object) Design Pattern: grouping a long parameter list means a large public interface with big risk for change
 Read-only and immutable (only get methods). Cannot change state (no history), only a snapshot of an entity at particular instance",
 ,Main design (Interaction diagrams),"1. Design one system operation at a time, translate each system operation from SSD into each interaction diagram (sequential/communication diagram), with time/execution flow
@@ -218,4 +236,72 @@ Cover branches, boundary cases, invalid inputs and correct failure behavior",
 ,,Complex dependencies: Higher-layer classes depend on lower-layer components -> Test entire stack and identify the lowest failing cases. Test cases written bottom-up (from no dependencies -> moving upward),
 ,,Production code MUST NOT be modified to simplify testing,
 ,Common mistakes,"Too many assertions in the same test method: Place as few assertions as possible in each test method—ideally one—because clearer, smaller tests are easier to name and understand, and they allow more assertions to run before a failure stops execution.",
-Handling exceptions,,,
+Handling exceptions,,"Exceptions (clear semantics, error information, invalid result)
+Checked exceptions: Business rule violations
+Unchecked exceptions: Unrecoverable technical failures, client cannot meaningfully respond",
+,,"Exception class names: clear, descriptive, more general, ending with Exception
+Exception message: detailed context
+
+* public class AlreadyBookedException extends Exception (already booked)
+* public class CarRegistryException extends RuntimeException (general unchecked exception)",
+,,"Include information about error conditions: Exception objects should both store the error data condition and a developer-forcused message -> debugging without exposing internal details to user interface
+e.g. AlreadyBookedException(""Unable to book <regNo>: already booked""), CarRegistryException(general datastore failure, no specific available information)",
+,,"Functionality provided in superclass Exception, pass messages to superclass constructor, encapsulate fixed message when appropriate, storing only varying data in fields -> cohesion and clarity",
+,,Low-level technical exceptions (e.g. database errors) caught + wrapped in high-level user-safe exception -> exception chaining/caught + handled earlier,
+,,"Javadoc comments for all exceptions -> @throws (condition it is thrown -> guide user of the method, force author to precisely define exception's purpose)",
+,,"An object shall not change state/invariants if it throws an exception (no modified fields)
+1 -fallback-> 2 -fallback->
+1. Immutable fields (final)
+2. Check parameter values before changing state
+3. Place failing operation before mutating state
+4. Use temporary copy of state, restore it before throwing 
+e.g. CarRegistry checks for failures before modifying state, Rental validates parameters first, and Controller’s bookCar never changes state at all.",
+,,"Never write empty catch block -> silently ignores exceptions, silent failures and extremely confusing program behavior
+No error escapes to user, catch blocks must provide information",
+,,"User error message: clear, consistent error messages generated by a single dedicated component in the view ensuring user-appropriate messages rather than exposing internal exception details or relying on lower-layer messages",
+,,"Developer error messages: Special logging component (util) with full stack traces (separate from user, non-business-logic)
+-> Log into file",
+,,"Unit-testing: No execution occur during valid execution, occur during failure conditions",
+,Common mistakes,"Missing failure handling, forgetting to validate all parameters and cover all execution paths
+Expose missing checks through unit testing",
+,,"Exceptions are caught when it is not needed: Do not catch exceptions unnecessarily, if the catch block does nothing except rethrow, let the exception propagate naturally instead of adding pointless handling.",
+Polymorphism and inheritance,,"Achieve better OOP guidelines, interface using <<interface>> stereotype, abstract method in italics, class realize interface, subclasses generalize superclass",
+,,"Sequence and communication diagrams cannot show that an object both implements an interface and inherits from a class—such diagrams must depict the object as either the class type or the interface type, but not both simultaneously.
+
+Drawing both the interface type and the implementing class type for the same lifeline is incorrect, because in a sequence diagram it would imply two separate objects rather than one.
+
+Interfaces in sequence and communication diagrams can be drawn either with the standard class diagram interface symbol or with the alternative ""lollipop"" interface symbol.",
+,Polymorphism (share interface),"Common interface (Logger, FileLogger) common methods -> flexibility and decoupled design
+e.g. Logger -> (FileLogger, ConsoleLogger), clients use logging without depending on any specific implementation, hiding implementation details inside API, maintaining low coupling, high cohesion, reduced coupling",
+,,Allows program behavior to change at runtime (e.g. switching log destinations) without scattered if statements/code changes,
+,,"New implementations to be loaded and added at runtime, e.g. letting a program dynamically load classes (such as different Logger implementations)",
+,Inheritance (share class),"Subclass automatically gain all non-private members of superclass (protected, marked with #) -> accessible to subclasses",
+,,"Not for code reuse, use function composition
+-> Make frequently make code harder to reuse
+1. Rigid inheritance hierarchies break down when real-word variations appear (e.g. Penguin cannot fly, but derived from Bird)
+2. Break encapsulation, subclasses recieve superclass internal implementation (e.g. List -> CountingList, inherited internal implementation can behave unexpectedly, List.addAll calls add, overriding add in CountingList -> counter increase twice -> hard-to-detect bugs)
+3. Cannot control public interface of subclass: Automatic inheritance of entire public interface of superclass -> force subclass to accept and maintain inherited methods -> loss of control, accidental interface expansion, hidden maintenance burdens when superclass evolves",
+,,"Appropriate use: Subclass truly a specialized version of superclass, sharing core behavior, public interface in stable, well-designed hierarchy
+Modify behavior: One class performs almost same task as another but differs only in specific detail -> specialization using subclass cleaner than duplication (e.g. BarChart, LineChart, differing part placed in protected, overridable/template method)
+Provide default implementation: adapter class (e.g. MouseAdapter)
+Appropriate class hierarchies:
+1. All members of the superclass must be meaningful also in the subclass.
+2. The superclass is a generalization of the subclass, it is more abstract than the subclass, and can therefore be used in more situations than the subclass.
+3. The subclass is a specialization of the superclass. It can not be used in all situations where the superclass can be used, but where it can be used, it is better suited than the superclass.
+4. The subclass and the superclass must have an is-a relation, meaning the expression a <subclass name> is a <superclass name> must be true.",
+,,"Appropriate for artificial, well-defined concepts where hierarchies are stable and unambigious
+Not appropriate for modeling real-world entities that rarely fit strict generalization-specialization trees",
+,Gang of Four (GoF) design patterns,"The GoF design-patterns book and Fowler's refactoring book -> foundational concepts, underpin modern software design
+Design pattern: Formalized, reusable solution to a recurring software design problem, proven strategies for building better systems",
+,,"The Observer Pattern: Notifies one or more dependent objects automatically whenever another object changes state, making it ideal for listeners and event‑handling mechanisms.",
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+Additional,,"Despite their age, the GoF design-patterns book and Fowler’s refactoring book** remain highly relevant because they introduced foundational concepts and ways of thinking that still underpin modern software design, even if their code examples use older languages.",
+,,"Joshua Bloch’s Effective Java (3rd edition) remains an essential resource for Java developers because it distills modern, language‑specific best practices—making older editions obsolete due to Java’s rapid evolution.",
+,,"Martin Fowler’s website (https://martinfowler.com/) is an excellent resource filled with valuable material on software design and architecture, even if you don’t agree with everything.",
+,,"There are countless learning resources beyond this book, and the best path forward is to explore multiple — often contradictory — opinions and practices, gaining deeper understanding over time through continuous study and hands‑on experience.",

@@ -1,4 +1,8 @@
-Here’s a clean, structured README you can use:
+# Bookkeeping backup
+
+The bookkeeping backup contains backup version of paneled knowledge data (knowledge reference sheets) structured and built as spreadsheet. 
+
+Spreadsheets are maintained using a script that converts from Excel files to CSV files incrementally, which stays in sync with development tools.
 
 ---
 

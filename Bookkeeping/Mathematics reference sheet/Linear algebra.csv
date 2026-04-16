@@ -136,8 +136,8 @@ Matrisekvationer,,A(B+XB)=I -> B+XB=A^(-1)I -> I+X=A^(-1)B -> X= A^(-1)*B-I,
 Determinanter,Utveckla efter rad i,"det(A_(n*n)) = \S{j=1, n, a_ij(-1)^(i+j)*M_(ij)}
 M_(ij) är determinanten som fås genom att stryka rad i och kolonn j i det([A])",
 ,2*2 determinanter,"det([[a, b], [c, d]]) = ad-bc",
-,,"En multipel av en rad kan läggas till en annan rad utan att determinanten ändras
-En multipel av en kolonn kan läggas till en annan utan att determinanten ändras",
+,Gausseliminering,"En multipel av en rad kan läggas till en annan rad utan att determinanten ändras
+En multipel av en kolonn kan läggas till en annan utan att determinanten ändras","[[0, 1, 1, 1, 1, 1], [1, 0, 1, 1, 1, 1], [1, 1, 0, 1, 1, 1], [1, 1, 1, 0, 1, 1], [1, 1, 1, 1, 0, 1], [1, 1, 1, 1, 1, 0]]"
 ,Adjutant,adj(A) = …,
 Determinanter algebra,,Determinant (|det(A)|) -> avbildningsskala (area/volym),
 ,,"det A != 0 -> linjär oberoende kolonner, det A = 0 -> linjär beroende kolonner",
@@ -243,6 +243,10 @@ R^n -[A_f]-> R^n
 ,Egenvärden och egenvektorer,"F har egenvektorn [u], F([u]) = [A]*[u] = \l*[u], [u] != 0",
 ,Egenvärdena \l_k,Karakteristiska ekvationen det([A]-\l*[I])=0,
 ,Egenvektorer u_k,([A]-\l*[I])*[u] = 0,
+,Egenvärde av ortogonal projektion,"Vektorer speglingsplanet: 1, ortogonal mot speglingsplan: 0",
+,Egenvärde av spegling,"Vektorer speglingsplanet: 1, övriga: -1",
+,Egenvärde av rotation,"Egenvärde saknas
+Multipel av \pi: alla vektorer, -1",
 ,Diagonalisering,"Om n*n-matrisen [A] har n st linjärt oberoende egenvektorer {k=1, n, [u]_k} med motsvarande egenvärden {k=1, n, \l_k} då är [A] = [P]*[D]*[P]^(-1) där P = [[u]_1 … [u]_n] och D = [[\l_1, …, 0], …, [0, … \l_n]]",
 Tillämpningar,"Minsta kvadratlösnig till ett överdeterminerat system
 Interpolation","[A_(m*n)]*[X_n] = [B_m], m>n

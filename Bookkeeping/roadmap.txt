@@ -1,12 +1,11 @@
 - Course activities:
-  - Year 1 period 3:
-    - Algebra and geometry (+ Object oriented design and analysis)
   - ...
   
 - Private activities:
   1. Convergence:
     - Retroactive data convergence I:
       - Bobasystem (Bobasystem + photo notes)
+      - current repo
       - repos/convergence
       - Sommarmatematik/fysik (https://mattefysik.rcn.kth.se/course/view.php?id=17) + sommarprogrammering
     - Retroactive data convergence II: ZAYAH Folder
