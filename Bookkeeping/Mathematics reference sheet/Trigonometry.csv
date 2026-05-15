@@ -35,10 +35,34 @@ a=10, B=30\deg -> no solutions, 1 solution, 2 solutions"
 A=70\deg, B=60\deg, b=10"
 Laws of cosines,c^2=a^2+b^2-2ab*cos(C),"a=48, b=61, C=30\deg -> c
 a=40, b=58, c=70 -> C"
+LAW OF TANGENTS,"(b - c)/(b + c) = tan(1/2*(B - C)) / tan(1/2*(B + C))
+(c - a)/(c + a) = tan(1/2*(C - A)) / tan(1/2*(C + A))
+(a - b)/(a + b) = tan(1/2*(A - B)) / tan(1/2*(A + B))",
 Combined,,"a=21, c=25, C=55 (5064, 5065)"
-Trigonometric functions,f(x)=A*sin(k(x-x_0))+y_0 -> sine curve,
-,f(x)=A*cos(k(x-x_0))+y_0 -> cosine curve,
-,f(x)=A*tan(k(x-x_0))+y_0 -> tan curve,
+Trigonometric functions,f(x)=A*sin(k(x-x_0))+y_0 -> sine curve [graph],
+,f(x)=A*cos(k(x-x_0))+y_0 -> cosine curve [graph],
+,f(x)=A*tan(k(x-x_0))+y_0 -> tan curve [graph],
+,f(x)=A*cot(k(x-x_0))+y_0 -> cotangent curve [graph],
+,f(x)=A*sec(k(x-x_0))+y_0 -> secant curve [graph],
+,f(x)=A*csc(k(x-x_0))+y_0 -> cosecant curve [graph],
+,Inverse trigonometric function graphs [graphs],
+,"PERIOD
+Function f is periodic if there is a positive real number k such that, for x and x + k in domain of f, f(x + k) = f(x)
+Fundamental period of f is smallest number p such that, for x \in R, f(x + p) = f(x)
+Sine function has period of 2*\pi; f(x) = f(x + p) if |kp| = 2*\pi
+So, f: x -> A*sin(kx + d) is periodic with period 2*\pi/|k|",
+,"AMPLITUDE
+When a periodic function has maximum value of M and minimum value of m, amplitude is defined as (M - m)/2
+For f: x -> sin(x), x \in R, it is known that -1 <= sin(x) <= 1, so M = 1 and m = -1
+So, amplitude = 1
+For y = A*sin(kx + d), amplitude = |a|
+Amplitude is also equal to |a| for y = a*cos(kx + d)",
+,"PHASE SHIFT
+For graph of y = a*sin(kx + d), zero occurs when k*x + d = 0 or x = -d/k
+-d/k is the phase shift
+If -d/k < 0, then graph of y = a*sin(k\t + d) is translated |d/k| to the left
+If -d/k > 0, then translation is |d/k| to the right
+For y = a*cos(kx + d), the phase shift is also -d/k",
 ,Origin: ,
 Expand functions,f(x)=C*sin(x+\ph)=C(sin(x)cos(\ph)+cos(x)sin(\ph))=C*cos(\ph)*sin(x)+C*sin(\ph)*cos(x),"C=sqrt(2), \ph=pi/4
 C=2, \ph=-\pi/3"
@@ -59,12 +83,23 @@ x=x, y=60\deg"
 x=x, y=15\deg"
 ,sin(2x)=2*sin(x)cos(x),"x=60\deg
 sin(4x)/sin(2x) = sin(2*2x)/sin(2x) => {x=2x} => 2cos(2x)"
+,sin(3x) = 3sin(x)-4sin^3(x),
 ,"cos(2x)=cos^2(x)-sin^2(x)
 =2cos^2(x)-1
 =1-2sin^2(x)","x=10\deg
 cos^2(15\deg)-sin^2(15\deg) => {x=15\deg}
 sin(v)=4/5, cos(2v)=1-2(4/5)^2"
+,sin^2(x) = (1-cos(2x))/2,
+,cos^2(x) = (1+cos(2x))/2,
+,cos(3x) = 4cos^3(x)-3cos(x),
+,sin(1/2*x) =  \pm\sqrt((1-cos(x))/2),
 ,tan(x+y)=(tan(x)+tan(y))/(1-tan(x)tan(y)),
+,tan(x-y) = (tan(x)-tan(y))/(1+tan(x)tan(y)),
+,tan(2x) = (2tan(x))/(1+tan^2(x)),
+,tan(3x) = (3tan(x)-tan^3(x))/(1-3tan^2(x)),
+,cot(x+y)=(1-cot(x)cot(y))/(cot(x)+cot(y)),
+,cot(x-y)=(1+cot(x)cot(y))/(cot(x)-cot(y)),
+,cot(2x)=(1-cot^2(x))/(2cot(x)),
 ,"b=cos(v) -> sin(v+pi/4)=sin(v)cos(\pi/4)+cos(v)sin(\pi/4)=[sin(v)->sqrt(1-b^2), cos(v)->b]",
 ,sin(x)sin(y)=(-cos(x+y)+cos(x-y))/2,
 ,cos(x)cos(y)=(cos(x+y)+cos(x-y))/2,
@@ -89,6 +124,44 @@ Simplifications,,sin(x)(1/sin(x)-sin(x))=sin(x)*1/sin(x)-sin(x)sin(x)=1-sin^2(x)
 ,"sin(x)=sin(A) => x=A+2\pi, x=\pi-A+2\pi",A=380
 ,"cos(x)=cos(A) => x=A+2\pi, x=-A+2\pi",A=3700
 ,sin(x)=cos(A) => cos(\pi/2-x)=cos(A),
+,"General solutions:
+1. Power formulas
+2. Multiple angle formulas
+3. Product formulas
+4. Sum/difference formulas
+5. Relationship between formulas",
+,,
+Circle radius,"a, b, c: sides, A, B, C: angles (being opposite to lowercase side)",
+Circumscribed Circle,R = a/(2sin(A)) = b/(2sin(B)) = c/(2*sin(C)),
+Inscribed Circle,r = sqrt(((s - a)(s - b)(s - c))/s),
+,"A + B + C = 180\degree
+sin(A) + sin(B) + sin(C) = 4cos(1/2A)cos(1/2B)cos(1/2C)
+cos(A) + cos(B) + cos(C) = 4sin(1/2A)sin(1/2B)sin(1/2C) + 1
+sin(A)^2 + sin(B)^2 + sin(C)^2 = 2*cos(A)*cos(B)*cos(C) + 2",
+MOLLWEIDE'S FORMULAS,"(b - c)/a = sin(1/2*(B - C))/cos(1/2A)
+(c - a)/b = sin(1/2(C - A))/cos(1/2B)
+(a - b)/c = sin(1/2(A - B))/cos(1/2*C)",
+NEWTON'S FORMULAS,"(b + c)/a = cos(1/2*(B - C))/sin(1/2A)
+(a + b)/c = cos(1/2(A - B))/sin(1/2C)
+(c + a)/b = cos(1/2(C - A))/sin(1/2*B)",
+Half angle formulas,"sin(1/2*A) = sqrt(((s - b)(s - c))/(b*c))
+sin(1/2*B) = sqrt(((s - a)(s - c))/(a*c))
+sin(1/2*C) = sqrt(((s - a)(s - b))/(a*b))",
+,"cos(1/2*A) = sqrt((s(s - a))/(b*c))
+cos(1/2*B) = sqrt((s(s - b))/(a*c))
+cos(1/2*C) = sqrt((s(s - c))/(a*b))",
+,"tan(1/2*A) = r/(s - a)
+tan(1/2*B) = r/(s - b)
+tan(1/2*C) = r/(s - c)",
+AREA MEASUREMENT,"K = sqrt(s*(s - a)(s - b)(s - c)) = (abc)/(4R) = rs
+= (1/2)bc*sin(A) = (1/2)ca*sin(B) = (1/2)ab*sin(C)
+= (a^2*sin(B)*sin(C))/(2*sin(A)) = (b^2*sin(C)*sin(A))/(2*sin(B)) = (c^2*sin(A)sin(B))/(2*sin(C))",
+,,
+,,
+,,
+,,
+,,
+,,
 "Basic equations
 Reminder list:
 1. Add the period 2\pi and second angle after arcsin/arccos

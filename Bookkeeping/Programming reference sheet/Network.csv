@@ -1,0 +1,23 @@
+Unnamed: 0,"- Nätverk:
+        - Fysisk hårdvaror:
+          - Hårdvarumaskiner:
+            - Modem
+            - Wi-Fi router
+          - Kabelledningar:
+            - Internet backbone
+            - Fysisk hårdvara
+        - MAC-nivå:
+          - Struktur:
+            - MAC-adress
+        - IP-nivå:
+          - Struktur:
+            - IP-adress
+        - TCP/UDP-nivå:
+          - TCP:
+            - ...
+          - UDP:
+            - ...
+        - HTTP-nivå (Internet):
+          - Webpage/Webapplication:
+            - Front-end (HTML5 + CSS3 + JS)
+            - Back-end (PHP + SQL)"

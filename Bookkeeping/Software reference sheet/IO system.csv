@@ -1,0 +1,242 @@
+Group,Name,General structure,Presetted values
+Memory Mapped I/O,Memory Mapped I/O,"0x00000000 - 0x0000000C: Interrupt and reset entry
+0x0000000C - …: Text
+… - …: Global data
+… - 0x20000000: Stack (Dynamic data)
+0x20000000 - 0x40000000: General purpose
+0x40000000 - 0x8025800: The reserved memory may be used for memory mapped I/O",
+,"Memory mapping structure, Basic I/O","Memory in some regions mapped to I/O peripherals, writing to these memory controls them
+Historically, I/O devices and memory were connected using buses (shared parallel wires), but today it is also common with dedicated wires.",
+,,"TBL(column-major)[[(MemW, Addr, WriteData) = Processor(CLK, ReadData)], [(WEM, WE1, WE2, Mselect)AddressDecoder(MemW, addr), M0 = Memory(Addr, WriteData, CLK, WEM), M1 = IODevice1(D-FF(WriteData, CLK, WE1)), M2 = IODevice2(D-FF(WriteData, CLK, WE2))], [MUX([M0, M1, M2], Mselect)]]",
+,,"Device 1 is mapped to 0xffff fff4 and device 2 to 0xffff fff8
+li t1, 0xfffffff8
+lw t0, 0(t1)
+addi t0, t0, 100
+sw t0, -4(t1)",
+,,"10 green LEDs are memory mapped to the least 10 significant bits of the word starting at address 0x4000000
+C-statement: led_test(0xAA);
+ASM:
+.global led_test
+led_test:
+    lui t0, 0x04000
+    sw a0, 0(t0)
+    jr ra",
+,,"Toggle switches memory mapped to word address 0x04000010 (bits 9-0), green LEDs 0x0x000000 (bits 9-0)
+switch_test:
+    lui t0, 0x04000
+    lw t1, 0x10(t0)
+    andi t1,t1,0xf
+    mul t1,t1,t1 <- Squaring the binary input from switches to LEDs
+    sw t1, 0(t0)
+    j switch_test",
+,,"void display4(void) {
+    volatile int *segm7 = (volatile int*) 0x04000050; <- Volatile!!!
+    *segm7 = 0b00011001; <- Display 7-segment 4
+}",
+GPIO,GPIO (General-Purpose I/O),"Flexible, configured either input or output on microcontroller
+Switches, LEDs, 7-segments are considered GPIO, preconfigured the direction on those",
+,GPIO port registers (General),"Direction: Registers tells if the port is an output (bit value is 0) or input (bit value is 1)
+Data: Register for writing (if output) or reading (if input) ",
+,,"DTEK-V, 2*20 GPIO header",
+,PIC32 GPIO Port programming,"PIC32 (port A, port B, ...) -> each port up to 16 GPIOs
+- TRISx (where x is the port, e.g. TRISE, TRISF). This registers tells direction (port as output -> bit value is 0, input -> bit value is 1)
+- PORTx (where x is the port, e.g. PORTE, PORTF). This is the register for writing (if output) or reading (if input).
+
+Table lookup:
+Appendix A: ChipKIT Basic I/O Shield Printout table (Uno32 pin #4, name: BTN1, Description: Pushbutton)
+(ChipKIT Pin #4, ..., PIC32 Signal: RF1) -> TRISF and PORTF with bit index 1 should be used",
+,,"TRISE &= ~0xff; /* Port E is used for the LED, set bits 0 through 7 to 0 (output) */
+TRISF |= 0x2; /* Set bit index 1 to 1 (input) */
+while(1)
+    PORTE = (PORTF >> 1) & 0x1;
+
+pix32mx.h:
+#define PIC32_R(a) *(volatile unsigned*)(0xBF800000 + (a))
+#define TRISF PIC32_R (0x86140)
+#define TRISFCLR PIC32_R (0x86144)
+#define TRISFSET PIC32_R (0x86148)
+#define TRISFINV PIC32_R (0x8614C)
+#define PORTF PIC32_R (0x86150)",
+,DTEK-V GPIO header,"To use GPIO (e.g., a custom LED light, joystick, etc.), locate the pin you attach your devices to and program respective direction pins as input or output. After that, you can read or write to your device.
+Data, 0x40000e0: [GPIO_31, GPIO_30, GPIO_29, ..., GPIO_2, GPIO_1, GPIO_0]
+Direction, 0x40000e4: [DIR_31, DIR_30, DIR_29, ..., DIR_2, DIR_1, DIR_0]
+GPIO 36-32 mapped to address 0x4000f0",
+,,... (Depending on I/O reference sheets),
+Buses and DMA,Bus,"Bus: shared interconnection network where the processor can communicate with different peripherals, such as memory and I/O devices.
+
+Address: When writing or reading to a peripheral, the address is given on the address lines. The address can for instance be 32 bits.
+Data: Data is written to the data line. The data line can for instance be 32-bit
+Each peripheral has a unique address (or range of addresses).
+When a peripheral is not the bus driver (not communicating), the output must be turned off (have high impedance). This is done by using tri-state gates.
+Note that modern computers often separate I/O and memory.
+
+Address --- 
+Data ---
+Control ---
+  (Processor, memory, I/O device, I/O device, I/O device, ...)
+
+Many types: AMBA, Avalon, Widhbone, etc.",
+,Syncronous bus,"Data transmission is synchronized using a bus clock. The bus clock triggers the peripherals to send or receive data, Synchronous buses can be designed so that it takes several cycles to transmit data.
+Read:
+1. For a read operation, a control signal indicates that it is a read and the processor puts the address on the address lines.
+2. All devices reads the address and the device with the assigned address answers by putting out the data.
+Write:
+For a write operation (not shown in diagram) the processor puts both the data and the address on the bus. The device with the assigned address then reads the data.
+
+TIMING[Bus clock = 0[0, 1, 2], Address and control = <>[0, 2], Data = 0[1<>, 2]]",
+,Asynchronous Bus,"No clock, handshaking protocol between leader and follower
+Read:
+1. The leader puts the address on the bus. Devices decode the information.
+2. Leader sets leader ready. All control and address info are now available.
+3. The follower puts the data on the bus and signals follower ready, meaning that the data is available for the leader.
+4. The leader reads the data and sets leader ready to low when it finished.
+5. When the follower sees that leader ready goes from high to low, it can safely stop sending data and sets follower ready to low.
+TIMING[Address and control = <>[0, 3], Leader ready = 0[1, 2-3], Follower ready = 0[2, 4], Data = 0[2<>, 4]]",
+,Direct Memory Access (DMA),"Problem: Programs often move data between different I/O devices. One option is to use the processor to move the data -> cannot do ""useful work"". e.g. Disk or Ethernet to memory
+DMA enables memory transfer to occur without continous internvention by the processor
+1. The processor issues an DMA request, stating addresses and a word count (how much data that should be transferred), stride (the increase in address), etc.
+2. A DMA controller takes care of performing the actual transfer. The processor can perform other tasks in parallel.
+3. The DMA controller may issue an interrupt request (IRQ) when the transfer has finished.
+
+Bus <-> VGA PixelBuffer DMA <-> VGA output",
+Timers,General timer,"Timers are I/O devices that are used to measure elapsed time. Timers can be configured in different ways, but have basically
+the following components.
+Clock source: A timer is driven by a clock source. Example, 30Mhz external clock.
+Status register: Tells if time-out is reached. Check if running
+Control register: Starts/Stops the timer, Enables interrupts, Timer wrap-around
+Period register(s): Timeout periods
+Timer value: Read/write register, a ""snap-shot"" of timer value",
+,PIC32 Timers,"Control registers:
+IFS0:
+- Interrupt register indicating when the counter has reached the period value.
+- Note that the define in pic32mx.h is IFS(0) and not IFS0.
+TxCON (x is the timer number):
+- 16-bit control register.
+- Configures the prescaling
+- Starts/stops the timer
+
+Period register:
+PRx (x is the timer number)
+- The period register.
+- TMRx counts upwards until reaching this value.
+
+Timer value:
+TMRx (x is the timer number)
+- Holds the current 16-bit timer value
+- May be written to.",
+,DTEK-V Timers,"Clock source: Intel Timer (that we will use) operates at 30 MHz that countsdown to 0.
+
+Status register: (16-bit),
+- TO indicates that a timeout (=1) occurred (the timer reached the timeout value)
+- RUN indicates that the timer is running (=1) or not running (=0)
+
+Control register: Starts/stops the timer (STOP/START), Enables interrupts (ITO),  Allows timer to wrap-around on time-
+out (CONT)
+- Timer control, 16-bit control registers (Bit 3: STOP: stops counting, Bit 2: START: start counting, Bit 1: CONT: restart when reaching 0, Bit 0: ITO: enable timer to raise interrupts)
+
+Period register(s): PeriodL and PeriodH (16-bit): The period register PeriodH and PeriodL together forms the 32-bit period, May be written to.
+
+Timer value: SnapL and SnapH: Snapshot registers, Write to them to take a snapshot of the current timer value, Read to retrieve the value",
+,Polling,"Repeatedly check if checked out, not efficient",
+Parallel and serial communication,Parallel Communication,"[System 1] <-(n)-> [System 2]
+Several wires that transmits data in parallel. Problem: Requires many cables",
+,Synchronous serial communication,"[Leader] -(clock)-> <-> [Follower]
+Serial Peripheral Interface (SPI)
+- Full duplex
+- 4 wires, fast transfers, (10-100 MHz)
+I2C (Inter-integrated circuit)
+- 2 lines: Serial Data line (SDL) and Serial Clock line (SCL)
+- 7 or 10 bits addresses (Fast mode 400kHz)",
+,Asynchronous Serial Communication,"[System 1] <-> [System 2]
+Universal Asynchronous Receiver/Transmitter (UART)",
+,PC I/O Systems,"PC IO Systems:
+- Demand for very high performance.
+- Must be easy to add devices. -> Consequence: complex I/O protocols",
+,,"Peripheral Component Interconnect (PCI)
+- Used for adding expansion cards (from 1994)
+- For example, Ethernet directly on the motherboard.
+- Fast (e.g., 64 GB/s for PCIe 5.0)
+Universal Serial Bus (USB)
+- Taking over. High speed serial communication.
+- Versions 1.0 to 3.0. Up to 5Gbit/s.
+- Simple for users, complex hardware and software.
+Other Devices
+- Ethernet (Wired networking)
+- Wi-Fi (Wireless communication)
+- SATA (Serial interface to hard disks)",
+Exceptions and interrupts,,"Normal program flow with branch, loops
+Exception -> Exception handler -> return from exception (Sometimes)",
+,Exceptions,"Synchronous events triggered by the current instruction being executed, e.g., division by zero, illegal instruction, system calls (called software “interrupts”; ecall)",
+,Interrupts,"Asynchronous events, triggered by external or timer hardware e.g., a keyboard, a timer",
+,MIPS Exception handling,"In MIPS, the exception handler is located at address 0x80000180.
+1. The processor stores the current PC in a register called EPC.
+2. The processor stores the cause of the exception in register called Cause.
+3. The processor jumps to address 0x80000180 where the exception handler is stored.
+4. The exception handler saves registers on the stack.
+5. The exception handler inspects the cause of the exception and handles the exception. EPC and Cause are not normal register. They are accessed using instruction mfc0 (move from coprocessor 0).
+6. The exception handler restores saved registers, copies the return program pointer EPC to $k0, and jumps back using jr $k0. Alternatively, for MIPS32, use the eret instruction. ($k0-$k1 -> reserved for OS kernel)",
+,ARM ISA Exception vectors,"The cause of the exception is shown by jumping to different exception handlers, depending on the cause, The vector will normally contain jumps to where the actual handler is stored.
+Exception, Vector address
+Reset, 0x0000 0000
+Undefined instruction, 0x0000 0004
+Software Interrupt (SWI), 0x0000 0008
+Prefetch abort, 0x0000 000C
+Data abort, 0x0000 0010
+IRQ (normal interrupt), 0x0000 0018
+FIQ (fast interrupt), 0x0000 001C",
+,Maskable interrupts and priorities,"External interrupts may be enabled (allowed) or disabled. This is typically configured by using an interrupt flag status register.
+Non-maskable interrupts are interrupts that cannot be masked (disabled). Typically involved non-recoverable hardware errors.
+Interrupts can be given different priorities. An interrupt with higher priority will preempt a lower priority interrupt. For instance, a timer might have higher priority than the UART and will preempt the UART handling routine.",
+,,Interrupt initialization -> Normal program <-> Interrupt service routine (ISR),
+,PIC32 Interrupts - Initialization,"IECx (Interrupt Enable Control): The initialization procedure should set the bit for the interrupt that should be enabled.
+IPCx (Interrupt Priority Control): Configure the priority (0-7, where 7 is highest) and the sub-priority (0-3 where 3 is highest).
+The x means that there exist several registers, e.g. IPC0, IPC1, etc. Note that for pic32mx.h, the syntax is e.g., IPC(1)
+Enable Interrupts: You need to enable interrupts by executing instruction ei",
+,PIC32 Interrupts - Interrupt Execution,"IFSx (Interrupt Flag Status Register)
+- The interrupt request sets the bit (e.g. for a timer at timeout).
+- The ISR must clear the flag before returning from the ISR.",
+,"RISC-V, Control and Status Registers","Control local interrupts handled by a local unit called a CLINT
+- mstatus = machine status control register
+- mie = machine interrupt enable control register
+- mepc = exception/interrupt program counter (=address where exception happened)
+- mcause = the reason why an exception/interrupt happened
+- mip = machine interrupt pending control register
+- mtvec = address to jump to during exception/interrupt
+
+Contain machine-specific functionality and support
+
+Contain hardware performance counters
+- cycle = Cycle counter
+- instret = number of instructions executed
+- hpmcounterX = machine-specific counters",
+,,"Accessing the CSRs in RISC-V is performed using specialized instructions:
+- csrrw rd, csr, rs1 (CSR Read and Write): copy csr into rd; then copy rs1 into csr
+- csrrs rd, csr, rs1 (CSR Read and Set): copy csr into rd; update csr by setting a bit to 1 if the corresponding bit in rs1 is also 1.
+- csrrc rd, csr, rs1 (CSR Read and Clear): copy csr into rd; update csr by setting a bit to 0 if the corresponding bit in rs1 is also 1",
+,RISC-V Exception handling,"In RISC-V, the exception handler is located at address 0x00000000
+1. The processor stores the current PC in a register called mepc.
+2. The processor stores the cause of the exception in register called mcause.
+3. The processor disabled interrupts (in mstatus).
+4. The processor jumps to address mtvec (=0x00000000) where the exception handler is stored.
+5. The exception handler saves registers on the stack.
+6. The exception handler inspects mcause and jumps to an interrupt handler (void handle_interrupt(unsigned cause)) in your labcode, providing the cause
+7. After the exception/interrupt has been handled, the exception handler restores the old context (registers) prior to the exception by jumping to mepc (or mepc+4 in the case of a software interrupt).",
+,RISC-V Interrupts,"[[External interrupts -> PLIC (Platform-Level Interrupt Controller) ->, Local interrupts -> CLINT (Core-Local Interruptor)<->], [RISC-V Core]]",
+,,"Most significant bit of mcause indicates exception(=0) or interrupt(=1)
+Remaining bits of mcause indicates the reason for the interrupt/exception
+
+mcause31 mcause30:0 Interrupt
+0 0 Instruction address misalign
+0 2 Illegal instructions
+0 11 Environment call from M-mode
+1 16 Timer interrupt
+1 17 Switches interrupt
+1 18 Button interrupt",
+,,Interrupt initialization -> Normal program <-> Interrupt service routine (ISR),
+,RISC-V Interrupts - initialization,"Enable Interrupts from I/O device: The initialization procedure should enable the I/O device that you want interrupts from to
+generate interrupts. For timer, see [Intel Interval Timer ref].
+Enable interrupts on CPU: You need enable interrupts from sources to propagate to the CPU interrupt controller by setting the corresponding bits in mie. For more information, see: H&H 9.3.8 or [RISC-V ISA – Privileged Specification, ch. 3.1.9]
+Enable Interrupts: You need to enable interrupts by setting global interrupts bits to enable (MIE) in the mstatus register. For more information, see: H&H 9.3.8 or the [RISC-V ISA – Privileged Specification, ch. 3.1.9]",
+,RISC-V Interrupts - Interrupt Execution,"Pending interrupts: The mcause and mip registers contains the cause of the interrupt and also information about all pending interrupts respectively. You need to identify the cause and acknowledge (or clear) the interrupt.
+
+Acknowledge (or clear) the interrupt is different for each I/O device. Refer to the documentation for the interrupting I/O device to understand how to clear the interrupt.",

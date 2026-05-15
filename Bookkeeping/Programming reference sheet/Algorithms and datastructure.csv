@@ -1,0 +1,75 @@
+Data structure algorithms,Unnamed: 1,Unnamed: 2
+Sorting algorithms,Bubble sort,"public static void sort(String[] s) {
+    String temp;
+    int n = s.length;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (s[j].compareTo(s[j+1]) > 0) {
+                temp = s[j];
+                s[j] = s[j+1];
+                s[j+1] = temp;
+            }
+        }
+    }
+}"
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+Tree,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+Calculating algorithm,Naive multiplication,"algorithm naivemul(num1: BigInt, num2: BigInt) -> BigInt:
+    let n = max(num_digits(num1), num_digits(num2))  // Length of the largest number
+    if n == 1: return num1 * num2  // Base case: single-digit multiplication
+    let mid = n / 2  // Split the number at mid-point
+    let r = 10  // Radix constant, typically 10 for decimal
+    // Split num1 and num2 into two halves
+    let a = first_half(num1) = num1 // r^mid
+    let b = second_half(num1) = num1 - a * r^mid
+    let c = first_half(num2) = num2 // r^mid
+    let d = second_half(num2) = num2 - c * r^mid
+    // Recursively calculate the four products
+    let ac = naivemul(a, c)  // ac
+    let bd = naivemul(b, d)  // bd
+    let ad = naivemul(a, d)  // ad
+    let bc = naivemul(b, c)  // bc
+    // Combine the results to get the final product
+    let ad_plus_bc = ad + bc
+    return ac * r^n + ad_plus_bc * r^mid + bd"
+,Karatsuba algorithm,"1234*5678 = a[12]b[34]*c[56]d[78]
+(100a+b)(100c+d) = 10000(ac)+100(ad+bc)+bd (4 multiplications) = 10000(ac)+100((a+b)(c+d)-ac-bd)+bd (3 multiplications)
+algorithm karatsuba(x: BigInt, y: BigInt) -> BigInt:
+    let n = max(num_digits(x), num_digits(y))
+    if n == 1: return x * y
+    let mid = n / 2  // Split the number at mid-point
+    let r = 10  // Radix, typically 10 for decimal
+    // Split x and y into two halves
+    let a = first_half(x) = x // r^mid
+    let b = second_half(x) = x - a * r^mid
+    let c = first_half(y) = y // r^mid
+    let d = second_half(y) = y - c * r^mid
+    // Recursively calculate the three products
+    let ac = karatsuba(a, c)  // ac
+    let bd = karatsuba(b, d)  // bd
+    let ad_plus_bc = karatsuba(a + b, c + d) - ac - bd  // (a + b)(c + d) - ac - bd
+    // Combine the results to get the final product
+    return ac * r^(2 * mid) + ad_plus_bc * r^mid + bd
+n amount of digits in each number: log_2(n) depth (At recursive depth k: 3^k subproblems (Size: n/2^k, work: c))
+T(n) = \S{k=0, log_2(n), 3^k*n/2^k*c} = 3cn^log_2(3)-2cn -> O(n^log_2(3))"

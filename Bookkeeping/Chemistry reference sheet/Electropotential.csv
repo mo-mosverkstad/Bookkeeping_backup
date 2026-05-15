@@ -1,27 +1,103 @@
 Unnamed: 0,Unnamed: 1,Unnamed: 2
 ,,Normalpotentialen (E0)
-,F2 (g) + (2e-) -> 2(F-) (aq),2.87
-,H2O2 (aq) + 2(H+) + 2(e-) -> 2H2O (l),1.78
-,(MnO4-) (aq) + 8(H+) + 5(e-) -> Mn (2+) (aq) + 4H2O (l),1.51
-,Cl2 (g) + 2(e-) -> 2(Cl-) (aq),1.36
-,Cr2O7 + 14(H+) (aq) + 6(e-) -> 2Cr (3+) (aq) + 7H2O,1.33
-,O2 (g) + 4(H+) + 4(e-) -> H2O2 (aq),1.23
+,H4XeO6(s) + 2H+ + 2e- -> XeO3(s) + 3H2O,3
+,F2(g) + 2e- -> 2F-(aq),2.87
+,O3(g) + 2H+(aq) + 2e- -> O2(g) + H2O(l),2.07
+,S2O8 2-(aq) + 2e- -> 2SO4 2-(aq),2.05
+,Ag 2+(aq) + e- -> Ag+(aq),1.98
+,Co 3+(aq) + e- -> Co 2+(aq),1.81
+,H2O2(aq) + 2H+(aq) + 2e- -> 2H2O(l),1.78
+,Au 3+(aq) + 3e- -> Au(s),1.69
+,Pb 4+(aq) + 2e- -> Pb 2+(aq),1.67
+,2HClO(aq) + 2H+(aq) + 2e- -> Cl2(g) + 2H2O(l),1.63
+,Hg 2+(aq) + 2e- -> Hg(l),0.851
+,Ce 4+(aq) + e- -> Ce 3+(aq),1.61
+,2HBrO(aq) + 2H+(aq) + 2e- -> Br2(g) + 2H2O(l),1.6
+,MnO4-(aq) + 8H+ + 5e- -> Mn 2+(aq) + 4H2O(l),1.51
+,Mn 3+(aq) + e- -> Mn 2+(aq),1.51
+,Au 3+(aq) + 3e- -> Au(s),1.4
+,Cl2(g) + 2e- -> 2Cl-(aq),1.36
+,Cr2O7 2-(aq) + 14H+ + 6e- -> 2Cr 3+(aq) + 7H2O,1.33
+,O3(g) + H2O(l) + 2e- -> O2(g) + 2OH-(aq),1.24
+,O2(g) + 4H+ + 4e- -> 2H2O(l),1.23
+,MnO2(s) + 4H+ + 2e- -> Mn 2+(aq) + 2H2O(l),1.23
+,ClO4-(aq) + 2H+ + 2e- -> ClO3-(aq) + H2O(l),1.23
+,Pt 2+(aq) + 2e- -> Pt(s),1.2
 ,Br2 (l) + 2(e-) -> 2(Br-) (aq),1.09
-,(Ag+) (aq) + (e-) -> Ag (s),0.8
-,Fe (3+) (aq) + (e-) -> Fe (2+) (aq),0.77
+,Pt 4+(aq) + e- -> Pt 3+(aq),0.97
+,NO3-(aq) + 4H+ + 3e- -> NO(g) + 2H2O(l),0.96
+,2Hg 2+(aq) + 2e- -> Hg2 2+(aq),0.92
+,ClO-(aq) + H2O(l) + 2e- -> Cl-(aq) + 2OH-(aq),0.89
+,NO3-(aq) + 2H+ + e- -> NO2(g) + H2O(l),0.8
+,Ag+(aq) + e- -> Ag(s),0.8
+,Hg2 2+(aq) + 2e- -> 2Hg(l),0.79
+,AgF(s) + e- -> Ag(s) + F-(aq),0.78
+,Fe 3+(aq) + e- -> Fe 2+(aq),0.77
+,BrO-(aq) + H2O(l) + 2e- -> Br-(aq) + 2OH-(aq),0.76
 ,O2 (g) + 2(H+) (aq) + 2(e-) -> H2O2 (aq),0.7
-,I2 (s) + 2(e-) -> 2(I-) (aq),0.54
+,MnO4-(aq) + H2O(l) + 2e- -> MnO2(s) + 2OH-(aq),0.6
+,I2(s) + 2e- -> 2I-(aq),0.54
+,I3-(aq) + 2e- -> 3I-(aq),0.53
+,Cu 2+(aq) + 2e- -> Cu(s),0.52
+,NiO2(s) + 2H2O + 2e- -> Ni(OH)2(s) + 2OH-,0.49
+,O2(g) + 2H2O(l) + 4e- -> 4OH-(aq),0.4
 ,O2 (g) + 2H2O (l) + 4(e-) -> 4(OH-) (aq),0.4
-,Cu (2+) (aq) + 2(e-) -> Cu (s),0.34
-,Sn (4+) (aq) + 2(e-) -> Sn (2+),0.15
-,2(H+) (aq) + 2(e-) -> H2 (g),0
-,Pb (2+) (aq) + 2(e-) -> Pb (s),-0.13
-,Ni (2+) (aq) + 2(e-) -> Ni (s),-0.26
-,Cd (2+) (aq) + 2(e-) -> Cd (s),-0.4
-,Fe (2+) + 2(e-) -> Fe (s),-0.45
-,Zn (2+) (aq) + 2(e-) -> Zn (s),-0.76
-,2H2O (l) + 2(e-) -> H2 (g) + 2(OH-) (aq),-0.83
-,Al (3+) (aq) + 3(e-) -> Al (s),-1.66
-,Mg (2+) (aq) + 3(e-) -> Mg (s),-2.37
-,(Na+) (aq) + (e-) -> Na (s),-2.71
-,(Li+) (aq) + 2(e-) -> Li (s),-3.04
+,ClO-(aq) + H2O(l) + 2e- -> ClO3-(aq) + 2OH-,0.36
+,Cu 2+(aq) + 2e- -> Cu(s),0.36-0.34
+,HgCl2(s) + 2e- -> Hg(l) + 2Cl-,0.27
+,AgCl(s) + e- -> Ag(s) + Cl-,0.22
+,Bi 3+(aq) + 3e- -> Bi(s),0.2
+,SO4 2- + 4H+ + 2e- -> H2SO3 + H2O,0.17
+,Cu 2+(aq) + e- -> Cu+(aq),0.15
+,Sn 4+(aq) + 2e- -> Sn 2+(aq),0.15
+,AgBr(s) + e- -> Ag(s) + Br-(aq),0.07133
+,2MnO2(s) + 2H+ + 2e- -> Mn2O3(s) + H2O(l),0.15
+,NO3-(aq) + H2O(l) + 2e- -> NO2-(aq) + 2OH-,0.01
+,Ti 4+(aq) + e- -> Ti 3+(aq),0
+,2H+(aq) + 2e- -> H2(g),0.00 (def.)
+,Fe 3+(aq) + 3e- -> Fe(s),−0.04
+,O2(g) + H2O(l) + 2e- -> HO2-(aq) + OH-(aq),−0.08
+,Pb 2+(aq) + 2e- -> Pb(s),−0.13
+,In 3+(aq) + e- -> In(s),−0.14
+,Sn 2+(aq) + 2e- -> Sn(s),−0.14
+,AgI(s) + e- -> Ag(s) + I-(aq),−0.15
+,Ni 2+(aq) + 2e- -> Ni(s),−0.23
+,V 3+(aq) + e- -> V 2+(aq),−0.26
+,Co 2+(aq) + 2e- -> Co(s),−0.28
+,Tl+(aq) + e- -> Tl(s),−0.34
+,PbSO4(s) + 2e- -> Pb(s) + SO4 2-,−0.36
+,Ti 3+(aq) + e- -> Ti 2+(aq),−0.37
+,In 2+(aq) + e- -> In+(aq),−0.40
+,Cd 2+(aq) + 2e- -> Cd(s),−0.40
+,Cr 3+(aq) + e- -> Cr 2+(aq),−0.41
+,Fe 2+(aq) + 2e- -> Fe(s),−0.44
+,In 3+(aq) + 2e- -> In+(aq),−0.49
+,S(s) + 2e- -> S 2-(aq),−0.48
+,In 3+(aq) + e- -> In 2+(aq),−0.49
+,Ga 3+(aq) + e- -> Ga(s),−0.53
+,U 4+(aq) + e- -> U 3+(aq),−0.61
+,Se(s) + 2e- -> Se 2-(aq),−0.67
+,Cr 3+(aq) + 3e- -> Cr(s),−0.74
+,Zn 2+(aq) + 2e- -> Zn(s),−0.76
+,Cd(OH)2(s) + 2e- -> Cd(s) + 2OH-,−0.81
+,2H2O(l) + 2e- -> H2(g) + 2OH-,−0.83
+,Te(s) + 2e- -> Te 2-(aq),−0.84
+,Cr 2+(aq) + 2e- -> Cr(s),−0.91
+,Mn 2+(aq) + 2e- -> Mn(s),−1.18
+,V 2+(aq) + 2e- -> V(s),−1.19
+,Ti 2+(aq) + 2e- -> Ti(s),−1.63
+,Al 3+(aq) + 3e- -> Al(s),−1.66
+,U 3+(aq) + 3e- -> U(s),−1.79
+,Be 2+(aq) + 2e- -> Be(s),−1.85
+,Mg 2+(aq) + 2e- -> Mg(s),−2.36
+,Ce 3+(aq) + 3e- -> Ce(s),−2.48
+,La 3+(aq) + 3e- -> La(s),−2.52
+,Na+(aq) + e- -> Na(s),−2.71
+,Ca 2+(aq) + 2e- -> Ca(s),−2.87
+,Sr 2+(aq) + 2e- -> Sr(s),−2.89
+,Ba 2+(aq) + 2e- -> Ba(s),−2.91
+,Ra 2+(aq) + 2e- -> Ra(s),−2.92
+,Cs+(aq) + e- -> Cs(s),−2.92
+,Rb+(aq) + e- -> Rb(s),−2.93
+,K+(aq) + e- -> K(s),−2.93
+,Li+(aq) + e- -> Li(s),−3.05

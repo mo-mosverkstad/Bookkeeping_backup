@@ -1,0 +1,1984 @@
+Unnamed: 0,Unnamed: 1,INBOX,Unnamed: 3
+,07:00:00,http://yout-ube.com/watch?v=blKkRoZPxLc&source_ve_path=MTc4NDI0,
+,,https://www.yout-ube.com/watch?v=tZvjSl9dswg,
+,,,
+Structural,,,
+,Structural program,"public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println(""Hello, World!"");
+    }
+}",
+,Java environment structure,"JDK (Java Development Kit)
+JRE (Java Runtime Environment)
+JVM (Java Virtual Machine)",
+Memory models,,,
+Reference model,Primitive types,,
+,"Strong reference (Object types)
+(prevents GC from collecting)","String a = new String(""Hello"");
+String b = a; // b is a reference to the same object as a",
+,"Soft reference  (Object types)
+(GC collect when low memory)",SoftReference<T>,
+,"Weak Reference  (Object types)
+(GC collects eagerly -> memory-sensitive caches/maps)",WeakReference<T>,
+,"Phantom Reference  (Object types)
+(Enqueued after object is finalized, used for cleanup before GC reclaims.)",PhantomReference<T>,
+"Java Memory Model (JMM)
+(visibility, ordering, and atomicity across threads)",Heap: All objects are allocated here. Shared between threads.,,
+,Stack: Each thread has its own stack for method calls and local variables.,,
+,Volatile: Ensures visibility of changes to variables across threads.,volatile int counter = 0; // guarantees visibility but not atomicity,
+,Synchronized: Ensures mutual exclusion and visibility.,,
+,,,
+,,,
+Syntax and Logic,,,
+Blocks,"blocks
+-> Local and global variables",{…},
+,if/else,"if (<boolean_value>){
+    <expr>
+}
+else if (<boolean_value>){
+    <expr>
+}
+else{
+    <expr>
+}
+",
+,switch,"switch (<value>){
+    case <value1>:
+        <expr>
+        break;
+    case <value2>:
+        <expr>
+        break;
+        …
+     default:
+        …
+        break;
+}",
+,while-loop,"while (<boolean_value>){
+    <expr>
+}
+
+int n = scanner.nextInt();
+while (n>=0){
+    System.out.println(Math.sqrt(n));
+    n = scanner.nextInt();
+}
+
+do {
+    <expr>
+} while (<boolean_value>);
+
+do {
+    n = scanner.nextInt();
+    System.out.println(Math.sqrt(n));
+} while (n>=0)",
+,for-loop,"for (<start>; <stop>; <step>){
+
+for (int i = 0; i < 10; i++){
+
+for (<type> <element_variable> : <variable>){
+    <expr>
+}",
+,continue/break,"continue;
+break;",
+"Primitive data types (Numbers: all signed, implicit type cast while widening (up), explicit type cast while narrowing(down))","double (8 bytes, single precision floating point)",3091.238,"int a = 2;
+long b = 3;
+…"
+,"float (4 bytes, single precision floating point)",32.1F,
+,long (8 bytes),"23519L
+23519l",
+,int (4 bytes),2351,
+,short (2 bytes),180 (Promote to int during operators),
+,byte (1 byte),15 (Promote to int during operators),
+,char (2 byte),"'a', '\u0042', '\n', '\t', '\b', '\r', '\\', '\'' (Promote to int during operators)",
+,boolean (1 byte),"true, false",
+"Primitive type operators
+(Small, lives in stack)",Arithmetic errors,"Type overflow -> No error, floats -> Infinity/-Infinity",
+,,"Division by zero -> java.lang.ArithmeticException (Only for int primitive values), float primitive values -> Infinity/-Infinity",
+,"assignment
+variable declaration","<variable_type> <variable_name> = <variable_value>;
+final <variable_type> <variable_name> = <variable_value>;
+<variable_type> <variable_name>; // Uninitialized variable
+final <variable_type> <variable_name>; // Uninitialized variable
+<variable_type> <variable_name1> = <variable_value1>, <variable_name2> = <variable_value2>",
+,Type casting,"(<variable_type>) <variable_name>
+(int) 23.1F, 32.6f
+(incompatible types: possible lossy conversion … to …) (During narrowing)",
+,"Basic arithmetic operator:
+When two primitive types of different ""widths"" (sizes) are used in an operation, the narrower one is automatically promoted to match the wider one.
+x = x+y: type dependent on type x",x + y,
+,,x - y,
+,,x * y,
+,,x / y,
+,,x % y,
+,"Compound Assignment Operator
+x += y (Implicitly uses type for x)",x += y,
+,,x -= y,
+,,x *= y,
+,,x /= y,
+,,x %= y,
+,"Relational operator
+Return a boolean",x < y,
+,,x > y,
+,,x == y,
+,,x <= y,
+,,x >= y,
+,,x != y,
+,Short circuit boolean operators,b1 && b2,
+,,b1 || b2,
+,Boolean operators,b1 & b2,
+,,b1 | b2,
+,,b1 ^ b2,
+,,!b1,
+,Compound assignment boolean operators,b1 &= b2,
+,,b1 |= b2,
+,,b1 ^= b2,
+"References
+A reference (from stack) pointing to heap",,"<type> a = new <type>();
+<type> b = a; (b has now the same reference as a)",
+,,<type> a = null; (Pointing to null),
+,,<type> a; (No initialization of reference variable),
+"Arrays
+(Objects, large, lives on heap, reference from stack)","Construct -> Object, reference from stack
+(Continous allocating values to heap through a reference)","<type>[] <name> = new <type>[<number>];
+<name>[0] = <element0>;
+<name>[1] = <element1>;
+…",
+,,"<type>[] <name> = {<element0>, <element1>, <element2>, <element3>}",
+,"Multidimentional array
+(Can be of uneven size e.g. {{1, 2, 3}, {5, 4, 3}, {3, 8, 9, 4, 2}})",<type>[][] <name>=new <type>[<number>][<number>]; (Continous allocating array references to heap through a reference),
+,,"<type>[][] <name> = new <type>[<number>][]; (Allocating an array with uninstanced references through a reference)
+<name>[0] = {<element00>, <element01>, <element02>, <element03>};
+<name>[1] = {<element10>, <element11>, <element12>, <element13>};",
+,,"<type>[][] <name> = {{<element00>, <element01>, <element02>}, {<element10>, <element11>, <element12>}};",
+,Access,<name>[<index>],
+,Write,<name>[<index>] = <element>,
+,Length of array,.length,
+,Iterate through for loop,for (<type> <element> : <name>){,
+,,"for (<type> row : <name>){
+    for (<type> col: row){
+        row, col…
+    }
+}",
+,,"for (int i = 0; i < <name>.length; i++){
+    <name>[i]...
+}",
+,,"for (int i = 0; i < <name>.length; i++){
+    for (int j = 0; j < <name>[i].length; j++){
+        <name>[i][j]...
+    }
+}",
+,,"System.out.println(<name>); (output a reference number, does not pretty print)",
+"Class
+1. Executable (main+static method)
+2. Useful utility class with only static methods
+3. New object -> Appearance and behaviours
+4. Both static and instance",class definition,<public/private/> class <abstract/> <final/> <class_name>{ … },
+,"Access modifiers:
+Public: Accessed by all classes in any package
+Default: Accessed in the same package
+Protected: Accessed in same package and only its subclasses there
+Private: Only to this class
+
+Non-access modifiers:
+Static: belong to class
+Final: Prevents modification
+Abstract: Cannot instance/cannot overwrite or modify methods
+native: method implemented in another language",<public/protected/private> <static/> <final/>,
+,"Class instance members -> variables
+Static/default as instance
+Final: constant
+volatile: Variable may changed by multiple threads, not cached thread-locally, read from main memory
+transients: Attributes and methods excluded in serialize","<public/protected/private> <static/> <final/> <volatile/> <transient/> <name> = <value>;
+<public/protected/private> <static/> <final/> <volatile/> <transient/> <name>;",
+,"methods/method call to call stack
+Static/default as instance
+Final: cannot override while inherit
+
+main() -> <func1>() -> <func2>() …
+Parameters: copy of argument (primitives copied, references shallow copied)","<public/protected/private> <type> <static/> <abstract/> <final/> <native/> <name>(<type> <param>, <type> <param>, ...){
+    ...
+}",
+,"method overloading
+depends on method signature","<public/protected/private> <type> <static/> <final/> <native/> <name>(<type> <param1>, <type> <param2>, ...){
+    ...
+}
+
+<public/protected/private> <type> <static/> <final/> <native/> <name>(<type> <param3>, <type> <param4>, ...){
+    ...
+}",
+,"constructors, no return type","<public/protected/private> <class_name>(...){
+    ... -> this keyword
+}",
+Interface,,"interface <name>{
+    <public/> <type> <name>(<type> <param3>, <type> <param4>, ...);
+}",
+Enums,,"enum <name>{
+    // implicit constructoring
+    <value1>()
+    <value2>()
+    …
+
+    <Same as a class>
+}",
+"Generics
+<T> or <T, U, …> as type variables",Generic class,"class <class_name> <T>{
+    … using T
+}
+<class_name><<type>> <variable_name> = new <class_name><>()",
+,Generic method,"<public/protected/private> <T> <type> <static/> <abstract/> <final/> <native/> <name>(<type> <param>, <type> <param>, ...){
+    ...
+}
+<name>(<type> <param>, <type> <param>, ...) // Generic type T inferred
+<class_name>.<<type>><name>(<type> <param>, <type> <param>, ...) // Explicit generic type T",
+Lambda,,,
+"Exception
+(Runtime errors)","Called function throws exception to caller function
+-> main function (standard output), print call stack in standard output
+Exception handling strategy:
+1. No error occurs
+2. If occuring error: 3 parts
+  1. Method analyzing circumstances
+  2. Caller method -> Responsible to catch/handle Exception (Try-catch)
+  3. JRE Exception mechanism -> Find suitable catch in caller function and so on
+  4. If no suitable catch, default catch strategy will be applied
+-> End if console, continue if GUI window",throw Exception(...),
+,Default exit handling,"exception.printStrackTrace
+exception.getMessage
+
+.printStackTrace();
+System.exit(1);",
+,"Declare exceptions
+If not catch/handle/throw currently -> compilation error","public static void arraycopy(…) throws NullPointerException{
+    throw new NullPointerException(<message>);
+}",
+,Catch exceptions (Providing error message to caller function),"try{
+    … // code that may fail and result into an Exception
+}
+catch (<Exception_name_1> | <Exception_name_2> | <Exception_name_3> | ... exception){
+    … // Handles exception defined in catch block
+}",
+,Nested try-catch,"try{
+    … // May result into an outer Exception
+    try{
+        … // May result into an inner Exception
+    }
+    catch (<Exception_name> exception){
+        … // Handles inner exception
+    }
+}
+catch (<Exception_name> exception){
+    … // Handles outer exception
+}",
+,"Multiple try-catch.
+Smaller exception (Subclasses)
+Bigger exceptions (More base exception classes)
+Fail inside one catch -> Jump to next catch block","try{
+    … // code that may fail and result into an Exception
+}
+catch (<Exception_name> smallerexception){
+    … // Handles exception defined in catch block
+}
+catch (<Exception_name> mediumexception){
+    … // Handles exception defined in catch block
+}
+catch (<Exception_name>largeexception){
+    … // Handles exception defined in catch block
+}",
+,"Error treament solutions:
+1. Save necessary data and exit the program
+2. Treat problem and continue working",,
+,"Different error types:
+Unchecked exceptions can be avoided by passing right arguments
+Checked exceptions cannot be avoided e.g. File writing -> Must throw or catch the error in caller function",,
+,,,
+Standard input,,,
+Standard output,,,
+Kotlin,,,
+,Structural program,"fun main(){
+    println(""Hello"")
+}",
+,if/else,"if (<boolean_value>){
+    <expr>
+}
+else if (<boolean_value>){
+    <expr>
+}
+else{
+    <expr>
+}
+",
+,"if/else assignment
+
+Last expression as return","var/val condition_value = if (<boolean_value>){
+    <expr>
+}
+else if (<boolean_value>){
+    <expr>
+}
+else{
+    <expr>
+}
+
+Type implication goes for highest common superclass",
+,when statement,"when {
+    x.isOdd() -> print(""x is odd"")
+    y.isEven() -> print(""y is even"")
+    else -> print(""x+y is odd"")
+}",
+,Parameterized when statement,"when (day) {
+    1 -> println(""Monday""),
+    2 -> println(""Tuesday""),
+    3 -> println(""Wednesday""),
+    4 -> println(""Thursday""),
+    5 -> println(""Friday""),
+    6 -> println(""Saturday""),
+    7 -> println(""Sunday""),
+    else -> println(""Invalid day.""),
+}
+
+when (day) {
+    1, 2, 3, 4, 5 -> println(""Weekday""),
+    6, 7 -> println(""Weekend""),
+    else -> println(""Invalid day""),
+}
+
+when (x) {
+    in 1..10 -> print(""x is in the range"")
+    in validNumbers -> print(""x is valid"")
+    !in 10..20 -> print(""x is outside the range"")
+    else -> print(""none of the above"")
+}",
+,when assignment,"val message = when {
+    localFileSize > remoteFileSize -> ""Local file is larger than remote file""
+    localFileSize < remoteFileSize -> ""Local file is smaller than remote file""
+    else -> ""Local and remote files are the same size""
+}",
+,while-loop,"while (<boolean_value>){
+    <expr>
+}
+
+do {
+    <expr>
+} while (<boolean_value>);
+
+
+var number = 0
+outer@ while (number < 5) {
+    number++
+    println(number)
+    var i = 0
+    while (i < 5) {
+        if (i == 0) break@outer
+        i++
+        println(""***$i"")
+    }
+}
+",
+,Ranges,"0..10 -> [0, 10]
+0..<10 -> [0, 10)
+1 until 10 -> [1, 10)
+10 downTo 1 -> [10, 1]
+... step 3 -> Progression with step 3
+
+2 in 2..5 -> true (boolean value)",
+,for-loop,"for (i in <range>/<iterator>){
+    <expr>
+}
+
+for (i in 0..10){
+    print(i)
+}
+
+numbers.forEach{
+    println(it)
+}",
+,continue/break,"continue;
+break;",
+"Primitive data types (Numbers: all signed, implicit type cast while widening (up), explicit type cast while narrowing(down))
+Signed 2s complement","Double (8 bytes, single precision floating point, default in fractional number literal)",3091.238,
+,"Float (4 bytes, single precision floating point, must add suffix F)",32.1F,
+,"Long (8 bytes, add a suffix L, can be implied if given number too big to fit in Int)","23519L
+23519l",
+,"Int (4 bytes, default in number literals)",2351,
+,"Short (2 bytes, must be explicitly typed)",180 (Promote to int during operators),
+,"Byte (1 byte, must be explicitly typed)",15 (Promote to int during operators),
+,Char (2 byte),"'a', '\u0042', '\n', '\t', '\b', '\r', '\\', '\'' (Promote to int during operators)",
+,Boolean (1 byte),"true, false",
+,"assignment
+variable declaration","var -> variable, val -> constant
+Explicit type: var userName: String = ""John"", val userName: String = ""John""
+Implicit type/Inferred type: var userName = ""John"", val userName = ""John""",
+,Type casting,"(<variable_type>) <variable_name>
+(int) 23.1F, 32.6f
+(incompatible types: possible lossy conversion … to …) (During narrowing)",
+,"Basic arithmetic operator:
+When two primitive types of different ""widths"" (sizes) are used in an operation, the narrower one is automatically promoted to match the wider one.
+x = x+y: type dependent on type x",x + y,
+,,x - y,
+,,x * y,
+,,x / y,
+,,x % y,
+,"Compound Assignment Operator
+x += y (Implicitly uses type for x)",x += y,
+,,x -= y,
+,,x *= y,
+,,x /= y,
+,,x %= y,
+,Prefix/postfix notation,"x++, x--, ++x, --x",
+,"Relational operator
+Return a boolean",x < y,
+,,x > y,
+,,x == y,
+,,x <= y,
+,,x >= y,
+,,x != y,
+,Boolean operators,b1 && b2,
+,,b1 || b2,
+,,!b1,
+,Compound assignment boolean operators,b1 &= b2,
+,,b1 |= b2,
+,,b1 ^= b2,
+"References
+A reference (from stack) pointing to heap",Null checking,"Nullable variable, regular variables does not allow null: val text: String? = null",
+,,text?.length -> if (text != null) {text.length},
+,,text!!.length -> May cause null pointer exception,
+,,"val text2 = text ?: ""The variable is null""",
+,,<variable> is <type> -> boolean,
+,String,"""hello"", special type of array with chars using String",
+,"Methods/Functions
+Globally defined functions implicitly stored as Main application class","fun myFunc(name: String, age: Int){
+    println(""Hello $name, you are $age years old"")
+}
+
+fun getMax(a: Int, b: Int): Int{
+    return if (a>b) a else b
+}",
+,Simple syntax,"fun getMax(a: Int, b: Int): int = if (a>b) a else b
+fun getMax(a: Int, b: Int) = if (a>b) a else b",
+,"Overloading, different parameter lists","fun getMax(a: Int, b: Int): int = if (a>b) a else b
+fun getMax(a: Double, b: Double): Double = if (a>b) a else b",
+,Default parameters,"fun sendMessage(name: String, message: String = """"){ ... }",
+,Calling using different order,"Default order: sendMessage(""Alice"", ""Hello!"")
+Custom order: sendMessage(message = ""Hello!"", name = ""Alice"")",
+,Arbitrary number of arguments using vararg,"fun sum(vararg numbers: Int): Int{
+    var result = 0
+    for (number in numbers){
+        results += number
+    }
+    return result
+}",
+"Class
+1. Executable (main+static method)
+2. Useful utility class with only static methods
+3. New object -> Appearance and behaviours
+4. Both static and instance",,"fun main(args: Array<String>) {
+    val car1 = Car(""Tesla"", ""S Plaid"", ""Red"", 4)
+    -> car1.name, car1.model, car1.color, car1.doors (as setters and getters)
+}
+
+class Car(name: String, model: String, color: String, doors: Int) {
+    var name = name
+    var model = model
+    var color = color
+    var doors = doors
+
+    fun move() {
+        println(""The car $name is moving"")
+    }
+
+    fun stop() {
+        println(""The car $name has stopped"")
+    }
+}
+",
+,Shorthand constructor,"class Car(var name: String, var model: String, var color: String, var doors: Int)",
+,Init as constructor,"class User(name: String, var lastName: String, var age: Int) {
+    var name: String
+    init {
+        if (name.lowercase().startsWith(""a"")) {
+            this.name = name
+        } else {
+            this.name = ""User""
+            println(""The name doesn't start with the letter 'a' or 'A'"")
+        }
+    }
+}
+",
+,Explicit constructors,"class User(var name: String, var lastName: String, var age: Int) {
+    constructor(name: String) : this(name, lastName = ""LastName"", age = 0) {
+        println(""2nd"")
+    }
+    constructor(name: String, lastName: String) : this(name, lastName, age = 0) {
+        println(""3rd"")
+    }
+}",
+,Custom setter/getter behavior,"class User(firstName: String, var lastName: String = ""LastName"", var age: Int = 0) {
+    var firstName = firstName
+        get() {
+            return ""FirstName: $field""
+        }
+        set(value) {
+            println(""$value was assigned"")
+            field = value
+        }
+}",
+,Static methods,"class Calculator {
+    companion object {
+        fun sum(a: Int, b: Int): Int {
+            return a + b
+        }
+    }
+}
+
+-> Calculator.sum(a = 5, b = 10)",
+,,,
+,,,
+,,,
+,,,
+,,,
+,class definition,<public/private/> class <abstract/> <final/> <class_name>{ … },
+,"Access modifiers:
+Public: Accessed by all classes in any package
+Default: Accessed in the same package
+Protected: Accessed in same package and only its subclasses there
+Private: Only to this class
+
+Non-access modifiers:
+Static: belong to class
+Final: Prevents modification
+Abstract: Cannot instance/cannot overwrite or modify methods
+native: method implemented in another language",<public/protected/private> <static/> <final/>,
+,"Class instance members -> variables
+Static/default as instance
+Final: constant
+volatile: Variable may changed by multiple threads, not cached thread-locally, read from main memory
+transients: Attributes and methods excluded in serialize","<public/protected/private> <static/> <final/> <volatile/> <transient/> <name> = <value>;
+<public/protected/private> <static/> <final/> <volatile/> <transient/> <name>;",
+,"methods/method call to call stack
+Static/default as instance
+Final: cannot override while inherit
+
+main() -> <func1>() -> <func2>() …
+Parameters: copy of argument (primitives copied, references shallow copied)","<public/protected/private> <type> <static/> <abstract/> <final/> <native/> <name>(<type> <param>, <type> <param>, ...){
+    ...
+}",
+,"method overloading
+depends on method signature","<public/protected/private> <type> <static/> <final/> <native/> <name>(<type> <param1>, <type> <param2>, ...){
+    ...
+}
+
+<public/protected/private> <type> <static/> <final/> <native/> <name>(<type> <param3>, <type> <param4>, ...){
+    ...
+}",
+,"constructors, no return type","<public/protected/private> <class_name>(...){
+    ... -> this keyword
+}",
+Interface,,,
+Enums,,,
+"Generics
+<T> or <T, U, …> as type variables",Generic class,,
+,Generic method,,
+Lambda,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+APIs (Java Packages and libraries),,,
+Java packages and libraries,,…,
+java.lang,"Integer (Wrapper class), do not use its constructor (deprecated) in modern versions",String toString(int n),
+,,int parseInt(String s),
+,Byte,Byte parseByte(String s),
+,Short,Short parseShort(String s),
+,Long,Long parseLong(String s),
+,Float,Float parseFloat(String s),
+,Double,Double parseDouble(String s),
+,Character,boolean isLetter(char c),
+,,boolean isLowerCase(char c),
+,,boolean isUpperCase(char c),
+,,boolean isDigit(char c),
+,,boolean isLetterOrDigit(char c),
+,,boolean isWhiteSpace(char c),
+,,char toUpperCase(char c),
+,,char toLowerCase(char c),
+,Arrays,"boolean equal(T[] v1, T[] v2)",
+,,"void sort(T[] v)
+void sort(T[] v, int fromIndex, int toIndex)",
+,,"int binarySearch(T[] v, T key) -> Only after sort, return index",
+,,"void fill(T[] v, T val)
+void fill(T[] v, int fromIndex, int toIndex, T val)",
+,,String toString(T[] v) -> Pretty print primitive array,
+,System,int exit(int status) // status as 0: no problem,
+,,long currentTimeMillis() // Milliseconds timestamp,
+,,"void arrayCopy(Object source, int srcindex, Object dest, int destindex, int size)",
+,Class reflection,if (<object>.getClass() == <Class>.class){ <specific class object handling>},
+,,<object>.getClass(),
+,,<object>.getSuperclass(),
+,,<object>.getFields(),
+,,<object>.getMethods(),
+,,,
+,,,
+,,,
+,Math,.PI,
+,,.E,
+,,short abs(float x),
+,,"int round(float x)
+long round(double x)",
+,,double ceil(double x),
+,,double floor(double x),
+,,"int max(int n1, int n2)",
+,,"int min(int n1, int n2)",
+,,double sqrt(double x),
+,,double cbrt(double x),
+,,"double pow(double base, double exponent)",
+,,double exp(double x) // e^x,
+,,double log(double x) // ln(x),
+,,double toRadians(double degreeds),
+,,double toDegreeds(double radians),
+,,"double random() // Inclusive 0.0, exclusive 1.0, (int) ((n+1)*Math.random())",
+,"String
+Strings are immutable. Class methods cannot modify the string itself","new String()
+new String(char[] chars)
+new String(String string)
+""..."" // string literal as constructor",
+,,char charAt(int index) throws IndexOutOfBoundsException,
+,,"int codePointAt(int index) throws IndexOutOfBoundsException -> Unicode int point
+int codePointBefore(int index) throws IndexOutOfBoundsException -> Unicode int point
+int codePointCount(int startIndex, int endIndex) throws IndexOutOfBoundsException -> number of Unicode values found",
+,,"int indexOf(int ch)/indexOf(int ch, int fromIndex)/indexOf(String str)/indexOf(String str, int fromIndex)
+int lastIndexOf(int ch)/lastIndexOf(int ch, int fromIndex)/lastIndexOf(String str)/lastIndexOf(String str, int fromIndex)",
+,,int length(),
+,,"int offsetByCodePoints(int index, int codePointOffset) throws IndexOutOfBoundsException",
+,,"CharSequence subSequence(int beginIndex, int endIndex) throws IndexOutOfBoundsException",
+,,char[] toCharArray(),
+,,int hashCode(),
+,,"int compareTo(String string2)/compareTo(Object object) 
+int compareToIgnoreCase(String string2) // Lexicographically compare, <0: less, >0: greater",
+,,String concat(String string2),
+,,boolean contains(CharSequence chars) throws NullPointerException,
+,,"boolean contentEquals(StringBuffer chars)
+boolean contentEquals(CharSequence chars)",
+,,boolean endsWith(String chars),
+,,"boolean equals(Object anotherObject)
+boolean equalsIgnoreCase(String anotherString)",
+,,"byte[] getBytes() throws UnsupportedEncodingException
+byte[] getBytes(Charset charset) throws UnsupportedEncodingException
+byte[] getBytes(String charsetName) throws UnsupportedEncodingException",
+,,"void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)",
+,,boolean isEmpty(),
+,,"boolean matches(String regex)
+boolean regionMatches(boolean ignoreCase, int offset, String other, int otherOffset, int length)
+boolean regionMatches(int offset, String other, int otherOffset, int length)",
+,,"String replace(char oldChar, char newChar)
+String replace(CharSequence target, CharSequence replacement)
+String replaceAll(String regex, String replacement) throws PatternSyntaxException
+String replaceFirst(String regex, String replacement) throws PatternSyntaxException",
+,,"String[] split(String regex)
+String[] split(String regex, int limit) throws PatternSyntaxException //limit: (0 as default, -1 as one separate part more, 2 as 2 last tokens combined)",
+,,"boolean startsWith(String prefix)
+boolean startsWith(String prefix, int offset)",
+,,"String substring(int beginIndex) throws IndexOutOfBoundsException
+String substring(int beginIndex, int endIndex) throws IndexOutOfBoundsException",
+,,"String toLowerCase()
+String toLowerCase(Locale locale)",
+,,String toString(),
+,,"String toUpperCase()
+String toUpperCase(Locale locale)",
+,,String trim(),
+,,"String copyValueOf(char[] data, int offset, int count) throws StringIndexOutOfBoundsException",
+,,"String format(Locale locale, String format, Object... args) throws IllegalFormatException
+String format(String format, Object... args) throws IllegalFormatException",
+,,"String join(CharSequence delimiter, CharSequence... elements)
+String join(CharSequence separator, Iterable elements)",
+,,"String valueOf(Object obj)
+String valueOf(char[] data)
+String valueOf(char[] data, int offset, int count)
+String valueOf(boolean b)
+String valueOf(char c)
+String valueOf(int i)
+String valueOf(long l)
+String valueOf(float f)
+String valueOf(double d)",
+,"StringBuilder
+(StringBuilder is mutable, but not as effective/high-performance as String.)
+default capacity is 16 bytes + CharSequence size
+Growth by doubling + 2","new StringBuilder()
+new StringBuilder(CharSequence seq)
+new StringBuilder(int capacity)
+new StringBuilder(String str)",
+,"StringBuffer
+(Similar to StringBuilder, intended for multithreaded programs)",,
+,"Scanner
+(Read as tokens, CLOSE AFTER USE)","Scanner scanner = new Scanner(System.in);
+String tokens = null;
+while (t.hasNext(){
+    token = t.next();
+    <use token here…>
+}",
+,,"scanner.useLocale(Locale.US);
+t.useDeliminator(""[+=]"")
+…",
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+java.io,"Java I/O
+(CLOSE AFTER USE)","High-level helpers (3rd layer), buffering: BufferedReader/BufferedWriter, PrintWriter, Scanner
+Character conversion (2nd layer), Add encoding/decoding using char: FileReader/FileWriter, InputStreamReader/OutputStreamWriter
+Raw byte streams (1st layer), OS handle bytes in and out: FileInputStream/FileOutputStream",
+,,"BufferedReader br =
+new BufferedReader(           // 3rd layer: buffering & readLine()
+        new FileReader(           // 2nd layer: char decoding
+            new File(""data.txt"")  // path information
+        )
+    );",
+,,"File inputFile = new File(""input.txt"");
+File outputFile = new File(""output.txt"");
+try (
+    FileReader fr = new FileReader(inputFile);
+    BufferedReader br = new BufferedReader(fr);
+    FileWriter fw = new FileWriter(outputFile);
+    BufferedWriter bw = new BufferedWriter(fw);
+) {
+    String line;
+    while ((line = br.readLine()) != null) {
+        bw.write(line);
+        bw.newLine(); // preserve line breaks
+    }
+    System.out.println(""File copied successfully."");
+} catch (IOException e) {
+    e.printStackTrace();
+}",
+,File,new File(String fileNamePath),
+,,boolean createNewFile() throws IOException,
+,,boolean delete(),
+,,void deleteOnExit(),
+,,boolean exists(),
+,,boolean canRead(),
+,,boolean canWrite(),
+,,boolean setReadOnly(),
+,,"boolean setWritable(boolean writable)
+boolean setWritable(boolean writable, boolean ownerOnly)",
+,,"boolean setReadable(boolean readable)
+boolean setReadable(boolean readable, boolean ownerOnly)",
+,,"boolean setExecutable(boolean executable)
+boolean setExecutable(boolean executable, boolean ownerOnly)",
+,,boolean renameTo(File dest),
+,,boolean mkdir(),
+,,boolean mkdirs(),
+,,"String[] list()
+String[] list(FilenameFilter filter)",
+,,"File[] listFiles()
+File[] listFiles(FilenameFilter filter)
+File[] listFiles(FileFilter filter)",
+,,long length(),
+,,String getAbsolutePath(),
+,,String getCanonicalPath() throws IOException,
+,,String getName(),
+,,String getParent(),
+,,File getParentFile(),
+,,String getPath(),
+,,boolean isAbsolute(),
+,,boolean isDirectory(),
+,,boolean isFile(),
+,,boolean isHidden(),
+,,long lastModified(),
+,,boolean setLastModified(long time),
+,,boolean setReadOnly(),
+,,int compareTo(File pathname),
+,,Path toPath(),
+,,URI toURI(),
+,,URL toURL() throws MalformedURLException,
+,"InputStream
+throws IOException",int available() // Estimate numbers of bytes that can be read from inputstream without blocking next method invocation for this input stream,
+,,void close(),
+,,void mark() // Mark current position,
+,,markSupported() // tests if mark and reset supports,
+,,"abstract int read()
+int read(byte[] b) // read and store into byte[]
+int read(byte[] b, int off, int len)",
+,,void reset(),
+,"OutputStream
+throws IOException",void close(),
+,,void flush(),
+,,"void write(byte[] b)
+void write(int b) // Writes the specified byte to this output stream.
+void write(byte[] b, int off, int len)",
+,FileInputStream extends InputStream,"new FileInputStream(String name) throws FileNotFoundException
+new FileInputStream(File file) throws FileNotFoundException
+new FileInputStream(FileDescriptor fdObj)",
+,,int read(),
+,,long skip(long n) throws IOException,
+,,protected void finalize(),
+,,FileChannel getChannel() // return unique FileChannel associated with this input stream,
+,,FileDescriptor getFD() throws IOException // Returns the FileDescriptor object representing the connection to the actual file in the file system being used,
+,FileOutputStream,"new FileOutputStream(String name) throws FileNotFoundException
+new FileOutputStream(String name, boolean append) throws FileNotFoundException
+new FileOutputStream(File file) throws FileNotFoundException
+new FileOutputStream(File file, boolean append) throws FileNotFoundException
+new FileOutputStream(FileDescriptor fdObj)",
+,,void write(byte[] b),
+,,protected void finalize(),
+,,FileChannel getChannel() // return unique FileChannel associated with this input stream,
+,,FileDescriptor getFD() throws IOException // Returns the FileDescriptor object representing the connection to the actual file in the file system being used,
+,Reader,"abstract int read(char[] cbuf, int off, int len) throws IOException
+int read() throws IOException // -1 return at the end of the stream
+int read(char[] cbuf, int off, int len) // returns number of read characters
+int read(char[] cbuf) throws IOException // returns number of read characters
+int read(CharBuffer target) throws IOException // returns number of read characters",
+,,boolean ready() throws IOException,
+,,void close() throws IOException,
+,,void mark(int readAheadLimit) throws IOException,
+,,boolean markSupported(),
+,,void reset() throws IOException,
+,,long skip(long n) throws IOException,
+,Writer,"Writer append(char c)
+Writer append(CharSequence charSequence)
+Writer append(CharSequence charSequence, int start, int end)",
+,,"abstract void write(char[] cbuf, int off, int len) throws IOException
+void write(int c) throws IOException
+void write(char[] cbuf) throws IOException
+void write(String str) throws IOException
+void write(String str, int off, int len) throws IOException",
+,,void flush() throws IOException,
+,,void close() throws IOException,
+,FileReader extends Reader,"FileReader(String fileName) throws FileNotFoundException
+FileReader(File file) throws FileNotFoundException
+FileReader(FileDescriptor fd)",
+,FileWriter extends Writer,"FileWriter(String fileName) throws IOException
+FileWriter(String fileName, boolean append) throws IOException
+FileWriter(File file) throws IOException
+FileWriter(File file, boolean append) throws IOException
+FileWriter(FileDescriptor fd)",
+,BufferedReader extends Reader,"BufferedReader(Reader in)
+BufferedReader(Reader in, int size)",
+,,Stream<String> lines() // Stream with lines read,
+,,String readLine(),
+,BufferedWriter extends Writer,"BufferedWriter(Writer out)
+BufferedWriter(Writer out, int size)",
+,,void newLine() // Writes line separator,
+,PrintWriter extends Writer,"new PrintWriter(String fileName) throws FileNotFoundException
+new PrintWriter(String fileName, String csn) throws FileNotFoundException, UnsupportedEncodingException
+new PrintWriter(File file) throws FileNotFoundException
+new PrintWriter(File file, String csn) throws FileNotFoundException, UnsupportedEncodingException
+new PrintWriter(Writer out)
+new PrintWriter(OutputStream out)",
+,,boolean checkError(),
+,,"PrintWriter printf(String format, Object... args)",
+,,"PrintWriter format(String format, Object... args)",
+,,"void print(boolean b)
+void print(char c)
+void print(int i)
+void print(long l)
+void print(float f)
+void print(double d)
+void print(char[] s)
+void print(String s)
+void print(Object obj)
+void println()
+void println(boolean x)
+void println(char x)
+void println(int x)
+void println(long x)
+void println(float x)
+void println(double x)
+void println(char[] x)
+void println(String x)
+void println(Object x)",
+,RandomAccessFile,"new RandomAccessFile(File file, String mode)
+new RandomAccessFile(String name, String mode)",
+,,FileChannel getChannel() ,
+,,FileDescriptor getFD() ,
+,,long getFilePointer() ,
+,,long length() ,
+,,"int read()
+int read(byte[] b) 
+int read(byte[] b, int off, int len) ",
+,,void close() ,
+,,boolean readBoolean() ,
+,,byte readByte() ,
+,,char readChar() ,
+,,double readDouble() ,
+,,float readFloat() ,
+,,void readFully(byte[] b) ,
+,,"void readFully(byte[] b, int off, int len) ",
+,,int readInt() ,
+,,String readLine() ,
+,,long readLong() ,
+,,short readShort() ,
+,,int readUnsignedByte() ,
+,,int readUnsignedShort() ,
+,,String readUTF() ,
+,,void seek(long pos) ,
+,,void setLength(long newLength) ,
+,,int skipBytes(int n) ,
+,,"void write(byte[] b) 
+void write(byte[] b, int off, int len)
+void write(int b)",
+,,void writeBoolean(boolean v) ,
+,,void writeByte(int v) ,
+,,void writeBytes(String s) ,
+,,void writeChar(int v) ,
+,,void writeChars(String s) ,
+,,void writeDouble(double v) ,
+,,void writeFloat(float v) ,
+,,void writeInt(int v) ,
+,,void writeLong(long v) ,
+,,void writeShort(int v) ,
+,,void writeUTF(String str) ,
+,,System.getProperty(String file) -> Directory name,
+,,"java.nio.channels
+FileChannel (Abstract)
+randomAccessFile.getChannel() -> FileChannel
+fileChannel.map(FileChannel.MapMode.READ_ONLY/READ_W+C309RITE, 0, (int) fileChannel.size()) -> Buffer>ByteBuffer>MappedByteBuffer
+Memory maps",
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,Calendar -> GregorianCalendar,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,"<T> T REDUCE(T[] array, T accumulator, update){
+    T accumulator = accumulator;
+    for (int i = 0; i < points.length; i++){
+        accumulator = update(accumulator, i);
+    }
+    accumulator
+}","REDUCE<Int>(ints, Int.ZERO, accumulator.add(ints[i]))"
+,,"<T> T MIN (T[] list, A, B, op) FAIL IllegalArgumentException{
+    T minValue = points[0];
+    for (int i = 1; i < points.length; i++){
+        if (A op B){
+            minValue = points[i];
+        }
+    }
+    return nearP;
+}",
+,,"<T> MIN(T[] array, calculate, compare)){
+    T minElement = array[0];
+    U minValue = calculate(minElement);
+    U val = 0;
+    for (int i = 1; i < array.length; i++){
+        val = calculate(array[i]);
+        if (compare(val, minValue)){
+            minElement = array[i];
+            minValue = val;
+        }
+    }
+    return minElement;
+}","MIN<Point>(points, array[i].distance (Point.ORIGIN), val < minValue)
+MIN<Region>(regions, regions[i].area(), val < minValue)
+MINMAX<Circle>(circles, circles[i].area (), val < minValue)"
+,,"<T> int FIND(T[] array, targetCondition) FAIL IllegalArgumentException{
+    int i = 0;
+    while (i < array.length && !targetCondition(i))
+        i++;
+    if (i >= relationship.length)
+        throw new IllegalArgumentException (""word not found: "" + key)
+    i
+}
+
+<T> int FIND(T[] array, targetCondition) FAIL IllegalArgumentException{
+    boolean found = false;
+    int i = 0;
+    while (!found && i < array.length){
+        if (targetCondition(i)){
+            found = true;
+        }
+        else{
+            i++;
+        }
+    }
+    i, found
+}",
+,,"T[] SFILTER (T[] array, condition){
+    int count = 0;
+    for (int i = 0; i < array.length; i++)
+        if (condition(array[i]))
+            count++;
+    T[] selectedPoints = new T[count];
+    int i = 0;
+    int j = 0;
+    while (j < count){
+        if (condition(array[i]))
+            selectedPoints[j++] = array[i];
+        i++;
+    }
+    return selectedPoints;
+}","SFILTER(points, array[i].distance (point) < 4)
+SFILTER(circles, circles[i].getColor().equals (color))
+SFILTER<Int>(ints, ints[i].lessThan(target))"
+,,"<T> SAPPEND(T[] array, T value){
+    T[] newArray = new T[T.length + 1];
+    for (int i = 0; i < array.length; i++)
+        newArray[i] = array[i];
+    newArray[newArray.length - 1] = value;
+    newArray
+}",
+,,"<T> T[] COPYARR(T[] array1){
+    array2 = new T[array1.length];
+    for (int i = 0; i < array1.length; i++)
+        array2[i] = array1[i];
+	array1
+}",
+,,"<T> T[] SINSERT(T[] array, int index, T element){
+    T[] newArray = new T[array.length + 1];
+    for (int i = 0; i < index; i++)
+        newArray[i] = array[i];
+    newArray[index] = element;
+    for (int i = index; i < array.length; i++)
+        newArray[i + 1] = array[i];
+    newArray
+}",
+,,"<T> T[] SREMOVE(T[] array, int index){
+    T[] newArray = new T[array.length - 1];
+    for (int i = 0; i < index; i++)
+        newArray[i] = array[i];
+    for (int i = index + 1; i < array.length; i++)
+        newArray[i - 1] = array[i];
+    newArray
+}",
+,,"<T> Node<T> LCOPYARR(Node<T> first, T[] array){
+    if (array.length != 0){
+        first = new Node(array[0]);
+        Node n = first;
+        for (int i = 1; i < array.length; i++)
+        {
+            n.next = new Node(array[i]);
+            n = n.next;
+        }
+    }
+}",
+,,"<T> T[] LARR() {
+        T[] array = new T[length()];
+        int i = 0;
+        Node n = first;
+        while (n != null) {
+            array[i++] = n.number;
+            n = n.next;
+        }
+        array
+    }",
+,,"<T> String LSTRARR(Node<T> first) {
+    StringBuilder sb = new StringBuilder();
+    Node<T> n = first;
+
+    while (n != null) {
+        sb.append(n.number);
+        if (n.next != null) sb.append("", "");
+        n = n.next;
+    }
+
+    sb.toString()
+}",
+,,"<T> T LMAX(Node<T> first) {
+    if (first == null)
+        return null;
+    T max = first.number;
+    Node<T> n = first.next;
+
+    while (n != null) {
+        if (n.number > max) max = n.number;
+        n = n.next;
+    }
+
+    max
+}",
+,,"<T> T LMIN(Node<T> first) {
+    if (first == null)
+        return null;
+    T min = first.number;
+    Node<T> n = first.next;
+
+    while (n != null) {
+        if (n.number < min) min = n.number;
+        n = n.next;
+    }
+
+    min
+}",
+,,"<T> T LACCESS(Node<T> first, int position) {
+        if (position < 0) throw new IndexOutOfBoundsException();
+        Node<T> n = first;
+        while (n != null && position > 0) {
+            n = n.next;
+            position--;
+        }
+        if (n == null) throw new IndexOutOfBoundsException();
+        n.number
+    }",
+,,"<T> int LFIND(T number) {
+    int index = 0;
+    boolean found = false;
+    Node<T> n = first;
+    while (n != null && !found) {
+        if (n.number == number)
+            found = false;
+        else{
+            n = n.next;
+            index++;
+        }
+        
+    }
+    return found ? index : -1;
+}",
+,,"<T> boolean LINC(Node<T> first) {
+    Node<T> a = first;
+    Node<T> b = (a != null) ? a.next : null;
+    while (a != null && b != null) {
+        if (a.number > b.number) return false;
+        a = b;
+        b = b.next;
+    }
+    return true;
+}",
+,,"<T> boolean LDEC(Node<T> first) {
+    Node<T> a = first;
+    Node<T> b = (a != null) ? a.next : null;
+    while (a != null && b != null) {
+        if (a.number < b.number) return false;
+        a = b;
+        b = b.next;
+    }
+    return true;
+}",
+,,"<T> void LAPPEND(T number) {
+    Node<T> newNode = new Node<>(number);
+    if (first == null) {
+        first = newNode;
+    else{
+        Node n = first;
+        while (n.next != null) {
+            n = n.next;
+        }
+        n.next = newNode;
+    }
+}",
+,,"<T> void LINSERT(int position, T number) {
+    Node<T> newNode = new Node<>(number);
+    if (position < 0) throw new IndexOutOfBoundsException();
+    if (position == 0) {
+        newNode.next = first;
+        first = newNode;
+    }
+    else{
+        Node n = first;
+        int i = 0;
+        while (n != null && i < position - 1) {
+            n = n.next;
+            i++;
+        }
+        if (n == null) throw new IndexOutOfBoundsException();
+        newNode.next = n.next;
+        n.next = newNode;
+    }
+}",
+,,"<T> void LREMOVE(int position) {
+    if (position < 0 || first == null) throw new IndexOutOfBoundsException();
+    if (position == 0) {
+        first = first.next;
+    }
+    else{
+        Node n = first;
+        int i = 0;
+        while (n != null && i < position - 1) {
+            n = n.next;
+            i++;
+        }
+        if (n == null || n.next == null) throw new IndexOutOfBoundsException();
+        n.next = n.next.next;
+    }
+}",
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,"<T> String STRARR(){
+    StringBuilder stringBuilder = new StringBuilder();
+    stringBuilder.append(""["");
+    if (a.length > 0){
+        for (int i = 0; i < a.length - 1; i++){
+            s.append(a[i].toString());
+            s.append("", "");
+        }
+        s.append(a[a.length - 1].toString());
+    }
+    s.append(""]"");
+    return s.toString();
+}",
+,,,
+,,,
+,Basic set,"class Set<T>{
+    private T[] elements;
+    public Set (T[] elements){
+        this.elements = COPYARR(elements);
+    }
+    public String toString (){
+        return STRARR(this.elements);
+    }
+	
+    public boolean contains (T element){
+        return FIND(this.elements, this.elements[i] == element) < this.elements.length;
+    }
+	
+	public boolean add(T element){
+	    FAIL(contains(element), throw new IllegalStateException(element + "" already is in the set""));
+		SAPPEND(this.element, element);
+	}
+	
+	public void remove (T element) throws java.util.NoSuchElementElementException{
+        int pos = FIND(this.elements, this.elements[i] == element) throw new java.util.NoSuchElementElementException (element + "" not present"");
+        elements = SREMOVE(this.elements, pos);
+    }
+	
+	public Set intersection(Set<T> set){
+	    return REDUCE(elements, new Set<T>(), if (set.contains(elements[i]) accumulator.add(elements[i]));
+	}
+	
+	public Set union(Set<T> set){
+	    Set<T> unionSet = COPYARR(elements);
+	    return REDUCE(set.elements, unionSet, if (!unionSet.contains(set.elements[i]) unionSet.add(elements[i]));
+	}
+}",
+,Linked list,"class MutableString{
+    private static DATACLASS(Node(+char ch, [+Node next]))
+    private int numberOfChars = 0;
+    private Node first = null;
+    public MutableString (char[] chars){
+        LCOPYARR(first, chars);
+    }
+    public String toString (){
+        return LSTRARR(first);
+    }
+    public char charAt (int index) throws java.lang.IndexOutOfBoundsException{
+	    FAIL(OUTRANGE[0, index, numberOfChars-1], java.lang.IndexOutOfBoundsException)
+		return LACCESS(first, index);
+	}
+    public void addFirst (char ch){
+	    LINSERT(first, 0, char);
+		numberOfChars++;
+	}
+}",
+,Relationship,"class MappingRelationship{
+    private static DATACLASS(Relationship(+T key, +T value) -> (key + "" -->"" + value))
+    private Relationship[] relationships;
+    public Dictionary (){
+        relationships = new Relationship[0];
+    }
+	
+    public String toString (){
+        String s = """";
+        for (int i = 0; i < relationships.length; i++)
+            s = s + relationships[i] + ""\n"";
+        return s;
+    }
+    
+    public void addRelationship (String key, String value){
+        relationship = SAPPEND<Relationship>(relationships, new Relationship(key, value));
+    }
+	
+    public String get(String key) throws IllegalArgumentException{
+        int i = FIND(relationships, relationships[i].key.equals(key)) throw new IllegalArgumentException (""word not found: "" + key);
+        return relationship[i].value;
+    }
+}",
+,Compound synonym handler,"import java.io.*;    // FileReader, BufferedReader, PrintWriter,
+                     // IOException
+
+class SynonymHandler{
+    public static String[] readSynonymData (String synonymFile) throws IOException{
+        BufferedReader reader = new BufferedReader(
+	        new FileReader(synonymFile));
+        int numberOfLines = 0;
+        String synonymLine = reader.readLine();
+        while (synonymLine != null)
+        {
+			numberOfLines++;
+			synonymLine = reader.readLine();
+		}
+		reader.close();
+
+		String[] synonymData = new String[numberOfLines];
+        reader = new BufferedReader(new FileReader(synonymFile));
+		for (int i = 0; i < numberOfLines; i++)
+		    synonymData[i] = reader.readLine();
+		reader.close();
+
+		return synonymData;
+    }
+
+    public static void writeSynonymData (String[] synonymData, String synonymFile) throws IOException {
+        PrintWriter writer = new PrintWriter(synonymFile);
+        for (String synonymLine : synonymData)
+            writer.println(synonymLine);
+        writer.close();
+
+    }
+
+	private static int synonymLineIndex(String[] synonymData, String word) throws IllegalArgumentException{
+        return FIND(synonymData, (i) -> {
+            int d = synonymData[i].indexOf('|');
+            String w = synonymData[i].substring(0, d).trim();
+            return w.equalsIgnoreCase(word);
+        });
+    }
+
+    public static String getSynonymLine (String[] synonymData, String word) throws IllegalArgumentException -> synonymLineIndex(synonymData, word)
+    public static String[] addSynonymLine(String[] data, String line) -> SAPPEND(data, line);
+	static String[] removeSynonymLine(String[] data, String word) throws IllegalArgumentException -> SREMOVE(data, synonymLineIndex(data, word))
+
+
+	private static String[] getSynonyms (String synonymLine){
+        String[] synonymLineParts = synonymLine.split(""\\|"");
+        return synonymLineParts[1].trim().split("", "");
+	}
+
+    public static void addSynonym(String[] data, String word, String synonym) FAIL IllegalArgumentException{
+        int index = synonymLineIndex(data, word);
+        String[] syns = getSynonyms(data[index]);
+    
+        syns = SAPPEND(syns, synonym);
+    
+        String name = data[index].split(""\\|"")[0].trim();
+        data[index] = name + "" | "" + String.join("", "", syns);
+    }
+
+
+    static void removeSynonym(String[] data, String word, String synonym) throws IllegalArgumentException, IllegalStateException{
+        int index = synonymLineIndex(data, word);
+        String[] syns = getSynonyms(data[index]);
+    
+        if (syns.length <= 1)
+            FAIL IllegalStateException;
+    
+        // Use SFILTER to remove the unwanted synonym
+        String[] newSyns = SFILTER(syns,
+            (s) -> !s.equalsIgnoreCase(synonym)
+        );
+    
+        String name = data[index].split(""\\|"")[0].trim();
+        data[index] = name + "" | "" + String.join("", "", newSyns);
+    }
+
+
+    private static void sortIgnoreCase (String[] strings){
+        SelectionSort.selectionSort(strings, (String string1, String string2) -> string1.compareTo(string2));
+	}
+
+    private static String sortSynonymLine (String synonymLine){
+        String[] synonymLineParts = synonymLine.split(""\\|"");
+        String name = synonymLineParts[0].trim();
+        String[] synonyms = synonymLineParts[1].trim().split("", "");
+        sortIgnoreCase(synonyms);
+        return String.format(""%s | %s"", name, String.join("", "", synonyms));
+	}
+
+	public static void sortSynonymData (String[] synonymData){
+        sortIgnoreCase(synonymData);
+        for (int i = 0; i < synonymData.length; i++){
+            synonymData[i] = sortSynonymLine(synonymData[i]);
+        }
+	}
+    
+}",
+,,,
+,Double linked list,...,
+,Tree<T>,"private TreeNode <T> root = null;
+DATACLASS(Tree<T>(-TreeNode<T> root = null), +root, toString -> root.toString())
+
+private String formatString (String str, boolean isPrefix) {
+    return (str.isBlank() || str.isEmpty()) ? """" : isPrefix ? "" "" + str : str + "" "";
+}
+private String preOrderTraversal(TreeNode<?> parentNode) {
+    if (parentNode == null)
+        return """";
+    return parentNode.getVal() + formatString(preOrderTraversal(parentNode.getLeft()), true) + formatString(preOrderTraversal(parentNode.getRight()), true);
+}
+
+private String inOrderTraversal(TreeNode<?> parentNode) {
+    if (parentNode == null)
+        return """";
+    return formatString(inOrderTraversal(parentNode.getLeft()), false) + parentNode.getVal().toString() + formatString(inOrderTraversal(parentNode.getRight()), true);
+}
+
+private String postOrderTraversal(TreeNode<?> parentNode) {
+    if (parentNode == null)
+        return """";
+    return formatString(postOrderTraversal(parentNode.getLeft()), false) + formatString(postOrderTraversal(parentNode.getRight()), false) + parentNode.getVal().toString();
+}",
+,TreeNode<T extends Comparable<T>>,"DATACLASS(TreeNode<T>(-T val, -TreeNode<T>left=null, -TreeNode<T>right=null, [-TreeNode<T> parent = null]), +val, +parent, +left, +right){
+    private static String TREE_FORMAT = ""TreeNode{val=%s, left=%s, right=%s, parent=%s}"";
+    public boolean isLeftChild () {
+        return parent != null && parent.getLeft() == this;
+    }
+    public boolean isRightChild () {
+        return parent != null && parent.getRight() == this;
+    }
+    @Override
+    public String toString() {
+        return String.format(TREE_FORMAT, val, left, right, parent==null?"""":parent.getVal());
+    }
+} ",
+,Binary search,"public static <T extends Comparable<T>> int binarySearch(T[] array, T key) {
+        int left = 0;
+        int right = array.length - 1;
+        int index = -1;
+        int found = false;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2; // Avoids overflow
+            int cmp = key.compareTo(array[mid]);
+
+            if (cmp == 0) {
+                found = true;
+                index = mid;
+            } else if (cmp < 0) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return index;
+    }",
+,Binary search tree,"class Node{
+    public int digit;
+    public Node left;
+    public Node right;
+	
+    public Node (int digit){
+        this.digit = digit;
+        this.left = null;
+        this.right = null;
+    }
+}","Node root = new Node (5);
+root.left = new Node (2);
+root.right = new Node (7);
+root.left.left = new Node (1);
+root.left.right = new Node (4);
+root.left.right.left = new Node (3);
+root.right.left = new Node (6);
+root.right.right = new Node (8);
+root.right.right.right = new Node (9);"
+,,"public static void visitRight (Node node){
+    Node n = node;
+    while (n != null){
+        System.out.print (n.digit + "" "");
+        n = n.right;
+    }
+}",
+,BinarySortedTree <T extends Comparable<T>> extends Tree <T>,,
+,Helper method search,"private Optional<TreeNode<T>> searchInSortedTree(TreeNode<T> rootNode, T value) {
+    TreeNode<T> currentTreeNode = rootNode;
+    TreeNode<T> foundTreeNode = null;
+    boolean notfinished = true;
+    while (notfinished){
+        if (value.compareTo(currentTreeNode.getVal()) < 0) {
+            if (currentTreeNode.getLeft() == null){
+                foundTreeNode = currentTreeNode;
+                notfinished = false;
+            } else {
+                currentTreeNode = currentTreeNode.getLeft();
+            }
+            }
+        else if (value.compareTo(currentTreeNode.getVal()) > 0) {
+            if (currentTreeNode.getRight() == null){
+                foundTreeNode = currentTreeNode;
+                notfinished = false;
+            } else {
+                currentTreeNode = currentTreeNode.getRight();
+            }
+        } else {
+            foundTreeNode = currentTreeNode;
+            notfinished = false;
+        }
+    }
+    return Optional.of(foundTreeNode);
+}",
+,find,"public Optional<TreeNode<T>> findInSortedTree(T value) {
+    Optional<TreeNode<T>> foundTreeNode = searchInSortedTree(getRoot(), value);
+    if (foundTreeNode.isPresent() && value.compareTo(foundTreeNode.get().getVal()) == 0) {
+        return foundTreeNode;
+    }
+    return Optional.empty();
+}",
+,insert,"public void insertIntoSortedTree(T value) {
+    Optional<TreeNode<T>> parentTreeNodeOptional = searchInSortedTree(getRoot(), value);
+    if (parentTreeNodeOptional.isEmpty()) {
+        setRoot(new TreeNode<>(value));
+    } else {
+        TreeNode<T> parentTreeNode = parentTreeNodeOptional.get();
+        TreeNode<T> newNode = new TreeNode<>(value);
+        if (value.compareTo(parentTreeNode.getVal()) < 0) {
+            parentTreeNode.setLeft(newNode);
+        } else if (value.compareTo(parentTreeNode.getVal()) > 0){
+            parentTreeNode.setRight(newNode);
+        }
+    }
+}",
+,remove,"
+
+public void deleteFromSortedTree(T value) {
+    Optional<TreeNode<T>> treeNodeOptional = findInSortedTree(value);
+    if (treeNodeOptional.isEmpty()) {
+        return;
+    }
+    TreeNode<T> treeNode = treeNodeOptional.get();
+    
+    if (treeNode.getLeft() == null && treeNode.getRight() == null){
+        replaceTreeNode(treeNode, null);
+    }
+    else if (treeNode.getLeft() != null && treeNode.getRight() == null){
+        replaceTreeNode(treeNode, treeNode.getLeft());
+        treeNode.deleteLeft();
+    }
+    else if (treeNode.getLeft() == null && treeNode.getRight() != null){
+        replaceTreeNode(treeNode, treeNode.getRight());
+        treeNode.deleteRight();
+    }
+    else if (treeNode.getLeft() != null && treeNode.getRight() != null){
+        TreeNode<T> replaceTreeNode = treeNode.getLeft();
+        while (replaceTreeNode.getRight() != null) {
+            replaceTreeNode = replaceTreeNode.getRight();
+        }
+        if (replaceTreeNode.getLeft() != null){
+            TreeNode<T> subReplaceTreeNode = replaceTreeNode.getLeft();
+            replaceTreeNode.deleteLeft();
+            replaceTreeNode.getParent().setRight(subReplaceTreeNode);
+        }
+        TreeNode<T> replaceTreeNodeParent = replaceTreeNode.getParent();
+        if (replaceTreeNode.isLeftChild()) {
+            replaceTreeNodeParent.deleteLeft();
+        }
+        else if (replaceTreeNode.isRightChild()){
+            replaceTreeNodeParent.deleteRight();
+        }
+        treeNode.setVal(replaceTreeNode.getVal());
+    }
+}",
+,replaceTreeNode,"private void replaceTreeNode (TreeNode<T> treeNode, TreeNode<T> replaceTreeNode) {
+    TreeNode<T> parentTreeNode = treeNode.getParent();
+    if (parentTreeNode == null) {
+        setRoot(replaceTreeNode);
+    }
+    else{
+        if (treeNode.isLeftChild()) {
+            parentTreeNode.setLeft(replaceTreeNode);
+        }
+        else if (treeNode.isRightChild()){
+            parentTreeNode.setRight(replaceTreeNode);
+        }
+    }
+}",
+,Heap<T>,"private static final int ROOT_NODE_INDEX = 0;
+private ArrayList<T> heap;
+private BiFunction <T, T, Integer> comparator;
+
+public Heap(Integer heapSize, BiFunction<T, T, Integer> comparator){
+    this.comparator = comparator;
+    heap = new ArrayList<>(heapSize);
+}",
+,filterDown,"private void filterDown(int currentIndex){
+    int heapSize = heap.size();
+    if (heapSize <= 1){
+        return;
+    }
+    boolean continueFilterDown = true;
+    while (continueFilterDown){
+        continueFilterDown = false;
+        int leftChildIndex = 2 * currentIndex + 1;
+        int rightChildIndex = 2 * currentIndex + 2;
+        T current = heap.get(currentIndex);
+        T leftChild = heap.get(leftChildIndex);
+        T rightChild = rightChildIndex < heapSize ? heap.get(rightChildIndex) : null;
+        int smallestChildIndex;
+        T smallestChild;
+        if (rightChild == null){
+            smallestChildIndex = leftChildIndex;
+            smallestChild = leftChild;
+        }
+        else{
+            if (comparator.apply(leftChild, rightChild) > 0){
+                smallestChildIndex = rightChildIndex;
+                smallestChild = rightChild;
+            }
+            else{
+                smallestChildIndex = leftChildIndex;
+                smallestChild = leftChild;
+            }
+        }
+        if (comparator.apply(current, smallestChild) > 0){
+            heap.set(currentIndex, smallestChild);
+            heap.set(smallestChildIndex, current);
+            currentIndex = smallestChildIndex;
+            continueFilterDown = 2 * currentIndex + 1 < heapSize;
+        }
+    }
+}",
+,filterUp,"private void filterUp(int currentIndex){
+    T current = heap.get(currentIndex);
+    int parentIndex = (currentIndex - 1) / 2;
+    T parent = heap.get(parentIndex);
+    while (currentIndex != parentIndex && comparator.apply(current, parent) < 0){
+        heap.set(currentIndex, parent);
+        heap.set(parentIndex, current);
+        currentIndex = parentIndex;
+        current = heap.get(currentIndex);
+        parentIndex = (currentIndex - 1) / 2;
+        parent = heap.get(parentIndex);
+    }
+}",
+,Insert/Remove,"public T getRoot(){
+    return heap.isEmpty() ? null : heap.get(ROOT_NODE_INDEX);
+}
+public void insert(T value){
+    int insertionIndex = heap.size();
+    heap.add(value);
+    filterUp(insertionIndex);
+}
+public void deleteRoot(){
+    T lastNode = heap.removeLast();
+    if (heap.isEmpty()) return;
+    heap.set(ROOT_NODE_INDEX, lastNode);
+    filterDown(ROOT_NODE_INDEX);
+}",
+,Heapifization,"public Heap(List<T> list, BiFunction<T, T, Integer> comparator){
+    this.comparator = comparator;
+    int heapSize = list.size();
+    heap = new ArrayList<>(heapSize);
+    for (T value: list){
+        heap.add(value);
+    }
+
+    for (int i = heapSize / 2 - 1; i >= 0; i--){
+        filterDown(i);
+    }
+}",
+,Pretty print,"public String toString(){
+    StringBuilder stringBuilder = new StringBuilder();
+    int index = 0;
+    int count = 1;
+    while (index < heap.size()){
+        for (int i = index; i < index + count && i < heap.size(); i++){
+            stringBuilder.append(heap.get(i) + "" "");
+        }
+        stringBuilder.append('\n');
+        index += count;
+        count *= 2;
+    }
+    return stringBuilder.toString();
+}",
+,,,
+,,,
+,,,
+,"Insertion sort (Time complexity: worst: \T(n^2), best: \T(n))
+
+Ascending order: e < sequence[holePos - 1] or e.compareTo(sequence[holePos - 1]) < 0
+Descending order:  e > sequence[holePos - 1] or e.compareTo(sequence[holePos - 1]) > 0","public static void sort (int[] sequence){
+    int e = 0;
+    int holePos = 0;
+    for (int pos = 1; pos < sequence.length; pos++){
+        e = sequence[pos];
+        holePos = pos;
+        while (holePos > 0 && {{e < sequence[holePos - 1]}}){
+            sequence[holePos] = sequence[holePos - 1];
+            holePos--;
+        }
+        sequence[holePos] = e;
+        System.out.println (java.util.Arrays.toString (sequence));
+    }
+}",
+,"Selection sort (Time complexity: \T(n^2))
+
+Ascending order: sequence[p].compareToIgnoreCase (sequence[maxPos]) < 0
+Descending order:
+sequence[p].compareToIgnoreCase (sequence[maxPos]) > 0","public static void sort (String[] sequence){
+    int lastPos = sequence.length - 1;
+    int maxPos = 0;
+    String e = """";
+    for (int pos = 0; pos < lastPos; pos++){
+        maxPos = pos;
+        for (int p = pos + 1; p <= lastPos; p++)
+            if (sequence[p].compareToIgnoreCase (sequence[maxPos]) < 0)
+                maxPos = p;
+            if (maxPos != pos){
+                e = sequence[pos];
+                sequence[pos] = sequence[maxPos];
+                sequence[maxPos] = e;
+            }
+        System.out.println (java.util.Arrays.toString (sequence));
+    }
+}",
+,,"public static void sort(int[] sequence) {
+    int lastPos = sequence.length - 1;
+    int minPos;
+    int temp;
+
+    for (int pos = lastPos; pos > 0; pos--) {
+
+        // Find the smallest value in 0..pos
+        minPos = 0;
+        for (int p = 1; p <= pos; p++) {
+            if (sequence[p] < sequence[minPos]) {
+                minPos = p;
+            }
+        }
+
+        // Swap smallest with element at current end (pos)
+        if (minPos != pos) {
+            temp = sequence[pos];
+            sequence[pos] = sequence[minPos];
+            sequence[minPos] = temp;
+        }
+
+        System.out.println(java.util.Arrays.toString(sequence));
+    }
+}
+",
+,Bubble sort,"public static <T> List<T> bubbleSort(List<T> list, BiFunction<T, T, Integer> comparator){
+    T first;
+    T second;
+    for (int endIndex = 0; endIndex < list.size() - 1; endIndex ++){
+        for (int startIndex = list.size() - 1; startIndex > endIndex; startIndex--){
+            first = list.get(startIndex);
+            second = list.get(startIndex - 1);
+            if (comparator.apply(first, second) < 0){
+                list.set(startIndex, second);
+                list.set(startIndex - 1, first);
+            }
+        }
+    }
+    return list;
+}",
+,Exchange sort,"public static <T> List<T> exchangeSort(List<T> list, BiFunction<T, T, Integer> comparator){
+    T anchorValue;
+    T compareValue;
+    for (int anchorIndex = 0; anchorIndex < list.size() - 1; anchorIndex ++){
+        for (int compareIndex = anchorIndex + 1; compareIndex < list.size(); compareIndex ++){
+            anchorValue = list.get(anchorIndex);
+            compareValue = list.get(compareIndex);
+            if (comparator.apply(anchorValue, compareValue) > 0){
+                list.set(anchorIndex, compareValue);
+                list.set(compareIndex, anchorValue);
+            }
+        }
+    }
+    return list;
+}",
+,Merge sort,"private static <T> List<T> mergeSortedLists(List<T> list1, List<T> list2, BiFunction<T, T, Integer> comparator){
+    int list1size = list1.size();
+    int list2size = list2.size();
+    List<T> list = new ArrayList<>(list1size + list2size);
+    int index1 = 0;
+    int index2 = 0;
+    while (index1 < list1size && index2 < list2size){
+        T value1 = list1.get(index1);
+        T value2 = list2.get(index2);
+        if (comparator.apply(value1, value2) > 0){
+            list.add(value2);
+            index2++;
+        }
+        else{
+            list.add(value1);
+            index1++;
+        }
+    }
+    while (index1 < list1size) {
+        list.add(list1.get(index1));
+        index1++;
+    }
+    while (index2 < list2size) {
+        list.add(list2.get(index2));
+        index2++;
+    }
+    return list;
+}",
+,,"public static <T> List<T> mergeSort(List<T> list, BiFunction<T, T, Integer> comparator){
+    int size = list.size();
+    if (size <= 1){
+        return list;
+    }
+    else if (size == 2){
+        T value0 = list.get(0);
+        T value1 = list.get(1);
+        if (comparator.apply(value0, value1) > 0){
+            list.set(0, value1);
+            list.set(1, value0);
+        }
+        return list;
+    }
+    int halfSize = size / 2;
+    List<T> list1 = list.subList(0, halfSize);
+    List<T> list2 = list.subList(halfSize, size);
+    return mergeSortedLists(mergeSort(list1, comparator), mergeSort(list2, comparator), comparator);
+}",
+,,"public static int[] radixSort(int[] array){
+    int size = array.length;
+    int maxValue = MAX(array);
+    int[] output = new int[size];
+    int[] count = new int[10];
+    for (int exp = 1; maxValue / exp > 0; exp *= 10){
+        for (int i = 0; i < count.length; i++){
+            count[i] = 0;
+        }
+        for (int number : array){
+            int digit = (number / exp) % 10;
+            count[digit]++;
+        }
+        for (int i = 1; i < 10; i++){
+            count[i] += count[i-1];
+        }
+        for (int i = size - 1; i >= 0; i--){
+            int digit = (array[i] / exp) % 10;
+            output[count[digit] - 1] = array[i];
+            count[digit]--;
+        }
+        System.arraycopy(output, 0, array, 0, size);
+    }
+    return array;
+}",
+,Collapsed tree/Implicit binary tree,"private static int sibling(int i) {
+    return (i % 2 == 0) ? i - 1 : i + 1;
+}
+
+private static <T> T get(ArrayList<T> a, int i) {
+    return (i < a.size()) ? a.get(i) : null;
+}",
+,Bitwise modifications,"public static int nextPowerOfTwo(int x) {
+    if (x <= 0) return 1;
+    x--;
+    x |= x >> 1;
+    x |= x >> 2;
+    x |= x >> 4;
+    x |= x >> 8;
+    x |= x >> 16;
+    return x + 1;
+}",
+,Tournament sort,"private static <T> void chooseWinner(ArrayList<T> tree, ArrayList<Integer> idx, int parent, int leftIndex, int rightIndex, BiFunction<T,T,Integer> cmp, boolean useChildIndexArrays) {
+    T left  = get(tree, leftIndex);
+    T right = get(tree, rightIndex);
+
+    if (left != null && right != null) {
+        if (cmp.apply(left, right) <= 0) {
+            tree.set(parent, left);
+            idx.set(parent, useChildIndexArrays ? idx.get(leftIndex) : leftIndex);
+        } else {
+            tree.set(parent, right);
+            idx.set(parent, useChildIndexArrays ? idx.get(rightIndex) : rightIndex);
+        }
+    }
+    else if (left != null) {
+        tree.set(parent, left);
+        idx.set(parent, useChildIndexArrays ? idx.get(leftIndex) : leftIndex);
+    }
+    else if (right != null) {
+        tree.set(parent, right);
+        idx.set(parent, useChildIndexArrays ? idx.get(rightIndex) : rightIndex);
+    }
+    else {
+        tree.set(parent, null);
+        idx.set(parent, 0);
+    }
+}",
+,,"public static <T> ArrayList<T> tournamentSort(List<T> array, BiFunction<T, T, Integer> comparator) {
+    int fitArraySize = nextPowerOfTwo(array.size());
+    int L = fitArraySize - 1;       // number of parents
+    int totalSize = fitArraySize + L;
+    ArrayList<T> tree = new ArrayList<>(totalSize);
+    ArrayList<Integer> idx = new ArrayList<>(L);
+
+    // Fill parents with null
+    for (int i = 0; i < L; i++) tree.add(null);
+    // Fill leaves with input (rest remain null)
+    for (int i = 0; i < array.size(); i++) tree.add(array.get(i));
+    // index array default
+    for (int i = 0; i < L; i++) idx.add(0);
+
+    // Initial tournament from leaves up
+    int leafStart = L;
+    for (int i = totalSize - 1; i > leafStart - 1; i -= 2) {
+        int parent = (i - 1) / 2;
+        chooseWinner(tree, idx, parent, i - 1, i, comparator, false);
+    }
+    for (int i = leafStart - 1; i > 0; i -= 2) {
+        int parent = (i - 1) / 2;
+        chooseWinner(tree, idx, parent, i - 1, i, comparator, true);
+    }
+
+    // Extract sorted results
+    ArrayList<T> result = new ArrayList<>();
+    while (idx.get(0) != 0) {
+        int lowestIndex = idx.get(0);
+        tree.set(lowestIndex, null); // Remove winner leaf
+        
+        // Replace parent with sibling
+        int sib = sibling(lowestIndex);
+        int parent = (lowestIndex - 1) / 2;
+        tree.set(parent, get(tree, sib));
+        idx.set(parent, sib);
+
+        // Bubble replacement upward
+        int curr = parent;
+        while (curr > 0) {
+            int parent2 = (curr - 1) / 2;
+            int sib2 = sibling(curr);
+            chooseWinner(tree, idx, parent2, curr, sib2, comparator, true);
+            curr = parent2;
+        }
+
+        T lowest = tree.get(0);
+        if (lowest != null) result.add(lowest);
+    }
+
+    return result;
+}",
+,Heapsort,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,"DATACLASS(Point(-double x, -double y)), DATACLASS(PointN:Point(String name, <Point>))",

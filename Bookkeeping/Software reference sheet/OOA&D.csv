@@ -1,10 +1,11 @@
-Basic OOP,Unnamed: 1,"Categories of an Object’s Methods:
+Unnamed: 0,Unnamed: 1,Nominal relationship,Implementational relationship
+Basic OOP,,"Categories of an Object’s Methods:
   Accessors (Inspectors) – methods that retrieve information from the object, Include getters
   Mutators – methods that modify the object’s state, , Include setters
   Combinators – methods that combine this object with others to produce a result, Does not modify current object
   Comparators – methods that compare objects (e.g., equals, compareTo)
   Predicates – methods that test a condition and return a Boolean (isDigit...)
-  Transformers (Converters) – methods that produce a transformed version of the object or its data (toString)",Unnamed: 3
+  Transformers (Converters) – methods that produce a transformed version of the object or its data (toString)",
 ,,"Procedural programming is about writing procedures or methods that perform operations on the data, while object-oriented programming is about creating objects that contain both data and methods.
 Advantages:
 OOP is faster and easier to execute

@@ -1,15 +1,67 @@
-Group,Name,General structure,Presetted values
-,,"             0 1 2 3 4 5 6 7 8 9 a b c d e f
+Group,Name,General structure,Presetted values,Presetted structure
+,Sample code,"#include <stdio.h>
+/* The main function. */
+int main(void){
+    printf(""Hello World!\n"");
+    return 0;
+}",,"             0 1 2 3 4 5 6 7 8 9 a b c d e f
 00000000  4*[int] 8*[double] [short] [byte] [byte]
 …
-heap growth -> <- stack growth",
+heap growth -> <- stack growth"
+,GCC compilation,"Compilation using gcc (GNU Compiler Collection).
+Without the output flag -o, the compiler produces an
+executable file named a.out.
+
+$ gcc hello.c –o hello
+$ ./hello
+Hello World!",,
+,,,,
+,Basic syntax,"Tokens and Whitespace: Whitespace (space, newline, tab) separates tokens, but does not affect the program otherwise.
+Identifier: An identifier is a name used to identify user defined items, such as variables and functions. (Case sensitive, Can contain
+underscore, A to Z, a to z, and 0 to 9, but cannot start with a digit (0 to 9).
+Keyword: reserved word that cannot be used as an identifier
+auto double int struct
+break else long switch
+case enum register typedef
+char extern return union
+const float short unsigned
+continue for signed void
+default goto sizeof volatile
+do if static while",,
 ,Value type,"<unsigned/default (2s complement)> byte/char: 1 byte, short: 2 bytes, int: 4 bytes, long: 8 bytes
-float (4 bytes float), double (8 bytes float)",
+float (4 bytes float), double (8 bytes float)
+
+Type, Size(bits), Min, Max
+char, 8, -2^7 = -128, 2^7-1 = 127
+unsigned char, 8, 0, 2^8-1 = 255
+short, 16, -2^15 = -32768, 2^15-1 = 32767
+unsigned short, 16, 0, 2^16-1 = 65535
+long, 32 or 64
+int, machine dependent (signed)
+unsigned int, machine dependent (unsigned)
+float, 32
+double, 64
+(Floating-point numbers approximate the result)",,
+,,"Integer Literals
+233 Decimal
+0x1A Hexadecimal (prefix 0x)
+012 Octal (prefix of 0) <- Warning. A prefix 0 means that the base is 8 (octal numbers). This number means 10 in decimal representation.",,
+,,"Floating-point Literals
+3.1415 With a decimal point
+74e-6 With exponent",,
+,,"Character constants
+'a' A character
+'\n' New line
+'\\' \ character
+'\'' ' character
+'\""' "" character",,
+,,,,
+,,,,
 ,Pointer type (carry an adress),"byte */char *, short *, int *, long *, float *, double *, void *: 8 bytes
-NULL (special pointer, usually (void *) 0)",
-,Retrieve adress from variable,"&a, int *ptr= &a;",
-,Write to adress value,*a = 3,
-,Read from adress value,*a,
+NULL (special pointer, usually (void *) 0)",,
+,Retrieve adress from variable,"&a, int *ptr= &a;",,
+,Write to adress value,*a = 3,,
+,Read from adress value,*a,,
 ,,"a = b (Copy value (if value/value struct), copy adress (if pointer) and does not depend on value inside the adress)","int x = 1;
 int a = x;
 x = 11;
@@ -18,7 +70,7 @@ x = 11;
 int y = 1;
 int *p = &y;
 *p = 12;
--> y: 12, p: 12"
+-> y: 12, p: 12",
 ,,Copy assignment during parameter parse,"void test(foo_t f) {
     f.a = 22; // f is a full shallow copy of x, doesn't affect x
 }
@@ -35,7 +87,7 @@ foo_t *p = &x; // p is a pointer to x
 p->a = 21;
 p->b = 22;
 test(&x);
-(The component of a struct can be reached using a pointer and the -> notation)"
+(The component of a struct can be reached using a pointer and the -> notation)",
 ,,,"foo_t *test() {
     foo_t f;
     f.a = 21;
@@ -44,20 +96,66 @@ test(&x);
 }
 
 foo_t *p = test();
-(*p becomes a dangling pointer -> causes undefined behavior/segmentation fault, f lives only inside the stack frame of test() the moment test() returns, that stack frame is gone.)"
+(*p becomes a dangling pointer -> causes undefined behavior/segmentation fault, f lives only inside the stack frame of test() the moment test() returns, that stack frame is gone.)",
 ,Common operations,"if, else, while, for
-+, -, *, /, …","unwrapping:
++, -, *, /, …",,
+,,,,
+,,,,
+,Operators,"Arithmetics operators: Binary operators: a+b, a-b, a*b, a/b, a%b, Unary operators: a++, a-- (Post-increment/decrement), ++a, --a (Pre-increment/decrement)
+Logical and bitwise operators: Integer value 0 is interpreted as false, everything else as true, bitwise: &, |, ^, <<, >>, boolean: &&, ||, !
+Relational operators: ==, !=, <, >, <=, >=",,
+,Conditional statements,"int x = 0;
+if(x)
+    printf(""true"");
+if(x){
+    printf(""true"");
+    x = 1;
+}",,
+,,"int op = 3;
+int z = 0;
+switch(op){
+    case 1:
+        z=10
+        break;
+    case 2:
+        z=20
+        break;
+    default:
+        z=40;
+}",,
+,Loops,"int x = 0;
+while(x < 10){
+    x++;
+    printf(""%d\n"",x);
+}
+
+int x = 0;
+while(1){
+    if(x >= 10)
+    break;
+    x++;
+    printf(""%d\n"",x);
+}","unwrapping while loop
+...",
+,,"int x = 0;
+do{
+    x++;
+    printf(""%d\n"",x);
+}while(x < 10);",,
+,,"for(int i=0; i<128; i++){
+    printf(""%3d %3x %c\n"",i,i,i);
+}","unwrapping for loop (calculation by hand):
 col, i, u[i] = b[i][col]
 3, 0, u[0] = b[0][3]
 2, 1, u[1] = b[1][2]
 1, 2, u[2] = b[2][1]
-0, 3, u[3] = b[3][0]"
+0, 3, u[3] = b[3][0]",
 ,Struct,"struct compound{
     int x;
     int y;
     int z;
-}",
-,Union,,
+}",,
+,Union,,,
 ,Array,"int a[] = {2, 3, 5, 8, 11};
 int* a[] = … (pointers/adresses)
 int a[10]; // empty 10, `int buffer[10]` equivalent to `int *ptr = buffer;`
@@ -69,12 +167,12 @@ void test2(int *f) { f[1] = 21; }
 void test3(int *f) {*(f + 1) = 21;}
 int foo[5] = {0,1,2,3,4};
 test(foo);
--> foo = {0, 21, 2, 3, 4}"
+-> foo = {0, 21, 2, 3, 4}",
 ,,"Index: a[b], equivalent to *(a + b)","int a[10];
 a[2] = 3; // writing to offset 2
-foo[20] = 666; // writing to offset 20, maximum is 10 and does not belong to its intended allocation"
+foo[20] = 666; // writing to offset 20, maximum is 10 and does not belong to its intended allocation",
 ,C-strings (special case of array),"char str[6] = {'H', 'e', 'l', 'l', 'o', '\n'} (Terminated with null), str[0]='H', ..., str[4]='o', str[5]='\0'
-char str[6] = ""Hello""; (Alias using double quotes)",
+char str[6] = ""Hello""; (Alias using double quotes)",,
 ,,"The conceptual stack frame contains:
 1. the arguments of the procedure
 2. place to hold local variables
@@ -90,7 +188,7 @@ general purpose registers: used by a process to store data
 Data structures placed on the stack will not be available once we return from a call.
 The space required to store the structures can be reused immediately.
 Not all data structures could be allocated on the stack (not the ones that should live for longer).
-Data structures that should survive a return should be placed on the heap.",
+Data structures that should survive a return should be placed on the heap.",,
 ,Call stack,"int foo(int x, int y) {
     return x + y;
 }
@@ -100,8 +198,8 @@ int bar() {
     return z;
 }
 
--> {(stack frame of bar)} -> {(stack frame of bar) -> (stack frame of foo)} -> {(stack frame of bar)} ",
-,Process,"Simplistic view: (code, data, heap -> (growth) (growth) <- stack, OS)",
+-> {(stack frame of bar)} -> {(stack frame of bar) -> (stack frame of foo)} -> {(stack frame of bar)} ",,
+,Process,"Simplistic view: (code, data, heap -> (growth) (growth) <- stack, OS)",,
 ,Functions,"The arguments to a procedure are provided as copies of the value, i.e. ""call by value"".
 int foo(int a, int b) {
     return a + b;
@@ -116,7 +214,7 @@ int * this_is_the_way() { // Can include pointers as return values
 }
 int main() {
     int * ret = this_is_the_way();
-}",
+}",,
 ,Generics function type,"int generic(int * arr, int n, int init, int (*op)(int, int)) {
     int gen = init;
     for (int i = 0; i < n; i++)
@@ -136,12 +234,12 @@ int main() {
     printf("" product : %d \n "", generic(arr, 5, 1, mul));
     int(*x)(int, int) = add; // function as type
     printf(""x(3,4) = %d\n "", x(3, 4));
-}",
-,,,
-,,,
-,,,
-,,,
-APIs,,,
+}",,
+,,,,
+,,,,
+,,,,
+,,,,
+APIs,,,,
 <stdlib.h>,Malloc and free (Heap allocation offered by OS),"malloc (allocate, contains garbage data)
 realloc (allocate by copying the existing data)
 calloc (clear and allocate)
@@ -155,4 +253,4 @@ If you access a structure after free, undefined behavior.","foo_t *test() {
 }
 
 foo_t *p = test();
-free(p); // When the strcuture is no longer needed, call free."
+free(p); // When the strcuture is no longer needed, call free.",

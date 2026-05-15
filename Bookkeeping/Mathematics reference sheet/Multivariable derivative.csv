@@ -1,1 +1,123 @@
-Name,Basic relationship,Presetted values
+Group,Name,Basic relationship,Presetted values
+,Multivariable functions,"f(x, y) = xy + 1, \\R^2 -> \\R",
+,,"f(x) = (cos(x), sin(x)), \\R -> \\R^2
+f(x, y, z) = (x*y, y+z-1)",
+,,"|f| = sqrt(x^2+y^2+z^2)
+|f-g|",
+,Omgivning,B_r([a]) = {[x] \in \\R^n: |[x]-[a]|<r},
+,,"Öppen interval, sluten intervall -> Öppen mängd, sluten mängd
+Randpunkt: Varje omgivning innehåller inre och yttre punkter
+Inre punkt: Inuti mängden (omgivning som ligger innanför mängden
+Yttre punkt: Utifrån mängden (omgivning som ligger utanför mängden)",
+,,,
+Koordinater,Polära koordinater (\\R^2),"[Image]
+x = r*cos(\t), y = r*sin(\t)
+r = sqrt(x^2+y^2), tan(\t) = y/x",
+,Cylindriska koordinater (\\R^3),"[Image]
+x = r*cos(\t), y = r*sin(\t), z = z
+r = sqrt(x^2+y^2), tan(\t) = y/x, z=z",
+,Sfäriska koordinater (\\R^3),"\f: R-line-z, \t -> x-y plane
+x = R*sin(\f)*cos(\t), y = R*sin(\f)*sin(\t), z = R*cos(\f)
+R = sqrt(x^2+y^2+z^2), tan(\f) = sqrt(x^2+y^2)/z, tan(\t) = y/x",
+,,,
+,,,
+,Vektorvärda funktioner av en variabel,"f(t) = (x(t), y(t), z(t)) [Image]
+f'(t_0) = lim{h->0, (f(t_0+h) - f(t_0))/h} = (x'(t_0), y'(t_0), z'(t_0))",
+,Reelvärda funktioner av flera variabler,"graf: {(x, y, z): z = f(x, y)}, nivåkurva/höjdkurva: {(x, y): f(x, y) = C} [Image]
+Kontinuerlig i (a, b): lim{(x, y) -> (a, b), f(x, y) = f(a, b)}","f(x, y)=x^2+y^2"
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,Partial derivatives/Partiella derivator,"[Image of z=f(x, y)]
+f_('x) = \\df/\\dx = lim{\Dx->0, (f(x+\Dx, y)-f(x, y))/\Dx
+f_('y) = \\dy/\\dx = lim{\Dx->0, (f(x, y+\Dy)-f(x, y))/\Dy",
+,Tangentplan,"f(x, y) = x^2+y^2
+\\df/\\dx(2, 1) = 4, \\df/\\dy(2, 1) = 2, f(2, 1)=5, Tangentplan: z=f(2, 1)+\\df/\\dx*(2, 1)(x-2)+\\df/\\dy(2, 1)*(y-1) = 5+4(x-2)+2(y-1)",
+,Differentierbarhet och linjär approximation,"Approximation: z = f(a, b) + \\df/\\dx(a, b)*(x-a) + \\df/\\dy(a, b)*(y-b) = f(a, b) + f_('x)(a, b)(x-a) + f_('y)(a, b)*(y-b)
+Krav: Partiella derivator och lim{(x, y)->(a, b), (f(x, y) - f(a, b) - \\df/\\dx(a, b)*(x-a) + \\df/\\dy(a, b)*(y-b))/sqrt((x-a)^2 + (y-b)^2)} = 0
+(Patologisk funktion f(x, y)={1: (x=0, y=0), 0: (x!=0, y!=0)})",
+,2nd derivative,"r\\d^2*f/\\dx^2 = f_('xx)
+r\\d^2*f/\\dy^2 = f_('xx)
+r\\d^2*f/(\\dx\\dy) = f_('xy)
+r\\d^2*f/(\\dy\\dx) = f_('yx)
+f_('xy) = f_('yx) if partial derivatives are continous",
+,Chain rule/Kedjeregeln,"\\du/\\dt_k = \S{l=0, n, \\du/\\dx_1*\\dx_1/\\dt_k}, k=1, 2, 3, …, m",
+,,"f(x(t), y(t)) -> (df)/(dt) = \\df/\\dx*\dx/\dt + \\df/\\dy*\dy/\dt",
+,,"f(x(s, t), y(s, t))
+-> \\df/\\ds = \\df/\\dx*\dx/\ds + \\df/\\dy*\dy/\ds
+\\du/\\dt = \\du/\\dx*\dx/\dt + \\du/\\dy*\dy/\dt",
+,Gradient och riktningsderivata,"f(x, y) = x^2y, grad f = \nabla f = (\\df/\\dx, \\df/\\dy) = (2xy, x^2)",
+,Riktningskurva,"[Image]
+f deriverbar och |[u]| = 1
+D_([u])(f(a, b)) = lim{h->0, (f(a+h[u_1], b+h[u_2]) - f(a, b))/h}
+D_([u])(f(a, b)) = [u] . \nabla f(a, b)
+
+D_([u])(f(a, b)) = lim{h->0, (f(a+h[u_1], b+h[u_2]) - f(a, b))/h}
+= lim{h->0, (f(a, b) + f_('x)(a, b)*((a+h[u_1]) - a) + f_('y)(a, b)*((b+h[u_2])-b) + o(h) - f(a, b))/h}
+= \lim{h->0, (f_('x)(a, b)*(h[u_1]) + f_('y)(a, b)*(h[u_2]) + o(h))/h}
+= f_('x)(a, b)[u_1] + f_('y)(a, b)[u_2] = (f_('x)(a, b), f_('y)(a, b)).([u_1], [u_2])",
+,,"\nabla f(a, b) är ortogonal mot nivåkurvan till f genom (a, b) och pekar för maxtillväxt av f",
+,,"Maxtillväxten är |\nabla f(a, b)|",
+,Total differential,df = \\df/\\dx*dx + \\df/\\dy*dy,
+,Total derivative,"dz/dx = \\dz/\\dx + \\dz/\\dy*(dy)/(dx)
+dz/dy = \\dz/\\dx*(dx)/(dy) + \\dz/\\dy",
+,Implicit derivata,"F(x, y) = x^4+xy^2+y^3+5 = 0
+d/dx(F(x, y(x))) = 0 -> \\dF/\\dx + \\dF/\\dy*dy/dx = 0 -> dy/dx = -(\\dF/\\dx)/(\\dF/\\dy)",
+,,"(F(x, y, z)=0, G(x, y, z)=0) -> (d/dx(F(x, y(x), z(x)))=0, d/dx(G(x, y(x), z(x)))=0)
+\\dF/\\dx + \\dF/\\dy*dy/dx + \\dF/\\dz*dz/dx = 0
+\\dG/\\dx + \\dG/\\dy*dy/dx + \\dG/\\dz*dz/dx = 0
+-> dy/dx, dz/dx (|[[\\dF/\\dy, \\dF/\\dz], [\\dG/\\dy, \\dG/\\dz]]| != 0)",
+,Taylors formel,"f(x) = f(a) + f'(a)/1!(x-a) + f''(a)/2!*(x-a)^2 + f'''(c)/3!*(x-a)^3
+f(x, y) = f(a, b) + 1/1!(\\df/\\dx(a, b)(x-a) + \\df/\\dy(a, b)(y-b)) + 1/2!(\\d^2f/\\dx^2(a, b)(x-a)^2 + 2\\d^2f/\\dx\\dy(a, b)(x-a)(y-b) + \\d^2f/\\dy^2(a, b)(y-b)^2) + O(sqrt((x-a)^2+(y-b)^2)^3)",
+,Optimering/Extremvärden i flera variabler,"f har max i (a, b) om f(a, b) >= f(x, y)
+f kontinuerlig på sluten, begränsad mängd -> garanterar existensen
+Max/min kan antas i:
+- Kritiska punkter: Alla partiella derivator = 0
+- Singulära punkter: Någon av partiella derivator saknas
+- Randpunkter",
+,,Andraderivatatest: ...,
+,Optimering med bivillkor,,
+,,,
+,,,
+,,,
+,,,
+,Derivative of vectors,"[A]([u]) = [[A_1([u])], [A_2([u])], [A_3([u])]]
+d[A]/du = lim{\Du->0, (A(u+\Du)-A(u))/(\Du)} = [[dA_1/du], [dA_2/du], [dA_3/du]]",
+,Nabla operator/del operator,"\nabla = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]",
+,,"grad f = (\nabla)f = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]",
+,,div [F] = \nabla.[F] = \\dF_1/\\dx + \\dF_2/\\dx + \\dF_3/\\dx,
+,,"curl [F] = \nabla*[F] = [[\\dF_3/\\dy-\\dF_2/\\dz], [\\dF_1/\\dz-\\dF_3/\\dx], [\\dF_2/\\dx-\\dF_1/\\dy]]",
+,Derivative rules for vectors,d/(dx)([F].[G]) = [F].(d[G])/(dx) + (d[F])/(du).[G],
+,,d/(dx)([F]*[G]) = [F]*(d[G])/(dx) + (d[F])/(dx)*[G],
+,,d/(dx)([F].([G]*[H])) = (d[F])/(dx).([G]*[H]) + [F].((d[G])/(dx)*[H]) + [F].([G]*(d[H]/dx)),
+,,[F].(d[F])/(dx) = [F](d[F])/(dx),
+,,"[F].(d[F])/(dx) = 0, if |[F]| is constant",
+,,,
+,Nabla operator rules,\nabla(f+g) = \nabla(f) + \nabla(g),
+,,\nabla.([F]+[G]) = \nabla.[F] + \nabla.[G],
+,,\nabla*([F]+[G]) = \nabla*[F] + \nabla*[G],
+,,\nabla.(f[G]) = ((\nabla)f).[G] + f(\nabla.[G]),
+,,\nabla*(f[G]) = ((\nabla)f)*[G] + f(\nabla*[G]),
+,,\nabla.([F]*[G]) = [G].(\nabla*[F]) - [F].(\nabla*[G]),
+,,\nabla*([F]*[G]) = ([G].\nabla)[F] - [G](\nabla.[F]) - ([F].\nabla)[G] + [F](\nabla.[G]),
+,,\nabla([F].[G]) = ([G].\nabla)[F] + ([F].\nabla)[G] + [G]*(\nabla*[F]) + [F]*(\nabla*[G]),
+,,\nabla*((\nabla)f) = 0,
+,,\nabla.(\nabla*[F]) = 0,
+,,\nabla.((\nabla)f) = (\nabla^2)U,
+,,\nabla*(\nabla*[F]) = \nabla(\nabla.[F])-\nabla^2[F],
+,,,
+,,,
+,,,
+,Maxima and minima,,
+,"f(a, b) maximum","f_(x)'(a, b) = f_(y)'(a, b) = 0, (f_(xy)')^2(a, b) - f_(xx)'(a, b)*f_(yy)'(a, b) < 0",
+,"f(a, b) minimum","f_(xx)'(a, b) < 0, f_(yy)'(a, b) < 0",
+,,"f_(xx)'(a, b) > 0, f_(yy)'(a, b) > 0",
+,,,
+,,,
+,Differentiation under the integral sign,"f(\a) = int{g_1(\a), g_2(\a), f(x,\a)*dx} ->
+df/d\a = f(g_2, \a)*dg_2/d\a - f(g_1(\a),\a)*dg_1/d\a + int{(g_1(\a)), (g_2(\a)), \df(x,\a)/\d\a*dx}
+= int{(g_1), (g_2), \df(x,\a)/\d\a*dx} (if g_1, g_2 = constant), formula of Leibnitz",

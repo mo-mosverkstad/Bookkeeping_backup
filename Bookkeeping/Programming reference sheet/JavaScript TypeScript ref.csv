@@ -1,0 +1,447 @@
+Structural,Unnamed: 1,Unnamed: 2
+,Structural program,"console.log(""hello"");"
+,,
+,,
+Syntax and Logic,,
+Blocks,"blocks
+-> Local and global variables",{…}
+,if/else,"if (<boolean_value>){
+    <expr>
+}
+else if (<boolean_value>){
+    <expr>
+}
+else{
+    <expr>
+}"
+,switch,"switch (<value>){
+    case <value1>:
+        <expr>
+        break;
+    case <value2>:
+        <expr>
+        break;
+        …
+     default:
+        …
+        break;
+}"
+,while-loop,"while (<boolean_value>){
+    <expr>
+}
+
+do {
+    <expr>
+} while (<boolean_value>);"
+,for-loop,"for (<start>; <stop>; <step>){
+
+for (let i: number = 0; i < 10; i++){
+
+for (let <element_variable> : <type> of <variable>){
+    <expr>
+}"
+,continue/break,"continue;
+break;"
+,function,"function <function_name>(<param1>: <type>, <param2>: <type>, …, <optional_param>: <type> = <default_value>, ...<rest_param>: <type>): <return_type>{
+    …
+}
+// Optional parameter may inferred from the context"
+Primitive data types,number (neither indicate int/float nor its memory size),3091.238
+,boolean (1 byte),"true, false"
+,string,"""string text"""
+,Variable assignment,"var <variable_name> = <value> // Not using now
+let <variable_name> = <value> // Declare block scope local variable, type inferred
+let <variable_name>: <variable_type> = <value> // Declare block scope local variable, explicit type in TypeScript
+let <variable_name>; // undefined as variable
+const <variable_name> = <value> // Declare constant, type inferred
+const <variable_name>: <variable_type> = <value> // Declare constant, explicit type in TypeScript"
+"Primitive type operators
+(Small, lives in stack)","Basic arithmetic operator, returns number",x + y
+,,x - y
+,,x * y
+,,x / y
+,,x % y
+,Compound Assignment Operator,x += y
+,,x -= y
+,,x *= y
+,,x /= y
+,,x %= y
+,Incremental operators,x++
+,,x--
+,"Binary operators
+Low precedence order than relational operators",x & y
+,,x | y
+,,x ^ y
+,,x >> n // Shift right signed
+,,x >>> n // Shift right unsigned
+,,x << n
+,Binary compound assignment operators,x &= y
+,,x |= y
+,,x ^= y
+,,x <<= y
+,,x >>= y
+,,x >>>=y
+,"Relational operator
+Return a boolean",x < y
+,,x > y
+,,x == y
+,,x <= y
+,,x >= y
+,,x != y
+,Short circuit boolean operators,b1 && b2
+,,b1 || b2
+,Boolean operators,b1 & b2
+,,b1 | b2
+,,b1 ^ b2
+,,!b1
+,Compound assignment boolean operators,b1 &= b2
+,,b1 |= b2
+,,b1 ^= b2
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+APIs,,
+Local,Number,"Number(Object object)
+0b10010
+0o1252
+0x2c32a9"
+,,.POSITIVE_INFINITY or Infinity literal
+,,.NEGATIVE_INFINITY or -Infinity literal
+,,.MIN_VALUE
+,,.MAX_VALUE
+,,.EPSILON // difference between 1 & smallest > 1
+,,.NaN or NaN literal
+,,toExponential(decimal: number): String
+,,toFixed(decimal: number): String
+,,toPrecision(p: number): String // Change precision
+,,isFinite(n: number): boolean
+,,isNaN(n: number): boolean
+,,"parseInt(string: String, radix: number): number"
+,,"parseFloat(string: String, radix: number): number"
+,String,"""string text"" // string literal
+'string text' // string literal using apostrophes, NOT CHAR, but they aren't always safe
+`string ${a}` // format strings using backticks
+String(Object object)"
+,,.length
+,,str[number n]
+,,charAt(index: number): String // Used in EMCA6
+,,charCodeAt(index: number) // Unicode number at pos
+,,"startsWith(string: String, size: number): boolean"
+,,"endsWith(string: String, size: number): boolean"
+,,"includes(string: string, startIndex: number): boolean // startIndex: starting index to find"
+,,"indexOf(string: string, startIndex: number): number
+lastIndexOf(string: string, startIndex: number): boolean"
+,,search(regex: Regexp): number
+,,"localeCompare(string: String, locale: String, options: Object)"
+,,match(regex: Regexp): Array
+,,repeat(count: number): String
+,,"replace(pattern: String | Regexp, (newstr: String | func: Function))"
+,,"slice(start: number, end: number): String"
+,,"substr(start: number, length: number): String"
+,,"split(separator: String|Regexp, limit: number): Array"
+,,toLowerCase(): String
+,,toUpperCase(): String
+,,trim(): String // Remove space from begin/end
+,,.fromCharCode(numbers…: Number…): String
+,,.raw`` // template string with ${vars}
+,RegExp,"/.+/ig // Regexp literal
+new Regexp(...)"
+,,lastIndex: number // index to start global regexp
+,,flags: string // active flags of current regexp
+,,global: boolean // flag g (search all matches)
+,,ignoreCase: boolean // flag i (match lower/upper)
+,,multiline: boolean // flag m (match multiple lines)
+,,sticky: boolean // flag y (search from lastIndex)
+,,unicode: boolean // flag u (enable unicode feat.)
+,,source: string // current regexp (w/o slashes)
+,,exec(str: string): RegExpExecArray | null // exec search for a match
+,,test(str: string): boolean // check if regexp match w/str
+,Date,"Date(): Date
+new Date()"
+,,"*UTC(y: number, m: number, d?: number, h?: number, i?: number, s?: number, ms?: number): number // timestamp"
+,,*now(): number // timestamp of current time
+,,*parse(str: string): number // convert string to timestamp
+,,setTime(ts: number): void // set UNIX timestamp
+,,getTime(): number // return UNIX timestamp
+,,"setFullYear(y: number, m?: number, d?: number): void // set year (yyyy)"
+,,"setMonth(m: number, d?: number): void // set month (0–11)"
+,,setDate(d: number): void // set day (1–31)
+,,"setHours(h: number, m?: number, s?: number, ms?: number): void // set hour (0–23)"
+,,"setMinutes(m: number, s?: number, ms?: number): void // set min (0–59)"
+,,"setSeconds(s: number, ms?: number): void // set sec (0–59)"
+,,setMilliseconds(ms: number): void // set ms (0–999)
+,,getDate(): number // return day (1–31)
+,,getDay(): number // return day of week (0–6)
+,,getMonth(): number // return month (0–11)
+,,getFullYear(): number // return year (yyyy)
+,,getHours(): number // return hour (0–23)
+,,getMinutes(): number // return minutes (0–59)
+,,getSeconds(): number // return seconds (0–59)
+,,getMilliseconds(): number // return ms (0–999)
+,,getTimezoneOffset(): number // offset in mins
+,,"toLocaleDateString(locale?: string, options?: object): string //"
+,,"toLocaleTimeString(locale?: string, options?: object): string //"
+,,"toLocaleString(locale?: string, options?: object): string //"
+,,toUTCString(): string // return UTC date
+,,toDateString(): string // return American date
+,,toTimeString(): string // return American time
+,,toISOString(): string // return ISO8601 date
+,,toJSON(): string // return date ready for JSON
+,Array,"[] // Array literal
+Array(): Array/T[]
+new Array(): Array/T[]"
+,,isArray(obj: any): boolean
+,,"includes(searchElement: T, fromIndex?: number): boolean"
+,,"indexOf(searchElement: T, fromIndex?: number): number"
+,,"lastIndexOf(searchElement: T, fromIndex?: number): number"
+,,join(separator?: string): string
+,,"slice(start?: number, end?: number): Array<T>"
+,,concat(...items: Array<T>[]): Array<T>
+,,"copyWithin(target: number, start: number, end?: number): Array<T>"
+,,"fill(value: T, start?: number, end?: number): Array<T>"
+,,reverse(): Array<T>
+,,"sort(compareFn?: (a: T, b: T) => number): Array<T>"
+,,"splice(start: number, deleteCount?: number, ...items: T[]): Array<T>"
+,,"entries(): IterableIterator<[number, T]>"
+,,keys(): IterableIterator<number>
+,,values(): IterableIterator<T>
+,,"every(callbackfn: (value: T, index: number, array: Array<T>) => boolean, thisArg?: any): boolean"
+,,"some(callbackfn: (value: T, index: number, array: Array<T>) => boolean, thisArg?: any): boolean"
+,,"map<U>(callbackfn: (value: T, index: number, array: Array<T>) => U, thisArg?: any): Array<U>"
+,,"filter(callbackfn: (value: T, index: number, array: Array<T>) => boolean, thisArg?: any): Array<T>"
+,,"find(predicate: (value: T, index: number, array: Array<T>) => boolean, thisArg?: any): T | undefined"
+,,"findIndex(predicate: (value: T, index: number, array: Array<T>) => boolean, thisArg?: any): number"
+,,"forEach(callbackfn: (value: T, index: number, array: Array<T>) => void, thisArg?: any): void"
+,,"reduce<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: Array<T>) => U, initialValue: U): U
+reduce(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: Array<T>) => T): T"
+,,"reduceRight<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: Array<T>) => U, initialValue: U): U
+reduceRight(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: Array<T>) => T): T"
+,,pop(): T | undefined
+,,push(...items: T[]): number
+,,shift(): T | undefined
+,,unshift(...items: T[]): number
+,Math,E: number // Euler's constant
+,,LN2: number // natural logarithm of 2
+,,LN10: number // natural logarithm of 10
+,,LOG2E: number // base 2 logarithm of E
+,,LOG10E: number // base 10 logarithm of E
+,,PI: number // ratio circumference/diameter
+,,SQRT1_2: number // square root of 1/2
+,,SQRT2: number // square root of 2
+,,abs(x: number): number // absolute value
+,,cbrt(x: number): number // cube root
+,,clz32(x: number): number // return leading zero bits (32)
+,,exp(x: number): number // return e^x
+,,expm1(x: number): number // return e^x - 1
+,,hypot(...x: number[]): number // length of hypotenuse
+,,log(x: number): number // natural logarithm (base e)
+,,log1p(x: number): number // natural logarithm (1+x)
+,,log10(x: number): number // base 10 logarithm
+,,log2(x: number): number // base 2 logarithm
+,,max(...x: number[]): number // return max number
+,,min(...x: number[]): number // return min number
+,,"pow(x: number, y: number): number // return x to the power y"
+,,"random(): number // float random number [0,1)"
+,,round(x: number): number // return rounded number
+,,sign(x: number): number // return sign of number
+,,sqrt(x: number): number // square root
+,,ceil(x: number): number // superior round (smallest integer ≥ x)
+,,floor(x: number): number // inferior round (largest integer ≤ x)
+,,fround(x: number): number // nearest single precision float
+,,trunc(x: number): number // remove fractional digits
+,,acos(x: number): number // arc cosine
+,,acosh(x: number): number // hyperbolic arc cosine
+,,asin(x: number): number // arc sine
+,,asinh(x: number): number // hyperbolic arc sine
+,,atan(x: number): number // arc tangent
+,,"atan2(y: number, x: number): number // arc tangent of quotient y/x"
+,,atanh(x: number): number // hyperbolic arc tangent
+,,cos(x: number): number // cosine
+,,cosh(x: number): number // hyperbolic cosine
+,,sin(x: number): number // sine
+,,sinh(x: number): number // hyperbolic sine
+,,tan(x: number): number // tangent
+,,tanh(x: number): number // hyperbolic tangent
+,JSON,"parse(string: String, tf: (key: any, value: any) => Object"
+,,"stringify(object: Object, repf|wl, sp) -> String"
+,Error,.name: String
+,,.message: String
+,Object,*constructor: Function // return reference to object function
+,,"*assign<T, U>(target: T, ...sources: U[]): T & U // copy values"
+,,"*create(proto: object | null, propertiesObject?: PropertyDescriptorMap): any // create object with prototype"
+,,"*defineProperties(obj: object, props: PropertyDescriptorMap): object // define multiple properties"
+,,"*defineProperty(obj: object, prop: string | symbol, descriptor: PropertyDescriptor): object // define single property"
+,,*freeze<T>(obj: T): Readonly<T> // avoid properties changes
+,,"*getOwnPropertyDescriptor(obj: object, prop: string | symbol): PropertyDescriptor | undefined // return descriptor"
+,,*getOwnPropertyNames(obj: object): string[] // return names
+,,*getOwnPropertySymbols(obj: object): symbol[] // return symbols
+,,*getPrototypeOf(obj: object): object | null // return prototype
+,,"*is(value1: any, value2: any): boolean // check if same value"
+,,*isExtensible(obj: object): boolean // check if can add properties
+,,*isFrozen(obj: object): boolean // check if frozen
+,,*isSealed(obj: object): boolean // check if sealed
+,,*keys(obj: object): string[] // return only keys of object
+,,*preventExtensions<T>(obj: T): T // avoid extend
+,,*seal<T>(obj: T): T // make object non-configurable
+,,"*setPrototypeOf(obj: object, prototype: object | null): object // change prototype"
+,,hasOwnProperty(prop: string | symbol): boolean // check if property exists in object
+,,isPrototypeOf(obj: object): boolean // test in another object’s prototype chain
+,,propertyIsEnumerable(prop: string | symbol): boolean // check if property is enumerable
+,,toLocaleString(): string // return locale version string
+,,toString(): string // return object as string
+,,valueOf(): object // return primitive value
+,Promise,"new Promise<T>(executor: (resolve: (value?: T | PromiseLike<T>) => void, reject: (reason?: any) => void) => void) // create a new promise"
+,,*all<T>(values: Iterable<T | PromiseLike<T>>): Promise<T[]> // return promise when all resolved
+,,"catch<T>(onRejected: (reason: any) => T | PromiseLike<T>): Promise<T> // = .then(undefined, onRejected)"
+,,"then<T, TResult1 = T, TResult2 = never>(
+    onFulfilled?: (value: T) => TResult1 | PromiseLike<TResult1>,
+    onRejected?: (reason: any) => TResult2 | PromiseLike<TResult2>
+): Promise<TResult1 | TResult2> // when fulfilled or rejected"
+,,*race<T>(values: Iterable<T | PromiseLike<T>>): Promise<T> // return greedy promise (first resolved or rejected)
+,,*resolve<T>(value: T | PromiseLike<T>): Promise<T> // return resolved promise
+,,*reject(reason?: any): Promise<never> // return rejected promise
+,Proxy,"new Proxy<T extends object>(target: T, handler: ProxyHandler<T>): T"
+,,"apply(target: Function, thisArg: any, argArray?: any[]): any // trap function call"
+,,"construct(target: Function, argArray: any[], newTarget?: Function): object // trap new"
+,,"defineProperty(target: object, prop: string | symbol, descriptor: PropertyDescriptor): boolean // trap defineProperty"
+,,"deleteProperty(target: object, prop: string | symbol): boolean // trap delete"
+,,enumerate(target: object): IterableIterator<any> // trap for...in (deprecated)
+,,"get(target: object, prop: string | symbol, receiver: any): any // trap property access"
+,,"getOwnPropertyDescriptor(target: object, prop: string | symbol): PropertyDescriptor | undefined // trap getOwnPropertyDescriptor"
+,,getPrototypeOf(target: object): object | null // trap getPrototypeOf
+,,"has(target: object, prop: string | symbol): boolean // trap in operator"
+,,isExtensible(target: object): boolean // trap Object.isExtensible
+,,ownKeys(target: object): (string | symbol)[] // trap Object.keys / Reflect.ownKeys
+,,preventExtensions(target: object): boolean // trap Object.preventExtensions
+,,"set(target: object, prop: string | symbol, value: any, receiver: any): boolean // trap property setting"
+,,"setPrototypeOf(target: object, prototype: object | null): boolean // trap Object.setPrototypeOf"
+,Set,new Set<T>(iterable?: Iterable<T>)
+,,size: number
+,,add(value: T): this // add value (returns the set itself)
+,,clear(): void // remove all values
+,,delete(value: T): boolean // remove a value
+,,has(value: T): boolean // check if a value exists
+,,"entries(): IterableIterator<[T, T]> // return iterator of [value, value]"
+,,"forEach(callback: (value: T, value2: T, set: Set<T>) => void, thisArg?: any): void // call callback for each value"
+,,keys(): IterableIterator<T> // return iterator of values (alias of values)
+,,values(): IterableIterator<T> // return iterator of values
+,,[Symbol.iterator](): IterableIterator<T> // default iterator for for..of
+,Map,"new Map<K, V>(iterable?: Iterable<[K, V]>)"
+,,size: number
+,,clear(): void // remove all key–value pairs
+,,delete(key: K): boolean // remove element by key
+,,get(key: K): V | undefined // return value for key
+,,has(key: K): boolean // check if key exists
+,,"set(key: K, value: V): this // add or update key–value pair"
+,,"entries(): IterableIterator<[K, V]> // return iterator of [key, value]"
+,,"forEach(callback: (value: V, key: K, map: Map<K, V>) => void, thisArg?: any): void // call callback for each entry"
+,,keys(): IterableIterator<K> // return iterator of keys
+,,values(): IterableIterator<V> // return iterator of values
+,,"[Symbol.iterator](): IterableIterator<[K, V]> // default iterator for for..of"
+,Symbol,.iterator: Set
+,,match: Set
+,,species: Set
+,,for(key: String): Set
+,,keyFor(symbol: Set): Set
+,Generator,function*() {…} // Generator literal
+,,next(value: Object): Object
+,,return(value: Object): Object
+,,throw(except: Error): void
+,Window,"new Window() -> Illegal constructor
+window // window variable instead"
+,,closed: boolean // check if window is closed
+,,defaultStatus: string // default status bar text
+,,document: Document // current document object
+,,frameElement: Element | null // element containing this frame
+,,frames: Window[] // subframes in window
+,,history: History // browsing history
+,,innerHeight: number // viewport height
+,,innerWidth: number // viewport width
+,,length: number // number of frames
+,,location: Location // window URL
+,,name: string // window name
+,,navigator: Navigator // browser info
+,,opener: Window | null // parent window (if opened by another)
+,,outerHeight: number // total window height incl. interface
+,,outerWidth: number // total window width incl. interface
+,,pageXOffset: number // horizontal scroll offset
+,,pageYOffset: number // vertical scroll offset
+,,parent: Window // parent window
+,,screen: Screen // screen object
+,,screenLeft: number // horizontal pos relative to screen
+,,screenTop: number // vertical pos relative to screen
+,,screenX: number // horizontal pos (alias of screenLeft)
+,,screenY: number // vertical pos (alias of screenTop)
+,,self: Window // reference to itself
+,,status: string // status bar text
+,,top: Window // topmost window
+,,atob(str: string): string // decode base64 to string
+,,btoa(str: string): string // encode string to base64
+,,blur(): void // remove focus from window
+,,focus(): void // set focus to window
+,,stop(): void // stop window loading
+,,"open(url: string, name: string, options: string): Window // open new window"
+,,"prompt(str: string, def: string): string | null // show input dialog"
+,,confirm(str: string): boolean // show OK/Cancel dialog
+,,alert(str: string): void // show alert dialog
+,,requestAnimationFrame(cb(n): function): number // schedule animation callback
+,,cancelAnimationFrame(reqID: number): void // cancel scheduled animation
+,,"setTimeout(f(...args): function, ms: number, ...args): number // delay call once"
+,,clearTimeout(id: number): void // cancel timeout
+,,"setInterval(f(...args): function, ms: number, ...args): number // repeat call"
+,,clearInterval(id: number): void // cancel interval
+,,"getComputedStyle(elem: Element, pseudelem?: string): CSSStyleDeclaration // get CSS styles"
+,,matchMedia(mediaq: string): MediaQueryList // test media query
+,,getSelection(id: String): Object // Selection object
+,,"postMessage(msg: String, dst: String, transfer: Object) // send"
+,,"find(str: String, case: boolean, back: boolean, wrap: boolean, word: boolean, fr: boolean, d: boolean): boolean"
+,,print(): void // open print document window
+,,"scrollBy(x: number, y: number)"
+,,"scrollTo(x: number, y: number)"
+,,"moveBy(x: number, y: number)"
+,,"moveTo(x: number, y: number)"
+,,"resizeBy(x: number, y: number)"
+,,"resizeTo(x: number, y: number)"

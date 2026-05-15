@@ -1,0 +1,29 @@
+Unnamed: 0,Storhet,SI-enhet symbol,SI-enhet namn,Definition
+Grundläggande,Tid,s,sekund,En sekund är den tid det tar för 9 192 631 770 svängningar i ljus från cesium-133-atomen
+,Längd,m,meter,En meter är den sträcka som ljus i vakuum färdas på 1/299 792 458 sekund.
+,Massa,kg,kilogram,"Definieras utifrån Plancks konstant (h = 6,626\ 070\ 040 \cdot 10^-34\ Js = kg m^2\ s^-1; meter och sekund är redan definierade, se ovan)"
+,Elektrisk ström,A,Ampere,"Definieras utifrån elementarladdningen (e = 1,602\ 176\ 620\ 8 \cdot 10^-19\ C = A s; sekunden är redan definierad, se ovan)"
+,Termodynamisk temperatur,K,Kelvin,"Definieras utifrån Boltzmanns konstant (k_B = 1,380\ 648\ 52 \cdot 10^-23\ J K^-1. En fysisk översättning av definitionen: Antag en ideal gas där varje gasmolekyl upptar 1,380\ 648\ 52 \cdot 10^-34\ m^3. Förhållandet mellan gasens temperatur och tryck är exakt 1 K/Pa)."
+,Substansmängd,mol,mol,"Definieras utifrån Avogadros konstant, N_A = 6,022\ 140\ 857 \cdot 10^23\ mol^-1."
+,Ljusintensitet,cd,candela,En candela är den ljusintensitet i en viss riktning som en monokromatisk ljuskälla med frekvensen 540 \cdot 10^12\ Hz och strålningsintensiteten (1/683) watt per steradian ger i den givna riktningen.
+,,,,
+Härledd,Plan vinkel,rad,radian,m/m = 1
+,Rymdvinkel,sr,steradian,m^2/m^2 = 1
+,Frekvens,Hz,Hertz,s^-1
+,Kraft,N,Newton,kg m s^-2
+,Tryck,Pa,Pascal,N m^-2
+,"Energi, arbete",J,Joule,N m
+,Effekt,W,Watt,J s^-1
+,"Elmängd, laddning",C,Coulomb,A s
+,Elektrisk potential,V,Volt,J C^-1
+,Kapacitans,F,Farad,C V^-1
+,Resistans,$\Omega$,ohm,V A^-1
+,Konduktans,S,Siemens,\O^-1
+,Magnetiskt flöde,Wb,Weber,V s
+,Magnetisk flödestäthet,T,Tesla,Wb m^-2
+,Induktans,H,Henry,Wb A^-1
+,Ljusflöde,lm,lumen,cd sr
+,"Illuminans, belysning",lx,lux,lm m^-2
+,Aktivitet,Bq,Bequerel,s^-1 (antal sönderfall per sekund av ett radioaktivt ämne)
+,Absorberad dos,Gy,Gray,J kg^-1 (absorberad dos av joniserande strålning)
+,Dosekvivalent,Sv,Sievert,J kg^-1 (dosekvivalent av joniserande strålning)

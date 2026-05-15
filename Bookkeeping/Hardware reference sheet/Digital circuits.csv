@@ -167,18 +167,14 @@ Transient response for circuit delay, rising edge (LOW -> HIGH), falling edge (H
 Propagation delay (of critical path) and contamination delay (of shortest path)
 Glitches
 A=X+YZ
-X ...
-Y ...
-Z ...
-YZ ...
-A=X+YZ …",
+TIMING[X=[...], Y=[...], Z = [...], YZ = [...], A=X+YZ = [...]]",
 ,,,
 Sequential logic circuits,Sequential logic circuits,"With memory, output depend on previous state (explicitly remember certain previous inputs or walking through states -> set of bits called state variables)
 Basically all circuits that are not combinational
 State: Information about a circuit necessary to explain future behavior",
 ,Asyncronous sequential circuits ,"(Contains cyclic paths, output directly fed back to inputs) -> Always settle to correct value within a propagation delay in combinational circuit, Undesirable races/unstable behaviour in sequential circuits",
 ,"Astable circuits (Ring oscillator)
-Circuits that oscillates in time","X -> (Y=(-X), Z=(-Y), X=(-Z)) -> X => X=0[0, 3, 6, 9], Y=1[1, 4, 7], Z=0[2, 5, 8]",
+Circuits that oscillates in time","X -> (Y=(-X), Z=(-Y), X=(-Z)) -> X => TIMING[X=0[0, 3, 6, 9], Y=1[1, 4, 7], Z=0[2, 5, 8]]",
 ,Circuit race conditions,"D, CLK -> (N_1=CLK*D, N_2=(-CLK)*Q_prev, Q=N_1+N_2) -> Q",
 ,Latches and flip-flops,"State elements that store one state bit
 Clock (CLK): (described by Professor Jan Rabaey) trigger start of computation by combinational logic, set limit on combinational logic completion time",

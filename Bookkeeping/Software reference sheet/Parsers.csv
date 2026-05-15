@@ -1,0 +1,163 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3
+,Parser,Syntax -> AST,"(a + 2)*b + a*c -> INORDER-TREE(((a, +, 2), *, b), -, (4, *, c))"
+,,"Tokenization: Transform a stream of characters into a meaninful array of tokens
+Abstract syntax tree (AST): Data structure that represents the program's structure, easy to traverse, many uses",
+,,,
+Manual parsing ,,Hand-writing the parser (e.g. Pratt Parsing),
+Pratt parsing,,"(Only infix operators, numbers)
+(Operator), (Binding power)
+High precedence: (*, /), (2)
+Low precendence: (+, -), (1)
+
+Move to operator with higher precedence, if left and right operator has same binding power, bind to the lefter one -> a+ b*c + 2/4
+-> a+(b*c) +(2/4)",
+,,"enum Token{
+    Atom(char),
+    Op(char),
+    Eof
+}
+
+struct Lexer{
+    tokens: Vec<Token>
+}
+
+impl Lexer{
+    fn new(input: &str) -> Lexer{
+        let mut tokens = input.chars().filter(|it| !it.is_ascii_whitespace())
+            .map(|c| match c{
+                '0'..='9' | 'a'..='z' | 'A'..='Z' => Token::Atom(c),
+                _ => Token::Op(c),
+            }).collect::<Vec<_>>();
+        Lexer {tokens}
+    }
+}",
+,,"impl Lexer {
+    fn new(input: &str) -> Lexer {
+        // ...
+        tokens.reverse();
+        Lexer { tokens }
+    }
+
+    fn next(&mut self) -> Token {
+        self.tokens.pop().unwrap()
+    }
+
+    fn peek(&mut self) -> Token {
+        self.tokens.last().copied().unwrap()
+    }
+}",
+,,"fn infix_binding_power(op: char) -> (f32, f32) {
+    match op {
+        '+' | '-' => (1.0, 1.1),
+        '*' | '/' => (2.0, 2.1),
+        _ => panic!(""unknown operator: {:?}"", op)
+    }
+}",
+,Expression middle,"enum Expression{
+    Atom(char),
+    Operation(char, Vec<Expression>)
+}",
+,,"impl Expression {
+    fn from_str(input: &str) -> Expression {
+        let mut lexer = Lexer::new(input);
+        parse_expression(&mut lexer)
+    }
+}",
+,,"(Testing trees)
+impl fmt::Display for Expression {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Expression::Atom(i) => write!(f, ""{}"", i),
+            Expression::Operation(head, rest) => {
+                write!(f, ""({}"", head)?;
+                for s in rest {
+                    write!(f, "" {}"", s)?;
+                }
+                write!(f, "")"")
+            }
+        }
+    }
+}",
+,First (problematic),"fn parse_expression(lexer: &mut Lexer) -> Expression {
+    let mut lhs = match lexer.next() {
+        Token::Atom(it) => Expression::Atom(it),
+        t => panic!(""bad token: {:?}"", t),
+    };
+
+    let op = match lexer.peek() {
+        Token::Eof => return lhs,
+        Token::Op(op) => op,
+        t => panic!(""bad token: {:?}"", t),
+    };
+
+    lexer.next();
+
+    let mut rhs = match lexer.next() {
+        Token::Atom(it) => Expression::Atom(it),
+        t => panic!(""bad token: {:?}"", t),
+    };
+}",
+,,"fn infix_binding_power(op: char) -> (f32, f32){
+    match op{
+        '+' | '-' => (1.0, 1.1),
+        '*' | '/' => (2.0, 2.1),
+        '^' | 'v' => (3.1, 3.0),
+        _ => panic!(""unknown operator: {:?}"", op)
+    }
+}",
+,"Finalized parser, without parenthesis support","fn parse_expression(lexer: &mut Lexer, min_bp: f32) -> Expression {
+    let mut lhs = match lexer.next() {
+        Token::Atom(it) => Expression::Atom(it),
+        t => panic!(""bad token: {:?}"", t),
+    };
+
+    loop {
+        let op = match lexer.peek() {
+            Token::Eof => break,
+            Token::Op(op) => op,
+            t => panic!(""bad token: {:?}"", t),
+        };
+
+        lexer.next();
+
+        let (l_bp, r_bp) = infix_binding_power(op);
+
+        if l_bp < min_bp {
+            break;
+        }
+
+        let rhs = parse_expression(lexer, r_bp);
+
+        lhs = Expression::Operation(op, vec![lhs, rhs]);
+    }
+
+    lhs
+}",
+,Parser with parenthesis support,"fn parse_expression(lexer: &mut Lexer, min_bp: f32) -> Expression{
+    let mut lhs = match lexer.next() {
+        Token::Atom(it) => Expression::Atom(it),
+        Token::Op('(') => {
+            let lhs = parse_expression(lexer, 0.0);
+            assert_eq!(lexer.next(), Token::Op(')'));
+            lhs
+        }
+        t => panic!(""bad token: {:?}"", t),
+    };
+    loop {
+        let op = match lexer.peek() {
+            Token::Eof => break,
+            Token::Op(')') => break,
+            Token::Op(op) => op,
+            t => panic!(""bad token: {:?}"", t),
+        };
+        lexer.next();
+        let (l_bp, r_bp) = infix_binding_power(op);
+        if l_bp < min_bp{
+            break;
+        }
+        let rhs = parse_expression(lexer, r_bp);
+        lhs = Expression::Operation(op, vec![lhs, rhs]);
+    }
+    lhs
+}",
+,Context free-grammar,Using a domain-specific language to specify and abstract the grammar of the language (Backus-Naur Form),

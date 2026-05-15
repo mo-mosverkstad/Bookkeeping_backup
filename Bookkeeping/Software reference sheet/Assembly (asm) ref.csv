@@ -1,0 +1,287 @@
+Group,Name,General structure,Presetted values
+General about ISAs,ISAs,"RISC-V -> Embedded realtime systems, warehouse computers
+ARMv8/SVE -> Embedded realtime systems, Personal computer, warehouse
+Intel x86 -> Personal computer, warehouse",
+,,"Complex Instruction Set Computers (CISC)
+- Many special purpose instructions.
+- Example: x86. Now almost 900 instructions.
+- Typically various encoding lengths (x86, 1-15 bytes)
+- Different number of clock cycles, depending on
+instruction.
+
+Reduced Instruction Set Computers (RISC)
+- Few, regular instructions. Minimize hardware complexity.
+- RISC-V is a good example (ARM mostly RISC)
+- Typically fixed instruction lengths (e.g., 4 bytes for RISC-V)
+- Typically one clock cycle per instruction (excluding memory
+accesses and cache misses)",
+,,"RISC-V is the focus because
+i) it is relatively easy to understand
+ii) many text-books on RISC-V,
+iii) A lot of research and focus on it",
+,C to asm,"1. C-code, a=b+c
+The compiler maps (if possible) C variables to registers (a->s_0, b->s_1, c->s_2)
+2. RISC-V Assembly Code, add s0, s1, s2
+The assembly code is a human-readable form of the machine code
+3. RISC-V Machine Code, 0x01248433
+Each assembly instruction is mapped to one or more machine code instructions.
+In RISC-V, most instructions are 32 bits (there is support for compressed instructions, but we will not tackle them in the course).",
+MIPS ISA,Registers (Fast but small due to cost-expensive/power intensive),"Name Number Use
+ra 1 Return address (caller-saved)
+sp 2 Stack pointer (callee-saved)
+gp 3 Global pointer
+tp 4 Thread pointer
+t0-t2 5-7 Temporary register (caller-saved)
+s0/fp 8 Saved register (callee-saved)
+s1 9 Saved register (callee-saved)
+a0-a1 10-11 Arguments #0-1/ Return values
+a2-a7 12-17 Arguments #2-7
+s2-s11 18-27 Saved register (callee-saved)
+t3-t6 28-31 Temporary register (caller-saved)",
+,"Memory (latent storage, slow but larger)","Has many more data locations than registers, Accessing memory is slower than accessing registers.
+A processor’s word size is the data width it can handle in one operation. A 32-bit processor has 32-bit words. A 64-bit processor has 64-bit words.
+
+The choice of endianness is arbitrary, but creates problems when communicating between processors with different endianness.
+- Big-endian: the most significant byte (MSB) of the word is stored at the lowest memory address.
+- Little-endian: the least significant byte (LSB) is stored at the lowest memory address.",
+,Machine code/Instruction format,"R-type (register-type)
+(op, 6), (rs, 5), (rt, 5), (rd, 5), (shamt, 5), (funct, 6)
+op: For most R-Type instructions, op is 0.
+rs: source op 1
+rt: source op 2
+rd: dest op
+shamt: shift amount, used only for shift instructions
+funct: determines specific R-type instruction",
+,,"I-type (immediate-type)
+(op, 6), (rs, 5), (rt, 5), (imm, 16)
+op: Opcode
+rs: source op 1
+rt: destination, op for some instance (lw, addi), source op for others (sw)
+imm: immediate value",
+,,"J-type (jump-type)
+(op, 6), (pseudo-adress, 26)
+
+BNE using PC-relative addressing, Calculate branch target address (BTA): BTA = PC + 4 + signext(imm)*4
+0x40 lo: add $t1, $a0, $s0
+0x44 lb $t1,0($t1)
+0x48 add $t2, $a1, $s0
+0x4c sb $t1, 0($t2)
+0x50 addi $s0, $s0, 1
+0x54 bne $t1, $0, lo <- imm=-6
+0x58 lw $s0,0($sp)
+
+J-type instruction, psuedo-direct addressing
+32-bit pseudo-direct adress:
+Bit 1 to 0: omitted, always 00 due to word alignment of code
+Bit 27 to 2, taken directly from imm
+Bit 31 to 28: Obtained from 4 most significant bits from PC + 4",
+RISC-V ISA,Registers,"Name Number Use
+zero 0 constant value of 0
+ra 1 Return address (caller-saved)
+sp 2 Stack pointer (callee-saved)
+gp 3 Global pointer
+tp 4 Thread pointer
+t0-t2 5-7 Temporary register (caller-saved)
+s0/fp 8 Saved register (callee-saved)
+s1 9 Saved register (callee-saved)
+a0-a1 10-11 Arguments #0-1/ Return values
+a2-a7 12-17 Arguments #2-7
+s2-s11 18-27 Saved register (callee-saved)
+t3-t6 28-31 Temporary register (caller-saved)",
+,,,
+,Machine code/Instruction format,"Where a RISC-V program is stored is dictated by a linker (during compilation). In DTEK-V board, we start code immediately at address 0x0.
+In RISC-V, each instruction requires exactly one word (32 bits) of space.
+RISC-V code must be word-aligned (start at addresses 0,4, 8, C etc.). X86 does not require word alignment.",
+,,,
+,,"R-type (register-type), instructions have three register operands: two sources and one destination
+(funct7, 7), (rs2, 5), (rs1, 5), (funct3, 3), (rd, 5), (opcode, 7)
+funct3/7: determines the specific R-type operation to perform.
+rs1, rs2: source operands 1 and 2
+rd: destination op (where is the result saved)",
+,,"I-type (immediate-type), A few I-Type instructions are encoded slightly differently, but are still considered I-Type. These are shift immediate instructions (srli, slli, srai).
+(imm, 12), (rs1, 5), (funct3, 3), (rd, 5), (opcode, 7)
+imm: immediate value (signed-extended)
+rs1: source operand
+funct3: determines the operation to perform
+rd: destination op (where is the result saved)",
+,,"Special I-type (encoded slightly differently, but still considered I-type), srli, slli, srai
+(Imm_(11:5), 7), (shamt, 5), (rs1, 5), (funct3, 3), (rd, 5), (opcode: 7)
+Since funct3 for srli and srai is the same (101_2), imm11:5 encodes whether its an arithmetic or logical shift.",
+,,"S-type (store-type), sw
+(Imm_(11:5), 7), (rs2, 5), (rs1, 5), (funct3, 3), (Imm_(4:0), 5), (opcode, 7) 
+rs1, rs2: source operands 1 and 2
+funct3: determines the operation to perform (e.g. the size of the store)
+Imm needs to be concatenated to form the immediate value",
+,,"B-type (branches), beq
+(Imm_12, 1), (Imm_(10:5), 6), (rs2, 5), (rs1, 5), (funct3, 3), (Imm_(4:1), 4), (Imm_11, 1), (opcode, 7)
+rs1, rs2: source operands 1 and 2
+funct3: determines the operation to perform (e.g. the size of the store)
+Imm needs to be concatenated to form the immediate value
+
+Conditional branches compute their addresses relative to the program counter (PC) because the instructions have not enough address bits. Calculate branch target address (BTA): BTA = PC + signext(concat(imm_(12:1),'0'))",
+,,"U-type (lui, auipc)
+(Imm, 20), (rd, 5), (opcode, 7)
+Imm: 20-bit immediate value, large, signed-extended
+rd: destination operand (where the result should is saved)",
+,,"J-type (jal)
+(Imm_20, 1), (imm_(10:1), 10), (imm_11, 1), (imm_(19:12), 8), (rd, 5), (opcode, 7)
+rd: destination operand (where the result should is saved), e.g. return address of jal
+Imm needs to be concatenated to form the immediate value, The JAL instruction also uses the PC-relative addressing but the immediate is 20 bits
+
+The target address is called JTA instead of BTA and it is computed as:
+JTA = PC+signext(concat(imm20:1, ”0”))
+Since the imm-field is 20-bits (with an implicit imm_0), we can jump +/- 2MiB.
+
+Note: The jump register (jr 16(rs1)) does not use PC-relative addressing. It jumps to the memory address contained in register rs1 where the least significant bit is overwritten to '0'. The jr instruction is a pseudoinstruction based on jalr, which jumps to the address pointed by the register plus a given sign-extended immediate value.",
+,,,
+,,,
+Assembly programming,Arithmetic/Logical Instructions,"Registry instructions:
+and s0, s1, s2 -> s0 = s1 & s2
+or s0, s1, s2 -> s0 = s1 | s2
+xor s0, s1, s2 -> s0 = s1 ^ s2
+
+Immediate instructions:
+andi s0, s1, 0x741 -> s0 = s1 & 0x741
+ori s0, s1, 0x5A1 -> s0 = s1 | 0x5A1
+xori s0, s1, 0x78 -> s0 = s1 ^ 0x78
+
+NOT -> xori t0, s1, 0xffffffff",
+,Constants Values,"addi s0, zero, 1342 <- Max 16 bits
+
+int a = 0x6af022e7; (2 instructions)
+lui s0,0x6af02 <- Load upper immediate instructions
+ori s0,s0,0x2e7
+
+li s0, 0x6af02Fe7 <- Psuedoinstruction (load immediate)",
+,Conditional Branches,"addi s0, zero, 2
+xori s1, s0, 3
+slli t0, s1, 1
+beq t0, s0, foo
+add s1, s1, s0
+foo:
+add s5, s1, zero",
+,,"if(s==t)
+a = s;
+a = a – t;
+
+bne s0, t0, L1
+add a0, s0, zero
+L1: sub a0, a0, t0",
+,,"if(s!=t)
+    a = s;
+else
+    a = s + t;
+a = a – t;
+
+beq s0, t0, else
+add a0, s0, zero
+j L1
+else:
+add a0, s0, t0
+L1:
+sub t0, a0, s1",
+,While/For loops,"int sum = 0;
+for(int i=1; i < 10; i++)
+    sum = sum + i;
+
+addi s1, zero, 0 # sum = 0
+addi s0, zero, 1 # i = 1
+addi t0, zero, 10 # t0 = 10
+for:
+bge s0, t0, done # i >= 10?
+add s1, s1, s0 # sum = sum + i
+addi s0, s0, 1 # i = i + 1
+j for # repeat loop
+done:",
+,Arbitrary memory access,"int ar[5];
+ar[0] = ar[0] * 8;
+ar[1] = ar[1] * 8;
+
+lui s0, 0x10007
+ori s0, s0,0x000 <- Load s0 to 10007000
+lw t1, 0(s0) <- Load word (s0 adress + 0)
+slli t1, t1, 3
+sw t1, 0(s0) <- Store word (s0 adress + 0)
+lw t1, 4(s0) <- Load word (s0 adress + 4)
+slli t1, t1, 3
+sw t1, 4(s0)<- Store word (s0 adress + 4)",
+,Function calls and returns,"int main(){ <- caller
+    dummy();
+    ...
+}
+void dummy(){ <- callee
+}
+
+0x0040 0200 main: jal dummy
+0x0040 0204
+...
+0x0040 1040 dummy: jr $ra
+
+jal: jump and link
+1. stores the adress of next instruction in return adress register $ra
+2. updates program counter",
+,,"Branch delay slots, add nop to avoid pushing bordered instructions:
+main: jal double
+nop
+...
+.global double
+double: add $v0,$a0,$a0
+jr $ra
+nop",
+,Arguments and return values,"int main(){
+    int y;
+    y = sum(3,8);
+    ...
+}
+int sum(int x, int y){
+    return x + y;
+}
+
+main:
+    addi $a0, $0, 3 <- $a0, $a1 as arguments
+    addi $a1, $0, 8
+    jal sum
+    add $s0, $v0, $0
+    ...
+sum:
+    add $v0, $a0, $a1 <- Save return value in $v0
+    jr $ra",
+,Stack (More arguments/more return values),".macro PUSH (%reg)
+    addi $sp,$sp,-4
+    sw %reg,0($sp)
+.end_macro
+.macro POP (%reg)
+    lw %reg,0($sp)
+    addi $sp,$sp,4
+.end_macro",
+,More efficient stack,"foo:
+addi $sp, $sp, -8
+sw $s0, 4($sp)
+sw $s1, 0($sp)
+...
+modifies $s0 and $s1
+...
+lw $s1, 0($sp)
+lw $s0, 4($sp)
+addi $sp, $sp, 8
+jr $ra",
+,,"$t0-$t9 -> Temporary (caller-saved)
+$s0-$s9 -> Saved variables (callee-saved)
+Callee only saves $s0-$s9, can read but not write to $t0-$t9",
+,Pointer usage,"void swap(int* x, int* y){
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+li $a0, 0x00000014
+li $a1, 0x00000010
+jal swap
+[...]
+swap:
+lw $t0, 0($a0)
+lw $t1, 0($a1)
+sw $t0, 0($a1)
+sw $t1, 0($a0)
+jr $ra",

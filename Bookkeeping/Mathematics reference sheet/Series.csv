@@ -16,12 +16,14 @@ f(0)=…, f'(0)=…, f''(0)=…, f'''(0)= …",
 Common Maclaurin series,"e^x=\S{k=0, \inf, x^k/k!}",
 ,"sin(x)=\S{k=0, (-1)^k*x^(2k+1)/(2k+1)!}",
 ,"cos(x) = \S{k=0, \inf, (-1)^k * x^(2k) / (2k)!}",
-,tan(x)= x + x^3/3 + 2*x^5/15 + 17*x^7/315 + ...,
-,"arctan(x) = \S{k=0, \inf, (-1)^k * x^(2k+1) / (2k+1)}",
+,"tan(x) = \S{k=1, \inf, ((-1)^(k-1)*2^(2k)*(2^(2k)-1)*B_(2k)*x^(2k - 1)) / (2k)!} = x + x^3/3 + 2*x^5/15 + 17*x^7/315 + …
+B_n: Bernoulli numbers",
+,"arctan(x) = \S{k=0, \inf, (-1)^k * x^(2k+1) / (2k+1)}","S{k=1, \inf, (-1)^(k-1)/(2k-1)} = pi/4"
 ,"arcsin(x) = \S{k=0, inf, ((2k)! / ( (4^k) * (k!)^2 * (2k+1) ) ) * x^(2k+1)}",
 ,"arccos(x) = \pi/2 - \S{k=0, inf, ((2k)! / ( (4^k) * (k!)^2 * (2k+1) ) ) * x^(2k+1)}",
 ,"ln(1+x) = \S{k=1, inf, (-1)^(k-1) * x^k / k}
-ln(1-x) = -\S{k=1, inf, x^k / k}",
+ln(1-x) = -\S{k=1, inf, x^k / k}","S{k=1, \inf, (-1)^(k-1)/k} = ln(2)"
+,"1/2*ln((1+x)/(1-x)), -1<x<1 = \S{k=1, \inf, x^(2k-1)/(2k-1}",
 ,"(1+x)^n = \S{k=0, inf, C(n,k) * x^k}
 with C(n,k) = n*(n-1)*(n-2)*...*(n-k+1) / k!
 

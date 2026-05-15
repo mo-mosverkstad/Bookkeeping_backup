@@ -1,0 +1,403 @@
+Unnamed: 0,Unnamed: 1,"int x = 1;
+int a = x;
+x = 11;
+-> a: 1, x:11"
+,,"int y = 1;
+int *p = &y;
+*p = 12;
+-> y: 12, p: 12"
+,Create a struct (Lives in stack!),"typedef struct foo_t {
+    int a;
+    int b;
+} foo_t;
+
+foo_t x;
+x.a = 11;
+x.b = x.a + 1;"
+,"Struct as argument (Full shallow copy! Since it is expensive to copy larger data structures it is more
+efficient to work with pointers to them.)","void test(foo_t f) {
+    f.a = 22; // f is a full shallow copy of x, doesn't affect x
+}
+
+foo_t x;
+x.a = 11;
+x.b = x.a + 1;
+test(x);
+-> x: {a: 11, b: 12} (in stack)"
+,,"foo_t test() {
+    foo_t f;
+    f.a = 21;
+    f.b = 22;
+    return f; // As with primitive values, we return a copy of the structure f = {a: 21, b: 22} -> return {x:21, b:22}
+}"
+,Pointer to a struct (to stack),"void test(foo_t *f) {
+    f->a = 22;
+}
+
+foo_t *p = &x; // p is a pointer to x
+p->a = 21;
+p->b = 22;
+test(&x);
+
+(The component of a struct can be reached using a pointer and the -> notation)"
+,,"foo_t *test() {
+    foo_t f;
+    f.a = 21;
+    f.b = 22;
+    return &f; // nooooo!!!!!
+}
+
+foo_t *p = test();
+(*p becomes a dangling pointer -> causes undefined behavior/segmentation fault, f lives only inside the stack frame of test() the moment test() returns, that stack frame is gone.)"
+,"Malloc and free (include <stdlib.h>)
+(How do we create a struct an return a pointer to the struct?)
+
+If you forget to do free, you will have a memory leak.
+If you do free twice, undefined behavior.
+If you access a structure after free, undefined behavior.","foo_t *test() {
+    foo_t *f = (foo_t*) malloc(sizeof(foo_t));
+    f->a = 51;
+    return f;
+}
+
+foo_t *p = test();
+free(p); // When the strcuture is no longer needed, call free."
+,Arrays (Similar to structs),"int foo[5];
+foo[1] = 11;
+int x = foo[1];
+
+`int buffer[10]` equivalent to `int *ptr = buffer;`"
+,"(An array is always passed as a pointer, never copied)","// Variant 1
+void test(int f[]) {
+    f[1] = 21;
+}
+
+// Variant 2
+void test(int *f) {
+    f[1] = 21;
+}
+
+// Variant 3
+void test(int *f) {
+    *(f + 1) = 21;
+}
+
+int foo[5] = {0,1,2,3,4};
+test(foo);
+-> foo = {0, 21, 2, 3, 4}"
+,Undefined behavior when overflow,"int foo[10];
+foo[20] = 666; // not good"
+,"C-strings
+A character array that does not end in zero will cause an error","char str[6] = ""Hello""; // str[0]='H', ..., str[4]='o', str[5]='\0'
+char str[6] = {'H', 'e', 'l', 'l', 'o'};"
+,,
+,,"TODO: Visualize the allocations and data types using memory layout grid, interpretation and reinterpretation"
+,,
+,,
+,,
+,,
+,,TODO: Use data structures as another plain abstraction
+,Abstract data structures,"An abstract data structure is defined by the operations we can perform on the structure.
+The opertions should be well defined and also implemented giving a predictable requirement of space and time.
+Exactly how the structure is implemented is up to the provider and should not be assumed by the user.
+Examples: array, set, vector, sequence, list, stack, tree, queue, priority queue, lock, map, ..."
+,Concrete data structure,"A concrete data structure is an description of how the structure is implemented in memory. We’re talkning about memory layout, pointers, encoding of values etc."
+,Array,"Abstract: get(index) and put(index, value) operations in constant time, size proportional to number of items.
+Concrete: a consecutive segment of memory where each item can be indexed using the base adress.
+collection of data structures accessed by index, assumed constant time access, fixed size"
+,Stack,A stack is an abstract data structure that provides two operations: push(val) and pop(). The push operation will add a new item to the stack and the pop operations will remove and return the last pushed item.
+,,if (stk->top == stk->size) { int size = stk->size * 2; stk->size = size; int *copy = (int*)malloc(size*sizeof(int)); for (int i = 0; i < stk->top; i++) { copy[i] = stk->array[i]; } free(stk->array); stk->array = copy; }
+,,"void push(stack_t * stk, int val) {
+    // May need protection
+    stk -> array[stk -> top] = val;
+    stk -> top += 1;
+}
+
+// Dynamic:
+if (stk -> top == stk -> size) {
+    int size = stk -> size * 2;
+    stk -> size = size;
+    int * copy = (int * ) malloc(size * sizeof(int));
+    for (int i = 0; i < stk -> top; i++) {
+        copy[i] = stk -> array[i];
+    }
+    free(stk -> array);
+    stk -> array = copy;
+}"
+,,"int pop(stack_t * stk) {
+    // May need protection
+    stk -> top -= 1;
+    int val = stk -> array[stk -> top];
+    return val;
+}"
+,,"Reversed polish notation to calculate using stack
+(1 + 2) * (4 + 5) -> 1 2 + 4 5 + * ->
+{1} -> {1, 2} -> pop two (1+2) push -> {3} -> {3, 4} -> {3, 4, 5} -> pop two (4+5) push -> {3, 9} -> pop two (3*9) push -> {27}"
+,,"Dynamic size:
+Assume a stack of size 16, first 16 push operations are constant.
+you pay a price for copying 16 elements ...
+then its a constant cost for the next 16 push operations
+you pay a price for copying 32 element ...
+then its a constant cost for the next 32 push operations
+-> Amortized cost is constant"
+,Call stack,"int foo(int x, int y) {
+    return x + y;
+}
+int bar() {
+    int z;
+    z = foo(3, 4)
+    return z;
+}
+
+-> {(stack frame of bar)} -> {(stack frame of bar) -> (stack frame of foo)} -> {(stack frame of bar)} "
+,,"The conceptual stack frame contains:
+1. the arguments of the procedure
+2. place to hold local variables
+3. magic information to be able to return from a call
+
+Implementation of stack:
+The CPU can be described by:
+the instruction pointer (IP): a reference to the next instruction to execute
+a stack pointer (SP): a reference to the top of the stack
+a base pointer (BP): a reference to the current stack frame
+general purpose registers: used by a process to store data
+
+Data structures placed on the stack will not be available once we return from a call.
+The space required to store the structures can be reused immediately.
+Not all data structures could be allocated on the stack (not the ones that should live for longer).
+Data structures that should survive a return should be placed on the heap."
+,Process,"Simplistic view: (code, data, heap -> (growth) (growth) <- stack, OS)"
+,C procedure,"The arguments to a procedure are provided as copies of the value, i.e. ""call by value"".
+int foo(int a, int b) {
+    return a + b;
+}
+
+int * this_is_the_way() {
+    int * foo = (int * ) malloc(4 * sizeof(int));
+    for (int i = 0; i < 4; i++) {
+        foo[i] = i;
+    }
+    return foo;
+}
+int main() {
+    int * ret = this_is_the_way();
+}"
+,Return a datastructure (multiple values),"gurka * two_values() {
+    struct gurka * grk = (struct gurka * ) malloc(sizeof(gurka))
+    grk -> a = 21;
+    grk -> b = 22;
+    return grk;
+}
+int main() {
+    struct gurka * res = two_values();
+    int x = res -> a + res -> b;
+}"
+,Struct pointer as param,"void two_values(struct gurka * grk) {
+    grk -> a = 21;
+    grk -> b = 22;
+}
+int main() {
+    struct gurka * res = (struct gurka * ) malloc(sizeof(gurka));
+    two_values(res);
+    int x = res -> a + res -> b;
+}"
+,Primitive pointer as param,"void two_values(int * a, int * b) {
+    * a = 21;
+    * b = 22;
+}
+int main() {
+    int a, b;
+    two_values( & a, & b);
+    int x = a + b;
+}"
+,Generics function type,"int generic(int * arr, int n, int init, int (*op)(int, int)) {
+    int gen = init;
+    for (int i = 0; i < n; i++)
+        gen = op(gen, arr[i]);
+    return gen;
+}
+
+int add (int x , int y ) {
+    return x + y ;
+}
+int mul (int x , int y ) {
+    return x * y ;
+}
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    printf("" sum : %d \n "", generic(arr, 5, 0, add));
+    printf("" product : %d \n "", generic(arr, 5, 1, mul));
+    int(*x)(int, int) = add; // function as type
+    printf(""x(3,4) = %d\n "", x(3, 4));
+}"
+,Generic type,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,Sum of elements,"int sum/prod(int * arr, int n) {
+    int sum = 0;
+    for (int i = 0; i < n, i++)
+        sum += arr[i]; (sum *= arr[i];)
+    return sum;
+}"
+,Searching array,"bool unsorted_search(int * array, int length, int key) {
+    for (int index = 0; index < length; index++) {
+        if (array[index] == key) {
+            return true;
+        }
+    }
+    return false;
+}"
+,Binary search,...
+,,-> search for duplicates between 2 arrays (one sorted and one unsorted)
+,,
+,Complexity functions,"An estimate of the change in execution time when the data set grows large.
+A functions upper bound is limited by O(g(n)).
+Its lower bound is limited by Ω(g(n)).
+If a function is limited by O(g(n)) and Ω(g(n)) then it is limited by Θ(g(n)).
+
+Ordered by complexity - not execution time given a specific n
+O(n^4) O(n^2) O(n × lg(n)) O(n) O(\sqrt(n)) O(lg^2(n))) O(lg(n))
+\O(f(x)) -> Worse than or equal f(x)
+O(f(x)) -> Better than or equal f(x)
+\T(f(x)) = \O(f(x)) \intersect O(f(x))
+
+Tractable (Polynomial complexity) - Intractable (Exponential complexity) - Solvable problems - Unsolvable problems
+It’s not easy to determine the classification of a problem.
+If we have an algorithm at least we know the upper limit.
+We have problems where it’s easy to find an exponential algorithm, but no proof that there is no polynomial algorithm
+Polynomial P, Non-deterministic Polynomial problem NP"
+,Selection sort,"void selection_sort(int *arr, int n){
+    for (int i = 0; i < n; i++){
+        int min_index = i;
+        for (int j = i+1; j < n; j++){
+            if (arr[j] < arr[min_index]){
+                min_index = j;
+            }
+        }
+        if (min_index != i){
+            int temp = arr[i];
+            arr[i] = arr[min_index];
+            arr[min_index] = temp;
+        }
+    }
+}
+
+How many compare operations?
+How many swap operations?
+Any special cases?
+
+an O(n^2) algorithm
+few write operations
+useful when iteratively searching for the smallest elements"
+,Insertion sort,"
+void insertion_sort(int *arr, int n){
+    for (int i = 1; i < n; i++){
+        int hole_index = i;
+        int hole_element = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > hole_element){
+            arr[j + 1] = arr[j];
+            hole_index = j;
+            j--;
+        }
+        arr[hole_index] = hole_element;
+    }
+}
+
+How many compare operations?
+How many swap operations?
+Any special cases?
+
+an O(n^2) algorithm
+many write operations (in an array)
+useful when data set almost sorted
+always used when inserting a new element in a sorted data set"
+,Merge sort,"void copy_array(int * src, int * dest, int start, int end) {
+    for (int i = start; i < end; i++)
+        dest[i] = src[i];
+}
+
+void merge(int * org, int * aux, int lo, int mid, int hi) {
+    int i = lo;
+    int j = mid + 1;
+    for (int k = lo; k <= hi; k++) {
+        if (i > mid)
+            org[k] = aux[j++];
+        else if (j > hi)
+            org[k] = aux[i++];
+        else if (aux[i] <= aux[j])
+            org[k] = aux[i++];
+        else
+            org[k] = aux[j++];
+    }
+}
+
+void sort(int * org, int * aux, int lo, int hi) {
+    if (lo < hi) {
+        int mid = lo + (hi - lo) / 2;
+        sort(org, aux, lo, mid);
+        sort(org, aux, mid + 1, hi);
+        copy_array(org, aux, lo, hi + 1);
+        merge(org, aux, lo, mid, hi);
+    }
+}
+
+void mergesort(int * org, int n) {
+    if (n == 0) return;
+    int * aux = (int * ) malloc(n * sizeof(int));
+    copy_array(org, aux, 0, n);
+    sort(org, aux, 0, n - 1);
+}"
+,,"Type generic version
+
+void merge (void ** org , void ** aux, int (* cmp )(void *, void *)){
+    if (cmp(aux[i], aux[j]) <= 0)
+        org[k] = aux[i++];
+    else
+        org[k] = aux[j++];
+}"
+,,"If you can sort an array with up to n elements and can merge two sorted arrays then you can sort an array of up to 2 × n elements.
+Since an array with only one element is sorted then you can sort an array of arbitrary length."
+,Quick sort,"void quick_sort(int *arr, int start, int end){
+    if (start >= end) return;
+    if (end - start <= 1) return;
+    int pivot_index = (start + end)/2;
+    int pivot_value = arr[pivot_index];
+    int i = start;
+    int j = end - 1;
+    while (i < j){
+        while (arr[i] < pivot_value) i++;
+        while (arr[j] > pivot_value) j--;
+        if (i < j){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
+    quick_sort(arr, start, i);
+    quick_sort(arr, i, end);
+}
+
+an O(n × lg(n)) algorithm
+no additional space
+worst case scenario if array is sorted - O(n^2)"
+,Sort stability,"A sorting algorithm is stable if the given order is preserved when sorting two equal elements. (when two values are equal, the order of them are the same as the original one)
+stable algorithms: insertion sort, merge sort
+unstable algorithms: selection sort, quick sort"
+,,
+,Arraylist,
+,Linkedlist,

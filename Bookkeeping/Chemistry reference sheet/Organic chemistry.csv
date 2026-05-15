@@ -1,6 +1,6 @@
-Compound,Melting (°C),Boiling (°C),Color,Odour,Structure,Reactivity,Toxicity,Application
-General,"Alla organiska föreningar innehåller kol. Eftersom kol har 4 valenselektroner kan den skapa 4 bindningar till andra atomer. På så sätt kan det skapas många variationer där de är antingen raka, grenade eller cykliska kolkedjor. Organiska ämnen förekommer främst hos levande organismer/naturligt förekommande, men också konstgjorda inom industrin. Kolväten utvninns ur råolja (fossila bränslen) som bildas av avlagring av uråldringa organismer (separeras i oljeraffinaderi)",,,,,,,
-,"Nomenclature/Nomenklatur (IUPAC-number)
+Compound,Name,Melting (°C),"ΔH_fus, kJ/mol",Boiling (°C),"ΔH_vap, kJ/mol",Critical temperature,Critical pressure (atm),Specific heat capacity,Color,Odour,Structure,Reactivity,Toxicity,Application
+General,,"Alla organiska föreningar innehåller kol. Eftersom kol har 4 valenselektroner kan den skapa 4 bindningar till andra atomer. På så sätt kan det skapas många variationer där de är antingen raka, grenade eller cykliska kolkedjor. Organiska ämnen förekommer främst hos levande organismer/naturligt förekommande, men också konstgjorda inom industrin. Kolväten utvninns ur råolja (fossila bränslen) som bildas av avlagring av uråldringa organismer (separeras i oljeraffinaderi)",,,,,,,,,,,,
+,,"Nomenclature/Nomenklatur (IUPAC-number)
 
 Functional groups/Funktionella grupper: Atomgrupper som ger den organiska föreningen speciella egenskaper kallas för en funktionell grupp. En ämnesklass är en ämnesgrupp med samma funktionella grupp.
 Amount/Antal av funktionella grupper: Mono/di/tri/polyvalent groups, en/två/tre/flervärda grupper
@@ -11,227 +11,227 @@ Chain isomerism/Kedjeisomerer: Butan vs 2-metylpropan, Molekyler har olika kolke
 Position isomerism/Ställningsisomeri: 1-propanol vs 2-propanol, Den funktionella gruppen har olika position i kedjan
 Functional isomerism/Funktionsisomeri: Etanol vs dimetyleter, Molekyler har olika funktionella grupper
 Cis-trans isomerism(Geometrical isomerism)/Cis-transisomeri(Zusammen, Cis-2-buten (Z)), (Entegen, Trans-2-buten): Samma atomer är bundna till varandra men befinner sig i olika lägen kring en dubbelbindning (Kan reagera/ha andra egenskaper)
-Enantiomerism(Optical isomerism)/Spegelbildsisomeri(Optiska isomerer) (L-mjölksyra vs D mjölksyra), Kiralt kol (assymetrisk centra), GRupperna har olika riktning kring assymetrisk centrum i molekylen, har olika egenskaper -> binder till olika receptorer, blandning skapar en racemisk blandning",,,,,,,
-Alkanes/Alkaner (-),"(Mättad, endast enkelbindning) Endast van-der-Waalsbindning -> (Fettlösliga, relativt låga kokpunkter)",,,,,,,
-1,-183,-162,TRA,Odorless,Fumigant,-,.,Bränsle (Bil/fordon)
-2,-183,-89,TRA,Odorless,-,-,-,Plasttillverkning
-3,-188,-44,-,-,-,-,-,"Gasol, plast"
-4,-138,0,-,-,-,-,-,"Gasol, plast"
-5,-129,36,-,-,-,-,-,
-6,-95,69,-,-,-,-,-,
-7,-91,98,-,-,-,-,-,
-8,-57,126,-,-,-,-,-,
-9,-51,151,-,-,-,-,-,
-10,-30,174,-,-,-,-,-,
-(1)3,-160,-12,-,-,-,-,-,Köldmedel
-(2-1)4,-160,28,-,-,-,-,-,
-"(2,2-1)3",-16,10,-,-,-,-,-,
-Cycloalkanes/Cykloalkaner (~n),Ringslutna alkaner,,,,,,,
-~3,-128,-33,TRA,-,-,"Flammable, Unstable -> free radical",.,Tidig narkosmedel
-~4,-91,13,-,-,-,Unstable,.,
-~5,-94,50,-,-,-,-,-,
-~6,6,81,-,-,-,-,-,
-Alkenes/Alkener (=),"(Omättad, dubbelbindnig) Bindningar i plan, 120\deg, ej vridbarhet H-, H-C=C-H, -H",,,,,,,
-2=,-169.2,-103.7,-,-,-,Highly flammable,.,"Plasttillverkning, svetsning"
-3=,-185.2,-47.6,-,-,-,-,-,
-4=,-185.3,-6.3,-,-,-,-,-,
-5=,-165.2,36.1,-,-,-,-,-,
-6=,-140,62.8,-,-,-,-,-,
-7=,-119,93,-,-,-,-,-,
-8=,-101,122,-,-,-,-,-,
-9=,-57.5,101,-,-,-,-,-,
-10=,-45.5,163,-,-,-,-,-,
-(2-1)3,-140.4,-6.9,-,-,-,-,-,
-T4.2,106,0.3,-,-,-,-,-,
-Alkynes/Alkyner (≡),"Omättad trippelbindning, H-C-(3)-C-H",,,,,,,
-2≡,-84,-80.8,TRA,Garlic,-,Explosive,.,"Svetsning, metallskärning"
-3≡,-103,-23.2,-,-,-,-,-,"Svetsgas, raketbränsle"
-4≡,-125.7,8.1,TRA,Garlic,-,-,-,Svetsgas
-5≡,-106,40,-,-,-,-,-,
-6≡,-131,70,-,-,-,-,-,
-7≡,-81,100,-,-,-,-,-,
-8≡,-42.6,128,-,-,-,-,-,
-9≡,-50,150,-,-,-,-,-,
-10≡,-44,174,-,-,-,-,-,
-Arenes/Arener (~~n),"Kolväten med bensenstruktur, aromatiska, många är ohälsosamma (CMR-ämnen), cancerogena, mutagena och reproduktionsstörande ämnen, förekommer i tobaksrök
+Enantiomerism(Optical isomerism)/Spegelbildsisomeri(Optiska isomerer) (L-mjölksyra vs D mjölksyra), Kiralt kol (assymetrisk centra), GRupperna har olika riktning kring assymetrisk centrum i molekylen, har olika egenskaper -> binder till olika receptorer, blandning skapar en racemisk blandning",,,,,,,,,,,,
+Alkanes/Alkaner (-),,"(Mättad, endast enkelbindning) Endast van-der-Waalsbindning -> (Fettlösliga, relativt låga kokpunkter)",,,,,,,,,,,,
+1,,-182.3,0.94,-161.3,8.2,-83.0,46.0,,TRA,Odorless,Fumigant,-,.,Bränsle (Bil/fordon)
+2,,-183,,-89,,,,,TRA,Odorless,-,-,-,Plasttillverkning
+3,,-188,,-44,,,,,-,-,-,-,-,"Gasol, plast"
+4,,-138,,0,,,,,-,-,-,-,-,"Gasol, plast"
+5,,-129,,36,,,,,-,-,-,-,-,
+6,,-95,,69,,,,,-,-,-,-,-,
+7,,-91,,98,,,,,-,-,-,-,-,
+8,,-57,,126,,,,,-,-,-,-,-,
+9,,-51,,151,,,,,-,-,-,-,-,
+10,,-30,,174,,,,,-,-,-,-,-,
+(1)3,,-160,,-12,,,,,-,-,-,-,-,Köldmedel
+(2-1)4,,-160,,28,,,,,-,-,-,-,-,
+"(2,2-1)3",,-16,,10,,,,,-,-,-,-,-,
+Cycloalkanes/Cykloalkaner (~n),,Ringslutna alkaner,,,,,,,,,,,,
+~3,,-128,,-33,,,,,TRA,-,-,"Flammable, Unstable -> free radical",.,Tidig narkosmedel
+~4,,-91,,13,,,,,-,-,-,Unstable,.,
+~5,,-94,,50,,,,,-,-,-,-,-,
+~6,,6,,81,,,,,-,-,-,-,-,
+Alkenes/Alkener (=),,"(Omättad, dubbelbindnig) Bindningar i plan, 120\deg, ej vridbarhet H-, H-C=C-H, -H",,,,,,,,,,,,
+2=,,-169.2,,-103.7,,,,,-,-,-,Highly flammable,.,"Plasttillverkning, svetsning"
+3=,,-185.2,,-47.6,,,,,-,-,-,-,-,
+4=,,-185.3,,-6.3,,,,,-,-,-,-,-,
+5=,,-165.2,,36.1,,,,,-,-,-,-,-,
+6=,,-140,,62.8,,,,,-,-,-,-,-,
+7=,,-119,,93,,,,,-,-,-,-,-,
+8=,,-101,,122,,,,,-,-,-,-,-,
+9=,,-57.5,,101,,,,,-,-,-,-,-,
+10=,,-45.5,,163,,,,,-,-,-,-,-,
+(2-1)3,,-140.4,,-6.9,,,,,-,-,-,-,-,
+T4.2,,106,,0.3,,,,,-,-,-,-,-,
+Alkynes/Alkyner (≡),,"Omättad trippelbindning, H-C-(3)-C-H",,,,,,,,,,,,
+2≡,,-84,,-80.8,,,,,TRA,Garlic,-,Explosive,.,"Svetsning, metallskärning"
+3≡,,-103,,-23.2,,,,,-,-,-,-,-,"Svetsgas, raketbränsle"
+4≡,,-125.7,,8.1,,,,,TRA,Garlic,-,-,-,Svetsgas
+5≡,,-106,,40,,,,,-,-,-,-,-,
+6≡,,-131,,70,,,,,-,-,-,-,-,
+7≡,,-81,,100,,,,,-,-,-,-,-,
+8≡,,-42.6,,128,,,,,-,-,-,-,-,
+9≡,,-50,,150,,,,,-,-,-,-,-,
+10≡,,-44,,174,,,,,-,-,-,-,-,
+Arenes/Arener (~~n),,"Kolväten med bensenstruktur, aromatiska, många är ohälsosamma (CMR-ämnen), cancerogena, mutagena och reproduktionsstörande ämnen, förekommer i tobaksrök
 Polycykliska aromatiska kolväten (PAH) 4+ bensenringar, bildas vid ofullständig förbränning vid ved och cigarett
 Konjugerande dubbelbindningar (omväxlande dubbel och enkelbindning, kortare än dubbelbindning, längre än enkelbindning, mellanläge av 2 ytterligheter)
 Elektroner fördelas jämnt mellan alla kolatomer i ringen/Delokaliserade elektroner
 Reaktioner är mer reaktionströga (Delokaliserade elektroner -> stabilitet)
-Resonansformler: [[C-C=C-C=C-C] <-> [C=C-C=C-C=C]], Resonanshybrid: [C~C~C~C~C~C]",,,,,,,
-~~1,5.5,80.1,-,-,-,Reactive,Carcinogenic,"Lösningsämne (färg, lack)"
-(1)~~1,-95,110.6,TRA,Petroleum,-,Flammable,Celebral neural damages,Bensin
-"(1,2-1)~~1",-25,135,-,-,-,-,"Dizziness, Dullness, Vomiting, Unconsiousness, Lung inflammatino","Lösningsmedel, färg, lim"
-"(1,3-1)~~1",-48,140,-,-,-,-,-,
-"(1,4-1)~~1",13,145,-,-,-,-,-,
-~~2,80.3,218,WHI,Penetrating odor,Crystal form,-,-,Skydda textiler
-~~3,217.5,340,TRA,-,-,-,.,
-~~5,179,495,-,-,-,-,.,
-2~~1,155,251,WHI,Medical,Solid,-,.,"Plastmjukgörare, kvitto"
-2*1,69,256,TRA,-,Crystal form,-,.,
-Haloalkanes/alkyl halogenides/Haloalkaner (-X),"En eller flera halogenatomer bunden till en alkan
+Resonansformler: [[C-C=C-C=C-C] <-> [C=C-C=C-C=C]], Resonanshybrid: [C~C~C~C~C~C]",,,,,,,,,,,,
+~~1,,5.600000000000023,10.59,80.19999999999999,30.8,289.0,49.0,1.05,-,-,-,Reactive,Carcinogenic,"Lösningsämne (färg, lack)"
+(1)~~1,,-95,,110.6,,,,,TRA,Petroleum,-,Flammable,Celebral neural damages,Bensin
+"(1,2-1)~~1",,-25,,135,,,,,-,-,-,-,"Dizziness, Dullness, Vomiting, Unconsiousness, Lung inflammatino","Lösningsmedel, färg, lim"
+"(1,3-1)~~1",,-48,,140,,,,,-,-,-,-,-,
+"(1,4-1)~~1",,13,,145,,,,,-,-,-,-,-,
+~~2,,80.3,,218,,,,,WHI,Penetrating odor,Crystal form,-,-,Skydda textiler
+~~3,,217.5,,340,,,,,TRA,-,-,-,.,
+~~5,,179,,495,,,,,-,-,-,-,.,
+2~~1,,155,,251,,,,,WHI,Medical,Solid,-,.,"Plastmjukgörare, kvitto"
+2*1,,69,,256,,,,,TRA,-,Crystal form,-,.,
+Haloalkanes/alkyl halogenides/Haloalkaner (-X),,"En eller flera halogenatomer bunden till en alkan
 Funktionella grupper är halogenatomer. Alkylhalogenider är vanligtvis flytande vid rumstemperatur och har högre kokpunkt än alkaner med lika långa kolkedja (Elektronegativa, mer reaktiva än motsvarande alkan)
-Attraktionskrafterna ökar med ökad molekylmassa, RF < RCl < RBr < RI, och ökad längd på alkylgruppens kolkedja R eftersom van der Waalsbindningar blir starkare. Ju fler grenade kedjor desto lägre kokpunkt -> Klorerade lösningsmedel",,,,,,,
-Cl+1,-97.7,-24.2,TRA,Sweet odor,-,-,"Dizziness, Tiredness, Confusing, Respiration system damages, Celebral neural damages",Kylmedel vid 1835
-Cl+2,-138.3,12.3,TRA,-,-,-,Celebral neural damages (block nerv impulses),
-Cl+3,-122.8,46.7,TRA,-,-,-,"Celebral neural damages, Irritating",
-Cl+4,-123,77,TRA,-,-,Flammable,.,
-Cl+5,-99,107,TRA,-,-,Flammable,-,
-2Cl+1,-97,40,-,Sweet odor,-,Highly flammable,Nauseating,"Avfettsmedel, lösningsmedel"
-3Cl+1,-63,62,TRA,-,-,-,"Liver damages, Arrhythmias",Förr bedövning
-4Cl+1,-23,76,-,Sweet odor,-,Highly flammable,"Liver damages, Kidney damages, Celebral neural damages","Lösningsmedel, färg, lim"
-2Cl+2,-35.7,83.5,TRA,-,Oily,-,-,Fettborttagning
-3Cl+2,-35.5,113.6,TRA,-,LD+KD+CED???,,,
-3Cl+2,-35.5,113.6,TRA,-,-,-,"Liver damages, Kidney damages, Celebral neural damages",
-"(1Cl,1-2)4",-,-,-,-,-,-,-,
-(1Cl-2*2-2)3,-,-,-,-,-,-,-,
-F+1,-,-,-,-,-,-,-,
-F+2,-,-,-,-,-,-,-,
-F+3,-,-,-,-,-,-,-,
-F+4,-,-,-,-,-,-,-,
-F+5,-,-,-,-,-,-,-,
-"(F,3Cl)1",-110.5,23.7,TRA,-,-,-,-,
-"(2F,2Cl)1",-157.8,-29.8,TRA,-,-,-,-,
-"(3F,Cl)1",-181,-81.5,TRA,Sweet odor,-,-,-,
-"(Br,2F,Cl)1",-159.5,-3.7,TRA,-,-,-,-,Bransläckare
-"(Br,3F)1",-108.9,7,TRA,-,-,-,-,Brandsläckare
-"(2Br,2Cl,3F-1)2",-76,73,-,-,-,-,-,Narkosmedel
-Alcohols/Alkoholer (-OH),"Funktionella grupper hydroxylgrupp (-OH)
+Attraktionskrafterna ökar med ökad molekylmassa, RF < RCl < RBr < RI, och ökad längd på alkylgruppens kolkedja R eftersom van der Waalsbindningar blir starkare. Ju fler grenade kedjor desto lägre kokpunkt -> Klorerade lösningsmedel",,,,,,,,,,,,
+Cl+1,,-97.7,,-24.2,,,,,TRA,Sweet odor,-,-,"Dizziness, Tiredness, Confusing, Respiration system damages, Celebral neural damages",Kylmedel vid 1835
+Cl+2,,-138.3,,12.3,,,,,TRA,-,-,-,Celebral neural damages (block nerv impulses),
+Cl+3,,-122.8,,46.7,,,,,TRA,-,-,-,"Celebral neural damages, Irritating",
+Cl+4,,-123,,77,,,,,TRA,-,-,Flammable,.,
+Cl+5,,-99,,107,,,,,TRA,-,-,Flammable,-,
+2Cl+1,,-97,,40,,,,,-,Sweet odor,-,Highly flammable,Nauseating,"Avfettsmedel, lösningsmedel"
+3Cl+1,,-63,,62,,,,,TRA,-,-,-,"Liver damages, Arrhythmias",Förr bedövning
+4Cl+1,,-23,,76,,,,,-,Sweet odor,-,Highly flammable,"Liver damages, Kidney damages, Celebral neural damages","Lösningsmedel, färg, lim"
+2Cl+2,,-35.7,,83.5,,,,,TRA,-,Oily,-,-,Fettborttagning
+3Cl+2,,-35.5,,113.6,,,,,TRA,-,LD+KD+CED???,,,
+3Cl+2,,-35.5,,113.6,,,,,TRA,-,-,-,"Liver damages, Kidney damages, Celebral neural damages",
+"(1Cl,1-2)4",,-,,-,,,,,-,-,-,-,-,
+(1Cl-2*2-2)3,,-,,-,,,,,-,-,-,-,-,
+F+1,,-,,-,,,,,-,-,-,-,-,
+F+2,,-,,-,,,,,-,-,-,-,-,
+F+3,,-,,-,,,,,-,-,-,-,-,
+F+4,,-,,-,,,,,-,-,-,-,-,
+F+5,,-,,-,,,,,-,-,-,-,-,
+"(F,3Cl)1",,-110.5,,23.7,,,,,TRA,-,-,-,-,
+"(2F,2Cl)1",,-157.8,,-29.8,,,,,TRA,-,-,-,-,
+"(3F,Cl)1",,-181,,-81.5,,,,,TRA,Sweet odor,-,-,-,
+"(Br,2F,Cl)1",,-159.5,,-3.7,,,,,TRA,-,-,-,-,Bransläckare
+"(Br,3F)1",,-108.9,,7,,,,,TRA,-,-,-,-,Brandsläckare
+"(2Br,2Cl,3F-1)2",,-76,,73,,,,,-,-,-,-,-,Narkosmedel
+Alcohols/Alkoholer (-OH),,"Funktionella grupper hydroxylgrupp (-OH)
 Bildas oftast från cellens metabolism (jäsning av druvsocker). Alkohol framställs industriellt via syntetiska reaktioner
 Alkoholers funktionella grupp med vätebindning (Högre kokpunkt än motsvarande alkaner, polära karaktärer störst för kortare kolvätekedja/flest), R-O-H <-> O (-H) -R
 Etanol/Etylalkohol: (Mest kända av alkoholen) ingår i öl, vin och sprit men har andra användningsområden bland annat motorbränsle, läsningsämne och desinfektionsmedel, jäsning av spannmål/potatis -> 15% etanol (halten ökas vid destillation) -> 96%, fordonsbränsle (85% etanol, 12.5% bensin, 2.5% andra organiska ämnen), absolut alkohol -> (CaO -> Ca(OH)2)
-Kylarvätska: Blandning med vatten -> Frostskyddsmedel (Förhindrar vatten bilda regelbundna kristaller) (Glukol, glycerol, propylenglukol)",,,,,,,
-1OH,-98,64.7,TRA,Faint odor,-,-,Blind,"Lösningsmedel, effektiv bränsle"
-2OH,-114.3,78.4,TRA,-,-,-,Celebral neural damages(Intoxication),"Bakterie, svamp, virusmedel"
-3OH,-126,97,TRA,Mild odor,-,-,-,"Fermentation, finkelolja"
-4OH,-89,117,TRA,-,-,-,-,Eteriska oljor
-5OH,-77.6,138,TRA,-,-,Flammable,-,"Lösningsämne, smakämne"
-6OH,-45,157,TRA,Perfume/cut_grass,-,-,.,"Parfym, nyklippt gräs"
-7OH,-34.6,175.8,-,Pleasant,-,-,-,"Hjärtelektrofysisk experiment, kosmetika"
-8OH,-14,200,TRA,Citrus,-,-,-,Essentiella oljor
-9OH,-6,214,BLA~YEL,Citronella_oil/Orange,-,-,Irritating(Skin/Eyes),
-10OH,6.4,233,TRA,-,Viscous,-,-,"Lösningsmedel, smörjmedel"
-2(12OH),-13,198,TRA,-,-,-,"Kidney damages, Celebral neural damages",Hindrar vätskefrysning
-3(1~3OH),18,290,TRA,Sweet odor,Viscous,-,_,"Hudkräm, konsistensgivare, munvatten"
-6(1~6OH),95,296,-,Sweet odor,-,-,-,Sötningsmedel
-1~2-3OH,-59,188,TRA,,,,,
-~~1+1,-16,204,-,_,hygroskopisk,-,-,Parfymerier
-Phenols/Fenoler (~~-(OH)),"Arener med hydroxylgrupp ([C~C~C~C~C~C] + H2O <-> (Fenolatjon, oxideras lätt) [[(C - O-)~C~C~C~C~C]](-) + H3O+",,,,,,,
-1,40.5,181.7,-,Pungent odor,-,Corrosive,"., ger allergi, mutagen",1860~1900 desinfektionsmedel
-1(12),29.8,191,-,-,Crystal form,Flammable,.,
-1(1~3),11.8,203,-,-,Viscous,Flammable,.,
-1(1~4),35.5,202,-,-,Crystal form,Flammable,.,
-2,123,285,TRA,Burning taste,"Crystal form, shiny",-,,
-3,121,363,-,-,-,-,-,
-2+2*4.3+2(Bisfenol A),157,250,WHI~BRO,-,Crystal form,-,Endocrine disruptor,
-Aldehydes/Aldehyder,Karbonylförening med karbonylgrupp i änden av kedjan (Kan ha angenäm smak/doft),,,,,,,
-1CHO,-,-,-,-,-,-,"Allergy, Irritating (Mucous)","Konservering, plast, lim, spånskivor"
-2CHO,-,-,-,-,-,-,-,
-3CHO,-,-,-,-,-,-,-,
-4CHO,-,-,-,-,-,-,-,
-5CHO,-,-,-,-,-,-,-,
-6CHO,-,-,-,-,-,-,-,
-7CHO,-,-,-,-,-,-,-,
-8CHO,-,-,-,-,-,-,-,
-9CHO,-,-,-,-,-,-,-,
-10CHO,-,-,-,-,-,-,-,
-Ketones/Ketoner,Karbonylförening med karbonylgrupp i mitten av kedjan (Doft och smakämne),,,,,,,
-3CO,-,-,-,-,Viscous,Flammable,-,Lösningsmedel
-2-4CO,-,-,-,-,-,-,-,
-3-4CO,-,-,-,-,-,-,-,
-2-5CO,-,-,-,-,-,-,-,
-3-5CO,-,-,-,-,-,-,-,
-4-5CO,-,-,-,-,-,-,-,
-2-6CO,-,-,-,-,-,-,-,
-3-6CO,-,-,-,-,-,-,-,
-4-6CO,-,-,-,-,-,-,-,
-5-6CO,-,-,-,-,-,-,-,
-Carboxylic acids/Karboxylsyror (-COOH),"Organiska syror med karbonylgrupp (karbonylgrupp med hydroxigrupp)
+Kylarvätska: Blandning med vatten -> Frostskyddsmedel (Förhindrar vatten bilda regelbundna kristaller) (Glukol, glycerol, propylenglukol)",,,,,,,,,,,,
+1OH,,-97.80000000000001,3.16,64.19999999999999,35.3,,,,TRA,Faint odor,-,-,Blind,"Lösningsmedel, effektiv bränsle"
+2OH,,-114.30000000000001,4.6,78.5,43.5,,,2.42,TRA,-,-,-,Celebral neural damages(Intoxication),"Bakterie, svamp, virusmedel"
+3OH,,-126,,97,,,,,TRA,Mild odor,-,-,-,"Fermentation, finkelolja"
+4OH,,-89,,117,,,,,TRA,-,-,-,-,Eteriska oljor
+5OH,,-77.6,,138,,,,,TRA,-,-,Flammable,-,"Lösningsämne, smakämne"
+6OH,,-45,,157,,,,,TRA,Perfume/cut_grass,-,-,.,"Parfym, nyklippt gräs"
+7OH,,-34.6,,175.8,,,,,-,Pleasant,-,-,-,"Hjärtelektrofysisk experiment, kosmetika"
+8OH,,-14,,200,,,,,TRA,Citrus,-,-,-,Essentiella oljor
+9OH,,-6,,214,,,,,BLA~YEL,Citronella_oil/Orange,-,-,Irritating(Skin/Eyes),
+10OH,,6.4,,233,,,,,TRA,-,Viscous,-,-,"Lösningsmedel, smörjmedel"
+2(12OH),,-13,,198,,,,,TRA,-,-,-,"Kidney damages, Celebral neural damages",Hindrar vätskefrysning
+3(1~3OH),,18,,290,,,,,TRA,Sweet odor,Viscous,-,_,"Hudkräm, konsistensgivare, munvatten"
+6(1~6OH),,95,,296,,,,,-,Sweet odor,-,-,-,Sötningsmedel
+1~2-3OH,,-59,,188,,,,,TRA,,,,,
+~~1+1,,-16,,204,,,,,-,_,hygroskopisk,-,-,Parfymerier
+Phenols/Fenoler (~~-(OH)),,"Arener med hydroxylgrupp ([C~C~C~C~C~C] + H2O <-> (Fenolatjon, oxideras lätt) [[(C - O-)~C~C~C~C~C]](-) + H3O+",,,,,,,,,,,,
+1,,40.5,,181.7,,,,,-,Pungent odor,-,Corrosive,"., ger allergi, mutagen",1860~1900 desinfektionsmedel
+1(12),,29.8,,191,,,,,-,-,Crystal form,Flammable,.,
+1(1~3),,11.8,,203,,,,,-,-,Viscous,Flammable,.,
+1(1~4),,35.5,,202,,,,,-,-,Crystal form,Flammable,.,
+2,,123,,285,,,,,TRA,Burning taste,"Crystal form, shiny",-,,
+3,,121,,363,,,,,-,-,-,-,-,
+2+2*4.3+2(Bisfenol A),,157,,250,,,,,WHI~BRO,-,Crystal form,-,Endocrine disruptor,
+Aldehydes/Aldehyder,,Karbonylförening med karbonylgrupp i änden av kedjan (Kan ha angenäm smak/doft),,,,,,,,,,,,
+1CHO,,-,,-,,,,,-,-,-,-,"Allergy, Irritating (Mucous)","Konservering, plast, lim, spånskivor"
+2CHO,,-,,-,,,,,-,-,-,-,-,
+3CHO,,-,,-,,,,,-,-,-,-,-,
+4CHO,,-,,-,,,,,-,-,-,-,-,
+5CHO,,-,,-,,,,,-,-,-,-,-,
+6CHO,,-,,-,,,,,-,-,-,-,-,
+7CHO,,-,,-,,,,,-,-,-,-,-,
+8CHO,,-,,-,,,,,-,-,-,-,-,
+9CHO,,-,,-,,,,,-,-,-,-,-,
+10CHO,,-,,-,,,,,-,-,-,-,-,
+Ketones/Ketoner,,Karbonylförening med karbonylgrupp i mitten av kedjan (Doft och smakämne),,,,,,,,,,,,
+3CO,Aceton,-95.19999999999999,5.72,56.5,29.1,,,,-,-,Viscous,Flammable,-,Lösningsmedel
+2-4CO,,-,,-,,,,,-,-,-,-,-,
+3-4CO,,-,,-,,,,,-,-,-,-,-,
+2-5CO,,-,,-,,,,,-,-,-,-,-,
+3-5CO,,-,,-,,,,,-,-,-,-,-,
+4-5CO,,-,,-,,,,,-,-,-,-,-,
+2-6CO,,-,,-,,,,,-,-,-,-,-,
+3-6CO,,-,,-,,,,,-,-,-,-,-,
+4-6CO,,-,,-,,,,,-,-,-,-,-,
+5-6CO,,-,,-,,,,,-,-,-,-,-,
+Carboxylic acids/Karboxylsyror (-COOH),,"Organiska syror med karbonylgrupp (karbonylgrupp med hydroxigrupp)
 Syrorna har utpräglat starka och otrevliga lukter (stickande), fasta i rumstemperatur, korta (vattenlösliga)
 R-(C=O)-OH + H2O <-> [R-(C~O)~O](-) + H3O+ (Protolysering, relativt inte lätt tillbaka på grund av stabila delokaliserade elektroner)
-(\o-numrering, 18:6, \o-3 => 18 kolatomer, 6 dubbelbindningar, kolatom 3 från motsatt ände än COOH-grupp) ",,,,,,,
-1COOH,-,-,-,-,-,-,-,"Rödmyror, giftkörtel, hökonserv"
-2COOH,-,-,-,-,-,-,-,"Body as buffer CH3COOH + (CH3COO-), (HCO3-)
+(\o-numrering, 18:6, \o-3 => 18 kolatomer, 6 dubbelbindningar, kolatom 3 från motsatt ände än COOH-grupp) ",,,,,,,,,,,,
+1COOH,,-,,-,,,,,-,-,-,-,-,"Rödmyror, giftkörtel, hökonserv"
+2COOH,,-,,-,,,,,-,-,-,-,-,"Body as buffer CH3COOH + (CH3COO-), (HCO3-)
 Inläggning, salladsdressing"
-3COOH,-,-,-,-,-,-,-,
-4COOH,-,-,-,-,-,-,-,Härsknat smör
-5COOH,-,-,-,-,-,-,-,
-6COOH,-,-,-,-,-,-,-,
-7COOH,-,-,-,-,-,-,-,
-8COOH,-,-,-,-,-,-,-,
-9COOH,-,-,-,-,-,-,-,
-10COOH,-,-,-,-,-,-,-,
-17COOH,-,-,-,-,-,-,-,
-18COOH,-,-,-,-,-,-,-,
-~~1COOH (Bensoesyra),,,,,,,,
-2[2COOH] (Etandisyra),,,,,,,,Rabarber
-4[2COOH] (Bärnstenssyra),,,,,,,,
-Citronsyra,,,,,,,,"Citron, konservering, rengöring"
-Oljesyra (18:1 \o-9),,,,,,,,
-Linolsyra (18:2 \o-6),,,,,,,,
-Linolensyra (18:3 \o-3),,,,,,,,
-EPA (20:5 \o-3),,,,,,,,
-Lactic,-,-,-,-,-,-,-,
-Salicylic,-,-,-,-,-,-,-,
-Esters/Estrar (-COO-),"Karbonylförening med estergrupp (karbonylgrupp med syre)
+3COOH,,-,,-,,,,,-,-,-,-,-,
+4COOH,,-,,-,,,,,-,-,-,-,-,Härsknat smör
+5COOH,,-,,-,,,,,-,-,-,-,-,
+6COOH,,-,,-,,,,,-,-,-,-,-,
+7COOH,,-,,-,,,,,-,-,-,-,-,
+8COOH,,-,,-,,,,,-,-,-,-,-,
+9COOH,,-,,-,,,,,-,-,-,-,-,
+10COOH,,-,,-,,,,,-,-,-,-,-,
+17COOH,,-,,-,,,,,-,-,-,-,-,
+18COOH,,-,,-,,,,,-,-,-,-,-,
+~~1COOH (Bensoesyra),,,,,,,,,,,,,,
+2[2COOH] (Etandisyra),,,,,,,,,,,,,,Rabarber
+4[2COOH] (Bärnstenssyra),,,,,,,,,,,,,,
+Citronsyra,,,,,,,,,,,,,,"Citron, konservering, rengöring"
+Oljesyra (18:1 \o-9),,,,,,,,,,,,,,
+Linolsyra (18:2 \o-6),,,,,,,,,,,,,,
+Linolensyra (18:3 \o-3),,,,,,,,,,,,,,
+EPA (20:5 \o-3),,,,,,,,,,,,,,
+Lactic,,-,,-,,,,,-,-,-,-,-,
+Salicylic,,-,,-,,,,,-,-,-,-,-,
+Esters/Estrar (-COO-),,"Karbonylförening med estergrupp (karbonylgrupp med syre)
 Oftast väldoftande (mycket koncentrerad doft) -> Avdunstar lätt på grund av svaga bindningar (Van der Waalsbindning) -> Opolära och fettlöslig
-Vaxer: Hydrofob (Vattenavvisande) -> Förhindrar korrosion",,,,,,,
-2+2,-,-,-,Peach,-,-,-,
-4+1,-,-,-,Raspberry,-,-,-,
-4+4,-,-,-,Pineapple,-,-,-,
-5+2,-,-,-,Banana,-,-,-,
-5+5,-,-,-,Apple,-,-,-,
-8+2,-,-,-,Orange,-,-,-,
-Ethers/Etrar (-O-),Kolkedja som länkas av en etergrupp (syre) -> Endast van-der-Waalsbindning,,,,,,,
-1+1,-141,-24,TRA,-,-,Flammable,-,Dieselmotordrivmedel
-1+2,-113,7.4,-,-,-,Flammable,-,Förr bedövningsmedel (-> 1900)
-2+2,-141,35,-,-,Heavy vapors,Stable,-,"Förr bedövningsmedel, lösning"
-1+3,-101,39,TRA,-,-,Flammable,-,Förr bedövningsmedel
-2+3,-127,63,TRA,-,-,Flammable,Irritating,
-3+3,-122,90,TRA,Sweet odor,-,Flammable,-,
-1+4,-116,70,-,-,-,-,-,
-2+4,-124,92.3,TRA,-,-,Flammable,Irritating(skin/eyes),
-3+4,-62,120,-,-,-,-,-,
-4+4,-95,141,-,-,-,-,-,
-Ether perioxides/Eter perioxider (-2O-),,,,,,,,
-2+2,-,-,-,-,-,-,-,
-Amines/Aminer (-NH2),,,,,,,,
-1NH2,-,-,-,-,-,-,-,
-2NH2,-,-,-,-,-,-,-,
-3NH2,-,-,-,-,-,-,-,
-4NH2,-,-,-,-,-,-,-,
-5NH2,-,-,-,-,-,-,-,
-6NH2,-,-,-,-,-,-,-,
-7NH2,-,-,-,-,-,-,-,
-8NH2,-,-,-,-,-,-,-,
-9NH2,-,-,-,-,-,-,-,
-10NH2,-,-,-,-,-,-,-,
-Thiols/Tioler (-SH),Basiska organiska föreningar med amingrupp (-NH2),,,,,,,
-1SH,-123,6,TRA,-,-,Flammable,.,
-2SH,-148,35,TRA,-,-,Flammable,.,
-3SH,-113,67,TRA~LYE,-,-,Heavy vapors,-,
-4SH,-116,98,-,-,Clear,Corrosive,-,
-5SH,-76,127,TRA~YEL,-,-,-,Irritating(skin/eyes),
-6SH,-81,151,TRA,Earth,-,-,Irritating(skin/eyes),
-7SH,-43,177,TRA,Onion,-,-,Irritating(skin/eyes),
-8SH,-49,177,TRA,Onion,-,-,Irritating(skin/eyes),
-9SH,-20,220,-,-,-,-,-,
-10SH,-26,241,TRA,-,-,-,Irritating,
-Disulfides/Disulfider (-2S-),,,,,,,,
-1+1,-85,110,TRA,Garlic,-,-,-,
-1+2,-,-,-,-,-,-,-,
-2+2,-,-,-,-,-,-,-,
-1+3,-,-,-,-,-,-,-,
-2+3,-,-,-,-,-,-,-,
-3+3,-,-,-,-,-,-,-,
-Nitro compounds/Nitroföreningar (-NO2),,,,,,,,
-1NO2,-,-,-,-,-,-,-,
-2NO2,-,-,-,-,-,-,-,
-3NO2,-,-,-,-,-,-,-,
-4NO2,-,-,-,-,-,-,-,
-5NO2,-,-,-,-,-,-,-,
-6NO2,-,-,-,-,-,-,-,
-7NO2,-,-,-,-,-,-,-,
-8NO2,-,-,-,-,-,-,-,
-9NO2,-,-,-,-,-,-,-,
-10NO2,-,-,-,-,-,-,-,
+Vaxer: Hydrofob (Vattenavvisande) -> Förhindrar korrosion",,,,,,,,,,,,
+2+2,,-,,-,,,,,-,Peach,-,-,-,
+4+1,,-,,-,,,,,-,Raspberry,-,-,-,
+4+4,,-,,-,,,,,-,Pineapple,-,-,-,
+5+2,,-,,-,,,,,-,Banana,-,-,-,
+5+5,,-,,-,,,,,-,Apple,-,-,-,
+8+2,,-,,-,,,,,-,Orange,-,-,-,
+Ethers/Etrar (-O-),,Kolkedja som länkas av en etergrupp (syre) -> Endast van-der-Waalsbindning,,,,,,,,,,,,
+1+1,,-141,,-24,,,,,TRA,-,-,Flammable,-,Dieselmotordrivmedel
+1+2,,-113,,7.4,,,,,-,-,-,Flammable,-,Förr bedövningsmedel (-> 1900)
+2+2,,-141,,35,,,,,-,-,Heavy vapors,Stable,-,"Förr bedövningsmedel, lösning"
+1+3,,-101,,39,,,,,TRA,-,-,Flammable,-,Förr bedövningsmedel
+2+3,,-127,,63,,,,,TRA,-,-,Flammable,Irritating,
+3+3,,-122,,90,,,,,TRA,Sweet odor,-,Flammable,-,
+1+4,,-116,,70,,,,,-,-,-,-,-,
+2+4,,-124,,92.3,,,,,TRA,-,-,Flammable,Irritating(skin/eyes),
+3+4,,-62,,120,,,,,-,-,-,-,-,
+4+4,,-95,,141,,,,,-,-,-,-,-,
+Ether perioxides/Eter perioxider (-2O-),,,,,,,,,,,,,,
+2+2,,-,,-,,,,,-,-,-,-,-,
+Amines/Aminer (-NH2),,,,,,,,,,,,,,
+1NH2,,-,,-,,,,,-,-,-,-,-,
+2NH2,,-,,-,,,,,-,-,-,-,-,
+3NH2,,-,,-,,,,,-,-,-,-,-,
+4NH2,,-,,-,,,,,-,-,-,-,-,
+5NH2,,-,,-,,,,,-,-,-,-,-,
+6NH2,,-,,-,,,,,-,-,-,-,-,
+7NH2,,-,,-,,,,,-,-,-,-,-,
+8NH2,,-,,-,,,,,-,-,-,-,-,
+9NH2,,-,,-,,,,,-,-,-,-,-,
+10NH2,,-,,-,,,,,-,-,-,-,-,
+Thiols/Tioler (-SH),,Basiska organiska föreningar med amingrupp (-NH2),,,,,,,,,,,,
+1SH,,-123,,6,,,,,TRA,-,-,Flammable,.,
+2SH,,-148,,35,,,,,TRA,-,-,Flammable,.,
+3SH,,-113,,67,,,,,TRA~LYE,-,-,Heavy vapors,-,
+4SH,,-116,,98,,,,,-,-,Clear,Corrosive,-,
+5SH,,-76,,127,,,,,TRA~YEL,-,-,-,Irritating(skin/eyes),
+6SH,,-81,,151,,,,,TRA,Earth,-,-,Irritating(skin/eyes),
+7SH,,-43,,177,,,,,TRA,Onion,-,-,Irritating(skin/eyes),
+8SH,,-49,,177,,,,,TRA,Onion,-,-,Irritating(skin/eyes),
+9SH,,-20,,220,,,,,-,-,-,-,-,
+10SH,,-26,,241,,,,,TRA,-,-,-,Irritating,
+Disulfides/Disulfider (-2S-),,,,,,,,,,,,,,
+1+1,,-85,,110,,,,,TRA,Garlic,-,-,-,
+1+2,,-,,-,,,,,-,-,-,-,-,
+2+2,,-,,-,,,,,-,-,-,-,-,
+1+3,,-,,-,,,,,-,-,-,-,-,
+2+3,,-,,-,,,,,-,-,-,-,-,
+3+3,,-,,-,,,,,-,-,-,-,-,
+Nitro compounds/Nitroföreningar (-NO2),,,,,,,,,,,,,,
+1NO2,,-,,-,,,,,-,-,-,-,-,
+2NO2,,-,,-,,,,,-,-,-,-,-,
+3NO2,,-,,-,,,,,-,-,-,-,-,
+4NO2,,-,,-,,,,,-,-,-,-,-,
+5NO2,,-,,-,,,,,-,-,-,-,-,
+6NO2,,-,,-,,,,,-,-,-,-,-,
+7NO2,,-,,-,,,,,-,-,-,-,-,
+8NO2,,-,,-,,,,,-,-,-,-,-,
+9NO2,,-,,-,,,,,-,-,-,-,-,
+10NO2,,-,,-,,,,,-,-,-,-,-,

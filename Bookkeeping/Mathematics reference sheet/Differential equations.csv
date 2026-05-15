@@ -1,43 +1,159 @@
-Name,Basic relationship,Presetted values
-Verification of solution,"y=x*ln(x)->xy'-y+2xy''=x+2
+Group,Name,Basic relationship,Presetted values
+Basics,Verification of solution,"y=x*ln(x)->xy'-y+2xy''=x+2
 y=x*ln(x), y'=ln(x)+1, y''=1/x => xy'-y+2xy''=x(ln(x)+1)-x*ln(x)+2x*1/x=x+2",y=ln(x)->xy'-y+2xy''=x+2
-,"y=sin(5x)->y'+ky=5cos(5x)+3sin(5x), k=?
+,,"y=sin(5x)->y'+ky=5cos(5x)+3sin(5x), k=?
 y=sin(5x), y'=5cos(5x) => y'+ky=5cos(5x)+k*sin(5x)=5cos(5x)+3sin(5x) => k=3",
-,"y=A*cos(2x)+B*sin(2x) -> y''+4y=0
+,,"y=A*cos(2x)+B*sin(2x) -> y''+4y=0
 y=A*cos(2x)+B*sin(2x), y'=-2A*sin(2x)+2B*cos(2x), y''=-4A*cos(2x)-4B*sin(2x) => y''+4y=-4A*cos(2x)-4B*sin(2x)+4(A*cos(2x)+B*sin(2x))=0",
-"Integral solutions, opposite to antiderivative
+1st order equations,"Integral solutions, opposite to antiderivative
 ",F(x) = \int{f(x)dx} => F'(x) = f(x),
-,Ay'=B=>y=\int{B/A*dx},sqrt(x) 7-1/x -> y=14\sqrt(x)+2/\sqrt(x)+C
-,"Ay""=B=>y=\int{\int{B/A*dx}dx}","1 Acos(x)-Bsin(x) -> (y(0)=2, y'(0)=3) -> y=sin(x)-cos(x)+3x+2"
-,Ay^(n)=B=>\int^(n){B/A*dx},
-,"y(x_p)=y_p=>...C1 C2, y(x)=...",
-,y'+12y=0,"(Tangent->(1, 0.5)) y'+12*0.5=0=>..."
-Separable differential equation,g(y)y'=f(x)=>\int{g(y)dy}=\int{f(x)dx}=>G(y)+C1=F(x)+C2,"3y^2 4x -> y=cbrt(2x^2+C)
+,,Ay'=B=>y=\int{B/A*dx},sqrt(x) 7-1/x -> y=14\sqrt(x)+2/\sqrt(x)+C
+,,"Ay""=B=>y=\int{\int{B/A*dx}dx}","1 Acos(x)-Bsin(x) -> (y(0)=2, y'(0)=3) -> y=sin(x)-cos(x)+3x+2"
+,,Ay^(n)=B=>\int^(n){B/A*dx},
+,,"y(x_p)=y_p=>...C1 C2, y(x)=...",
+,,y'+12y=0,"(Tangent->(1, 0.5)) y'+12*0.5=0=>..."
+,Separable differential equation,g(y)y'=f(x)=>\int{g(y)dy}=\int{f(x)dx}=>G(y)+C1=F(x)+C2,"3y^2 4x -> y=cbrt(2x^2+C)
 y'=1/(xy-y) -> y 1/(x-1) -> y=sqrt(2ln|x-1|+C)"
-,y'=f(x)g(y)=>1/g(y)y'=f(x),"sin(x) y^2 -> y=1/(cos(x)+C), x 1/y -> y=sqrt(x^2+C)"
-,x^2*y'+y=0 => 1/y*y/dx=-1/x^2 => ln|y|+C_1=1/x+C_2 ,
-,y'=kf(x)g(y)=>1/g(y)y'=kf(x),dx/(dt)=k(120-3x/5)(60-2x/5) => dx/(dt)=6k/25(200-x)(150-x) => 1/((200-x)(150-x))dx/(dt)=6k/25 => 1/50(1/(x-200)-1/(x-150))dx/(dt)=6k/25 => 1/50(ln|x-200|-ln|x-150|)+C_1=6kt/25+C_2 => (x-200)/(x-150)=Ce^(12kt)
-,f(x)y'+g(y)=0=>1/g(y)y'=-1/f(x),x^2 y -> y=Ce^(1/x)
-"Integrating factor
+,,y'=f(x)g(y)=>1/g(y)y'=f(x),"sin(x) y^2 -> y=1/(cos(x)+C), x 1/y -> y=sqrt(x^2+C)"
+,,x^2*y'+y=0 => 1/y*y/dx=-1/x^2 => ln|y|+C_1=1/x+C_2 ,
+,,y'=kf(x)g(y)=>1/g(y)y'=kf(x),dx/(dt)=k(120-3x/5)(60-2x/5) => dx/(dt)=6k/25(200-x)(150-x) => 1/((200-x)(150-x))dx/(dt)=6k/25 => 1/50(1/(x-200)-1/(x-150))dx/(dt)=6k/25 => 1/50(ln|x-200|-ln|x-150|)+C_1=6kt/25+C_2 => (x-200)/(x-150)=Ce^(12kt)
+,,f(x)y'+g(y)=0=>1/g(y)y'=-1/f(x),x^2 y -> y=Ce^(1/x)
+,General separable equations,f_1(x)g_1(y)dx + f_2(x)g_2(y)dy = 0 -> \int{f_1(x)/f_2(x)*dx} + \int{g_2(y)/g_1(y)*dy} = c,
+,,"y*F(xy)dx + xG(xy)*dy = 0 -> ln(x) = \int{G(v)dv/(v*(G(v) - F(v)))} + c, Where: v = x*y
+If G(v) = F(v), then the solution is x*y = c",
+,"Integrating factor
 ",y'+g(x)y=f(x)=[*e^G(x)]>(e^G(x)y)'=f(x)e^G(x),2x 2x^3
-,y'+Ay=BA=>...,"(2 4)x, (3 5)x^2, sqrt(x), (1 4)sin(x)"
-,y'+A/xy=B=>(x^A)'=Bx^A,2 x
-,Ay'+By=C=>y'+B/Ay=C/A,"x^2 x 3/x^2, s+1 3 s+1"
-First order/Första ordningen,y'+ay=0=>y'=-ay=>ln(y)+C1=-ax+C2=>y=Ce^(-ax),1 e
-,ay'+by=0=>y'+b/ay=0,2 1
-Inhomogeneous/Inhomogen,"If the guess solves the homogeneous equation, multiply by x repeatedly and solve until it does not solve the homogeneous equation
+,,y'+Ay=BA=>...,"(2 4)x, (3 5)x^2, sqrt(x), (1 4)sin(x)"
+,,y'+A/xy=B=>(x^A)'=Bx^A,2 x
+,,Ay'+By=C=>y'+B/Ay=C/A,"x^2 x 3/x^2, s+1 3 s+1"
+,First order equation,"dy/dx = f(x, y), homogenous
+1. Homogeneous equation if f(x,y) depends only on ratio of x/y or y/x
+2. Set y = u*x and substitute dy/dx = u*(d/dx x) + x*(du/dx) = u + x*(du/dx)
+3. Original equation becomes separable x*(du/dx) = f(1,u) - u
+4. Solve by integration
+5. Replace u by original x/y or y/x ratio to get solution",
+,,"1. 1st order non-homogeneous equation, a_1*x + b_1*y + c_1)dx + (a_2*x + b_2*y + c_2)dy = 0
+1a. (a_1b_2 - a_2b_1 = 0) -> Use transformation h = a_1x + b_1y, dy/dx = (dh/dx - a_1)/b_1 -> To reduce original to a separable form A(x,h)dx + B(x,h)dh = 0
+1b. (a_1b_2 - a_2b_1 != 0) -> Use transformation x = A + h, y = B + k, where h and k are solutions of system (a_1h + b_1k + c_1 = 0, a_2h + b_2k + c_2 = 0) -> To reduce original equation to a homogeneous form (a_1A + b_1B)dA + (a_2A + b_2B)dB = 0
+2. For first order non-homogeneous equation of form y*a(xy)dx + x*b(xy)dy = 0 ->
+Use transformation t = xy, y = t/x, and dy = (xdt - tdx)/x^2 -> To reduce equation to a separable form A(x,t)dx + B(x,t)dt = 0",
+,,,
+,,,
+,First order linear equations/Första ordningen linjär ekvation,y'+ay=0=>y'=-ay=>ln(y)+C1=-ax+C2=>y=Ce^(-ax),1 e
+,,ay'+by=0=>y'+b/ay=0,2 1
+,Inhomogeneous/Inhomogen,"If the guess solves the homogeneous equation, multiply by x repeatedly and solve until it does not solve the homogeneous equation
 Each term on the right-hand side constitutes a particular solution",
-,"y'+ay=f(x), y=y_h+y_p",
-,y_p=A-> B,
-,a y'+ay,
-,ax+b,
-,ax^2+bx+c,
-,ae^(kx),
-,asin(kx)+bcos(kx),
-Growth model,y'=y'_(in)-y'(out)+k_(in)y-k_(out)y,
-,"y'=Q_(in)-y/VQ(out), V=V, V=V0+t(Q_(in)-Q_(out))","Q_(in)=5*100, Q_(out)=5, V=50"
-,y'=Q_(in)-y/VQ(out),
-,y'=A-y/f(t)B,
-Newton's law of cooling/Newtons avsvalningslag,T'=-k(T-T_a) -> T=Ce^(kx)+T_a,95 20
-,y'=ky(1-y/M)=>\int{(1/y+1/(M(1-y/M))dy}=\int{k*dx}=>y/(M-y)=Ce^(kt)=>y=MCe^(kt)/(Ce^(kt)+1),
-,mv'=mg-kv^2=>v'=g-k/mv^2,
+,,"y'+ay=f(x), y=y_h+y_p",
+,,y_p=A-> B,
+,,a y'+ay,
+,,ax+b,
+,,ax^2+bx+c,
+,,ae^(kx),
+,,asin(kx)+bcos(kx),
+,Growth model,y'=y'_(in)-y'(out)+k_(in)y-k_(out)y,
+,,"y'=Q_(in)-y/VQ(out), V=V, V=V0+t(Q_(in)-Q_(out))","Q_(in)=5*100, Q_(out)=5, V=50"
+,,y'=Q_(in)-y/VQ(out),
+,,y'=A-y/f(t)B,
+,Newton's law of cooling/Newtons avsvalningslag,T'=-k(T-T_a) -> T=Ce^(kx)+T_a,95 20
+,,y'=ky(1-y/M)=>\int{(1/y+1/(M(1-y/M))dy}=\int{k*dx}=>y/(M-y)=Ce^(kt)=>y=MCe^(kt)/(Ce^(kt)+1),
+,,mv'=mg-kv^2=>v'=g-k/mv^2,
+,,,
+,,,
+,Generalised Linear 1st order equation,dy/dx + P(x)*y = Q(x) -> y*e^(\int{Pdx}) = \int{Qe^(\int{Pdx})*dx} + c,
+,Bernoulli's Equation,"dy/dx + P(x)*y = Q(x)*y^n -> v*e^(\int{(1-n)Pdx}) = (1-n)\int{Qe^(\int{(1-n)*Pdx})*dx} + c
+Where: v = y^(1-n) and n != 1",
+,,Special case (n = 1): dy/dx + P(x)*y = Q(x)*y -> ln(y) = \int{(Q - P)*dx} + c,
+,Exact Equation,"For equation of form: M(x,y)dx + N(x,y)dy = 0",
+,,"M(x,y)*dx + N(x,y)*dy = 0, \\dM/\\y = \\dN/\\x -> \int{Mdx} + \int{(N - \\d/\\dy (\int{M\\dx}))*dy} = c
+Where: \int{M*dx} indicates the integration is performed with respect to x keeping y constant",
+,,"1. Check equation for condition (\dM/\dy) = (\dN/\dx), If this condition exists, then equation is exact, and a function f(x,y) exists such that: \df/\dx = M(x,y), \df/\dy = N(x,y)
+2. Write equation in form: (\d(g(x,y))/\dx)dx + (\d(g(x,y))/\dy)dy = 0
+3. Keeping y constant, find: g(x,y) = int{M(x,y) dx} + h(y)
+4. Keeping x constant, put: \dg/\dy = N(x,y)
+5. -> h'(y) = N(x,y) - \d/dy(\int{M(x,y)dx})
+6: Put above into Step 3 to obtain general solution: g(x,y) = int{M(x,y)dx} + int{h'(y)dy}",
+,,,
+,,,
+2nd order equations,Homogenous equations with constant coefficients,"ay'' + by' + c*y = 0
+
+1. Auxiliary equation (Karaktäristiska ekvationen) ar^2 + br + c = 0 -> r = (-b \pm sqrt(b^2 - 4ac)) / (2*a)
+
+2.
+If (b^2 - 4ac > 0): y = C1e^(r1x) + C2e^(r2x)
+If (b^2 - 4ac = 0): y = (C1 + C2*x)e^(rx)
+If (b^2 - 4ac < 0): Let r = \a \pm i\b
+y = e^(\ax) * (C1cos(\bx) + C2sin(\b*x)), Where: \a = -b/(2a),   \b = sqrt(4ac - b^2)/(2a)",
+,Change of independent variable,"For equation of form: d^2y/dx^2 + M(x)*(dy/dx) + N(x)*y = P(x)
+
+1. Substitute dy/dx = (dy/dz)*(dz/dx) and d^2 y/dx^2 = (d^2 y/dz^2)*(dz/dx)^2 + (dy/dz)*(d^2 z/dx^2) to get (d^2y)/(dz^2) + ((d^2z)/(dx^2)+M(x)dz/dx)/((dz)/(dx))^2*(dy)/dz + N(x)y/((dz)/(dx))^2 = P(x)/((dz)/(dx))^2
+2. Then sqrt(\pm N(x)/q^2) must be chosen to be a real number, Hint: Choose q^2 = 1
+3. Use transformation, z = int{sqrt(\pm N(x)/q^2) dx} to reduce Equation (2) to linear equation with constant coefficients of form d^2y/dz^2 + c*(dy/dz) \pm q^2*y = P(x)/(dz/dx)^2",
+,Variation of parameters (Non-homogenous),"For equation of form: y'' + A_1*y' + A_2*y = f(x)
+1. Solve homogeneous equation (i.e., set f(x) = 0), Particular solution is y_par(x) = v_1(x)*y_1(x) + v_2(x)*y_2(x), (y_1(x) and y_2(x) are solutions to homogeneous equation) where v_1 and v_2 satisfy
+v_1'(x)*y_1(x) + v_2'(x)*y_2(x) = 0 and v_1'(x)*y_1'(x) + v_2'(x)*y_2'(x) = f(x)
+
+2. Solve above two equations simultaneously for v_1' and v_2'
+3. Integrate v_1' and v_2' to obtain v_1 and v_2
+4. General solution is y = v_1*y_1(x) + v_2*y_2(x)",
+,Linear equations with variable coefficients,"For equation of form: d^2 y/dx^2 + M(x)*(dy/dx) + N(x)*y = P(x)
+
+1. Substitute y = u(x)*v(x), to get d^2 v/dx^2 + M_1(x)*(dv/dx) + N_1(x)*v = P_1(x) (equation 1) where M_1(x) = (2/u)*(du/dx) + M(x), N_1(x) = (1/u)*[ d^2 u/dx^2 + M(x)*(du/dx) + N(x)*u ] and P_1(x) = P(x)/u
+
+2. Choose u(x) so (du/u) = -1/2 * M(x) or M_1(x) = (2/u)*(du/dx) + M(x) = 0
+
+3. Now u(x) = exp[ -1/2 * int{M(x)dx} ], N_1(x) = N(x) - 1/4 * (M(x))^2 - 1/2 * (dM/dx) and P_1(x) = P(x)/u
+
+4.1 For N_1(x) = C, with C = constant, Equation (1) gives a linear equation with constant coefficients of form d^2 v/dx^2 + C*A = P(x)/u(x)
+4.2 For N_1(x) = C/x^2, Equation (1) gives a Cauchy equation x^2 * d^2 v/dx^2 + C*A = P(x)*x^2 / u(x)",
+,Reducing the order,"For equation of form y'' + a(x)*y' + b(x)*y = 0
+If one solution y = y_1(x) is known, then second solution may be found y = y_2(x) = u(x)*y_1(x)
+
+1. Differentiate this second solution y_2(x) = u(x)*y_1(x)
+2. Substitute into original equation to get first order equation in u': u'' + (a + 2*y_1'/y_2')*u' = 0
+3. Solving the above equation gives: u' = C*exp[- int{a(x) + y_1'(x)/y_1(x) dx}] = C*w(x)
+4. Integrating again gives: u = C*int{w(x) dx}
+5. General solution of original equation is y = C_1*y_1(x) + C_2*y_1(x)*int{w(x) dx}",
+Higher order,Short method for higher order linear equations,"Note: In D-operator form: D = d/dx,   D^2 = d^2/dx^2,   ...   D^n = d^n/dx^n
+
+For linear equation in D-operator form F(D)y = A, there is a certain integral y = (1/F(D))*A
+
+1. For A of form e^(q*x), y = (1/F(q))*e^(q*x), where F(q) != 0
+2. For A of form x^n, y = (q_0 + q_1*D + q_2*D^2 + ... + q_n*D^n)*x^n, where q_0 != 0
+3. For A of form sin(a*x + b): y = (1/F(-a^2))*sin(a*x + b), with F(-a^2) != 0
+For A of form cos(ax+b): y = (1/F(-a^2))*cos(a*x + b), with F(-a^2) != 0
+4. For A of form e^(q*x)*M(x), y = (1/F(D))*e^(q*x)*M = (1/F(D+q))*e^(q*x)*M
+5. For A of form x*M(x), y = x*(1/F(D))*M-(F'(D)/[F(D)]^2)*M",
+,Homogenous equations with constant coefficients,"For high order linear general equation: A_n*(d^n y/dx^n) + A_(n-1)*(d^(n-1) y/dx^(n-1)) + ... + A_1*(dy/dx) + A_0*y = 0
+
+1. Solve its characteristic equation: A_n*r^n + A_(n-1)*r^(n-1) + ... + A_1*r + A_0 = 0
+
+2. Check roots for following conditions
+For real and distinct roots: y = C_1*e^(r_1*x) + C_2*e^(r_2*x) + ... + C_n*e^(r_n*x)
+For real roots repeated m times: y = (C_1 + C_2*x + C_3*x^2 + ... + C_m*x^(m-1))*e^(r*x)
+For each pair of complex roots a \pm b*i: y = e^(a*x)*(C_1*sin(b*x) + C_2*cos(b*x))
+
+3: For general solution, sum solutions for each type of root",
+,NON-HOMOGENEOUS EQUATIONS VARIATION OF PARAMETERS,"For high order linear general equation of form: A_n(x) \d^n y / \d x^n + A_(n-1)(x) \d^(n-1) y / \d x^(n-1) + ... + A_1(x) dy/dx + A_0(x) y = f(x)
+
+1. Follow method described Second Order Equations: Variation of Parameters for increasing number of constraints and homogeneous solutions, y_n(x)
+Example: For third order equation, simultaneously solve:
+v'_1(x) y_1(x) + v'_2(x) y_2(x) + v'_3(x) y_3(x) = 0
+v'_1(x) y'_1(x) + v'_2(x) y'_2(x) + v'_3(x) y'_3(x) = 0
+v'_1(x) y''_1(x) + v'_2(x) y''_2(x) + v'_3(x) y''_3(x) = f(x)
+
+2. Solve above three equations simultaneously for v'_1, v'_2, and v'_3
+3. Integrate v'_1, v'_2, and v'_3 to get v_1, v_2, and v_3
+4. General solution is: y = v_1 y_1(x) + v_2 y_2(x) + v_3 y_3(x)
+
+Note: This method may be applied to all linear differential equations",
+Help index,,dy/dx + P(x)y = Q(x),"First Order Equations, Linear Equations"
+,,"A(x,y)dx + B(x,y)dy = 0","First Order Equations, Separable Equations"
+,,"M(x,y)dx + N(x,y)dy = 0","First Order Equations, Exact Equations"
+,,"dy/dx = f(x,y)","First Order Equations, Homogeneous Equations"
+,,y'' + a(x)y' + b(x)y = 0,"Second Order Equations, Reducing the Order"
+,,ay'' + by' + cy = 0,"Second Order Equations, Homogeneous Equations with Constant Coefficients"
+,,d^2y/dx^2 + M(x) dy/dx + N(x)y = P(x),"Second Order Equations, Linear Equations with Variable Coefficients or Second Order Equations, Change of Independent Variable"
+,,y'' + \A1 y' + \A2 y = f(x),"Second Order Equations, Variation of Parameters (For Non-Homogeneous Equations)"
+,,\A_n \\d^n y/dx^n + \A_(n-1) \\d^(n-1) y/dx^(n-1) + ... + \A_1 dy/dx + \A_0 y = 0,Homogeneous Equations with Constant Coefficients (High Order Equations)
+,,\A_n \\d^n y/dx^n + \A_(n-1) \\d^(n-1) y/dx^(n-1) + ... + \A_1 dy/dx + \A_0 y = f(x),"Non-Homogeneous Equations, Method of Undetermined Coefficients (High Order Equations)"
+,,\A_n(x) \\d^n y/dx^n + \A_(n-1)(x) \\d^(n-1) y/dx^(n-1) + ... + \A_1(x) dy/dx + \A_0(x)y = f(x),"Non-Homogeneous Equations, Variation of Parameters (High Order Equations)"

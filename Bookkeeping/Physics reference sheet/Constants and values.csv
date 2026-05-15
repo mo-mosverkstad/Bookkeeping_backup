@@ -1,0 +1,25 @@
+Konstant,Beteckn.,Värde,Enhet,Anmärkning
+Avogadros tal,"N_A, L",602214085700000015187968,mol^-1,"Exakt, definierat värde"
+Boltzmanns konstant,"k_B, k",1.380658e-23,J K^-1,"Exakt, definierat värde"
+Allmänna gaskonstanten,R,831447,J K^-1mol^-1,R = k_B N_A
+,,831447,L kPa K^-1mol^-1,
+,,0.0831447,L bar K^-1mol^-1,
+,,0.0820574,L atm K^-1mol^-1,
+,,1987246,cal K^-1mol^-1,
+,,623637,L Torr K^-1mol^-1,
+Elementarladdningen,e,1.6021766208e-19,A s,
+Faradays konstant,F,96485.309,A s mol^-1,F = e N_A
+Ljushastigheten i vakuum,c_0,299792458,m s^-1,"Exakt, definierat värde"
+Permeabiliteten i vakuum,\mu_0,4\pi*10^(-7),V s A^-1m^-1,"Exakt, definierat värde"
+Permittiviteten i vakuum,\varepsilon_0,8.854187816...e-12,A s V^-1m^-1,\varepsilon_0 = \mu_0^(-1) c_0^(-2)
+Plancks konstant,h,6.6260755e-34,J s,"Exakt, definierat värde"
+Plancks strukna konstant,\hbar,1.05457266e-34,J s,\hbar = h/2\pi
+Atommassenheten,m_u,1.6605402e-27,kg,m_u = 1\text(u) = 10^(-3)/N_A (kg)
+Elektronens vilomassa,m_e,9.1093897e-31,kg,
+Protonens vilomassa,m_p,1.6726231e-27,kg,
+Neutronens vilomassa,m_n,1.6749286e-27,kg,
+Bohrs atomradie,a_0,5.29177249e-11,m,a_0 = (h^2 \varepsilon_0)/(\pi m_e e^2)
+Rydbergs konstant,R_\inf,10973731.534,m^-1,R_\inf = (m_e e^4)/(8 \varepsilon_0^2 h^3 c_0)
+Normalaccelerationen,g_n,980665,m s^-2,"Exakt, definierat värde"
+Gravitationskonstanten,G,6.67259e-11,m^3kg^-1s^-2,
+Celsiusskalans nollpunkt,0^\circ C,273.15,K,"Exakt, definierat värde"

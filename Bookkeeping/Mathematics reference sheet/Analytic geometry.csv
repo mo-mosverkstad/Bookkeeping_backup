@@ -33,6 +33,10 @@ Straight line intersections,"L1=L2 => k_1*x+b_1=k_2*x+b_2 => (k_1-k_2)*x=b_2-b_1
 ,=> A=…,"L=[y=5x/2, y=-x/2, x=p], P[(p, 5p/2), (p, -p/2), (0, 0)], A=(5p/2-(-p/2))p/2
 L=[y=0, x=p, y=3x] => A=3p^2/2"
 Linear plane,y>=(kx+b) -> over line kx+b,"y>=2, y<x, ..."
+,"ax^2+bxy+cy^2+dx+ey+f=0, \D = b^2-4ac
+\D < 0 -> Ellipse, circle, point or non-existent
+\D = 0 -> Parabla, 2 lines or non-existent
+\D > 0 -> Hyperbola or 2 lines",
 Parabola,y=ax^2+bx+c=a(x-x_0)^2+y_0,
 ,sqrt((x-x_0)^2+(y-y_0)^2)=y-(-y_0) => y=…(x),"x_0=0, y_0=3"
 ,sqrt((x-0)^2+(y-h)^2)=y-d => sqrt(x^2+(ax^2-h)^2)=y-d => x^2(1-4ah)=0 => h=1/(4a),"a=1, …"

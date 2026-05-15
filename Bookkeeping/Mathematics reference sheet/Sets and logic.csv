@@ -32,11 +32,17 @@ n=n+1 => (1) = A^(n+1)-B^(n+1) = A*A^n-B*B^n = (A-B)A^n+B(A^n-B^n) = (A-B)A^n+C(
 ,,"2^n>n^2 (n>4), (2^5=32, 5^2=25, 2^5>5^2), (2^(n+1)>(n+1)^2=>2^(n+1)-(n+1)^2>0, 2^(n+1)-(n+1)^2=n^2-2n-1=(n-1)^2-2>0)"
 ,,
 ,,
-Number set,"\\N: Natural numbers/Naturliga tal = {0, 1, 2, 3, 4, 5, …}
-\\Z: Integers/Heltal = {…, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, ...}
-\\Q: Rational numbers/Rationella tal = {... -1/2, 1/4, ...}
-\\R: Real numbers/Reela tal = {..., 0, 1, sqrt(2), e, \pi, ...}
-\\C: Complex numbers/Komplexa tal",
+DIGITS,"The digits of a number are its unitary building blocks (e.g., 124 consists of 1, 2, 4).
+Digit: Terminal member of the hand, Finger excludes thumb.
+The 10 digits are (0, 1, 2, 3, 4, 5, 6, 7, 8, 9), which are historical digits because (0 digit) was used for counting.",
+Decimal system,"Base 10, We count in base 10 because we have 10 digits.
+Value of numbered depends upon positioning; it increases leftward with every step to left in each column (e.g., 5 is 5, but 50 is 5 ten's).",
+Number set,"\\N: Natural numbers/Naturliga tal = {0, 1, 2, 3, 4, 5, …}, Positive whole numbers
+\\Z: Integers/Heltal = {…, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, ...}, Whole numbers without fractions
+\\Q: Rational numbers/Rationella tal = {... -1/2, 1/4, ...}, Any number that can be expressed in the form of a fraction
+Irrational numbers: Numbers that cannot be expressed with terminating or recurring (infinite) repetition.
+\\R: Real numbers/Reela tal = {..., 0, 1, sqrt(2), e, \pi, ...}, The union of rational and irrational numbers.
+\\C: Complex numbers/Komplexa tal, An extension of real and rational numbers and imaginary numbers (e.g., 3 + 4i).",
 Number systems,"Olika talsystem:
 Romerska tal, e.g. XXI
 Fibonacci Pisano introducerade arabiska tal i Europa (Liber de abacco, 1202)

@@ -1,45 +1,59 @@
-Name,Basic relationship,Presetted values
-Prime factor/Primtalsfaktorisering,"2 3 5 7 11 13 17 19 23 29 31 37 ...
+Group,Name,Basic relationship,Presetted values
+,Prime factor/Primtalsfaktorisering,"2 3 5 7 11 13 17 19 23 29 31 37 ...
 128 = 2^7, 152=2^3*19",
-Lowest common denominator/Greatest common divider,"gcd(x, y)=min(PF[x]... PF[y]...)=A, lcd(x, y)=max(PF[x]... PF[y]...)=B
+,Lowest common denominator/Greatest common divider,"gcd(x, y)=min(PF[x]... PF[y]...)=A, lcd(x, y)=max(PF[x]... PF[y]...)=B
 128 152 2^3 2^7*19
 2p 6q=2*3q 2 6pq
 a b 12 360 => (a, b)=12(x, y), 12xy=360, x=3, y=10",
-,a=k*q+r,100 7 14 2
-Modular arithmetic,"a\=b (mod c) => a-b = kc => a=k1*c+r, b=k2*c+r",
-,"a\=b (mod n), c\=d (mod n) => a+c\=b+d (mod n)",
-,"a\=b (mod n), c\=d (mod n) => ac\=bd (mod n)",a=45 c=353 b=3 d=3 n=7
-,a\=b (mod n) => a^c\=b^c (mod n),"a=27 b=16 c=2 n=5, a=a, b=2, c=2, n=3"
-,,A1: 2^16=16^4=... (mod 5)
-,,A2: 2^95=4*8^31... (mod 7)
-,,A3: 477^42\=7^42=49^21\=-1 (mod 10)
-,,A4: \\S{a_k*10^k}\=\\S{a_k} (mod 3)
-Number in different bases/Tal i olika baser,"(Potenssystem inom bas b: A=\\S{k=0, n, a_k*b^k}",
-,"241=7*34+3, 34=7*4+6 => 241=463_7",
-,5b7_16 = 5*16^2+11*16^1+7*16^0 = …,
-,(2^4=16) => 111110101_2 = 1f5_16,
-Number sequence,"An infinite sequence of numbers determined by a rule where each positive integer n corresponds to a number. a_n = f(n), n = {1, 2, 3, ...}
+,,a=k*q+r,100 7 14 2
+,Modular arithmetic,"a\=b (mod c) => a-b = kc => a=k1*c+r, b=k2*c+r",
+,,"a\=b (mod n), c\=d (mod n) => a+c\=b+d (mod n)",
+,,"a\=b (mod n), c\=d (mod n) => ac\=bd (mod n)",a=45 c=353 b=3 d=3 n=7
+,,a\=b (mod n) => a^c\=b^c (mod n),"a=27 b=16 c=2 n=5, a=a, b=2, c=2, n=3"
+,,,A1: 2^16=16^4=... (mod 5)
+,,,A2: 2^95=4*8^31... (mod 7)
+,,,A3: 477^42\=7^42=49^21\=-1 (mod 10)
+,,,A4: \\S{a_k*10^k}\=\\S{a_k} (mod 3)
+,Number in different bases/Tal i olika baser,"(Potenssystem inom bas b: A=\\S{k=0, n, a_k*b^k}",
+,,"241=7*34+3, 34=7*4+6 => 241=463_7",
+,,5b7_16 = 5*16^2+11*16^1+7*16^0 = …,
+,,(2^4=16) => 111110101_2 = 1f5_16,
+Number sequence,,"An infinite sequence of numbers determined by a rule where each positive integer n corresponds to a number. a_n = f(n), n = {1, 2, 3, ...}
 Essentially a function, but its domain is usually restricted to the natural numbers/sometimes integers/sometimes with stricter bounds",
-Arithmetic number sequence,a_n=a_1*k(n-1),"a_1=3, k=7, n=5
+,Arithmetic number sequence,a_n=a_1*k(n-1),"a_1=3, k=7, n=5
 a_1=2, k=4 n=4
 a_n>500 a_1=3 k=7 n=n => n"
-,a_(n+1)=d*a_n+k,"2 a_n 4: 3, 10, 24"
-Geometric number sequence,a_n=a_1*q^(n-1),"{1/3, 1/2, 3/4}->1/3*(3/2)^9"
-,a_n=a_0*q^n,
-,a_(n+1)=q*a_n (a_(n+1)/a_n=q),
-Sequence limits,"The sequence {1, \inf, a_n} is said to have the limit a if, for every given \e>0, there exists a number N_(\e) such that for all n>N_(\e), it holds that |a_n-a|<\e
+,,a_(n+1)=d*a_n+k,"2 a_n 4: 3, 10, 24"
+,Geometric number sequence,a_n=a_1*q^(n-1),"{1/3, 1/2, 3/4}->1/3*(3/2)^9"
+,,a_n=a_0*q^n,
+,,a_(n+1)=q*a_n (a_(n+1)/a_n=q),
+,Sequence limits,"The sequence {1, \inf, a_n} is said to have the limit a if, for every given \e>0, there exists a number N_(\e) such that for all n>N_(\e), it holds that |a_n-a|<\e
 Can be rewritten to lim{n->\inf, a_n}=a
 Convergent: lim{n->\inf, a_n} = A
 Divergent: lim{n->\inf, a_n} = \inf",
-,"lim{n->\inf, (-1)^n/n} = 0 -> Convergent",
-,"lim{n->\inf, 2n+1} = \inf -> Divergent",
-Sequence sum,"\S{k=1, n, a_k}",
-Addition,"\S{k=m, n, a_k+b_k}",
-Subtraction,"\S{k=m, n, a_k-b_k}",
-Constant factorization,\S{,
-Arithmetic,"\S{k=A, B, a_1*d(k-1)} = (a_A+a_B)(B-A)/2","(A=5, B=7, n-1)"
-,"\S{k=1, n, k} = n(n+1)/2",
-Geometric,"\S{k=1, n, a_1*q^(k-1)} = a_1(q^n-1)/(q-1)
+,,"lim{n->\inf, (-1)^n/n} = 0 -> Convergent",
+,,"lim{n->\inf, 2n+1} = \inf -> Divergent",
+,Sequence sum/series,"\S{k=1, n, a_k}",
+,Addition,"\S{k=m, n, a_k+b_k}",
+,Subtraction,"\S{k=m, n, a_k-b_k}",
+,Constant factorization,\S{,
+,Index switch,"\S{k=1, n, (k+1)^p} = [j=k+1, k=j-1] = \S{j=2, n+1, j^p} = \S{j=2, n, j^p}+(n+1)^p = -1^p+1^p+\S{j=2, n, j^p}+(n+1)^p = \S{k=1, n, k^p}+(n+1)^p-1",
+,Arithmetic series,"\S{k=A, B, a_1*d(k-1)} = (a_A+a_B)(B-A)/2","(A=5, B=7, n-1)"
+,,"\S{k=1, n, k} = n(n+1)/2",
+,Geometric series,"\S{k=1, n, a_1*q^(k-1)} = a_1(q^n-1)/(q-1)
 (\S{k=1, n, a_1*q^(k-1)} - q\S{k=1, n, a_1*q^(k-1)} = a_1(1-q^n)",
-,"\S{k=0, n, a_0*q^k} = a_0(q^(n+1)-1)/(q-1)","(5 3 2), (64 1 2)"
-Index switch,"\S{k=1, n, (k+1)^p} = [j=k+1, k=j-1] = \S{j=2, n+1, j^p} = \S{j=2, n, j^p}+(n+1)^p = -1^p+1^p+\S{j=2, n, j^p}+(n+1)^p = \S{k=1, n, k^p}+(n+1)^p-1",
+,,"\S{k=0, n, a_0*q^k} = a_0(q^(n+1)-1)/(q-1)","(5 3 2), (64 1 2)"
+,,"S{k=0, \inf, 1/2^k} = 2",
+,Arithmetic/Geometric,"\S{k=0, n-1, (a + k*d)*r^k} = a*(1-r^n)/(1-r)+r*d*(1-n*r^(n-1)+(n-1)*r^n)/(1-r)^2,  r != 1",
+,,"\S{k=0, \inf, (a + k*d)*r^k} = a/(1 - r) + r*d/(1 - r)^2,  |r| < 1",
+,Quadratic sequence series,"\S{k=1, n, k^2} = n(n+1)(2n+1)/6",
+,Cubic sequence series,"\S{k=1, n, k^3} = n^2(n+1)^2/4 = (\S{k=1, n, k})^2",
+,Inverse squared,"\S{k=1, n, 1/k^2}",
+,,"\S{k=1, \inf, 1/k^2} = pi^2/6",
+,,"\S{k=1, \inf, (-1)^(k-1)/k^2} = pi^2/12",
+,,"\S{k=1, \inf, 1/(2k-1)^2} = pi^2/8",
+,Inverse cubic,"\S{k=1, \inf, 1/k^3}",
+,,"S{k=1, \inf, (-1)^(k-1)/(2k-1)^3} = pi^3/32",
+,Multiplicational inverse,"S{k=1, \inf, 1/((2k-1)*(2k+1))} = 1/2",
+,Trigonometric series,"\S{k=1, n, sin(kx)} = sin(k/2*x)*sin((k+1)/2*x)/sin(x/2)",
+,,"\S{k=1, n, cos(kx)} = sin((n-1/2)x)/(2sin(x/2))-1/2",

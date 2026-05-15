@@ -37,9 +37,11 @@ x/A=B/C => x=AB/C",3 10 7
 ,(AB)/(EF)=(BC)/(CE) => … (3020),
 ,R/H=r/h => r=Rh/H -> V=\pi*r^2*h/3 …,"(3022, 3023)"
 ,,
-Quadrilaterals,Angle sum = 360\deg,
+Quadrilaterals,"Angle sum = 360\deg, A + B + C + D = 360°
+A=1/2*p*q*sin(\t) = 1/4*sqrt(2b^2*d^2+2a^2*c^2-a^4-b^4-c^4-d^4), P=a + b + c + d
+Theorem: Diagonals of a quadrilateral with consecutive sides a, b, c, and d are perpendicular if and only if a^2 + c^2 = b^2 + d^2",
 Trapezoid/Paraelltrapets,A=h(a+b)/2,
-Paraellogram,A=bh,
+Paraellogram,"A=bh, P=2(a+b)",
 Diamond/diamant,,
 Rectangle/Rektangel,"<A, B, C, D=90
 A=bh",

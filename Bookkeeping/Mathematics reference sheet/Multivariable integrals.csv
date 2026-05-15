@@ -1,5 +1,67 @@
-Name,Basic relationship,Presetted values
-Double integrals,dxdy=rdrd\t,
-,"\int{-\inf, \inf, e^(-x^2)dx}
+Group,Name,Basic relationship,Presetted values
+,Double integrals,"The limit of the sum of inscribed or circumscribed prisms with base \Delta A = \Delta x \Delta y equals the volume under the surface z = f(x,y) and is given by the double integral between (x_1, x_2) and (y_1, y_2) [Image]
+
+lim_{n->\infty} sum_{i=1}^{n} f(x_i, y_i)*\Delta A_i = int{x_1, x_2, int{y_1, y_2, f(x,y) dy} dx}",
+,,"int{a, b, int{g1(x), g2(x), f(x,y) dy} dx}
+
+Evaluate in 2 Steps:
+int{g1(x), g2(x), f(x,y) dy}
+[at constant x -> u(x)]
+int{a, b, u(x) dx} = U(b) - U(a)
+U = anti-derivative of u",
+,TRIPLE INTEGRALS,"Triple integrals are three-dimensional extensions of double integrals defined in analogous fashion [Image]
+
+lim_{n->\infty} sum_{i=1}^{n} f(x_i, y_i, z_i)*\Delta V_i = int{x_1, x_2, int{y_1, y_2, int{z_1, z_2, f(x,y,z) dz} dy} dx}",
+,,"int{a, b, int{h1(z), h2(z), int{g1(y,z), g2(y,z), f(x,y,z) dx} dy} dz}
+
+Evaluate in 3 Steps:
+int{x_1, x_2, f(x,y,z) dx}
+[at constant y,z -> u(y,z)]
+int{y_1, y_2, u(y,z) dy}
+[at constant z -> v(z)]
+int{a, b, v(z) dz} = V(b) - V(a)",
+,ITERATED & PARTIAL INTEGRALS,"For evaluation purposes, double and triple integrals are expressed in iterated forms of interchangeable order
+
+Each iteration is called a partial integral
+
+int{x_1, x_2, int{y_1, y_2, f(x,y) dy} dx}
+= int{x_1, x_2, [ int{y_1, y_2, f(x,y) dy} ] dx}
+= int{y_1, y_2, int{x_1, x_2, f(x,y) dx} dy}",
+,,,
+,,,
+,,,
+,,,
+,Area of a curved surface,"Rectangular Coordinates
+A = int{x_1, x_2, int{y_1=f_1(x), y_2=f_2(x), sqrt(1 + (\\d z/\\d x)^2 + (\\d z/\\d y)^2) dydx}}
+
+Cylindrical Coordinates
+A = int{\t_1, \t_2, int{r_1=f_1(\t), r_2=f_2(\t), sqrt(1 + (\\d z/\\d r)^2 + (1/r^2)*(\\d z/\\d \t)^2) r dr d\t}}","Find the area in the first octant cut from the cylindrical surface z = 4 - x^2 by the plane y = x.
+
+Since boundaries of projection of the required area onto the x-y plane are y = 0, y = x, and x = 2, we have A = int{0, 2, int{0, x, sqrt(1 + (dz/dx)^2 + (dz/dy)^2) dydx}} = int{0, 2, int{0, x, sqrt(1 + 4x^2 + 0) dydx}}, A = int{0, 2, sqrt(1 + 4x^2) x dx} = (1/12)*(17*sqrt(17) - 1)
+
+This result can also be found, though with much greater difficulty, by reversing the order of integration:
+A = int{0, 2, int{y, 2, sqrt(1 + 4x^2 + 0) dxdy}}
+Thus, ease of evaluation often depends on order of integration"
+,Volumes under a surface,"Rectangular Coordinates
+V = int{x_1, x_2, int{y_1, y_2, f(x,y) dydx}}
+
+Cylindrical Coordinates
+V = int{\t_1, \t_2, int{r_1, r_2, g(r,\t) r dr d\t}}",
+,Volumes as triple integrals,"Rectangle
+V = int{int{int{dxdydz}}}
+
+Cylindrical
+V = int{int{int{\r d\r dz d\t}}}
+
+Spherical
+V = int{int{int{\r^2*sin(\t) d\r d\t d\f}}}",
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,Change coordinates,dxdy=rdrd\t,
+,,"\int{-\inf, \inf, e^(-x^2)dx}
 I = \int{-\inf, \inf, e^(-x^2)dx}, I^2 = \int{-\inf, \inf, e^(-x^2)dx}*\int{-\inf, \inf, e^(-y^2)dy}",
-,"\int{0, \inf, \int{0, \inf, xy*e^(-x^2-y^2)dxdy}}",
+,,"\int{0, \inf, \int{0, \inf, xy*e^(-x^2-y^2)dxdy}}",

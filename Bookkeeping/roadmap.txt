@@ -5,22 +5,42 @@
   1. Convergence:
     - Retroactive data convergence I:
       - Bobasystem (Bobasystem + photo notes)
-      - current repo
+      - Database contents
       - repos/convergence
+      - current repo
       - Sommarmatematik/fysik (https://mattefysik.rcn.kth.se/course/view.php?id=17) + sommarprogrammering
     - Retroactive data convergence II: ZAYAH Folder
-    - KTH academic pathway map
     - Constructional source convergence: ZAYAH folder
-  2. Learning:
+  2. Learning (Convergence II):
     - Learn computer architecture/computer engineering from the digital design book
     - Learn asm
     - Learn VHDL/Verilog
-    - Leetcode practice
     - Check II1302 Project and project methods (ii1302 folder)
-    - Learn to read/write/process thesis (Can reorder/paraell)
+    - Learn to read/write/process thesis
+    - https://blazeannmed.com/helpful-tips-for-studying-biochemistry/
   3. Building:
     - Build a custom processor -> learning
     - Build with e-ink display to raspberry pi -> practical application hardware
+  1*. Data convergence:
+    - Retroactive data convergence III: Convergence folder
+    - Retroactive data convergence IV (Bundles):
+      - https://hackingcpp.com/cpp/libs/fmt
+      - https://devlindell.github.io/lindell.hho.fi/index.html
+      - https://toshiba.semicon-storage.com/ap-en/semiconductor/knowledge/e-learning/cmos-logic-basics/chap3/chap3-3-1.html
+      - https://github.com/codecrafters-io/build-your-own-x
+      - https://fiveable.me/introduction-algorithms/unit-7/red-black-trees/study-guide/77hl9OcP6lKRURaw
+      - Quickstudy bundle(https://www.amazon.com/Biochemistry-Quick-Study-Academic-BarCharts/dp/1423208536)
+      - Rustfinity, https://www.rustfinity.com/
+      - Leetcode
+      - Neso academy (https://www.youtube.com/watch?v=4KiwoeDJFiA)
+    - Fix repositories
+    - Compression for Bookkeeping ...
+  2*. Computer science learning:
+    - Reverse engineering (IDA pro)
+    - Build extensivelang with macro -> compiler as tool
+    - CAD functionalities
+    - Semiconductor physics
+    - Analog circuits
   4*. Bookkeeping engine:
     - Build Bookkeeping engine:
       - Spreadsheet editor
@@ -32,13 +52,3 @@
     - Plugins Quine-McCluskey and hardware CAD software
   5*. Calendar software:
     - Gantt view
-  1*. Data convergence:
-    - Retroactive data convergence III: Convergence folder
-    - Fix repositories
-    - Compression for Bookkeeping ...
-  2*. Computer science learning:
-    - Reverse engineering (IDA pro)
-    - Build extensivelang with macro -> compiler as tool
-    - CAD functionalities
-    - Semiconductor physics
-    - Analog circuits
