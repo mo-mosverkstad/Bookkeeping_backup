@@ -1,20 +1,45 @@
-Name,Basic relationship,Presetted values
-Point,"P(L1(α))
+Group,Name,Basic relationship,Presetted values
+,Point,"P(L1(α))
 L+P>α
 α(L1~L2)",
-Line // Line,"L∥α(Ln)
+,Line // Line,"L∥α(Ln)
 (L1⊥)∥(L2⊥)
 L1((α)∥β)∥L2(α/β)",
-Plane // Line,"α(L1)∥L
+,Plane // Line,"α(L1)∥L
 L(α)∥β",
-Plane ⊥ Line,"(α∥β)⊥L
+,Plane ⊥ Line,"(α∥β)⊥L
 α(m/n)⊥L
 (l1⊥α)⊥α",
-Plane // Plane,α(L1/L2)∥β,
-Plane ⊥ Plane,β(L)⊥α,
-,,
-,,
-Pyramid,V=Bh/3,
-Prism,V=Bh,
-Sphere,"V=4/3*\pi*r^3, A=4\pi*r^2",
-Ellipsoid,V=4/3*\pi*a*b*c,
+,Plane // Plane,α(L1/L2)∥β,
+,Plane ⊥ Plane,β(L)⊥α,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+GEOMETRY,PLANE SOLIDS - PARALLELEPIPED,"Geometry:\nSystem(3,Euclidean)\nParallelepiped(A,B,C,D,E,F,G,H)\nSegment(base_edge)=a\nSegment(side_edge)=b\nSegment(depth_edge)=c\nAngle(dihedral)=\t\n\nGeneral:\n0\deg<\t<180\deg\n\nArea=2(ac+bc+absin(\t))\n\nVolume=abcsin(\t)\n\nRectangle:\n\t=90\deg\n\nArea=2(ab+bc+ac)\n\nVolume=abc\n\nCube:\na=b=c\n\t=90\deg\n\nArea=6a^2\n\nVolume=a^3",
+GEOMETRY,PLANE SOLIDS - PRISMATOIDS,"Definition:\nPolyhedra consisting of either 2 parallel polygon bases or a polygon base and vertex; lateral faces consist of either trapezoids or triangles respectively.\n\nKey:\nB_1=lower base area\nB_2=upper base area\nM=midsection area\nh=altitude\n\nVolume:\n(1/6)h(B_1+B_2+4M)\n\nGeometry:\nSystem(3,Euclidean)\nPolyhedron\nParallel(Plane(base_1),Plane(base_2))",
+GEOMETRY,PLANE SOLIDS - REGULAR POLYHEDRA,"Definition:\nPolyhedra with equal dihedral angles and faces which are congruent regular polygons.\n\nKey:\nf=number of faces\nv=number of vertices\nA=face area\na=edge length\ne=number of edges\nr=radius of inscribed sphere\nq=dihedral angle\n\nGeometry:\nSystem(3,Euclidean)\nRegularPolyhedron",
+GEOMETRY,PLANE SOLIDS - REGULAR POLYHEDRA TABLE,Tetrahedron:\nFace=4 equilateral triangles\nv=4\ne=6\nf=4\nq=70\deg32'\nArea=1.7321a^2\nVolume=0.1178a^3\n\nHexahedron:\nFace=6 squares\nv=8\ne=12\nf=6\nq=90\deg\nArea=6.0000a^2\nVolume=1.0000a^3\n\nOctahedron:\nFace=8 equilateral triangles\nv=6\ne=12\nf=8\nq=109\deg28'\nArea=3.4641a^2\nVolume=0.4714a^3\n\nDodecahedron:\nFace=12 regular pentagons\nv=20\ne=30\nf=12\nq=116\deg34'\nArea=20.6457a^2\nVolume=7.6631a^3\n\nIcosahedron:\nFace=20 equilateral triangles\nv=12\ne=30\nf=20\nq=138\deg11'\nArea=8.6602a^2\nVolume=2.1817a^3,
+GEOMETRY,PLANE SOLIDS - RIGHT REGULAR PYRAMID,"Key:\nB=base area\nP=base perimeter\ns=slant height\n\nArea:\nArea_L=(1/2)Ps\n\nArea_T=(1/2)Ps+B\n\nVolume:\n(1/3)Bh\n\nNote:\nAltitude h intersects center of base.\n\nGeometry:\nSystem(3,Euclidean)\nPyramid(A,B,C,D,E)\nSegment(altitude)=h\nSegment(slant_height)=s\nBaseArea=B\nBasePerimeter=P",
+GEOMETRY,PLANE SOLIDS - RIGHT REGULAR PRISM,"Key:\nB=base area\nP=base perimeter\ns=slant height\n\nArea:\nArea_L=Ph\n\nArea_T=Ph+2B\n\nVolume:\nBh\n\nEuler-Descartes Formula:\nv-e+f=2\n\nArea_T=fA\n\nVolume=(1/3)\pi r^4\n\nNote:\nFor all sections:\nArea_L=lateral surface area\nArea_T=total surface area\n\nGeometry:\nSystem(3,Euclidean)\nPrism(A,B,C,D,E,F)\nSegment(altitude)=h\nBaseArea=B\nBasePerimeter=P\nAngle(side_face)=\t",
+GEOMETRY,CYLINDERS - GENERAL CYLINDERS,"Note:\nFor all cylinders:\nA=base area\nP=base perimeter\n\nArea:\nArea_L=Ps=(Ph)/sin(\t)\n\nVolume:\nAh=As*sin(\t)\n\nNote:\nA represents the area of any closed curve.\n\nGeometry:\nSystem(3,Euclidean)\nCylinder\nSegment(height)=h\nSegment(side)=s\nAngle(side,base)=\t",
+GEOMETRY,CYLINDERS - CIRCULAR CYLINDERS,"Area:\nA=\pi R^2\n\nArea_L=2\pi Rs=(2\pi rh)/sin(\t)\n\nVolume:\n\pi R^2h=\pi R^2s*sin(\t)\n\nPerimeter:\nP=2\pi R\n\nGeometry:\nSystem(3,Euclidean)\nCircularCylinder\nCircle((A,B,C),O,R)\nSegment(height)=h\nSegment(side)=s\nAngle(side,base)=\t",
+GEOMETRY,CYLINDERS - RIGHT CIRCULAR CYLINDERS,"Key:\n\t=90\deg\nh=s\n\nPerimeter:\nP=2\pi R\n\nArea:\nA=\pi R^2\n\nArea_L=2\pi Rh\n\nArea_T=2\pi Rh+2\pi r^2\n\nVolume:\n\pi R^2h\n\nGeometry:\nSystem(3,Euclidean)\nRightCircularCylinder\nCircle((A,B,C),O,R)\nSegment(height)=h\nPerpendicular(Line(axis),Plane(base))",
+Main Section,Subsection,Content,
+SPHERES & SPHEROIDS,SPHERES,"Area: 4\pR^2 = \pD^2\nVolume: (4/3)\pR^3 = (1/6)\pD^3\nGeometry:\nSystem(3,Euclidean)\nSphere((A,B),O,R)\nSegment(O,A)=R\nSegment(B,C)=D\nD=2R\nCap region shown near top of sphere.\nSlice region shown through sphere center.",
+SPHERES & SPHEROIDS,SPHERICAL CAPS,"Formed by making an arbitrary slice through a sphere.\nRadius:\na = Radius of cap base\nArea(cap): 2\pRh\nVolume: (1/3)\ph^2(3R-h) = (1/6)\ph(3a^2+h^2)\nGeometry:\nSystem(3,Euclidean)\nSphere((A,B),O,R)\nCircle((C,D,E),F,a)\nSegment(O,A)=R\nSegment(F,C)=a\nSegment(G,H)=h\nPlane(C,D,E)\nCap region bounded above slicing plane.",
+SPHERES & SPHEROIDS,ELLIPSOIDS,"Volume: (4/3)\pabc\nGeometry:\nSystem(3,Euclidean)\nEllipsoid((A,B,C),O,a,b,c)\nSegment(O,A)=a\nSegment(O,B)=b\nSegment(O,C)=c",
+SPHERES & SPHEROIDS,LUNES,"Note: \t is measured in radians.\nShaded Area: 2R^2\t\nVolume: (2/3)\tR^3\nGeometry:\nSystem(3,Spherical)\nSphere((A,B),O,R)\nAngle(A,O,B)=\t\nArc(A,B,O)\nShaded lune region between two semicircular planes.",
+SPHERES & SPHEROIDS,SPHERICAL SLICES,"Formed by making two parallel slices through a sphere.\nRadius:\na = Radius of upper base\nb = Radius of lower base\nSurface Area: 2\pRh\nVolume: (1/6)\ph(3a^2+3b^2+h^2)\nGeometry:\nSystem(3,Euclidean)\nSphere((A,B),O,R)\nCircle((C,D,E),F,a)\nCircle((G,H,I),J,b)\nParallel(Plane(C,D,E),Plane(G,H,I))\nSegment(K,L)=h",
+SPHERES & SPHEROIDS,PARABOLOIDS,"Volume: (1/2)\pa^2b\nGeometry:\nSystem(3,Euclidean)\nParaboloid(P)\nCircle((A,B,C),O,a)\nSegment(O,D)=b\nAxis of paraboloid vertical.",
+SPHERES & SPHEROIDS,SPHERICAL TRIANGLES,"Note: A, B, and C are measured in radians.\nArea: (A+B+C-\p)R^2\nGeometry:\nSystem(2,Spherical)\nTriangle(A,B,C)\nAngle(B,A,C)=A\nAngle(A,B,C)=B\nAngle(A,C,B)=C\nSphere center O implied.\nSpherical triangle drawn on sphere surface.",
+SPHERES & SPHEROIDS,CIRCULAR TORI,"Key:\nR = Radius of cross-section\nArea: \p^2(b^2-a^2) = 4\p^2bR\nVolume: (1/4)\p^2(a+b)(b-a)^2 = 2\p^2bR^2\nGeometry:\nSystem(3,Euclidean)\nTorus(T)\nCircle((A,B,C),O,R)\nSegment(D,E)=a\nSegment(F,G)=b",
+SPHERES & SPHEROIDS,SPHEROIDS,Note:\na = major semiaxis\nb = minor semiaxis\n\e = eccentricity = sqrt(a^2-b^2)/a,
+SPHERES & SPHEROIDS,PROLATE SPHEROID (OBLONG),"Form by rotating ellipse about major axis.\nArea: 2\pb^2 + (2\pab^2/\e)ln((1+\e)/(1-\e))\nVolume: (4/3)\pa^2b\nGeometry:\nSystem(3,Euclidean)\nEllipse((A,B,C),O,a,b)\nRotation about major axis.",
+SPHERES & SPHEROIDS,OBLATE SPHEROID (DISC),"Form by rotating ellipse about minor axis.\nArea: 2\pb^2 + (2\pab/\e)sin^-1(\e)\nVolume: (4/3)\pa^2b\nGeometry:\nSystem(3,Euclidean)\nEllipse((A,B,C),O,a,b)\nRotation about minor axis.",
+CONES,GENERAL CONES,"Key:\nB_1 = Lower base area\nB_2 = 0 (tip of cone is intact)\nh = Altitude\nVolume: (1/3)Bh\nFrustum:\nB_1 = Lower base area\nB_2 = Upper base area\nh_f = Distance between parallel bases B_1 and B_2\nV = (1/3)h_f(B_1+B_2+sqrt(B_1B_2))\nGeometry:\nSystem(3,Euclidean)\nCone(C)\nPlane(A,B,C)=B_1\nPlane(D,E,F)=B_2\nParallel(Plane(A,B,C),Plane(D,E,F))\nSegment(G,H)=h\nSegment(I,J)=h_f",
+CONES,RIGHT CIRCULAR CONES,"Slant Height:\ns = sqrt(R^2+h^2)\nArea_l = \pRs\nArea_T = \pR(R+s)\nVolume: (1/3)\pR^2h\nGeometry:\nSystem(3,Euclidean)\nCone(C)\nCircle((A,B,C),O,R)\nSegment(O,D)=R\nSegment(E,F)=h\nSegment(G,H)=s\nPerpendicular(Line(O,D),Line(E,F))",
+CONES,FRUSTUMS FOR RIGHT CIRCULAR CONES,"Height:\ns = sqrt((R_1-R_2)^2+h_f^2) (slant height)\nh_f = Distance between upper and lower bases\nArea_l = \p(R_1+R_2)s\nArea_T = \p(R_1^2+R_2^2+(R_1+R_2)s)\nVolume: (1/3)\ph_f(R_1^2+R_1R_2+R_2^2)\nGeometry:\nSystem(3,Euclidean)\nFrustum(F)\nCircle((A,B,C),O,R_1)\nCircle((D,E,G),P,R_2)\nParallel(Plane(A,B,C),Plane(D,E,G))\nSegment(H,I)=h_f\nSegment(J,K)=s",

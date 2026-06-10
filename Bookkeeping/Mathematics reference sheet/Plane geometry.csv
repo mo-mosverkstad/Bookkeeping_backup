@@ -1,59 +1,81 @@
-Name,Basic relationship,Presetted values
-Fundamental concepts,"Point
+Group,Name,Basic relationship,Presetted values
+,Fundamental concepts,"Point
 Line
 Line segment, line ray
 Angle (Angle tip, )/(Vinkel, vinkelspets, vinkelben) <A = <BAC
 Acute angle, Right angle=90\deg, Obtuse angle/(spetsig vinkel, rät vinkel, trubbig vinkel)",
-Paraell lines,"1//2, 1//3 -> 2//3",
-Angles,"Adjacent angles/Sidovinklar: α+β=180°
+,Paraell lines,"1//2, 1//3 -> 2//3",
+,Angles,"Adjacent angles/Sidovinklar: α+β=180°
 Vertical angles/Vertikalvinklar: α=β
 Transversal angles/Transversalvinklar: α=β=γ
 Corresponding angles/Likbenägna vinklar: α=β
 Alternate angles/Alternatvinklar: α=γ
 Bisector/Bisektris: α/2",
-Transformations,"Translation
+,Transformations,"Translation
 Scale (S=1/10, A=S^2, V=S^3)
 Rotation
 Reflection
 Dilation",
-Polygons,"Inner angle sum (n-polygon): 180\deg(n-2)
+,Polygons,"Inner angle sum (n-polygon): 180\deg(n-2)
 Outer angle sum: 360\deg
 Concave/Convex polygons",
-Triangles,"Area: 1/2bh=\sqrt(3)/4s², Angle sum=180\deg
-Perimeter: AB+AC+BC
-(Acute triangle, Obtuse triangle)",
-Isoceles triangle,<B=<C AB=AC,
-Equilateral triangle,3I+<60 3 angles = 60 3/=,
-Right triangle,Apply Pythogoras formula (a^2+b^2=c^2),
-Pythagoras theorem,a^2+b^2=c^2,"sqrt(4^2+7^2), sqrt(8^2-6^2), sqrt(sqrt(19)^20sqrt(30)^2), 1.42+0.77+sqrt(1.42^2+0.77^2), sqrt(1600^2+800^2)=200sqrt(8^2+2^2)"
-Distance formula,sqrt((x_1-x_0)^2+(y_1-y_0)^2),"5 2 4 5, 4 -2 -3 4"
-,,"(2, 1), (1, -2), (3, -1) => A=?
+,TRIANGLES - GENERAL TRIANGLES,"Note: s=semiperimeter=(1/2)(a+b+c), r=radius of inscribed circle, R=radius of circumscribed circle
+Sum of the Interior Angles: A+B+C=180\deg
+Height: h=a*sin(B)=b*sin(A)
+Perimeter: a+b+c
+Area: K=(1/2)hc=(1/2)absin(C)=abc/(4R), K=rs=sqrt(s(s-a)(s-b)(s-c))
+Radii: r=(absin(C))/(2s)=(s-c)tan(C/2), R=c/(2sin(C))=abc/(4K)
+
+Geometry:
+Point(A,B,C,D), Triangle(A,B,C), Segment(A,C)=b, Segment(B,C)=a, Segment(A,D,B)=c, Segment(C,D)=h, Perpendicular(Line(C,D),Line(A,B))",
+,,(Acute/Obtuse triangles),
+,Isoceles triangle,<B=<C AB=AC,
+,Equilateral triangle,3I+<60 3 angles = 60 3/=,
+,Right triangle,Apply Pythogoras formula (a^2+b^2=c^2),
+,,,
+,TRIANGLES - RIGHT TRIANGLES,"Interior Angles:\nA+B=C=90\deg\n\nArea:\n(1/2)ab=(1/2)hc\n\nPerimeter:\na+b+c\n\nRadii:\nr=ab/(a+b+c)\n\nR=(1/2)c\n\nGeometry:\nSystem(2,Euclidean)\nPoint(A,B,C,D)\nTriangle(A,B,C)\nSegment(B,C)=a\nSegment(A,C)=b\nSegment(A,B)=c\nSegment(C,D)=h\nPerpendicular(Line(A,C),Line(B,C))\nPerpendicular(Line(C,D),Line(A,B))",
+,TRIANGLES - EQUILATERAL TRIANGLES,"Interior Angles:\nA=B=C=60\deg\n\nPerimeter:\n3a\n\nRadii:\nr=(1/6)asqrt(3)\n\nR=(1/3)asqrt(3)\n\nArea:\n(1/4)a^2*sqrt(3)=(1/2)ah\n\nGeometry:\nSystem(2,Euclidean)\nPoint(A,B,C,D)\nTriangle(A,B,C)\nSegment(A,B)=a\nSegment(B,C)=a\nSegment(C,A)=a\nSegment(C,D)=h\nPerpendicular(Line(C,D),Line(A,B))",
+,,,
+,,,
+,,,
+,,,
+,,,
+,Pythagoras theorem,a^2+b^2=c^2,"sqrt(4^2+7^2), sqrt(8^2-6^2), sqrt(sqrt(19)^20sqrt(30)^2), 1.42+0.77+sqrt(1.42^2+0.77^2), sqrt(1600^2+800^2)=200sqrt(8^2+2^2)"
+,Distance formula,sqrt((x_1-x_0)^2+(y_1-y_0)^2),"5 2 4 5, 4 -2 -3 4"
+,,,"(2, 1), (1, -2), (3, -1) => A=?
 (x, y), (x+2, y+2), (x+4, y+1), (x+3, y-2)"
-Triangle congruence,"SSS, SAS, ASA, RHS/HL (trianglar överensstämmer varandra i 3 sidor, …)",2070-1
-Triangle similarity,"(AA, SAS, ASA (sides S in scale to each other)
+,Triangle congruence,"SSS, SAS, ASA, RHS/HL (trianglar överensstämmer varandra i 3 sidor, …)",2070-1
+,Triangle similarity,"(AA, SAS, ASA (sides S in scale to each other)
 x/A=B/C => x=AB/C",3 10 7
-,x/B=y/A => x/y= B/A => …,"A=50, B=200"
-,"A/y, B/x, S_1=xy/2, S_2=AB/2 => x=B/sqrt(S_2/S_1), y=A/sqrt(S_2/S_1)","A=50, B=200, S_1=800"
-,(AB)/(EF)=(BC)/(CE) => … (3020),
-,R/H=r/h => r=Rh/H -> V=\pi*r^2*h/3 …,"(3022, 3023)"
-,,
-Quadrilaterals,"Angle sum = 360\deg, A + B + C + D = 360°
-A=1/2*p*q*sin(\t) = 1/4*sqrt(2b^2*d^2+2a^2*c^2-a^4-b^4-c^4-d^4), P=a + b + c + d
-Theorem: Diagonals of a quadrilateral with consecutive sides a, b, c, and d are perpendicular if and only if a^2 + c^2 = b^2 + d^2",
-Trapezoid/Paraelltrapets,A=h(a+b)/2,
-Paraellogram,"A=bh, P=2(a+b)",
-Diamond/diamant,,
-Rectangle/Rektangel,"<A, B, C, D=90
+,,x/B=y/A => x/y= B/A => …,"A=50, B=200"
+,,"A/y, B/x, S_1=xy/2, S_2=AB/2 => x=B/sqrt(S_2/S_1), y=A/sqrt(S_2/S_1)","A=50, B=200, S_1=800"
+,,(AB)/(EF)=(BC)/(CE) => … (3020),
+,,R/H=r/h => r=Rh/H -> V=\pi*r^2*h/3 …,"(3022, 3023)"
+,,,
+,,,
+,GENERAL QUADRILATERALS,"Sum of Interior Angles:\nA+B+C+D=360\deg\n\nPerimeter:\na+b+c+d\n\nArea:\n(1/2)pqsin(\t)=(1/4)(b^2+d^2-a^2-c^2)*tan(\t)\n\n=(1/4)sqrt(4p^2q^2-(b^2+d^2-a^2-c^2)^2)\n\nTheorem:\nDiagonals of a quadrilateral with consecutive sides a,b,c,d are perpendicular iff:\na^2+c^2=b^2+d^2\n\nGeometry:\nSystem(2,Euclidean)\nPoint(A,B,C,D,E)\nQuadrilateral(A,B,C,D)\nSegment(A,B)=a\nSegment(B,C)=b\nSegment(C,D)=c\nSegment(D,A)=d\nSegment(A,C)=q\nSegment(B,D)=p\nIntersection(Line(A,C),Line(B,D))=E\nAngle(A,E,D)=\t",
+,QUADRILATERALS - RECTANGLES,"Interior Angles:\nA=B=C=D=90\deg\n\nPerimeter:\n2(a+b)\n\nArea:\nab\n\nGeometry:\nSystem(2,Euclidean)\nPoint(A,B,C,D)\nQuadrilateral(A,B,C,D)\nSegment(A,B)=b\nSegment(B,C)=a\nSegment(C,D)=b\nSegment(D,A)=a\nSegment(D,B)=p\nPerpendicular(Line(A,B),Line(B,C))\nPerpendicular(Line(B,C),Line(C,D))\nPerpendicular(Line(C,D),Line(D,A))\nPerpendicular(Line(D,A),Line(A,B))",
+,QUADRILATERALS - TRAPEZOIDS,"Sum of Interior Angles:\nA+B+C+D=360\deg\n\nParallel Relation:\nParallel(Line(A,B),Line(D,C))\n\nPerimeter:\na+b+h*((1/sin(\t))+(1/sin(\b)))\n\nArea:\n(1/2)h(a+b)\n\nGeometry:\nSystem(2,Euclidean)\nPoint(A,B,C,D,E)\nQuadrilateral(A,B,C,D)\nSegment(D,C)=a\nSegment(A,B)=b\nSegment(D,E)=h\nAngle(D,A,B)=\t\nAngle(A,B,C)=\b\nParallel(Line(A,B),Line(D,C))\nPerpendicular(Line(D,E),Line(A,B))",
+,QUADRILATERALS - PARALLELOGRAMS,"Interior Angles:\nA=C\nB=D\nA+B=180\deg\n\nInterior Lengths:\nh=asin(A)=asin(B)\n\np=sqrt(a^2+b^2-2abcos(A))\n\nq=sqrt(a^2+b^2-2abcos(B))\n\nPerimeter:\n2(a+b)\n\nArea:\nbh=absin(A)=absin(B)\n\nGeometry:\nSystem(2,Euclidean)\nPoint(A,B,C,D,E)\nQuadrilateral(A,B,C,D)\nSegment(A,D)=a\nSegment(B,C)=a\nSegment(A,B)=b\nSegment(D,C)=b\nSegment(A,C)=q\nSegment(D,B)=p\nSegment(D,E)=h\nParallel(Line(A,B),Line(D,C))\nParallel(Line(A,D),Line(B,C))\nPerpendicular(Line(D,E),Line(A,B))",
+,Trapezoid/Paraelltrapets,A=h(a+b)/2,
+,Paraellogram,"A=bh, P=2(a+b)",
+,Diamond/diamant,,
+,Rectangle/Rektangel,"<A, B, C, D=90
 A=bh",
-Square/Kvadrat,"<A, B, C, D=90, AC⊥BD
+,Square/Kvadrat,"<A, B, C, D=90, AC⊥BD
 <A, B, C, D=90, AB=BC=CD=AD
 A=s^2",
-,,
-,,
-,,
-,,
-,,
-Circles,"A circle has the same distance from origin to circle curve
+,,,
+,,,
+,PLANE AREA APPROXIMATION FORMULAS,"Divide the planar area ABCD into n parallel strips of equal thickness.\n\nLet x_0,x_1,x_2,...,x_n denote the lengths of the vertical cords.\n\nh=(B-A)/n\n\nGeometry:\nSystem(2,Euclidean)\nPoint(A,B,C,D)\nQuadrilateral(A,B,C,D)\nParallel(Line(A,B),Line(C,D))\n\nTrapezoidal Rule:\nArea=h*((1/2)x_0+x_1+x_2+...+x_(n-1)+(1/2)x_n)\n\nSimpson's Rule (n even):\nArea=(1/3)h(x_0+4x_1+2x_2+4x_3+2x_4+...+2x_(n-2)+4x_(n-1)+x_n)\n\nDurand's Rule:\nArea=h((4/10)x_0+(11/10)x_1+x_2+x_3+...+x_(n-2)+(11/10)x_(n-1)+(4/10)x_n)\n\nWeddle's Rule (n=6):\nArea=(3/10)h(x_0+5x_1+x_2+6x_3+x_4+5x_5+x_6)",
+,REGULAR POLYGONS,"Note:\nn=number of sides\nr=radius of inscribed circle\nR=radius of circumscribed circle\n\nInterior Angles:\n\t=((n-2)/n)180\deg\nn>2\n\nPerimeter:\nna=2nrsin(180\deg/n)\n\nLength:\na=2rtan(180\deg/n)\n\na=2Rsin(180\deg/n)\n\nRadii:\nr=(1/2)acot(180\deg/n)\n\nR=(1/2)acsc(180\deg/n)\n\nArea:\n(1/4)na^2cot(180\deg/n)\n\n=nr^2tan(180\deg/n)\n\n=(1/2)nr^2*sin(360\deg/n)\n\nGeometry:\nSystem(2,Euclidean)\nPolygon(A,B,C,D,E,...)\nRegularPolygon(n)\nSegment(side)=a\nSegment(center,vertex)=R\nSegment(center,side_midpoint)=r\nAngle(interior)=\t",
+,REGULAR POLYGONS - TABLE,n=3\nPolygon=Triangle\nr=0.2887a\nR=0.5774a\nArea=0.4330a^2\n\nn=4\nPolygon=Square\nr=0.5000a\nR=0.7071a\nArea=1.0000a^2\n\nn=5\nPolygon=Pentagon\nr=0.6882a\nR=0.8506a\nArea=1.7205a^2\n\nn=6\nPolygon=Hexagon\nr=0.8660a\nR=1.0000a\nArea=2.5981a^2\n\nn=7\nPolygon=Heptagon\nr=1.0383a\nR=1.1524a\nArea=3.6339a^2\n\nn=8\nPolygon=Octagon\nr=1.2071a\nR=1.3066a\nArea=4.8284a^2\n\nn=9\nPolygon=Nonagon\nr=1.3737a\nR=1.4619a\nArea=6.1818a^2\n\nn=10\nPolygon=Decagon\nr=1.5388a\nR=1.6180a\nArea=7.6942a^2,
+,,,
+,,,
+,,,
+,,,
+,,,
+,Circles,"A circle has the same distance from origin to circle curve
 Tangent
 Secant/Sekant
 Radius/Radie
@@ -63,17 +85,14 @@ Chord/Koorda
 Circle arc/Cirkelbåge
 Periphery/Periferi
 Circle sector/Cirkelsektor
-Circle segment/Cirkelsegment
-
-A=\pi*r^2, P=2\pi*r(=\pi*d)",
-Ellipse,A=\pi*ab,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,"{$A, 3RH(A x(D), C _(F), B 20(E)), C(O, 6, (EDF))}
+Circle segment/Cirkelsegment",
+,CIRCLES & CONICS - CIRCLES,"Note:\nC=circumference\ns=arc length\n\nDiameter:\nD=2R\n\nCircumference:\n2\pi R=\pi D\n\nArea:\n\pi R^2=(1/4)\pi D^2\n\nSector & Segment of Circle:\n\t=2cos^-1(b/R)-2sin^-1(a/(2R))\n\ns=R\t\n\nh=R-b\n\na=2Rsin(\t/2)=2btan(\t/2)\n\nb=R*cos(\t/2)=(1/2)*sqrt(4R^2-a^2)\n\nArea(sector)=(1/2)Rs=(1/2)R^2\t\n\nArea(segment)=(1/2)R^2(\t-sin(\t))\n\nGeometry:\nSystem(2,Euclidean)\nPoint(O,A,B,C)\nCircle((A,B,C),O,R)\nArc(A,B,O)=s\nSegment(A,B)=a\nSegment(O,C)=R\nSegment(C,D)=h\nAngle(A,O,B)=\t",
+,CIRCLES & CONICS - PARABOLAS (SEGMENT),"Arc Length:\n(1/2)*sqrt(b^2+16a^2)+(b^2/(8a))*ln((4a+sqrt(b^2+16a^2))/b)\n\nArea:\n(2/3)ab\n\nGeometry:\nSystem(2,Euclidean)\nPoint(A,B,C,D)\nSegment(A,C)=b\nSegment(D,B)=a\nPerpendicular(Line(D,B),Line(A,C))\nMidpoint(D,Segment(A,C))\nGraph(y=ax^2)\n\nParabolic segment bounded by parabola and Segment(A,C)",
+,CIRCLES & CONICS - ELLIPSES,"Diameter:\n2a=major axis\n2b=minor axis\n\nArea:\n\pi ab\n\nPerimeter:\nk=sqrt(a^2-b^2)/a\n\nP=4bint{0,\pi/2,sqrt(1-k^2sin(\t)^2)d\t}\n\nP~=2\pisqrt((1/2)(a^2+b^2))\n\nGeometry:\nSystem(2,Euclidean)\nPoint(O,A,B,C)\nEllipse((A,B,C),O,a,b)\nSegment(vertical_major_axis)=2a\nSegment(horizontal_minor_axis)=2b",
+,,,
+,,,
+,,,
+,,,
+,,,
+,,"{$A, 3RH(A x(D), C _(F), B 20(E)), C(O, 6, (EDF))}
 -> $A, 3RH(A x(14[D]x-14), C x-8(x-14[F]6), B 20(6[E]14)), C(O, 6, (EDF))",

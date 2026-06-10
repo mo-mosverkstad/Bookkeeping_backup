@@ -1,0 +1,133 @@
+Group,Name,Basic relationship,Presetted values
+Vector function with one variable,,"[f](x) = (x, y, z) = x*[i] + y*[j] + z*[k]
+f(x) = (cos(x), sin(x)), \\R -> \\R^2
+|f| = sqrt(x^2+y^2+z^2)
+|f-g|",
+,Derivatives,d/(dx)([u](t) + [v](t)) = [u]'(t) + [v]'(t),
+,,d/(dx)(\l(t)*[u](t)) = \l'(t)*[u](t) + \l(t)*[u]'(t),
+,,d/(dx)([u](t).[v](t)) = [u](t).[v]'(t) + [u]'(t).[v](t),
+,,d/(dx)([u](t)*[v](t)) = [u](t)*[v]'(t) + [u]'(t)*[v](t),
+,,d/(dx)([u](\l(t))) = \l'(t)*[u](\l(t)),
+,,d/(dt)||[u](t)| = [u](t).[u]'(t)/|[u](t)|,
+,Momentum `1p,F = d*[`1p]/dt = d/dt(m*[v]),
+,,"`1p_10 + `1p_20 + `1I = `1p_11 + `1p_21
+
+(m + \D*m)([v]+\D*[v]) + (-\D*m)([v]+[v_e]) = m*[v] -> m*d*[v]/(dt) = dm/(dt)*[v_e]",
+,Circular motion,"[r] -> [v] -> [a]
+d[r]/dt = [v](t) = [\O]*[r](t)
+[\O] axis of rotation, point upward",
+,Rotational frames,"Inertial frame: {[`3I], [`3J], [`3K]}
+Rotational frame: {[`3i], [`3j], [`3k]}, offset [R_0], rotation axis: [\O]
+Position (rotational): [r], (inertial): [R]",
+,,"d[i]/dt = [\O]*[`3i], d[j]/dt = [\O]*[`3j], d[k]/(dt) = [\O]*[`3k], d[R_0]/(dt) = [\O]*[R_0]",
+,,[V] = d*[R]/(dt) = d/(dt)([R_0] + [R]) = d[R_0]/(dt) + dx/(dt)*[`3i] + x*d[`3i]/(dt) + dy/(dt)*[`3j] + y*d[`3j]/(dt) + dz/(dt)*[`3k] + z*d[`3k]/(dt) = [v] + [\O]*[R_0] + x[\O]*[i] + y[}O]*[j] + z[\O]*[k] = [v] + [\O]*[R_0] + [O]*[r] = [v] + [\O]*[R],
+,,"[A] = d[V]/dt = d/(dt)([v] + [\O]*[R]) = d^2x/(dt^2)[`3i] + dx/(dt)*d*[`3i]/(dt) + d^2y/(dt^2)[`3j] + dy/(dt)*d*[`3j]/(dt) + d^2z/(dt^2)[`3k] + dz/(dt)*d*[`3k]/(dt) + [\O]*d*[R]/(dt) = [a] + [\O]*[v] + [\O]*[V] = [a] + 2[\O]*v + [\O]*([O]*R)
+Coriolis acceleration: 2[\O]*[v]
+Centripetal acceleration: [\O]*([O]*[R])",
+,,"m[a] = [F] - 2m[\O]*[v] - m[\O]*([\O]*[R])
+Coriolis force: - 2m[\O]*[v]
+Centrifugal force: - m[\O]*([\O]*[R])",
+,Curves and parametrizations,"{k=1, n, [eq_k]} intersection parametrization
+Substitute t=x, t=y, t=z","y=2x-4, z=3x+1
+x+y=1, x^2+y^2=z
+x^2+y+z=2, xy+z=1 -> x^2+y-xy=1 (x=t)"
+,,"e.g. x^2+y^2+z^2 = 1, [eq with z]
+Substitute x=a*cos(t), y=b*sin(t)","x+2y+4z=4, x^2+4y^2=4"
+,,"L1: x+y+z=1, L2: x^2+y^2+z^2 = 1, [n] = (1, 1, 1)
+-> (1, 0, 0), (0, 1, 0), (0, 0, 1) intersections -> midpoint [r_0]=(1/3, 1/3, 1/3), radius: r=sqrt(2/3)
+[v_1] = (1, -1, 0), [v_2]=[v_1].[n] = (-1, -1, 2), [e_1] = 1/sqrt(2)*(1, -1, 0), [e_2] = 1/sqrt(6)*(-1, -1, 2) -> [r] = [r_0] + [r]([e_1]cos(t) + [e_2]sin(t))",
+,Arc length,"\int{t_1, t_2, |d*[r]/(dt)|dt}",
+,Piecewise smooth curves,"[r](t) fail to be smooth where d[r]/dt = 0
+-> Curve: C = \S{k=1, n, C_k} with parametrization {k=1, n, [r_k]}
+-> \S{1, k, \int{a_i, b_i, |d*[r_i]/dt|*dt}}",
+,Arc length parametrization,"s(t) = \int{t_0, t, |d/(dt)([r](t))|dt}
+[r](s) = [r](t(s)) -> Speed 1",
+,Unit tangent vector,[T] = [v](t)/v(t) = (d[r]/dt)/|d[r]/dt| = d[r]/ds,
+,Unit normal vector,"[N](s) = d[T]/(ds)
+[T](s).[T](s)=1 -> 2[T](s).d[T]/(ds) = 0",
+,Curvature ,\k(s) = |d[T]/(ds)|,
+,Radius of curvature,\r(s) = 1/\k(s),
+,,[N](s) = 1/\k(s)*d[T]/(ds) = (d[T]/(ds))/|d[T]/(ds)|,
+,,"Curvature as rate of turning of unit tangent
+\k > 0 on interval containing s, \D\t angle between [T](s+\D*s) and [T](s) -> \k(s) = lim{\D*s->0, (\D*\t)/(\D*s)}
+
+[\D*T] = [T](s+\D*s) - [T](s)
+-> \lim{\D*s->0, |(\D*[T])/(\D*\t)| = 1
+\k(s) = \lim{\D*s->0, (\D*[T])/(\D*s)} = \lim{\D*s->0, (\D*[T])/(\D*\t)}*\lim{\D*s->0, (\D*\t)/(\D*s)} = \lim{\D*s->0, (\D*\t)/(\D*s)}",
+,Osculating plane,[r](s) with both [N] and [T],
+,Osculating circle,"[r_c] circle center, \r(s) radius
+[r_c](s) = [r](s) + \r(s)[N](s)",
+,Unit binomial,[B] = [T]*[N],
+,Torsion,"\k(s) != 0 -> exist \t(s) torsion in d[B]/(ds) = -\t(s)[N](s)
+
+d[B]/(ds) = d[T]/(ds)*[N] + [T]*d[N]/(ds) = \k[N]*[N] + [T]*d[N]/(ds) = [T]*d[N]/(ds)
+d[B]/(ds) both perpendicular to [T] and [B] -> parallel with [N]",
+,,"lim{\Ds->0, |\D\phi/\D*s|} = |\t(s)|",
+,Frenet-Serret frame,"[T], [N], [B]",
+,Frenet-Serret formulas,"d[T]/(ds) = \k[N]
+d[N]/(ds) = -\k[T] + \t[B]
+d[B]/(ds) = -\t[N]",
+,The fundamental theorem of space curves,"C_1 and C_2 curves with same \k(s) != 0, \t(s) -> Congruent curves (moved rigidly, only translate and rotate to coincide)
+s=0 -> coinciding frames
+
+[N], [B] undefined \k=0, (C_1: [T_1](s), [N_1](s), [B_1](s)), (C_2: [T_2](s), [N_2](s), [B_2](s))
+f(s) = [T_1](s).[T_2](s) + [N_1](s).[N_2](s) + [B_1](s).[B_2](s)
+f'(s) = [T_1]'(s).[T_2](s) + [T_1](s).[T_2]'(s) + [N_1]'(s).[N_2](s) + [N_1](s).[N_2]'(s) + [B_1]'(s).[B_2](s) + [B_1](s).[B_2]'(s) = \k*[N_1].[T_2] + [T_1].(\k*[N_2]) + (-\k*[T_1] + \t*[B_1]).[N_2] + [N_1].(-\k[T_2] + \t[B_2]) + (-\t*[N_1]).[B_2] + [B_1](-\t*[N_2]) = 0 -> Coinciding curve frames, coinciding curve -> f(s)=3 -> [T_1](s).[T_2](s) = 1 -> d[r_1]/(ds) = [T_1] = [T_2] = d[r_2]/(ds) -> [r_1](s) = [r_2](s) (s=0 coinciding point)",
+,General parametrization,"[v] = d*[r]/(dt) = d*[r]/(ds)*(ds)/(dt) = v[T]
+[a] = d*[v]/(dt) = (dv)/(dt)*[T] + v*d*[T]/(dt) = (dv)/(dt)*[T] + v*d*[T]/(ds)*(ds)/dt) = (dv)/(dt)[T] + v^2\k*[N] <- Tangental + normal acceleration
+[v]*[a] = v[T]*(dv/(dt)[T]) + v^3\k[T]*[N] = v^3\k*[B]",
+,,"-> [T] = [v]/v, [B] = ([v]*[a])/|[v]*[a]|, \k = |[v]*[a]|/[v]^3",
+,,"(d*[T])/(dt) = (d*[T])/(ds)*(ds)/(dt) = v*(d*[T])/(ds) = v\k*[N]
+-> [N]=[B]*[T] = 1/(v\k)*(d*[T])/(dt) = \r/v*(d*[T])/(dt) = ((d*[T])/(dt))/|(d*[T])/(dt)|",
+,,"(d*[a])/(dt) = d/(dt)((dv)/(dt)[T] + v^2\k*[N]) = [several terms] = \l*[T] + \m*[N] + v^3\k\t*[B] (\l and \m some constant)
+([v]*[a]).(d*[a])/(dt) = (v^3\k)^2\t = |[v]*[a]|^2\t
+-> \t = ([v]*[a]).((d*[a])/(dt))/|[v]*[a]|^2",
+,Evolutes,[r_c](t) = [r](t) + \r(t)[N](t),
+,Kepler laws and planetary motions,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+Multivariable function,,"f(x, y) = xy + 1, \\R^2 -> \\R",
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+Vector fields,,"f(x, y, z) = (x*y, y+z-1)",

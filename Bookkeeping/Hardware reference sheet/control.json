@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "entries": [
+    {
+      "id": "general_concepts",
+      "view": "table",
+      "file": "General concepts.csv"
+    },
+    {
+      "id": "analog_circuits",
+      "view": "table",
+      "file": "Analog circuits.csv"
+    },
+    {
+      "id": "boolean_algebra",
+      "view": "table",
+      "file": "Boolean algebra.csv"
+    },
+    {
+      "id": "digital_circuits",
+      "view": "table",
+      "file": "Digital circuits.csv"
+    },
+    {
+      "id": "hdls",
+      "view": "table",
+      "file": "SystemVerilog+VHDL.csv"
+    },
+    {
+      "id": "processor_architecture",
+      "view": "table",
+      "file": "Processor architecture.csv"
+    }
+  ]
+}

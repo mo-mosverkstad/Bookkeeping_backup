@@ -81,7 +81,7 @@ Radical,Radical expression,"Linear: \int{p(x, [...root{n, (ax+b)/(cx+d)})*dx]}= 
 ,,"\int{sqrt(x^2+1)*dx}=[x=sinh(t), dx/dt=cosh(t)]=\int{sqrt(cosh^2(t))*cosh^2(t)*dt}",
 ,,"x^2+a^2 -> x=a*tan(\t), 1+tan^2(\t)=sec^2(\t)",
 ,,"x^2-a^2 -> x=a*sec(\t), sec^2(\t)-1=tan^2(\t)",
-,,int{sqrt(u^2 \pm a^2) du} = (u/2)*sqrt(u^2 \pm a^2) \mp (a^2/2)*ln|u + sqrt(u^2 \pm a^2)| + C,
+,,int{sqrt(u^2 \pm a^2) du} = (u/2)*sqrt(u^2 \pm a^2) \pm (a^2/2)*ln|u + sqrt(u^2 \pm a^2)| + C,
 ,,int{u*sqrt(u^2 \pm a^2) du} = ( (u^2 \pm a^2)^(3/2) )/3 + C,
 ,,int{(sqrt(u^2 \pm a^2))/u du} = sqrt(u^2 \pm a^2) \mp a*ln|(a + sqrt(u^2 \pm a^2))/u| + C,
 ,,int{u^2*sqrt(u^2 \pm a^2) du} = (u/8)*(2*u^2 \pm a^2)*sqrt(u^2 \pm a^2) \mp (a^4/8)*ln|u + sqrt(u^2 \pm a^2)| + C,

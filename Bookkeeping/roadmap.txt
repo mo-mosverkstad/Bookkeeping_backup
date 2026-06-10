@@ -12,8 +12,6 @@
     - Retroactive data convergence II: ZAYAH Folder
     - Constructional source convergence: ZAYAH folder
   2. Learning (Convergence II):
-    - Learn computer architecture/computer engineering from the digital design book
-    - Learn asm
     - Learn VHDL/Verilog
     - Check II1302 Project and project methods (ii1302 folder)
     - Learn to read/write/process thesis
