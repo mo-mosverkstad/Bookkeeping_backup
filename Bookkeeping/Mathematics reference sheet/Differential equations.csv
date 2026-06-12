@@ -1,4 +1,5 @@
 Group,Name,Basic relationship,Presetted values
+rich,rich,rich,rich
 Basics,Verification of solution,"y=x*ln(x)->xy'-y+2xy''=x+2
 y=x*ln(x), y'=ln(x)+1, y''=1/x => xy'-y+2xy''=x(ln(x)+1)-x*ln(x)+2x*1/x=x+2",y=ln(x)->xy'-y+2xy''=x+2
 ,,"y=sin(5x)->y'+ky=5cos(5x)+3sin(5x), k=?

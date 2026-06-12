@@ -1,4 +1,5 @@
 Group,Name,Basic relationship,Presetted values
+rich,rich,rich,rich
 Standard integrals,Definition of integrals,"\int{a, b,f(x)dx} ~= lim n->\inf \\S{k=0, n, f(x_k)*\Dx}
 F(x) = \int{f(x)dx} + C (C is an arbitrary constant)",
 ,"Common integral functions

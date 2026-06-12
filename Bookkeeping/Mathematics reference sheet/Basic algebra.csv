@@ -1,4 +1,5 @@
 Group,Name,Basic relationship,Presetted values
+rich,rich,rich,rich
 Basic algebra rules,Simple expansion,"Expansion: (x~y)=x~'y, Factorization: x~'y=(x~y), variables itself contains sign 
 -> Expansion/Utveckling E[...], <- Factorization/Faktorisering F[...]
 Start with innermost pair, remove brackets, collect like terms and add/subtract",

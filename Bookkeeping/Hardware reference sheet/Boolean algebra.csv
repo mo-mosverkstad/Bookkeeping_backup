@@ -10,9 +10,9 @@ Maxterm: sum involving all inputs A+(-B)+C
 Precedence order: NOT, AND, OR
 X: illegal value in circuit, don't care in truth table, sometimes due to contention
 Z: floating, high-impedance, 0 or 1 or between, does not mean circuit error, so long as other circuit element drive the node to valid logic level, commonly forgetting to connect a voltage to circuit input/assume unconnected input as 0, does not cause contention with other wires"
-"Identities, proven by perfect induction",x*0 = 0 (Null element)
-,x+1 = 1  (Identity)
-,x*1 = x
+"Identities, proven by perfect induction",$math{x*0 = 0} (Null element)
+,$math{x+1 = 1}  (Identity)
+,$math{x*1 = x}
 ,x+0 = x
 ,x*x = x
 ,x+x = x (Idempotency)

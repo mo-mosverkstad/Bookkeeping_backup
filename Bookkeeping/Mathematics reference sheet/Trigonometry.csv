@@ -1,4 +1,5 @@
 Name,Basic relationship,Presetted values
+rich,rich,rich
 General definition,"a: opposite side, b: adjacent side, c: hypotenuse
 sin v = a/c, cos v = b/c, tan v = a/b, cot v = b/a
 arcsin a/c = v [-\pi/2, \pi/2], arccos b/c = v [0, \pi], arctan a/b = v [-\pi/2, \pi/2], arccot b/a = v [-\pi/2, \pi/2]",

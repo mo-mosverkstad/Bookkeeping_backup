@@ -1,4 +1,5 @@
 Group,Name,Basic relationship,Presetted values
+rich,rich,rich,rich
 Formal limit,Formal limit definition/Formell gränsvärdedefinition,"lim{x->a, f(x)} = L
 For any \e > 0, there exist \d > 0 such that |x-a|<\d => |f(x)-L|<\e
 
