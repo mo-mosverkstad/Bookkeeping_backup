@@ -1,0 +1,328 @@
+Group,Name,Basic relationship,Presetted values
+rich,rich,rich,rich
+,,,
+,,,
+Multivariable concepts,Neighbourhood/Omgivning,"B_r([a]) = {[x] \in \\R^n: |[x]-[a]|<r}
+
+n=1: open interval (a-r, a+r)
+n=2: open disk
+n=3: open ball",
+,"Open/closed set
+Öppen/Sluten mängd","Open interval, closed interval -> Open set, closed set
+Öppen interval, sluten intervall -> Öppen mängd, sluten mängd
+
+S is open in \\R^n if every point of S has neighbourhood contained in S (sets defined by strict inequalities < or > e.g. x+y+z>2)",
+,"Complement/Komplement, $math{S^c}","Set of all points in \\R^n that does not belong to S
+Complement to open set -> closed set",
+,Boundary point/Randpunkter,"Every neighbourhood of P contains both points in S and points in S^c
+Boundary bdry(S) = set of all boundary points in S
+Varje omgivning innehåller inre och yttre punkter",
+,,"Interior point/Inre punkt: int(S), Inuti mängden (omgivning som ligger innanför mängden
+Exterior point/Yttre punkt: ext(S), Utifrån mängden (omgivning som ligger utanför mängden)
+Both are open sets",
+,,,
+Koordinater,Polära koordinater (\\R^2),"[Image]
+$math{x = r*cos(\t)}, $math{y = r*sin(\t)}
+$math{r = sqrt(x^2+y^2)}, $math{tan(\t) = y/x}",
+,Cylindriska koordinater (\\R^3),"[Image]
+$math{x = r*cos(\t)}, $math{y = r*sin(\t)}, $math{z = z}
+$math{r = sqrt(x^2+y^2)}, $math{tan(\t) = y/x}, $math{z=z}",
+,Sfäriska koordinater (\\R^3),"\f: R-line-z, \t -> x-y plane
+x = R*sin(\f)*cos(\t), y = R*sin(\f)*sin(\t), z = R*cos(\f)
+R = sqrt(x^2+y^2+z^2), tan(\f) = sqrt(x^2+y^2)/z, tan(\t) = y/x",
+,,,
+,,,
+,Vektorvärda funktioner av en variabel,"f(t) = (x(t), y(t), z(t)) [Image]
+f'(t_0) = lim{h->0, (f(t_0+h) - f(t_0))/h} = (x'(t_0), y'(t_0), z'(t_0))",
+,Reelvärda funktioner av flera variabler,"graf: {(x, y, z): z = f(x, y)}, nivåkurva/höjdkurva: {(x, y): f(x, y) = C} [Image]
+Kontinuerlig i (a, b): lim{(x, y) -> (a, b), f(x, y) = f(a, b)}","f(x, y)=x^2+y^2"
+,,,
+Vector function with one variable,,"$math{[f](x) = (x, y, z) = x*[i] + y*[j] + z*[k]}
+$math{f(x) = (cos(x), sin(x))}, $math{\\R -> \\R^2}
+$math{|f| = sqrt(x^2+y^2+z^2)}
+$math{|f-g|}",
+,Derivatives,$math{d/(dx)*([u](t) + [v](t)) = [u]'(t) + [v]'(t)},
+,,$math{d/(dx)*(\l(t)*[u](t)) = \l'(t)*[u](t) + \l(t)*[u]'(t)},
+,,$math{d/(dx)*([u](t).[v](t)) = [u](t).[v]'(t) + [u]'(t).[v](t)},
+,,$math{d/(dx)*([u](t)*[v](t)) = [u](t)*[v]'(t) + [u]'(t)*[v](t)},
+,,$math{d/(dx)([u](\l(t))) = \l'(t)*[u](\l(t))},
+,,$math{d/(dt)|[u](t)| = [u](t).[u]'(t)/|[u](t)|},
+,Momentum $math{`1p},$math{F = d*[`1p]/dt = d/dt(m*[v])},
+,,"$math{`1p_10 + `1p_20 + `1I = `1p_11 + `1p_21}
+
+$math{(m + \D*m)([v]+\D*[v]) + (-\D*m)([v]+[v_e]) = m*[v] -> m*d*[v]/(dt) = dm/(dt)*[v_e]}",
+,Circular motion,"$math{[r] -> [v] -> [a]}
+$math{d[r]/dt = [v](t) = [\O]*[r](t)}
+$math{[\O]} axis of rotation, point upward",
+,Rotational frames,"Inertial frame: {[`3I], [`3J], [`3K]}
+Rotational frame: {[`3i], [`3j], [`3k]}, offset [R_0], rotation axis: [\O]
+Position (rotational): [r], (inertial): [R]",
+,,"d[i]/dt = [\O]*[`3i], d[j]/dt = [\O]*[`3j], d[k]/(dt) = [\O]*[`3k], d[R_0]/(dt) = [\O]*[R_0]",
+,,[V] = d*[R]/(dt) = d/(dt)([R_0] + [R]) = d[R_0]/(dt) + dx/(dt)*[`3i] + x*d[`3i]/(dt) + dy/(dt)*[`3j] + y*d[`3j]/(dt) + dz/(dt)*[`3k] + z*d[`3k]/(dt) = [v] + [\O]*[R_0] + x[\O]*[i] + y[}O]*[j] + z[\O]*[k] = [v] + [\O]*[R_0] + [O]*[r] = [v] + [\O]*[R],
+,,"[A] = d[V]/dt = d/(dt)([v] + [\O]*[R]) = d^2x/(dt^2)[`3i] + dx/(dt)*d*[`3i]/(dt) + d^2y/(dt^2)[`3j] + dy/(dt)*d*[`3j]/(dt) + d^2z/(dt^2)[`3k] + dz/(dt)*d*[`3k]/(dt) + [\O]*d*[R]/(dt) = [a] + [\O]*[v] + [\O]*[V] = [a] + 2[\O]*v + [\O]*([O]*R)
+Coriolis acceleration: 2[\O]*[v]
+Centripetal acceleration: [\O]*([O]*[R])",
+,,"m[a] = [F] - 2m[\O]*[v] - m[\O]*([\O]*[R])
+Coriolis force: - 2m[\O]*[v]
+Centrifugal force: - m[\O]*([\O]*[R])",
+,Curves and parametrizations,"{k=1, n, [eq_k]} intersection parametrization
+Substitute t=x, t=y, t=z","y=2x-4, z=3x+1
+x+y=1, x^2+y^2=z
+x^2+y+z=2, xy+z=1 -> x^2+y-xy=1 (x=t)"
+,,"e.g. x^2+y^2+z^2 = 1, [eq with z]
+Substitute x=a*cos(t), y=b*sin(t)","x+2y+4z=4, x^2+4y^2=4"
+,,"L1: x+y+z=1, L2: x^2+y^2+z^2 = 1, [n] = (1, 1, 1)
+-> (1, 0, 0), (0, 1, 0), (0, 0, 1) intersections -> midpoint [r_0]=(1/3, 1/3, 1/3), radius: r=sqrt(2/3)
+[v_1] = (1, -1, 0), [v_2]=[v_1].[n] = (-1, -1, 2), [e_1] = 1/sqrt(2)*(1, -1, 0), [e_2] = 1/sqrt(6)*(-1, -1, 2) -> [r] = [r_0] + [r]([e_1]cos(t) + [e_2]sin(t))",
+,Arc length,"\int{t_1, t_2, |d*[r]/(dt)|dt}",
+,Piecewise smooth curves,"[r](t) fail to be smooth where d[r]/dt = 0
+-> Curve: C = \S{k=1, n, C_k} with parametrization {k=1, n, [r_k]}
+-> \S{1, k, \int{a_i, b_i, |d*[r_i]/dt|*dt}}",
+,Arc length parametrization,"s(t) = \int{t_0, t, |d/(dt)([r](t))|dt}
+[r](s) = [r](t(s)) -> Speed 1",
+,Unit tangent vector,[T] = [v](t)/v(t) = (d[r]/dt)/|d[r]/dt| = d[r]/ds,
+,Unit normal vector,"[N](s) = d[T]/(ds)
+[T](s).[T](s)=1 -> 2[T](s).d[T]/(ds) = 0",
+,Curvature ,\k(s) = |d[T]/(ds)|,
+,Radius of curvature,\r(s) = 1/\k(s),
+,,[N](s) = 1/\k(s)*d[T]/(ds) = (d[T]/(ds))/|d[T]/(ds)|,
+,,"Curvature as rate of turning of unit tangent
+\k > 0 on interval containing s, \D\t angle between [T](s+\D*s) and [T](s) -> \k(s) = lim{\D*s->0, (\D*\t)/(\D*s)}
+
+[\D*T] = [T](s+\D*s) - [T](s)
+-> \lim{\D*s->0, |(\D*[T])/(\D*\t)| = 1
+\k(s) = \lim{\D*s->0, (\D*[T])/(\D*s)} = \lim{\D*s->0, (\D*[T])/(\D*\t)}*\lim{\D*s->0, (\D*\t)/(\D*s)} = \lim{\D*s->0, (\D*\t)/(\D*s)}",
+,Osculating plane,[r](s) with both [N] and [T],
+,Osculating circle,"[r_c] circle center, \r(s) radius
+[r_c](s) = [r](s) + \r(s)[N](s)",
+,Unit binomial,[B] = [T]*[N],
+,Torsion,"\k(s) != 0 -> exist \t(s) torsion in d[B]/(ds) = -\t(s)[N](s)
+
+d[B]/(ds) = d[T]/(ds)*[N] + [T]*d[N]/(ds) = \k[N]*[N] + [T]*d[N]/(ds) = [T]*d[N]/(ds)
+d[B]/(ds) both perpendicular to [T] and [B] -> parallel with [N]",
+,,"lim{\Ds->0, |\D\phi/\D*s|} = |\t(s)|",
+,Frenet-Serret frame,"{[T], [N], [B]}",
+,Frenet-Serret formulas,"d[T]/(ds) = \k[N]
+d[N]/(ds) = -\k[T] + \t[B]
+d[B]/(ds) = -\t[N]",
+,The fundamental theorem of space curves,"C_1 and C_2 curves with same \k(s) != 0, \t(s) -> Congruent curves (moved rigidly, only translate and rotate to coincide)
+s=0 -> coinciding frames
+
+[N], [B] undefined \k=0, (C_1: [T_1](s), [N_1](s), [B_1](s)), (C_2: [T_2](s), [N_2](s), [B_2](s))
+f(s) = [T_1](s).[T_2](s) + [N_1](s).[N_2](s) + [B_1](s).[B_2](s)
+f'(s) = [T_1]'(s).[T_2](s) + [T_1](s).[T_2]'(s) + [N_1]'(s).[N_2](s) + [N_1](s).[N_2]'(s) + [B_1]'(s).[B_2](s) + [B_1](s).[B_2]'(s) = \k*[N_1].[T_2] + [T_1].(\k*[N_2]) + (-\k*[T_1] + \t*[B_1]).[N_2] + [N_1].(-\k[T_2] + \t[B_2]) + (-\t*[N_1]).[B_2] + [B_1](-\t*[N_2]) = 0 -> Coinciding curve frames, coinciding curve -> f(s)=3 -> [T_1](s).[T_2](s) = 1 -> d[r_1]/(ds) = [T_1] = [T_2] = d[r_2]/(ds) -> [r_1](s) = [r_2](s) (s=0 coinciding point)",
+,General parametrization,"[v] = d*[r]/(dt) = d*[r]/(ds)*(ds)/(dt) = v[T]
+[a] = d*[v]/(dt) = (dv)/(dt)*[T] + v*d*[T]/(dt) = (dv)/(dt)*[T] + v*d*[T]/(ds)*(ds)/dt) = (dv)/(dt)[T] + v^2\k*[N] <- Tangental + normal acceleration
+[v]*[a] = v[T]*(dv/(dt)[T]) + v^3\k[T]*[N] = v^3\k*[B]",
+,,"-> [T] = [v]/v, [B] = ([v]*[a])/|[v]*[a]|, \k = |[v]*[a]|/[v]^3",
+,,"(d*[T])/(dt) = (d*[T])/(ds)*(ds)/(dt) = v*(d*[T])/(ds) = v\k*[N]
+-> [N]=[B]*[T] = 1/(v\k)*(d*[T])/(dt) = \r/v*(d*[T])/(dt) = ((d*[T])/(dt))/|(d*[T])/(dt)|",
+,,"(d*[a])/(dt) = d/(dt)((dv)/(dt)[T] + v^2\k*[N]) = [several terms] = \l*[T] + \m*[N] + v^3\k\t*[B] (\l and \m some constant)
+([v]*[a]).(d*[a])/(dt) = (v^3\k)^2\t = |[v]*[a]|^2\t
+-> \t = ([v]*[a]).((d*[a])/(dt))/|[v]*[a]|^2",
+,Evolutes,[r_c](t) = [r](t) + \r(t)[N](t),
+,Kepler laws and planetary motions,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+Multivariable function,,"$math{f(x, y) = xy + 1}, $math{\\R^2 -> \\R}",
+,Multivariable limits,"$math{\lim{(x, y)->(a, b), f(x)}}",
+,,"$math{\lim{(x, y)->(a, b), f(x)} = L}
+
+Every neighbourhood of (a, b) contains points of the domain of f different from a and b
+$math{\e > 0 -> (\d=\d(\e) > 0)}, $math{|f(x, y)-L|<\e -> (0 < \sqrt{(x-a)^2+(y-b)^2} < \d)}",
+,,"$math{\lim{(x, y)->(a, b), f(x, y) \pm g(x, y)} = \lim{(x, y)->(a, b), f(x, y)} \pm \lim{(x, y)->(a, b), g(x, y)}}",
+,,"$math{\lim{(x, y)->(a, b), f(x, y) * g(x, y)} = \lim{(x, y)->(a, b), f(x, y)} * \lim{(x, y)->(a, b), g(x, y)}}",
+,,"$math{\lim{(x, y)->(a, b), f(x, y) / g(x, y)} = \lim{(x, y)->(a, b), f(x, y)} / \lim{(x, y)->(a, b), g(x, y)}}",
+,,"$math{\lim{(x, y)->(a, b), f(x, y)} = L -> \lim{(x, y)->(a, b), F(f(x, y))} = F(L)}",
+,,"$math{\lim{(x, y)->(0, 0), 2xy/(x^2+y^2)}}
+(Path x=0 -> 0, y=x -> 1) -> Nonexistent limit","$math{f(x, y)=2x^2/(x^4+y^2)}
+Path x=0->3, y=x^2->1"
+,,"$math{\lim{(x, y)->(0, 0), x^2y/(x^2+y^2)}=0}
+$math{x^2<=x^2+y^2 -> |f(x, y)-0|=|x^2y/(x^2+y^2)|<=|y|<=\sqrt{x^2+y^2} -> |f(x, y) - 0|<\e -> (0<sqrt(x^2+y^2)<\d)}",
+,,,
+,,,
+,Partial derivatives/Partiella derivator,"[Image of z=f(x, y)]
+$math{f_(x') = \\df/(\\dx) = \lim{(\D*x)->0, (f(x+(\D*x), y)-f(x, y))/(\D*x)}}
+$math{f_(y') = \\dy/(\\d*x) = \lim{(\D*x)->0, (f(x, y+(\D*y))-f(x, y))/(\D*y)}}",
+,2nd derivative,"$math{\\d^2*f/(\\d*x^2) = f_(xx')}
+$math{\\d^2*f/(\\d*y^2) = f_(xx')}
+$math{\\d^2*f/(\\dx\\dy) = f_(xy')}
+$math{\\d^2*f/(\\dy\\dx) = f_(yx')}",
+,,"$math{f_(xy') = f_(yx')} if partial derivatives are continous, (f, all partials to f less than n derivative) continous in neighbourhood of P, n-derivative partials to f continous
+
+$math{Q = f(a+h, b+k) - f(a+h, b) - f(a, b+k) - f(a, b)}, $math{u(x) = f(x, b+k) - f(x, b)}, $math{v(y) = f(a+h, y)-f(a, y)}
+$math{0 < t_1 < 1}, $math{0 < t_2 < 1}
+$math{Q = u(a+h)-u(a) = hu'(a+\t_1h) = h(f_(1')(a+\t_1h, b+k) - f_(1')(a+\t_1h, b)) = hkf_(12')(a+\t_1h, b+\t_2k)}
+$math{Q = v(b+k)-v(b) = hv'(b+\t_1k) = h(f_(2')(a+h, b+\t_2k) - f_(2')(a, b+\t_2k)) = hkf_(21')(a+\t_2h, b+\t_1k)}",
+,Chain rule/Kedjeregeln,"$math{\\du/(\\dt_k) = \S{l=0, n, ((\\du)/(\\dx_1))*((\\dx_1)/(\\dt_k))}}, k=1, 2, 3, …, m
+$math{g_1(s, t) = f_(1')(u(s, t), v(s, t))u_(1')(s, t) + f_(2')(u(s, t), v(s, t))u_(1')(s, t)}
+$math{g_2(s, t) = f_(1')(u(s, t), v(s, t))u_(2')(s, t) + f_(2')(u(s, t), v(s, t))u_(2')(s, t)}
+Multiple chain dependencies -> Dependency chart",
+,,"$math{g(t) = f(x(t), y(t)) -> (df)/(dt) = (\\df/(\\dx))*(\dx/\dt) + (\\df/(\\dy))*(\dy/(\dt))}
+$math{g(t) = f(u(t), v(t))}, $math{g'(t) = f_(1')(u(t), v(t)*u'(t)) + f_(2')(u(t), v(t))*v'(t)}",
+,,"$math{f(x(s, t), y(s, t)) -> (\\df/(\\ds)) = (\\df/(\\dx))(\dx/(\ds)) + (\\df/(\\dy))*(\dy/(\ds))}
+$math{(\\du/(\\dt)) = (\\du/(\\dx))*(dx/(dt)) + (\\du/(\\dy))*(dy/(dt))}",
+,Homogenous functions,"$math{f(x_1, ..., x_n)} every point $math{(x_1, ..., x_n, t>0) -> f(tx_1, ..., tx_n) = t^k*f(x_1, ..., x_n)}
+
+e.g. $math{f(x, y)=x^2+xy-y^2} homogenous 2",
+,Euler's theorem,"$math{\S{i=1, n, x_i*f_(i')(x_1, ..., x_n)}=k*f(x_1, ..., x_n)}
+
+$math{d/(dt)f(tx_1, tx_2, ..., tx_n) = d/(dt)t^kf(x_1, x_2, ..., x_n) -> t=1 -> \S{i=1, n, x_i*f_(i')(tx_1, ..., tx_n)} = k*t^(k-1)f(x_1, ..., x_n)}",
+,,,
+,Tangentplan,"$math{f(x, y) = x^2+y^2}
+$math{(\\df/(\\d*x))(2, 1) = 4}, $math{(\\df/(\\d*y))(2, 1) = 2}, $math{f(2, 1)=5}
+->Tangentplan: $math{z=f(2, 1)+(\\df/(\\d*x))(2, 1)(x-2)+(\\df/(\\d*y))(2, 1)*(y-1) = 5+4(x-2)+2(y-1)}",
+,Differentierbarhet och linjär approximation,"Approximation: $math{z = f(a, b) + \\df/\\dx(a, b)*(x-a) + \\df/\\dy(a, b)*(y-b) = f(a, b) + f_(x')(a, b)(x-a) + f_(y')(a, b)*(y-b)}
+Krav: Partiella derivator och $math{\lim{(x, y)->(a, b), (f(x, y) - f(a, b) - (\\df/(\\dx))(a, b)*(x-a) + (\\df/(\\dy))(a, b)*(y-b))/\sqrt{(x-a)^2 + (y-b)^2}} = 0}
+(Patologisk funktion f(x, y)={1: (x=0, y=0), 0: (x!=0, y!=0)})
+",
+,Multivariable Mean-value theorem,"Continous f_1(x, y), f_2(x, y) in neighbourhood (a, b) -> 0 < (\t_1, \t_2) < 1
+$math{f(a+h, b+k)-f(a, b) = h*f_(1')(a+\t_1*h, b+k)+k*f_(2')(a, b+\t_2*k)}
+
+$math{f(a+h, b+k)-f(a, b) = (f(a+h, b+k)-f(a, b+k))-(f(a, b+k)-f(a, b)) = h*f_(1')(a+\t_1*h, b+k) - k*f_(2')(a, b+\t_2*k)}",
+,,"f_1, f_2 continous in neighbourhood (a, b) -> f differentiable at (a, b)
+$math{\lim{(x, y)->(a, b), (f(x, y) - f(a, b) - (\\df/(\\dx))(a, b)*(x-a) + (\\df/(\\dy))(a, b)*(y-b))/\sqrt{(x-a)^2 + (y-b)^2}} = 0}
+
+Multivariable Mean-value theorem -> 
+$math{h=x-a}, $math{k=y-b}
+$math{|h/\sqrt{h^2+k^2}|<1}, $math{|k/\sqrt{h^2+k^2}|<1}
+$math{0<=|(f(a+h, b+k)-f(a, b)-h*f_1(a, b)-k*f_2(a, b))/\sqrt{h^2+k^2}|=|h/\sqrt{h^2+k^2}*(f_1(a+\t_1*h, b+k)-f_1(a, b)) + k/\sqrt{h^2+k^2}*(f_2(a, b+\t_2*k)-f_2(a, b))|<=|f_1(a+\t_1*h, b+k)-f_1(a, b)|+|f_2(a, b+\t_2*k)-f_2(a, b)|<=0 -> 0}
+",
+,,,
+,,,
+,,,
+,,,
+,Gradient och riktningsderivata,"$math{f(x, y) = x^2y}, $math{grad f = \nabla f = (\\df/\\dx, \\df/\\dy) = (2xy, x^2)}",
+,Riktningskurva,"[Image]
+f deriverbar och |[u]| = 1
+D_([u])(f(a, b)) = lim{h->0, (f(a+h[u_1], b+h[u_2]) - f(a, b))/h}
+D_([u])(f(a, b)) = [u] . \nabla f(a, b)
+
+D_([u])(f(a, b)) = lim{h->0, (f(a+h[u_1], b+h[u_2]) - f(a, b))/h}
+= lim{h->0, (f(a, b) + f_('x)(a, b)*((a+h[u_1]) - a) + f_('y)(a, b)*((b+h[u_2])-b) + o(h) - f(a, b))/h}
+= \lim{h->0, (f_('x)(a, b)*(h[u_1]) + f_('y)(a, b)*(h[u_2]) + o(h))/h}
+= f_('x)(a, b)[u_1] + f_('y)(a, b)[u_2] = (f_('x)(a, b), f_('y)(a, b)).([u_1], [u_2])",
+,,"\nabla f(a, b) är ortogonal mot nivåkurvan till f genom (a, b) och pekar för maxtillväxt av f",
+,,"Maxtillväxten är |\nabla f(a, b)|",
+,Total differential,df = \\df/\\dx*dx + \\df/\\dy*dy,
+,Total derivative,"dz/dx = \\dz/\\dx + \\dz/\\dy*(dy)/(dx)
+dz/dy = \\dz/\\dx*(dx)/(dy) + \\dz/\\dy",
+,Implicit derivata,"F(x, y) = x^4+xy^2+y^3+5 = 0
+d/dx(F(x, y(x))) = 0 -> \\dF/\\dx + \\dF/\\dy*dy/dx = 0 -> dy/dx = -(\\dF/\\dx)/(\\dF/\\dy)",
+,,"(F(x, y, z)=0, G(x, y, z)=0) -> (d/dx(F(x, y(x), z(x)))=0, d/dx(G(x, y(x), z(x)))=0)
+\\dF/\\dx + \\dF/\\dy*dy/dx + \\dF/\\dz*dz/dx = 0
+\\dG/\\dx + \\dG/\\dy*dy/dx + \\dG/\\dz*dz/dx = 0
+-> dy/dx, dz/dx (|[[\\dF/\\dy, \\dF/\\dz], [\\dG/\\dy, \\dG/\\dz]]| != 0)",
+,Taylors formel,"f(x) = f(a) + f'(a)/1!(x-a) + f''(a)/2!*(x-a)^2 + f'''(c)/3!*(x-a)^3
+f(x, y) = f(a, b) + 1/1!(\\df/\\dx(a, b)(x-a) + \\df/\\dy(a, b)(y-b)) + 1/2!(\\d^2f/\\dx^2(a, b)(x-a)^2 + 2\\d^2f/\\dx\\dy(a, b)(x-a)(y-b) + \\d^2f/\\dy^2(a, b)(y-b)^2) + O(sqrt((x-a)^2+(y-b)^2)^3)",
+,Optimering/Extremvärden i flera variabler,"f har max i (a, b) om f(a, b) >= f(x, y)
+f kontinuerlig på sluten, begränsad mängd -> garanterar existensen
+Max/min kan antas i:
+- Kritiska punkter: Alla partiella derivator = 0
+- Singulära punkter: Någon av partiella derivator saknas
+- Randpunkter","f(x) = xy-x, D: x^2<=y<=4
+(\\df)/(\\dx) = y-1, (\\df)/(\\dy) = x, y -> (0, 1), f(0, 1)=0
+y=x^2: f(x, x^2)=x^3-x = g(x) -> g'(x)=0 -> x = 1/sqrt(3), -1/sqrt(3), f(1/sqrt(3)) = 1/(3sqrt(3)) - 1/sqrt(3) = -2/(3sqrt(3), f(1/sqrt(3)) = -1/(3sqrt(3)) + 1/sqrt(3) = 2/(3sqrt(3))
+y=4: f(2, 4) = 8-2=6, f(-2, 4)=-8+2=6"
+,,Andraderivatatest: ...,
+,Optimering med bivillkor,"f(x, y) = (2x+y)^2 som uppfyller g(x, y) = c -> \nabla f och \nabla g paraella, vinkelrät mot nivåkurva (\nabla f = \l*\nabla g)
+
+-> Sök kritiska punkter till (Lagrangefunktionen) L(x, y, \l) = f(x, y) - \l*(g(x, y)-c)
+0 = (\\dL)/(\\dx) = (\\df)/(\\dx) - \l*(\\dg)/(\\dx))
+0 = (\\dL)/(\\dy) = (\\df)/(\\dy) - \l*(\\dg)/(\\dy))
+0 = (\\dL)/(\\d\l) = g(x, y)","f(x, y)=(2x+y)^2, x^2+y^2-5=0
+-> \pm(1, -2), \pm(2, 1)"
+,Maxima and minima,,
+,"f(a, b) maximum","f_(x)'(a, b) = f_(y)'(a, b) = 0, (f_(xy)')^2(a, b) - f_(xx)'(a, b)*f_(yy)'(a, b) < 0",
+,"f(a, b) minimum","f_(xx)'(a, b) < 0, f_(yy)'(a, b) < 0",
+,,"f_(xx)'(a, b) > 0, f_(yy)'(a, b) > 0",
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+Vector fields,,"f(x, y, z) = (x*y, y+z-1)",
+,Vector fields/Vektorfält,"[F](x, y, z) = -k/(x^2+y^2+z^2)^(3/2)(x, y, z)
+[F](x, y) = k/(x^2+y^2)(-y, x)
+[F]([r]) = -k/|[r]|^3[r]",
+,Konservativ vektorfält,"[F](x, y, z) = \nabla f(x, y, z), [F] med potential f
+[F] = (P, Q, R) = ((\\df)/(//dx), (\\df)/(//dy), (\\df)/(//dz))
+(\\dP)/(\\dy) = (\\dQ)/(\\dx), (\\dQ)/(\\dz) = (\\dR)/(\\dy), (\\dP)/(\\dz) = (\\dR)/(\\dx)
+
+Blandade andraderivatorna lika:
+\\f_('xy) = \\f_('yx) -> (\\dP)/(\\dy) = (\\dQ)/(\\dx)
+
+Fältlinjer, potential, ekvipotentiallinjer",
+,Kurvintegraler av vektorfält,"[F] = (P, Q), [r](t) = (x(t), y(t))
+int2{\g, [F].[dr]} = int2{\g, Pdx+Qdy} = int{a, b, (P(x(t), y(t))x'(t) + Q(x(t), y(t))y'(t))dt}",
+,,"Konservativ vektorfält, [F]=(y^2, 2xy) -> f=xy^2, [r](t) = (t, t^2) r(0) -> r(1)
+int2{\g, [F].[dr]} = f(1, 1^2) - f(0, 0^2)",
+,Ytintegral,"Y: x^2+y^2+z^2=1, z>=0 -> [r](sin(\p)cos(\t), sin(\p)sin(\t), cos(\p))
+dS = |[r_('\p)]*[r_('\t)]|d\p*d\t, int2{Y, z^2*dS} = int{0, 2\pi, int{0, \pi/2, cos^2(\p)*sin(\p)d\p}d\t}",
+,Flödesintegral,"[F](x, y, z) = (x, y, 0), Y: x^2+y^2<=1, 0<=x<=1
+int2{Y, [F].[N]dS} = int2{Y, (cos(\t), sin(\t), 0).(cos(\t), sin(\t), 0)|[r_('\t)*r_('z)]|d\t*d\z}",
+,Green's formel i planet,"ringint{\g, (P*dx+Q*dy)} = int2{D, ((\\dQ)/(\\dx) - (\\dP)/(\\dy))dxdy}
+(Under vissa förutsättningar, positivt orienterad)
+\g en kurva runt område D","\g: x^2+y^2=1, x=0, y=0, x>=0, y>=0
+ringint{\g, -y^3dx + x^3dy} = int{D, (3x^2+3y^2)dxdy}"
+,Divergenssatsen/Gauss sats,"(Under vissa förutsättningar på [F], K)
+int2(\\dK, [F].[N]dS) = int3{K, div[F]dV}
+
+K: x^2+y^2+z^2 = 1
+[F](x, y, z) = (x+y, y, 0), int2{\\dK, [F].[N]dS} = int3{K, div[F]dV} = int3{K, 3dV}",
+,,,
+,,,
+,,,
+,,,
+,Derivative of vectors,"[A]([u]) = [[A_1([u])], [A_2([u])], [A_3([u])]]
+d[A]/du = lim{\Du->0, (A(u+\Du)-A(u))/(\Du)} = [[dA_1/du], [dA_2/du], [dA_3/du]]",
+,Nabla operator/del operator,"\nabla = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]",
+,,"grad f = (\nabla)f = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]",
+,,div [F] = \nabla.[F] = \\dF_1/\\dx + \\dF_2/\\dx + \\dF_3/\\dx,
+,,"curl [F] = \nabla*[F] = [[\\dF_3/\\dy-\\dF_2/\\dz], [\\dF_1/\\dz-\\dF_3/\\dx], [\\dF_2/\\dx-\\dF_1/\\dy]]",
+,Derivative rules for vectors,d/(dx)([F].[G]) = [F].(d[G])/(dx) + (d[F])/(du).[G],
+,,d/(dx)([F]*[G]) = [F]*(d[G])/(dx) + (d[F])/(dx)*[G],
+,,d/(dx)([F].([G]*[H])) = (d[F])/(dx).([G]*[H]) + [F].((d[G])/(dx)*[H]) + [F].([G]*(d[H]/dx)),
+,,[F].(d[F])/(dx) = [F](d[F])/(dx),
+,,"[F].(d[F])/(dx) = 0, if |[F]| is constant",
+,,,
+,Nabla operator rules,\nabla(f+g) = \nabla(f) + \nabla(g),
+,,\nabla.([F]+[G]) = \nabla.[F] + \nabla.[G],
+,,\nabla*([F]+[G]) = \nabla*[F] + \nabla*[G],
+,,\nabla.(f[G]) = ((\nabla)f).[G] + f(\nabla.[G]),
+,,\nabla*(f[G]) = ((\nabla)f)*[G] + f(\nabla*[G]),
+,,\nabla.([F]*[G]) = [G].(\nabla*[F]) - [F].(\nabla*[G]),
+,,\nabla*([F]*[G]) = ([G].\nabla)[F] - [G](\nabla.[F]) - ([F].\nabla)[G] + [F](\nabla.[G]),
+,,\nabla([F].[G]) = ([G].\nabla)[F] + ([F].\nabla)[G] + [G]*(\nabla*[F]) + [F]*(\nabla*[G]),
+,,\nabla*((\nabla)f) = 0,
+,,\nabla.(\nabla*[F]) = 0,
+,,\nabla.((\nabla)f) = (\nabla^2)U,
+,,\nabla*(\nabla*[F]) = \nabla(\nabla.[F])-\nabla^2[F],
+,,,
+,,,
+,,,
+,Differentiation under the integral sign,"f(\a) = int{g_1(\a), g_2(\a), f(x,\a)*dx} ->
+df/d\a = f(g_2, \a)*dg_2/d\a - f(g_1(\a),\a)*dg_1/d\a + int{(g_1(\a)), (g_2(\a)), \df(x,\a)/\d\a*dx}
+= int{(g_1), (g_2), \df(x,\a)/\d\a*dx} (if g_1, g_2 = constant), formula of Leibnitz",
+,Laplace equations,$math{\\d^2z/(\\dx^2)+\\d^2z/(\\dy^2)=0 -> z=e^(kx)*cos(ky)},
+,,"$math{f(x, y)} harmonic -> $math{f(x^2-y^2, 2xy)} harmonic",
+,Wave equation,$math{\\d^2w/(\\dt^2) = c^2*(\\d^2w/(\\dx^2)) -> w=f(x-ct)+g(x+ct)},
+,Laplace equation in polar coordinates,$math{(\\d^2z)/(\\dr^2)+1/r*((\\dz)/(\\dr))+1/r^2*((\\d^2z)/(\\dr^2)) = (\\d^2z)/(\\dx^2)+(\\d^2z)/(\\dy^2)},
+,,,
+,,,
+,,,

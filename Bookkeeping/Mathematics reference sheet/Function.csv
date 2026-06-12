@@ -1,4 +1,5 @@
 Name,Basic relationship,Presetted values
+rich,rich,rich
 General function definition,"f: A (Domain, definitionsmängd) -> B (Range, Värdemängd) is a rule that to every x in A yields one function value f(x) in B
 Function graph/Funktionsgraf/Funktionskurva: {point(x, y): y=f(x)}
 Domain D_f (set, allowed x values) -> Range V_f (set, based on allowed domain values)

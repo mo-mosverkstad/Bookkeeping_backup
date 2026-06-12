@@ -1,0 +1,437 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2
+rich,rich,rich
+Architecture,,"High-level view of computer, defined by instruction set (language) and operatnd locations (memory, registers)
+Computer architecture does not define underlying hardware implementation"
+Single cycle computer,Carry-based single cycle computer,"F: Acc, I, C, D, N -> (A[3:0] = MUX(Acc, 0, C[1]), S=C[1]*C[3], B[3:0] = MUX(D, I, C[0])^Bitextend(4, S)) -> S, A[3:0], B[3:0]
+G: C, N -> (P=C[2]*(C[3]+!N), Q=!C[2]) -> P, Q
+
+(Address)[3:0] = Counter(CLK, R, load=P)
+(Acc)[3:0] = Register(CLK, R, Write=Q)
+[C[3:0], D[3:0]] = ROM(Adress)
+S, A[3:0], B[3:0] = F(Acc, I, C, D)
+P, Q = G(C, D-FF(CLK, N))
+N, R[3:0] = ADD(A, B, S)"
+,,
+,,"Imm: D[3:0], A: Accumulator (Registor), SW: Switch input (external user input), JNC: Jump no carry to adress
+(C[3:0]: Instruction, 0: A=0+Imm+0, 1: A=0+SW, 2: A=A+Imm, 3: A=A+SW, 4: JNC 0+Imm, 5: JNC 0+SW, 6: JNC A+Imm, 7: JNC A+SW, 8: A=0+Imm, 9: A=0+SW, A: A=A-Imm, B: A=A-SW, C: JMP 0+Imm, D: JMP 0+SW, E: JMP A-Imm, F: JMP A-SW)
+e.g. [00 21 41 05 0A C3]"
+,ALU,"module ALU (
+    input  wire [31:0] A,
+    input  wire [31:0] B,
+    input  wire [2:0]  F,      // ALU control: F2:F0
+    output reg  [31:0] Y,
+    output wire        Zero,
+    output wire [31:0] N       // Zero-extended MSB of A
+);
+    // Zero extender: extract MSB of A and pad with zeros
+    assign N = {31'b0, A[31]};
+    // Zero flag: true if result is zero
+    assign Zero = (Y == 32'b0);
+    always @(*) begin
+        case (F)
+            3'b000: Y = A & B;              // A AND B
+            3'b001: Y = A | B;              // A OR B
+            3'b010: Y = A + B;              // A + B
+            3'b011: Y = A & ~B;             // A AND !B
+            3'b100: Y = A | ~B;             // A OR !B
+            3'b101: Y = A - B;              // A - B
+            3'b110: Y = (A < B) ? 32'd1 : 32'd0; // SLT
+            default: Y = 32'b0;             // Unused
+        endcase
+    end
+endmodule"
+,Datapath (MIPS),"Datapath(Jump, RegWrite, RegDst, ALUSrc, ALUControl, Branch, MemWrite, MemToReg)
+# Program Counter
+PC      = D-FF(CLK, PC_next)
+PC_plus4 = Add(PC, 4)
+# Instruction Fetch
+Instr   = InstructionMemory(PC)"
+,,"# Register File Read
+rs = Instr[25:21]
+rt = Instr[20:16]
+rd = Instr[15:11]
+WriteReg = MUX([rt, rd], RegDst)
+RD1, RD2 = Registers(CLK, rs, rt, WriteReg, WriteData, RegWrite)
+# Immediate Generation
+Simm = SignExtend(Instr[15:0])
+# ALU Input Mux
+ALU_B = MUX([RD2, Simm], ALUSrc)
+# ALU Operation
+ALUResult, Zero = ALU(RD1, ALU_B, ALUControl)
+# Data Memory
+MemOut = DataMemory(ALUResult, RD2, MemWrite, CLK)"
+,,"# Writeback Mux
+WriteData = MUX([ALUResult, MemOut], MemToReg)
+# Branch Target Calculation
+Simm_shift = ShiftLeft2(Simm)
+BTA = Add(PC_plus4, Simm_shift)
+# Branch Decision
+BranchTaken = AND(Branch, Zero)
+# Jump Target Calculation
+JumpAddr = { PC_plus4[31:28], Instr[25:0], 2'b00 }
+# Next PC Mux
+PC_branch = MUX([PC_plus4, BTA], BranchTaken)
+PC_next   = MUX([PC_branch, JumpAddr], Jump)"
+,"Control unit (Decoder, MIPS)","[Instr,op,RegWrite,RegDst,ALUSrc,Branch,MemWrite,MemToReg,Jump,ALUOp]
+[R-Type,000000,1,1,0,0,0,0,0,10]
+[lw,100011,1,0,1,0,0,1,0,00]
+[sw,101011,0,?,1,0,1,?,0,00]
+[beq,000100,0,?,0,1,0,?,0,01]
+[addi,001000,1,0,1,0,0,0,0,00]
+[j,000010,0,?,?,?,?,0,?,1,??]"
+,ALU decoder,"[ALUOp,funct,ALUControl] (Enough to check one bit, faster decoding)
+[00,?,010 (add)]
+[?1,?,110 (subtract)]
+[1?,100000 (add),010 (add)]
+[1?,100010 (sub),110 (subtract)]
+[1?,100100 (and),000 (and)]
+[1?,100101 (or),001 (or)]
+[1?,101010 (slt),111 (set less than)]"
+Pipelining,,Pipeline structure … (5 stage pipeline)
+,Pipelining data hazards,"Read after write (RAW)
+add $s0, $s1, $s2: [F][D][E][M][W] <- $s0 production
+sub $t0, $s0, $t1: [-][F][D][E][M][W] <- Depend on $s0
+and $t2, $t1, $s0: [-][-][F][D][E][M][W] <- Depend on $s0
+xori $t3, $s0, 12: [-][-][-][F][D][E][M][W] <- Depend on $s0
+
+Solution:
+1. Forwarding to previous stage (Hazard detection implemented using a hazard detection unit -> give control signal to datapath if data should be forwarded)
+add $s0, $s1, $s2: [F][D][E][M(Send down)][W] <- $s0 production
+sub $t0, $s0, $t1: [-][F][D][E(Recieve)][M][W] <- Depend on $s0
+
+2. Stalling, delay dependent stages so forwarding matches
+lw $s0, 20($s2): [F][D][E][M][W(Send down)]
+sub $t0, $s0, $t1: [-][F][D]<[D]>[E(Recieve)][M][W]"
+,Branch prediction,"20: beq  $s1, $s2, foo [F][D][E][M][W]
+24: sub  $t0, $s0, $t1 [-][F][D][E][M][W]
+28: and  $t2, $t1, $s0 [-][-][F][D][E][M][W]
+2C: xori $t3, $s0, 12 [-][-][-][F][D][E][M][W]
+. . . 
+64: foo: addi $t3, $s0, 100 [-][-][-][-][F][D][E][M][W] <- Branch misprediction penalty 3 cycles, flush away 24, 28 and 2C
+
+20: beq  $s1, $s2, foo [F][D][E][M][W]
+24: sub  $t0, $s0, $t1 [-][F][D][E][M][W]
+28: and  $t2, $t1, $s0 [-][-][F][D][E][M][W]
+2C: xori $t3, $s0, 12 [-][-][-][F][D][E][M][W]
+. . . 
+64: foo: addi $t3, $s0, 100 [-][-][F][D][E][M][W] <- Branch misprediction penalty reduced to 1 cycle, flush away 64"
+,Static branch predictors,"Statically (at compile time) determine if a branch is taken or not. For instance, predict branch not taken."
+,Dynamic branch predictors,"Branch predictors
+- Dynamically (at runtime) predict if a branch will be taken or note.
+- Operates in the fetch state.
+- Maintains a table, called the branch target buffer, that contains hundreds or thousands of executed branch instructions, their destinations, and information if the branches were taken or not."
+,,
+,,
+,,
+RISC-V,,
+,Single-cycle,"SingleCycle()(CLK, ControlUnit, Datapath(ControlUnit, CLK))"
+,,"Datapath(ControlUnit, CLK)(
+PCPlus4[31:0] = ADD(PC[31:0], 4, 0),
+PCNext[31:0] = MUX([PCPlus4[31:0], PCTarget[31:0]], PCSrc),
+PC[31:0] = D-FF(CLK, PCNext[31:0], Write=1),
+
+Instr[31:0] = InstructionMemory(PC[31:0]),
+rs1[] = Instr[19:15], rs2[] = Instr[24:20], rd[] = Instr[11:7], op[] = Instr[6:0], funct3[] = Instr[14:12], funct7_5[] = Instr[30],
+RD1[31:0], RD2[31:0] = RegisterFile(rs1[], rs2[], RD3 = rd[], WD3 = Result[31:0], we3=RegWrite, clk=CLK),
+ImmExt[31:0] = ImmDecoder(Instr[31:0], ImmSrc[1:0]),
+PCSrc, ResultSrc, MemWrite, ALUControl[2:0], ALUSrc, ImmSrc[1:0], RegWrite = ControlUnit(op, funct3, funct7, Zero),
+
+PCTarget[3:0] = ADD(PC[3:0], ImmExt, 0),
+SrcA[31:0] = RD1[], SrcB[31:0] = MUX([RD2[31:0], ImmExt[31:0]], ALUSrc),
+ALUResult[31:0], Zero = ALU(SrcA[31:0], SrcB[31:0], ALUControl[2:0])
+
+ReadData[31:0] = DataMemory(A=ALUResult, WD=RD2, WE=MemWrite, CLK)
+Result[31:0] = MUX([ALUResult[31:0], ReadData[31:0], PcPlus4[31:0]], ResultSrc[1:0])
+)"
+,,"Extend: instr[31:0], ImmSrc[1:0] -> (ImmExt[31:0] = MAP([
+    00: {{20{Instr[31]}},Instr[31:20]}, <- I-type, 12-bit signed immediate
+    01: {{20{Instr[31]}}, Instr[31:25], Instr[11:7]}, <- S-type, 12-bit signed immediate
+    10: {{20{Instr[31]}}, Instr[7], Instr[30:25], Instr[11:8], 1'b0}, <- B-type, 13-bit signed immediate
+    11: {{12{Instr[31]}}, Instr[19:12], Instr[20], Instr[30:21], 1'b0}, <- J-type, 21-bit signed immediate
+], ImmSrc[1:0])) -> ImmExt[31:0]"
+,,"ControlUnit: Zero, op[6:0], funct3[2:0], funct7_5 -> (
+    RegWrite, ImmSrc[1:0], ALUSrc, MemWrite, ResultSrc[1:0], Branch, ALUOp[1:0], Jump = MainDecoder(op[6:0]),
+    ALUControl[2:0] = ALUDecoder(funct3[2:0], funct7_5),
+    PCSrc = (Zero)*(Branch) + (Jump)
+) -> PCSrc, ResultSrc[1:0], MemWrite, ALUSrc, ImmSrc[1:0], RegWrite, ALUControl[2:0]"
+,,"MainDecoder: op[6:0] -> (MAP([op[6:0]: [RegWrite, ImmSrc[1:0], ALUSrc, MemWrite, ResultSrc[1:0], Branch, ALUOp[1:0], Jump]], [
+0000011: [1,00,1,0,01,0,00,0], <- lw
+0100011: [0,01,1,1,xx,0,00,0], <- sw
+0110011: [1,xx,0,0,00,0,10,0], <- R-type
+1100011: [0,10,0,0,xx,1,01,0], <- beq
+0010011: [1,00,1,0,00,0,10,0], <- I-type ALU
+1101111: [1,11,x,0,10,0,xx,1] <- jal
+]) -> RegWrite, ImmSrc[1:0], ALUSrc, MemWrite, ResultSrc[1:0], Branch, ALUOp[1:0], Jump"
+,,"ALUDecoder: ALUOp[1:0], funct3[2:0], funct7_5 -> (MAP([ALUOp[1:0], funct3[2:0], {op[5], funct7_5}: ALUControl[2:0]], [
+    00, x, x: 000 (add), <- lw, sw
+    01, x, x, 001 (sub), <- beq, add
+    10, 000, [00, 01, 10]: 000 (add), <- add
+    , 000, 11: 001 (sub), <- sub
+    , 010, x: 101 (set less than), <- slt
+    , 110, x: 011 (or), <- or
+    , 111, x: 010 (and), <- and
+], [ALUOp[1:0], funct3[2:0], {op[5], funct7_5}])) -> ALUControl[2:0]"
+,Multi-cycle,
+,,"Datapath(ControlUnit, CLK)(
+PC[31:0] = D-FF(CLK, PCNext[31:0], Write=PCWrite),
+Adr[31:0] = MUX([PC[31:0], Result[31:0]], AdrSrc),
+ReadData[31:0] = InstrDataMemory(A = Adr[31:0], WD = WriteData[31:0], WE = MemWrite, CLK = CLK),
+Instr[31:0], OldPC[31:0] = D-FF(CLK, [ReadData[31:0], PC[31:0]], EN=IRWrite),
+Data[31:0]  = D-FF(CLK, ReadData[31:0]),
+
+op[] = Instr[6:0], funct3[] = Instr[14:12], funct7_5 = Instr[30], rs1[] = Instr[19:15], rs2[] = Instr[24:20], rd[] = Instr[11:7],
+RD1[31:0], RD2[31:0] = RegisterFile(A1 = rs1[], A2 = rs2[], A3 = rd[], WD3 = Result[31:0], WE3 = RegWrite, CLK = CLK),
+ImmExt[31:0] = ImmDecoder(Instr[31:0], ImmSrc[1:0]),
+PCWrite, AdrSrc, MemWrite, IRWrite, ResultSrc[1:0], ALUControl[2:0], ALUSrcB[1:0], ALUSrcA[1:0], ImmSrc[1:0], RegWrite = ControlUnit(op[], funct3[], funct7_5, Zero)
+
+A[31:0]         = D-FF(CLK, RD1[31:0]),
+WriteData[31:0] = D-FF(CLK, RD2[31:0]),
+
+SrcA[31:0] = MUX([PC[31:0], OldPC[31:0], A[31:0]], ALUSrcA[1:0]),
+SrcB[31:0] = MUX([WriteData[31:0], ImmExt[31:0], 4], ALUSrcB[1:0]),
+ALUResult[31:0], Zero = ALU(SrcA[31:0], SrcB[31:0], ALUControl[2:0]),
+ALUOut[31:0] = D-FF(CLK, ALUResult[31:0]),
+Result[31:0] = MUX([ALUOut[31:0], Data[31:0], ALUResult[31:0]], ResultSrc[1:0]),
+
+PCNext[31:0] = Result[31:0]
+)"
+,,"ControlUnit: Zero, op[6:0], funct3[2:0], funct7_5 -> (
+    Branch, PCUpdate, AdrSrc, MemWrite, IRWrite, RegWrite, ImmSrc[1:0], ALUSrcA[1:0], ALUSrcB[1:0], ALUControl[2:0], ALUOp[1:0], ResultSrc[1:0] = MainDecoderFSM(op[6:0])
+    PCWrite = (Zero)*(Branch) + (PCUpdate)
+    ALUControl[2:0] = ALUControl(funct3[2:0], funct7_5, ALUOp[1:0])
+    op[6:0] = InstrDecoder(ImmSrc[1:0])
+) -> PCWrite, AdrSrc, MemWrite, IRWrite, ResultSrc[1:0], ALUControl[2:0], ALUSrcB[1:0], ALUSrcA[1:0], ImmSrc[1:0], RegWrite"
+,,"MainDecoder: op[6:0] -> (FSM([state[]: op[6:0]/[Branch, PCUpdate, AdrSrc, MemWrite, IRWrite, RegWrite, ImmSrc[1:0], ALUSrcA[1:0], ALUSrcB[1:0], ALUOp[1:0], ResultSrc[1:0]]], [
+S0 Fetch: (S1 Decode)/[0,1,0,0,1,0,xx,00,10,00,10],
+S1 Decode: (S2 MemAdr, S6 ExecuteR, S8 ExecuteI, S9 JAL, S10 BEQ)/[0,0,0,0,0,0,xx,01,01,00,xx],
+S2 MemAdr: (S3 MemRead, S5 MemWrite)/[0,0,0,0,0,0,00,10,01,00,xx],
+S3 MemRead: (S4 MemWB)/[0,0,1,0,0,0,xx,xx,xx,xx,01],
+S4 MemWB: (S0 Fetch)/[0,0,0,0,0,1,xx,xx,xx,xx,01],
+S5 MemWrite: (S0 Fetch)/[0,0,1,1,0,0,xx,xx,xx,xx,xx],
+S6 ExecuteR: (S7 ALUWB)/[0,0,0,0,0,0,xx,10,00,10,xx],
+S7 ALUWB: (S0 Fetch)/[0,0,0,0,0,1,xx,xx,xx,xx,00],
+S8 ExecuteI: (S7 ALUWB)/[0,0,0,0,0,0,01,10,01,10,xx],
+S9 JAL: (S0 Fetch)/[0,1,0,0,0,0,11,10,10,00,00],
+S10 BEQ: (S0 Fetch)/[1,0,0,0,0,0,10,10,00,01,00]
+]) -> RegWrite, ImmSrc[1:0], ALUSrcA[1:0], ALUSrcB[1:0], MemWrite, ResultSrc[1:0], Branch, ALUOp[1:0], Jump"
+,Pipelined,"Datapath(ControlUnit, HazardUnit, CLK)(
+PCPlus4F[31:0] = ADD(PCF[31:0], 4, 0),
+PCNextF[31:0] = MUX([PCPlus4F[31:0], PCTargetE[31:0]], PCSrcE),
+PCF[31:0] = D-FF(CLK, PCNextF[31:0], Write=~StallF),
+
+InstrF[31:0] = InstructionMemory(PCF[31:0]),
+InstrD[31:0], PCD[31:0], PCPlus4D[31:0] = D-FF(CLK, [InstrF[31:0], PCF[31:0], PCPlus4F[31:0]], Write=~StallD, Flush=FlushD),
+
+rs1D[] = InstrD[19:15], rs2D[] = InstrD[24:20], rdD[] = InstrD[11:7], opD[] = InstrD[6:0], funct3D[] = InstrD[14:12], funct7_5D[] = InstrD[30],
+
+RegWriteD, ResultSrcD[1:0], MemWriteD, JumpD, BranchD, ALUControlD[2:0], ALUSrcD, ImmSrcD[1:0] = ControlUnit(opD, funct3D, funct7_5D),
+RD1D[31:0], RD2D[31:0] = RegisterFile(rs1D[], rs2D[], RD3=rdW[], WD3=ResultW[31:0], we3=RegWriteW, clk=CLK),
+ImmExtD[31:0] = ImmDecoder(InstrD[31:0], ImmSrcD[1:0]),
+RegWriteE, ResultSrcE[1:0], MemWriteE, JumpE, BranchE, ALUControlE[2:0], ALUSrcE, RD1E[31:0], RD2E[31:0], PCE[31:0], Rs1E[], Rs2E[], RdE[], ImmExtE[31:0], PCPlus4E[31:0] = D-FF(CLK, [RegWriteD, ResultSrcD, MemWriteD, JumpD, BranchD, ALUControlD, ALUSrcD, RD1D, RD2D, PCD, rs1D, rs2D, rdD, ImmExtD, PCPlus4D], Flush=FlushE),
+
+ForwardAE[1:0], ForwardBE[1:0], StallF, StallD, FlushD, FlushE = HazardUnit(Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW, RegWriteM, RegWriteW, ResultSrcE[0], PCSrcE),
+SrcAE[31:0] = MUX([RD1E[31:0], ResultW[31:0], ALUResultM[31:0]], ForwardAE[1:0]),
+WriteDataE[31:0] = MUX([RD2E[31:0], ResultW[31:0], ALUResultM[31:0]], ForwardBE[1:0]),
+SrcBE[31:0] = MUX([WriteDataE[31:0], ImmExtE[31:0]], ALUSrcE),
+PCTargetE[31:0] = ADD(PCE[31:0], ImmExtE[31:0], 0),
+ALUResultE[31:0], ZeroE = ALU(SrcAE[31:0], SrcBE[31:0], ALUControlE[2:0]),
+PCSrcE = (BranchE & ZeroE) | JumpE, RegWriteM, ResultSrcM[1:0], MemWriteM, ALUResultM[31:0], WriteDataM[31:0], PCPlus4M[31:0], RdM[] = D-FF(CLK, [RegWriteE, ResultSrcE, MemWriteE, ALUResultE, WriteDataE, PCPlus4E, RdE]),
+
+ReadDataM[31:0] = DataMemory(A=ALUResultM[31:0], WD=WriteDataM[31:0], WE=MemWriteM, CLK),
+RegWriteW, ResultSrcW[1:0], ALUResultW[31:0], ReadDataW[31:0], PCPlus4W[31:0], RdW[] = D-FF(CLK, [RegWriteM, ResultSrcM, ALUResultM, ReadDataM, PCPlus4M, RdM]),
+ResultW[31:0] = MUX([ALUResultW[31:0], ReadDataW[31:0], PCPlus4W[31:0]], ResultSrcW[1:0])
+)"
+,,"HazardUnit: Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW, RegWriteM, RegWriteW, ResultSrcE[0], PCSrcE -> (
+lwStall = ResultSrcE[0] & ((RdE == Rs1D) | (RdE == Rs2D)),
+ForwardAE[1:0] = (RegWriteM & (RdM != 0) & (RdM == Rs1E)) ? 2 :     (RegWriteW & (RdW != 0) & (RdW == Rs1E)) ? 1 : 0,
+ForwardBE[1:0] = (RegWriteM & (RdM != 0) & (RdM == Rs2E)) ? 2 : (RegWriteW & (RdW != 0) & (RdW == Rs2E)) ? 1 : 0,
+StallF = lwStall,
+StallD = lwStall,
+FlushD = PCSrcE,
+FlushE = lwStall | PCSrcE
+) -> ForwardAE[1:0], ForwardBE[1:0], StallF, StallD, FlushD, FlushE"
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+Memory hierarchy,,"Cache <- Main memory <- Virtual memory (large capacity, slow)
+Only 2 can be fulfilled: fast, large and cheap, Combining fast, small, cheap memory and a slow, large, cheap memory as approximation"
+,,"Temporal locality: that if you have used data recently, you are likely to use it again soon (likely to access recent addresses)
+Spatial locality: when you use one particular data, you are likely to be interested in other data similar (likely to access addresses close to each other)"
+,,"Requested data found in cache -> Cache hit, hit rate = (Number of hits)/(number of total mem access)
+Requested data not found -> Cache miss, data fetched from memory, miss rate = (Number of miss)/(number of total mem access)
+(hit rate) + (miss rate) = 100%"
+,,"Average memory access time (AMAT): average time a processor must wait for memory per load or store instruction
+(AMAT) = t_cache + (MR_cache)*(t_(MM) + (MR_MM)*t_(VM))
+t_cache: cache access time, t_(MM): main mem access time, t_(VM): virtual mem access time, (MR_cache): cache miss rate, (MR_MM): main memory miss rate"
+,Cache (structure),"Capacity (C): Number of words or bytes in the cache. A program accessing data in random order will not benefit cache
+Number of Sets (S): Each set holds one or more blocks of data. (Sometimes the term row is used instead of set)  
+Block size/Cache line size (b): Number of words or bytes in a cache block/cache line.
+Number of Cache Blocks/cache lines (B): The total number of cache blocks/cache lines. Always: B >= S
+Degree of associativity (N): N = B/S
+
+Sets as rows, ways as columns
+
+[0x00000000] Set 7
+[0x00000000] Set 6
+...
+[0x00000000] Set 0
+N=1, B=S=8, b=1"
+,(Mapping),"Mapping: Relationship between main memory data address and cache location
+Each memory address maps to one set in the cache"
+,Direct-mapped cache,"Direct mapped cache: Each set contains 1 block S=B
+-> tag + [set number]
+00...000[011]00
+00...000[010]00
+00...000[001]00
+00...000[000]00
+
+ -> [Tag][Set/index][Byte offset], set number same in cache -> Add tag number
+If C = 256 words, N=1, b = 4 words, and address and word size are 32-bits. How many bits are then needed for the tag and the set fields?
+Byte offset width: 4 words/block, 4 bytes/block -> 16 bytes/block -> 4 bits wide
+Set-field: capacity 256 words, 4 words/set -> 64 sets -> 6 bits wide
+Tag -> 22 bits wide"
+,,"[Valid(1 bit), tag(27 bits), data (32 bits)] Set n
+
+Address[tag(27 bits), set(3 bits), byte_offset(2 bits)] -> (RD = Cache(set), Hit = Equal(Tag, RD[58:32])*RD[59], Data = RD[31:0]) -> Hit, Data"
+,,"addi $t0, $0, 5
+loop:
+beq $t0, $0, done
+lw $t1, 0x4($0)
+lw $t2, 0xC($0)
+addi $t0, $t0, -1
+j loop
+done: <- reached
+
+Temporal locality: Cache: [[0, 0, 0], [1, 0, mem[0x0004]], [0, 0, 0], [1, 0, mem[0x000C]], ...] -> (lw 10 times, 2 times fetch to cache) -> Miss rate = 2/10 = 20%
+Spatial locality -> 0x0000 4000 (1st addi), 0x0000 4004 (beq), 0x0000 4008 (1st lw), 0x0000 400C (2nd lw), 0x0000 4010 (2nd addi), 0x0000 4014 (j), 0x0000 4000 (1st addi), ... -> 2 Cache misses at 0x0000 4000 and 0x0000 4010"
+,Cache conflicts,"addi $t0, $0, 5
+loop:
+beq  $t0, $0, done
+lw   
+lw   
+$t1, 0x4($0)
+$t2, 0x24($0)
+addi $t0, $t0, -1
+j    loop
+done:
+
+-> [[0, 0, 0], [1, 0, mem[0x0024], …] -> mem[0x0004] and mem[0x0024] has same set number and rewrite each other -> 100% cache miss"
+,"N-way set associative cache
+Set-associative","We can reduce conflicts by having N blocks in each set. This is called an N-way Set Associative Cache. -> Lower miss rates, but slower and requires more hardware
+[way1, way0] = [[v1, tag1 (28 bits), data1 (32 bits)], [v0, tag0 (28 bits), data0 (32 bits)]] set n
+
+"
+,Different block size,"Larger block size -> hold several consecutive words
+Advantage: More words fetched, subsequent access more likely to hit due to spatial locality
+Disadvantage: Larger block size -> fewer blocks, more conflicts + more time to fetch after a miss (high miss penalty)
+
+[Tag][Set][Block offset][Byte offset]
+Pack multiple words into one block e.g. 4-word block size -> Block offset 2 bits"
+,Fully associative cache,"Fully associative cache (S=1), data can go in any of the B blocks in the set, B-way set associative cache
+A fully associative cache contains a single set with B ways, where B is the number of blocks. "
+,Eviction policy,"Temporal locality -> LRU (Least recently used) replacement policy
+2 way: Add use bit (U) to track least recently used (the other one than fetched)
+>2 way: Pseudo-LRU, ways divided into 2 groups, U indicates which group of ways least recently used, new block replaces random block within least recently used group"
+,Advanced cache design,
+,Reducing miss rate,"Reduced by changing capacity, block size, and/or associativity
+Compulsory miss: 1st request, the block must be read from memory regardless of the cache design
+Capacity miss: Cache too small to hold all concurrently used data
+Conflict miss: Several addresses map to same set -> evict blocks that are still needed
+
+cache size increases, capacity misses decrease
+Increased associativity, especially for small caches, decreases the number of conflict misses
+Increasing associativity beyond four or eight ways provides only small decreases in miss rate
+As block size increases, the number of sets in a fixed-size cache decreases, increasing the probability of conflicts
+Larger caches, increasing size block size beyond 64 bytes does not change miss rate, Larger block size might increase execution time due to larger miss penalty"
+,Write policy,"Memory store -> Processor check cache
+if cache miss -> cache block fetched from main memory into cache and then the appropriate word in cache block written
+if cache hit -> word simply written to cache block
+
+Write-through cache: data written to cache block simutaneously written to main memory
+Write-back cache: dirty bit (D) associated with each cache block, D=1 if cache block been written, 0 not written, dirty cache blocks written to main memory only when being evicted from cache
+Modern caches uses write-back"
+,Virtual memory,"Placing data in hard drive (least used) to simulate larger memory storage, virtual addresses are used as addressing (e.g. *((volatile int *)...), lw, sw)
+Cache: block, block size, block offset, miss, tag
+Virtual memory: Page, page size, page offset, page fault, virtual page number 
+
+OS loads the page from hard drive into physical memory
+Address translation: Mapping between virtual address -> physical address, any virtual page can map to any physical page (fully associative cache), translation through a page table (large) located in physical memory (translation lookaside buffer (TLB) caches most commonly used page table entries)"
+,,"Address translation:
+Virtual page number [Virtual page number][Page offset] -> Physical page number [Physical page number][Page offset] (Page size usual 4KiB)"
+,,"Page table:
+Translation using page table (long array), stored in physical memory (using a page table register to store the base address of the page table)
+[virtual page number]: [v (valid, if exist in physical memory, 1 bit)][Physical page number]
+
+Read: Translate virtual address to physial address, load from virtual to physical if page fault -> read
+Write: Translate virtual address to physical address, valid physical address -> read or write data in physical address
+Each load or store invovles 2 physical memory accesses if no caching"
+,,"Translation lookaside buffer: (Page table accesses high temporal locality, often greater than 99% hit rate)
+Full associative cache, holds 16-512 entries"
+,Virtual memory eviction policy,"Write-back and approximate LRU replacement policy (write-through policy impractical)
+Paging: Physical page written back to hard drive only during eviction and reload with new page -> 2 status bits D (dirty bit), U (use bit)
+LRU approximated (exact LRU impractically complicated): periodically resetting all use bits, accessed page -> bit set to 1
+Hard drive in a virtual memory system called swap space"
+,,"Memory protection between concurrently running programs, programs/processes should be protected from each other so no program can crash/hijack other program without permission
+Each program use as much memory as want in virtual address space (being allocated), but only a portion is in physical memory, program can only access its own pages
+OS can add control bits to each page to determine which program can write to shared physical pages (if any)"
+,Multilevel page tables,"2 levels, 1st level page table in physical memory (2^9=512 entries) indicating where 2nd-level tables are stored, 2nd-level table actual translations for a range of virtual pages -> 2nd-level page table can be paged out to hard drive (not used) -> reducing physical memory
+[virtual page number]: [page table number][page table offset][page offset]
+
+Advantage: Reducing physical memory table footprint
+Disadvantage: Another memory access layer for trnanslation when TLB misses"
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+Arm v7/v8,,"The most popular ISA for embedded devices
+More complex addressing modes than MIPS (can do shift and add of addresses in registers in one instruction)
+Condition results are saved in special flags: negative, zero, carry, overflow.
+16 registers, each 32-bit (integers)
+Instruction size 32-bit (Thumb-mode, 16-bits encoding).
+Conditional execution of instructions, depending on condition code.
+Example 1: ARM Cortex-A8, a processor at 1GHz, 14-stage pipeline, with branch predictor.
+Example 2: A64FX by Fujitsu, 48 cores, ~2 GHz,  7nm, Scalable Vector extensions, HBM2 memory. Used in Fugaku #2 Supercomputer today (www.top500.org)"
+x86 ,,"Standard in laptops, PCs, and in the cloud
+CISC –instructions are more powerful than for ARM and MIPS, but requires more complex hardware
+x86 architecture has evolved over the last 35 years, 
+There are 16, 32, and 64 bits variants.
+8 general purpose registers (eax, ebx, ecx, edx, esp, ebp, esi, edi). 
+Variable length of instruction encoding (between 1 and 15 bytes)
+Arithmetic operations allow destination operand to be in memory
+Major manufacturers are Intel and AMD"
+,,
+,,
+,,
+,,
+Logic arrays,Logic arrays,"Gates organized into regular array/matrix without reconfiguring wires -> Design simplification, reconfigurabiity, especially during development"
+,PLA (Programmable logic arrays),"Older, only combinational logic functions
+Inputs -> And array -(Implicants)-> Or array -> output using dot notation for interconnection
+ROM as a special case of PLA (Decoder as AND-array, ROM array as OR-array)
+Simple programmable logic devices (SPLDs) are souped-up PLAs that add registers and various other features to the basic AND/OR planes."
+,FPGA (Field-Programmable Gate Array),"Both combinational and sequential logic, multilevel logic functions
+array of reconfigurable gates, either programming on HDL or schematic
+General structure: TBL[[(IOE), (IOE), (IOE), (IOE), (IOE)], [(IOE), (LE), (LE), (LE), (IOE)], [(IOE), (LE), (LE), (LE), (IOE)], [(IOE), (LE), (LE), (LE), (IOE)], [(IOE), (IOE), (IOE), (IOE), (IOE)]]"
+,Xilinx Zync 7000,"General structure: (Programmable logic[2*2](Processing system[1*1] <-AXI Interfaces-> Programmable logic[2*2]))
+APU: TOP[TBL[[-, ""NEON/FPU (Floating point extensions)""*[2*1]], [""MMU (Memory management unit)""*[1*2], ""ARM Processor/ARM Cortex-A9 processing core""*[2*2]], [-, ""Level 1 cache(D)"", ""Level 1 cache (I), (32KB each, data + instructions)""]] <-> [""Snoop control unit(SCU)""] <-> [[""Standard Level 2 cache memory 512 KB data+ instructions"", ""OCM (On chip memory, 256 KB)""]]]
+Logic fabric + Switch matrix
+CLB (Configurable logic block): (LEFT[Switch matrix[1*2] -> CLB(LEFT[BOTTOM[C_in -> Slice 1 -> C_out], BOTTOM[C_in -> Slice 0 -> C_out]])])"
+,Altera Cyclone IV Logic Element LE,…

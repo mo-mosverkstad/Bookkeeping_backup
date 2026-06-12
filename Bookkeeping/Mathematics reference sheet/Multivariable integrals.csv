@@ -1,17 +1,30 @@
 Group,Name,Basic relationship,Presetted values
-,Double integrals,"The limit of the sum of inscribed or circumscribed prisms with base \Delta A = \Delta x \Delta y equals the volume under the surface z = f(x,y) and is given by the double integral between (x_1, x_2) and (y_1, y_2) [Image]
+rich,rich,rich,rich
+,Double integrals/Dubbelintegraler,"The limit of the sum of inscribed or circumscribed prisms with base \D A = \D x \D y equals the volume under the surface z = f(x,y) and is given by the double integral between (x_1, x_2) and (y_1, y_2) [Image]
 
-lim_{n->\infty} sum_{i=1}^{n} f(x_i, y_i)*\Delta A_i = int{x_1, x_2, int{y_1, y_2, f(x,y) dy} dx}",
+lim{n->\infty, \S{i=1, n, f(x_i, y_i)*\D A_i}} = int2{D, f(x, y)dxdy} = int{x_1, x_2, int{y_1, y_2, f(x,y) dy} dx}","int2{D, xydxdy} = \int{1, 4, {[x^2y/2], 1, 3}dy} = int{1, 4, 4ydy} = 30"
 ,,"int{a, b, int{g1(x), g2(x), f(x,y) dy} dx}
 
 Evaluate in 2 Steps:
 int{g1(x), g2(x), f(x,y) dy}
 [at constant x -> u(x)]
 int{a, b, u(x) dx} = U(b) - U(a)
-U = anti-derivative of u",
-,TRIPLE INTEGRALS,"Triple integrals are three-dimensional extensions of double integrals defined in analogous fashion [Image]
+U = anti-derivative of u","D: {y>2x, 0<x<2, 0<y<4}
+int2{D, (x+y)dxdy} = int{0, 4, int{0, y/2, (x+y)dx}dy}
+= int2{0, 2, int{2x, 4, (x+y)dy}dx}"
+,Variable substitution/Variabelsubstitution,"int2{D, f(x, y)dxdy} = int{E, f(x(u, v), y(u, v))|\\d(x, y)/\\d(u, v)|dudv}, |\\d(x, y)/\\d(u, v)| = det|[[\\dx/\\du, \\dx/\\dv], [\\dy/\\du, \\dy/\\dv]]|
+det|[[\\dx/\\du, \\dx/\\dv, \\dx/\\dw], [\\dy/\\du, \\dy/\\dv, \\dy/\\dw], [\\dz/\\du, \\dz/\\dv, \\dz/\\dw]]|
+(x=x(u, v), y=y(u, v))
 
-lim_{n->\infty} sum_{i=1}^{n} f(x_i, y_i, z_i)*\Delta V_i = int{x_1, x_2, int{y_1, y_2, int{z_1, z_2, f(x,y,z) dz} dy} dx}",
+similar to int{f(x)dx} = int{f(g(u))g'(u)du}
+du->0, g(u+du) = g(u) + g'(u)du",
+,,"x(r, \t) = r*cos(\t)
+y(r, \t) = r*sin(\t)
+|\\d(x, y)/\\d(u, v)| = |[[cos(\t), -r*sin(\t)], [sin(\t), r*cos(\t)]]| = r
+-> int2{D, f(x, y)dxdy} = int{E, f(x(r, \t), y(r, \t))rdrd\t}",
+,TRIPLE INTEGRALS/Trippelintegraler,"Triple integrals are three-dimensional extensions of double integrals defined in analogous fashion [Image]
+
+lim{n->\inf, \S{i=1, n, f(x_i, y_i, z_i)*\D V_i} = int{x_1, x_2, int{y_1, y_2, int{z_1, z_2, f(x,y,z) dz} dy} dx}",
 ,,"int{a, b, int{h1(z), h2(z), int{g1(y,z), g2(y,z), f(x,y,z) dx} dy} dz}
 
 Evaluate in 3 Steps:
@@ -19,7 +32,8 @@ int{x_1, x_2, f(x,y,z) dx}
 [at constant y,z -> u(y,z)]
 int{y_1, y_2, u(y,z) dy}
 [at constant z -> v(z)]
-int{a, b, v(z) dz} = V(b) - V(a)",
+int{a, b, v(z) dz} = V(b) - V(a)","K = {(x, y, z): x+y+z<=1, x>=0, y>=0, z>=0}
+int3{K, y*dV} = int3{K, y*dxdydz} = int{0, 1, int{0, 1-x, int{0, 1-x-y, y*dz}dy}dx}"
 ,ITERATED & PARTIAL INTEGRALS,"For evaluation purposes, double and triple integrals are expressed in iterated forms of interchangeable order
 
 Each iteration is called a partial integral

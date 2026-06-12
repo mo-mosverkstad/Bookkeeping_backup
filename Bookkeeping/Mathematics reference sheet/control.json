@@ -1,0 +1,116 @@
+{
+  "version": "1.0",
+  "entries": [
+    {
+      "id": "arithmetics",
+      "view": "table",
+      "file": "Arithmetics.csv"
+    },
+    {
+      "id": "basic_algebra",
+      "view": "table",
+      "file": "Basic algebra.csv"
+    },
+    {
+      "id": "trigonometry",
+      "view": "table",
+      "file": "Trigonometry.csv"
+    },
+    {
+      "id": "complex_number",
+      "view": "table",
+      "file": "Complex number.csv"
+    },
+    {
+      "id": "sets_and_logic",
+      "view": "table",
+      "file": "Sets and logic.csv"
+    },
+    {
+      "id": "plane_geometry",
+      "view": "table",
+      "file": "Plane geometry.csv"
+    },
+    {
+      "id": "solid_geometry",
+      "view": "table",
+      "file": "Solid geometry.csv"
+    },
+    {
+      "id": "analytic_geometry",
+      "view": "table",
+      "file": "Analytic geometry.csv"
+    },
+    {
+      "id": "discrete_mathematics",
+      "view": "table",
+      "file": "Discrete mathematics.csv"
+    },
+    {
+      "id": "statistics",
+      "view": "table",
+      "file": "Statistics.csv"
+    },
+    {
+      "id": "linear_algebra",
+      "view": "table",
+      "file": "Linear algebra.csv"
+    },
+    
+    {
+      "id": "function",
+      "view": "table",
+      "file": "Function.csv"
+    },
+    {
+      "id": "limits",
+      "view": "table",
+      "file": "Limits.csv"
+    },
+    {
+      "id": "derivatives",
+      "view": "table",
+      "file": "Derivatives.csv"
+    },
+    {
+      "id": "integrals",
+      "view": "table",
+      "file": "Integrals.csv"
+    },
+    {
+      "id": "series",
+      "view": "table",
+      "file": "Series.csv"
+    },
+    {
+      "id": "convergence",
+      "view": "table",
+      "file": "Convergence.csv"
+    },
+    {
+      "id": "differential_equations",
+      "view": "table",
+      "file": "Differential equations.csv"
+    },
+    {
+      "id": "multivariable_calculus",
+      "view": "table",
+      "file": "Multivariable calculus.csv"
+    },
+    {
+      "id": "multivariable_derivative",
+      "view": "table",
+      "file": "Multivariable derivative.csv"
+    },
+    {
+      "id": "multivariable_integrals",
+      "view": "table",
+      "file": "Multivariable integrals.csv"
+    },
+    {
+      "id": "externals",
+      "view": "table",
+      "file": "Externals.csv"
+    }
+  ]
+}

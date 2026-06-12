@@ -1,4 +1,5 @@
 Group,Name,Description,Implementation
+rich,rich,rich,rich
 Basic,Logic circuits,"Logic circuits: Electronic voltage signals with discrete values as input and output, Binary logic circuits - only 2 discrete values (0, 1)
 Static discipline: Usage of logic 0 and logic 1 mapped to values
 Multiple signals as a bus",

@@ -1,4 +1,5 @@
 Group,Name,Basic relationship,Presetted values
+rich,rich,rich,rich
 Differentials,,"y=f(x), \Dy = f(x+\Dx) - f(x)
 (\Dy)/(\Dx) = (f(x+\Dx)-f(x))/\Dx = f'(x) + \e = dy/dx + \e, \e -> 0 as \Dx -> 0",
 ,,\Dy = f'(x)\Dx + \e*\Dx -> dy = f'(x)dx,
