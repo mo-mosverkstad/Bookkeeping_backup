@@ -35,7 +35,7 @@ R = sqrt(x^2+y^2+z^2), tan(\f) = sqrt(x^2+y^2)/z, tan(\t) = y/x",
 ,Vektorvärda funktioner av en variabel,"f(t) = (x(t), y(t), z(t)) [Image]
 f'(t_0) = lim{h->0, (f(t_0+h) - f(t_0))/h} = (x'(t_0), y'(t_0), z'(t_0))",
 ,Reelvärda funktioner av flera variabler,"graf: {(x, y, z): z = f(x, y)}, nivåkurva/höjdkurva: {(x, y): f(x, y) = C} [Image]
-Kontinuerlig i (a, b): lim{(x, y) -> (a, b), f(x, y) = f(a, b)}","f(x, y)=x^2+y^2"
+Kontinuerlig i (a, b): $math{\lim{(x, y) -> (a, b), f(x, y) = f(a, b)}}","f(x, y)=x^2+y^2"
 ,,,
 Vector function with one variable,,"$math{[f](x) = (x, y, z) = x*[i] + y*[j] + z*[k]}
 $math{f(x) = (cos(x), sin(x))}, $math{\\R -> \\R^2}
@@ -54,11 +54,11 @@ $math{(m + \D*m)([v]+\D*[v]) + (-\D*m)([v]+[v_e]) = m*[v] -> m*d*[v]/(dt) = dm/(
 ,Circular motion,"$math{[r] -> [v] -> [a]}
 $math{d[r]/dt = [v](t) = [\O]*[r](t)}
 $math{[\O]} axis of rotation, point upward",
-,Rotational frames,"Inertial frame: {[`3I], [`3J], [`3K]}
-Rotational frame: {[`3i], [`3j], [`3k]}, offset [R_0], rotation axis: [\O]
+,Rotational frames,"Inertial frame: $math{{[`3I], [`3J], [`3K]}}
+Rotational frame: $math{{[`3i], [`3j], [`3k]}}, offset [R_0], rotation axis: [\O]
 Position (rotational): [r], (inertial): [R]",
-,,"d[i]/dt = [\O]*[`3i], d[j]/dt = [\O]*[`3j], d[k]/(dt) = [\O]*[`3k], d[R_0]/(dt) = [\O]*[R_0]",
-,,[V] = d*[R]/(dt) = d/(dt)([R_0] + [R]) = d[R_0]/(dt) + dx/(dt)*[`3i] + x*d[`3i]/(dt) + dy/(dt)*[`3j] + y*d[`3j]/(dt) + dz/(dt)*[`3k] + z*d[`3k]/(dt) = [v] + [\O]*[R_0] + x[\O]*[i] + y[}O]*[j] + z[\O]*[k] = [v] + [\O]*[R_0] + [O]*[r] = [v] + [\O]*[R],
+,,"$math{d[i]/dt = [\O]*[`3i], d[j]/dt = [\O]*[`3j], d[k]/(dt) = [\O]*[`3k], d[R_0]/(dt) = [\O]*[R_0]}",
+,,$math{[V] = d*[R]/(dt) = d/(dt)([R_0] + [R]) = d[R_0]/(dt) + dx/(dt)*[`3i] + x*d[`3i]/(dt) + dy/(dt)*[`3j] + y*d[`3j]/(dt) + dz/(dt)*[`3k] + z*d[`3k]/(dt) = [v] + [\O]*[R_0] + x[\O]*[i] + y[O]*[j] + z[\O]*[k] = [v] + [\O]*[R_0] + [O]*[r] = [v] + [\O]*[R]},
 ,,"[A] = d[V]/dt = d/(dt)([v] + [\O]*[R]) = d^2x/(dt^2)[`3i] + dx/(dt)*d*[`3i]/(dt) + d^2y/(dt^2)[`3j] + dy/(dt)*d*[`3j]/(dt) + d^2z/(dt^2)[`3k] + dz/(dt)*d*[`3k]/(dt) + [\O]*d*[R]/(dt) = [a] + [\O]*[v] + [\O]*[V] = [a] + 2[\O]*v + [\O]*([O]*R)
 Coriolis acceleration: 2[\O]*[v]
 Centripetal acceleration: [\O]*([O]*[R])",
@@ -129,7 +129,7 @@ f'(s) = [T_1]'(s).[T_2](s) + [T_1](s).[T_2]'(s) + [N_1]'(s).[N_2](s) + [N_1](s).
 ,,,
 ,,,
 ,,,
-Multivariable function,,"$math{f(x, y) = xy + 1}, $math{\\R^2 -> \\R}",
+Multivariable function,,"$math{f(x, y) = xy + 1, \\R^2 -> \\R}",
 ,Multivariable limits,"$math{\lim{(x, y)->(a, b), f(x)}}",
 ,,"$math{\lim{(x, y)->(a, b), f(x)} = L}
 
@@ -164,7 +164,7 @@ $math{g_1(s, t) = f_(1')(u(s, t), v(s, t))u_(1')(s, t) + f_(2')(u(s, t), v(s, t)
 $math{g_2(s, t) = f_(1')(u(s, t), v(s, t))u_(2')(s, t) + f_(2')(u(s, t), v(s, t))u_(2')(s, t)}
 Multiple chain dependencies -> Dependency chart",
 ,,"$math{g(t) = f(x(t), y(t)) -> (df)/(dt) = (\\df/(\\dx))*(\dx/\dt) + (\\df/(\\dy))*(\dy/(\dt))}
-$math{g(t) = f(u(t), v(t))}, $math{g'(t) = f_(1')(u(t), v(t)*u'(t)) + f_(2')(u(t), v(t))*v'(t)}",
+$math{g(t) = f(u(t), v(t)), g'(t) = f_(1')(u(t), v(t)*u'(t)) + f_(2')(u(t), v(t))*v'(t)}",
 ,,"$math{f(x(s, t), y(s, t)) -> (\\df/(\\ds)) = (\\df/(\\dx))(\dx/(\ds)) + (\\df/(\\dy))*(\dy/(\ds))}
 $math{(\\du/(\\dt)) = (\\du/(\\dx))*(dx/(dt)) + (\\du/(\\dy))*(dy/(dt))}",
 ,Homogenous functions,"$math{f(x_1, ..., x_n)} every point $math{(x_1, ..., x_n, t>0) -> f(tx_1, ..., tx_n) = t^k*f(x_1, ..., x_n)}
@@ -179,7 +179,7 @@ $math{(\\df/(\\d*x))(2, 1) = 4}, $math{(\\df/(\\d*y))(2, 1) = 2}, $math{f(2, 1)=
 ->Tangentplan: $math{z=f(2, 1)+(\\df/(\\d*x))(2, 1)(x-2)+(\\df/(\\d*y))(2, 1)*(y-1) = 5+4(x-2)+2(y-1)}",
 ,Differentierbarhet och linjär approximation,"Approximation: $math{z = f(a, b) + \\df/\\dx(a, b)*(x-a) + \\df/\\dy(a, b)*(y-b) = f(a, b) + f_(x')(a, b)(x-a) + f_(y')(a, b)*(y-b)}
 Krav: Partiella derivator och $math{\lim{(x, y)->(a, b), (f(x, y) - f(a, b) - (\\df/(\\dx))(a, b)*(x-a) + (\\df/(\\dy))(a, b)*(y-b))/\sqrt{(x-a)^2 + (y-b)^2}} = 0}
-(Patologisk funktion f(x, y)={1: (x=0, y=0), 0: (x!=0, y!=0)})
+(Patologisk funktion $math{f(x, y)=\cases{(x=0, y=0): 1, (x!=0, y!=0): 0}})
 ",
 ,Multivariable Mean-value theorem,"Continous f_1(x, y), f_2(x, y) in neighbourhood (a, b) -> 0 < (\t_1, \t_2) < 1
 $math{f(a+h, b+k)-f(a, b) = h*f_(1')(a+\t_1*h, b+k)+k*f_(2')(a, b+\t_2*k)}
@@ -193,6 +193,20 @@ $math{h=x-a}, $math{k=y-b}
 $math{|h/\sqrt{h^2+k^2}|<1}, $math{|k/\sqrt{h^2+k^2}|<1}
 $math{0<=|(f(a+h, b+k)-f(a, b)-h*f_1(a, b)-k*f_2(a, b))/\sqrt{h^2+k^2}|=|h/\sqrt{h^2+k^2}*(f_1(a+\t_1*h, b+k)-f_1(a, b)) + k/\sqrt{h^2+k^2}*(f_2(a, b+\t_2*k)-f_2(a, b))|<=|f_1(a+\t_1*h, b+k)-f_1(a, b)|+|f_2(a, b+\t_2*k)-f_2(a, b)|<=0 -> 0}
 ",
+,,"Chain rule proof:
+$math{z=f(x, y), x=u(s, t), y=v(s, t), (a, b) -> u(a, b)=p, v(a, b)=q, h=u(a+\s, b)-u(a, b), k=v(a+\s, b)-v(a, b)
+E(h, k)=(f(p+h, q+k)-f(p, q)-h*f_(1')(p, q)-k*f_(2')(p, q))/\sqrt{h^2+k^2} -> f(p+h, q+k)-f(p, q)=h*f_(1')(p, q)+k*f_(2')(p, q)+\sqrt(h^2+k^2)*E(h, k)
+\lim{\s->0, (w(a+\s, b)-w(a, b))/\s} = \lim{\s->0, (f(u(a+\s, b), v(a+\s, b))-f(u(a, b), v(a, b)))/\s} = \lim{\s->0, (f(p+h, q+k)-f(p, q))/\s} = \lim{\s->0, (f(p+h, q+k)-f(p, q)=h*f_(1')(p, q)+k*f_(2')(p, q)+\sqrt(h^2+k^2)*E(h, k))/\s} = f_(1')(p, q)u_(1')(a, b)+f_(2')(p, q)u_(2')(a, b)
+}",
+,,"Differential
+$math{dz=df=\S{k=1, n, (\\dz)/(\\dx_k)*dx_k}
+\D*f = f(x_1+dx_1, ..., f_n+dx_n)-f(x_1, ..., f_n)
+""Approximation Error""= (\D*f-df)/\sqrt{\S{k=1, n, (dx_k)^2}} -> 0, dx_k -> 0
+\D*x = dx + ""error""
+}
+[Image]",
+,Legendre transformation,"$math{f(x), p=f'(x), u=px-f(x), du = p*dx+x*dp-f'(x)dx = x*dp}",
+,,"$math{u=f(x, y), p=f_(1')(x, y), q=f_(2')(x, y), dw = pdx+xdp+qdy+ydq-f_(1')(x, y)dx-f_(2')(x, y)dy = x*dp+y*dq}",
 ,,,
 ,,,
 ,,,
