@@ -243,36 +243,77 @@ f([a]+[h])=F(1)=\S{k=0, n, (n.\nabla)^kf(a)/k!+([h].\nabla)^(m+1)f([a]+\t[h])/((
 y=\S{k=0, n, a_k*x}, sin(x+y)=sin(x+a_1x+a_2x^2+...)=x+a_1x+a_2x^2+...+1/3!*(x+a_1x+a_2x^2+...)^3+...=(1+a_1)x+a_2x^2+(a_3-1/6*(1+a_1)^3)x^3+..., xy=2x=2x+a_1x^2+a_2x^3+...}",
 ,,,
 ,,,
-,Optimering/Extremvärden i flera variabler,"local max value: f(x) <= f(a), local min value: f(x)>=f(a), absolute maximum/minimum (in all points)
-f har max i (a, b) om f(a, b) >= f(x, y)
-f kontinuerlig på sluten, begränsad mängd -> garanterar existensen
-Max/min kan antas i:
-- Kritiska punkter: Alla partiella derivator = 0
-- Singulära punkter: Någon av partiella derivator saknas
-- Randpunkter","f(x) = xy-x, D: x^2<=y<=4
+,Optimering/Extremvärden i flera variabler,"local max value: f(x) <= f(a), local min value: f(x)>=f(a), absolute maximum/minimum (in all points)","f(x) = xy-x, D: x^2<=y<=4
 (\\df)/(\\dx) = y-1, (\\df)/(\\dy) = x, y -> (0, 1), f(0, 1)=0
 y=x^2: f(x, x^2)=x^3-x = g(x) -> g'(x)=0 -> x = 1/sqrt(3), -1/sqrt(3), f(1/sqrt(3)) = 1/(3sqrt(3)) - 1/sqrt(3) = -2/(3sqrt(3), f(1/sqrt(3)) = -1/(3sqrt(3)) + 1/sqrt(3) = 2/(3sqrt(3))
 y=4: f(2, 4) = 8-2=6, f(-2, 4)=-8+2=6"
-,,Andraderivatatest: ...,
-,Optimering med bivillkor,"f(x, y) = (2x+y)^2 som uppfyller g(x, y) = c -> \nabla f och \nabla g paraella, vinkelrät mot nivåkurva (\nabla f = \l*\nabla g)
+,,"Sufficient condition for extreme values:
+f max/min in (a, b), f(a, b) >= f(x, y): f continous D_f (closed, bounded set in \\R^n), f kontinuerlig (sluten, begränsad mängd)",
+,,"Max/min:
+- Critical points/Kritiska punkter: Alla partiella derivator = 0, grad f(a, b)=0
+- Singular point/Singulära punkter: Någon av partiella derivator saknas, grad f(a, b) not existing
+- Boundary point/Randpunkter of f domain/definitionsmängd
+(a, b) in D_f, (a, b) not boundary -> (a, b) interior, (a, b) not singular, not critical -> grad f(a, b) != 0 -> directional derivative \grad f(a, b) -> (a, b) not max/min f
 
--> Sök kritiska punkter till (Lagrangefunktionen) L(x, y, \l) = f(x, y) - \l*(g(x, y)-c)
-0 = (\\dL)/(\\dx) = (\\df)/(\\dx) - \l*(\\dg)/(\\dx))
-0 = (\\dL)/(\\dy) = (\\df)/(\\dy) - \l*(\\dg)/(\\dy))
-0 = (\\dL)/(\\d\l) = g(x, y)","f(x, y)=(2x+y)^2, x^2+y^2-5=0
--> \pm(1, -2), \pm(2, 1)"
-,Maxima and minima,,
+Critical point:
+- Max/min
+- Saddle e.g. $math{f=y^2-x^2, f_(x')=-(x^3)}",
+,,"Classifying extreme points:
+$math{\D f(a, b)=f(a+h, b+k)-f(a, b), ""any small h, k""}","$math{f(x, y)=2x^3-6x+3y^2
+\D f(1, 1)=f(1+h, 1+k)-f(1, 1)=3k^2-6kh+3h^2+3h^2+2h^3=3(k-h)^2+h^2*(3+2h)>0, |h|<3/2}"
+,,"Second derivative test/Andraderivatatest (Hessian matrix):
+$math{H(x)=[[f_(11'), f_(12'), ..., f_(1n')], [f_(21'), f_(22'), ..., f_(2n')], [...], [f_(n1'), f_(n2'), ..., f_(nn')]]}
+$math{[[A, B], [B, C]] -> \D=B^2-4AC}
+Positive definite -> Local maximum (\D<0, A>0)
+Negative definite -> Local minimum (\D<0, A<0)
+Indefinite -> Saddle point (\D>0)
+Else -> Test no information (\D=0)",
 ,"f(a, b) maximum","f_(x)'(a, b) = f_(y)'(a, b) = 0, (f_(xy)')^2(a, b) - f_(xx)'(a, b)*f_(yy)'(a, b) < 0",
 ,"f(a, b) minimum","f_(xx)'(a, b) < 0, f_(yy)'(a, b) < 0",
 ,,"f_(xx)'(a, b) > 0, f_(yy)'(a, b) > 0",
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
+,Restricted domains,"Restricted domains/Non-empty interior
+1. Find any critical/singular points inside D
+2. Find extreme values on boundary paths (as 1 variable)
+3. Compare the values","1. $math{f(x, y)=x^2ye^(-(x+y)), (x>=0, y>=0, x+y<=4)}
+2. $math{f_(1')=xy(2-x)e^(-(x+y)), f_(2')=x^2(1-y)e^(-(x+y)), (f_(1')=0, f_(2')=0) -> (x=0, y=0, x=2, y=1)}
+3. $math{f(x, 0)=0, f(0, y)=0, f(x, 4-x)=e^(-4)*(4x^2-x^3)}"
+,Linear programming,"Linear function restricted domain by linear -> Extreme value on boundary
+$math{F(x, y)=2x+7y, (x+2y<=6, 2x+y<=6, x>=0, y>=0) -> ""Max"" =21}",
+,Lagrange multipliers/Optimering med bivillkor,"$math{f, g ""partial derivatives continous"" (x_0, y_0), f(x, y) ""local max/min"", P_0 -> f(x, y) = (2x+y)^2, g(x, y) = c -> \nabla f, \nabla g (""parallel"", ""ortogonal"") ""to level curve"" (\nabla f = \l*\nabla g)}
+
+-> Critical points to/Sök kritiska punkter till (Lagrange function/Lagrangefunktionen) $math{L(x, y, \l) = f(x, y) - \l*(g(x, y)-c)}
+$math{0 = (\\dL)/(\\dx) = (\\df)/(\\dx) - \l*(\\dg)/(\\dx)}
+$math{0 = (\\dL)/(\\dy) = (\\df)/(\\dy) - \l*(\\dg)/(\\dy)}
+$math{0 = (\\dL)/(\\d\l) = g(x, y)}","f(x, y)=(2x+y)^2, x^2+y^2-5=0
+-> \pm(1, -2), \pm(2, 1)"
+,More constrained Lagrange,"$math{f(x, y, z), (g(x, y, z)=0, h(x, y, z)=0)
+L(x, y, z, \l, \m)=f(x, y, z)+\l*g(x, y, z)+\m*h(x, y, z)}",
+,Lagrange multipliers n-space,"$math{f([x]), ({k=1, n, g_k(x)}), f, g, ""smooth"", ""3rd partial derivatives continous"", \nabla g_k!=0
+M={x\in\\R^n, {k=1, m, g(x)}=0}, \dim(M)=n-m, ""Assumption: ""M ""linear independent"" (\S{k=1, m, c_k*\nabla g_k(a)}=0 -> {k=1, m, c_k}!=[0])
+N=\span*{\nabla g_1(x),\nabla g_2(x),\nabla g_3(x)}, \dim(N)=m, T=N^\perp={v \in \\R^n, {k=1, m, \nabla g_k([a]).[v]=[0]}}, dim(T)=n-m}
+[Image]",
+,,"$math{[a] "" extreme value "" M -> L([x], [\l])=f([x])+\S{k=1, m, \l_k*g_k([x])}}
+
+$math{[a] "" local extreme value"", L([x], [\l])=f([x])+\S{k=1, m, \l_kg_k([x])} -> \nabla_[x] L([a], [\l])=\nabla f([a])+\S{k=1, m, \l_k \nabla g_k([x])}=0 -> \nabla f([a])=-\S{k=1, m, \l_k \nabla g_k([x])} -> \nabla f([a]) \in! N
+([v] \in T->\nabla f([a])^T[v]!=0) -> (\nabla f([a])^T*[V]>0, \nabla f([a])^T*(-[v])<0) -> (f([a]+t*[v])>f([a]), f([a]-t*[v])<f([a])) -> [a] "" not extremum""}",
+,,"2nd derivative restricted test $math{H(x)=[[L_(11'), L_(12'), ..., L_(1n')], [L_(21'), L_(22'), ..., L_(2n')], [...], [L_(n1'), L_(n2'), ..., L_(nn')]]}
+Positive definite -> Local min
+Negative definite -> Local max
+Indefinite -> Saddle
+
+$math{f([a]+[h])-f([a])=[h].\nabla f([a]) + 1/2*([h].\nabla)^2f([a])+O(|[h]|^3), g([a]+[h])-g([a])=[h].\nabla g([a]) + 1/2*([h].\nabla)^2g([a])+O(|[h]|^3)
+[a] "" critical point"", h->0, f([a]+[h])-f([a])+\S{k=1, m, g_k([a]+[h])-g_k([a])}=f([a]+[h])-f([a])+0=f([a]+[h])-f([a])
+[h].\nabla f([a])+1/2*([h].\nabla)^2+O(|[h]|^3)+\S{k=1, m, [h].\nabla g_k([a])+1/2*([h].\nabla)^2 g_k([a])+O(|[h]|^3)=[h].\nabla L([a])+1/2*(h.\nabla)^2L([a])+O(|[h]|^3)}=1/2*\S{k=1, n, \S{l=1, n, h_k*h_l*L_(kl)([a])}}+O(|[h]|^3)=[h]^T*H*[h]+O(|[h]|^3)}",
+,,"Restricted Hessian, H positive/negative definite -> H_T positive/negative definite
+$math{{[u]_1, [u]_2, ..., [u]_(n-m)} "" ortonormal basis "" T, \e=[u_1, u_2, ..., u_m], [H]_T=\e^TH\e -> [H]_T "" positive/negative definite""}",
+,Method of least square,"$math{y=c -> S=\S{k=1, n, (c-c_k)^2}, c=\bar{c} -> (\\dS)/(\\dc)=\S{k=1, n, 2(\bar{c}-c_k)}=2n\bar{c}-2\S{k=1, n, c_k}=0 -> \bar{c}=1/n\S{k=1, n, c_k}}",
+,,"$math{y=ax+b -> S=\S{k=1, n, (y_k-ax_k-b)^2}, (\\dS)/(\\da)=-2\S{k=1, n, x_k(y_k-ax_k-b)}=0 -> a\S{k=1, n, (x_k)^2}+b\S{k=1, n, x_k}=\S{k=1, n, x_ky_k}
+(\\dS)/(\\db)=-2\S{k=1, n, y_k-ax_k-b}=0->a\S{k=1, n, x_k}+b*n = \S{k=1, n, y_k}
+a=(n\S{k=1, n, x_ky_k}-\S{k=1, n, x_k}\S{k=1, n, y_k})/(n\S{k=1, n, x_k^2}-(\S{k=1, n, x_k})^2)=(\bar{xy}-\bar{x}\bar{y})/(\bar{x^2}-(\bar{x}^2)), b=(\S{k=1, n, x_k^2}\S{k=1, n, y_k}-\S{k=1, n, x_k}\S{k=1, n, x_ky_k})/(n\S{k=1, n, x_k^2}-(\S{k=1, n, x_k})^2)=(\bar{x^2}\bar{y}-\bar{x}*\bar{xy})/(\bar{x^2}-(\bar{x}^2))}",
+,,"$math{I(p, q)=\int{0, 1, (f(x)-px-q)^2dx}, (\\dI)/(\\dp)=-2\int{0, 1, x(f(x)-px-q)dx}, (\\dI)/(\\dq)=-2\int{0, 1, (f(x)-px-q)dx}
+p/3+q/2=\int{0, 1, xf(x)dx}, p/2+q=\int{0, 1, f(x)dx}->p=\int{0, 1, (12x-6)f(x)dx}, q=\int{0, 1, (4-6x)f(x)dx}}",
+,,"Fourier series (f approx with \S{k=1, n, b_k*sin(kx)}):
+$math{I=\int{0, \p, (f(x)-\S{k=1, n, b_k*sin(kx)dx})^2}}",
 ,,,
 ,,,
 ,,,
@@ -315,9 +356,9 @@ K: x^2+y^2+z^2 = 1
 ,,,
 ,Derivative of vectors,"[A]([u]) = [[A_1([u])], [A_2([u])], [A_3([u])]]
 d[A]/du = lim{\Du->0, (A(u+\Du)-A(u))/(\Du)} = [[dA_1/du], [dA_2/du], [dA_3/du]]",
-,Nabla operator/del operator,"\nabla = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]",
-,,"grad f = (\nabla)f = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]",
-,,div [F] = \nabla.[F] = \\dF_1/\\dx + \\dF_2/\\dx + \\dF_3/\\dx,
+,Nabla operator/del operator,"$math{\nabla = [[\\d/(\\dx)], [\\d/(\\dy)], [\\d/(\\dz)]]}",
+,,"$math{\grad(f) = (\nabla)f = [[\\d/(\\dx)], [\\d/(\\dy)], [\\d/(\\dz)]]}",
+,,$math{div([F]) = \nabla.[F] = (\\dF_1)/(\\dx) + (\\dF_2)/(\\dy) + (\\dF_3)/(\\dz)},
 ,,"curl [F] = \nabla*[F] = [[\\dF_3/\\dy-\\dF_2/\\dz], [\\dF_1/\\dz-\\dF_3/\\dx], [\\dF_2/\\dx-\\dF_1/\\dy]]",
 ,Derivative rules for vectors,d/(dx)([F].[G]) = [F].(d[G])/(dx) + (d[F])/(du).[G],
 ,,d/(dx)([F]*[G]) = [F]*(d[G])/(dx) + (d[F])/(dx)*[G],
