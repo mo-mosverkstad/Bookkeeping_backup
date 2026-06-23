@@ -147,22 +147,17 @@ $math{x^2<=x^2+y^2 -> |f(x, y)-0|=|x^2y/(x^2+y^2)|<=|y|<=\sqrt{x^2+y^2} -> |f(x,
 ,,,
 ,,,
 ,Partial derivatives/Partiella derivator,"[Image of z=f(x, y)]
-$math{f_(x') = \\df/(\\dx) = \lim{(\D*x)->0, (f(x+(\D*x), y)-f(x, y))/(\D*x)}}
-$math{f_(y') = \\dy/(\\d*x) = \lim{(\D*x)->0, (f(x, y+(\D*y))-f(x, y))/(\D*y)}}",
-,2nd derivative,"$math{\\d^2*f/(\\d*x^2) = f_(xx')}
-$math{\\d^2*f/(\\d*y^2) = f_(xx')}
-$math{\\d^2*f/(\\dx\\dy) = f_(xy')}
-$math{\\d^2*f/(\\dy\\dx) = f_(yx')}",
+$math{f_(x') = \\df/(\\dx) = \lim{(\D*x)->0, (f(x+(\D*x), y)-f(x, y))/(\D*x)}, f_(y') = \\dy/(\\d*x) = \lim{(\D*x)->0, (f(x, y+(\D*y))-f(x, y))/(\D*y)}}",
+,2nd derivative,"$math{\\d^2*f/(\\d*x^2) = f_(xx'), \\d^2*f/(\\d*y^2) = f_(xx'), \\d^2*f/(\\dx\\dy) = f_(xy'), \\d^2*f/(\\dy\\dx) = f_(yx')}",
 ,,"$math{f_(xy') = f_(yx')} if partial derivatives are continous, (f, all partials to f less than n derivative) continous in neighbourhood of P, n-derivative partials to f continous
 
 $math{Q = f(a+h, b+k) - f(a+h, b) - f(a, b+k) - f(a, b)}, $math{u(x) = f(x, b+k) - f(x, b)}, $math{v(y) = f(a+h, y)-f(a, y)}
 $math{0 < t_1 < 1}, $math{0 < t_2 < 1}
 $math{Q = u(a+h)-u(a) = hu'(a+\t_1h) = h(f_(1')(a+\t_1h, b+k) - f_(1')(a+\t_1h, b)) = hkf_(12')(a+\t_1h, b+\t_2k)}
 $math{Q = v(b+k)-v(b) = hv'(b+\t_1k) = h(f_(2')(a+h, b+\t_2k) - f_(2')(a, b+\t_2k)) = hkf_(21')(a+\t_2h, b+\t_1k)}",
-,Chain rule/Kedjeregeln,"$math{\\du/(\\dt_k) = \S{l=0, n, ((\\du)/(\\dx_1))*((\\dx_1)/(\\dt_k))}}, k=1, 2, 3, …, m
-$math{g_1(s, t) = f_(1')(u(s, t), v(s, t))u_(1')(s, t) + f_(2')(u(s, t), v(s, t))u_(1')(s, t)}
+,Chain rule/Kedjeregeln,"$math{\\du/(\\dt_k) = \S{l=0, n, ((\\du)/(\\dx_1))*((\\dx_1)/(\\dt_k))}, k=1, 2, 3, ..., m}","$math{g_1(s, t) = f_(1')(u(s, t), v(s, t))u_(1')(s, t) + f_(2')(u(s, t), v(s, t))u_(1')(s, t)}
 $math{g_2(s, t) = f_(1')(u(s, t), v(s, t))u_(2')(s, t) + f_(2')(u(s, t), v(s, t))u_(2')(s, t)}
-Multiple chain dependencies -> Dependency chart",
+Multiple chain dependencies -> Dependency chart"
 ,,"$math{g(t) = f(x(t), y(t)) -> (df)/(dt) = (\\df/(\\dx))*(\dx/\dt) + (\\df/(\\dy))*(\dy/(\dt))}
 $math{g(t) = f(u(t), v(t)), g'(t) = f_(1')(u(t), v(t)*u'(t)) + f_(2')(u(t), v(t))*v'(t)}",
 ,,"$math{f(x(s, t), y(s, t)) -> (\\df/(\\ds)) = (\\df/(\\dx))(\dx/(\ds)) + (\\df/(\\dy))*(\dy/(\ds))}
@@ -174,7 +169,7 @@ e.g. $math{f(x, y)=x^2+xy-y^2} homogenous 2",
 
 $math{d/(dt)f(tx_1, tx_2, ..., tx_n) = d/(dt)t^kf(x_1, x_2, ..., x_n) -> t=1 -> \S{i=1, n, x_i*f_(i')(tx_1, ..., tx_n)} = k*t^(k-1)f(x_1, ..., x_n)}",
 ,,,
-,Tangentplan,"$math{f(x, y) = x^2+y^2}
+,Tangent plane,"$math{f(x, y) = x^2+y^2}
 $math{(\\df/(\\d*x))(2, 1) = 4}, $math{(\\df/(\\d*y))(2, 1) = 2}, $math{f(2, 1)=5}
 ->Tangentplan: $math{z=f(2, 1)+(\\df/(\\d*x))(2, 1)(x-2)+(\\df/(\\d*y))(2, 1)*(y-1) = 5+4(x-2)+2(y-1)}",
 ,Differentierbarhet och linjär approximation,"Approximation: $math{z = f(a, b) + \\df/\\dx(a, b)*(x-a) + \\df/\\dy(a, b)*(y-b) = f(a, b) + f_(x')(a, b)(x-a) + f_(y')(a, b)*(y-b)}
@@ -198,43 +193,58 @@ $math{z=f(x, y), x=u(s, t), y=v(s, t), (a, b) -> u(a, b)=p, v(a, b)=q, h=u(a+\s,
 E(h, k)=(f(p+h, q+k)-f(p, q)-h*f_(1')(p, q)-k*f_(2')(p, q))/\sqrt{h^2+k^2} -> f(p+h, q+k)-f(p, q)=h*f_(1')(p, q)+k*f_(2')(p, q)+\sqrt(h^2+k^2)*E(h, k)
 \lim{\s->0, (w(a+\s, b)-w(a, b))/\s} = \lim{\s->0, (f(u(a+\s, b), v(a+\s, b))-f(u(a, b), v(a, b)))/\s} = \lim{\s->0, (f(p+h, q+k)-f(p, q))/\s} = \lim{\s->0, (f(p+h, q+k)-f(p, q)=h*f_(1')(p, q)+k*f_(2')(p, q)+\sqrt(h^2+k^2)*E(h, k))/\s} = f_(1')(p, q)u_(1')(a, b)+f_(2')(p, q)u_(2')(a, b)
 }",
-,,"Differential
-$math{dz=df=\S{k=1, n, (\\dz)/(\\dx_k)*dx_k}
+,Differentials,"$math{dz=df=\S{k=1, n, (\\dz)/(\\dx_k)*dx_k}
 \D*f = f(x_1+dx_1, ..., f_n+dx_n)-f(x_1, ..., f_n)
 ""Approximation Error""= (\D*f-df)/\sqrt{\S{k=1, n, (dx_k)^2}} -> 0, dx_k -> 0
 \D*x = dx + ""error""
 }
 [Image]",
+,Total derivative,"$math{dz/(dx) = \\dz/(\\dx) + \\dz/(\\dy)*((dy)/(dx))
+dz/(dy) = (\\dz)/(\\dx)*((dx)/(dy)) + \\dz/(\\dy)}",
 ,Legendre transformation,"$math{f(x), p=f'(x), u=px-f(x), du = p*dx+x*dp-f'(x)dx = x*dp}",
 ,,"$math{u=f(x, y), p=f_(1')(x, y), q=f_(2')(x, y), dw = pdx+xdp+qdy+ydq-f_(1')(x, y)dx-f_(2')(x, y)dy = x*dp+y*dq}",
 ,,,
 ,,,
 ,,,
 ,,,
-,Gradient och riktningsderivata,"$math{f(x, y) = x^2y}, $math{grad f = \nabla f = (\\df/\\dx, \\df/\\dy) = (2xy, x^2)}",
-,Riktningskurva,"[Image]
+,"Gradient och riktningsderivata
+Gradient and directional derivatives","$math{f(x, y) = x^2y}, $math{grad f = \nabla f = (\\df/\\dx, \\df/\\dy) = (2xy, x^2)}",
+,Directional directive/Riktningskurva,"[Image]
 f deriverbar och |[u]| = 1
-D_([u])(f(a, b)) = lim{h->0, (f(a+h[u_1], b+h[u_2]) - f(a, b))/h}
-D_([u])(f(a, b)) = [u] . \nabla f(a, b)
+$math{D_([u])(f(a, b)) = \lim{h->0, (f([a]+h*[u_1], [b]+h*[u_2]) - f([a], [b]))/h}=d/(dt)f([a]+t*[u_1], [b]+t*[u_2]), t=0",
+,,"$math{D_uf(a, b)=\lim{h->+0, (f([a]+h*[u], [b]+h*[v])-f([a], [b]))/h}=d/(dt)f([a]+t*[u], [b]+t*[v]), t=0, |[u]|=1}",
+,,"$math{D_([u])(f(a, b)) = [u] . \nabla f(a, b)
 
-D_([u])(f(a, b)) = lim{h->0, (f(a+h[u_1], b+h[u_2]) - f(a, b))/h}
-= lim{h->0, (f(a, b) + f_('x)(a, b)*((a+h[u_1]) - a) + f_('y)(a, b)*((b+h[u_2])-b) + o(h) - f(a, b))/h}
-= \lim{h->0, (f_('x)(a, b)*(h[u_1]) + f_('y)(a, b)*(h[u_2]) + o(h))/h}
-= f_('x)(a, b)[u_1] + f_('y)(a, b)[u_2] = (f_('x)(a, b), f_('y)(a, b)).([u_1], [u_2])",
-,,"\nabla f(a, b) är ortogonal mot nivåkurvan till f genom (a, b) och pekar för maxtillväxt av f",
-,,"Maxtillväxten är |\nabla f(a, b)|",
-,Total differential,df = \\df/\\dx*dx + \\df/\\dy*dy,
-,Total derivative,"dz/dx = \\dz/\\dx + \\dz/\\dy*(dy)/(dx)
-dz/dy = \\dz/\\dx*(dx)/(dy) + \\dz/\\dy",
-,Implicit derivata,"F(x, y) = x^4+xy^2+y^3+5 = 0
-d/dx(F(x, y(x))) = 0 -> \\dF/\\dx + \\dF/\\dy*dy/dx = 0 -> dy/dx = -(\\dF/\\dx)/(\\dF/\\dy)",
-,,"(F(x, y, z)=0, G(x, y, z)=0) -> (d/dx(F(x, y(x), z(x)))=0, d/dx(G(x, y(x), z(x)))=0)
-\\dF/\\dx + \\dF/\\dy*dy/dx + \\dF/\\dz*dz/dx = 0
-\\dG/\\dx + \\dG/\\dy*dy/dx + \\dG/\\dz*dz/dx = 0
--> dy/dx, dz/dx (|[[\\dF/\\dy, \\dF/\\dz], [\\dG/\\dy, \\dG/\\dz]]| != 0)",
-,Taylors formel,"f(x) = f(a) + f'(a)/1!(x-a) + f''(a)/2!*(x-a)^2 + f'''(c)/3!*(x-a)^3
-f(x, y) = f(a, b) + 1/1!(\\df/\\dx(a, b)(x-a) + \\df/\\dy(a, b)(y-b)) + 1/2!(\\d^2f/\\dx^2(a, b)(x-a)^2 + 2\\d^2f/\\dx\\dy(a, b)(x-a)(y-b) + \\d^2f/\\dy^2(a, b)(y-b)^2) + O(sqrt((x-a)^2+(y-b)^2)^3)",
-,Optimering/Extremvärden i flera variabler,"f har max i (a, b) om f(a, b) >= f(x, y)
+\lim{h->0, (f([a], [b]) + f_(x')([a], [b])*(([a]+h[u_1]) - [a]) + f_(y')([a], [b])*(([b]+h[u_2])-[b]) + o(h) - f([a], [b]))/h} =\lim{h->0, (f_(x')([a], b)*(h[u_1]) + f_(y')(a, b)*(h[u_2]) + o(h))/h} = f_(x')(a, b)[u_1] + f_(y')(a, b)[u_2] = (f_(x')(a, b), f_(y')(a, b)).([u_1], [u_2])}}",
+,,"$math{\nabla f(a, b) ""ortogonal level curve "", f ""through"" (a, b), ""max growth direction""
+|\nabla f(a, b)| ""increase rate"", ""rapid decrease at"" -\nabla f(a, b)
+
+""Tangent to level curve"" -> ""No change"" -> \nabla f(a, b) ""perpendicular"" "" level curve""}",
+,,"$math{D_[u]f(a, b) = [u].\nabla f(a, b) = |\nabla f(a, b)|cos(\t), \t "" between "" u, \nabla f(a, b)}",
+,Moving observer,"$math{[v] "" moving velocity"" -> |[v]|*D_[u]f(a, b) = |[v]|*([v]/|[v]|).\nabla f(a, b)}",
+,,,
+,,,
+,Implicit derivative,"[Graph, V1, V2, V3 singular points]
+$math{F_(2')(a, b) != 0, f "" differentiable"" -> ""Non-vertical tangent"" (a, b), ""some part of level curve as function"" (""V1, V2, V3 not fulfill"")
+d/(dx) F(x, y(x)) = 0 -> F_(1')(x, y) + F_(2')(x, y)*(dy/(dx)) = 0 -> dy/(dx) = -F_(1')(x, y)/F_(2')(x, y)}","$math{F(x, y) = x^4+xy^2+y^3+5 = 0}"
+,,"$math{(F(x, y, z)=0, G(x, y, z)=0) -> (d/(dx)F(x, y(x), z(x))=0, d/(dx)G(x, y(x), z(x))=0)
+\\dF/(\\dx) + \\dF/(\\dy)*(dy/(dx)) + \\dF/(\\dz)*(dz/(dx)) = 0
+\\dG/(\\dx) + \\dG/(\\dy)*(dy/(dx)) + \\dG/(\\dz)*(dz/(dx)) = 0 -> dy/(dx), dz/(dx), (|[[\\dF/(\\dy), \\dF/(\\dz)], [\\dG/(\\dy), \\dG/(\\dz)]]| != 0)}",
+,Implicit function theorem,"$math{{l=1, n, F_l({k=1, m, x_k}, {k=1, n, y_k})} -> {l=1, n, \S{k=1, n, (\\dF_l)/(\\dy_k)*((\\dy_k)/(\\dx_r))}=-(\\dF_k)/(\\dx_r)}
+((\\dy_s)/(\\dx_r))_(x_1 ... x_n) = -(\\d(F_1, ..., F_n)/\\d(y_1, ..., x_r, ..., y_n))/(\\d(F_1, ..., F_n)/\\d(y_1, ..., y_n))}",
+,,"$math{\\d(z_1, ..., z_n)/\\d(x_1, ..., x_n)=\\d(y_1, ..., y_n)/\\d(y_1, ..., y_n)*(\\d(z_1, ..., z_n)/\\d(x_1, ..., x_n))
+\\d(x_1, ..., x_n)/\\d(y_1, ..., y_n)=1/(\\d(y_1, ..., y_n)/\\d(x_1, ..., x_n))}",
+,,,
+,Taylors formel,"$math{f(x) = f(a) + f'(a)/1!(x-a) + f''(a)/2!*(x-a)^2 + f'''(c)/3!*(x-a)^3
+F(t)=f([a]+t*[h]), F'(t)=\S{k=1, n, f_(h_k')([a]+t*[h])*h_k}=([h].\nabla)f([a]+t*[h]), F'(t)=\S{k=1, n, h_k*\S{k=1, n, f_(h_k')([a]+t*[h])}}=([h].\nabla)^2f([a]+t*[h])
+(F^(n'))(t)=(h.\nabla)^nf([a]+t*[h])
+f([a]+[h])=F(1)=\S{k=0, n, (n.\nabla)^kf(a)/k!+([h].\nabla)^(m+1)f([a]+\t[h])/((m+1)!), 0<=\t<=1} = P_m([h]) + R_m([h], \t)}","$math{f(x, y) = f(a, b) + 1/1!*((\\df/(\\dx))(a, b)(x-a) + (\\df/(\\dy))(a, b)(y-b)) + 1/2!*((\\d^2f/(\\dx^2))(a, b)(x-a)^2 + 2(\\d^2f/(\\dx\\dy))(a, b)(x-a)(y-b) + (\\d^2f/(\\dy^2))(a, b)(y-b)^2) + O(sqrt((x-a)^2+(y-b)^2)^3)}"
+,Approximate implicit functions,"$math{sin(x+y)=xy+2x, F(x, y)=sin(x+y)-xy-2x -> ""Implicit function theorem"" -> x=0, y=0 ->F=0, \\dF/(\\dy)=cos(x+y-x)=1!=0
+y=\S{k=0, n, a_k*x}, sin(x+y)=sin(x+a_1x+a_2x^2+...)=x+a_1x+a_2x^2+...+1/3!*(x+a_1x+a_2x^2+...)^3+...=(1+a_1)x+a_2x^2+(a_3-1/6*(1+a_1)^3)x^3+..., xy=2x=2x+a_1x^2+a_2x^3+...}",
+,,,
+,,,
+,Optimering/Extremvärden i flera variabler,"local max value: f(x) <= f(a), local min value: f(x)>=f(a), absolute maximum/minimum (in all points)
+f har max i (a, b) om f(a, b) >= f(x, y)
 f kontinuerlig på sluten, begränsad mängd -> garanterar existensen
 Max/min kan antas i:
 - Kritiska punkter: Alla partiella derivator = 0
