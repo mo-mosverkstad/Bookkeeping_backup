@@ -231,7 +231,7 @@ d/(dx) F(x, y(x)) = 0 -> F_(1')(x, y) + F_(2')(x, y)*(dy/(dx)) = 0 -> dy/(dx) = 
 \\dF/(\\dx) + \\dF/(\\dy)*(dy/(dx)) + \\dF/(\\dz)*(dz/(dx)) = 0
 \\dG/(\\dx) + \\dG/(\\dy)*(dy/(dx)) + \\dG/(\\dz)*(dz/(dx)) = 0 -> dy/(dx), dz/(dx), (|[[\\dF/(\\dy), \\dF/(\\dz)], [\\dG/(\\dy), \\dG/(\\dz)]]| != 0)}",
 ,Implicit function theorem,"$math{{l=1, n, F_l({k=1, m, x_k}, {k=1, n, y_k})} -> {l=1, n, \S{k=1, n, (\\dF_l)/(\\dy_k)*((\\dy_k)/(\\dx_r))}=-(\\dF_k)/(\\dx_r)}
-((\\dy_s)/(\\dx_r))_(x_1 ... x_n) = -(\\d(F_1, ..., F_n)/\\d(y_1, ..., x_r, ..., y_n))/(\\d(F_1, ..., F_n)/\\d(y_1, ..., y_n))}",
+""Cramer's rule"" ->((\\dy_s)/(\\dx_r))_(x_1 ... x_n) = -(\\d(F_1, ..., F_n)/\\d(y_1, ..., x_r, ..., y_n))/(\\d(F_1, ..., F_n)/\\d(y_1, ..., y_n))}",
 ,,"$math{\\d(z_1, ..., z_n)/\\d(x_1, ..., x_n)=\\d(y_1, ..., y_n)/\\d(y_1, ..., y_n)*(\\d(z_1, ..., z_n)/\\d(x_1, ..., x_n))
 \\d(x_1, ..., x_n)/\\d(y_1, ..., y_n)=1/(\\d(y_1, ..., y_n)/\\d(x_1, ..., x_n))}",
 ,,,
@@ -313,18 +313,33 @@ a=(n\S{k=1, n, x_ky_k}-\S{k=1, n, x_k}\S{k=1, n, y_k})/(n\S{k=1, n, x_k^2}-(\S{k
 ,,"$math{I(p, q)=\int{0, 1, (f(x)-px-q)^2dx}, (\\dI)/(\\dp)=-2\int{0, 1, x(f(x)-px-q)dx}, (\\dI)/(\\dq)=-2\int{0, 1, (f(x)-px-q)dx}
 p/3+q/2=\int{0, 1, xf(x)dx}, p/2+q=\int{0, 1, f(x)dx}->p=\int{0, 1, (12x-6)f(x)dx}, q=\int{0, 1, (4-6x)f(x)dx}}",
 ,,"Fourier series (f approx with \S{k=1, n, b_k*sin(kx)}):
-$math{I=\int{0, \p, (f(x)-\S{k=1, n, b_k*sin(kx)dx})^2}}",
+$math{I=\int{0, \p, (f(x)-\S{k=1, n, b_k*\sin(kx)dx})^2}, {j=1, n, (\\dI)/(\\db_j)=-2\int{0, \p, (f(x)-\S{k=1, n, b_k\sin(kx)})\sin(jx)dx}}=0, {j=1, n, \S{k=1, n, b_k\int{0, \p, sin(kx)sin(jx)dx}}=\int{0, \p, f(x)sin(jx)dx}}
+j!=k->\int{0, \p, \sin(kx)\sin(jx)dx}=1/2\int{0, \p, (-\cos((k+j)x)+cos((k-j)x))dx}=0
+j=k->\int{0, \p, \sin^2*(jx)dx}=1/2\int{0, \p, (1-\cos(2jx))dx}=\p/2
+\S{k=1, n, b_k*sin(kx)}->b_k=2/\p\int{0, \p, f(x)sin(jx)dx}}",
+,Differentiation through integral,"$math{c<x<d, (h!=0, |h| ""sufficient small"" -> (c<x+h<d)), F(x)=\int{a, b, f(x, t)dt}, \int{a, b, f_(1')(t)dt} "" exist"", (|f_(11')(x, t)|<=g(t), a<t<b->\int{a, b, g(t)dt}=K<\inf)->d/(dx)\int{a, b, f(x, t)dt}=\int{a, b, (\\d)/(\\dx)f(x, t)dt}}
+
+$math{f(x+h, t)=f(x, t)+hf_(1')(x, t)+h^2/2f_(11')(x+\t*h, t), (0<=\t<=1)
+|(F(x+h)-F(x))/h-\int{a, b, f_(1')(x, t)dt}|=|\int{a, b, (f(x+h, t)-f(x, t))/tdt-\int{a, b, f_(1')(x, t)}}|<=\int{a, b, |(f(x+h, t)-f(x, t))/h-f_(1')(x, t)|dt}=\int{a, b, |h/2f_(11')(x+\th, t)|}<=h/2\int{a, b, g(t)dt}=Kh/2
+\lim{h->0, (F(x+h)-F(x))/h-\int{a, b, f_(1')(x, t)dt}=0 -> F'(x)=\lim{h->0, (F(x+h, t)-F(x, t))/h}=\int{a, b, f_(1')(x, t)dt}}}",
+,,"$math{F(x, b, a)=\int{a, b, f(x, t)dt}, d/(dx)F(x, b(x), a(x))=(\\dF)/(\\dx)+(\\dF)/(\\db)*((db)/(dx))+(\\dF)/(\\da)*((da)/(dx))
+d/(dx)\int{a(x), b(x), f(x, t)dt}=\int{a(x), b(x), (\\d)/(\\dx)f(x, t)dt}=\int{a(x), b(x), (\\d)/(\\dx)f(x, t)dt}+f(x, b(x))b'(x)-f(x, a(x))a'(x)}",
+,Envelope,"$math{f(x, y, c)=0 "" tangent to C curve"" -> f(x, y, c)=0, \\d/(\\dc)f(x, y, c)=0}
+
+$math{x=g(c), y=h(x), f(g(c), h(c), c)=0 -> f_(1')*g'(c)+f_(2')*h'(c)+f_(3')=0
+f(x, y, z)=0->f_(1')+f_(2')((dy)/(dx))=0
+(dy)/(dx)=((dy)/(dc))/((dx)/(dc))=h'(c)/g'(c) -> f_(1')+f_(2')(h'(c)/g'(c))=0 -> f_(1')*g'(c)+f_(2')*h'(c)=0 -> f_(3')=0}",
+,Pertubation (Approximated solution),"$math{y+1/50*ln(1+y)=x^2 -> y+\e*\ln(1+y)=x^2 -> y=y(x, \e)=y(x, 0)+\e*y_(\e')(x, 0)+\e^2/2!y_(\e\e')(x, 0)
+(\\dy)/(\\d\e)+\ln(1+y)+\e/(1+y)*((\\dy)/(\\d\e)) -> y_(\e')(x, 0)=-\ln(1+x^2), (\\d^2y)/(d\e^2)+2/(1+y)*((\\dy)/(\\d\e))+\e*(\\d/(\\d\e))*(1/(1+y)*(\\dy)/(\\d\e))=0->y_(\e\e')(x, 0)=2/(1+x^2)*ln(1+x^2)
+\e=1/50 -> y=x^2-ln(1+x^2)/50+ln(1+x^2)/(2500(1+x^2))}",
+,Newton's method,"$math{f(x, y)=0, g(x, y)=0 -> (x=x_0, y=y_0) -> x_1=x_0-|[[f, f_(2')], [g, g_(2')]]|/|[[f_(1'), f_(2')], [g_(1'), g_(2')]]|, y_1=y_0-|[[f_(1'), f], [g_(1'), g]]|/|[[f_(1'), f_(2')], [g_(1'), g_(2')]]|
+z=f(x_0, y_0)+f_(1')(x_0, y_0)(x-x_0)+f_(2')(x_0, y_0)(y-y_0), z=f(x_0, y_0)+g_(1')(x_0, y_0)(x-x_0)+g_(2')(x_0, y_0)(y-y_0) -> ""Cramer's rule""}",
 ,,,
 ,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-Vector fields,,"f(x, y, z) = (x*y, y+z-1)",
-,Vector fields/Vektorfält,"[F](x, y, z) = -k/(x^2+y^2+z^2)^(3/2)(x, y, z)
-[F](x, y) = k/(x^2+y^2)(-y, x)
-[F]([r]) = -k/|[r]|^3[r]",
+Vector fields,,"$math{f(x, y, z) = (x*y, y+z-1)}",
+,Vector fields/Vektorfält,"$math{[F](x, y, z) = -k/(x^2+y^2+z^2)^(3/2)*(x, y, z)
+[F](x, y) = k/(x^2+y^2)*(-y, x)
+[F]([r]) = -k/|[r]|^3[r]}",
 ,Konservativ vektorfält,"[F](x, y, z) = \nabla f(x, y, z), [F] med potential f
 [F] = (P, Q, R) = ((\\df)/(//dx), (\\df)/(//dy), (\\df)/(//dz))
 (\\dP)/(\\dy) = (\\dQ)/(\\dx), (\\dQ)/(\\dz) = (\\dR)/(\\dy), (\\dP)/(\\dz) = (\\dR)/(\\dx)
