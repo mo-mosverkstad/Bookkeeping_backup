@@ -2,70 +2,70 @@ Group,Name,Basic relationship,Presetted values
 rich,rich,rich,rich
 Vectors/Vektorer,,"Physics: Magnitude and direction, Fysik: Storlek + riktining
 Mathematics: Abstract objects that satisfy certain axioms, Matematik: Abstrakta objekt som uppfyller räkneregler",
-,,"[P] as point, [u] as vector (delta), [PQ] = [Q]-[P] as vector between points",
-,Addition,"[u_1, u_2, u_3]+[v_1, v_2, v_3] = [u_1+v_1, u_2+v_2, u_3+v_3]",
-,Scalar multiplication,"\l*[u] = [\l*u_1, \l*u_2, \l*u_3]",
-,Dot product/Skalärprodukt,[u].[v] = u_1*v_1+u_2*v_2+u_3*v_3,
-,Cross product/Kryssprodukt,"[u]*[v]
-<u1> u2 u3 u1 u2 <u3>
-<v1> v2 v3 v1 v2 <v3>
-[u2*v3-u3*v2, u3*v1-u1*v3, u1*v2-u2*v1]",
+,,"$math{[P]}$ as point, $math{[u]}$ as vector (delta), $math{[PQ] = [Q]-[P]}$ as vector between points",
+,Addition,"$math{[u_1, u_2, u_3]+[v_1, v_2, v_3] = [u_1+v_1, u_2+v_2, u_3+v_3]}$",
+,Scalar multiplication,"$math{\l*[u] = [\l*u_1, \l*u_2, \l*u_3]}$",
+,Dot product/Skalärprodukt,$math{[u].[v] = u_1*v_1+u_2*v_2+u_3*v_3}$,
+,Cross product/Kryssprodukt,"$math{[u]*[v]}$
+$math{<u1> u2 u3 u1 u2 <u3>}$
+$math{<v1> v2 v3 v1 v2 <v3>}$
+$math{[u2*v3-u3*v2, u3*v1-u1*v3, u1*v2-u2*v1]}$",
 ,Vector space orientation/Orientering,"1st vektor -> 2nd vektor moturs riktning
-[u], [v], [u]*[v] positivt orienterad",
-Vektoralgebra,,"Mängdobjekt med 2 operationer [u]+[v] och t[u]
-R^n = {[[x1], [x2], …, [x_n]]: x1, x2, …, xn \in R}",
-,Räkneregler Addition,[u]+[v] = [v]+[u],
-,,([u]+[v])+[w] = [u]+([v]+[w]),
-,,"[u]+[0] = [u]
-[u]+(-[u]) = [0]",
-,Multiplikation med tal,s(t[x]) = st[x],
-,,(s+t)[x] = s[x]+t[x],
-,,t([x]+[y]) = t[x]+t[y],
-,,1[x] = [x],
-,Dot product/Skalärmultiplikation,[x].[y] = [y].[x],
-,,[x].([y]+[z]) = [x].[y]+[x].[z],
-,,(t[x]).[y] = [x].(t[y]),
-,,[x].[x] = |[x]|^2 >= 0,
-,Cauchy-Schwarz,|[u].[v]| <= [u][v],
-,Vinkel mellan vektor,"\t = arccos(([u].[v])/(|[u]||[v]|))
-[u].[v] = |[u]*|[v]|*cos(\t)",
-,Triangelolikheten,|[u]+[v]| <= |[u]|+|[v]|,
-,Cross product/Kryssprodukt,[u]*[v] ortogonal mot både [u] och [v],
-,,[u]*[v] = -[v]*[u],
-,,(\l*[u])*[v] = [u]*(\l*v) = \l*([u]*[v]),
-,,[u]*([v]+[w]) = [u]*[v]+[u]*[w],
-,,[u].([v]*[w]) = [w].([u]*[v]) = [v].([w]*[u]),
-,,"|[u]*[v]| = |[u]|*|[v]|*sin(\t)
+$math{[u], [v], [u]*[v]}$ positivt orienterad",
+Vektoralgebra,,"Mängdobjekt med 2 operationer $math{[u]+[v]}$ och $math{t[u]}$
+$math{R^n = {[[x1], [x2], …, [x_n]]: x1, x2, …, xn \in R}}$",
+,Räkneregler Addition,$math{[u]+[v] = [v]+[u]}$,
+,,$math{([u]+[v])+[w] = [u]+([v]+[w])}$,
+,,"$math{[u]+[0] = [u]}$
+$math{[u]+(-[u]) = [0]}$",
+,Multiplikation med tal,$math{s(t[x]) = st[x]}$,
+,,$math{(s+t)[x] = s[x]+t[x]}$,
+,,$math{t([x]+[y]) = t[x]+t[y]}$,
+,,$math{1[x] = [x]}$,
+,Dot product/Skalärmultiplikation,$math{[x].[y] = [y].[x]}$,
+,,$math{[x].([y]+[z]) = [x].[y]+[x].[z]}$,
+,,$math{(t[x]).[y] = [x].(t[y])}$,
+,,$math{[x].[x] = |[x]|^2 >= 0}$,
+,Cauchy-Schwarz,$math{|[u].[v]| <= [u][v]}$,
+,Vinkel mellan vektor,"$math{\t = arccos(([u].[v])/(|[u]||[v]|))}$
+$math{[u].[v] = |[u]*|[v]|*cos(\t)}$",
+,Triangelolikheten,$math{|[u]+[v]| <= |[u]|+|[v]|}$,
+,Cross product/Kryssprodukt,$math{[u]*[v]}$ ortogonal mot både $math{[u]}$ och $math{[v]}$,
+,,$math{[u]*[v] = -[v]*[u]}$,
+,,$math{(\l*[u])*[v] = [u]*(\l*v) = \l*([u]*[v])}$,
+,,$math{[u]*([v]+[w]) = [u]*[v]+[u]*[w]}$,
+,,$math{[u].([v]*[w]) = [w].([u]*[v]) = [v].([w]*[u])}$,
+,,"$math{|[u]*[v]| = |[u]|*|[v]|*sin(\t)}$
 
-|[u]*[v]|^2 = ([u]*[v]).([u]*[v]) = [u].([v]*([u]*[v])) = [u].(([v].[v])u - ([v].[u])v) = ([v].[v])([u].[u]) - ([u].[v])^2 = |[u]|^2|[v]|^2-(|u|^2|v|^2cos(\t)) = (|[u]||[v]|sin(\t))^2",
-Vector geometry/Vektorgeometri,Längd/norm,"|[u]| = sqrt(u_1^2+u_2^2+u_3^2+u_k^2) = \sqrt([u].[u]), |[u]|>=0, |[u]|=0 -> [u]=[0]",
-,Enhetsvektorn [e] utmed [u],"[e] = [u]/|[u]|, |[e]| = 1",
-,Ortogonalitet,[u].[v] = 0,
-,Paraell,[u] = k[v],
-,Coplanar Vectors,"If a, b, c represents [AB], [AC], [AD], then A, B, C, D lie in a plane provided a.(b*c)=0",
-,Ortogonal projektion,proj_[v]([u]) = ([u].[v])/(|[v]|^2)*[v],
-,,prp_[v]([u]) = [u] - proj_[v]([u]),
+$math{|[u]*[v]|^2 = ([u]*[v]).([u]*[v]) = [u].([v]*([u]*[v])) = [u].(([v].[v])u - ([v].[u])v) = ([v].[v])([u].[u]) - ([u].[v])^2 = |[u]|^2|[v]|^2-(|u|^2|v|^2cos(\t)) = (|[u]||[v]|sin(\t))^2}$",
+Vector geometry/Vektorgeometri,Längd/norm,"$math{|[u]| = sqrt(u_1^2+u_2^2+u_3^2+u_k^2) = \sqrt([u].[u])}$, $math{|[u]|>=0}$, $math{|[u]|=0 -> [u]=[0]}$",
+,Enhetsvektorn [e] utmed [u],"$math{[e] = [u]/|[u]|}$, $math{|[e]| = 1}$",
+,Ortogonalitet,$math{[u].[v] = 0}$,
+,Paraell,$math{[u] = k[v]}$,
+,Coplanar Vectors,"If $math{a, b, c}$ represents $math{[AB], [AC], [AD]}$, then A, B, C, D lie in a plane provided $math{a.(b*c)=0}$",
+,Ortogonal projektion,$math{proj_[v]([u]) = ([u].[v])/(|[v]|^2)*[v]}$,
+,,$math{prp_[v]([u]) = [u] - proj_[v]([u])}$,
 ,,,
-,Area,"A([u], [v]) = |[u]*[v]| = |[u]|*|[v]|*sin(\t)",
-,Volym,"V([u], [v], [w]) = [u].([v]*[w])",
-Linjer och plan,Line parameterform,"[x] = [x_0] + t[v] = [[x_0], [y_0], [z_0]]+t[[v_x], [v_y], [v_z]]
+,Area,"$math{A([u], [v]) = |[u]*[v]| = |[u]|*|[v]|*sin(\t)}$",
+,Volym,"$math{V([u], [v], [w]) = [u].([v]*[w])}$",
+Linjer och plan,Line parameterform,"$math{[x] = [x_0] + t[v] = [[x_0], [y_0], [z_0]]+t[[v_x], [v_y], [v_z]]}$
 ",
-,Plan parameterform,[x] = [x_0] + s[v_1] + t[v_2],
-,Plan normalform,"ax+by+cz = d -> Normal [[a], [b], [c]]
-[[a], [b], [c]].[[x-x_0], [y-y_0], [z-z_0]] = a(x-x_0)+b(y-y_0)+c(z-z_0)",
-,Normalform -> Parameterform,"z=2x+3y+1 -> [0, 0, 1], [1, 0, 3], [0, 1, 4] -> [x, y, z] = [0, 0, 1]+[1, 0, 2]s+[0, 1, 3]t",
-,Parameterform -> Normalform,"x = [1, 1, 1] + [1, 1, 0]s + [0, 0, 1]t -> n = [1, 1, 0]*[0, 0, 1] = [1, -1, 0] -> [x-1, y-1, z-1].[1, -1, 0]=0",
-,,"P=[2, -1], n=[3, -2] -> [x-2, y+1].[3, -2] = 0",
-,Sned linjeprojektion,"L1 = (P[x] + [u[x]]t, P[y] + [u[y]]t), L2 = ax+by+c
-L1 \inter L2 -> t -> L1(t)","P: (1, 3), [u] = (2, 1), L2: x+2y=0"
-,Sned linjespegling,"L1 = (P[x] + [u[x]]t, P[y] + [u[y]]t), L2 = ax+by+c
-L1 \inter L2 -> t -> L1(2t)",
+,Plan parameterform,$math{[x] = [x_0] + s[v_1] + t[v_2]}$,
+,Plan normalform,"$math{ax+by+cz = d}$ -> Normal $math{[[a], [b], [c]]}$
+$math{[[a], [b], [c]].[[x-x_0], [y-y_0], [z-z_0]] = a(x-x_0)+b(y-y_0)+c(z-z_0)}$",
+,Normalform -> Parameterform,"$math{z=2x+3y+1}$ -> $math{[0, 0, 1], [1, 0, 3], [0, 1, 4]}$ -> $math{[x, y, z] = [0, 0, 1]+[1, 0, 2]s+[0, 1, 3]t}$",
+,Parameterform -> Normalform,"$math{x = [1, 1, 1] + [1, 1, 0]s + [0, 0, 1]t}$ -> $math{n = [1, 1, 0]*[0, 0, 1] = [1, -1, 0]}$ -> $math{[x-1, y-1, z-1].[1, -1, 0]=0}$",
+,,"$math{P=[2, -1], n=[3, -2]}$ -> $math{[x-2, y+1].[3, -2] = 0}$",
+,Sned linjeprojektion,"$math{L1 = (P[x] + [u[x]]t, P[y] + [u[y]]t)}$, $math{L2 = ax+by+c}$
+$math{L1 \inter L2 -> t -> L1(t)}$","$math{P: (1, 3), [u] = (2, 1), L2: x+2y=0}$"
+,Sned linjespegling,"$math{L1 = (P[x] + [u[x]]t, P[y] + [u[y]]t)}$, $math{L2 = ax+by+c}$
+$math{L1 \inter L2 -> t -> L1(2t)}$",
 ,Minsta avstånd,godtycklig plan punkt -> punkt vektor projektion på normal,
 ,2 linjer minsta avstånd,,
-Totalmatriser/Gausseliminering,Gausseliminering,"[[2, -4, 2| 2]*1/2, [-4, 0, -2| -2], [1, -1, 1| 3]] ~ [[1, -2, 1| 1]*(-1, 2)(-4, 3), [1, -1, 1| 3], [-4, 0, -2| -2]] ~ [[1, -2, 1| 1], [0, 1, 0| 2], [0, -8, 2| 2]*1/8] ~ [[1, -2, 1| 1], [0, 1, 0| 2]*(1, 3), [0, -1, 1/4|1/4]] ~ [[1, -2, 1| 1], [0, 1, 0| 2], [0, 0, 1/4| 9/4]*4] ~ [[1, -2, 1| 1], [0, 1, 0| 2], [0, 0, 1| 9]] -> Återsubstitution",
+Totalmatriser/Gausseliminering,Gausseliminering,"$math{[[2, -4, 2| 2]*1/2, [-4, 0, -2| -2], [1, -1, 1| 3]] ~ [[1, -2, 1| 1]*(-1, 2)(-4, 3), [1, -1, 1| 3], [-4, 0, -2| -2]] ~ [[1, -2, 1| 1], [0, 1, 0| 2], [0, -8, 2| 2]*1/8] ~ [[1, -2, 1| 1], [0, 1, 0| 2]*(1, 3), [0, -1, 1/4|1/4]] ~ [[1, -2, 1| 1], [0, 1, 0| 2], [0, 0, 1/4| 9/4]*4] ~ [[1, -2, 1| 1], [0, 1, 0| 2], [0, 0, 1| 9]]}$ -> Återsubstitution",
 ,,"Med hjälp av ERO reducera till ett linjärt ekvationssstem till echelonform
 - Byta plats på två ekvationer
-- Multiplikation av en ekvation med ett tal \l != 0
+- Multiplikation av en ekvation med ett tal $math{\l != 0}$
 - Addera multipel av en ekvation till en annan",
 ,,"radreduktion - göra radoperationer i en matris
 radekvivalenta matriser - man kan gå från den ena till den andra genom
@@ -76,9 +76,9 @@ koefficientmatris - matris med koefficienterna (utan högerledet)
 utökad matris - matris med koefficienter och högerled
 homogent system - högerledet är bara nollor
 inkonsistent system - saknar lösning",
-,,"rank([A]) = max antalet av linjärt oberoende kolonnvektorer av [A] (ledande etta)
-rank([A_(n*n)]) = n
-Visas ofta genom Gauss-Jordan elimination, ned- och uppåt, i kvadratiska matriser av full rang när manlöser linjärt system, [A][X]=[B] -> ([A]|[B])~…~([I]|[X]) eller för att bestämma inversen ([A]|[I])~…~([I]|[A]^(-1))",
+,,"$math{rank([A])}$ = max antalet av linjärt oberoende kolonnvektorer av $math{[A]}$ (ledande etta)
+$math{rank([A_(n*n)]) = n}$
+Visas ofta genom Gauss-Jordan elimination, ned- och uppåt, i kvadratiska matriser av full rang när manlöser linjärt system, $math{[A][X]=[B] -> ([A]|[B])~…~([I]|[X])}$ eller för att bestämma inversen $math{([A]|[I])~…~([I]|[A]^(-1))}$",
 ,,,
 ,,,
 ,,,
@@ -86,8 +86,8 @@ Visas ofta genom Gauss-Jordan elimination, ned- och uppåt, i kvadratiska matris
 ,,,
 ,,"(1)
 E linjärkombination E1, E2 -> lösning till E1, E2 samma till E
-E1: A_1x+B_1y=C_1, E2: A_2x+B_2y=C_2, Ax+By = C -> \l_1(A_1x+B_1y)+\l_2(A_2x+B_2y) = \l_1*C_1 + \l_2*C_2
-Lösning (x_0, y_0) till E1, E2 -> A_1x_0+B_1y_0=C_1, A_2x_0+B_2y_0 -> Ax_0+By_0 = \l_1(A_1x_0+B_1y_0)+\l_2(A_2x_0+B_2y_0) = \l_1*C_1 + \l_2*C_2 = C -> Lösning (x_0, y_0) till C",
+$math{E1: A_1x+B_1y=C_1}$, $math{E2: A_2x+B_2y=C_2}$, $math{Ax+By = C -> \l_1(A_1x+B_1y)+\l_2(A_2x+B_2y) = \l_1*C_1 + \l_2*C_2}$
+Lösning $math{(x_0, y_0)}$ till E1, E2 -> $math{A_1x_0+B_1y_0=C_1, A_2x_0+B_2y_0}$ -> $math{Ax_0+By_0 = \l_1(A_1x_0+B_1y_0)+\l_2(A_2x_0+B_2y_0) = \l_1*C_1 + \l_2*C_2 = C}$ -> Lösning $math{(x_0, y_0)}$ till C",
 ,Gausseliminering bevarar systemets lösningsmängd,"Gausseliminering bevarar systemets lösningsmängd
 
 System S1 elimineras till S2, varje ny ekvation i S2 (inte finns i S1) uppkommit som linjärkombination av 2 ekvationer i S1 -(1)> Lösning i S1 också är lösning till S2
@@ -95,11 +95,11 @@ S2 kan linjärkombineras tillbaka till S1 -(1)> Lösning i S2 också är lösnin
 ,,"(2)
 Linjärt ekvationsystem 2 lösningar, l linjen genom punkterna -> Alla punkter på l lösningar till systemet
 
-P1: {k=1, n, x_k}, P2: {k=1, n, y_k} -> \S{k=1, n, A_k*x_k} = B, \S{k=1, n, A_k*y_k} = B
-[v] = {k=1, n, x_k-y_k}, l: P1+[v]t = {k=1, n, x_k+(x_k-y_k)t}
-\S{k=1, n, A_k(x_k+(x_k-y_k)t)} = C
-[A][P1]=[y], [A][P2]=[y], ...",
-,Ekvationssystemet lösningar,"Linjärt ekvationssystem ingen, entydig eller oändigt många lösningar
+$math{P1: {k=1, n, x_k}, P2: {k=1, n, y_k}}$ -> $math{\S{k=1, n, A_k*x_k} = B, \S{k=1, n, A_k*y_k} = B}$
+$math{[v] = {k=1, n, x_k-y_k}, l: P1+[v]t = {k=1, n, x_k+(x_k-y_k)t}}$
+$math{\S{k=1, n, A_k(x_k+(x_k-y_k)t)} = C}$
+$math{[A][P1]=[y], [A][P2]=[y]}$, ...",
+,Ekvationssystemet lösningar,"Linjärt ekvationssystem ingen, entydig eller oändligt många lösningar
 Lösning saknas, entydig lösning
 Mer än en lösning -(2)-> Alla punkter på linjen är lösningar",
 ,,"Lösning saknas (Ingen gemensam skärningspunkt)
@@ -115,341 +115,341 @@ Alltid lösbara, entydlig/flera lösningar",
 ,Överbestämda ekvationssystem,"Ingen lösning, entydig lösning, oändligt många lösningar",
 ,,För varje överbestämt linjärt ekvationssystem finns det uppsättning högerled så att lösning saknas,
 ,,,
-,,"[x] = [x]_p + [x]_h (partikulärlösning + homogen lösning)
-[A][x]=[y], [A][x]_h = [A]([x]-[x]_p) = [A][x]-[A][x]_p = [y]-[y] = [0]",
+,,"$math{[x] = [x]_p + [x]_h}$ (partikulärlösning + homogen lösning)
+$math{[A][x]=[y], [A][x]_h = [A]([x]-[x]_p) = [A][x]-[A][x]_p = [y]-[y] = [0]}$",
 ,,,
 ,,,
-Matrix/Matriser,,"Nollmatris: [0]
+Matrix/Matriser,,"Nollmatris: $math{[0]}$
 Kvadratiska matris
 Identitetsmatris
 Diagnonalmatris
 Triangulära matris",
-,Row/columns,"A = [[1, 0, -1], [2, 3, 1]], [r_1(A)] = [[1], [0], [1]], [c_2(A)] = [[0], [3]]",
-,Matrisaddition,[…],
+,Row/columns,"$math{A = [[1, 0, -1], [2, 3, 1]]}$, $math{[r_1(A)] = [[1], [0], [1]]}$, $math{[c_2(A)] = [[0], [3]]}$",
+,Matrisaddition,$math{[…]}$,
 ,Matrismultiplikation,,
 ,Invers matris,,
-,2x2 matrisinverser,"[A_(2*2)]^(-1) = [[a, b], [c, d]]^(-1) = 1/det([A])*[[d, -b], [-c, a]] = 1/(ad-bc)*[[d, -b], [-c, a]]",
-,Transponering,"[[a_11, a_12, a_13], [a_21, a_22, a_23]]^^ = [[a_11, a_21], [a_12, a_22], [a_13, a_23]]",
-Matrisalgebra,Addition,[A]+[B] = [B]+[A],
-,,([A]+[B])+[C] = [A]+([B]+[C]),
-,Multiplication av skalär,"\l*([A]+[B]) = \l*[A]+\l*[B]
-\l*([A]*[B]) = (\l*[A])*[B] = [A]*(\l*[B])",
-,Multiplikation,"[A](p*q), [B](q*r), [A][B] (p*r)",
-,,[A]*[B] != [B]*[A],
-,,([A]*[B])*[C] = [A]*([B]*[C]),
-,,"[A]*([B]+[C]) = [A][B]+[A][C]
-([A]+[B])*[C] = [A][C]+[B][C]",
-,,"[A][B] = [A][[b1], [b2], …, [bn]] = [[Ab1], [Ab2], …, [Abn]]",
-,,"[[[a1]], [[a2]], …, [[an]]][[b1], [b2], …, [bm]] = [[[a1].[b1], [a1].[b2], …, [a1].[bm]], [[a2].[b1], [a2].[b2], …, [a2].[bm]], …, [[an].[b1], [an].[b2], …, [an].[bm]]]",
-,Transponering,([A]^^)^^ = A,
-,,([A]+[B])^^ = [A]^^+[B]^^,
-,,"([A][B])^^ = [B]^^*[A]^^
-(([A][B])^^)_ij = ([A][B])_ji = [r_j([A])]*[c_i([B])], (B^^*A^^)_ij = [r_i([B]^^)]*[c_j([A]^^)] = [c_i([B]^^)]*[r_j([A]^^)]",
-,,(\l*A)^^ = \l*A^^,
-,Invers,"Definition: [A][A]^(-1) = [A]^(-1)*[A] = [I], [A] inverterbar -> [A]^(-1) entydig
-[A][B]=[B][A]=I, [A][C]=I -> [B] = [B]([A][C]) = ([B][A])[C] = [C]",
-,,"([A]*[B])^(-1) = [B]^(-1)*[A]^(-1)
-([A][B])([B]^(-1)*[A]^(-1)) = [A]([B][B]^(-1))([A]^(-1)) = [A][I][A]^(-1) = [I]",
-,,([A]^(-1))^^ = ([A]^^)^(-1),
-,,[A]^(-n) = ([A]^(-1))^n = ([A]^n)^(-1),
-,,"[A] inveterbar -> [A]^(-1) entydig
+,2x2 matrisinverser,"$math{[A_(2*2)]^(-1) = [[a, b], [c, d]]^(-1) = 1/det([A])*[[d, -b], [-c, a]] = 1/(ad-bc)*[[d, -b], [-c, a]]}$",
+,Transponering,"$math{[[a_11, a_12, a_13], [a_21, a_22, a_23]]^^ = [[a_11, a_21], [a_12, a_22], [a_13, a_23]]}$",
+Matrisalgebra,Addition,$math{[A]+[B] = [B]+[A]}$,
+,,$math{([A]+[B])+[C] = [A]+([B]+[C])}$,
+,Multiplication av skalär,"$math{\l*([A]+[B]) = \l*[A]+\l*[B]}$
+$math{\l*([A]*[B]) = (\l*[A])*[B] = [A]*(\l*[B])}$",
+,Multiplikation,"$math{[A](p*q), [B](q*r), [A][B] (p*r)}$",
+,,$math{[A]*[B] != [B]*[A]}$,
+,,$math{([A]*[B])*[C] = [A]*([B]*[C])}$,
+,,"$math{[A]*([B]+[C]) = [A][B]+[A][C]}$
+$math{([A]+[B])*[C] = [A][C]+[B][C]}$",
+,,"$math{[A][B] = [A][[b1], [b2], …, [bn]] = [[Ab1], [Ab2], …, [Abn]]}$",
+,,"$math{[[[a1]], [[a2]], …, [[an]]][[b1], [b2], …, [bm]] = [[[a1].[b1], [a1].[b2], …, [a1].[bm]], [[a2].[b1], [a2].[b2], …, [a2].[bm]], …, [[an].[b1], [an].[b2], …, [an].[bm]]]}$",
+,Transponering,$math{([A]^^)^^ = A}$,
+,,$math{([A]+[B])^^ = [A]^^+[B]^^}$,
+,,"$math{([A][B])^^ = [B]^^*[A]^^}$
+$math{(([A][B])^^)_ij = ([A][B])_ji = [r_j([A])]*[c_i([B])]}$, $math{(B^^*A^^)_ij = [r_i([B]^^)]*[c_j([A]^^)] = [c_i([B]^^)]*[r_j([A]^^)]}$",
+,,$math{(\l*A)^^ = \l*A^^}$,
+,Invers,"Definition: $math{[A][A]^(-1) = [A]^(-1)*[A] = [I]}$, $math{[A]}$ inverterbar -> $math{[A]^(-1)}$ entydig
+$math{[A][B]=[B][A]=I, [A][C]=I -> [B] = [B]([A][C]) = ([B][A])[C] = [C]}$",
+,,"$math{([A]*[B])^(-1) = [B]^(-1)*[A]^(-1)}$
+$math{([A][B])([B]^(-1)*[A]^(-1)) = [A]([B][B]^(-1))([A]^(-1)) = [A][I][A]^(-1) = [I]}$",
+,,$math{([A]^(-1))^^ = ([A]^^)^(-1)}$,
+,,$math{[A]^(-n) = ([A]^(-1))^n = ([A]^n)^(-1)}$,
+,,"$math{[A]}$ inveterbar -> $math{[A]^(-1)}$ entydig
 
-[B] och [C] båda uppfyller invers:
-[A][B] = [B][A] = [I], [A][C] = [C][A] = [I] -> [B]=[C]",
-,,"[A][B]=0:
-[A] inverterbar -> [B]=0 (0=[A]^(-1)*0=[A]^(-1)*[A]*[B]=[B])
-[C]!=0 -> [B][A][C]=0 ([C]=[B], [B][A][C]=[B][A][B]=0)",
-,,"[A][B] inverterbar -> [A] inverterbar
-([A][B])[C] = [I] -> [A]([B][C]) = [I] -> [A]^(-1)=[B][C]",
-,Vänsterinvers,"[L][A]=[I] -> [A][x]=[y] entydlig lösning för varje högerled [y] (Kvadratisk)
+$math{[B]}$ och $math{[C]}$ båda uppfyller invers:
+$math{[A][B] = [B][A] = [I], [A][C] = [C][A] = [I] -> [B]=[C]}$",
+,,"$math{[A][B]=0}$:
+$math{[A]}$ inverterbar -> $math{[B]=0}$ ($math{0=[A]^(-1)*0=[A]^(-1)*[A]*[B]=[B]}$)
+$math{[C]!=0}$ -> $math{[B][A][C]=0}$ ($math{[C]=[B], [B][A][C]=[B][A][B]=0}$)",
+,,"$math{[A][B]}$ inverterbar -> $math{[A]}$ inverterbar
+$math{([A][B])[C] = [I] -> [A]([B][C]) = [I] -> [A]^(-1)=[B][C]}$",
+,Vänsterinvers,"$math{[L][A]=[I]}$ -> $math{[A][x]=[y]}$ entydlig lösning för varje högerled $math{[y]}$ (Kvadratisk)
 
 Varje entydlig lösning -> Någon entydlig lösning
-[x]=[0] -> [A][x]=[0] -> [L][A][x]=[L][0] -> [x]=[0]",
-,Högerinvers,"[A][x]=[y] entydlig lösning -> [A][R]=[I] (Kvadratisk)
+$math{[x]=[0] -> [A][x]=[0] -> [L][A][x]=[L][0] -> [x]=[0]}$",
+,Högerinvers,"$math{[A][x]=[y]}$ entydlig lösning -> $math{[A][R]=[I]}$ (Kvadratisk)
 
-[A][[a], [b]] = (1, 0), [A][[c], [d]] = (0, 1) -> [A][[a, c], [b, d]] = [[1, 0], [0, 1]] -> [A][R]=[I]",
-,Invers med vänster högerinvers,"[A] vänsterinvers [L] eller [A] högerinvers [H] -> [A] inverterbar med [A]^(-1) = [L] = [H]
+$math{[A][[a], [b]] = (1, 0), [A][[c], [d]] = (0, 1) -> [A][[a, c], [b, d]] = [[1, 0], [0, 1]] -> [A][R]=[I]}$",
+,Invers med vänster högerinvers,"$math{[A]}$ vänsterinvers $math{[L]}$ eller $math{[A]}$ högerinvers $math{[H]}$ -> $math{[A]}$ inverterbar med $math{[A]^(-1) = [L] = [H]}$
 
-[A] vänsterinvers -> [A][x]=[y] -> [A] högerinvers
-[A] högerinvers -> [A][R]=[I] -> [R] vänsterinvers [A] -> [R] högerinvers [A] -> [R][A]=[I] -> [A] vänsterinvers",
-,,"-> [A][x]=[y] entydig lösning för varje högerled [y] <-> entydlig lösning för något högerled [y] <-> har lösning för varje högerled [y] <-> [A] inverterbar
+$math{[A]}$ vänsterinvers -> $math{[A][x]=[y]}$ -> $math{[A]}$ högerinvers
+$math{[A]}$ högerinvers -> $math{[A][R]=[I]}$ -> $math{[R]}$ vänsterinvers $math{[A]}$ -> $math{[R]}$ högerinvers $math{[A]}$ -> $math{[R][A]=[I]}$ -> $math{[A]}$ vänsterinvers",
+,,"-> $math{[A][x]=[y]}$ entydig lösning för varje högerled $math{[y]}$ <-> entydlig lösning för något högerled $math{[y]}$ <-> har lösning för varje högerled $math{[y]}$ <-> $math{[A]}$ inverterbar
 1, 2, 3 (lösningar ekvivalens), 4 (invers med vänster högerinvers)",
-,Ortogonal,"Ortogonal <-> Inverterbar [A]^(-1) = [A]^^, [A]*[A]^^=[I]
+,Ortogonal,"Ortogonal <-> Inverterbar $math{[A]^(-1) = [A]^^}$, $math{[A]*[A]^^=[I]}$
 Matrisens kolonner bildar en ortonormerad mängd
 
-Ortogonal -> Inverterbar: [A]*[A]^^=[I] -> [A]^(-1) = [A]^^
-Inverterbar -> Ortogonal: [A]*[A]^(-1) = [A]*[A]^^ = [I] -> Ortogonal",
-,,"[A] ortogonal <-> [A]^^ ortogonal
-([A]^^)^^*[A]^^=[A][A]^^=[I]",
-,,"[A], [B] ortogonal <-> [A][B] ortogonal
-[A][B])*([A][B])^^ = [A][B][B]^^[A]^^ = [I]",
-,,|[A][v]|=|[v]|,
-,Skevsymmetrisk,[A]^^=-[A],
-,,"[A]+[A]^^ symmetrisk
-([A]+[A]^^)^^ = [A]^^+[A]",
-,,"[A]-[A]^^ skevsymmetrisk
-([A]-[A]^^)^^ = [A]^^-A = -([A]-[A]^^)",
-,Nilpotent,[A]^k=0,
+Ortogonal -> Inverterbar: $math{[A]*[A]^^=[I] -> [A]^(-1) = [A]^^}$
+Inverterbar -> Ortogonal: $math{[A]*[A]^(-1) = [A]*[A]^^ = [I]}$ -> Ortogonal",
+,,"$math{[A]}$ ortogonal <-> $math{[A]^^}$ ortogonal
+$math{([A]^^)^^*[A]^^=[A][A]^^=[I]}$",
+,,"$math{[A], [B]}$ ortogonal <-> $math{[A][B]}$ ortogonal
+$math{[A][B])*([A][B])^^ = [A][B][B]^^[A]^^ = [I]}$",
+,,$math{|[A][v]|=|[v]|}$,
+,Skevsymmetrisk,$math{[A]^^=-[A]}$,
+,,"$math{[A]+[A]^^}$ symmetrisk
+$math{([A]+[A]^^)^^ = [A]^^+[A]}$",
+,,"$math{[A]-[A]^^}$ skevsymmetrisk
+$math{([A]-[A]^^)^^ = [A]^^-A = -([A]-[A]^^)}$",
+,Nilpotent,$math{[A]^k=0}$,
 ,,"Inte inverterbar
-[A]^k=0, [B]*[A]^k=[I] -> [B]*0=[I] -> [B] inte invers till [A]",
-,,"[I]-[A] inverterbar \S{l=0, k-1, [A]^l}
-([I]-[A])*\S{l=0, k-1, [A]^l} = [I]-[A]^k = [I]",
-,Likformiga matriser,"[A]=[T]^(-1)[B][T], ([A], [B]: n*n)",
+$math{[A]^k=0, [B]*[A]^k=[I] -> [B]*0=[I]}$ -> $math{[B]}$ inte invers till $math{[A]}$",
+,,"$math{[I]-[A]}$ inverterbar $math{\S{l=0, k-1, [A]^l}}$
+$math{([I]-[A])*\S{l=0, k-1, [A]^l} = [I]-[A]^k = [I]}$",
+,Likformiga matriser,"$math{[A]=[T]^(-1)[B][T]}$, ($math{[A], [B]}$: n*n)",
 ,,"Samma form:
-([A], [B]: n*n) -> [T]: n*n",
-Matrisekvationer,,A(B+XB)=I -> B+XB=A^(-1)I -> I+X=A^(-1)B -> X= A^(-1)*B-I,
-Determinanter,Utveckla efter rad i,"det(A_(n*n)) = \S{j=1, n, a_ij(-1)^(i+j)*M_(ij)}
-M_(ij) är determinanten som fås genom att stryka rad i och kolonn j i det([A])",
-,2*2 determinanter,"det([[a, b], [c, d]]) = ad-bc",
-,,"det({k=1, n, [a_k]}) -> + (positivt orienterad), - (negativ orienterad)",
+($math{[A], [B]}$: n*n) -> $math{[T]}$: n*n",
+Matrisekvationer,,$math{A(B+XB)=I -> B+XB=A^(-1)I -> I+X=A^(-1)B -> X= A^(-1)*B-I}$,
+Determinanter,Utveckla efter rad i,"$math{det(A_(n*n)) = \S{j=1, n, a_ij(-1)^(i+j)*M_(ij)}}$
+$math{M_(ij)}$ är determinanten som fås genom att stryka rad i och kolonn j i $math{det([A])}$",
+,2*2 determinanter,"$math{det([[a, b], [c, d]]) = ad-bc}$",
+,,"$math{det({k=1, n, [a_k]})}$ -> + (positivt orienterad), - (negativ orienterad)",
 ,Gausseliminering,"En multipel av en rad kan läggas till en annan rad utan att determinanten ändras
-En multipel av en kolonn kan läggas till en annan utan att determinanten ändras","[[0, 1, 1, 1, 1, 1], [1, 0, 1, 1, 1, 1], [1, 1, 0, 1, 1, 1], [1, 1, 1, 0, 1, 1], [1, 1, 1, 1, 0, 1], [1, 1, 1, 1, 1, 0]]"
-,Adjutant,adj(A) = …,
-,Ortogonal matris,"det(A)=1, -1, det(A*A^^)=det(A)*det(A^^)=det^2(A)=1",
-Determinanter algebra,,Determinant (|det(A)|) -> avbildningsskala (area/volym),
-,,"det A != 0 -> linjär oberoende kolonner, det A = 0 -> linjär beroende kolonner",
+En multipel av en kolonn kan läggas till en annan utan att determinanten ändras","$math{[[0, 1, 1, 1, 1, 1], [1, 0, 1, 1, 1, 1], [1, 1, 0, 1, 1, 1], [1, 1, 1, 0, 1, 1], [1, 1, 1, 1, 0, 1], [1, 1, 1, 1, 1, 0]]}$"
+,Adjutant,$math{adj(A) = …}$,
+,Ortogonal matris,"$math{det(A)=1, -1}$, $math{det(A*A^^)=det(A)*det(A^^)=det^2(A)=1}$",
+Determinanter algebra,,Determinant ($math{|det(A)|}$) -> avbildningsskala (area/volym),
+,,"$math{det A != 0}$ -> linjär oberoende kolonner, $math{det A = 0}$ -> linjär beroende kolonner",
 ,Laplace expansion,|| ->  minor determinant,
-,,det([A]^^) = det([A]),
-,,"det(A+B, C) = det(A, C) + det(B, C)
+,,$math{det([A]^^) = det([A])}$,
+,,"$math{det(A+B, C) = det(A, C) + det(B, C)}$
 (Uppspänning delas upp när vektor delas upp)",
-,,"det(\l*A, B) = \l*det(A, B)
-det(\l*A, \l*B) = \l^2*det(A, B)",
-,,"det(A, A) = 0
+,,"$math{det(\l*A, B) = \l*det(A, B)}$
+$math{det(\l*A, \l*B) = \l^2*det(A, B)}$",
+,,"$math{det(A, A) = 0}$
 (Paraella vektorer spänner inte upp area)",
-,,"det([A][B]) = det([A])det([B])
+,,"$math{det([A][B]) = det([A])det([B])}$
 (1st scale and 2nd scale must be multiplied)",
-,,det([A]^k) = det([A])^k,
-,,det([A]^(-1)) = 1/det([A]),
+,,$math{det([A]^k) = det([A])^k}$,
+,,$math{det([A]^(-1)) = 1/det([A])}$,
 ,,"Multipel av en rad eller kolonn kan bytas ut:
-[[a, \l*b, c], [d, \l*e, f], [g, \l*h, i]] = \l*[[a, b, c], [d, e, f], [g, h, i]]
-[[a, b, c], [d, e, f], [\l*g, \l*h, \l*i]] = \l*[[a, b, c], [d, e, f], [g, h, i]]",
+$math{[[a, \l*b, c], [d, \l*e, f], [g, \l*h, i]] = \l*[[a, b, c], [d, e, f], [g, h, i]]}$
+$math{[[a, b, c], [d, e, f], [\l*g, \l*h, \l*i]] = \l*[[a, b, c], [d, e, f], [g, h, i]]}$",
 ,,"Om två rader eller två kolonner byter plats skiftar determinanten tecken
-|[[a, b, c], [d, e, f], [g, h, i]]| = -|[[b, a, c], [e, d, f], [h, g, i]]|
+$math{|[[a, b, c], [d, e, f], [g, h, i]]| = -|[[b, a, c], [e, d, f], [h, g, i]]|}$
 
-det([a_1]+[a_2], [a_2]+[a_1], [a_3]) = det([a_1], [a_1], [a_3]) + det([a_1], [a_2], [a_3]) + det([a_2], [a_1], [a_3]) + det([a_2], [a_2], [a_3]) = 0",
+$math{det([a_1]+[a_2], [a_2]+[a_1], [a_3]) = det([a_1], [a_1], [a_3]) + det([a_1], [a_2], [a_3]) + det([a_2], [a_1], [a_3]) + det([a_2], [a_2], [a_3]) = 0}$",
 ,,"Multipel av en rad/kolonn läggs till annan rad -> determinant förändras inte
 
-det([a_1] + \l*[a_2], [a_2], [a_3]) = det([a_1], [a_2], [a_3]) + \l*det([[a_2], [a_2], [a_3])",
-,Cramers rule/Cramers regel,"x_1 = det(y, a_2, a_3, …)/det(A), x_2 = det(a_1, y, a_3, ...)/det(A)
+$math{det([a_1] + \l*[a_2], [a_2], [a_3]) = det([a_1], [a_2], [a_3]) + \l*det([[a_2], [a_2], [a_3])}$",
+,Cramers rule/Cramers regel,"$math{x_1 = det(y, a_2, a_3, …)/det(A), x_2 = det(a_1, y, a_3, ...)/det(A)}$
 
-x*[a_1]+y*[a_2] = [b] -> det(b, a_2) = det(x*[a_1]+y*[a_2], a_2) = x*det(a_1, a_2) + y*det(a_2, a_2) -> x = det(b, a_2)/det(a_1, a_2)",
-,Cofactor matrix/Cofaktor matris,"C_(ij) = (-1)^(i+j)*det(M_(ij))
-cof(A) = [[D_(11), -D_(12), D_(13)], [-D_(21), D_(22), -D_(23)], [D_(31), -D_(32), D_(33)]]
+$math{x*[a_1]+y*[a_2] = [b] -> det(b, a_2) = det(x*[a_1]+y*[a_2], a_2) = x*det(a_1, a_2) + y*det(a_2, a_2) -> x = det(b, a_2)/det(a_1, a_2)}$",
+,Cofactor matrix/Cofaktor matris,"$math{C_(ij) = (-1)^(i+j)*det(M_(ij))}$
+$math{cof(A) = [[D_(11), -D_(12), D_(13)], [-D_(21), D_(22), -D_(23)], [D_(31), -D_(32), D_(33)]]}$
 -> D underdeterminant",
-,Adjugate/Adjutant,adj(A) = C(A)^T,
-,Inverse using adjugate/Invers med adjutant,"[A]^(-1) = 1/det(A)*adj(A)
+,Adjugate/Adjutant,$math{adj(A) = C(A)^T}$,
+,Inverse using adjugate/Invers med adjutant,"$math{[A]^(-1) = 1/det(A)*adj(A)}$
 
-A*adj(A) = [[det(A), 0, 0, ...], [0, det(A), 0, ...], ...] = det(A)*I -> A*1/det(A)*adj(A) = I -> A^(-1) = 1/det(A)*adj(A)",
-Delrum,Linjära rum,"[u] in L, [v] in L
--> [u]+[v] in L, \l*[u] in L",
-,Underrum,"[u] in M, [v] in M, L sub M
--> (Sluten under addition) [u]+[v] in M, (sluten under multiplikation) \l*[u] in M, innehåller [0]",M={[x]: [A][x]=0}
-Linjärkombinationer,Linjärkombination/linjärt hölje,"[u] = \S{k=1, n, \l_k*[u_k]} = span{k=1, n, [u_k]}
-delrum i R^n: [u]=\S{k=1, n, a_k*[u_k]}, [v]=\S{k=1, n, b_k*[v_k]}, [u]+[v] = \S{k=1, n, a_k*[u_k]+b_k*[v_k]}, t[u]=\S{k=1, n, t*a_k*[u_k]}",
-,Linjär beroende,"{k=1, n, [u_k]} om någon är linjärkombination av övriga",
-,Linjär oberoende,"Vektorerna {k=1, n [u]_k} linjär oberoende (om det inte finns linjärkombination mellan vektorer)",
+$math{A*adj(A) = [[det(A), 0, 0, ...], [0, det(A), 0, ...], ...] = det(A)*I -> A*1/det(A)*adj(A) = I -> A^(-1) = 1/det(A)*adj(A)}$",
+Delrum,Linjära rum,"$math{[u] in L, [v] in L}$
+-> $math{[u]+[v] in L, \l*[u] in L}$",
+,Underrum,"$math{[u] in M, [v] in M, L sub M}$
+-> (Sluten under addition) $math{[u]+[v] in M}$, (sluten under multiplikation) $math{\l*[u] in M}$, innehåller $math{[0]}$",$math{M={[x]: [A][x]=0}}$
+Linjärkombinationer,Linjärkombination/linjärt hölje,"$math{[u] = \S{k=1, n, \l_k*[u_k]} = span{k=1, n, [u_k]}}$
+delrum i $math{R^n}$: $math{[u]=\S{k=1, n, a_k*[u_k]}}$, $math{[v]=\S{k=1, n, b_k*[v_k]}}$, $math{[u]+[v] = \S{k=1, n, a_k*[u_k]+b_k*[v_k]}}$, $math{t[u]=\S{k=1, n, t*a_k*[u_k]}}$",
+,Linjär beroende,"$math{{k=1, n, [u_k]}}$ om någon är linjärkombination av övriga",
+,Linjär oberoende,"Vektorerna $math{{k=1, n [u]_k}}$ linjär oberoende (om det inte finns linjärkombination mellan vektorer)",
 ,,"<-> 2 vektorer spänner upp area, 3 vektorer volym",
-,,"Linjär oberoende <-> \S{k=1, n, \l_k*[u_k]} = 0 ger trivial lösning
-Linjär beroende <-> \S{k=1, n, \l_k*[u_k]} = 0 -> minst 1 \l_k != 0
+,,"Linjär oberoende <-> $math{\S{k=1, n, \l_k*[u_k]} = 0}$ ger trivial lösning
+Linjär beroende <-> $math{\S{k=1, n, \l_k*[u_k]} = 0}$ -> minst 1 $math{\l_k != 0}$
 
-c_1*[v_1]+c_2*[v_2]+...+c_n[v_n]=0 -> [v_1]=-c_2/c_1*[v_2]-…-c_n/c_1*[v_n]
-Linjär beroende: -> [v_1] som linjär beroende av andra vektorer
-Linjär oberoende: -> [v_1] existerar inte (c_1=0), samma för andra koefficienter",
-,,"(1)Linjär oberoende {k=1, n, [v_k]} <-> [v] = \S{k=1, n, \l_k*[v_k]} entydiga \l_k
+$math{c_1*[v_1]+c_2*[v_2]+...+c_n[v_n]=0 -> [v_1]=-c_2/c_1*[v_2]-…-c_n/c_1*[v_n]}$
+Linjär beroende: -> $math{[v_1]}$ som linjär beroende av andra vektorer
+Linjär oberoende: -> $math{[v_1]}$ existerar inte ($math{c_1=0}$), samma för andra koefficienter",
+,,"(1)Linjär oberoende $math{{k=1, n, [v_k]}}$ <-> $math{[v] = \S{k=1, n, \l_k*[v_k]}}$ entydiga $math{\l_k}$
 
 ->
-[v]=\S{k=1, n, a_k*[v_k]}=\S{k=1, n, b_k*[v_k]}
-\S{k=1, n, (a_k-b_k)[v_k]} = [v]-[v]=[0] -> a_k-b_k = 0 -> a_k=b_k -> entydiga koefficienter
+$math{[v]=\S{k=1, n, a_k*[v_k]}=\S{k=1, n, b_k*[v_k]}}$
+$math{\S{k=1, n, (a_k-b_k)[v_k]} = [v]-[v]=[0] -> a_k-b_k = 0 -> a_k=b_k}$ -> entydiga koefficienter
 <-
-a_k=b_k -> \S{k=1, n, (a_k-b_k)[v_k]} = [v]-[v]=[0] -> (a_k-b_k) = 0 (Trivial lösning) -> Linjär oberoende [v_k]",
-,Spänna upp,"span{k=1, n, [u_k]} -> alla [v] in \\R^n, [v] = \S{k=1, n, \l_k*[u_k]}
-<-> [A][x]=[y] lösning för varje [y] in \\R^n",
-,Bas,"Varje vektor i \\R^n kan skrivas som [v] = \S{k=1, n, x_1[u_k]}",
-,,"Bas för \\R^n <-> Linjär oberoende [u_k], spänner upp \\R^n <-> entydig lösning ([v] = \S{k=1, n, \l_k*[u_k]})",
+$math{a_k=b_k -> \S{k=1, n, (a_k-b_k)[v_k]} = [v]-[v]=[0] -> (a_k-b_k) = 0}$ (Trivial lösning) -> Linjär oberoende $math{[v_k]}$",
+,Spänna upp,"$math{span{k=1, n, [u_k]}}$ -> alla $math{[v] in \\R^n}$, $math{[v] = \S{k=1, n, \l_k*[u_k]}}$
+<-> $math{[A][x]=[y]}$ lösning för varje $math{[y] in \\R^n}$",
+,Bas,"Varje vektor i $math{\\R^n}$ kan skrivas som $math{[v] = \S{k=1, n, x_1[u_k]}}$",
+,,"Bas för $math{\\R^n}$ <-> Linjär oberoende $math{[u_k]}$, spänner upp $math{\\R^n}$ <-> entydig lösning ($math{[v] = \S{k=1, n, \l_k*[u_k]}}$)",
 ,,,
 ,,,
 ,,,
-,Ortonormerad mängd,"\S{k=1, n, \l_k*[u_k]} parvis ortogonala ([u_k].[u_l]=0) -> Bas
-\S{k=1, n, \l_k*[u_k]}=0 -> [u_l].\S{k=1, n, \l_k*[u_k]} = [u_l].0 -> \l_l = 0 -> Inte linjärberoende i n*n -> Bas",
-,Linjär oberoende matris,Linjär oberoende kolonner <-> kolonner spänner upp \\R^n <-> [A][x]=0 entydig lösning [x]=0 <-> [A][x]=[y] lösning för varje [y] in \\R^n,
-,,[A][x]=y endast lösbart om [y] är linjärkombination av kolonner,
-,Matris/Ekvationssystem,"A kolonner linjär oberoende <-> [A][x]=[0] entydig lösning/trivial lösning
+,Ortonormerad mängd,"$math{\S{k=1, n, \l_k*[u_k]}}$ parvis ortogonala ($math{[u_k].[u_l]=0}$) -> Bas
+$math{\S{k=1, n, \l_k*[u_k]}=0 -> [u_l].\S{k=1, n, \l_k*[u_k]} = [u_l].0 -> \l_l = 0}$ -> Inte linjärberoende i n*n -> Bas",
+,Linjär oberoende matris,"Linjär oberoende kolonner <-> kolonner spänner upp $math{\\R^n}$ <-> $math{[A][x]=0}$ entydig lösning $math{[x]=0}$ <-> $math{[A][x]=[y]}$ lösning för varje $math{[y] in \\R^n}$",
+,,"$math{[A][x]=y}$ endast lösbart om $math{[y]}$ är linjärkombination av kolonner",
+,Matris/Ekvationssystem,"A kolonner linjär oberoende <-> $math{[A][x]=[0]}$ entydig lösning/trivial lösning
 
-[A][x]=[0], trivial lösning <-> \S{k=1, n, x_k[A_k]} = [0], trivial lösning <-> A_k linjär oberoende",
-,,"[A(n*p)] spänner upp \\R^n <-> [A][x]=[y] lösning för varje [y]
+$math{[A][x]=[0]}$, trivial lösning <-> $math{\S{k=1, n, x_k[A_k]} = [0]}$, trivial lösning <-> $math{A_k}$ linjär oberoende",
+,,"$math{[A(n*p)]}$ spänner upp $math{\\R^n}$ <-> $math{[A][x]=[y]}$ lösning för varje $math{[y]}$
 
-[y]=\S{k=1, n, x_k[a_k]} -(1)-> finns [x] sådant [y]=[A][x]",
-,,-> [A(n*p)] är bas för \\R^n <-> [A][x]=[y] entydig lösning för varje [y],
+$math{[y]=\S{k=1, n, x_k[a_k]}}$ -(1)-> finns $math{[x]}$ sådant $math{[y]=[A][x]}$",
+,,-> $math{[A(n*p)]}$ är bas för $math{\\R^n}$ <-> $math{[A][x]=[y]}$ entydig lösning för varje $math{[y]}$,
 ,,"Fler än n vektorer alltid linjärt beroende
 
-p vektorer i \\R^n -> n ekvationer, p obekanta -> (p>n) homogent underbestämt system (oändligt många lösningar) ",
-,,"Färre än n vektorer spänner inte upp \\R^n
+p vektorer i $math{\\R^n}$ -> n ekvationer, p obekanta -> (p>n) homogent underbestämt system (oändligt många lösningar) ",
+,,"Färre än n vektorer spänner inte upp $math{\\R^n}$
 
-p vektorer i \\R^n -> n ekvationer, p obekanta -> (p<n) homogent överbestämt system, lösningar kan saknas",
-,,"-> Varje bas för \\R^n består av exakt n stycken vektorer
--> n vektorer: Bas för \\R^n <-> Linjärt oberoende <-> spänner upp \\R^n <-> [A][x]=[y] entydig lösning för varje/något/lösbart [y], inverterbar [A]",
-Linjär egenskapsrum,Nollrum/Kernel,"{x in \\R^n: [A][x]=0}
+p vektorer i $math{\\R^n}$ -> n ekvationer, p obekanta -> (p<n) homogent överbestämt system, lösningar kan saknas",
+,,"-> Varje bas för $math{\\R^n}$ består av exakt n stycken vektorer
+-> n vektorer: Bas för $math{\\R^n}$ <-> Linjärt oberoende <-> spänner upp $math{\\R^n}$ <-> $math{[A][x]=[y]}$ entydig lösning för varje/något/lösbart $math{[y]}$, inverterbar $math{[A]}$",
+Linjär egenskapsrum,Nollrum/Kernel,"$math{{x in \\R^n: [A][x]=0}}$
 Kolonn utan ledande etta ger basvektor till nollrum",
-,Nolldimension,"nolldim A, maximalt antal linjärt oberoende lösning till [A][x]=0",
+,Nolldimension,"nolldim A, maximalt antal linjärt oberoende lösning till $math{[A][x]=0}$",
 ,Kolonnrum/Bildrum,"Mängden av alla linjärkombination av kolonner i matris A där pivåvariabler
-span{k=0, n, ...}
+$math{span{k=0, n, ...}}$
 Kolonn med ledande etta ger basvektor till bildrum",
 ,Rang,"Maximal antal linjärt oberoende kolonner i A (samma antal som pivåkolonner)
 Full rang -> Inverterbar",
-,,"[G] trappekvivalent [A], Mängd kolonner i [A] linjär oberoende -> Motsvarande mängd kolonner i [G] linjär oberoende
+,,"$math{[G]}$ trappekvivalent $math{[A]}$, Mängd kolonner i $math{[A]}$ linjär oberoende -> Motsvarande mängd kolonner i $math{[G]}$ linjär oberoende
 
-[A] = [{k=1, n, [a_k]}], [G] = [{k=1, n, [g_k]}], [{k=1, m, x_k[a_k]}] = 0 <-> [{k=1, m, x_k[g_k]}] = 0 -> Samma lösningsrum (x_k = 0 -> Linjär oberoende)",
-,,"rank(A) = rank(G)
+$math{[A] = [{k=1, n, [a_k]}], [G] = [{k=1, n, [g_k]}]}$, $math{[{k=1, m, x_k[a_k]}] = 0 <-> [{k=1, m, x_k[g_k]}] = 0}$ -> Samma lösningsrum ($math{x_k = 0}$ -> Linjär oberoende)",
+,,"$math{rank(A) = rank(G)}$
 Rangen av matris samma som pivåvariabler",
-,,"rang(AB)<=min(rang(A), rang(B))",
-,,"T inverterbar, rang(TA) = rang(T^(-1)A) = rang(A)",
-,Radrang,"Linjärt oberoende rader, radrang A = rang(A^^)
-rang(A) = rang(A^^)
+,,"$math{rang(AB)<=min(rang(A), rang(B))}$",
+,,"T inverterbar, $math{rang(TA) = rang(T^(-1)A) = rang(A)}$",
+,Radrang,"Linjärt oberoende rader, radrang A = $math{rang(A^^)}$
+$math{rang(A) = rang(A^^)}$
 
 ???",
-,Dimensionssatsen,rang A + nolldim A = n (# kolonner i matris A),
+,Dimensionssatsen,$math{rang A + nolldim A = n}$ (# kolonner i matris A),
 ,,,
-,Linjärt oberoende av bas,"{B} = {(1, 1, a, 2), {1, b, 0, 1), (0, 1, 1, -1)} -> [[1, 1, 0| 0], [0, 1, 1| 0], [0, -a, 1| 0], [0, b-1, 1| 0]] -> a!=-1, b!=2",
-,Ortogonal komponent,"span{(1, 1, 1, 1), (-1, 1, -1, 1), (2, 1, 1, 2)}
--> [[1, 1, 1, 1| 0], [-1, 1, -1, 1| 0], [2, 1, 1, 2| 0]]",
+,Linjärt oberoende av bas,"$math{{B} = {(1, 1, a, 2), {1, b, 0, 1), (0, 1, 1, -1)}}$ -> $math{[[1, 1, 0| 0], [0, 1, 1| 0], [0, -a, 1| 0], [0, b-1, 1| 0]]}$ -> $math{a!=-1, b!=2}$",
+,Ortogonal komponent,"$math{span{(1, 1, 1, 1), (-1, 1, -1, 1), (2, 1, 1, 2)}}$
+-> $math{[[1, 1, 1, 1| 0], [-1, 1, -1, 1| 0], [2, 1, 1, 2| 0]]}$",
 ,Gram-Schmidt,"Skapa en ortonormal bas utifrån en bas, behåll 1st vektorn, vrid andra vektorn, vrid 3rd vektorn, behåller prp-delen i stället för rotation
-[v_1]=[u_1]
-[v_2]=[u_2]-proj[v_1]([u_2])
-[v_3]=[u_3]-proj[v_1]([u_3])-proj[v_2]([u_3])
-[v_n]=[u_n]-\S{k=1, n-1, proj[v_k]([u_n])}",
-,Projektion på bas-spänn plan,"S={k=1, n, [e_k]} ortonormala baser
-proj_S([v]) = \S{k=1, n, ([v].[e_k])[e_k]}",
-,,"(V, W delrum U) V \inter W = [0] (1), dim(V) + dim(W) = dim(U) (2) <-> U = V \oring W
+$math{[v_1]=[u_1]}$
+$math{[v_2]=[u_2]-proj[v_1]([u_2])}$
+$math{[v_3]=[u_3]-proj[v_1]([u_3])-proj[v_2]([u_3])}$
+$math{[v_n]=[u_n]-\S{k=1, n-1, proj[v_k]([u_n])}}$",
+,Projektion på bas-spänn plan,"$math{S={k=1, n, [e_k]}}$ ortonormala baser
+$math{proj_S([v]) = \S{k=1, n, ([v].[e_k])[e_k]}}$",
+,,"($math{V, W}$ delrum $math{U}$) $math{V \inter W = [0]}$ (1), $math{dim(V) + dim(W) = dim(U)}$ (2) <-> $math{U = V \oring W}$
 
-B = {k=1, m, [v_k]} bas för V, C = {k=1, n, [w_k]} bas för W, [v] \in B, [w] \in C -> v=\S{k=1, m, b_k[v_k]}, w=\S{k=1, n, c_k[w_k]}
-D = {k=1, m, b_k}, {k=1, n, c_k} 
+$math{B = {k=1, m, [v_k]}}$ bas för V, $math{C = {k=1, n, [w_k]}}$ bas för W, $math{[v] \in B, [w] \in C}$ -> $math{v=\S{k=1, m, b_k[v_k]}}$, $math{w=\S{k=1, n, c_k[w_k]}}$
+$math{D = {k=1, m, b_k}, {k=1, n, c_k}}$ 
 
 ->
-(1) -> [v]=[w]=[0] -> [v]-[w]=[0] -> \S{k=1, m, b_k[v_k]}-\S{k=1, n, c_k[w_k]}=[0] -> {k=1, m, b_k}={k=1, n, c_k}=0 -> D linjär oberoende
+(1) -> $math{[v]=[w]=[0]}$ -> $math{[v]-[w]=[0]}$ -> $math{\S{k=1, m, b_k[v_k]}-\S{k=1, n, c_k[w_k]}=[0]}$ -> $math{{k=1, m, b_k}={k=1, n, c_k}=0}$ -> D linjär oberoende
 (2) -> D spänner upp U
--> D bas för U -> [u] = \S{k=1, m, b_k[v_k]}+\S{k=1, n, c_k[w_k]} = [v]+[w]
+-> D bas för U -> $math{[u] = \S{k=1, m, b_k[v_k]}+\S{k=1, n, c_k[w_k]} = [v]+[w]}$
 
 (1) <-
-[u]=[v]+[w]=[0] -> [v]=[w]=[0] ([v]=[x], [w]=-[x] -> [u]=[u]+[w] inte entydlig)
+$math{[u]=[v]+[w]=[0] -> [v]=[w]=[0]}$ ($math{[v]=[x], [w]=-[x] -> [u]=[u]+[w]}$ inte entydlig)
 (2) <-
-D bas för U, D linjär oberoende, spänner upp U -> dim(V) + dim(W) = dim(U)",
-Linjära avbildningar,,"F: \\R^n -> \\R^n linjär
-<=> F([u]+[v]) = F([u]) + F([v]), F(\l*[u])
+D bas för U, D linjär oberoende, spänner upp U -> $math{dim(V) + dim(W) = dim(U)}$",
+Linjära avbildningar,,"$math{F: \\R^n -> \\R^n}$ linjär
+<=> $math{F([u]+[v]) = F([u]) + F([v])}$, $math{F(\l*[u])}$
 
-1. F([u]+[v]) = ... = F([u]) + F([v])
-2. F(\l*[u]) = … = \l*F([u])","{k=1, n, [u_k]} spänner upp, F(u_i) = 0 -> F(u) = F(\S{k=1, n, c_k*[u_k]}) = \S{k=1, n, c_k*F([u_k])} = 0"
-,,"F([x]) = [A]*[x]
+1. $math{F([u]+[v]) = ... = F([u]) + F([v])}$
+2. $math{F(\l*[u]) = … = \l*F([u])}$","$math{{k=1, n, [u_k]}}$ spänner upp, $math{F(u_i) = 0}$ -> $math{F(u) = F(\S{k=1, n, c_k*[u_k]}) = \S{k=1, n, c_k*F([u_k])} = 0}$"
+,,"$math{F([x]) = [A]*[x]}$
 
-->: [A]([x]+[y]) = [A][x]+[A][y], [A](k[x]) = k[A][x]
-<-: {k=1, n, F([e_k]) = [a_k]} -> F[x] = \S{k=1, n, x_k*F([e_k])} = [A]*[x_k]",
-,,"-> F([[1], [0]]), F([[0], [1]]) -> [A]",
-,,"Kolonner i [A] av [F]([x]) ges av {k=1, n, F([e_k])}",
-,,[F] bijektiv linjär ([A]) -> Invers [F^(-1)] linjär ([F^(-1)]),
+->: $math{[A]([x]+[y]) = [A][x]+[A][y]}$, $math{[A](k[x]) = k[A][x]}$
+<-: $math{{k=1, n, F([e_k]) = [a_k]}}$ -> $math{F[x] = \S{k=1, n, x_k*F([e_k])} = [A]*[x_k]}$",
+,,"-> $math{F([[1], [0]]), F([[0], [1]])}$ -> $math{[A]}$",
+,,"Kolonner i $math{[A]}$ av $math{[F]([x])}$ ges av $math{{k=1, n, F([e_k])}}$",
+,,$math{[F]}$ bijektiv linjär ($math{[A]}$) -> Invers $math{[F^(-1)]}$ linjär ($math{[F^(-1)]}$),
 ,Ortogonal projektion,,
 ,Sned projektion,,
-,Linjeprojektion,"y=kx+b -> [v]=[[1, k]], F([u])=proj_[v]([u]) -> [A]
-F([[1], [0]])=proj_[v]([[1], [0]]), F([[0], [1]])=proj_[v]([[0], [1]]) -> [A]",y=x
+,Linjeprojektion,"$math{y=kx+b}$ -> $math{[v]=[[1, k]]}$, $math{F([u])=proj_[v]([u])}$ -> $math{[A]}$
+$math{F([[1], [0]])=proj_[v]([[1], [0]])}$, $math{F([[0], [1]])=proj_[v]([[0], [1]])}$ -> $math{[A]}$",$math{y=x}$
 ,Spegling,,
-,Rotation,"(1, 0) -> (cos(\t), sin(\t)), (0, 1) -> (cos(\t+\pi/2), sin(\t+\pi/2))",
-,,"F([u]) = A*[n], A_(n*n) = (F([e]_1), …, F([e]_n))",
-,,"\S{k=1, n, F([u_k]) = [v_k]} -> [B]={k=1, n, [u_k]}, [C]={k=1, n, [v_k]}
-[A]*[B] = [C] -> [A] = [C]*[B]^(-1)","[u] = [cols[1, 0, 1], [-1, 1, 0], [0, 1, 2]], [v] = [cols[3, 0, 1], [-1, -1, 3], [1, -1, 1]]"
-,Värdemängd,"V_F (F([x])=[A]*[x])
--> Inverterbar [A] -> \R^n, -> Gausselimination -> […, [2y_1+2y_2-2y_3]] (sista rad -> sista ekvation)",
-,,"F([u])=[[2],[3]], F([v])=[[3], [0]], F([u])=F(k[v]) -> F([u])=kF([v]) lösning saknas -> Inte paraella, [u], [v] linjär oberoende, F([u]), F([v]) linjär oberoende -> a*F([u])+b*F([v]) = F(a*[u]+b*[v]) -> Hela värdemängd",
-,,rang([A]) = dim([V_F]),
-,Sammansättning,"[F] \\R^m->\\R^n ([A]), [G] \\R^n->\\R^p ([B]) linjära -> [F] \oring [G] linjär ([A][B])
+,Rotation,"$math{(1, 0) -> (cos(\t), sin(\t))}$, $math{(0, 1) -> (cos(\t+\pi/2), sin(\t+\pi/2))}$",
+,,"$math{F([u]) = A*[n], A_(n*n) = (F([e]_1), …, F([e]_n))}$",
+,,"$math{\S{k=1, n, F([u_k]) = [v_k]}}$ -> $math{[B]={k=1, n, [u_k]}}$, $math{[C]={k=1, n, [v_k]}}$
+$math{[A]*[B] = [C] -> [A] = [C]*[B]^(-1)}$","$math{[u] = [cols[1, 0, 1], [-1, 1, 0], [0, 1, 2]]}$, $math{[v] = [cols[3, 0, 1], [-1, -1, 3], [1, -1, 1]]}$"
+,Värdemängd,"$math{V_F}$ ($math{F([x])=[A]*[x]}$)
+-> Inverterbar $math{[A]}$ -> $math{\R^n}$, -> Gausselimination -> $math{[…, [2y_1+2y_2-2y_3]]}$ (sista rad -> sista ekvation)",
+,,"$math{F([u])=[[2],[3]]}$, $math{F([v])=[[3], [0]]}$, $math{F([u])=F(k[v])}$ -> $math{F([u])=kF([v])}$ lösning saknas -> Inte paraella, $math{[u], [v]}$ linjär oberoende, $math{F([u]), F([v])}$ linjär oberoende -> $math{a*F([u])+b*F([v]) = F(a*[u]+b*[v])}$ -> Hela värdemängd",
+,,$math{rang([A]) = dim([V_F])}$,
+,Sammansättning,"$math{[F] \\R^m->\\R^n}$ ($math{[A]}$), $math{[G] \\R^n->\\R^p}$ ($math{[B]}$) linjära -> $math{[F] \oring [G]}$ linjär ($math{[A][B]}$)
 
-F([u]) = [A]*[u], G([u]) = [B]*[u] -> (F\oring G)([u]) = F(G([u])) = F([B]*[u]) = [A]*[B]*[u]",
+$math{F([u]) = [A]*[u], G([u]) = [B]*[u] -> (F\oring G)([u]) = F(G([u])) = F([B]*[u]) = [A]*[B]*[u]}$",
 ,,F injektiv -> A kolonner linjärt oberoende,
-,,F surjektiv -> A kolonner spänner upp \\R^n,
-,,"F bijektiv -> A kolonner bas för \\R^n -> Inverterbar och är linjär avbildning
+,,F surjektiv -> A kolonner spänner upp $math{\\R^n}$,
+,,"F bijektiv -> A kolonner bas för $math{\\R^n}$ -> Inverterbar och är linjär avbildning
 (Bijektiv: Spegling, rotation, Inte bijektiv: Projektion)",
-,Isometriska avbildningar,"F: \\R^n -> \\R^n, |F([u])| = |[u]|, spegling och rotationer, inte projektion",
-,,"<=> [u].[v] = F([u]).F([v])
+,Isometriska avbildningar,"$math{F: \\R^n -> \\R^n}$, $math{|F([u])| = |[u]|}$, spegling och rotationer, inte projektion",
+,,"<=> $math{[u].[v] = F([u]).F([v])}$
 
-F([u]).F([v]) = 1/4*(|F([u])+F([v])|^2-|F([u])-F([v])|^2) = 1/4*(|F([u]+[v])|^2-|F([u]-[v])|^2) = 1/4*(|F([u]+[v])|^2-|F([u]-[v])|^2) = 1/4*(|[u]+[v]|^2-|[u]-[v]|^2) = [u]*[v]",
-,,"<=> [A] är en ON-matris <=> A^(-1) = A^^ (Ortogonal)
+$math{F([u]).F([v]) = 1/4*(|F([u])+F([v])|^2-|F([u])-F([v])|^2) = 1/4*(|F([u]+[v])|^2-|F([u]-[v])|^2) = 1/4*(|F([u]+[v])|^2-|F([u]-[v])|^2) = 1/4*(|[u]+[v]|^2-|[u]-[v]|^2) = [u]*[v]}$",
+,,"<=> $math{[A]}$ är en ON-matris <=> $math{A^(-1) = A^^}$ (Ortogonal)
 
-|F([u])|^2 = F([u]).F([u]) = ([A][u])^^*[A][u] = [u]^^*[A]^^*[A]*[u]
-|[u]|^2 = [u].[u] = ([u])^^*[u]
-|F([u])|^2 = |[u]|^2 -> [A]^^*[A] = [I]",
-,Symmetriska avbildningar,F: F([u]).[v]=[u].F([v]),
+$math{|F([u])|^2 = F([u]).F([u]) = ([A][u])^^*[A][u] = [u]^^*[A]^^*[A]*[u]}$
+$math{|[u]|^2 = [u].[u] = ([u])^^*[u]}$
+$math{|F([u])|^2 = |[u]|^2 -> [A]^^*[A] = [I]}$",
+,Symmetriska avbildningar,$math{F: F([u]).[v]=[u].F([v])}$,
 ,,"F symmetrisk <=> A symmetrisk
-F([u]).[v]=[u].F([v]) -> (Ax)^^*y=x^^*A*y -> x^^*A^^*y=x^^*A*y -> A^^=A",
-,Basbyte,"F([x]) = [e]*[A]*[X] = f([P]*[A]*[P]^(-1))*Y, med ..[e] = {k=1, n, [e]_k}, ..[f] = {k=1, n, [f]_k}, P = {k=1, n, [f]_k}",
-,,"Låt [b] = ..[e][X] = ..[f][Y] har koordinaterna {k=1, n, x_k} i basen ..[e] = {k=1, n, [e]_k} och koordinaterna {k=1, n, y_k} i basen ..[f] = {k=1, n, [f]_k}.,där ..[f]=..[e]P. Då är:
-[[x_1], …, [x_n]] = \S{k=1, n, y_k*[f]_k} = P([[y_1], …, [y_n]]) <=> [X] = [P]*[Y], P = [[[f]_1, ..., [f]_n], ...] i bas ..[e]
+$math{F([u]).[v]=[u].F([v]) -> (Ax)^^*y=x^^*A*y -> x^^*A^^*y=x^^*A*y -> A^^=A}$",
+,Basbyte,"$math{F([x]) = [e]*[A]*[X] = f([P]*[A]*[P]^(-1))*Y}$, med $math{..[e] = {k=1, n, [e]_k}}$, $math{..[f] = {k=1, n, [f]_k}}$, $math{P = {k=1, n, [f]_k}}$",
+,,"Låt $math{[b] = ..[e][X] = ..[f][Y]}$ har koordinaterna $math{{k=1, n, x_k}}$ i basen $math{..[e] = {k=1, n, [e]_k}}$ och koordinaterna $math{{k=1, n, y_k}}$ i basen $math{..[f] = {k=1, n, [f]_k}}$.,där $math{..[f]=..[e]P}$. Då är:
+$math{[[x_1], …, [x_n]] = \S{k=1, n, y_k*[f]_k} = P([[y_1], …, [y_n]])}$ <=> $math{[X] = [P]*[Y]}$, $math{P = [[[f]_1, ..., [f]_n], ...]}$ i bas ..[e]
 
-R^n -[A_e]-> R^n
+$math{R^n -[A_e]-> R^n}$
 P
-R^n -[A_f]-> R^n
-[A_f] = [P]^(-1)*[A_e]*[P]",
-,,"Rotation \t kring vektor [v] -> [^A] = [[1, 0, 0], [0, cos(\t), -sin(\t)], [0, sin(\t), cos(\t)]]
-[e_1] = [v]/|[v]|, [e_2] ortogonal [e_1], [e_3]=[e_1]*[e_2], S[[e_1], [e_2], [e_3]]
-[A] = [S]*[^A]*[S]^(-1)",
-,Ortonormerad baser,"[B] ortogonal, |[B]_k| = 1",
-,,"e_1, e_2, e_3, paraell mot plan -> e_1 paraell, e_3 ortogonal, e_2 = e_1*e_3",
-,Rotation av ON-bas,"[v_1] = [w_1]*cos(\a) + [w_2]*sin(\a)
-[v_2] = [w_1]*(-sin(\a)) + [w_2]*cos(\a)",
-,Egenvärden och egenvektorer,"F har egenvektorn [u], F([u]) = [A]*[u] = \l*[u], [u] != 0",
-,Egenvärdena \l_k,Karakteristiska ekvationen det([A]-\l*[I])=0,
-,Egenvektorer u_k,([A]-\l*[I])*[u] = 0,
+$math{R^n -[A_f]-> R^n}$
+$math{[A_f] = [P]^(-1)*[A_e]*[P]}$",
+,,"Rotation $math{\t}$ kring vektor $math{[v]}$ -> $math{[^A] = [[1, 0, 0], [0, cos(\t), -sin(\t)], [0, sin(\t), cos(\t)]]}$
+$math{[e_1] = [v]/|[v]|}$, $math{[e_2]}$ ortogonal $math{[e_1]}$, $math{[e_3]=[e_1]*[e_2]}$, $math{S[[e_1], [e_2], [e_3]]}$
+$math{[A] = [S]*[^A]*[S]^(-1)}$",
+,Ortonormerad baser,"$math{[B]}$ ortogonal, $math{|[B]_k| = 1}$",
+,,"$math{e_1, e_2, e_3}$, paraell mot plan -> $math{e_1}$ paraell, $math{e_3}$ ortogonal, $math{e_2 = e_1*e_3}$",
+,Rotation av ON-bas,"$math{[v_1] = [w_1]*cos(\a) + [w_2]*sin(\a)}$
+$math{[v_2] = [w_1]*(-sin(\a)) + [w_2]*cos(\a)}$",
+,Egenvärden och egenvektorer,"F har egenvektorn $math{[u]}$, $math{F([u]) = [A]*[u] = \l*[u]}$, $math{[u] != 0}$",
+,Egenvärdena \l_k,Karakteristiska ekvationen $math{det([A]-\l*[I])=0}$,
+,Egenvektorer u_k,$math{([A]-\l*[I])*[u] = 0}$,
 ,,"Every matrix has complex eigenvalues, all eigenvalues in symmetrical matrix are real",
 ,,"Triangular/diagnoal matrix, eigenvalues are identical to the diagonal entries",
-,,"Sum of diagnoal entries of any square matrix equals the sum of eigenvalues of the matrix, trace A = \S{\l_k}",
+,,"Sum of diagnoal entries of any square matrix equals the sum of eigenvalues of the matrix, $math{trace A = \S{\l_k}}$",
 ,,Product of eigenvalues equals to determinant,
-,,"[v_1], [v_2] eigenvectors, A^n*[u]=A^n*(a_1[v_1]+a_2[v_2]) = a_1*\l_1*[v_1]+a_2*\l_2*[v_2]",
+,,"$math{[v_1], [v_2]}$ eigenvectors, $math{A^n*[u]=A^n*(a_1[v_1]+a_2[v_2]) = a_1*\l_1*[v_1]+a_2*\l_2*[v_2]}$",
 ,Egenvärde av ortogonal projektion,"Vektorer speglingsplanet: 1, ortogonal mot speglingsplan: 0",
 ,Egenvärde av spegling,"Vektorer speglingsplanet: 1, övriga: -1",
 ,Egenvärde av rotation,"Egenvärde saknas
-Multipel av \pi: alla vektorer, -1",
-,,"[A] kvadratisk, egenvärde \l -> dim egenrum \l mindre/lika med multiplicitet av \l",
-,,"[A] kvadratisk, det A = 0 <-> A med egenvärde \l=0",
-,,"[A] inverterbar, egenvektor [x] egenvärde \l -> [x] egenvektor till [A]^(-1) egenvärde 1/\l
+Multipel av $math{\pi}$: alla vektorer, -1",
+,,"$math{[A]}$ kvadratisk, egenvärde $math{\l}$ -> dim egenrum $math{\l}$ mindre/lika med multiplicitet av $math{\l}$",
+,,"$math{[A]}$ kvadratisk, $math{det A = 0}$ <-> A med egenvärde $math{\l=0}$",
+,,"$math{[A]}$ inverterbar, egenvektor $math{[x]}$ egenvärde $math{\l}$ -> $math{[x]}$ egenvektor till $math{[A]^(-1)}$ egenvärde $math{1/\l}$
 
-[A][x] = \l[x] <-> [x] = [A]^(-1)(\l*[x]) <-> [A]^(-1)[x] = 1/\l*[x]",
-,,"Egenvektorer till olika egenvärde [u_k] linjär beroende
+$math{[A][x] = \l[x] <-> [x] = [A]^(-1)(\l*[x]) <-> [A]^(-1)[x] = 1/\l*[x]}$",
+,,"Egenvektorer till olika egenvärde $math{[u_k]}$ linjär beroende
 
-{k=1, n-1, [u_k]} linjär oberoende egenvektorer
-\S{k=1, n, a_k*[u_k]} = 0 -> \S{k=1, n, \l_n*a_k*[u_k]}
-[A]*\S{k=1, n, a_k*[u_k]} = \S{k=1, n, \l_k*a_k*[u_k]}
-\S{k=1, n, \l_n*a_k*[u_k]} - \S{k=1, n, \l_k*a_k*[u_k]} = \S{k=1, n, (\l_n-\l_k)a_k[u_k]} = 0 -> (\l_n!=l_k, [u_k]!=[0]) -> a_k = 0 -> {k=1, n, [u_k]} linjär oberoende",
-,Diagonalisering,"Om n*n-matrisen [A] har n st linjärt oberoende egenvektorer {k=1, n, [u]_k} med motsvarande egenvärden {k=1, n, \l_k} då är [A] = [P]*[D]*[P]^(-1) där P = [[u]_1 … [u]_n] och D = [[\l_1, …, 0], …, [0, … \l_n]]",
-,,[A] diagonaliserbar <-> [A] bas för \\R^n av egenvektorer,
-,,"[A] n*n, [A] n olika egenvektorer -> [A] diagonaliserbar
+$math{{k=1, n-1, [u_k]}}$ linjär oberoende egenvektorer
+$math{\S{k=1, n, a_k*[u_k]} = 0 -> \S{k=1, n, \l_n*a_k*[u_k]}}$
+$math{[A]*\S{k=1, n, a_k*[u_k]} = \S{k=1, n, \l_k*a_k*[u_k]}}$
+$math{\S{k=1, n, \l_n*a_k*[u_k]} - \S{k=1, n, \l_k*a_k*[u_k]} = \S{k=1, n, (\l_n-\l_k)a_k[u_k]} = 0}$ -> ($math{\l_n!=l_k, [u_k]!=[0]}$) -> $math{a_k = 0}$ -> $math{{k=1, n, [u_k]}}$ linjär oberoende",
+,Diagonalisering,"Om n*n-matrisen $math{[A]}$ har n st linjärt oberoende egenvektorer $math{{k=1, n, [u]_k}}$ med motsvarande egenvärden $math{{k=1, n, \l_k}}$ då är $math{[A] = [P]*[D]*[P]^(-1)}$ där $math{P = [[u]_1 … [u]_n]}$ och $math{D = [[\l_1, …, 0], …, [0, … \l_n]]}$",
+,,$math{[A]}$ diagonaliserbar <-> $math{[A]}$ bas för $math{\\R^n}$ av egenvektorer,
+,,"$math{[A]}$ n*n, $math{[A]}$ n olika egenvektorer -> $math{[A]}$ diagonaliserbar
 
-[A] egenvektorer linjär oberoende, n linjär oberoende egenvektorer -> bas för \\R^n av egenvektorer",
-,,"[A] symmetrisk, [A] egenvektor ([u], [v]) -> [u].[v]=[0]
-[A][u].[v] = [u].[A][v] <-> [A][u].[v]-[u].[A][v]=0 <-> (\l_1*[u]).[v] - [u].(\l_2[v]) = 0 <-> (\l_1-\l_2)([u].[v]) = [0] -> (\l_1 != \l_2), [u].[v] = [0]",
-,,"Spektralsatsen: [A] n*n symmetrisk, [A] n olika egenvärde -> [A] diagonaliserbar med [S] ortogonal
+$math{[A]}$ egenvektorer linjär oberoende, n linjär oberoende egenvektorer -> bas för $math{\\R^n}$ av egenvektorer",
+,,"$math{[A]}$ symmetrisk, $math{[A]}$ egenvektor ($math{[u], [v]}$) -> $math{[u].[v]=[0]}$
+$math{[A][u].[v] = [u].[A][v] <-> [A][u].[v]-[u].[A][v]=0 <-> (\l_1*[u]).[v] - [u].(\l_2[v]) = 0 <-> (\l_1-\l_2)([u].[v]) = [0]}$ -> ($math{\l_1 != \l_2}$), $math{[u].[v] = [0]}$",
+,,"Spektralsatsen: $math{[A]}$ n*n symmetrisk, $math{[A]}$ n olika egenvärde -> $math{[A]}$ diagonaliserbar med $math{[S]}$ ortogonal
 
 n egenvektor -> n parvis ortogonala egenvektor -> S koordinatbytesmatris efter normering av egenvektorerna
-[D] = [S]^^[A][S], [D]^^ = ([S]^^[A][S])^^ = [S]^^[A]^^[S] -> [A]=[A]^^",
-,,det(D) = det(S^(-1)AS) = det(A),
-,,"2x^2+2xy+2y^2 = 1 -> [[x, y]]*[[2, 1], [1, 2]]*[[x], [y]] = 1 -> [[u, v]]*D*[[u, v]] = 1",
+$math{[D] = [S]^^[A][S]}$, $math{[D]^^ = ([S]^^[A][S])^^ = [S]^^[A]^^[S] -> [A]=[A]^^}$",
+,,$math{det(D) = det(S^(-1)AS) = det(A)}$,
+,,"$math{2x^2+2xy+2y^2 = 1}$ -> $math{[[x, y]]*[[2, 1], [1, 2]]*[[x], [y]] = 1}$ -> $math{[[u, v]]*D*[[u, v]] = 1}$",
 Tillämpningar,"Minsta kvadratlösnig till ett överdeterminerat system
-Interpolation","[A_(m*n)]*[X_n] = [B_m], m>n
-Om kolonnvektorerna av matrisen [A] är linjärt oberoende, den entydiga lösningen till det kvadratiska systemet: [A]^^*[A]*[X] = [A]^^*[B] minimerar felet |[A][X]-[B]|^2",
-Linear programming,,"8x_1+2x_2>=16
-x_1+x_2 >= 5
-2x_1+7x_2 >= 20
-x_1>=0, x_2>= 0
-min f(x_1, x_2) = 1000x_1+2000x_2",
+Interpolation","$math{[A_(m*n)]*[X_n] = [B_m]}$, $math{m>n}$
+Om kolonnvektorerna av matrisen $math{[A]}$ är linjärt oberoende, den entydiga lösningen till det kvadratiska systemet: $math{[A]^^*[A]*[X] = [A]^^*[B]}$ minimerar felet $math{|[A][X]-[B]|^2}$",
+Linear programming,,"$math{8x_1+2x_2>=16}$
+$math{x_1+x_2 >= 5}$
+$math{2x_1+7x_2 >= 20}$
+$math{x_1>=0, x_2>= 0}$
+$math{min f(x_1, x_2) = 1000x_1+2000x_2}$",
 ,Duality,Every linear programming problem has associated with it another linear programming called its dual,
-,,Duality theorem: A feasible X_0 and is the solution of the Minum Problem (minimize CX subject to AX >= R and X >= 0) if and only a feasible fector Z_0 exists which is a solution of the Maximum problem (maximize [R]^^[Z] subject to [A]^^Z<=[C][T] and [Z]>=0) moreover [R]^^[Z_0] = [C][X_0] if and only if [X_0] and [Z_0] are solutions,
-,,"Maximum problem: Maximize [R]^^*[Z] subject to: [A]^^[Z]<=[C]^^, [Z]>=0",
-,,"Minimum problem: Minimize [C][X] subject to [A][X]<=R, [X]>=0",
-,Simplex method,"Maximize subject to: 16z_1+5z_2+20z_3+0z_4+0z_5 = f, 8z_1 + z_2 + 2z_3 + z_4 + 0z_5 >= 1000, 2z_1+z_2+7z_3+0z_4+z_5>=2000
-[[8, 1, 2| 1, 0| 1000], [2, 1, 7| 0, 1| 2000], [16, 5, 20| 0 0| f]]
-~ [[8, 1, 2| 1, 0| 1000], [0 3/4 13/2| -1/4, 1| 1750], [0, 3, 16| -2, 0| f-2000]]
-~ [[8, 1, 2| 1, 0| 1000], [-6 0 5| -1 1| 1000], [-24, 0, 10, -5, 0| f-1000]]
-~ [[52/5, 1, 0| 7/5, -2/5| 600], [-6, 0, 5| -1 1| 1000], [-12, 0, 0| -3, -2| f-7000]
-~ [[52/5, 1, 0| 7/5, -2/5| 600], [-6/5, 0, 1| -1/5 1/5| 200], [-12, 0, 0| -3, -2| f-7000]
--> x_2 = 600, x_3 = 200, f=7000",
+,,Duality theorem: A feasible $math{X_0}$ and is the solution of the Minum Problem (minimize $math{CX}$ subject to $math{AX >= R}$ and $math{X >= 0}$) if and only a feasible fector $math{Z_0}$ exists which is a solution of the Maximum problem (maximize $math{[R]^^[Z]}$ subject to $math{[A]^^Z<=[C][T]}$ and $math{[Z]>=0}$) moreover $math{[R]^^[Z_0] = [C][X_0]}$ if and only if $math{[X_0]}$ and $math{[Z_0]}$ are solutions,
+,,"Maximum problem: Maximize $math{[R]^^*[Z]}$ subject to: $math{[A]^^[Z]<=[C]^^}$, $math{[Z]>=0}$",
+,,"Minimum problem: Minimize $math{[C][X]}$ subject to $math{[A][X]<=R}$, $math{[X]>=0}$",
+,Simplex method,"Maximize subject to: $math{16z_1+5z_2+20z_3+0z_4+0z_5 = f}$, $math{8z_1 + z_2 + 2z_3 + z_4 + 0z_5 >= 1000}$, $math{2z_1+z_2+7z_3+0z_4+z_5>=2000}$
+$math{[[8, 1, 2| 1, 0| 1000], [2, 1, 7| 0, 1| 2000], [16, 5, 20| 0 0| f]]}$
+$math{~ [[8, 1, 2| 1, 0| 1000], [0 3/4 13/2| -1/4, 1| 1750], [0, 3, 16| -2, 0| f-2000]]}$
+$math{~ [[8, 1, 2| 1, 0| 1000], [-6 0 5| -1 1| 1000], [-24, 0, 10, -5, 0| f-1000]]}$
+$math{~ [[52/5, 1, 0| 7/5, -2/5| 600], [-6, 0, 5| -1 1| 1000], [-12, 0, 0| -3, -2| f-7000]}$
+$math{~ [[52/5, 1, 0| 7/5, -2/5| 600], [-6/5, 0, 1| -1/5 1/5| 200], [-12, 0, 0| -3, -2| f-7000]}$
+-> $math{x_2 = 600, x_3 = 200, f=7000}$",
 ,,"B: coefficient matrix of the restrictions
 R: Coefficient vector of the cost function
-O, I_n: Coefficient matrix of slack variables
+O, $math{I_n}$: Coefficient matrix of slack variables
 C: Coefficient vector of cost factors
 f: Cost function
-[[B|I_n|C^^], [R^^, O, f]]",
+$math{[[B|I_n|C^^], [R^^, O, f]]}$",

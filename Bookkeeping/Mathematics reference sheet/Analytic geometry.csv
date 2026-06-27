@@ -1,79 +1,79 @@
 Group,Name,Basic relationship,Presetted values
 rich,rich,rich,rich
-,General concept intersection,"A(x)=B(x) => (x, y) intersection(s)","y=x^2, y=2x+3
-9x^2+y^2=18, y=3x
-x^2+y^2=6, 3x^2+y^2=12
-y=x^2, y=kx-9, real solutions => x^2-kx+9=0 => \D=k^2-36<0"
+,General concept intersection,"$math{A(x)=B(x) => (x, y)} intersection(s)","$math{y=x^2, y=2x+3}
+$math{9x^2+y^2=18, y=3x}
+$math{x^2+y^2=6, 3x^2+y^2=12}
+$math{y=x^2, y=kx-9}, real solutions => $math{x^2-kx+9=0} => $math{\D=k^2-36<0}"
 ,,"{k=0, n, L[n]}
-Graph => {k=0, n, L[k]=L[(k+1)%n] => (x[k], y[k])} => …","L=[y=2/3x+4/3, y=-x+3, x=-2], L=[y=2/3x+4/3, y=2x-2, 0]"
-,,"f(x)[(x1, y1) (x, 0)] = ...
-g(x)[(x1, y1) (x, 0)] = ...
-h(x)[(x1, y1)]  = …",
-,,=> A(x)=…,"y=8x-2, A=xy=x(8-2x)
-y=4-x^2, A=xy=x(4-x^2)"
-,Straight line properties,y=kx+b,"k=1, y=3
-k=-2/5, y=3,
-y=(9b^2-1)x+b^2-5b, k=3 => 9b^2-1=3"
-,,"M_x=(x_A+x_B)/2, M_y=(y_A+y_B)/2",
-,,\Dy=k\Dx,"3 (1-3), -2 (5-0), 3 (-4-(-7))"
-,,k=\Dy/\Dx=(y_1-y_0)/(x_1-x_0),"P_0 = (0, 4), P_1 = (1, 7)
-P_0 = (3, 0), P_1 = (4, 2)
-P_0 = (3, a^3+5), P_1 = (-2, 4a)
-P_0 = (2, 1), P_1 = (5, 3)"
-,,y-y_0=k(x-x_0),
-,,"Ax+By=C (General form) => y=-A/Bx+C/B, Normal slope: B/A","5 -1 2, 2 5 1"
-,,"L1: y=k_1*x+b_1, L2: y=k_2*x+b_2, L1//L2 => k_1=k_2","L1: 2ax+3y=5, L2: (a+1)x-y+2=0 => a"
-,,"L1: y=k_1*x+b_1, L2: y=k_2*x+b_2, L1|L2 => k_1*k_2=-1",
+Graph => {k=0, n, L[k]=L[(k+1)%n] => (x[k], y[k])} => …","$math{L=[y=2/3x+4/3, y=-x+3, x=-2]}, $math{L=[y=2/3x+4/3, y=2x-2, 0]}"
+,,"$math{f(x)[(x1, y1) (x, 0)] = ...}
+$math{g(x)[(x1, y1) (x, 0)] = ...}
+$math{h(x)[(x1, y1)]  = …}",
+,,$math{=> A(x)=…},"$math{y=8x-2, A=xy=x(8-2x)}
+$math{y=4-x^2, A=xy=x(4-x^2)}"
+,Straight line properties,$math{y=kx+b},"$math{k=1, y=3}
+$math{k=-2/5, y=3}
+$math{y=(9b^2-1)x+b^2-5b, k=3 => 9b^2-1=3}"
+,,"$math{M_x=(x_A+x_B)/2, M_y=(y_A+y_B)/2}",
+,,$math{\Dy=k\Dx},"3 (1-3), -2 (5-0), 3 (-4-(-7))"
+,,$math{k=\Dy/\Dx=(y_1-y_0)/(x_1-x_0)},"$math{P_0 = (0, 4), P_1 = (1, 7)}
+$math{P_0 = (3, 0), P_1 = (4, 2)}
+$math{P_0 = (3, a^3+5), P_1 = (-2, 4a)}
+$math{P_0 = (2, 1), P_1 = (5, 3)}"
+,,$math{y-y_0=k(x-x_0)},
+,,"$math{Ax+By=C} (General form) => $math{y=-A/Bx+C/B}, Normal slope: $math{B/A}","5 -1 2, 2 5 1"
+,,"$math{L1: y=k_1*x+b_1, L2: y=k_2*x+b_2, L1//L2 => k_1=k_2}","$math{L1: 2ax+3y=5, L2: (a+1)x-y+2=0 => a}"
+,,"$math{L1: y=k_1*x+b_1, L2: y=k_2*x+b_2, L1|L2 => k_1*k_2=-1}",
 ,,,
 ,,,
 ,,,
 ,,,
 ,,,
 ,,,
-,Straight line intersections,"L1=L2 => k_1*x+b_1=k_2*x+b_2 => (k_1-k_2)*x=b_2-b_1 => x=(b_2-b_1)/(k_1-k_2), y=… => (x, y)","ax+3, 2x+a"
-,,=> A=…,"L=[y=5x/2, y=-x/2, x=p], P[(p, 5p/2), (p, -p/2), (0, 0)], A=(5p/2-(-p/2))p/2
-L=[y=0, x=p, y=3x] => A=3p^2/2"
-,Linear plane,y>=(kx+b) -> over line kx+b,"y>=2, y<x, ..."
-,,"ax^2+bxy+cy^2+dx+ey+f=0, \D = b^2-4ac
-\D < 0 -> Ellipse, circle, point or non-existent
-\D = 0 -> Parabla, 2 lines or non-existent
-\D > 0 -> Hyperbola or 2 lines",
-,Parabola,y=ax^2+bx+c=a(x-x_0)^2+y_0,
-,,sqrt((x-x_0)^2+(y-y_0)^2)=y-(-y_0) => y=…(x),"x_0=0, y_0=3"
-,,sqrt((x-0)^2+(y-h)^2)=y-d => sqrt(x^2+(ax^2-h)^2)=y-d => x^2(1-4ah)=0 => h=1/(4a),"a=1, …"
-,,"Symmetry line: x = (r_1+r_2)/2 = -b/(2a) -> contains highest/lowest point
-Vertex: (-b/(2a), -\D/(4a)=(4ac-b^2)/(4a)",
-,Circle,"(x-x_0)^2+(y-y_0)^2=r^2 (Origin: (x_0, y_0), radius: r)
-Parameter form: {x=r*cos(t)+x_0, y=r*sin(t)+y_0}
-(r=d=sqrt((x_1-x_0)^2+(y_1-y_0)^2))","1 -2 3, -5 7 sqrt(3)"
-,,x^2+ax+y^2+by+c = d => (x+a/2)^2+(y+b/2)^2=d-c-a^2/4-b^2/4,"0 -2 0 0, 4 -1 0 3/4, -2 8 1 0"
-,Ellipse,"(x-x_0)^2/a^2+(y-y_0)^2/b^2=1
-Focal point: S_1, S_2, l_1+l_2=constant (S_1 -l_1-> P -l_2-> S_2)","x_0=0, y_0=0, a=2, b=3
-x_0=3, y_0=4, a=1, b=2"
-,,,3x^2+y^2=12
-,Hyperbola,(x-x_0)(y-y_0)=k => y=k/(x-x_0)+y_0,1 -4 4
-,,(x-x_0)^2/a^2-(y-y_0)^2/b^2=1,
-,,"x^2/a^2-y^2/b^2=1 => (x, y) -> \pm\inf => x^2/a^2-y^2/b^2=0 => y/x=b/a, y/x=-b/a","a=2, y=3"
-,Translations/Translationer (via square completion/kvadratkomplettering),"A(x+a)^2+B(y+b)^2+C(x+a)(y+b) = Ax^2+By^2+Cxy+(2Aa+Cb)x+(2Bb+Ca)y+(A^2+B^2+Cab)  = Ax^2+By^2+Cxy+dx+ey+f=0 -> 2Aa+Cb = d, 2Bb+Ca = e",
-,Rotationer (via huvudaxelform),"Ax^2+bxy+cy^2=d -> [[x, y]][[a, b/2], [b/2, c]][[x], [y]] -> diag[[a, b/2], [b/2, c]]",
+,Straight line intersections,"$math{L1=L2 => k_1*x+b_1=k_2*x+b_2 => (k_1-k_2)*x=b_2-b_1 => x=(b_2-b_1)/(k_1-k_2), y=… => (x, y)}","$math{ax+3, 2x+a}"
+,,$math{=> A=…},"$math{L=[y=5x/2, y=-x/2, x=p], P[(p, 5p/2), (p, -p/2), (0, 0)], A=(5p/2-(-p/2))p/2}
+$math{L=[y=0, x=p, y=3x] => A=3p^2/2}"
+,Linear plane,"$math{y>=(kx+b)} -> over line $math{kx+b}","$math{y>=2, y<x}, ..."
+,,"$math{ax^2+bxy+cy^2+dx+ey+f=0}, $math{\D = b^2-4ac}
+$math{\D < 0} -> Ellipse, circle, point or non-existent
+$math{\D = 0} -> Parabla, 2 lines or non-existent
+$math{\D > 0} -> Hyperbola or 2 lines",
+,Parabola,$math{y=ax^2+bx+c=a(x-x_0)^2+y_0},
+,,"$math{sqrt((x-x_0)^2+(y-y_0)^2)=y-(-y_0) => y=…(x)}","$math{x_0=0, y_0=3}"
+,,"$math{sqrt((x-0)^2+(y-h)^2)=y-d => sqrt(x^2+(ax^2-h)^2)=y-d => x^2(1-4ah)=0 => h=1/(4a)}","$math{a=1}, …"
+,,"Symmetry line: $math{x = (r_1+r_2)/2 = -b/(2a)} -> contains highest/lowest point
+Vertex: $math{(-b/(2a), -\D/(4a)=(4ac-b^2)/(4a))}",
+,Circle,"$math{(x-x_0)^2+(y-y_0)^2=r^2} (Origin: $math{(x_0, y_0)}, radius: $math{r})
+Parameter form: $math{{x=r*cos(t)+x_0, y=r*sin(t)+y_0}}
+$math{r=d=sqrt((x_1-x_0)^2+(y_1-y_0)^2)}","1 -2 3, -5 7 sqrt(3)"
+,,"$math{x^2+ax+y^2+by+c = d => (x+a/2)^2+(y+b/2)^2=d-c-a^2/4-b^2/4}","0 -2 0 0, 4 -1 0 3/4, -2 8 1 0"
+,Ellipse,"$math{(x-x_0)^2/a^2+(y-y_0)^2/b^2=1}
+Focal point: $math{S_1, S_2, l_1+l_2=}constant ($math{S_1 -l_1-> P -l_2-> S_2})","$math{x_0=0, y_0=0, a=2, b=3}
+$math{x_0=3, y_0=4, a=1, b=2}"
+,,,$math{3x^2+y^2=12}
+,Hyperbola,"$math{(x-x_0)(y-y_0)=k => y=k/(x-x_0)+y_0}","1 -4 4"
+,,$math{(x-x_0)^2/a^2-(y-y_0)^2/b^2=1},
+,,"$math{x^2/a^2-y^2/b^2=1} => $math{(x, y) -> \pm\inf} => $math{x^2/a^2-y^2/b^2=0 => y/x=b/a, y/x=-b/a}","$math{a=2, y=3}"
+,Translations/Translationer (via square completion/kvadratkomplettering),"$math{A(x+a)^2+B(y+b)^2+C(x+a)(y+b) = Ax^2+By^2+Cxy+(2Aa+Cb)x+(2Bb+Ca)y+(A^2+B^2+Cab)}  = $math{Ax^2+By^2+Cxy+dx+ey+f=0} -> $math{2Aa+Cb = d, 2Bb+Ca = e}",
+,Rotationer (via huvudaxelform),"$math{Ax^2+bxy+cy^2=d} -> $math{[[x, y]][[a, b/2], [b/2, c]][[x], [y]]} -> $math{diag[[a, b/2], [b/2, c]]}",
 ,,,
 ,,,
-Quadratic surfaces,,Ax^2+Bx^2+Cz^2+Dxy+Exz+Fyz+Gx+Hy+Iz=J,
-,Degenerate,"(A_1x+B_1y+C_1z-D_1)(A_2x+B_2y+C_2z-D_2) = 0
+Quadratic surfaces,,$math{Ax^2+Bx^2+Cz^2+Dxy+Exz+Fyz+Gx+Hy+Iz=J},
+,Degenerate,"$math{(A_1x+B_1y+C_1z-D_1)(A_2x+B_2y+C_2z-D_2) = 0}
 -> 2 planes",
-,Sphere,"x^2+y^2+z^2=r^2
-(x-x_0)^2+(y-y_0)^2+(z-z_0)^2=r^2",
-,Circular cylinder,"x^2+y^2 = r^2, x^2+z^2=r^2, y^2+z^2=r^2",
-,Parabolic cylinder,"z=x^2, z=y^2",
-,Circular cone,az^2=x^2+y^2,
-,Ellipsoid,"x^2/a^2 + y^2/b^2 + z^2/c^2 = 1 ((a, 0, 0), (0, b, 0), (0, 0, c))",
-,Paraboloids,Elliptic paraboloid: z=x^2/a^2 + y^2/b^2 -> cross section ellipse,
-,,"Hyperbolic paraboloid: z=x^2/a^2-y^2/b^2 -> Cross section hyperbola
+,Sphere,"$math{x^2+y^2+z^2=r^2}
+$math{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2=r^2}",
+,Circular cylinder,"$math{x^2+y^2 = r^2, x^2+z^2=r^2, y^2+z^2=r^2}",
+,Parabolic cylinder,"$math{z=x^2, z=y^2}",
+,Circular cone,$math{az^2=x^2+y^2},
+,Ellipsoid,"$math{x^2/a^2 + y^2/b^2 + z^2/c^2 = 1} ($math{(a, 0, 0), (0, b, 0), (0, 0, c)})",
+,Paraboloids,"Elliptic paraboloid: $math{z=x^2/a^2 + y^2/b^2} -> cross section ellipse",
+,,"Hyperbolic paraboloid: $math{z=x^2/a^2-y^2/b^2} -> Cross section hyperbola
 Ruled surface (every point on surface passes a straight line lying wholly on surface)
 2 one-parameter families of straigh lines on hyperbolic paraboloid:
-\l*z = x/a - y/b, 1/\l = x/a + y/b
-\m*z = x/a + y/b, 1/\m = x/a - y/b",
+$math{\l*z = x/a - y/b, 1/\l = x/a + y/b}
+$math{\m*z = x/a + y/b, 1/\m = x/a - y/b}",
 ,Hyperboloids,"Surface with elliptical cross-sections in x-y planes and hyperbolic cross-sections in x-z planes
-Asympototic to elliptica cone with equation x^2/a^2+y^2/b^2=z^2/c^2",
-,,"x^2/a^2 + y^2/b^2 - z^2/c^2 = 1 -> Hyperboloid of 1 sheet ((a, 0, 0), (0, b, 0))",
-,,"x^2/a^2 + y^2/b^2 - z^2/c^2 = -1 -> Hyperboloid of 2 sheets ((0, 0, -c))",
+Asympototic to elliptica cone with equation $math{x^2/a^2+y^2/b^2=z^2/c^2}",
+,,"$math{x^2/a^2 + y^2/b^2 - z^2/c^2 = 1} -> Hyperboloid of 1 sheet ($math{(a, 0, 0), (0, b, 0)})",
+,,"$math{x^2/a^2 + y^2/b^2 - z^2/c^2 = -1} -> Hyperboloid of 2 sheets ($math{(0, 0, -c)})",

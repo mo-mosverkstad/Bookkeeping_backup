@@ -1,81 +1,82 @@
 Group,Name,Basic relationship,Presetted values
 rich,rich,rich,rich
-,Double integrals/Dubbelintegraler,"The limit of the sum of inscribed or circumscribed prisms with base \D A = \D x \D y equals the volume under the surface z = f(x,y) and is given by the double integral between (x_1, x_2) and (y_1, y_2) [Image]
+,Double integrals/Dubbelintegraler,"The limit of the sum of inscribed or circumscribed prisms with base $math{\D A = \D x \D y} equals the volume under the surface $math{z = f(x,y)} and is given by the double integral between $math{(x_1, x_2)} and $math{(y_1, y_2)} [Image]
 
-lim{n->\infty, \S{i=1, n, f(x_i, y_i)*\D A_i}} = int2{D, f(x, y)dxdy} = int{x_1, x_2, int{y_1, y_2, f(x,y) dy} dx}","int2{D, xydxdy} = \int{1, 4, {[x^2y/2], 1, 3}dy} = int{1, 4, 4ydy} = 30"
-,,"int{a, b, int{g1(x), g2(x), f(x,y) dy} dx}
+$math{lim{n->\infty, \S{i=1, n, f(x_i, y_i)*\D A_i}} = int2{D, f(x, y)dxdy} = int{x_1, x_2, int{y_1, y_2, f(x,y) dy} dx}}","$math{int2{D, xydxdy} = \int{1, 4, {[x^2y/2], 1, 3}dy} = int{1, 4, 4ydy} = 30}"
+,,"$math{int{a, b, int{g1(x), g2(x), f(x,y) dy} dx}}
 
 Evaluate in 2 Steps:
-int{g1(x), g2(x), f(x,y) dy}
+$math{int{g1(x), g2(x), f(x,y) dy}}
 [at constant x -> u(x)]
-int{a, b, u(x) dx} = U(b) - U(a)
-U = anti-derivative of u","D: {y>2x, 0<x<2, 0<y<4}
-int2{D, (x+y)dxdy} = int{0, 4, int{0, y/2, (x+y)dx}dy}
-= int2{0, 2, int{2x, 4, (x+y)dy}dx}"
-,Variable substitution/Variabelsubstitution,"int2{D, f(x, y)dxdy} = int{E, f(x(u, v), y(u, v))|\\d(x, y)/\\d(u, v)|dudv}, |\\d(x, y)/\\d(u, v)| = det|[[\\dx/\\du, \\dx/\\dv], [\\dy/\\du, \\dy/\\dv]]|
-det|[[\\dx/\\du, \\dx/\\dv, \\dx/\\dw], [\\dy/\\du, \\dy/\\dv, \\dy/\\dw], [\\dz/\\du, \\dz/\\dv, \\dz/\\dw]]|
-(x=x(u, v), y=y(u, v))
+$math{int{a, b, u(x) dx} = U(b) - U(a)}
+U = anti-derivative of u","D: $math{{y>2x, 0<x<2, 0<y<4}}
+$math{int2{D, (x+y)dxdy} = int{0, 4, int{0, y/2, (x+y)dx}dy}}
+$math{= int2{0, 2, int{2x, 4, (x+y)dy}dx}}"
+,Variable substitution/Variabelsubstitution,"$math{int2{D, f(x, y)dxdy} = int{E, f(x(u, v), y(u, v))|\\d(x, y)/\\d(u, v)|dudv}}
+$math{|\\d(x, y)/\\d(u, v)| = det|[[\\dx/\\du, \\dx/\\dv], [\\dy/\\du, \\dy/\\dv]]|}
+$math{det|[[\\dx/\\du, \\dx/\\dv, \\dx/\\dw], [\\dy/\\du, \\dy/\\dv, \\dy/\\dw], [\\dz/\\du, \\dz/\\dv, \\dz/\\dw]]|}
+$math{(x=x(u, v), y=y(u, v))}
 
-similar to int{f(x)dx} = int{f(g(u))g'(u)du}
-du->0, g(u+du) = g(u) + g'(u)du",
-,,"x(r, \t) = r*cos(\t)
-y(r, \t) = r*sin(\t)
-|\\d(x, y)/\\d(u, v)| = |[[cos(\t), -r*sin(\t)], [sin(\t), r*cos(\t)]]| = r
--> int2{D, f(x, y)dxdy} = int{E, f(x(r, \t), y(r, \t))rdrd\t}",
+similar to $math{int{f(x)dx} = int{f(g(u))g'(u)du}}
+$math{du->0, g(u+du) = g(u) + g'(u)du}",
+,,"$math{x(r, \t) = r*cos(\t)}
+$math{y(r, \t) = r*sin(\t)}
+$math{|\\d(x, y)/\\d(u, v)| = |[[cos(\t), -r*sin(\t)], [sin(\t), r*cos(\t)]]| = r}
+$math{-> int2{D, f(x, y)dxdy} = int{E, f(x(r, \t), y(r, \t))rdrd\t}}",
 ,TRIPLE INTEGRALS/Trippelintegraler,"Triple integrals are three-dimensional extensions of double integrals defined in analogous fashion [Image]
 
-lim{n->\inf, \S{i=1, n, f(x_i, y_i, z_i)*\D V_i} = int{x_1, x_2, int{y_1, y_2, int{z_1, z_2, f(x,y,z) dz} dy} dx}",
-,,"int{a, b, int{h1(z), h2(z), int{g1(y,z), g2(y,z), f(x,y,z) dx} dy} dz}
+$math{lim{n->\inf, \S{i=1, n, f(x_i, y_i, z_i)*\D V_i} = int{x_1, x_2, int{y_1, y_2, int{z_1, z_2, f(x,y,z) dz} dy} dx}}",
+,,"$math{int{a, b, int{h1(z), h2(z), int{g1(y,z), g2(y,z), f(x,y,z) dx} dy} dz}}
 
 Evaluate in 3 Steps:
-int{x_1, x_2, f(x,y,z) dx}
+$math{int{x_1, x_2, f(x,y,z) dx}}
 [at constant y,z -> u(y,z)]
-int{y_1, y_2, u(y,z) dy}
+$math{int{y_1, y_2, u(y,z) dy}}
 [at constant z -> v(z)]
-int{a, b, v(z) dz} = V(b) - V(a)","K = {(x, y, z): x+y+z<=1, x>=0, y>=0, z>=0}
-int3{K, y*dV} = int3{K, y*dxdydz} = int{0, 1, int{0, 1-x, int{0, 1-x-y, y*dz}dy}dx}"
+$math{int{a, b, v(z) dz} = V(b) - V(a)}","$math{K = {(x, y, z): x+y+z<=1, x>=0, y>=0, z>=0}}
+$math{int3{K, y*dV} = int3{K, y*dxdydz} = int{0, 1, int{0, 1-x, int{0, 1-x-y, y*dz}dy}dx}}"
 ,ITERATED & PARTIAL INTEGRALS,"For evaluation purposes, double and triple integrals are expressed in iterated forms of interchangeable order
 
 Each iteration is called a partial integral
 
-int{x_1, x_2, int{y_1, y_2, f(x,y) dy} dx}
-= int{x_1, x_2, [ int{y_1, y_2, f(x,y) dy} ] dx}
-= int{y_1, y_2, int{x_1, x_2, f(x,y) dx} dy}",
+$math{int{x_1, x_2, int{y_1, y_2, f(x,y) dy} dx}}
+$math{= int{x_1, x_2, [ int{y_1, y_2, f(x,y) dy} ] dx}}
+$math{= int{y_1, y_2, int{x_1, x_2, f(x,y) dx} dy}}",
 ,,,
 ,,,
 ,,,
 ,,,
 ,Area of a curved surface,"Rectangular Coordinates
-A = int{x_1, x_2, int{y_1=f_1(x), y_2=f_2(x), sqrt(1 + (\\d z/\\d x)^2 + (\\d z/\\d y)^2) dydx}}
+$math{A = int{x_1, x_2, int{y_1=f_1(x), y_2=f_2(x), sqrt(1 + (\\d z/\\d x)^2 + (\\d z/\\d y)^2) dydx}}}
 
 Cylindrical Coordinates
-A = int{\t_1, \t_2, int{r_1=f_1(\t), r_2=f_2(\t), sqrt(1 + (\\d z/\\d r)^2 + (1/r^2)*(\\d z/\\d \t)^2) r dr d\t}}","Find the area in the first octant cut from the cylindrical surface z = 4 - x^2 by the plane y = x.
+$math{A = int{\t_1, \t_2, int{r_1=f_1(\t), r_2=f_2(\t), sqrt(1 + (\\d z/\\d r)^2 + (1/r^2)*(\\d z/\\d \t)^2) r dr d\t}}}","Find the area in the first octant cut from the cylindrical surface $math{z = 4 - x^2} by the plane $math{y = x}.
 
-Since boundaries of projection of the required area onto the x-y plane are y = 0, y = x, and x = 2, we have A = int{0, 2, int{0, x, sqrt(1 + (dz/dx)^2 + (dz/dy)^2) dydx}} = int{0, 2, int{0, x, sqrt(1 + 4x^2 + 0) dydx}}, A = int{0, 2, sqrt(1 + 4x^2) x dx} = (1/12)*(17*sqrt(17) - 1)
+Since boundaries of projection of the required area onto the x-y plane are $math{y = 0}, $math{y = x}, and $math{x = 2}, we have $math{A = int{0, 2, int{0, x, sqrt(1 + (dz/dx)^2 + (dz/dy)^2) dydx}} = int{0, 2, int{0, x, sqrt(1 + 4x^2 + 0) dydx}}}, $math{A = int{0, 2, sqrt(1 + 4x^2) x dx} = (1/12)*(17*sqrt(17) - 1)}
 
 This result can also be found, though with much greater difficulty, by reversing the order of integration:
-A = int{0, 2, int{y, 2, sqrt(1 + 4x^2 + 0) dxdy}}
+$math{A = int{0, 2, int{y, 2, sqrt(1 + 4x^2 + 0) dxdy}}}
 Thus, ease of evaluation often depends on order of integration"
 ,Volumes under a surface,"Rectangular Coordinates
-V = int{x_1, x_2, int{y_1, y_2, f(x,y) dydx}}
+$math{V = int{x_1, x_2, int{y_1, y_2, f(x,y) dydx}}}
 
 Cylindrical Coordinates
-V = int{\t_1, \t_2, int{r_1, r_2, g(r,\t) r dr d\t}}",
+$math{V = int{\t_1, \t_2, int{r_1, r_2, g(r,\t) r dr d\t}}}",
 ,Volumes as triple integrals,"Rectangle
-V = int{int{int{dxdydz}}}
+$math{V = int{int{int{dxdydz}}}}
 
 Cylindrical
-V = int{int{int{\r d\r dz d\t}}}
+$math{V = int{int{int{\r d\r dz d\t}}}}
 
 Spherical
-V = int{int{int{\r^2*sin(\t) d\r d\t d\f}}}",
+$math{V = int{int{int{\r^2*sin(\t) d\r d\t d\f}}}}",
 ,,,
 ,,,
 ,,,
 ,,,
 ,,,
 ,,,
-,Change coordinates,dxdy=rdrd\t,
-,,"\int{-\inf, \inf, e^(-x^2)dx}
-I = \int{-\inf, \inf, e^(-x^2)dx}, I^2 = \int{-\inf, \inf, e^(-x^2)dx}*\int{-\inf, \inf, e^(-y^2)dy}",
-,,"\int{0, \inf, \int{0, \inf, xy*e^(-x^2-y^2)dxdy}}",
+,Change coordinates,$math{dxdy=rdrd\t},
+,,"$math{\int{-\inf, \inf, e^(-x^2)dx}}
+$math{I = \int{-\inf, \inf, e^(-x^2)dx}}, $math{I^2 = \int{-\inf, \inf, e^(-x^2)dx}*\int{-\inf, \inf, e^(-y^2)dy}}",
+,,"$math{\int{0, \inf, \int{0, \inf, xy*e^(-x^2-y^2)dxdy}}}",

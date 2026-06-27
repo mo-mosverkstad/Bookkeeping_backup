@@ -2,7 +2,7 @@ Group,Name,Basic relationship,Presetted values
 rich,rich,rich,rich
 ,,,
 ,,,
-Multivariable concepts,Neighbourhood/Omgivning,"B_r([a]) = {[x] \in \\R^n: |[x]-[a]|<r}
+Multivariable concepts,Neighbourhood/Omgivning,"$math{B_r([a]) = {[x] \in \\R^n: |[x]-[a]|<r}}
 
 n=1: open interval (a-r, a+r)
 n=2: open disk
@@ -28,14 +28,14 @@ $math{r = sqrt(x^2+y^2)}, $math{tan(\t) = y/x}",
 $math{x = r*cos(\t)}, $math{y = r*sin(\t)}, $math{z = z}
 $math{r = sqrt(x^2+y^2)}, $math{tan(\t) = y/x}, $math{z=z}",
 ,Sfäriska koordinater (\\R^3),"\f: R-line-z, \t -> x-y plane
-x = R*sin(\f)*cos(\t), y = R*sin(\f)*sin(\t), z = R*cos(\f)
-R = sqrt(x^2+y^2+z^2), tan(\f) = sqrt(x^2+y^2)/z, tan(\t) = y/x",
+$math{x = R*sin(\f)*cos(\t)}, $math{y = R*sin(\f)*sin(\t)}, $math{z = R*cos(\f)}
+$math{R = sqrt(x^2+y^2+z^2)}, $math{tan(\f) = sqrt(x^2+y^2)/z}, $math{tan(\t) = y/x}",
 ,,,
 ,,,
-,Vektorvärda funktioner av en variabel,"f(t) = (x(t), y(t), z(t)) [Image]
-f'(t_0) = lim{h->0, (f(t_0+h) - f(t_0))/h} = (x'(t_0), y'(t_0), z'(t_0))",
-,Reelvärda funktioner av flera variabler,"graf: {(x, y, z): z = f(x, y)}, nivåkurva/höjdkurva: {(x, y): f(x, y) = C} [Image]
-Kontinuerlig i (a, b): $math{\lim{(x, y) -> (a, b), f(x, y) = f(a, b)}}","f(x, y)=x^2+y^2"
+,Vektorvärda funktioner av en variabel,"$math{f(t) = (x(t), y(t), z(t)) [Image]}
+$math{f'(t_0) = lim{h->0, (f(t_0+h) - f(t_0))/h} = (x'(t_0), y'(t_0), z'(t_0))}",
+,Reelvärda funktioner av flera variabler,"$math{graf: {(x, y, z): z = f(x, y)}, nivåkurva/höjdkurva: {(x, y): f(x, y) = C} [Image]}
+Kontinuerlig i (a, b): $math{\lim{(x, y) -> (a, b), f(x, y) = f(a, b)}}","$math{f(x, y)=x^2+y^2}"
 ,,,
 Vector function with one variable,,"$math{[f](x) = (x, y, z) = x*[i] + y*[j] + z*[k]}
 $math{f(x) = (cos(x), sin(x))}, $math{\\R -> \\R^2}
@@ -59,68 +59,68 @@ Rotational frame: $math{{[`3i], [`3j], [`3k]}}, offset [R_0], rotation axis: [\O
 Position (rotational): [r], (inertial): [R]",
 ,,"$math{d[i]/dt = [\O]*[`3i], d[j]/dt = [\O]*[`3j], d[k]/(dt) = [\O]*[`3k], d[R_0]/(dt) = [\O]*[R_0]}",
 ,,$math{[V] = d*[R]/(dt) = d/(dt)([R_0] + [R]) = d[R_0]/(dt) + dx/(dt)*[`3i] + x*d[`3i]/(dt) + dy/(dt)*[`3j] + y*d[`3j]/(dt) + dz/(dt)*[`3k] + z*d[`3k]/(dt) = [v] + [\O]*[R_0] + x[\O]*[i] + y[O]*[j] + z[\O]*[k] = [v] + [\O]*[R_0] + [O]*[r] = [v] + [\O]*[R]},
-,,"[A] = d[V]/dt = d/(dt)([v] + [\O]*[R]) = d^2x/(dt^2)[`3i] + dx/(dt)*d*[`3i]/(dt) + d^2y/(dt^2)[`3j] + dy/(dt)*d*[`3j]/(dt) + d^2z/(dt^2)[`3k] + dz/(dt)*d*[`3k]/(dt) + [\O]*d*[R]/(dt) = [a] + [\O]*[v] + [\O]*[V] = [a] + 2[\O]*v + [\O]*([O]*R)
+,,"$math{[A] = d[V]/dt = d/(dt)([v] + [\O]*[R]) = d^2x/(dt^2)[`3i] + dx/(dt)*d*[`3i]/(dt) + d^2y/(dt^2)[`3j] + dy/(dt)*d*[`3j]/(dt) + d^2z/(dt^2)[`3k] + dz/(dt)*d*[`3k]/(dt) + [\O]*d*[R]/(dt) = [a] + [\O]*[v] + [\O]*[V] = [a] + 2[\O]*v + [\O]*([O]*R)}
 Coriolis acceleration: 2[\O]*[v]
 Centripetal acceleration: [\O]*([O]*[R])",
-,,"m[a] = [F] - 2m[\O]*[v] - m[\O]*([\O]*[R])
+,,"$math{m[a] = [F] - 2m[\O]*[v] - m[\O]*([\O]*[R])}
 Coriolis force: - 2m[\O]*[v]
 Centrifugal force: - m[\O]*([\O]*[R])",
-,Curves and parametrizations,"{k=1, n, [eq_k]} intersection parametrization
-Substitute t=x, t=y, t=z","y=2x-4, z=3x+1
-x+y=1, x^2+y^2=z
-x^2+y+z=2, xy+z=1 -> x^2+y-xy=1 (x=t)"
-,,"e.g. x^2+y^2+z^2 = 1, [eq with z]
-Substitute x=a*cos(t), y=b*sin(t)","x+2y+4z=4, x^2+4y^2=4"
-,,"L1: x+y+z=1, L2: x^2+y^2+z^2 = 1, [n] = (1, 1, 1)
--> (1, 0, 0), (0, 1, 0), (0, 0, 1) intersections -> midpoint [r_0]=(1/3, 1/3, 1/3), radius: r=sqrt(2/3)
-[v_1] = (1, -1, 0), [v_2]=[v_1].[n] = (-1, -1, 2), [e_1] = 1/sqrt(2)*(1, -1, 0), [e_2] = 1/sqrt(6)*(-1, -1, 2) -> [r] = [r_0] + [r]([e_1]cos(t) + [e_2]sin(t))",
-,Arc length,"\int{t_1, t_2, |d*[r]/(dt)|dt}",
-,Piecewise smooth curves,"[r](t) fail to be smooth where d[r]/dt = 0
--> Curve: C = \S{k=1, n, C_k} with parametrization {k=1, n, [r_k]}
--> \S{1, k, \int{a_i, b_i, |d*[r_i]/dt|*dt}}",
-,Arc length parametrization,"s(t) = \int{t_0, t, |d/(dt)([r](t))|dt}
-[r](s) = [r](t(s)) -> Speed 1",
-,Unit tangent vector,[T] = [v](t)/v(t) = (d[r]/dt)/|d[r]/dt| = d[r]/ds,
-,Unit normal vector,"[N](s) = d[T]/(ds)
-[T](s).[T](s)=1 -> 2[T](s).d[T]/(ds) = 0",
-,Curvature ,\k(s) = |d[T]/(ds)|,
-,Radius of curvature,\r(s) = 1/\k(s),
-,,[N](s) = 1/\k(s)*d[T]/(ds) = (d[T]/(ds))/|d[T]/(ds)|,
+,Curves and parametrizations,"$math{{k=1, n, [eq_k]} intersection parametrization}
+$math{Substitute t=x}, $math{t=y}, $math{t=z}","$math{y=2x-4}, $math{z=3x+1}
+$math{x+y=1, x^2+y^2=z}
+$math{x^2+y+z=2, xy+z=1 -> x^2+y-xy=1 (x=t)}"
+,,"$math{e.g. x^2+y^2+z^2 = 1, [eq with z]}
+$math{Substitute x=a*cos(t)}, $math{y=b*sin(t)}","$math{x+2y+4z=4, x^2+4y^2=4}"
+,,"$math{L1: x+y+z=1, L2: x^2+y^2+z^2 = 1, [n] = (1, 1, 1)}
+$math{-> (1, 0, 0), (0, 1, 0), (0, 0, 1) intersections -> midpoint [r_0]=(1/3, 1/3, 1/3), radius: r=sqrt(2/3)}
+$math{[v_1] = (1, -1, 0), [v_2]=[v_1].[n] = (-1, -1, 2), [e_1] = 1/sqrt(2)*(1, -1, 0), [e_2] = 1/sqrt(6)*(-1, -1, 2) -> [r] = [r_0] + [r]([e_1]cos(t) + [e_2]sin(t))}",
+,Arc length,"$math{\int{t_1, t_2, |d*[r]/(dt)|dt}}",
+,Piecewise smooth curves,"$math{[r](t) fail to be smooth where d[r]/dt = 0}
+$math{-> Curve: C = \S{k=1, n, C_k} with parametrization {k=1, n, [r_k]}}
+$math{-> \S{1, k, \int{a_i, b_i, |d*[r_i]/dt|*dt}}}",
+,Arc length parametrization,"$math{s(t) = \int{t_0, t, |d/(dt)([r](t))|dt}}
+$math{[r](s) = [r](t(s)) -> Speed 1}",
+,Unit tangent vector,$math{[T] = [v](t)/v(t) = (d[r]/dt)/|d[r]/dt| = d[r]/ds},
+,Unit normal vector,"$math{[N](s) = d[T]/(ds)}
+$math{[T](s).[T](s)=1 -> 2[T](s).d[T]/(ds) = 0}",
+,Curvature ,$math{\k(s) = |d[T]/(ds)|},
+,Radius of curvature,$math{\r(s) = 1/\k(s)},
+,,$math{[N](s) = 1/\k(s)*d[T]/(ds) = (d[T]/(ds))/|d[T]/(ds)|},
 ,,"Curvature as rate of turning of unit tangent
-\k > 0 on interval containing s, \D\t angle between [T](s+\D*s) and [T](s) -> \k(s) = lim{\D*s->0, (\D*\t)/(\D*s)}
+$math{\k > 0 on interval containing s, \D\t angle between [T](s+\D*s) and [T](s) -> \k(s) = lim{\D*s->0, (\D*\t)/(\D*s)}}
 
-[\D*T] = [T](s+\D*s) - [T](s)
--> \lim{\D*s->0, |(\D*[T])/(\D*\t)| = 1
-\k(s) = \lim{\D*s->0, (\D*[T])/(\D*s)} = \lim{\D*s->0, (\D*[T])/(\D*\t)}*\lim{\D*s->0, (\D*\t)/(\D*s)} = \lim{\D*s->0, (\D*\t)/(\D*s)}",
-,Osculating plane,[r](s) with both [N] and [T],
-,Osculating circle,"[r_c] circle center, \r(s) radius
-[r_c](s) = [r](s) + \r(s)[N](s)",
-,Unit binomial,[B] = [T]*[N],
-,Torsion,"\k(s) != 0 -> exist \t(s) torsion in d[B]/(ds) = -\t(s)[N](s)
+$math{[\D*T] = [T](s+\D*s) - [T](s)}
+$math{-> \lim{\D*s->0, |(\D*[T])/(\D*\t)| = 1}
+$math{\k(s) = \lim{\D*s->0, (\D*[T])/(\D*s)} = \lim{\D*s->0, (\D*[T])/(\D*\t)}*\lim{\D*s->0, (\D*\t)/(\D*s)} = \lim{\D*s->0, (\D*\t)/(\D*s)}}",
+,Osculating plane,$math{[r](s) with both [N] and [T]},
+,Osculating circle,"$math{[r_c] circle center, \r(s) radius}
+$math{[r_c](s) = [r](s) + \r(s)[N](s)}",
+,Unit binomial,$math{[B] = [T]*[N]},
+,Torsion,"$math{\k(s) != 0 -> exist \t(s) torsion in d[B]/(ds) = -\t(s)[N](s)}
 
-d[B]/(ds) = d[T]/(ds)*[N] + [T]*d[N]/(ds) = \k[N]*[N] + [T]*d[N]/(ds) = [T]*d[N]/(ds)
-d[B]/(ds) both perpendicular to [T] and [B] -> parallel with [N]",
-,,"lim{\Ds->0, |\D\phi/\D*s|} = |\t(s)|",
-,Frenet-Serret frame,"{[T], [N], [B]}",
-,Frenet-Serret formulas,"d[T]/(ds) = \k[N]
-d[N]/(ds) = -\k[T] + \t[B]
-d[B]/(ds) = -\t[N]",
+$math{d[B]/(ds) = d[T]/(ds)*[N] + [T]*d[N]/(ds) = \k[N]*[N] + [T]*d[N]/(ds) = [T]*d[N]/(ds)}
+$math{d[B]/(ds) both perpendicular to [T] and [B] -> parallel with [N]}",
+,,"$math{lim{\Ds->0, |\D\phi/\D*s|} = |\t(s)|}",
+,Frenet-Serret frame,"$math{{[T], [N], [B]}}",
+,Frenet-Serret formulas,"$math{d[T]/(ds) = \k[N]}
+$math{d[N]/(ds) = -\k[T] + \t[B]}
+$math{d[B]/(ds) = -\t[N]}",
 ,The fundamental theorem of space curves,"C_1 and C_2 curves with same \k(s) != 0, \t(s) -> Congruent curves (moved rigidly, only translate and rotate to coincide)
 s=0 -> coinciding frames
 
-[N], [B] undefined \k=0, (C_1: [T_1](s), [N_1](s), [B_1](s)), (C_2: [T_2](s), [N_2](s), [B_2](s))
-f(s) = [T_1](s).[T_2](s) + [N_1](s).[N_2](s) + [B_1](s).[B_2](s)
-f'(s) = [T_1]'(s).[T_2](s) + [T_1](s).[T_2]'(s) + [N_1]'(s).[N_2](s) + [N_1](s).[N_2]'(s) + [B_1]'(s).[B_2](s) + [B_1](s).[B_2]'(s) = \k*[N_1].[T_2] + [T_1].(\k*[N_2]) + (-\k*[T_1] + \t*[B_1]).[N_2] + [N_1].(-\k[T_2] + \t[B_2]) + (-\t*[N_1]).[B_2] + [B_1](-\t*[N_2]) = 0 -> Coinciding curve frames, coinciding curve -> f(s)=3 -> [T_1](s).[T_2](s) = 1 -> d[r_1]/(ds) = [T_1] = [T_2] = d[r_2]/(ds) -> [r_1](s) = [r_2](s) (s=0 coinciding point)",
-,General parametrization,"[v] = d*[r]/(dt) = d*[r]/(ds)*(ds)/(dt) = v[T]
-[a] = d*[v]/(dt) = (dv)/(dt)*[T] + v*d*[T]/(dt) = (dv)/(dt)*[T] + v*d*[T]/(ds)*(ds)/dt) = (dv)/(dt)[T] + v^2\k*[N] <- Tangental + normal acceleration
-[v]*[a] = v[T]*(dv/(dt)[T]) + v^3\k[T]*[N] = v^3\k*[B]",
-,,"-> [T] = [v]/v, [B] = ([v]*[a])/|[v]*[a]|, \k = |[v]*[a]|/[v]^3",
-,,"(d*[T])/(dt) = (d*[T])/(ds)*(ds)/(dt) = v*(d*[T])/(ds) = v\k*[N]
--> [N]=[B]*[T] = 1/(v\k)*(d*[T])/(dt) = \r/v*(d*[T])/(dt) = ((d*[T])/(dt))/|(d*[T])/(dt)|",
-,,"(d*[a])/(dt) = d/(dt)((dv)/(dt)[T] + v^2\k*[N]) = [several terms] = \l*[T] + \m*[N] + v^3\k\t*[B] (\l and \m some constant)
-([v]*[a]).(d*[a])/(dt) = (v^3\k)^2\t = |[v]*[a]|^2\t
--> \t = ([v]*[a]).((d*[a])/(dt))/|[v]*[a]|^2",
-,Evolutes,[r_c](t) = [r](t) + \r(t)[N](t),
+$math{[N], [B] undefined \k=0, (C_1: [T_1](s), [N_1](s), [B_1](s)), (C_2: [T_2](s), [N_2](s), [B_2](s))}
+$math{f(s) = [T_1](s).[T_2](s) + [N_1](s).[N_2](s) + [B_1](s).[B_2](s)}
+$math{f'(s) = [T_1]'(s).[T_2](s) + [T_1](s).[T_2]'(s) + [N_1]'(s).[N_2](s) + [N_1](s).[N_2]'(s) + [B_1]'(s).[B_2](s) + [B_1](s).[B_2]'(s) = \k*[N_1].[T_2] + [T_1].(\k*[N_2]) + (-\k*[T_1] + \t*[B_1]).[N_2] + [N_1].(-\k[T_2] + \t[B_2]) + (-\t*[N_1]).[B_2] + [B_1](-\t*[N_2]) = 0 -> Coinciding curve frames, coinciding curve -> f(s)=3 -> [T_1](s).[T_2](s) = 1 -> d[r_1]/(ds) = [T_1] = [T_2] = d[r_2]/(ds) -> [r_1](s) = [r_2](s) (s=0 coinciding point)}",
+,General parametrization,"$math{[v] = d*[r]/(dt) = d*[r]/(ds)*(ds)/(dt) = v[T]}
+$math{[a] = d*[v]/(dt) = (dv)/(dt)*[T] + v*d*[T]/(dt) = (dv)/(dt)*[T] + v*d*[T]/(ds)*(ds)/dt) = (dv)/(dt)[T] + v^2\k*[N] <- Tangental + normal acceleration}
+$math{[v]*[a] = v[T]*(dv/(dt)[T]) + v^3\k[T]*[N] = v^3\k*[B]}",
+,,"$math{-> [T] = [v]/v, [B] = ([v]*[a])/|[v]*[a]|, \k = |[v]*[a]|/[v]^3}",
+,,"$math{(d*[T])/(dt) = (d*[T])/(ds)*(ds)/(dt) = v*(d*[T])/(ds) = v\k*[N]}
+$math{-> [N]=[B]*[T] = 1/(v\k)*(d*[T])/(dt) = \r/v*(d*[T])/(dt) = ((d*[T])/(dt))/|(d*[T])/(dt)|}",
+,,"$math{(d*[a])/(dt) = d/(dt)((dv)/(dt)[T] + v^2\k*[N]) = [several terms] = \l*[T] + \m*[N] + v^3\k\t*[B] (\l and \m some constant)}
+$math{([v]*[a]).(d*[a])/(dt) = (v^3\k)^2\t = |[v]*[a]|^2\t}
+$math{-> \t = ([v]*[a]).((d*[a])/(dt))/|[v]*[a]|^2}",
+,Evolutes,$math{[r_c](t) = [r](t) + \r(t)[N](t)},
 ,Kepler laws and planetary motions,,
 ,,,
 ,,,
@@ -249,22 +249,22 @@ f kontinuerlig på sluten, begränsad mängd -> garanterar existensen
 Max/min kan antas i:
 - Kritiska punkter: Alla partiella derivator = 0
 - Singulära punkter: Någon av partiella derivator saknas
-- Randpunkter","f(x) = xy-x, D: x^2<=y<=4
-(\\df)/(\\dx) = y-1, (\\df)/(\\dy) = x, y -> (0, 1), f(0, 1)=0
-y=x^2: f(x, x^2)=x^3-x = g(x) -> g'(x)=0 -> x = 1/sqrt(3), -1/sqrt(3), f(1/sqrt(3)) = 1/(3sqrt(3)) - 1/sqrt(3) = -2/(3sqrt(3), f(1/sqrt(3)) = -1/(3sqrt(3)) + 1/sqrt(3) = 2/(3sqrt(3))
-y=4: f(2, 4) = 8-2=6, f(-2, 4)=-8+2=6"
+- Randpunkter","$math{f(x) = xy-x, D: x^2<=y<=4}
+$math{(\\df)/(\\dx) = y-1}, $math{(\\df)/(\\dy) = x}, $math{y -> (0, 1)}, $math{f(0, 1)=0}
+$math{y=x^2: f(x, x^2)=x^3-x = g(x) -> g'(x)=0 -> x = 1/sqrt(3)}, $math{-1/sqrt(3)}, $math{f(1/sqrt(3)) = 1/(3sqrt(3)) - 1/sqrt(3) = -2/(3sqrt(3), f(1/sqrt(3)) = -1/(3sqrt(3)) + 1/sqrt(3) = 2/(3sqrt(3))}
+$math{y=4: f(2, 4) = 8-2=6, f(-2, 4)=-8+2=6}"
 ,,Andraderivatatest: ...,
-,Optimering med bivillkor,"f(x, y) = (2x+y)^2 som uppfyller g(x, y) = c -> \nabla f och \nabla g paraella, vinkelrät mot nivåkurva (\nabla f = \l*\nabla g)
+,Optimering med bivillkor,"$math{f(x, y) = (2x+y)^2 som uppfyller g(x, y) = c -> \nabla f och \nabla g paraella, vinkelrät mot nivåkurva (\nabla f = \l*\nabla g)}
 
--> Sök kritiska punkter till (Lagrangefunktionen) L(x, y, \l) = f(x, y) - \l*(g(x, y)-c)
-0 = (\\dL)/(\\dx) = (\\df)/(\\dx) - \l*(\\dg)/(\\dx))
-0 = (\\dL)/(\\dy) = (\\df)/(\\dy) - \l*(\\dg)/(\\dy))
-0 = (\\dL)/(\\d\l) = g(x, y)","f(x, y)=(2x+y)^2, x^2+y^2-5=0
--> \pm(1, -2), \pm(2, 1)"
+$math{-> Sök kritiska punkter till (Lagrangefunktionen) L(x, y, \l) = f(x, y) - \l*(g(x, y)-c)}
+$math{0 = (\\dL)/(\\dx) = (\\df)/(\\dx) - \l*(\\dg)/(\\dx))}
+$math{0 = (\\dL)/(\\dy) = (\\df)/(\\dy) - \l*(\\dg)/(\\dy))}
+$math{0 = (\\dL)/(\\d\l) = g(x, y)}","$math{f(x, y)=(2x+y)^2, x^2+y^2-5=0}
+$math{-> \pm(1, -2), \pm(2, 1)}"
 ,Maxima and minima,,
-,"f(a, b) maximum","f_(x)'(a, b) = f_(y)'(a, b) = 0, (f_(xy)')^2(a, b) - f_(xx)'(a, b)*f_(yy)'(a, b) < 0",
-,"f(a, b) minimum","f_(xx)'(a, b) < 0, f_(yy)'(a, b) < 0",
-,,"f_(xx)'(a, b) > 0, f_(yy)'(a, b) > 0",
+,"f(a, b) maximum","$math{f_(x)'(a, b) = f_(y)'(a, b) = 0, (f_(xy)')^2(a, b) - f_(xx)'(a, b)*f_(yy)'(a, b) < 0}",
+,"f(a, b) minimum","$math{f_(xx)'(a, b) < 0, f_(yy)'(a, b) < 0}",
+,,"$math{f_(xx)'(a, b) > 0, f_(yy)'(a, b) > 0}",
 ,,,
 ,,,
 ,,,
@@ -280,69 +280,69 @@ y=4: f(2, 4) = 8-2=6, f(-2, 4)=-8+2=6"
 ,,,
 ,,,
 ,,,
-Vector fields,,"f(x, y, z) = (x*y, y+z-1)",
-,Vector fields/Vektorfält,"[F](x, y, z) = -k/(x^2+y^2+z^2)^(3/2)(x, y, z)
-[F](x, y) = k/(x^2+y^2)(-y, x)
-[F]([r]) = -k/|[r]|^3[r]",
-,Konservativ vektorfält,"[F](x, y, z) = \nabla f(x, y, z), [F] med potential f
-[F] = (P, Q, R) = ((\\df)/(//dx), (\\df)/(//dy), (\\df)/(//dz))
-(\\dP)/(\\dy) = (\\dQ)/(\\dx), (\\dQ)/(\\dz) = (\\dR)/(\\dy), (\\dP)/(\\dz) = (\\dR)/(\\dx)
+Vector fields,,"$math{f(x, y, z) = (x*y, y+z-1)}",
+,Vector fields/Vektorfält,"$math{[F](x, y, z) = -k/(x^2+y^2+z^2)^(3/2)(x, y, z)}
+$math{[F](x, y) = k/(x^2+y^2)(-y, x)}
+$math{[F]([r]) = -k/|[r]|^3[r]}",
+,Konservativ vektorfält,"$math{[F](x, y, z) = \nabla f(x, y, z), [F] med potential f}
+$math{[F] = (P, Q, R) = ((\\df)/(//dx), (\\df)/(//dy), (\\df)/(//dz))}
+$math{(\\dP)/(\\dy) = (\\dQ)/(\\dx)}, $math{(\\dQ)/(\\dz) = (\\dR)/(\\dy)}, $math{(\\dP)/(\\dz) = (\\dR)/(\\dx)}
 
 Blandade andraderivatorna lika:
-\\f_('xy) = \\f_('yx) -> (\\dP)/(\\dy) = (\\dQ)/(\\dx)
+$math{\\f_('xy) = \\f_('yx) -> (\\dP)/(\\dy) = (\\dQ)/(\\dx)}
 
 Fältlinjer, potential, ekvipotentiallinjer",
-,Kurvintegraler av vektorfält,"[F] = (P, Q), [r](t) = (x(t), y(t))
-int2{\g, [F].[dr]} = int2{\g, Pdx+Qdy} = int{a, b, (P(x(t), y(t))x'(t) + Q(x(t), y(t))y'(t))dt}",
-,,"Konservativ vektorfält, [F]=(y^2, 2xy) -> f=xy^2, [r](t) = (t, t^2) r(0) -> r(1)
-int2{\g, [F].[dr]} = f(1, 1^2) - f(0, 0^2)",
-,Ytintegral,"Y: x^2+y^2+z^2=1, z>=0 -> [r](sin(\p)cos(\t), sin(\p)sin(\t), cos(\p))
-dS = |[r_('\p)]*[r_('\t)]|d\p*d\t, int2{Y, z^2*dS} = int{0, 2\pi, int{0, \pi/2, cos^2(\p)*sin(\p)d\p}d\t}",
-,Flödesintegral,"[F](x, y, z) = (x, y, 0), Y: x^2+y^2<=1, 0<=x<=1
-int2{Y, [F].[N]dS} = int2{Y, (cos(\t), sin(\t), 0).(cos(\t), sin(\t), 0)|[r_('\t)*r_('z)]|d\t*d\z}",
-,Green's formel i planet,"ringint{\g, (P*dx+Q*dy)} = int2{D, ((\\dQ)/(\\dx) - (\\dP)/(\\dy))dxdy}
+,Kurvintegraler av vektorfält,"$math{[F] = (P, Q), [r](t) = (x(t), y(t))}
+$math{int2{\g, [F].[dr]} = int2{\g, Pdx+Qdy} = int{a, b, (P(x(t), y(t))x'(t) + Q(x(t), y(t))y'(t))dt}}",
+,,"$math{Konservativ vektorfält, [F]=(y^2, 2xy) -> f=xy^2, [r](t) = (t, t^2) r(0) -> r(1)}
+$math{int2{\g, [F].[dr]} = f(1, 1^2) - f(0, 0^2)}",
+,Ytintegral,"$math{Y: x^2+y^2+z^2=1, z>=0 -> [r](sin(\p)cos(\t), sin(\p)sin(\t), cos(\p))}
+$math{dS = |[r_('\p)]*[r_('\t)]|d\p*d\t, int2{Y, z^2*dS} = int{0, 2\pi, int{0, \pi/2, cos^2(\p)*sin(\p)d\p}d\t}}",
+,Flödesintegral,"$math{[F](x, y, z) = (x, y, 0), Y: x^2+y^2<=1, 0<=x<=1}
+$math{int2{Y, [F].[N]dS} = int2{Y, (cos(\t), sin(\t), 0).(cos(\t), sin(\t), 0)|[r_('\t)*r_('z)]|d\t*d\z}}",
+,Green's formel i planet,"$math{ringint{\g, (P*dx+Q*dy)} = int2{D, ((\\dQ)/(\\dx) - (\\dP)/(\\dy))dxdy}}
 (Under vissa förutsättningar, positivt orienterad)
-\g en kurva runt område D","\g: x^2+y^2=1, x=0, y=0, x>=0, y>=0
-ringint{\g, -y^3dx + x^3dy} = int{D, (3x^2+3y^2)dxdy}"
+\g en kurva runt område D","$math{\g: x^2+y^2=1}, $math{x=0}, $math{y=0}, $math{x>=0}, $math{y>=0}
+$math{ringint{\g, -y^3dx + x^3dy} = int{D, (3x^2+3y^2)dxdy}}"
 ,Divergenssatsen/Gauss sats,"(Under vissa förutsättningar på [F], K)
-int2(\\dK, [F].[N]dS) = int3{K, div[F]dV}
+$math{int2(\\dK, [F].[N]dS) = int3{K, div[F]dV}}
 
-K: x^2+y^2+z^2 = 1
-[F](x, y, z) = (x+y, y, 0), int2{\\dK, [F].[N]dS} = int3{K, div[F]dV} = int3{K, 3dV}",
+$math{K: x^2+y^2+z^2 = 1}
+$math{[F](x, y, z) = (x+y, y, 0), int2{\\dK, [F].[N]dS} = int3{K, div[F]dV} = int3{K, 3dV}}",
 ,,,
 ,,,
 ,,,
 ,,,
-,Derivative of vectors,"[A]([u]) = [[A_1([u])], [A_2([u])], [A_3([u])]]
-d[A]/du = lim{\Du->0, (A(u+\Du)-A(u))/(\Du)} = [[dA_1/du], [dA_2/du], [dA_3/du]]",
-,Nabla operator/del operator,"\nabla = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]",
-,,"grad f = (\nabla)f = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]",
-,,div [F] = \nabla.[F] = \\dF_1/\\dx + \\dF_2/\\dx + \\dF_3/\\dx,
-,,"curl [F] = \nabla*[F] = [[\\dF_3/\\dy-\\dF_2/\\dz], [\\dF_1/\\dz-\\dF_3/\\dx], [\\dF_2/\\dx-\\dF_1/\\dy]]",
-,Derivative rules for vectors,d/(dx)([F].[G]) = [F].(d[G])/(dx) + (d[F])/(du).[G],
-,,d/(dx)([F]*[G]) = [F]*(d[G])/(dx) + (d[F])/(dx)*[G],
-,,d/(dx)([F].([G]*[H])) = (d[F])/(dx).([G]*[H]) + [F].((d[G])/(dx)*[H]) + [F].([G]*(d[H]/dx)),
-,,[F].(d[F])/(dx) = [F](d[F])/(dx),
-,,"[F].(d[F])/(dx) = 0, if |[F]| is constant",
+,Derivative of vectors,"$math{[A]([u]) = [[A_1([u])], [A_2([u])], [A_3([u])]]}
+$math{d[A]/du = lim{\Du->0, (A(u+\Du)-A(u))/(\Du)} = [[dA_1/du], [dA_2/du], [dA_3/du]]}",
+,Nabla operator/del operator,"$math{\nabla = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]}",
+,,"$math{grad f = (\nabla)f = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]}",
+,,$math{div [F] = \nabla.[F] = \\dF_1/\\dx + \\dF_2/\\dx + \\dF_3/\\dx},
+,,"$math{curl [F] = \nabla*[F] = [[\\dF_3/\\dy-\\dF_2/\\dz], [\\dF_1/\\dz-\\dF_3/\\dx], [\\dF_2/\\dx-\\dF_1/\\dy]]}",
+,Derivative rules for vectors,$math{d/(dx)([F].[G]) = [F].(d[G])/(dx) + (d[F])/(du).[G]},
+,,$math{d/(dx)([F]*[G]) = [F]*(d[G])/(dx) + (d[F])/(dx)*[G]},
+,,$math{d/(dx)([F].([G]*[H])) = (d[F])/(dx).([G]*[H]) + [F].((d[G])/(dx)*[H]) + [F].([G]*(d[H]/dx))},
+,,$math{[F].(d[F])/(dx) = [F](d[F])/(dx)},
+,,"$math{[F].(d[F])/(dx) = 0, if |[F]| is constant}",
 ,,,
-,Nabla operator rules,\nabla(f+g) = \nabla(f) + \nabla(g),
-,,\nabla.([F]+[G]) = \nabla.[F] + \nabla.[G],
-,,\nabla*([F]+[G]) = \nabla*[F] + \nabla*[G],
-,,\nabla.(f[G]) = ((\nabla)f).[G] + f(\nabla.[G]),
-,,\nabla*(f[G]) = ((\nabla)f)*[G] + f(\nabla*[G]),
-,,\nabla.([F]*[G]) = [G].(\nabla*[F]) - [F].(\nabla*[G]),
-,,\nabla*([F]*[G]) = ([G].\nabla)[F] - [G](\nabla.[F]) - ([F].\nabla)[G] + [F](\nabla.[G]),
-,,\nabla([F].[G]) = ([G].\nabla)[F] + ([F].\nabla)[G] + [G]*(\nabla*[F]) + [F]*(\nabla*[G]),
-,,\nabla*((\nabla)f) = 0,
-,,\nabla.(\nabla*[F]) = 0,
-,,\nabla.((\nabla)f) = (\nabla^2)U,
-,,\nabla*(\nabla*[F]) = \nabla(\nabla.[F])-\nabla^2[F],
+,Nabla operator rules,$math{\nabla(f+g) = \nabla(f) + \nabla(g)},
+,,$math{\nabla.([F]+[G]) = \nabla.[F] + \nabla.[G]},
+,,$math{\nabla*([F]+[G]) = \nabla*[F] + \nabla*[G]},
+,,$math{\nabla.(f[G]) = ((\nabla)f).[G] + f(\nabla.[G])},
+,,$math{\nabla*(f[G]) = ((\nabla)f)*[G] + f(\nabla*[G])},
+,,$math{\nabla.([F]*[G]) = [G].(\nabla*[F]) - [F].(\nabla*[G])},
+,,$math{\nabla*([F]*[G]) = ([G].\nabla)[F] - [G](\nabla.[F]) - ([F].\nabla)[G] + [F](\nabla.[G])},
+,,$math{\nabla([F].[G]) = ([G].\nabla)[F] + ([F].\nabla)[G] + [G]*(\nabla*[F]) + [F]*(\nabla*[G])},
+,,$math{\nabla*((\nabla)f) = 0},
+,,$math{\nabla.(\nabla*[F]) = 0},
+,,$math{\nabla.((\nabla)f) = (\nabla^2)U},
+,,$math{\nabla*(\nabla*[F]) = \nabla(\nabla.[F])-\nabla^2[F]},
 ,,,
 ,,,
 ,,,
-,Differentiation under the integral sign,"f(\a) = int{g_1(\a), g_2(\a), f(x,\a)*dx} ->
-df/d\a = f(g_2, \a)*dg_2/d\a - f(g_1(\a),\a)*dg_1/d\a + int{(g_1(\a)), (g_2(\a)), \df(x,\a)/\d\a*dx}
-= int{(g_1), (g_2), \df(x,\a)/\d\a*dx} (if g_1, g_2 = constant), formula of Leibnitz",
+,Differentiation under the integral sign,"$math{f(\a) = int{g_1(\a), g_2(\a), f(x,\a)*dx} ->}
+$math{df/d\a = f(g_2, \a)*dg_2/d\a - f(g_1(\a),\a)*dg_1/d\a + int{(g_1(\a)), (g_2(\a)), \df(x,\a)/\d\a*dx}}
+$math{= int{(g_1), (g_2), \df(x,\a)/\d\a*dx} (if g_1, g_2 = constant), formula of Leibnitz}",
 ,Laplace equations,$math{\\d^2z/(\\dx^2)+\\d^2z/(\\dy^2)=0 -> z=e^(kx)*cos(ky)},
 ,,"$math{f(x, y)} harmonic -> $math{f(x^2-y^2, 2xy)} harmonic",
 ,Wave equation,$math{\\d^2w/(\\dt^2) = c^2*(\\d^2w/(\\dx^2)) -> w=f(x-ct)+g(x+ct)},

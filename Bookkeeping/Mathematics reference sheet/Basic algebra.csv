@@ -1,75 +1,75 @@
 Group,Name,Basic relationship,Presetted values
 rich,rich,rich,rich
-Basic algebra rules,Simple expansion,"Expansion: (x~y)=x~'y, Factorization: x~'y=(x~y), variables itself contains sign 
+Basic algebra rules/Grundläggande algebraregler,Simple expansion/Enkel utveckling,"Expansion: (x~y)=x~'y, Factorization: x~'y=(x~y), variables itself contains sign 
 -> Expansion/Utveckling E[...], <- Factorization/Faktorisering F[...]
 Start with innermost pair, remove brackets, collect like terms and add/subtract",
-,,x+(y+z) = x+y+z,2 3 x = ...
-,,x(y+z) = xy+xz,"2 2 -3 = …, xy=18x, xz=-2x^2, x=2x, y=9, z=-x"
+,,$math{x+(y+z) = x+y+z},$math{2 3 x = ...}
+,,$math{x(y+z) = xy+xz},"2 2 -3 = …, xy=18x, xz=-2x^2, x=2x, y=9, z=-x"
 ,,1 + 2,4x+2(2x-3) = …
-,,(x+y)(z+t) = xz+xt+yz+yt,x 3 2x 4 = …
-,,x/y = (xz)/(yz),
+,,$math{(x+y)(z+t) = xz+xt+yz+yt},x 3 2x 4 = …
+,,$math{x/y = (xz)/(yz)},
 ,,"\\Ax -> x<3 -!-> x^2<3x or x^2<3x -> x<3
 Cannot multiply or divide an inequality with an arbitrary variable!!!",
 ,Fractional arithmetics,(yr=ts) => x/y + z/t = xr/(yr)+zs/ts = (xr+zs)/yr = (xr+zs)/ts,"x=1, y=5, z=2, t=7, (r=7, s=5)
 x=1, y=4, z=3, t=10, (r=5, s=2)"
 ,,"={k=0, n, T[k]B[k]}, +{k=0, n, A[k]/B[k]}=+{k=0, n, A[k]T[k]/B[k]T[k]}","A=[1, 3, -1], B=[8, 4, 6], T=[3, 6, 4]"
-,,x/y = (xz)/(yz),"1/2=2/4, 5/3=10/6"
-,,x/z*y/t = (xz)/(yt),
-,,x/(y/z) = x/y*z,1/3 1 2
-,,A/B = C/D -> (A + B)/B = (C + D)/D,
-,,(A - B)/B = (C - D)/D,
-,,(A - B)/(A + B) = (C - D)/(C + D),
+,,$math{x/y = (xz)/(yz)},"1/2=2/4, 5/3=10/6"
+,,$math{x/z*y/t = (xz)/(yt)},
+,,$math{x/(y/z) = x/y*z},1/3 1 2
+,,$math{A/B = C/D -> (A + B)/B = (C + D)/D},
+,,$math{(A - B)/B = (C - D)/D},
+,,$math{(A - B)/(A + B) = (C - D)/(C + D)},
 ,,Combined,"(1/7+5/7)/2, (1/8+1/12)/2"
-,Power of sum/difference,(x+y)^2 = x^2+2xy+y^2,"3x 4, 4x 5/x, 2a 3b, (a+b) c -> a b
-sqrt(2) sqrt(8)"
-,,(x-y)^2 = x^2-2xy-y^2,7x 2
+,$math{Power of sum/difference},$math{(x+y)^2 = x^2+2xy+y^2},"3x 4, 4x 5/x, 2a 3b, (a+b) c -> a b
+$math{sqrt(2) sqrt(8)}"
+,,$math{(x-y)^2 = x^2-2xy-y^2},7x 2
 ,,(x+y+z+…)^2 = (x^2+y^2+z^2) + 2x(y + z + ...) + 2y(z+…) + ...,
-,,(x+y)(x-y) = x^2-y^2,x 4
-,,(x+y)^2+(x-y)^2=2(x^2+y^2),2x 3
-,,(x+y)^2-(x-y)^2=4xy,4x 5
-,,(x+y)^3 = x^3+3x^2*y+3xy^2+y^3,7x 8
-,,(x-y)^3 = x^3-3x^2*y+3xy^2-y^3,9x 2
-,,(x+y)(x^2-xy+y^2) = x^3+y^3,7x 3
-,,(x-y)(x^2+xy+y^2) = x^3-y^3,3x 5
-,,"(x+y)^z = \\S(k=0, z, C(z, k)x^(z-k)y^k)","5x 3 5, 2x 3 4"
-,,"(A(x)+B(x))^N -> k term -> C(N, k)A[^(z-k)](x)B[^k](x)",2 2x^2 3 7
+,,$math{(x+y)(x-y) = x^2-y^2},x 4
+,,$math{(x+y)^2+(x-y)^2=2(x^2+y^2)},2x 3
+,,$math{(x+y)^2-(x-y)^2=4xy},4x 5
+,,$math{(x+y)^3 = x^3+3x^2*y+3xy^2+y^3},7x 8
+,,$math{(x-y)^3 = x^3-3x^2*y+3xy^2-y^3},9x 2
+,,$math{(x+y)(x^2-xy+y^2) = x^3+y^3},7x 3
+,,$math{(x-y)(x^2+xy+y^2) = x^3-y^3},3x 5
+,,"$math{(x+y)^z = \\S(k=0, z, C(z, k)x^(z-k)y^k)}","5x 3 5, 2x 3 4"
+,,"(A(x)+B(x))^N -> k term -> C(N, k)A[^(z-k)](x)B[^k](x)",$math{2 2x^2 3 7}
 ,,"k term -> C(N, k)A[^(z-k)](x)B[^k](x) = K*x^m","A=2x^2, B=3, N=7, m=8 -> K
 A=x^2, B=1/x^3, N=15, m=0 -> K"
-,,"A^n - B^n = (A - B)(A^(n-1) + A^(n-2)B + A^(n-3)B^2 + ... + AB^(n-2) + B^(n-1))
-n = positive integer",
-,,"A^n + B^n = (A + B)(A^(n-1) - A^(n-2)B + A^(n-3)B^2 - ... - AB^(n-2) + B^(n-1))
+,,"$math{A^n - B^n = (A - B)(A^(n-1) + A^(n-2)B + A^(n-3)B^2 + ... + AB^(n-2) + B^(n-1))}
+$math{n = positive integer}",
+,,"$math{A^n + B^n = (A + B)(A^(n-1) - A^(n-2)B + A^(n-3)B^2 - ... - AB^(n-2) + B^(n-1))}
 only odd n",
-,,,(1-5x)(1+15x)-3(2-5x)(2+5x)=...=10x-11
-,Power rules,(xy)^z = x^z*y^z,9 x 6
-,,(x/y)^z = x^z/y^z,7 x 2
-,,\sqrt(xy) = \sqrt(x)\sqrt(y),15=3 5
-,,\sqrt(x/y) = \sqrt(x)/\sqrt(y),3 4
-,,"root(x, y)=x^(1/y)",16 -1/3
-,Exponential rules,x^(y+z) = x^y*x^z,"4 x 1
-4^(5n/2+1)=4^(3n/2)*4^(n+1)=16^(3n/4)*4^(n+1)"
-,,x^(y-z) = x^y/x^z,4 x 5
-,,(x^y)^z = x^(yz),4 2 x
-,,,(-2)^127/2^130=(-1)2^127/2^130
+,,,$math{(1-5x)(1+15x)-3(2-5x)(2+5x)=...=10x-11}
+,Power rules,$math{(xy)^z = x^z*y^z},9 x 6
+,,$math{(x/y)^z = x^z/y^z},7 x 2
+,,$math{\sqrt(xy) = \sqrt(x)\sqrt(y)},15=3 5
+,,$math{\sqrt(x/y) = \sqrt(x)/\sqrt(y)},3 4
+,,"$math{root(x, y)=x^(1/y)}",16 -1/3
+,Exponential rules,$math{x^(y+z) = x^y*x^z},"4 x 1
+$math{4^(5n/2+1)=4^(3n/2)*4^(n+1)=16^(3n/4)*4^(n+1)}"
+,,$math{x^(y-z) = x^y/x^z},4 x 5
+,,$math{(x^y)^z = x^(yz)},4 2 x
+,,,$math{(-2)^127/2^130=(-1)2^127/2^130}
 ,,,"3^(1/3)=3^(2*1/6)=9^(1/6), 2^(1/2)=2^(3*1/6)=8^(1/6)"
-,,,(2^(2/3))^(1/2)*3^(1/3)/6^(-2/3) = 6^(1/3)/6^(-2/3) = 6
+,,,$math{(2^(2/3))^(1/2)*3^(1/3)/6^(-2/3) = 6^(1/3)/6^(-2/3) = 6}
 ,Absolute value,"|x|={x: x>=0, -x: x<0} -> Interpreted as distance from x to 0 in number line, always positive
 |a-b|={a-b: a>=b, b-a: a<b} -> Distance between a to b, always positive",
-,,|-x|=|x|,
-,,|ab|=|a||b|,
-,,|a/b|=|a|/|b|,
-,,|a+b|<=|a|+|b|,
+,,$math{|-x|=|x|},
+,,$math{|ab|=|a||b|},
+,,$math{|a/b|=|a|/|b|},
+,,$math{|a+b|<=|a|+|b|},
 ,,"John Napier and Henry Briggs, 1618 log-tables with high precision",
 ,,"a^c=x, a^d=y => xy=a^c*a^d = a^(c+d) => log(xy)=c+d=log(x)+log(y)
-xy=a^(log(x)+log(y)) = a^(log(x))*a^(log(y))=xy
+$math{xy=a^(log(x)+log(y)) = a^(log(x))*a^(log(y))=xy}
 
-lg(12345)=lg(1.2345*10^4)=lg(1.2345)+4=0.09149+4=4.09149",
+$math{lg(12345)=lg(1.2345*10^4)=lg(1.2345)+4=0.09149+4=4.09149}",
 ,,,
-,Logarithmic rules,log(xy) = log(x)+log(y),45=5 9
-,,log(x/y) = log(x)-log(y),72 9
-,,log(x^y) = y*log(x),e 2
-,,log_n(x) = log(x)/log(n),8 2
+,Logarithmic rules,$math{log(xy) = log(x)+log(y)},45=5 9
+,,$math{log(x/y) = log(x)-log(y)},72 9
+,,$math{log(x^y) = y*log(x)},e 2
+,,$math{log_n(x) = log(x)/log(n)},8 2
 ,Comparasions,"1/5<2/5, 1/5<1/4, 8/9<9/10, 12/11>13/12",
-,,3^(5/6)>3^(3/4),
+,,$math{3^(5/6)>3^(3/4)},
 ,,"sqrt(10)+sqrt(12)>sqrt(9)+sqrt(11), sqrt(9)+sqrt(12)<sqrt(10)+sqrt(11) (square both sides)",
 ,Equations,A = B => f(A) = f(B),"x+1 2x+3 (f(n)=n-x-3), x+1 = 2x+3 => -2 = 2x, 2x+3=5x -> x=1"
 ,,"SOLUTIONS UNCHANGED:
@@ -84,9 +84,9 @@ lg(12345)=lg(1.2345*10^4)=lg(1.2345)+4=0.09149+4=4.09149",
 ,Equation system,"1. Solve either equation for one unknown in terms of the other
 2. Substitute solution into second equation and obtain the first unknown
 3. Substitute this unknown into either the original equations and solve for second unknown",
-,,"1. (y+x=13, y-x=3) -> y=3+x -> (3+x)+x=13 -> (x=5, y=8)
-2 (ADD) (y+x=13)+(y-x=3)=(2y=16)
-3 (SUB) (y+x=13)-(y-x=3)=(y+x=13)+(-y+x=-3)=(2x=10)",
+,,"$math{1. (y+x=13, y-x=3) -> y=3+x -> (3+x)+x=13 -> (x=5, y=8)}
+$math{2 (ADD) (y+x=13)+(y-x=3)=(2y=16)}
+$math{3 (SUB) (y+x=13)-(y-x=3)=(y+x=13)+(-y+x=-3)=(2x=10)}",
 ,Linear equations,ax+b=0 => x=-b/a,
 ,,x+(x+1)+(x+2)+(x+3)=…,
 ,,,(x_1*n_1)/(x_0*n_0)=1+16% => (x_0(1-20%)*n_1)/(x_0*n_0)=1+16% => n_1/n_0=1.16/0.8
@@ -106,31 +106,31 @@ a=-1, b=5, c=1"
 ,,"|ax+b|> c => ax+b>c => x>(c-b)/a, ax+b<-c => x<(-c-b)/a",
 ,,|x-a|=|x-b| => x=(a+b)/2,"a=-1, b=5"
 ,,|x-a|<|x-b| => x<(a+b)/2,"a=3, b=1"
-,,|ax+b|+|cx+d|=\'e => ,|x-1|+|x+1|=3
-,Negative factoring,(A*B)/(-A) = -B,"A=3-a, B=3+a"
-,Conjugate multiplication,A/(B+C) = A(B-C)/((B+C)(B-C)) = A(B-C)/(B^2-C^2),"\sqrt(2) \sqrt(3) \sqrt(5)
-\sqrt(2) \sqrt(3)+\sqrt(5) sqrt(7) -> \sqrt(2)(\sqrt(3)+\sqrt(5)-sqrt(7)) 2\sqrt(15) 1"
+,,|ax+b|+|cx+d|=\'e => ,$math{|x-1|+|x+1|=3}
+,Negative factoring,$math{(A*B)/(-A) = -B},"A=3-a, B=3+a"
+,Conjugate multiplication,$math{A/(B+C) = A(B-C)/((B+C)(B-C)) = A(B-C)/(B^2-C^2)},"$math{\sqrt(2) \sqrt(3) \sqrt(5)}
+$math{\sqrt(2) \sqrt(3)+\sqrt(5) sqrt(7) -> \sqrt(2)(\sqrt(3)+\sqrt(5)-sqrt(7)) 2\sqrt(15) 1}"
 ,Polynomial factorizations,"*{k=0, n, A[k]}=0 => {k=0, n, A[k]=0}","[x-2, x-5], [x+7, x-1], [2x+3, 5x+7], 9x^2-6x -> [3x+8, 3x-8]"
 ,,"P(x)=+{k=0, n, a[k]x^k}=A*(*{k=0, n, x-r[k]}), (P(r)=0 => {k=0, n, r[k]})","a=[1, -7, 15], r=[3, 5]"
-,Polynomial grouping,"+{l=0, m, (+{k=0, n, a[l][k]x^k})} = +{k=0, n, (+{l=0, m, a[l][k]})*x^k}",A(x^3+3x^2+3x+1) + 3(x^3+3x^2+3x+1) + C(x^4+2x^2+1)
+,Polynomial grouping,"$math{+{l=0, m, (+{k=0, n, a[l][k]x^k})} = +{k=0, n, (+{l=0, m, a[l][k]})*x^k}}",$math{A(x^3+3x^2+3x+1) + 3(x^3+3x^2+3x+1) + C(x^4+2x^2+1)}
 ,Polynomial division,"f(x), g(x), r(x) polynomials, degree(g(x))>=1
-f(x)=q(x)g(x)+r(x), degree(r(x))<degree(g(x)) or r(x)=0","(x^3+3x^2+3x+2)/(x+1)
-(x^4-3x^2+3x)/(x^2+1)"
-,Factor theorem/Faktorsatsen,"f(x): polynomial, a: real number
-f(x)=(x-a)q(x) -> f(a)=0","x^3-5x^2+8x-4=0, f(1)=0 -> (x-1) dividable"
+f(x)=q(x)g(x)+r(x), degree(r(x))<degree(g(x)) or r(x)=0","$math{(x^3+3x^2+3x+2)/(x+1)}
+$math{(x^4-3x^2+3x)/(x^2+1)}"
+,$math{Factor theorem/Faktorsatsen},"f(x): polynomial, a: real number
+$math{f(x)=(x-a)q(x) -> f(a)=0}","x^3-5x^2+8x-4=0, f(1)=0 -> (x-1) dividable"
 ,Fractional expressions,"(={k=0, n, B[k]R[k]}, expression common denominator)
 \+{k=0, n, A[k]/B[k]} => +{k=0, n, A[k]R[k]/(B[k]R[k]))","A=[x+2, -x], B=[x, x+2], (R=[x+2, x])
 A=[3, 4, 5], B=[x, x^2, x^3], (R=[x^2, x, 1])
 A=[2x+1, 1+x], B=[x+2, x-3], (R=[x-3, x+2])
 A=[1, 1], B=[(x+1)(x-1), x(x-1)], R=[x, (x+1)]"
-,,,(x+1/x)/(1-1/(x^2+1))=(x^4+2x^2+1)/x^3
-,,AB/(AC) = B/C,"AB=x^2-12x+36, AC=x^2-36 A=x-6 B=x-6 C=x+6
+,,,$math{(x+1/x)/(1-1/(x^2+1))=(x^4+2x^2+1)/x^3}
+,,$math{AB/(AC) = B/C},"AB=x^2-12x+36, AC=x^2-36 A=x-6 B=x-6 C=x+6
 AB=6x, AC=4x^2+2x, A=2x, B=3, C=2x+1
 AB=x^2-4, AC=x^2-4x+4, A=x-2, B=x+2, C=x-2
 AB=5x^4-20x^2, AC=x^2-2x, A=x(x-2), B=5x(x+2), C=1"
 ,,"AB/(CD) = -CB/(CD) = -B/D, (A=-C)","AB = 9-a^2, 3+a, 3-a, a-3, 1"
-,,x/(y/z) = x/y*z,"x=70, y=3x+3, z=21x"
-,Fractional equations,"A/B=C/D => AD=BC (B!=0, D!=0)",A=x+1 B=x-1 C=9 D=1
+,,$math{x/(y/z) = x/y*z},"x=70, y=3x+3, z=21x"
+,Fractional equations,"A/B=C/D => AD=BC (B!=0, D!=0)",$math{A=x+1 B=x-1 C=9 D=1}
 ,,"({k=0, n, B[k]R[k]=S}) +{k=0, n, A[k]/B[k]} = C/D => +{k=0, n, A[k]R[k]/(B[k]R[k]))}= (CS)/(DS) => +{k=0, n, A[k]R[k]}=CS","A=[1, -1], B=[x-1, x+3], (R=[3(x+3), 3(x-1)], S=(x-1)(x+3)), C=4, D=3
 A=[1, 2], B=[sqrt(4-x), x], (R=[x, sqrt(4-x)], S=x*sqrt(4-x), C=0, D=0
 A=[1, x], B=[x, 2], (R=[2, x], S=2), C=9, D=x -> x=\pm4
@@ -141,11 +141,11 @@ A=[3, x], B=[x, 2], (R=[2, x], S=x), C=9x, D=2"
 1 x+2, x+22"
 ,,A(x)+k*sqrt(B(x))=C(x) => k*sqrt(B(x))=C(x)-A(x),"x 1 x 2, 2 1 x-3 0, 2 1 x-1 1-x, x-2 -1 3x-2 0, x+(x+5) 1 x^2+(x+5)^2 60"
 ,,"A(x)+{k=0, n, r[k]*sqrt(B[x](x))}=C(x)+{k=0, n, r[k]*sqrt(D[x](x))} ) => ","0 [1, -1] [7-x, x+13] 2 [] []
-0 [1, 1] [x, x+15] 0 [1] [5x+20]"
+$math{0 [1, 1] [x, x+15] 0 [1] [5x+20]}"
 ,Logarithmetic equations,a^b(x)=c => ln(a^b(x)) = ln(c) => b(x)*ln(a) = ln(c) => b(x)=ln(c)/ln(a),"a=10, b=x, c=210"
 ,,ln(A) = ln(B) => A = B,
 ,,"ln(*{k=0, len(A), A[k](x))=ln(*{k=0, len(B), B[k](x)}) => +{k=0, len(A), ln(A[k](x))} = +{k=0, len(B), ln(B[k](x))}","A=[13, e^x], B=[2, 3^(-x)]"
-,,,(e^x+e^(-x))/2=3 -> e^(2x)-6e^x+1=0
+,,,$math{(e^x+e^(-x))/2=3 -> e^(2x)-6e^x+1=0}
 ,,,5^(2x-1)+5^(x+1)=250 => 5^(-1)*(5^x)^2+5^1*5^x=250
 ,,"+{k=0, n, A[k](x)*ln(B[k](x))dx}+C(x)=+{k=0, n, D[k](x)*ln(E[k](x))dx}+F(x) => *{k=0, n, B[k](x)^A[k](x)}*e^C(x)= *{k=0, n, E[k](x)^D[k](x)}*e^F(x)
 (May cause false roots)","A=[3, 4], B=[x, y], C=-1, D=[2], E=[z], F=0
@@ -153,35 +153,35 @@ A=[1], B=[2x+5], C=0, D=[1, 1], E=[24, 3], F=0 (lg)"
 ,,,4ln(x)=-3+ln(2x)=>4ln(x)=-3+ln(2)+ln(x)
 ,,,
 ,,,
-,Inequalities,"a<=x<=b -> x in [a, b]
-a < x < b -> x in (a, b)
--3(x+1)<-9 x+1>3 x>-4
+,Inequalities/Olikheter,"$math{a<=x<=b -> x in [a, b]}
+$math{a < x < b -> x in (a, b)}
+$math{-3(x+1)<-9 x+1>3 x>-4}
 
 \\Ax -> x<3 -!-> x^2<3x or x^2<3x -> x<3
 Cannot multiply or divide an inequality with an arbitrary variable!!!",
 ,,"*{k=0, n, A[k](x)}>0 => Sign table for roots of A[k](x)","[x, x-5] >, [x+2, x+3} >=, F[x^2+4x] -> [x, x+4] <
 [x-1, (x-2)^2, (x-3)^2] > -> x>1, x!=2, x!=3"
 ,,"*{k=0, n, A[k](x)}/B(x)>0, *{k=0, n, A[k](x)}/B(x)<0 => B(x)=0 as undefined",
-,,A(x) > B(x) => A(x) - B(x) > 0 => F[A(x)-B(x)] > 0,x^2+4x 7
+,,A(x) > B(x) => A(x) - B(x) > 0 => F[A(x)-B(x)] > 0,$math{x^2+4x 7}
 ,,+{A[k](x)/B[k](x)}+C(x)>+{D[k](x)/E[k](x)}+F(x) => +{A[k](x)/B[k](x)}+{D[k](x)/E[k](x)}+C(x)-F(x) > 0 => …,"[x-1] [x-5] 0 0 0 2 >, [2, 1] [x-4, x-1] 0 0 0 0 >, [4] [x+3] 0 [3] [x+4] 0 <, [x] [x+1] 0 [2x-1] [x-1] 0 =, [x^2+4x+1] [x-1] 0 [3x+1] [x-1] 0"
-,Factor out x,x^3+2x^2+3x=0 -> x(x^2+2x+3)=0,
+,Factor out x,$math{x^3+2x^2+3x=0 -> x(x^2+2x+3)=0},
 ,Value substitution,"f(g(x))=0 => (t = g(x)) => f(t)=0 => t, g(x)=t","f(g(x))=x^4-3x^2-4, f(t)=t^2-3t-4, g(x)=x^2
 f(g(x))=x^4-13x²+36, f(t)=t^2-13t+36, g(x)=x^2"
-,Completing the square,x^2+ax[+(1/2*a)^2-(1/2*2)^2]+b=(x+1/2*a)^2+b-(1/2*a)^2,
+,Completing the square,$math{x^2+ax[+(1/2*a)^2-(1/2*2)^2]+b=(x+1/2*a)^2+b-(1/2*a)^2},
 ,"Partial fraction decomposition (PFD(a, b))","1. Perform polynomial division if the degree of the numerator is higher than that of the denominator.
 2. Factorize (N(x)) into irreducible factors.
 3. Set up a partial fraction decomposition with unknown coefficients.
 4. Put everything over a common denominator and identify the coefficients.
 5. Verify (check the result).",
-,,(ax+b)/cx=a/c+b/(cx),"a=1, b=2, c=1"
-,,ax/(bx+c)=1-((b-a)x-c)/(bx+c),"a=1, b=1, c=2"
+,,$math{(ax+b)/cx=a/c+b/(cx)},"a=1, b=2, c=1"
+,,$math{ax/(bx+c)=1-((b-a)x-c)/(bx+c)},"a=1, b=1, c=2"
 ,,"Reducable simple:
 +{k=0, n, a[k]*x^k}/(*{k=0, n, x-b[k]})=+{k=0, n, A[k]/(x-b[k])}=+{k=0, n, A[k](*{l=0, n, l!=k, x-b[l]})}/(*{k=0, n, x-b[k]}) => +{k=0, n, A[k](*{l=0, n, l!=k, x-b[l]})} = +{k=0, n, a[k]x^k} => {k=0, n, A[k])
 Heaviside's cover-up method:
 {i=0, n, A[i] = +{k=0, n, a[k]*(b[i])^k}/(*{k=0, n, x-b[!k]})}","a=[-23, 7], b=[5, 2] => A=[4, 3]"
 ,,"Non-reducables:
-(x-a)^n -> +{k=1, n, A_k/(x-a)^k}
-(x^2+ax+b)^m -> +{k=1, m, (B_k+C_k)/(x^2+ax+b)^k}",(x^7+2)/(x-4)^4(x^2-2x+5)^2=A/(x-4)+B(x-4)^2+C/(x-4)^3+D/(x-4)^4+(Ex+F)/(x^2-2x+5)+(Gx+H)/(x^2-2x+5)^2
+$math{(x-a)^n -> +{k=1, n, A_k/(x-a)^k}}
+$math{(x^2+ax+b)^m -> +{k=1, m, (B_k+C_k)/(x^2+ax+b)^k}}",$math{(x^7+2)/(x-4)^4(x^2-2x+5)^2=A/(x-4)+B(x-4)^2+C/(x-4)^3+D/(x-4)^4+(Ex+F)/(x^2-2x+5)+(Gx+H)/(x^2-2x+5)^2}
 ,,"Multiple reducables: 
 Heaviside's cover-up method with derivatives: ",
 ,,,
@@ -190,18 +190,18 @@ Heaviside's cover-up method with derivatives: ",
 ,,,
 ,,,
 Different methods,"Bisection method, Bisektionsmetoden, Intervallhalvering","Continous function f(x) in interval [a, b], f(a)*f(b)<0
-Midpoint c=(a+b)/2
-f(c)*f(b)<0 -> interval [c, b]
-f(c)*f(a)<0 -> interval [a, c]
-f(c)=0 -> x=c",
+$math{Midpoint c=(a+b)/2}
+$math{f(c)*f(b)<0 -> interval [c, b]}
+$math{f(c)*f(a)<0 -> interval [a, c]}
+$math{f(c)=0 -> x=c}",
 ,,,
 ,,,
 Problems,Common numbers,"The sum of two numbers (x, y) is three times their difference and twice their ratio
 
 f(x,y) = g(x,y), f(x,y) = g(x,y)
 
-x + y = 3(x - y) (difference)
-x + y = 2(x/y) (ratio)
+$math{x + y = 3(x - y) (difference)}
+$math{x + y = 2(x/y) (ratio)}
 
 Solve simultaneous equations
 x = 8/3, y = 4/3",
@@ -211,25 +211,25 @@ Distance apart: 50 km
 Time to collision: t
 
 Dist. covered by I + Dist. covered by II = Total Dist.
-600t + 400t = 50 km
-t = 50 / 1000 = 0.05 hr",
+$math{600t + 400t = 50 km}
+$math{t = 50 / 1000 = 0.05 hr}",
 ,Chase,"Car I: 30 km/hr
 Car II: 70 km/hr
 Distance apart: 30 km
 Time to catch up: t
 
-Time travelled by I = Time travelled by II
+$math{Time travelled by I = Time travelled by II}
 
-x km / 30 km/hr = (x + 30) km / 70 km/hr
+$math{x km / 30 km/hr = (x + 30) km / 70 km/hr}
 
-70x = 30(x + 30) -> x = 22.5
+$math{70x = 30(x + 30) -> x = 22.5}
 
-t = 22.5 / 30 = 0.75 hr",
+$math{t = 22.5 / 30 = 0.75 hr}",
 ,Investment,"Amount x to be invested at 5% which yields $1000 more than same investment at 3%
 
-f(x) = g(x)
+$math{f(x) = g(x)}
 Return at 5% = Return at 3% + 1000
-0.05x = 0.03x + 1000
+$math{0.05x = 0.03x + 1000}
 x = $50,000",
 ,Blending,"Mix x liters of wine (12% alc.) with y liters of rum (40% alc.) to obtain 20 liters of punch (18% alc.)
 
@@ -237,10 +237,10 @@ f(x) + g(y) = Given Total I
 f(x) + g(y) = Given Total II
 
 Alcohol:
-0.12x + 0.40y = 0.18 * 20
+$math{0.12x + 0.40y = 0.18 * 20}
 
 Volume:
-x + y = 20
+$math{x + y = 20}
 
 Solve simultaneous equations
 x = 16.7 L, y = 4.3 L",
@@ -252,20 +252,20 @@ Cereal I required: x
 f(x) + g(x) = Given Total
 Intake from I + Intake from II = Total intake from mixture
 
-5.5x + 8(1 - x) = 7
+$math{5.5x + 8(1 - x) = 7}
 
-Cereal I = x = 1/2.5 = 0.4 g
-Cereal II = 1 - x = 0.6 g",
+$math{Cereal I = x = 1/2.5 = 0.4 g}
+$math{Cereal II = 1 - x = 0.6 g}",
 ,Market,"Merchandise
 
 5 items A + 8 items B = $115
 3 items A + 5 items B = $70
 
-f(x,y) = Total I
-g(x,y) = Total II
+$math{f(x,y) = Total I}
+$math{g(x,y) = Total II}
 
-5x + 8y = 115
-3x + 5y = 70
+$math{5x + 8y = 115}
+$math{3x + 5y = 70}
 
 Solve simultaneously
 x = $15, y = $5",
@@ -273,23 +273,23 @@ x = $15, y = $5",
 Area of rectangle: 216 m^2
 x, y: sides of rectangle
 
-f(x,y) = Total I
-g(x,y) = Total II
+$math{f(x,y) = Total I}
+$math{g(x,y) = Total II}
 
-2x + 2y = 60
-x*y = 216
+$math{2x + 2y = 60}
+$math{x*y = 216}
 
 Solve simultaneously
 x = 12 m, y = 18 m",
-,Conversion,"F = aC + b
+,Conversion,"$math{F = aC + b}
 
 Boiling point: (x_1, y_1) = (100, 212)
 Freezing point: (x_2, y_2) = (0, 32)
 
 f(x_1, y_1) = 0, f(x_2, y_2) = 0
 
-212 = a(100) + b
-32 = a(0) + b
+$math{212 = a(100) + b}
+$math{32 = a(0) + b}
 
 Solve simultaneously
 a = 9/5, b = 32",
@@ -301,28 +301,28 @@ a = 9/5, b = 32",
 ,,,
 ,,,
 ,,,
-Interest calculation,SIMPLE INTEREST,"P = principal
-I = accumulated interest
-A = principal + interest
-R = interest rate per year
-N = number of years
+Interest calculation,SIMPLE INTEREST,"$math{P = principal}
+$math{I = accumulated interest}
+$math{A = principal + interest}
+$math{R = interest rate per year}
+$math{N = number of years}
 
-I = P * R * N
-A = P(1 + R*N)","Interest to be paid on $4,000 borrowed at 10% for 5 years
+$math{I = P * R * N}
+$math{A = P(1 + R*N)}","Interest to be paid on $4,000 borrowed at 10% for 5 years
 I = PRN = 4000 * 0.10 * 5 = $2,000
 Principal to be invested at 7% that will yield $10,000 in 5 years
 P = 10000 / (1 + RN) = 10000 / (1 + 0.075) = $7,407.41"
-,COMPOUND INTEREST,"P = principal
-I = compound interest
-A = compound amount
-R = interest rate per period
-N = number of interest periods
+,COMPOUND INTEREST,"$math{P = principal}
+$math{I = compound interest}
+$math{A = compound amount}
+$math{R = interest rate per period}
+$math{N = number of interest periods}
 
-I = A - P
-A = P(1 + i)^N","Compound amount A received and compound interest I earned on principal of $5,000 compounded semi-annually at 5% over 2 years
+$math{I = A - P}
+$math{A = P(1 + i)^N}","Compound amount A received and compound interest I earned on principal of $5,000 compounded semi-annually at 5% over 2 years
 
-i = 0.05 / 2 = 0.025
-N = 4
+$math{i = 0.05 / 2 = 0.025}
+$math{N = 4}
 P = $5,000
 
 A = P(1 + i)^N = 5000 * (1 + 0.025)^4 = $5,519.06

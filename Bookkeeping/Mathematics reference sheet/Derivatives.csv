@@ -1,149 +1,149 @@
 Group,Name,Basic relationship,Presetted values
 rich,rich,rich,rich
-Differentials,,"y=f(x), \Dy = f(x+\Dx) - f(x)
-(\Dy)/(\Dx) = (f(x+\Dx)-f(x))/\Dx = f'(x) + \e = dy/dx + \e, \e -> 0 as \Dx -> 0",
-,,\Dy = f'(x)\Dx + \e*\Dx -> dy = f'(x)dx,
+Differentials/Differentialer,,"$math{y=f(x), \Dy = f(x+\Dx) - f(x)}
+$math{(\Dy)/(\Dx) = (f(x+\Dx)-f(x))/\Dx = f'(x) + \e = dy/dx + \e, \e -> 0 as \Dx -> 0}",
+,,$math{\Dy = f'(x)\Dx + \e*\Dx -> dy = f'(x)dx},
 ,,Differential rules analogous to derivative rules,
-,,dc = 0,
-,,d(cf)=cdf,
-,,d(f+g+h) = df+dg+dh,
-,,d(fg) = f*dg+g*df,
-,,d(f/g) = ,
+,,$math{dc = 0},
+,,$math{d(cf)=cdf},
+,,$math{d(f+g+h) = df+dg+dh},
+,,$math{d(fg) = f*dg+g*df},
+,,$math{d(f/g) =},
 ,,,
-Derivatives,Definition of derivatives/Derivatans definition,"Average/Medel: k=\Dy/(\Dx) = (f(x1)-f(x0))/(x1-x0)
-Derivative/Derivata: k=dy/(dx) = lim x1->x0 (f(x1)-f(x0))/(x1-x0)
-= lim h->0 (f(x+h)-f(x))/h (Forward derivative)
-= lim h->0 (f(x)-f(x-h))/h (Backward derivative)
-= lim h->0 (f(x+h)-f(x-h))/(2h) (Central derivative)
+Derivatives/Derivator,$math{Definition of derivatives/Derivatans definition},"$math{Average/Medel: k=\Dy/(\Dx) = (f(x1)-f(x0))/(x1-x0)}
+$math{Derivative/Derivata: k=dy/(dx) = lim x1->x0 (f(x1)-f(x0))/(x1-x0)}
+$math{= lim h->0 (f(x+h)-f(x))/h (Forward derivative)}
+$math{= lim h->0 (f(x)-f(x-h))/h (Backward derivative)}
+$math{= lim h->0 (f(x+h)-f(x-h))/(2h) (Central derivative)}
 Derivative as tangent of the curve",
-,Elementary derivative functions,d/(dx) kx^n = nkx^(n-1),
-,,d/(dx) e^(kx) = ke^(kx),
-,,d/(dx) a^x = ln(a)*a^x,
-,,d/(dx) ln(x) = 1/x,
-,,d/(dx) log_a(x) = d/(dx) ln(x)/ln(a) = 1/(ln(a)*x),
-,,d/(dx) sin(Ax) = A*cos(x),
-,,d/(dx) cos(Ax) = -A*sin(x),
-,,d/(dx) tan(x)=1/cos^2(x)=sec^2(x),
-,,d/(dx) cot(x)=-1/sin^2(x)=-cosec^2(x),
-,,d/(dx) sec(x)=sec(x)tan(x),
-,,d/(dx) cosec(x)=-cosec(x)cot(x),
-,,d/(dx) arcsin(x)=1/sqrt(1-x^2),
-,,d/(dx) arccos(x)=-1/sqrt(1-x^2),
-,,d/(dx) arctan(x)=1/(1+x^2),
-,,d/(dx) arccot(x)=-1/(1+x^2),
-,,"d/(dx) arcsec(x)=\pm 1/(x*sqrt(x^2-1)), (+: 0 < arcsec(x) < \pi/2, -: \pi/2 < arcsec(x) < \pi)",
-,,"d/(dx) arccsc(x)=\pm 1/(x*sqrt(x²-1)), (+: -\pi/2 < arccsc(x) < 0, -: 0 < arccsc(x) < \pi/2)",
-,,d/(dx) sinh(x) = cosh(x),
-,,d/(dx) cosh(x) = sinh(x),
-,,d/(dx) tanh(x) = 1/sinh^2(x) = sech^2(x),
-,,d/(dx) coth(x) = -csch^2(x),
-,,d/(dx) sech(x) = -sech(x)*tanh(x),
-,,d/(dx) csch(x) = -csch(x)*coth(x),
-,,d/(dx) arcsinh(x) = 1/sqrt(x^2+1),
-,,"d/(dx) arccosh(x) = \pm 1/sqrt(x^2-1), (+: arccosh(x)>0, x>1, -: arccosh(x)<0, x>1)",
-,,"d/(dx) arctanh(x) = 1/(1-x^2), (-1 < x < 1)",
-,,d/(dx) arccsch(x) = -1/(|x|sqrt(1+x^2)),
-,,d/(dx) arcsech(x) = -1/(|x|sqrt(1-x^2)),
-,,"d/(dx) arccoth(x) = 1/(1-x^2), (+: arccoth(x)<0, x>1, -: arccoth(x)>0, x>1)",
-,Derivative rules,d/(dx) (f(x)+g(x)) = f'(x) + g'(x),"e^(2x)-sin(3x), ln(x)+arctan(x), arcsin(2x)+(2x+1)^7"
-,,"d/(dx) (f(x)g(x)) = f'(x)g(x)+f(x)g'(x) (lim{h->0, (f(x+h)g(x+h)-f(x)g(x))/h} = lim{h->0, (f(x+h)g(x+h)-f(x)g(x+h)+f(x)g(x+h)-f(x)g(x))/h})",e^(2x)*sin(3x)
-,,d/(dx) (f(x)/g(x)) = (f'(x)g(x)-f(x)g'(x))/g^2(x),"(2x^2+1)/(x+1)^2, ln(x)/e^x"
-,,d/(dx) f(g(x)) = f'(g(x))g'(x),"arcsin(1/x), arcsin(sqrt(x)), ln(x+sqrt(1+x^2))"
-,,d/(dx) f(x)^g(x) = g(x)*f(x)^g(x)*f'(x) + (ln(f(x))*f(x)^g(x)*g'(x),
-,Derivatives,d/dx(ln(x+sqrt(1+x^2))),
-,,d/(dx)(ln(|x|/sqrt(1+x^2))) = d/(dx)(ln(sqrt(x/(1+x^2)))),
-,,"d/(dx)(x^x)=d/(dx)(e^(x*ln(x))) = e^(x*ln(x))*(ln(x)+1)
-d/(dx)(ln(x)^(1-x)) = d/(dx)(e^((1-x)ln(ln(x)))) = e^((1-x)*ln(ln(x)))*(1/(x*ln(x))-1/ln(x)-ln(ln(x)))",
-,The logarithmic derivative/Logaritmiska derivatan,"f(x)=\P{k=0, n, f_k(x)}, f'(x)/f(x)=\S{k=0, n, f_k(x)}
+,Elementary derivative functions,$math{d/(dx) kx^n = nkx^(n-1)},
+,,$math{d/(dx) e^(kx) = ke^(kx)},
+,,$math{d/(dx) a^x = ln(a)*a^x},
+,,$math{d/(dx) ln(x) = 1/x},
+,,$math{d/(dx) log_a(x) = d/(dx) ln(x)/ln(a) = 1/(ln(a)*x)},
+,,$math{d/(dx) sin(Ax) = A*cos(x)},
+,,$math{d/(dx) cos(Ax) = -A*sin(x)},
+,,$math{d/(dx) tan(x)=1/cos^2(x)=sec^2(x)},
+,,$math{d/(dx) cot(x)=-1/sin^2(x)=-cosec^2(x)},
+,,$math{d/(dx) sec(x)=sec(x)tan(x)},
+,,$math{d/(dx) cosec(x)=-cosec(x)cot(x)},
+,,$math{d/(dx) arcsin(x)=1/sqrt(1-x^2)},
+,,$math{d/(dx) arccos(x)=-1/sqrt(1-x^2)},
+,,$math{d/(dx) arctan(x)=1/(1+x^2)},
+,,$math{d/(dx) arccot(x)=-1/(1+x^2)},
+,,"$math{d/(dx) arcsec(x)=\pm 1/(x*sqrt(x^2-1)), (+: 0 < arcsec(x) < \pi/2, -: \pi/2 < arcsec(x) < \pi)}",
+,,"$math{d/(dx) arccsc(x)=\pm 1/(x*sqrt(x²-1)), (+: -\pi/2 < arccsc(x) < 0, -: 0 < arccsc(x) < \pi/2)}",
+,,$math{d/(dx) sinh(x) = cosh(x)},
+,,$math{d/(dx) cosh(x) = sinh(x)},
+,,$math{d/(dx) tanh(x) = 1/sinh^2(x) = sech^2(x)},
+,,$math{d/(dx) coth(x) = -csch^2(x)},
+,,$math{d/(dx) sech(x) = -sech(x)*tanh(x)},
+,,$math{d/(dx) csch(x) = -csch(x)*coth(x)},
+,,$math{d/(dx) arcsinh(x) = 1/sqrt(x^2+1)},
+,,"$math{d/(dx) arccosh(x) = \pm 1/sqrt(x^2-1), (+: arccosh(x)>0, x>1, -: arccosh(x)<0, x>1)}",
+,,"$math{d/(dx) arctanh(x) = 1/(1-x^2), (-1 < x < 1)}",
+,,$math{d/(dx) arccsch(x) = -1/(|x|sqrt(1+x^2))},
+,,$math{d/(dx) arcsech(x) = -1/(|x|sqrt(1-x^2))},
+,,"$math{d/(dx) arccoth(x) = 1/(1-x^2), (+: arccoth(x)<0, x>1, -: arccoth(x)>0, x>1)}",
+,Derivative rules,$math{d/(dx) (f(x)+g(x)) = f'(x) + g'(x)},"$math{e^(2x)-sin(3x), ln(x)+arctan(x), arcsin(2x)+(2x+1)^7}"
+,,"$math{d/(dx) (f(x)g(x)) = f'(x)g(x)+f(x)g'(x) (lim{h->0, (f(x+h)g(x+h)-f(x)g(x))/h} = lim{h->0, (f(x+h)g(x+h)-f(x)g(x+h)+f(x)g(x+h)-f(x)g(x))/h})}",$math{e^(2x)*sin(3x)}
+,,$math{d/(dx) (f(x)/g(x)) = (f'(x)g(x)-f(x)g'(x))/g^2(x)},"$math{(2x^2+1)/(x+1)^2, ln(x)/e^x}"
+,,$math{d/(dx) f(g(x)) = f'(g(x))g'(x)},"$math{arcsin(1/x), arcsin(sqrt(x)), ln(x+sqrt(1+x^2))}"
+,,$math{d/(dx) f(x)^g(x) = g(x)*f(x)^g(x)*f'(x) + (ln(f(x))*f(x)^g(x)*g'(x)},
+,Derivatives,$math{d/dx(ln(x+sqrt(1+x^2)))},
+,,$math{d/(dx)(ln(|x|/sqrt(1+x^2))) = d/(dx)(ln(sqrt(x/(1+x^2))))},
+,,"$math{d/(dx)(x^x)=d/(dx)(e^(x*ln(x))) = e^(x*ln(x))*(ln(x)+1)}
+$math{d/(dx)(ln(x)^(1-x)) = d/(dx)(e^((1-x)ln(ln(x)))) = e^((1-x)*ln(ln(x)))*(1/(x*ln(x))-1/ln(x)-ln(ln(x)))}",
+,The logarithmic derivative/Logaritmiska derivatan,"$math{f(x)=\P{k=0, n, f_k(x)}, f'(x)/f(x)=\S{k=0, n, f_k(x)}}
 
-d/dx(ln(f(x))) = 1/f(x)*f'(x), d/dx(\P{k=0, n, f_k(x)}) = \S{k=0, n, f_k(x)}",
-,,"f'(x) = f(x)*(f'/f) = f(x)*(+{k=0, n, f'[k](x)/f[k](x)})",f=e^x^2*arcsin^2(x)*x*sqrt(cos(x))/(ln^6(x)*sin^2(x))
-,Derivative of inverse function,(f^(-1)(x))'=1/(f'(f^(-1)(x))),f=x^2+1
-,,,"f=x^5+x^3+1 -> f'=5x^4+3x^2 -> Strict increasing, (f^(-1)(3))' -> guess root"
-,Limit to derivative,"lim{x->0, (e^x-1)/x} = {(e^x)', x=0}
-lim{x->0, ln(1+sin(2x))/x} = {(ln(1+sin(2x)))', x=0}",
+$math{d/dx(ln(f(x))) = 1/f(x)*f'(x), d/dx(\P{k=0, n, f_k(x)}) = \S{k=0, n, f_k(x)}}",
+,,"$math{f'(x) = f(x)*(f'/f) = f(x)*(+{k=0, n, f'[k](x)/f[k](x)})}",$math{f=e^x^2*arcsin^2(x)*x*sqrt(cos(x))/(ln^6(x)*sin^2(x))}
+,Derivative of inverse function,$math{(f^(-1)(x))'=1/(f'(f^(-1)(x)))},$math{f=x^2+1}
+,,,"$math{f=x^5+x^3+1 -> f'=5x^4+3x^2 -> Strict increasing, (f^(-1)(3))' -> guess root}"
+,Limit to derivative,"$math{lim{x->0, (e^x-1)/x} = {(e^x)', x=0}}
+$math{lim{x->0, ln(1+sin(2x))/x} = {(ln(1+sin(2x)))', x=0}}",
 ,,,
 ,,,
 ,,,
 ,,,
 ,,,
-,Differentiable and continous/Deriverbar och kontinuerlig,"f(x) differentiable in a -> f(x) continous in a
-f'(a) = lim{h->0, (f(a+h)-f(a))/h} = lim{x->a, (f(x)-f(a))/(x-a)}, lim{x->a, f(x)-f(a))=lim{x->a, (f(x)-f(a))/(x-a)*(x-a)) = f'(a)*0 = 0 -> lim{x->a, f(x)} = f(a)
+,Differentiable and continous/Deriverbar och kontinuerlig,"$math{f(x) differentiable in a -> f(x) continous in a}
+$math{f'(a) = lim{h->0, (f(a+h)-f(a))/h} = lim{x->a, (f(x)-f(a))/(x-a)}, lim{x->a, f(x)-f(a))=lim{x->a, (f(x)-f(a))/(x-a)*(x-a)) = f'(a)*0 = 0 -> lim{x->a, f(x)} = f(a)}
 Not all continous functions are differentiable e.g. f(x)=|x|, Weierstrass function",
-,,"f(x)={{k=0, n, A[k](x): B[k](x)}}
-{k=0, n, A[k](B[k]) = {l=0, n, l!=k, A[l](B[k])}}","f={x^2+2x: x<=1, x+2: x>1}, f={x^2+2x: x<=1, 4x+1: x>1}, f={x^2+2x: x<=1, 4x-1: x>1}"
+,,"$math{f(x)={{k=0, n, A[k](x): B[k](x)}}}
+$math{{k=0, n, A[k](B[k]) = {l=0, n, l!=k, A[l](B[k])}}}","$math{f={x^2+2x: x<=1, x+2: x>1}, f={x^2+2x: x<=1, 4x+1: x>1}, f={x^2+2x: x<=1, 4x-1: x>1}}"
 ,Differential of piecewise functions/Derivata av styckvis definierade funktioner,"Derivation rules cannot be applied to both piecewise definitions.
-f(x)={x^2: x>0, x^3+x^4: x<=0}
-f'(0) = lim{h->0, (g(h)-g(0))/h}, lim{x->0+, (h^2-0)/h} = 0, lim{x->0-, (h^3+h^4-0)/h} = 0",
-,,"f(x)={x^2*sin(1/x): x!=0, 0: x=0}
-f'(0) = lim{h->0, (f(h)-f(0))/h} = (h^2*sin(1/h))/h = 0, f(x)={2/x*sin(x)-cos(x): x!=0, 0: x=0}, lim{t->0, f(t)} = lim{t->0, 2/t*sin(t)-cos(t)} undefined -> Non continous derivative",
-Higher derivatives,2nd derivative,d/(dx)*(dy/dx) = (d^2*y)/(dx^2) = f''(x) = y'',
-,3rd derivative,d/(dx)*(d^2/dx^2) = (d^3*y)/(dx^3) = f'''(x) = y''',
-,Product derivatives (Leibnitz's rule),"d^n/(dx^n) (f*g) = \S{k=0, n, C(n, k)*((d^(n-k)f)/dx^(n-k))*((d^k*f)/dx^k)",
+$math{f(x)={x^2: x>0, x^3+x^4: x<=0}}
+$math{f'(0) = lim{h->0, (g(h)-g(0))/h}, lim{x->0+, (h^2-0)/h} = 0, lim{x->0-, (h^3+h^4-0)/h} = 0}",
+,,"$math{f(x)={x^2*sin(1/x): x!=0, 0: x=0}}
+$math{f'(0) = lim{h->0, (f(h)-f(0))/h} = (h^2*sin(1/h))/h = 0, f(x)={2/x*sin(x)-cos(x): x!=0, 0: x=0}, lim{t->0, f(t)} = lim{t->0, 2/t*sin(t)-cos(t)} undefined -> Non continous derivative}",
+Higher derivatives,2nd derivative,$math{d/(dx)*(dy/dx) = (d^2*y)/(dx^2) = f''(x) = y''},
+,3rd derivative,$math{d/(dx)*(d^2/dx^2) = (d^3*y)/(dx^3) = f'''(x) = y'''},
+,Product derivatives (Leibnitz's rule),"$math{d^n/(dx^n) (f*g) = \S{k=0, n, C(n, k)*((d^(n-k)f)/dx^(n-k))*((d^k*f)/dx^k)}",
 ,,,
 ,,,
 ,,,
 ,,,
 ,,,
 ,Rolle's theorem,"Between each pair of zeroes of continous and differentiable function, at least one point where tangent is horizontal
-f(x), f(a) = 0, f(b) = 0, f(c) = 0, a < c < b",
+$math{f(x), f(a) = 0, f(b) = 0, f(c) = 0, a < c < b}",
 ,Mean value theorem/Medelvärdesatsen,"If f is continuous on [a, b] and differentiable on (a, b) (+ defined at all points (a, b)), then there exists
 a point c in (a, b) such that f'(c)=(f(b)-f(a))/(b-a)
 \Graph(C, L, (A)->(B)) ...
 
 Some point where the derivative of f coincides with the average slope on an interval.
 
-g(x)=f(x)-(f(b)-f(a))/(b-a)*(x-a) -> g(a)=g(b)=f(a), if g not constant -> g max or min value -> g'(c)=0
+$math{g(x)=f(x)-(f(b)-f(a))/(b-a)*(x-a) -> g(a)=g(b)=f(a), if g not constant -> g max or min value -> g'(c)=0}
 Case 1: f(x)=f(a)=f(b) for all x in (a, b) -> f'(x)=0 in (a, b)
 Case 2: exist x_0: f(x_0)>(f(a)=f(b)), f max in x_1, max cannot be determined in a or b -> f'(x_1)<0
 Case 3: exist x_0: f(x_0)<(f(a)=f(b)), f min in x_1, min cannot be determined in a or b -> f'(x_1)<0",
 ,Function roots,"If f(a) = f(b), then f'(x) must be zero somewhere in (a, b).
-f(x)=4x^5 + x^3 + 7x − 2 = 0 only one root
+$math{f(x)=4x^5 + x^3 + 7x − 2 = 0 only one root}
 1. The Intermediate Value Theorem -> Check root [0, 1]
 2. MVS (Assume f(a)=f(b) in [a, b]), f'(x)=0 has no roots -> f(a)!=f(b)",
-,Function comparasion,"sqrt(1+x) <= 1+x/2, x>0
-MVS between [0, x], c in (0, x) -> f'(c)=(f(x)-f(0))/(x-0), for x>0 -> f(x)=f(0)+f'(c)*x, f(x)=sqrt(1+x), f'(x)=1/(2sqrt(x+1)), sqrt(1+x)=1+1/(2sqrt(1+c))*x <= 1+1/2*x",
-,Check min/max,"f(x)=(x-3)^42*(-x^2+6x-6), f(x)=0 -> x=3, x=3+sqrt(3), x=3-sqrt(3) -> MVS -> least 2 critical points",
-,"Mean value theorem corollary, Medelvärdesatsen följdsatser","x_1<x_2, c in (x_1, x_2), f'(c)=(f(x_2)-f(x_1))/(x_2-x_1) -> f(x_2)-f(x_1)=f'(c)*(x_2-x_1) -> Determine sign of f'(c)
+,Function comparasion,"$math{sqrt(1+x) <= 1+x/2, x>0}
+$math{MVS between [0, x], c in (0, x) -> f'(c)=(f(x)-f(0))/(x-0), for x>0 -> f(x)=f(0)+f'(c)*x, f(x)=sqrt(1+x), f'(x)=1/(2sqrt(x+1)), sqrt(1+x)=1+1/(2sqrt(1+c))*x <= 1+1/2*x}",
+,Check min/max,"$math{f(x)=(x-3)^42*(-x^2+6x-6), f(x)=0 -> x=3, x=3+sqrt(3), x=3-sqrt(3) -> MVS -> least 2 critical points}",
+,"Mean value theorem corollary, Medelvärdesatsen följdsatser","$math{x_1<x_2, c in (x_1, x_2), f'(c)=(f(x_2)-f(x_1))/(x_2-x_1) -> f(x_2)-f(x_1)=f'(c)*(x_2-x_1) -> Determine sign of f'(c)}
 Corollary 1. If f'(x) > 0 for all x in an interval I, then f is strictly increasing in I.
 Corollary 2. If f'(x) < 0 for all x in an interval I, then f is strictly decreasing in I.
 (f'(x) >= 0 or f'(x) <= 0, then “strictly” is removed)
 Corollary 3. If f'(x) = 0 for all x in an interval I, then f is constant in I.
 The opposite direction does not apply, strictly increasing does not infer f'(x)>0",
 ,,"Exception: cusps, when 2 portions of a curve have a common tangent and the point of contact is a sharp point (cusp), maxima and minima may occur when dy/dx = 0",
-,,"f(x)=sqrt(x(2-x)), f'(x)=(1-x)/sqrt(x(2-x))
-signtable([-, 0, -, 1, -, 2, -], (1-x)=[+, +, +, 0, -, -, -], sqrt(x(2-x))=[*, 0, +, +, +, 0, *], [*, *, +, 0, -, *, *])
--> f strict increasing (0, 1), f strict decreasing (1, 2)","(f=2x^3+3x^2-12x -> f'=6(x-1)(x-2)), (f=sqrt(x(2-x)) -> f'=(1-x)/sqrt(x(2-x)))"
+,,"$math{f(x)=sqrt(x(2-x)), f'(x)=(1-x)/sqrt(x(2-x))}
+$math{signtable([-, 0, -, 1, -, 2, -], (1-x)=[+, +, +, 0, -, -, -], sqrt(x(2-x))=[*, 0, +, +, +, 0, *], [*, *, +, 0, -, *, *])}
+-> f strict increasing (0, 1), f strict decreasing (1, 2)","$math{(f=2x^3+3x^2-12x -> f'=6(x-1)(x-2)), (f=sqrt(x(2-x)) -> f'=(1-x)/sqrt(x(2-x)))}"
 ,,,
 ,,,
-,Tangent and normals,"f(x) -> tangent, normal, intersect P(x_1, y_1)
-A subtangent B subnormal C",
-,Tangent line,"f(x) \\inter T(x) = (a, f(a))
-f(x)=..., f'(x)=...
-=> f(a)=T(a) => A=f'(a)*a+m => m=A-a*f'(a) => T(x) = f'(a)*x+m
-y-f(a)=f'(a)(x-a), y=f(a)+f'(a)(x-a)","f=sqrt(x), f=tan(x), (f=x^4+2, a=2)"
-,,(y-y_1)/(x-x_1) = f'(x),
-,Normal line,"f(x) \\inter N(x) = (a, f(a))
-f(x), f'(x)
--> f(a)=N(a) -> ",
-,,(y-y_1)/(x-x_1) = -1/f'(x),
-,Tangent slope equation,"f(x) \\inter T(x) = (a, A)
-f(x)=..., f'(x)=...
-=> f'(a)=(A-T(x))/(a-x) => [T(x)]",
-,Subtangent,"""AB"" = y_1/f'(x_1)",
-,Subnormal,"""BC"" = y_1*f'(x_1)",
+,Tangent and normals,"$math{f(x) -> tangent, normal, intersect P(x_1, y_1)}
+$math{A subtangent B subnormal C}",
+,Tangent line,"$math{f(x) \\inter T(x) = (a, f(a))}
+$math{f(x)=..., f'(x)=...}
+$math{=> f(a)=T(a) => A=f'(a)*a+m => m=A-a*f'(a) => T(x) = f'(a)*x+m}
+$math{y-f(a)=f'(a)(x-a), y=f(a)+f'(a)(x-a)}","$math{f=sqrt(x), f=tan(x), (f=x^4+2, a=2)}"
+,,$math{(y-y_1)/(x-x_1) = f'(x)},
+,Normal line,"$math{f(x) \\inter N(x) = (a, f(a))}
+$math{f(x), f'(x)}
+$math{-> f(a)=N(a) ->}",
+,,$math{(y-y_1)/(x-x_1) = -1/f'(x)},
+,Tangent slope equation,"$math{f(x) \\inter T(x) = (a, A)}
+$math{f(x)=..., f'(x)=...}
+$math{=> f'(a)=(A-T(x))/(a-x) => [T(x)]}",
+,Subtangent,"$math{""AB"" = y_1/f'(x_1)}",
+,Subnormal,"$math{""BC"" = y_1*f'(x_1)}",
 ,,,
 ,,,
-,Implicit differentiation/Implicit derivata,"A(x)+{k=0, n, B[k](y[k])}+C=D(x)+{k=0, n, E[k](y[k])}+F -> A'(x)+{k=0, n, B'[k](y[k])*y'[k]}=D'(x)+{k=0, n, E'[k](y[k])*y'[k]} -> …","(A(x)=-x^4-x^2, B=[y^3+y], C=10, D=0, E=0, F=10, -> y'), (A(x)=x^4, B=[y^4, xy], F=1), (A(x)=x^2, B=[y^2], F=1)"
-,,"{$*, x=6, L((x, 0), (0, y), 10), v((x, 0), (0, 2))} -> d/(dt)(x^2+y^2)=d/(dt)(10)
-{$A, s=15, 3RHA(B(\t), C (5), A (s)), v(C, (-600, 0))} -> d/(dt)(tan(\t))=d/(dt)(5/s) -> d/(dt)(\t)=-5s'cos^2(\t)/s^2",
-,,"V=c, d/dt(V)=d/(dt)(\pi*r^2*l) -> 2r'/r=-l'/l",
-,,d/(dt)(pV^1.4)=d/(dt)(C) -> dp/dt,
-,Water tank problem,"V=\pi*r^2*h/3, h/8=r/6 -> V = \pi(3h/4)^2*h/3 = 3\pi*h^3/16 -> (V)' = (3\pi*h^3/16)' = 9*\pi*h^2*h'/16",
-,Chain rules application,"dA/(dr)=d/dr*\pi*r^2=2\pi*r
-dA/(dt)=dA/(dr)*dr/(dt)=2\pi*r*1=2\pi*3=6\pi",
-,,"dV/(dr)=d/(dr)*4\pi*r^3/3=4\pi*r^2
-dr/(dt)=dV/(dt)/(dV/(dr))=16/(4\pi*r^2)=16/(4\pi*11^2)=4/(121\pi)",
+,Implicit differentiation/Implicit derivata,"$math{A(x)+{k=0, n, B[k](y[k])}+C=D(x)+{k=0, n, E[k](y[k])}+F -> A'(x)+{k=0, n, B'[k](y[k])*y'[k]}=D'(x)+{k=0, n, E'[k](y[k])*y'[k]} -> …}","$math{(A(x)=-x^4-x^2, B=[y^3+y], C=10, D=0, E=0, F=10, -> y'), (A(x)=x^4, B=[y^4, xy], F=1), (A(x)=x^2, B=[y^2], F=1)}"
+,,"$math{{$*, x=6, L((x, 0), (0, y), 10), v((x, 0), (0, 2))} -> d/(dt)(x^2+y^2)=d/(dt)(10)}
+$math{{$A, s=15, 3RHA(B(\t), C (5), A (s)), v(C, (-600, 0))} -> d/(dt)(tan(\t))=d/(dt)(5/s) -> d/(dt)(\t)=-5s'cos^2(\t)/s^2}",
+,,"$math{V=c, d/dt(V)=d/(dt)(\pi*r^2*l) -> 2r'/r=-l'/l}",
+,,$math{d/(dt)(pV^1.4)=d/(dt)(C) -> dp/dt},
+,Water tank problem,"$math{V=\pi*r^2*h/3, h/8=r/6 -> V = \pi(3h/4)^2*h/3 = 3\pi*h^3/16 -> (V)' = (3\pi*h^3/16)' = 9*\pi*h^2*h'/16}",
+,Chain rules application,"$math{dA/(dr)=d/dr*\pi*r^2=2\pi*r}
+$math{dA/(dt)=dA/(dr)*dr/(dt)=2\pi*r*1=2\pi*3=6\pi}",
+,,"$math{dV/(dr)=d/(dr)*4\pi*r^3/3=4\pi*r^2}
+$math{dr/(dt)=dV/(dt)/(dV/(dr))=16/(4\pi*r^2)=16/(4\pi*11^2)=4/(121\pi)}",
 ,,,
 ,,,
 ,,,
@@ -168,55 +168,55 @@ f''(x) > 0: Convex
 f''(x) < 0: Concave
 
 The Extreme Value Theorem [a, b], c in [a, b] -> (h>0 -> (f(c+h)-f(c))/h<=0), (h<0 -> (f(c+h)-f(c))/h>=0)
-f'(c)=f_+'(c)=f_-'(c) or (lim{h->0+, (f(c+h)-f(c))/h}<=0) = (lim{h->0-, (f(c+h)-f(c))/h}>=0) -> Only possibility f'(c)=0",
+$math{f'(c)=f_+'(c)=f_-'(c) or (lim{h->0+, (f(c+h)-f(c))/h}<=0) = (lim{h->0-, (f(c+h)-f(c))/h}>=0) -> Only possibility f'(c)=0}",
 ,,"Singular points/Singulära punkter: Undefined derivative
 Endpoints/Randpunkter: a and b in [a, b], lim{a+} and lim{b-} in (a, b)",
-,,"f(x)=..., f'(x)=..., f''(x)=…
-f'(x) = 0 => {k=0, n, x[k]}, {k=0, n, f''(x[k])=…, f(x[k])=… (local min/max/terass)}","f=x^3-3x, f=arctan(1/x)+arctan(x): x!=0"
-,,"f(x)=..., f'(x)=..., f''(x)=…
-f'(x_1) = 0 => {k=0, n, x_1[k]}, {k=0, n, f'(x[k])=… (+Adjacency)} -> sign table","f=x^2e^x, f=x^3/(x^""-1)"
-,,"f(x)=..., f'(x)=..., f''(x)=…
-f'(x_1) = 0 => {k=0, n, x_1[k]}, {k=0, n, f(x[k])=… (+Adjacency)} -> sign table",f=1/9*x^3/(x+2)
-,,"+ Assymptotes:
-Vertical assymptotes (out of domain): {k=0, n, {lim x->A[k], f(x)}, {lim x->A[k]+, f(x)}, {lim x->A[k]-, f(x)}}
-Horizontal assymptotes: {lim x->\inf, f(x)}, {lim x->-\inf, f(x)}
-Oblique assymptotes: {lim x->A[k], f(x)}=g(x), (k={lim x->A[k], f(x)/x}, b={lim x->A[k], f(x)-kx}, -> y=kx+b)","f=2x+1/x, f=1-x-1/x^2, f=(-x^3+x^2-1)/x^2, f=arctan(x^2/(x-1)), f=ln(x)/(x-2), f=2x/(sqrt(1+x^2))-arctan(x), f=sin(3x)/(1+1/2*cos(3x))"
+,,"$math{f(x)=..., f'(x)=..., f''(x)=…}
+$math{f'(x) = 0 => {k=0, n, x[k]}, {k=0, n, f''(x[k])=…, f(x[k])=… (local min/max/terass)}}","$math{f=x^3-3x, f=arctan(1/x)+arctan(x): x!=0}"
+,,"$math{f(x)=..., f'(x)=..., f''(x)=…}
+$math{f'(x_1) = 0 => {k=0, n, x_1[k]}, {k=0, n, f'(x[k])=… (+Adjacency)} -> sign table}","$math{f=x^2e^x, f=x^3/(x^""-1)}"
+,,"$math{f(x)=..., f'(x)=..., f''(x)=…}
+$math{f'(x_1) = 0 => {k=0, n, x_1[k]}, {k=0, n, f(x[k])=… (+Adjacency)} -> sign table}",$math{f=1/9*x^3/(x+2)}
+,,"$math{+ Assymptotes:}
+$math{Vertical assymptotes (out of domain): {k=0, n, {lim x->A[k], f(x)}, {lim x->A[k]+, f(x)}, {lim x->A[k]-, f(x)}}}
+$math{Horizontal assymptotes: {lim x->\inf, f(x)}, {lim x->-\inf, f(x)}}
+$math{Oblique assymptotes: {lim x->A[k], f(x)}=g(x), (k={lim x->A[k], f(x)/x}, b={lim x->A[k], f(x)-kx}, -> y=kx+b)}","$math{f=2x+1/x, f=1-x-1/x^2, f=(-x^3+x^2-1)/x^2, f=arctan(x^2/(x-1)), f=ln(x)/(x-2), f=2x/(sqrt(1+x^2))-arctan(x), f=sin(3x)/(1+1/2*cos(3x))}"
 ,,"-> min/max
-I=[a, b] -> {k=0, n, x[k] in I, f(x[k])}, f(a), f(b)","(f=xe^(-x), I=[0, 2]), (f=x/ln(x), I={x: x>0, x!=1})"
+$math{I=[a, b] -> {k=0, n, x[k] in I, f(x[k])}, f(a), f(b)}","$math{(f=xe^(-x), I=[0, 2]), (f=x/ln(x), I={x: x>0, x!=1})}"
 ,,"-> min/max
-{k=0, n, x[k] in I, f(x[k])}, lim{x->\inf, f(x)}, lim{x->-\inf, f(x)}, (Out of domain: {k=0, n, lim{x->a[k], f(x)}})","f=x^2*e^(x^2/2-3x+1), f=(x+2)/(x^2+1)+2arctan(x), f=x^4*e^(-x)"
-,,Piecewise defined function,"f={x^2+3x: 0<=x<1, 4e^(2-2x): 1<=x<=3}"
-,,f -> sign table (+ min/max) -> check roots,"f=x^3+6x^2+9x+3, f=e^(2x)-e^x, f=1/x+2ln(x+1)"
-,,f -> sign table (+ min/max) -> check above/below 0,"ln(1+4x)>arctan(3x):x>0, ln(1+x)>x-1/2x^2: x>+, ln(x)<=sqrt(x)-1/sqrt(x): x>=1"
+$math{{k=0, n, x[k] in I, f(x[k])}, lim{x->\inf, f(x)}, lim{x->-\inf, f(x)}, (Out of domain: {k=0, n, lim{x->a[k], f(x)}})}","$math{f=x^2*e^(x^2/2-3x+1), f=(x+2)/(x^2+1)+2arctan(x), f=x^4*e^(-x)}"
+,,Piecewise defined function,"$math{f={x^2+3x: 0<=x<1, 4e^(2-2x): 1<=x<=3}}"
+,,f -> sign table (+ min/max) -> check roots,"$math{f=x^3+6x^2+9x+3, f=e^(2x)-e^x, f=1/x+2ln(x+1)}"
+,,f -> sign table (+ min/max) -> check above/below 0,"$math{ln(1+4x)>arctan(3x):x>0, ln(1+x)>x-1/2x^2: x>+, ln(x)<=sqrt(x)-1/sqrt(x): x>=1}"
 ,,,
 ,Optimization/Optimering,,
-,,Cost: f=86*300/x+(2+x^2/300)*300/x*6,
-,,"{$A, 3(A ((24, (24-x)+E+x), D, 16), B, C), L(C, D, 4), L(C, E, sqrt(4^2+x^2))}, f(x)=2((24-x)+sqrt(x^2+4^2))+(sqrt(x^2+4^2)+(16+x))
-{$A, 3(A (2), B (6-x), C (sqrt(2^2+(6-x)^2))), L(B, C, D, 6), L(C, D, x)}, t(x)=x/10+sqrt((6-x^2)+2^2)",
-,,d=sqrt((x-x_0)^2+(f(x)-y_0)^2),"(f=1-x^2, x_0=0, y_0=0), (x^2/9+y^2/4=1, x_0=1, y_0=0), (x^2-y^2=1: x>=0, x_0=0, y_0=1)"
-,,"f(x)=f(a)+f'(a)(x-a)=f'(a)*x+f(a)-f'(a)a
-A=(f(a)-f'(a)a)*((-f(a)+f'(a)a)/f'(a))/2, A=(Normal line)…","f=e^-x, f=x/(1+x): x>=0"
-,Shape optimizations,"{$A, C((A, B, C), O, r), 3(A (l_0), B (2r*cos(\a), C (l_0)), 3(O (l_1), B, C (l_1))} -> A=(2rcos(\a))(rsin(\a)+r)/2 -'> \a=\pi/6
-{$A, O((A, B, C, D), O)4R(A (2r*cos(\a)), B (2r*sin(\a)), C, D)} -> A=(2r*cos(\a))*(2r*sin(\a)) -'> \a=\pi/4",
-,Build optimizations,"V=\pi*r^2*h -> A=\pi*r^2+2\pi*r^2*h = \pi*r^2+2\pi*r^2*V/(\pi*r^2)
-{$A, 4(A (2rsin(\a/2)), B (r), C, D), 3(C, B (r), A(\a) (r))} -> A=(r*r*sin(\a)/2)+(2r*sin(\a/2)*r)
-{$A, O((A, B, C, D), O)4R(A (2r*cos(\a)), B (2r*sin(\a)), C, D)} -> W=xy^2/6=(2r*cos(\a))*(2r*sin(\a))^2/6",
+,,$math{Cost: f=86*300/x+(2+x^2/300)*300/x*6},
+,,"$math{{$A, 3(A ((24, (24-x)+E+x), D, 16), B, C), L(C, D, 4), L(C, E, sqrt(4^2+x^2))}, f(x)=2((24-x)+sqrt(x^2+4^2))+(sqrt(x^2+4^2)+(16+x))}
+$math{{$A, 3(A (2), B (6-x), C (sqrt(2^2+(6-x)^2))), L(B, C, D, 6), L(C, D, x)}, t(x)=x/10+sqrt((6-x^2)+2^2)}",
+,,$math{d=sqrt((x-x_0)^2+(f(x)-y_0)^2)},"$math{(f=1-x^2, x_0=0, y_0=0), (x^2/9+y^2/4=1, x_0=1, y_0=0), (x^2-y^2=1: x>=0, x_0=0, y_0=1)}"
+,,"$math{f(x)=f(a)+f'(a)(x-a)=f'(a)*x+f(a)-f'(a)a}
+$math{A=(f(a)-f'(a)a)*((-f(a)+f'(a)a)/f'(a))/2, A=(Normal line)…}","$math{f=e^-x, f=x/(1+x): x>=0}"
+,Shape optimizations,"$math{{$A, C((A, B, C), O, r), 3(A (l_0), B (2r*cos(\a), C (l_0)), 3(O (l_1), B, C (l_1))} -> A=(2rcos(\a))(rsin(\a)+r)/2 -'> \a=\pi/6}
+$math{{$A, O((A, B, C, D), O)4R(A (2r*cos(\a)), B (2r*sin(\a)), C, D)} -> A=(2r*cos(\a))*(2r*sin(\a)) -'> \a=\pi/4}",
+,Build optimizations,"$math{V=\pi*r^2*h -> A=\pi*r^2+2\pi*r^2*h = \pi*r^2+2\pi*r^2*V/(\pi*r^2)}
+$math{{$A, 4(A (2rsin(\a/2)), B (r), C, D), 3(C, B (r), A(\a) (r))} -> A=(r*r*sin(\a)/2)+(2r*sin(\a/2)*r)}
+$math{{$A, O((A, B, C, D), O)4R(A (2r*cos(\a)), B (2r*sin(\a)), C, D)} -> W=xy^2/6=(2r*cos(\a))*(2r*sin(\a))^2/6}",
 ,,,
 ,,,
 ,,,
-,L'hopital rule,"lim{x->a, f(x)/g(x)} = lim{x->a, f'(a)/g'(a)}, in ""0/0"" or ""\inf/\inf""
-lim{x->a, f(x)/g(x)} = lim{x->a, (f(x)-0)/(g(x)-0)} = lim{x->a, (f(x)-f(a))/(g(x)-g(a))} = lim{x->a, ((f(x)-f(a))/(x-a))/((g(x)-g(a))/(x-a))} = lim{x->a, f'(a)/g'(a)}
+,L'hopital rule,"$math{lim{x->a, f(x)/g(x)} = lim{x->a, f'(a)/g'(a)}, in ""0/0"" or ""\inf/\inf""}
+$math{lim{x->a, f(x)/g(x)} = lim{x->a, (f(x)-0)/(g(x)-0)} = lim{x->a, (f(x)-f(a))/(g(x)-g(a))} = lim{x->a, ((f(x)-f(a))/(x-a))/((g(x)-g(a))/(x-a))} = lim{x->a, f'(a)/g'(a)}}
 
 Some does not work e.g. (e^x+e^(-x))/(e^x-e^(-x)) -> Cycle back
-f(x)=x+sin(x)cos(x), g(x)=f(x)e^sin(x), f/g=e^(-sin(x)), lim{x->\inf, f/g} doesn't exist, but l'Hopital gives 2cos^2(x)/((2cos(x)+x+sin(x)cos(x))cos(xe^sin(x))) -> 0",(e^x-1-sin(x))/x^2
-,,"\lim{x->a, f(x)*g(x)} = ""0*\inf"" = \lim{x->a, f(x)/(1/g(x))}",
-,,"\lim{x->a, f(x)-g(x)} = ""\inf-\inf"" -> Factor or find common denominator to reduce to ""0/0"" or ""\inf/\inf""",
-,,"\lim{x->a, f(x)^(g(x))} = ""0^0"", ""\inf^0"", ""1^\inf"" = e^(g*ln(f(x)) -> ""0*\inf""",
+$math{f(x)=x+sin(x)cos(x), g(x)=f(x)e^sin(x), f/g=e^(-sin(x)), lim{x->\inf, f/g} doesn't exist, but l'Hopital gives 2cos^2(x)/((2cos(x)+x+sin(x)cos(x))cos(xe^sin(x))) -> 0}",$math{(e^x-1-sin(x))/x^2}
+,,"$math{\lim{x->a, f(x)*g(x)} = ""0*\inf"" = \lim{x->a, f(x)/(1/g(x))}}",
+,,"$math{\lim{x->a, f(x)-g(x)} = ""\inf-\inf"" -> Factor or find common denominator to reduce to ""0/0"" or ""\inf/\inf""}",
+,,"$math{\lim{x->a, f(x)^(g(x))} = ""0^0"", ""\inf^0"", ""1^\inf"" = e^(g*ln(f(x)) -> ""0*\inf""}",
 ,,,
-Curve geometry,Radius of curvature,"r = |(1+(dy/dx)^2)^(3/2)/(d^2y/dx^2)|
-r = |(r^2+(dr/d\t)^2)^(3/2)/(r^2+2(dr/d\t)^2-r(d^2r/d\t^2))|",
-,Differential arc length,"ds = (1+(dy/dx)^2)^(1/2)*dx
-ds = (r^2 + (dr/d\t)^2)^(1/2)*d\t",
+Curve geometry,Radius of curvature,"$math{r = |(1+(dy/dx)^2)^(3/2)/(d^2y/dx^2)|}
+$math{r = |(r^2+(dr/d\t)^2)^(3/2)/(r^2+2(dr/d\t)^2-r(d^2r/d\t^2))|}",
+,Differential arc length,"$math{ds = (1+(dy/dx)^2)^(1/2)*dx}
+$math{ds = (r^2 + (dr/d\t)^2)^(1/2)*d\t}",
 ,,,
 ,,,
 ,,,

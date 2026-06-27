@@ -2,10 +2,10 @@ Name,Basic relationship,Presetted values
 rich,rich,rich
 General function definition,"f: A (Domain, definitionsmängd) -> B (Range, Värdemängd) is a rule that to every x in A yields one function value f(x) in B
 Function graph/Funktionsgraf/Funktionskurva: {point(x, y): y=f(x)}
-Domain D_f (set, allowed x values) -> Range V_f (set, based on allowed domain values)
+$math{Domain D_f (set, allowed x values) -> Range V_f (set, based on allowed domain values)}
 Algebraic form of function: f(x) = <rule> <bound>, function contains expression and bound (as domain D_f), to every x in domain map to one y in range.
 (<bound> can be omitted, and implicitly defined as the largest possible set of real numbers) e.g. f(x)=1/sqrt(x), <bound> infers to x>=0
-Continous: The function is continuous for all x in the domain.","f(x) = x^2-3x
+Continous: The function is continuous for all x in the domain.","$math{f(x) = x^2-3x}
 Value table:
 -2, 10
 -1, 4
@@ -15,85 +15,85 @@ Value table:
 3, 0
 4, 4
 5, 10"
-,f(x)=…,"f(x)=-x^3-2x^2, x=3, x=-5"
-,f(x_1)-f(x_2)=…,"f(x)=x/(2x+1), x_1=2, x_2=1/2
-f(x)=3x^2-4x, x=2a"
-,(f+g)(x)=f(x)+g(x),
-,(f+g)(x)=f(x)+g(x),
-,(fg)(x)=f(x)g(x),
-,(f/g)(x)=f(x)/g(x),
-,(f.g)(x)=f(g(x)),"f(x)=x+5, g(x)=x^2, x=2"
-,"f(x)=1/x, D_f: x!=0","x-3, x^2-4=(x+2)(x-2)"
-,"f(x)=1/g(x), g(x)>0 => D_f: x",g(x)=x^2+1
-,"f(x)=kx^(2n)+b, n \\e \\Z, V_f >= b","k=1, n=1, b=2
+,$math{f(x)=…},"$math{f(x)=-x^3-2x^2, x=3, x=-5}"
+,$math{f(x_1)-f(x_2)=…},"$math{f(x)=x/(2x+1), x_1=2, x_2=1/2}
+$math{f(x)=3x^2-4x, x=2a}"
+,$math{(f+g)(x)=f(x)+g(x)},
+,$math{(f+g)(x)=f(x)+g(x)},
+,$math{(fg)(x)=f(x)g(x)},
+,$math{(f/g)(x)=f(x)/g(x)},
+,$math{(f.g)(x)=f(g(x))},"$math{f(x)=x+5, g(x)=x^2, x=2}"
+,"$math{f(x)=1/x, D_f: x!=0}","$math{x-3, x^2-4=(x+2)(x-2)}"
+,"$math{f(x)=1/g(x), g(x)>0 => D_f: x}",$math{g(x)=x^2+1}
+,"$math{f(x)=kx^(2n)+b, n \\e \\Z, V_f >= b}","k=1, n=1, b=2
 k=-1, n=2, b=5"
-,"f(x)=k*sqrt(g(x))+b, D_f: g(x)>0, V_f: f>b","g(x)=7-2x, b=0
-f(x)=sqrt(5+x)+sqrt(12-3x)"
-,f(x)=a,"f(x)=(x+6)/(x-2), a=0
-f(x)=(x+5)/(x+3), a=2"
-Sign table,f(x)=*{},x(x+3)(x-3)
+,"$math{f(x)=k*sqrt(g(x))+b, D_f: g(x)>0, V_f: f>b}","$math{g(x)=7-2x, b=0}
+$math{f(x)=sqrt(5+x)+sqrt(12-3x)}"
+,$math{f(x)=a},"$math{f(x)=(x+6)/(x-2), a=0}
+$math{f(x)=(x+5)/(x+3), a=2}"
+Sign table,$math{f(x)=*{}},$math{x(x+3)(x-3)}
 ,,"Use as sign table
-x^2(x-2)+x+1
-x^3-4x^2+x-3=x^2(x-4)+x-3
-x^4-4x^2+x-3=x^2(x^2-4)+x-3"
-Injective function (one-to-one mapping function)/Injektiv funktion,"One to one mapping function, (x_1, x_2 in D_x)
+$math{x^2(x-2)+x+1}
+$math{x^3-4x^2+x-3=x^2(x-4)+x-3}
+$math{x^4-4x^2+x-3=x^2(x^2-4)+x-3}"
+$math{Injective function (one-to-one mapping function)/Injektiv funktion},"One to one mapping function, (x_1, x_2 in D_x)
 f: A->B
-\\A x_1!=x_2 -> f(x_1) != f(x_2) or f(x_1)=f(x_2) -> x_1=x_2","f(x)=x+1, f(x_1)=f(x_2) <=> x_1+1=x_2+1 <=> x_1=x_2"
-Surjective function/Surjektiv funktion,"f: A->B, \\A y in B \\E x in A -> f(x)=y",
+$math{\\A x_1!=x_2 -> f(x_1) != f(x_2)} or $math{f(x_1)=f(x_2) -> x_1=x_2}","$math{f(x)=x+1, f(x_1)=f(x_2) <=> x_1+1=x_2+1 <=> x_1=x_2}"
+$math{Surjective function/Surjektiv funktion},"f: A->B, $math{\\A y in B \\E x in A -> f(x)=y}",
 Bijektiv funktion,Both injective and surjective,
-Increasing/Växande,x_1<x_2 => f(x_1) <= f(x_2),
-Strictly increasing/Strängt växande,x_1<x_2 => f(x_1) < f(x_2),
-Decreasing/Avtagande,x_1<x_2 => f(x_1) >= f(x_2),
-Strictly decreasing/Strängt avtagande,x_1<x_2 => f(x_1) > f(x_2),
+Increasing/Växande,$math{x_1<x_2 => f(x_1) <= f(x_2)},
+Strictly increasing/Strängt växande,$math{x_1<x_2 => f(x_1) < f(x_2)},
+$math{Decreasing/Avtagande},$math{x_1<x_2 => f(x_1) >= f(x_2)},
+Strictly decreasing/Strängt avtagande,$math{x_1<x_2 => f(x_1) > f(x_2)},
 Strictly monotone function/Strängt monotona funktioner,"Strictly increasing and strictly decreasing functions
 f injective <=> f strictly monotone",
-Inverse function,"Bijective function, f: A->B, f^(-1): B->A, f (D_(f^(-1)) = V_f, V_(f^(-1)) = D_f)
-f^(-1)(y)=x -> y=f(x), f^(-1)(f(x)) = x, f(f^(-1)(y))=y
+Inverse function,"Bijective function, f: A->B, $math{f^(-1): B->A}, f ($math{D_(f^(-1)) = V_f, V_(f^(-1)) = D_f})
+$math{f^(-1)(y)=x -> y=f(x)}, $math{f^(-1)(f(x)) = x}, $math{f(f^(-1)(y))=y}
 For every y in V_f gives x in D_f -> f^(-1) inverse to f
 Geometrical interpretation: mirroring in y=x",
-,y=f(x) <=> f^(-1)(y)=x,
-,"f^(-1).f(x)=x, \\A x in D_f",
-,"f.f^(-1)(x)=x, \\A x in R_f",
-,f(x)=(x^2: x>=0) -Inverse-> sqrt(x),
-,"root(x, n) as inverse function to f(x)=x^n if odd, f(x)=(x^n:x>=0) if event, n in N, n>=0
-x^(1/n)=root(x, n)
-x^(m/n)=(x^(1/n)^m \\A m",
+,$math{y=f(x) <=> f^(-1)(y)=x},
+,$math{f^(-1).f(x)=x, \\A x in D_f},
+,$math{f.f^(-1)(x)=x, \\A x in R_f},
+,$math{f(x)=(x^2: x>=0) -Inverse-> sqrt(x)},
+,"$math{root(x, n)} as inverse function to f(x)=x^n if odd, f(x)=(x^n:x>=0) if even, n in N, n>=0
+$math{x^(1/n)=root(x, n)}
+$math{x^(m/n)=(x^(1/n)^m \\A m}",
 Calculate inverse function,"Check f injective
-f(x)=y => x=g(y) => f^(-1)(x)=g(x)
-Verification: f(f^(-1)(x))=x",f=1/2x+1 -> f^(-1)=2y-2
+$math{f(x)=y => x=g(y) => f^(-1)(x)=g(x)}
+Verification: $math{f(f^(-1)(x))=x}",$math{f=1/2x+1 -> f^(-1)=2y-2}
 ,,
 ,,
 ,,
 ,,
-Find domain and range,f(x) = 2+3x/sqrt(x^2+1)+3x^3,
-Polynomial function,"f(x) = \\S{k=0, n, a_k*x^k}
+Find domain and range,$math{f(x) = 2+3x/sqrt(x^2+1)+3x^3},
+Polynomial function,"$math{f(x) = \\S{k=0, n, a_k*x^k}}
 Degree: The highest exponent of a variable in a polynomial indicates the degree of the polynomial.
-Standard form: f(x) = \\S{k=0, n, a_k*x^k}
-Intercept form: f(x) = a*\\P{k=0, n, x-r_k}","f(x) = -0.6x^3+0.4x^2+2.1x-6.52
-Standard form: f(x) = x^3/4-9x^2/5+13x/2-6
-Intercept form: f(x) = 1/4(x+3)(x-2)(x-4), f(x)=0 => x_1=-3, x_2=2, x_3=4"
+Standard form: $math{f(x) = \\S{k=0, n, a_k*x^k}}
+Intercept form: $math{f(x) = a*\\P{k=0, n, x-r_k}}","$math{f(x) = -0.6x^3+0.4x^2+2.1x-6.52}
+Standard form: $math{f(x) = x^3/4-9x^2/5+13x/2-6}
+Intercept form: $math{f(x) = 1/4(x+3)(x-2)(x-4)}, $math{f(x)=0 => x_1=-3, x_2=2, x_3=4}"
 Linear,,
 Quadratic,,
 Cubic,,
 Number of roots,"Every polynomial eqn f(x) = 0 has n roots x_1, ..., x_n, if k equal roots are counted k times
 Each difference (x - x_1) is a factor of f(x):
-f(x) = 0 = (x - x_1)(x - x_2)...(x - x_n)","f(x) = x^3 + 12x^2 - 27x + 14 = 0
+$math{f(x) = 0 = (x - x_1)(x - x_2)...(x - x_n)}","$math{f(x) = x^3 + 12x^2 - 27x + 14 = 0}
 roots are: 1, 1, -14
-hence: f(x) = (x - 1)^2*(x + 14) = 0"
+hence: $math{f(x) = (x - 1)^2*(x + 14) = 0}"
 Number of real roots (Descartes Rule of Signs),"Number of positive roots = number of sign variations of f(x) or less than that by an even integer
-Number of negative roots = number of sign variations of f(-x) or less than that by an even integer","f(x) = x^3 + x^2 + 2*x + 2 = 0
+Number of negative roots = number of sign variations of f(-x) or less than that by an even integer","$math{f(x) = x^3 + x^2 + 2*x + 2 = 0}
 f(x) sign changes = 0
 => # of positive roots = 0
 
-f(-x) = -x^3 + x^2 - 2*x + 2 = 0
+$math{f(-x) = -x^3 + x^2 - 2*x + 2 = 0}
 f(-x) sign changes = 3
 => # of negative roots = 3 or 1"
-Number of complex roots,"Real coefficients -> Complex roots always occur in conjugate pairs (a \pm b*i), There is never only one complex root","f(x) = x^3 + x^2 + 2*x + 2 = 0
+Number of complex roots,"Real coefficients -> Complex roots always occur in conjugate pairs (a \pm b*i), There is never only one complex root","$math{f(x) = x^3 + x^2 + 2*x + 2 = 0}
 has at least 1 negative root
 => by inspection x_1 = -1
-therefore f(x) = (x + 1)(x^2 + 2) = 0
-=> x_2 = sqrt(2)*i, x_3 = -sqrt(2)*i"
-Location of real roots,"If f(a) and f(b) are opposite signs, there are at least one or an odd number of roots between a and b","f(x) = 8x^3 - 12x^2 - 2*x + 3 = 0
+therefore $math{f(x) = (x + 1)(x^2 + 2) = 0}
+=> $math{x_2 = sqrt(2)*i, x_3 = -sqrt(2)*i}"
+Location of real roots,"If f(a) and f(b) are opposite signs, there are at least one or an odd number of roots between a and b","$math{f(x) = 8x^3 - 12x^2 - 2*x + 3 = 0}
 f(-1) = -15, f(0) = 3
 f(1) = -3, f(2) = 15
 therefore real root exists in each of intervals:
@@ -101,9 +101,9 @@ therefore real root exists in each of intervals:
 Relationship between coefficients p_i and roots x_i,"-p_1 = sum of all roots
 p_2 = sum of all products of roots taken two at a time
 -p_3 = sum of all products of roots taken three at a time
-(-1)^n * p_n = product of all roots","f(x) = x^2 - 6.7*x + 1.2 = 0
+$math{(-1)^n * p_n = product of all roots}","$math{f(x) = x^2 - 6.7*x + 1.2 = 0}
 Find x_1^2 + x_2^2 without solving for roots
-x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1x_2
-x_1 + x_2 = -p_1 = 6.7
-and x_1*x_2 = p_2 = 1.2
-therefore x_1^2 + x_2^2 = (6.7)^2 - 2*1.2 = 42.59"
+$math{x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1x_2}
+$math{x_1 + x_2 = -p_1 = 6.7}
+and $math{x_1*x_2 = p_2 = 1.2}
+therefore $math{x_1^2 + x_2^2 = (6.7)^2 - 2*1.2 = 42.59}"

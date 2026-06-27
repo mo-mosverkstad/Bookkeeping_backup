@@ -1,210 +1,206 @@
 Group,Name,Basic relationship,Presetted values
 rich,rich,rich,rich
-Standard integrals,Definition of integrals,"\int{a, b,f(x)dx} ~= lim n->\inf \\S{k=0, n, f(x_k)*\Dx}
-F(x) = \int{f(x)dx} + C (C is an arbitrary constant)",
+Standard integrals,Definition of integrals,"$math{\int{a, b,f(x)dx} ~= lim n->\inf \\S{k=0, n, f(x_k)*\Dx}}
+$math{F(x) = \int{f(x)dx} + C (C is an arbitrary constant)}",
 ,"Common integral functions
 Through antiderivation:
-F(x) = \int{f(x)dx} => F'(x) = f(x)",\int{kx^n*dx} = kx^(n+1)/(n+1),
-,,"\int{+{i=0, N, k_i*x^n_i*dx}} = +{i=0, N, k_ix^(n_i+1)/(n_i+1)} (Polynomial equation)","(k=[4, 6, -2], n=[3, 2, 1]), (k=[1, 3, 4], n=[-2, 1/2, 1/3])"
-,,"\int{|f(x)|*dx} = {\int{f(x)dx} f(x)>=0, \int{-f(x)dx f(x)<0}}",f(x)=x-1
-,,\int{e^(kx)*dx} = e^(kx)/k,"k=2, k=-2"
-,,\int{a^x*dx} = a^x/ln(a),
-,,\int{1/x*dx} = ln(x),
-,,\int{ln(x)*dx} = \int{1*ln(x)*dx} = xln(x)+x,
-,,\int{sin(kx)*dx} = -cos(kx)/k,k(x)=2x+5
-,,\int{cos(kx)*dx} = sin(kx)/k,k=3
-,,\int{tan(x)*dx} (= \int{sin(x)/cos(x)*dx}) = -ln|cos(x)|,k=3x+\pi/4
-,,\int{cot(x)*dx} (= \int{cos(x)/sin(x)*dx}) = ln|sin(x)|,
-,,\int{1+tan^2(x)*dx} = tan(x),
-,,\int{1+cot^2(x)*dx} = -cot(x),
-,,\int{1/cos^2(x)*dx} = tan(x),
-,,\int{1/sin^2(x)*dx} = -cot(x),
-,,int{sec^2(u) du} = tan(u) + C,
-,,int{csc^2(u) du} = -cot(u) + C,
-,,int{sec(u)tan(u)*du} = sec(u) + C,
-,,int{csc(u)cot(u)du} = -csc(u) + C,
-,,int{tan(u)du} = ln|sec(u)| + C,
-,,int{cot(u)du} = ln|sin(u)| + C,
-,,int{sec(u)du} = ln|sec(u) + tan (u)| + C,
-,,int{csc(u)du} = ln|csc(u) - cot (u)| + C,
-,,\int{1/\sqrt(1-x^2)*dx} = arcsin(x),
-,,\int{-1/\sqrt(1-x^2)*dx} = arccos(x),
-,,\int{1/(x^2+1)*dx} = arctan(x),
-,,\int{1/(x^2+a^2)*dx} (= 1/a\int{1/((x/a)^2+1)*1/a*dx} ) = 1/a*arctan(x/a),4/(2x^2+3)=2/(x^2+sqrt(3/2)^2)
-,,\int{1/(x*sqrt(x^2-1))*dx} = arcsec(x),
-,,\int{sinh(x)*dx} = cosh(x),
-,,\int{cosh(x)*dx} = sinh(x),
-,,\int{tanh(x)*dx} = ln(cosh(x)),
-,,\int{coth(x)*dx} = ln|sinh(x)|,
-,,\int{1/\sqrt(1+x^2)*dx} = arcsinh(x) = ln|x+sqrt(x^2+1)|,
-,,\int{1/\sqrt(1-x^2)*dx} = arccosh(x) = ln|x+sqrt(x^2-1)|,
-,,\int{1/(1-x^2)*dx} = arctanh(x),
-,Integration rules,\int{(f(x)+g(x))*dx} = F(x) + G(x) + C,
-,,"\int{f(x)g(x)*dx} = F(x)g(x) - \int{F(x)g'(x)} + C (Integration by parts, may recurse)","(f=x, g=cos(x)), (f=x, g=sin(x)), (f=x^2, g=sin(x)), (f=x, g=sinh(x)), (f=e^x, g=x^3+1), (f=x^2, g=e^x), "
-,,(Spontanous product): \int{f(x)dx} = \int{1*f(x)dx} = x*f(x)-\int{x*f'(x)*dx},"f=ln(x), f=ln(sqrt(x)), f=ln(sqrt(x)), f=arctan(x), f=arcsin(x)"
-,,\int{f(x)g(x)*dx} = F(x)g(x) - \int{F(x)g'(x)} + C (g(x) for non-integral),"(f=x^3, g=ln(x)), "
-,,I(x)=\int{f(x)g(x)*dx} = F(x)g(x)-\int{F(x)g'(x)} = F(x)g(x)-…(I(x)) -> I(x) = …,"(f=sin(x), g=cos(4x)), (f=e^x, g=sin(x))"
-,,\int{f(g(x))g'(x)*dx} = F(g(x)),
-,,"Substitution: \int{f(g(x))g'(x)*dx} = (t=g(x), dt/dx=g'(x) -> dx=dx/g'(x)) = f(g(x))",
-,,"int{F(a*x + b) dx} -> (1/a) * int{F(u) du}, u = a*x + b",
-,,"int{F(sqrt(a*x + b)) dx} -> (2/a) * int{u * F(u) du}, u = sqrt(a*x + b)",
-,,"int{F((a*x + b)^(1/n)) dx} -> (n/a) * int{u^(n-1) * F(u) du}, u = (a*x + b)^(1/n)",
-,,"int{F(sqrt(x^2 + a^2)) dx} -> a * int{F(a*sec(u)) * sec(u)^2 du}, x = a*tan(u)",
-,,"int{F(sqrt(x^2 - a^2)) dx} -> a * int{F(a*tan(u)) * sec(u) * tan(u) du}, x = a*sec(u)",
-,,"int{F(sqrt(a^2 - x^2)) dx} -> a * int{F(a*cos(u)) * cos(u) du}, x = a*sin(u)",
-,,"int{F(e^(ax)) dx} -> (1/a), int{F(u)/u du}, u = e^(ax)",
-,,"int{F(ln(x)) dx} -> int{F(u) * e^u du}, u = ln(x)",
-,,"int{F(arcsin(x/a)) dx} -> a * int{F(u) * cos(u) du}, u = arcsin(x/a)",
-,Compound integrations,\int{f(x)*dx}=…,"x+cos(x), 2e^x-4, 1/cos^2(x)+sin(x)"
-,Absolute value integrals,"\int{a, b, […|f(x)|]dx} = \int{a, 0, […|f(x)|]dx} + \int{0, b, […|f(x)|]dx}",
-Rational,Rational expressions,"\int{+{k=0, len(a, b), a[k]*x^(b[k])}/(cx^d)*dx} = \int{+{k=0, len(a, b), a[k]*x^(b[k])/(cx^d)}*dx}","(a=[6, -2], b=[2, 0], c=1, d=2)"
-,,"\int{+{k=0, n, a_k(x)}/b(x)*dx} = \int{+{k=0, n, a_k(x)/b(x)}*dx}","(cos^3(x)+1)/cos^2(x), (e^(2x)+1)/e^x"
-,,\int{ax/(bx+c)*dx}=\int{1-((b-a)x-c)/(bx+c)*dx},(x^2-1)/(x^2+1)=1-(2/(x^2+1))
-,,Substitution for rational: \int{f'(x)/f(x)*dx}=ln|F(x)|,"2x/x^2+1, 4x/(x^2+1), x/(4-x^2), x^4/(x^5+1), e^r/(2e^r+1), (2x+2)/(x^2+2x+3), (x+1)/(x^2+2x+3)=1/2*(2x+2)/(x^2+2x+3)"
-,,"\int{p(x)/g^n(x)*dx}=(t=g(x), dt/dx=g'(x))=…, partial fraction decomposition","(4x-2)/(2x+1)^2*dx=(t=2x+1, dt/dx=2)=(t-2)/t^2*dt"
-,,,(9x+6)/(3x+1)^3=3(3x+1)/(3x+1)^3+3/(3x+1)^3
-,Rational partial fraction decomposition,\int{PFD(p(x)/q(x))*dx},"(p=5x-11, q=x^2-5x+4), (p=x+7, q=x^2+2x-3), (p=8x^3+16, q=(x+1)^3(x-1)^2)"
-,,With polynomial division: \int{PD(PFD(p(x)/q(x)))dx},"(p=x^2, q=x-1), (p=x^3+2x^2+3x+4, q=x^2+1)"
+$math{F(x) = \int{f(x)dx} => F'(x) = f(x)}",$math{\int{kx^n*dx} = kx^(n+1)/(n+1)},
+,,"$math{\int{+{i=0, N, k_i*x^n_i*dx}} = +{i=0, N, k_ix^(n_i+1)/(n_i+1)} (Polynomial equation)}","$math{(k=[4, 6, -2], n=[3, 2, 1]), (k=[1, 3, 4], n=[-2, 1/2, 1/3])}"
+,,"$math{\int{|f(x)|*dx} = {\int{f(x)dx} f(x)>=0, \int{-f(x)dx f(x)<0}}}",$math{f(x)=x-1}
+,,$math{\int{e^(kx)*dx} = e^(kx)/k},"$math{k=2, k=-2}"
+,,$math{\int{a^x*dx} = a^x/ln(a)},
+,,$math{\int{1/x*dx} = ln(x)},
+,,$math{\int{ln(x)*dx} = \int{1*ln(x)*dx} = xln(x)+x},
+,,$math{\int{sin(kx)*dx} = -cos(kx)/k},$math{k(x)=2x+5}
+,,$math{\int{cos(kx)*dx} = sin(kx)/k},$math{k=3}
+,,$math{\int{tan(x)*dx} (= \int{sin(x)/cos(x)*dx}) = -ln|cos(x)|},$math{k=3x+\pi/4}
+,,$math{\int{cot(x)*dx} (= \int{cos(x)/sin(x)*dx}) = ln|sin(x)|},
+,,$math{\int{1+tan^2(x)*dx} = tan(x)},
+,,$math{\int{1+cot^2(x)*dx} = -cot(x)},
+,,$math{\int{1/cos^2(x)*dx} = tan(x)},
+,,$math{\int{1/sin^2(x)*dx} = -cot(x)},
+,,$math{int{sec^2(u) du} = tan(u) + C},
+,,$math{int{csc^2(u) du} = -cot(u) + C},
+,,$math{int{sec(u)tan(u)*du} = sec(u) + C},
+,,$math{int{csc(u)cot(u)du} = -csc(u) + C},
+,,$math{int{tan(u)du} = ln|sec(u)| + C},
+,,$math{int{cot(u)du} = ln|sin(u)| + C},
+,,$math{int{sec(u)du} = ln|sec(u) + tan (u)| + C},
+,,$math{int{csc(u)du} = ln|csc(u) - cot (u)| + C},
+,,$math{\int{1/\sqrt(1-x^2)*dx} = arcsin(x)},
+,,$math{\int{-1/\sqrt(1-x^2)*dx} = arccos(x)},
+,,$math{\int{1/(x^2+1)*dx} = arctan(x)},
+,,$math{\int{1/(x^2+a^2)*dx} (= 1/a\int{1/((x/a)^2+1)*1/a*dx} ) = 1/a*arctan(x/a)},$math{4/(2x^2+3)=2/(x^2+sqrt(3/2)^2)}
+,,$math{\int{1/(x*sqrt(x^2-1))*dx} = arcsec(x)},
+,,$math{\int{sinh(x)*dx} = cosh(x)},
+,,$math{\int{cosh(x)*dx} = sinh(x)},
+,,$math{\int{tanh(x)*dx} = ln(cosh(x))},
+,,$math{\int{coth(x)*dx} = ln|sinh(x)|},
+,,$math{\int{1/\sqrt(1+x^2)*dx} = arcsinh(x) = ln|x+sqrt(x^2+1)|},
+,,$math{\int{1/\sqrt(1-x^2)*dx} = arccosh(x) = ln|x+sqrt(x^2-1)|},
+,,$math{\int{1/(1-x^2)*dx} = arctanh(x)},
+,Integration rules,$math{\int{(f(x)+g(x))*dx} = F(x) + G(x) + C},
+,,"$math{\int{f(x)g(x)*dx} = F(x)g(x) - \int{F(x)g'(x)} + C (Integration by parts, may recurse)}","$math{(f=x, g=cos(x)), (f=x, g=sin(x)), (f=x^2, g=sin(x)), (f=x, g=sinh(x)), (f=e^x, g=x^3+1), (f=x^2, g=e^x), }"
+,,$math{(Spontanous product): \int{f(x)dx} = \int{1*f(x)dx} = x*f(x)-\int{x*f'(x)*dx}},"$math{f=ln(x), f=ln(sqrt(x)), f=ln(sqrt(x)), f=arctan(x), f=arcsin(x)}"
+,,$math{\int{f(x)g(x)*dx} = F(x)g(x) - \int{F(x)g'(x)} + C (g(x) for non-integral)},"$math{(f=x^3, g=ln(x)), }"
+,,$math{I(x)=\int{f(x)g(x)*dx} = F(x)g(x)-\int{F(x)g'(x)} = F(x)g(x)-…(I(x)) -> I(x) = …},"$math{(f=sin(x), g=cos(4x)), (f=e^x, g=sin(x))}"
+,,$math{\int{f(g(x))g'(x)*dx} = F(g(x))},
+,,"Substitution: $math{\int{f(g(x))g'(x)*dx} = (t=g(x), dt/dx=g'(x) -> dx=dx/g'(x)) = f(g(x))}",
+,,"$math{int{F(a*x + b) dx} -> (1/a) * int{F(u) du}, u = a*x + b}",
+,,"$math{int{F(sqrt(a*x + b)) dx} -> (2/a) * int{u * F(u) du}, u = sqrt(a*x + b)}",
+,,"$math{int{F((a*x + b)^(1/n)) dx} -> (n/a) * int{u^(n-1) * F(u) du}, u = (a*x + b)^(1/n)}",
+,,"$math{int{F(sqrt(x^2 + a^2)) dx} -> a * int{F(a*sec(u)) * sec(u)^2 du}, x = a*tan(u)}",
+,,"$math{int{F(sqrt(x^2 - a^2)) dx} -> a * int{F(a*tan(u)) * sec(u) * tan(u) du}, x = a*sec(u)}",
+,,"$math{int{F(sqrt(a^2 - x^2)) dx} -> a * int{F(a*cos(u)) * cos(u) du}, x = a*sin(u)}",
+,,"$math{int{F(e^(ax)) dx} -> (1/a), int{F(u)/u du}, u = e^(ax)}",
+,,"$math{int{F(ln(x)) dx} -> int{F(u) * e^u du}, u = ln(x)}",
+,,"$math{int{F(arcsin(x/a)) dx} -> a * int{F(u) * cos(u) du}, u = arcsin(x/a)}",
+,Compound integrations,$math{\int{f(x)*dx}=…},"$math{x+cos(x), 2e^x-4, 1/cos^2(x)+sin(x)}"
+,Absolute value integrals,"$math{\int{a, b, […|f(x)|]dx} = \int{a, 0, […|f(x)|]dx} + \int{0, b, […|f(x)|]dx}}",
+Rational,Rational expressions,"$math{\int{+{k=0, len(a, b), a[k]*x^(b[k])}/(cx^d)*dx} = \int{+{k=0, len(a, b), a[k]*x^(b[k])/(cx^d)}*dx}}","$math{(a=[6, -2], b=[2, 0], c=1, d=2)}"
+,,"$math{\int{+{k=0, n, a_k(x)}/b(x)*dx} = \int{+{k=0, n, a_k(x)/b(x)}*dx}}","$math{(cos^3(x)+1)/cos^2(x), (e^(2x)+1)/e^x}"
+,,$math{\int{ax/(bx+c)*dx}=\int{1-((b-a)x-c)/(bx+c)*dx}},$math{(x^2-1)/(x^2+1)=1-(2/(x^2+1))}
+,,Substitution for rational: $math{\int{f'(x)/f(x)*dx}=ln|F(x)|},"$math{2x/x^2+1, 4x/(x^2+1), x/(4-x^2), x^4/(x^5+1), e^r/(2e^r+1), (2x+2)/(x^2+2x+3), (x+1)/(x^2+2x+3)=1/2*(2x+2)/(x^2+2x+3)}"
+,,"$math{\int{p(x)/g^n(x)*dx}=(t=g(x), dt/dx=g'(x))=…, partial fraction decomposition}","$math{(4x-2)/(2x+1)^2*dx=(t=2x+1, dt/dx=2)=(t-2)/t^2*dt}"
+,,,$math{(9x+6)/(3x+1)^3=3(3x+1)/(3x+1)^3+3/(3x+1)^3}
+,Rational partial fraction decomposition,$math{\int{PFD(p(x)/q(x))*dx}},"$math{(p=5x-11, q=x^2-5x+4), (p=x+7, q=x^2+2x-3), (p=8x^3+16, q=(x+1)^3(x-1)^2)}"
+,,With polynomial division: $math{\int{PD(PFD(p(x)/q(x)))dx}},"$math{(p=x^2, q=x-1), (p=x^3+2x^2+3x+4, q=x^2+1)}"
 ,,"Reduce header numerator degree if numerator and denominator same degree:
-\int{1+PFD((p(x)-q(x))/q(x))dx}","(p=x^2+x+2, q=x^2+2x-3), (p=x+1, q=x^3-6x^2+5x)"
+$math{\int{1+PFD((p(x)-q(x))/q(x))dx}}","$math{(p=x^2+x+2, q=x^2+2x-3), (p=x+1, q=x^3-6x^2+5x)}"
 ,,"Hermites method:
-\int{+{k=0, n, A[k]*x^k}/*{k=0, len(B), +{l=0, m, B[k][l]*x^l}^len(B)}dx}=…+\int{+{}/*{}}","(p=x^3, q=(x^2+2x+2)^2)"
-Radical,Radical expression,"Linear: \int{p(x, [...root{n, (ax+b)/(cx+d)})*dx]}= [t=root{n, (ax+b)/(cx+d)}]","(x+2)/cbrt(x+1), 1/(x+sqrt(x)), (7x+10)cbrt(x+2), (x*sqrt(x-1))/(1-sqrt(x-1))"
-,,Radical chains: \int{A*sqrt(f(x))*f'(x)*dx} = 2/3*A*(f(x))^(3/2),sqrt(x^4+1)*x^3
-,,int{ du / sqrt((a + b*u)*(p + q*u)) } = (2 / sqrt(b*q)) * ln[ sqrt(b*(p + q*u)) + sqrt(q*(a + b*u)) ] + C,
-,,int{ u du / sqrt((a + b*u)*(p + q*u)) } = sqrt((a + b*u)*(p + q*u)) / (b*q) - (a*q + b*p)/(2*b*q) * int{ du / sqrt((a + b*u)*(p + q*u)) },
-,,int{ sqrt((a + b*u)*(p + q*u)) du } = (2*b*q*u + a*q + b*p)/(4*b*q) * sqrt((a + b*u)*(p + q*u)) - ((a*q - b*p)^2)/(8*b*q) * int{ du / sqrt((a + b*u)*(p + q*u)) },
-,,int{ sqrt((p + q*u)/(a + b*u)) du } = sqrt((a + b*u)*(p + q*u)) / b + (b*p - a*q)/(2*b) * int{ du / sqrt((a + b*u)*(p + q*u)) },
-,,int{ du / ((p + q*u)*sqrt((a + b*u)*(p + q*u))) } = (2*sqrt(a + b*u)) / ((b*p - a*q)*sqrt(p + q*u)) + C,
+$math{\int{+{k=0, n, A[k]*x^k}/*{k=0, len(B), +{l=0, m, B[k][l]*x^l}^len(B)}dx}=…+\int{+{}/*{}}}","$math{(p=x^3, q=(x^2+2x+2)^2)}"
+Radical,Radical expression,"Linear: $math{\int{p(x, [...root{n, (ax+b)/(cx+d)})*dx]}= [t=root{n, (ax+b)/(cx+d)}]}","$math{(x+2)/cbrt(x+1), 1/(x+sqrt(x)), (7x+10)cbrt(x+2), (x*sqrt(x-1))/(1-sqrt(x-1))}"
+,,Radical chains: $math{\int{A*sqrt(f(x))*f'(x)*dx} = 2/3*A*(f(x))^(3/2)},$math{sqrt(x^4+1)*x^3}
+,,$math{int{ du / sqrt((a + b*u)*(p + q*u)) } = (2 / sqrt(b*q)) * ln[ sqrt(b*(p + q*u)) + sqrt(q*(a + b*u)) ] + C},
+,,$math{int{ u du / sqrt((a + b*u)*(p + q*u)) } = sqrt((a + b*u)*(p + q*u)) / (b*q) - (a*q + b*p)/(2*b*q) * int{ du / sqrt((a + b*u)*(p + q*u)) }},
+,,$math{int{ sqrt((a + b*u)*(p + q*u)) du } = (2*b*q*u + a*q + b*p)/(4*b*q) * sqrt((a + b*u)*(p + q*u)) - ((a*q - b*p)^2)/(8*b*q) * int{ du / sqrt((a + b*u)*(p + q*u)) }},
+,,$math{int{ sqrt((p + q*u)/(a + b*u)) du } = sqrt((a + b*u)*(p + q*u)) / b + (b*p - a*q)/(2*b) * int{ du / sqrt((a + b*u)*(p + q*u)) }},
+,,$math{int{ du / ((p + q*u)*sqrt((a + b*u)*(p + q*u))) } = (2*sqrt(a + b*u)) / ((b*p - a*q)*sqrt(p + q*u)) + C},
 ,,,
 ,,,
 ,,,
-,,"\int{sqrt(x^2+1)*dx}=[x=sinh(t), dx/dt=cosh(t)]=\int{sqrt(cosh^2(t))*cosh^2(t)*dt}",
-,,"x^2+a^2 -> x=a*tan(\t), 1+tan^2(\t)=sec^2(\t)",
-,,"x^2-a^2 -> x=a*sec(\t), sec^2(\t)-1=tan^2(\t)",
-,,int{sqrt(u^2 \pm a^2) du} = (u/2)*sqrt(u^2 \pm a^2) \pm (a^2/2)*ln|u + sqrt(u^2 \pm a^2)| + C,
-,,int{u*sqrt(u^2 \pm a^2) du} = ( (u^2 \pm a^2)^(3/2) )/3 + C,
-,,int{(sqrt(u^2 \pm a^2))/u du} = sqrt(u^2 \pm a^2) \mp a*ln|(a + sqrt(u^2 \pm a^2))/u| + C,
-,,int{u^2*sqrt(u^2 \pm a^2) du} = (u/8)*(2*u^2 \pm a^2)*sqrt(u^2 \pm a^2) \mp (a^4/8)*ln|u + sqrt(u^2 \pm a^2)| + C,
-,,int{(sqrt(u^2 - a^2))/u du} = sqrt(u^2 - a^2) - a*arcsec|u/a| + C,
-,,int{du/sqrt(u^2 \pm a^2)} = ln|u + sqrt(u^2 \pm a^2)| + C,
-,,int{(sqrt(u^2 \pm a^2))/u^2 du} = -sqrt(u^2 \pm a^2)/u + ln|u + sqrt(u^2 \pm a^2)| + C,
-,,int{u^2 du/sqrt(u^2 \pm a^2)} = (1/2)*u*sqrt(u^2 \pm a^2) \mp (a^2/2)*ln|u + sqrt(u^2 \pm a^2)| + C,
-,,int{du/(u*sqrt(u^2 + a^2))} = (1/a)*ln|(sqrt(u^2 + a^2) + a)/u| + C,
-,,int{du/(u*sqrt(u^2 - a^2))} = (1/a)*arcsec|u/a| + C,
-,,int{du/(u^2*sqrt(u^2 \pm a^2))} = \mp sqrt(u^2 \pm a^2)/(a^2*u) + C,
-,,int{du/((u^2 \pm a^2)^(3/2))} = \pm u/(a^2*sqrt(u^2 \pm a^2)) + C,
-,,"a^2-x^2 -> x=a*sin(\t), 1-sin^2(\t) = cos^2(\t)",
-,,int{sqrt(a^2 - u^2) du} = (u/2)*sqrt(a^2 - u^2) + (a^2/2)*arcsin(u/a) + C,
-,,int{u*sqrt(a^2 - u^2) du} = -(a^2 - u^2)^(3/2)/3 + C,
-,,int{u^2*sqrt(a^2 - u^2) du} = (u/8)*(2*u^2 - a^2)*sqrt(a^2 - u^2) + (a^4/8)*arcsin(u/a) + C,
-,,int{sqrt(a^2 - u^2)/u du} = sqrt(a^2 - u^2) - a*ln|(a + sqrt(a^2 - u^2)/u)| + C,
-,,int{sqrt(a^2 - u^2)/u^2 du} = -(1/u)*sqrt(a^2 - u^2) - arcsin(u/a) + C,
-,,int{u/sqrt(a^2 - u^2) du} = -sqrt(a^2 - u^2) + C,
-,,int{u^2/sqrt(a^2 - u^2) du} = -(u/2)*sqrt(a^2 - u^2) + (a^2/2)*arcsin(u/a) + C,
-,,int{du/(u*sqrt(a^2 - u^2))} = -(1/a)*ln|(a + sqrt(a^2 - u^2))/u| + C,
-,,int{du/(u^2*sqrt(a^2 - u^2))} = -(1/a^2)*sqrt(a^2 - u^2) + C,
-,,int{du/(a^2 - u^2)^(3/2)} = u/(a^2*sqrt(a^2 - u^2)) + C,
-,,int{(a^2 - u^2)^(3/2) du} = -(u/8)*(2*u^2 - 5*a^2)*sqrt(a^2 - u^2) + (3*a^4/8)*arcsin(u/a) + C,
-,,"Eulersubstitution: t=x+sqrt(x^2+1)
-\int{1/sqrt(x^2+1)*dx} = ln(x+sqrt(x^2+1))",
-,,\int{x/sqrt(x^2-2x+3)} -> … -> \int{x/sqrt(x^2+1)*dx} + \int{1/sqrt(x^2)+1},
-,,\int{sqrt(x^2-2x+3)*dx} = \int{1*sqrt(x^2-2x+3)*dx} = x*sqrt(x^2-2x+3)-\int{sqrt(x^2-2x+3)*dx}+\int{…*dx},
-,,\int{(1-x^4)/(1+x^2+x^4)sqrt(1+x^4))dx} = [u=sqrt(x^2+x^(-2)] = ,
-,,"sqrt(1-x^2)=(x=sin(t)), dx/dt=cos(t))=sqrt(cos^2(x))*cos(x)*dt",
-,,sqrt(2au-u^2),
-,,int{sqrt(2*a*u - u^2) du} = ((u - a)/2)*sqrt(2*a*u - u^2) + (a^2/2)*arccos((a - u)/a) + C,
-,,int{u*sqrt(2*a*u - u^2) du} = (2*u^2 - a*u - 3*a^2)/6 * sqrt(2*a*u - u^2) + (a^3/2)*arccos((a - u)/a) + C,
-,,int{sqrt(2*a*u - u^2)/u du} = sqrt(2*a*u - u^2) + a*arccos((a - u)/a) + C,
-,,int{sqrt(2*a*u - u^2)/u^2 du} = -(2*sqrt(2*a*u - u^2))/u - arccos((a - u)/a) + C,
-,,int{du/sqrt(2*a*u - u^2)} = arccos((a - u)/a) + C,
-,,int{u/sqrt(2*a*u - u^2) du} = -sqrt(2*a*u - u^2) + a*arccos((a - u)/a) + C,
-,,int{u^2/sqrt(2*a*u - u^2) du} = -((u + 3*a)/2)*sqrt(2*a*u - u^2) + (3*a^2/2)*arccos((a - u)/a) + C,
-,,int{du/(u*sqrt(2*a*u - u^2))} = -sqrt(2*a*u - u^2)/u + C,
-Exponential,Exponential expressions,\int{1/(e^x-e^(-2x)+2)dx} = [t=e^x] = \int{e^x/((e^x)^2-e^(-2)+2e^x)*dx},
-,,Chains: \int{x^(n-1)*e^x^n*dx}=\int{1/n*e^x^n*nx^(n-1)*dx} = e^x^n/n,
-,,\int{ln(1+e^x)/e^x*dx} -> PARTIALINT,
-,,int{u^n * e^(a*u) du} = (1/a)*u^n * e^(a*u) - (n/a)*int{u^(n-1)*e^(a*u) du},
-,,int{u*e^(a*u) du} = (e^(a*u)/a^2)*(a*u - 1) + C,
-,Gaussian-integrals/Gauss-integraler,"\int{0, \inf, x^n*e^(-ax)dx} = n!/a^n",
-,,"\int{0, \inf, x^n*e^(-ax^2)dx} = 
-n=0: 1/2(\pi/a)^(1/2)
-n=1: 1/(2a)
-n=2: 1/4*(\pi/a^3)^(1/2)
-n=3: 1/(2a)
-n=4: 1/4*(\pi/a^3)^(1/2)
-n=5: 1/(2a)
-n=6: 1/4*(\pi/a^3)^(1/2)",
-,Fractional exponential,int{e^u/u du} = ln(u) + (a*u)/(1!*1!) + (a*u)^2/(2!*2!) + (a*u)^3/(3!*3!) + ...,
-,,int{e^(a*u)/u^n du} = -(e^(a*u))/((n-1)*u^(n-1)) +  (a/(n-1))*int{e^(a*u)/u^(n-1) du},
-,,int{du/(p + q*e^(a*u))} = u/p - (1/(a*q))*ln(p + q*e^(a*u)) + C,
-,,int{du/(p + q*e^(a*u))^2} = u/p^2 + 1/(a*p*q*(p + q*e^(a*u))) - (1/(a*p^2*q))*ln(p + q*e^(a*u)) + C,
+,,"$math{\int{sqrt(x^2+1)*dx}=[x=sinh(t), dx/dt=cosh(t)]=\int{sqrt(cosh^2(t))*cosh^2(t)*dt}}",
+,,"$math{x^2+a^2 -> x=a*tan(\t), 1+tan^2(\t)=sec^2(\t)}",
+,,"$math{x^2-a^2 -> x=a*sec(\t), sec^2(\t)-1=tan^2(\t)}",
+,,$math{int{sqrt(u^2 \pm a^2) du} = (u/2)*sqrt(u^2 \pm a^2) \pm (a^2/2)*ln|u + sqrt(u^2 \pm a^2)| + C},
+,,$math{int{u*sqrt(u^2 \pm a^2) du} = ( (u^2 \pm a^2)^(3/2) )/3 + C},
+,,$math{int{(sqrt(u^2 \pm a^2))/u du} = sqrt(u^2 \pm a^2) \mp a*ln|(a + sqrt(u^2 \pm a^2))/u| + C},
+,,$math{int{u^2*sqrt(u^2 \pm a^2) du} = (u/8)*(2*u^2 \pm a^2)*sqrt(u^2 \pm a^2) \mp (a^4/8)*ln|u + sqrt(u^2 \pm a^2)| + C},
+,,$math{int{(sqrt(u^2 - a^2))/u du} = sqrt(u^2 - a^2) - a*arcsec|u/a| + C},
+,,$math{int{du/sqrt(u^2 \pm a^2)} = ln|u + sqrt(u^2 \pm a^2)| + C},
+,,$math{int{(sqrt(u^2 \pm a^2))/u^2 du} = -sqrt(u^2 \pm a^2)/u + ln|u + sqrt(u^2 \pm a^2)| + C},
+,,$math{int{u^2 du/sqrt(u^2 \pm a^2)} = (1/2)*u*sqrt(u^2 \pm a^2) \mp (a^2/2)*ln|u + sqrt(u^2 \pm a^2)| + C},
+,,$math{int{du/(u*sqrt(u^2 + a^2))} = (1/a)*ln|(sqrt(u^2 + a^2) + a)/u| + C},
+,,$math{int{du/(u*sqrt(u^2 - a^2))} = (1/a)*arcsec|u/a| + C},
+,,$math{int{du/(u^2*sqrt(u^2 \pm a^2))} = \mp sqrt(u^2 \pm a^2)/(a^2*u) + C},
+,,$math{int{du/((u^2 \pm a^2)^(3/2))} = \pm u/(a^2*sqrt(u^2 \pm a^2)) + C},
+,,"$math{a^2-x^2 -> x=a*sin(\t), 1-sin^2(\t) = cos^2(\t)}",
+,,$math{int{sqrt(a^2 - u^2) du} = (u/2)*sqrt(a^2 - u^2) + (a^2/2)*arcsin(u/a) + C},
+,,$math{int{u*sqrt(a^2 - u^2) du} = -(a^2 - u^2)^(3/2)/3 + C},
+,,$math{int{u^2*sqrt(a^2 - u^2) du} = (u/8)*(2*u^2 - a^2)*sqrt(a^2 - u^2) + (a^4/8)*arcsin(u/a) + C},
+,,$math{int{sqrt(a^2 - u^2)/u du} = sqrt(a^2 - u^2) - a*ln|(a + sqrt(a^2 - u^2)/u)| + C},
+,,$math{int{sqrt(a^2 - u^2)/u^2 du} = -(1/u)*sqrt(a^2 - u^2) - arcsin(u/a) + C},
+,,$math{int{u/sqrt(a^2 - u^2) du} = -sqrt(a^2 - u^2) + C},
+,,$math{int{u^2/sqrt(a^2 - u^2) du} = -(u/2)*sqrt(a^2 - u^2) + (a^2/2)*arcsin(u/a) + C},
+,,$math{int{du/(u*sqrt(a^2 - u^2))} = -(1/a)*ln|(a + sqrt(a^2 - u^2))/u| + C},
+,,$math{int{du/(u^2*sqrt(a^2 - u^2))} = -(1/a^2)*sqrt(a^2 - u^2) + C},
+,,$math{int{du/(a^2 - u^2)^(3/2)} = u/(a^2*sqrt(a^2 - u^2)) + C},
+,,$math{int{(a^2 - u^2)^(3/2) du} = -(u/8)*(2*u^2 - 5*a^2)*sqrt(a^2 - u^2) + (3*a^4/8)*arcsin(u/a) + C},
+,,"Eulersubstitution: $math{t=x+sqrt(x^2+1)}
+$math{\int{1/sqrt(x^2+1)*dx} = ln(x+sqrt(x^2+1))}",
+,,$math{\int{x/sqrt(x^2-2x+3)} -> … -> \int{x/sqrt(x^2+1)*dx} + \int{1/sqrt(x^2)+1}},
+,,$math{\int{sqrt(x^2-2x+3)*dx} = \int{1*sqrt(x^2-2x+3)*dx} = x*sqrt(x^2-2x+3)-\int{sqrt(x^2-2x+3)*dx}+\int{…*dx}},
+,,$math{\int{(1-x^4)/(1+x^2+x^4)sqrt(1+x^4))dx} = [u=sqrt(x^2+x^(-2)] = },
+,,"$math{sqrt(1-x^2)=(x=sin(t)), dx/dt=cos(t))=sqrt(cos^2(x))*cos(x)*dt}",
+,,$math{sqrt(2au-u^2)},
+,,$math{int{sqrt(2*a*u - u^2) du} = ((u - a)/2)*sqrt(2*a*u - u^2) + (a^2/2)*arccos((a - u)/a) + C},
+,,$math{int{u*sqrt(2*a*u - u^2) du} = (2*u^2 - a*u - 3*a^2)/6 * sqrt(2*a*u - u^2) + (a^3/2)*arccos((a - u)/a) + C},
+,,$math{int{sqrt(2*a*u - u^2)/u du} = sqrt(2*a*u - u^2) + a*arccos((a - u)/a) + C},
+,,$math{int{sqrt(2*a*u - u^2)/u^2 du} = -(2*sqrt(2*a*u - u^2))/u - arccos((a - u)/a) + C},
+,,$math{int{du/sqrt(2*a*u - u^2)} = arccos((a - u)/a) + C},
+,,$math{int{u/sqrt(2*a*u - u^2) du} = -sqrt(2*a*u - u^2) + a*arccos((a - u)/a) + C},
+,,$math{int{u^2/sqrt(2*a*u - u^2) du} = -((u + 3*a)/2)*sqrt(2*a*u - u^2) + (3*a^2/2)*arccos((a - u)/a) + C},
+,,$math{int{du/(u*sqrt(2*a*u - u^2))} = -sqrt(2*a*u - u^2)/u + C},
+Exponential,Exponential expressions,$math{\int{1/(e^x-e^(-2x)+2)dx} = [t=e^x] = \int{e^x/((e^x)^2-e^(-2)+2e^x)*dx}},
+,,Chains: $math{\int{x^(n-1)*e^x^n*dx}=\int{1/n*e^x^n*nx^(n-1)*dx} = e^x^n/n},
+,,$math{\int{ln(1+e^x)/e^x*dx} -> PARTIALINT},
+,,$math{int{u^n * e^(a*u) du} = (1/a)*u^n * e^(a*u) - (n/a)*int{u^(n-1)*e^(a*u) du}},
+,,$math{int{u*e^(a*u) du} = (e^(a*u)/a^2)*(a*u - 1) + C},
+,Gaussian-integrals/Gauss-integraler,"$math{\int{0, \inf, x^n*e^(-ax)dx} = n!/a^n}",
+,,"$math{\int{0, \inf, x^n*e^(-ax^2)dx} = }
+$math{n=0: 1/2(\pi/a)^(1/2)}
+$math{n=1: 1/(2a)}
+$math{n=2: 1/4*(\pi/a^3)^(1/2)}
+$math{n=3: 1/(2a)}
+$math{n=4: 1/4*(\pi/a^3)^(1/2)}
+$math{n=5: 1/(2a)}
+$math{n=6: 1/4*(\pi/a^3)^(1/2)}",
+,Fractional exponential,$math{int{e^u/u du} = ln(u) + (a*u)/(1!*1!) + (a*u)^2/(2!*2!) + (a*u)^3/(3!*3!) + ...},
+,,$math{int{e^(a*u)/u^n du} = -(e^(a*u))/((n-1)*u^(n-1)) +  (a/(n-1))*int{e^(a*u)/u^(n-1) du}},
+,,$math{int{du/(p + q*e^(a*u))} = u/p - (1/(a*q))*ln(p + q*e^(a*u)) + C},
+,,$math{int{du/(p + q*e^(a*u))^2} = u/p^2 + 1/(a*p*q*(p + q*e^(a*u))) - (1/(a*p^2*q))*ln(p + q*e^(a*u)) + C},
 ,,,
-Logarithmic,Logarithmic expressions,int{ln(u) du} = u*ln(u) - u + C,
-,,"\int{ln(+{k=0, n, A[k]*x^k})dx} = \int{ln(A*(*{k=0, n, x-r[k]}))dx} = \int{(ln(A)+(+ln({k=0, n, x-r[k]})))dx}
-(+{k=0, n, A[k]*x^k}=0 => {k=0, n, r[k]})","A=[1, -3, 2] -> A=1, r[1, 2]"
-,,\int{ln(A(x)/B(x)}dx} = \int{(ln(A(x))-ln(B(x)))dx},
-,,int{ln^n(u) du} = u*ln^n(u) - n*int{ln^(n-1)(u) du},
-,,int{(ln(u))/u^2 du} = -(ln(u))/u - 1/u + C,
-,,"int{(ln^n(u))/u du} = (ln^(n+1)(u))/(n+1) + C,  n != -1",
-,,int{u^n * ln(u) du} = (u^(n+1)/(n+1)^2)*((n+1)*ln(u) - 1) + C,
-,,"int{u^m*ln^n(u) du} = (u^(m+1)*ln^n(u))/(m+1) - (n/(m+1))*int{u^m*ln^(n-1)(u) du},  m != -1",
-,,int{u^n du/ln(u)} = ln(ln(u)) + (n+1)*ln(u) + ((n+1)^2 * ln^2(u))/(2!*2!) + ((n+1)^3 * ln^3(u))/(3!*3!) + ...,
-,,int{e^(a*u)*ln(u) du} = (e^(a*u)*ln(u))/a - (1/a)*int{e^(a*u)/u du},
-,,,
-,,,
-,,,
-,,,
+Logarithmic,Logarithmic expressions,$math{int{ln(u) du} = u*ln(u) - u + C},
+,,"$math{\int{ln(+{k=0, n, A[k]*x^k})dx} = \int{ln(A*(*{k=0, n, x-r[k]}))dx} = \int{(ln(A)+(+ln({k=0, n, x-r[k]})))dx}}
+$math{(+{k=0, n, A[k]*x^k}=0 => {k=0, n, r[k]})}","$math{A=[1, -3, 2] -> A=1, r[1, 2]}"
+,,$math{\int{ln(A(x)/B(x)}dx} = \int{(ln(A(x))-ln(B(x)))dx}},
+,,$math{int{ln^n(u) du} = u*ln^n(u) - n*int{ln^(n-1)(u) du}},
+,,$math{int{(ln(u))/u^2 du} = -(ln(u))/u - 1/u + C},
+,,"$math{int{(ln^n(u))/u du} = (ln^(n+1)(u))/(n+1) + C,  n != -1}",
+,,$math{int{u^n * ln(u) du} = (u^(n+1)/(n+1)^2)*((n+1)*ln(u) - 1) + C},
+,,"$math{int{u^m*ln^n(u) du} = (u^(m+1)*ln^n(u))/(m+1) - (n/(m+1))*int{u^m*ln^(n-1)(u) du},  m != -1}",
+,,$math{int{u^n du/ln(u)} = ln(ln(u)) + (n+1)*ln(u) + ((n+1)^2 * ln^2(u))/(2!*2!) + ((n+1)^3 * ln^3(u))/(3!*3!) + ...},
+,,$math{int{e^(a*u)*ln(u) du} = (e^(a*u)*ln(u))/a - (1/a)*int{e^(a*u)/u du}},
 ,,,
 ,,,
 ,,,
 ,,,
 ,,,
 ,,,
-Trigonometrical,Trigonometrical expressions,"int{sin^n(u) du} = -1/n*sin^(n-1)(u)*cos(u) +  (n-1)/n*int{sin^(n-2)(u) du}
-\int{sin^(2n)(x)dx} = \int{(sin^2(x))^n*dx} = EXPAND[\int{((1+cos(2x))/2)^n*dx}]
-\int{cos^(2n)(x)dx} = \int{(cos^2(x))^n*dx} = EXPAND[\int{((1-cos(2x))/2)^n*dx}]",
-,,int{sin^2(u) du} = \int{(1-cos(2x))/2*dx} = 1/2*u - 1/4*sin(2*u) + C,
-,,int{sin^3(u) du} = -1/3*(2 + sin^2(u))*cos(u) + C,
-,,int{du/sin^2(a*u)} = -1/a*cot(a*u) + C,
-,,int{du/sin^3(a*u)} = -(cos(a*u))/(2*a*sin^2(a*u)) + 1/(2*a)*ln(tan(a*u/2)) + C,
-,,"int{cos^n(u) du} = 1/n*cos^(n-1)(u)*sin(u) + (n-1)/n*int{cos^(n-2)(u) du}
-\int{sin^(2n+1)(x)dx}=\int{-(1-cos^2(x))^(2n)*(-sin(x))*dx}
-\int{cos^(2n+1)(x)dx}=\int{(1-sin^2(x))^(2n)*cos(x)*dx}",
-,,int{cos^2(u) du} = \int{(1+cos(2x))/2*dx} = 1/2*u + 1/4*sin(2*u) + C,
-,,int{cos^3(u) du} = 1/3*(2 + cos^2(u))*sin(u) + C,
-,,int{du/cos^2(a*u)} = (1/a)*tan(a*u) + C,
-,,int{du/cos^3(a*u)} = (sin(a*u))/(2*a*cos^2(a*u)) + 1/(2*a)*ln(tan(\p/4 + a*u/2)) + C,
-,,int{tan^n(u) du} = 1/(n-1)*tan^(n-1)(u) - int{tan^(n-2)(u) du},
-,,int{tan^2(u) du} = tan(u) - u + C,
-,,int{tan^3(u) du} = 1/2*tan^2(u) + ln|cos(u)| + C,
-,,int{cot^n(u) du} = -1/(n-1)*cot^(n-1)(u) - int{cot^(n-2)(u) du},
-,,int{cot^2(u) du} = -cot(u) - u + C,
-,,int{cot^3(u) du} = -1/2*cot^2(u) - ln|sin(u)| + C,
-,,int{sec^n(u) du} = 1/(n-1)*tan(u)*sec^(n-2)(u) + (n-2)/(n-1)*int{sec^(n-2)(u) du},
-,,int{sec^3(u) du} = 1/2*sec(u)*tan(u) + 1/2*ln|sec(u) + tan(u)| + C,
-,,int{csc^n(u) du} = -1/(n-1)*cot(u)*csc^(n-2)(u) + (n-2)/(n-1)*int{csc^(n-2)(u) du},
-,,int{csc^3(u) du} = -1/2*csc(u)*cot(u) + 1/2*ln|csc(u) - cot(u)| + C,
-,,"\int{cos(x^(1/n))*dx} = [t=x^(1/n), dx=nt^(n-1)*dt] = PARTIALINT[\int{n*t^(n-1)*cos(t)*dt}, \int{cos(t)dt}]",
-,,int{sin(a*u)/u^n du} = -(sin(a*u))/((n-1)*u^(n-1)) + (a/(n-1))*int{cos(a*u)/u^(n-1) du},
-,,int{du/sin^n(a*u)} = (cos(a*u))/(a*(n-1)*sin^(n-1)(a*u)) + ((n-2)/(n-1))*int{du/sin^(n-2)(a*u)},
-,,int{u du/sin^n(a*u)} = (u*cos(a*u))/(a*(n-1)*sin^(n-1)(a*u)) - 1/(a^2*(n-1)*(n-2)*sin^(n-2)(a*u)) + ((n-2)/(n-1))*int{u du/sin^(n-2)(a*u)},
-,,int{du/(1 - cos(a*u))} = -(1/a)*cot(a*u/2) + C,
-,,int{du/(1 - sin(a*u))} = (1/a)*tan(\p/4 + a*u/2) + C,
-,,int{du/(1 - sin(a*u))^2} = (1/(2*a))*tan(\p/4 + a*u/2) + (1/(6*a))*tan^3(\p/4 + a*u/2) + C,
-,,int{u du/(1 - sin(a*u))} = u/a*tan(\p/4 + a*u/2) + (2/a^2)*ln(sin(\p/4 - a*u/2)) + C,
-,,int{du/(1 + cos(a*u))} = (1/a)*tan(a*u/2) + C,
-,,int{u du/(1 - cos(a*u))} = -(u/a)*cot(a*u/2) + (2/a^2)*ln(sin(a*u/2)) + C,
-,,int{u du/(1 + cos(a*u))} = (u/a)*tan(a*u/2) + (2/a^2)*ln(cos(a*u/2)) + C,
-,,int{cos(a*u)/u^n du} = -(cos(a*u))/((n-1)*u^(n-1)) - (a/(n-1))*int{sin(a*u)/u^(n-1) du},
-,,int{du/cos^n(a*u)} = (sin(a*u))/(a*(n-1)*cos^(n-1)(a*u)) + ((n-2)/(n-1))*int{du/cos^(n-2)(a*u)},
-,,int{u du/cos^n(a*u)} = (u*sin(a*u))/(a*(n-1)*cos^(n-1)(a*u)) + 1/(a^2*(n-1)*(n-2)*cos^(n-2)(a*u)) + ((n-2)/(n-1))*int{u du/cos^(n-2)(a*u)},
-,,int{tan^n(a*u)*sec^2(a*u) du} = tan^(n+1)(a*u)/(a*(n+1)) + C,
-,,int{sec^2(a*u)/tan(a*u) du} = (1/a)*ln(tan(a*u)) + C,
 ,,,
 ,,,
 ,,,
 ,,,
+Trigonometrical,Trigonometrical expressions,"$math{int{sin^n(u) du} = -1/n*sin^(n-1)(u)*cos(u) +  (n-1)/n*int{sin^(n-2)(u) du}}
+$math{\int{sin^(2n)(x)dx} = \int{(sin^2(x))^n*dx} = EXPAND[\int{((1+cos(2x))/2)^n*dx}]}
+$math{\int{cos^(2n)(x)dx} = \int{(cos^2(x))^n*dx} = EXPAND[\int{((1-cos(2x))/2)^n*dx}]}",
+,,$math{int{sin^2(u) du} = \int{(1-cos(2x))/2*dx} = 1/2*u - 1/4*sin(2*u) + C},
+,,$math{int{sin^3(u) du} = -1/3*(2 + sin^2(u))*cos(u) + C},
+,,$math{int{du/sin^2(a*u)} = -1/a*cot(a*u) + C},
+,,$math{int{du/sin^3(a*u)} = -(cos(a*u))/(2*a*sin^2(a*u)) + 1/(2*a)*ln(tan(a*u/2)) + C},
+,,"$math{int{cos^n(u) du} = 1/n*cos^(n-1)(u)*sin(u) + (n-1)/n*int{cos^(n-2)(u) du}}
+$math{\int{sin^(2n+1)(x)dx}=\int{-(1-cos^2(x))^(2n)*(-sin(x))*dx}}
+$math{\int{cos^(2n+1)(x)dx}=\int{(1-sin^2(x))^(2n)*cos(x)*dx}}",
+,,$math{int{cos^2(u) du} = \int{(1+cos(2x))/2*dx} = 1/2*u + 1/4*sin(2*u) + C},
+,,$math{int{cos^3(u) du} = 1/3*(2 + cos^2(u))*sin(u) + C},
+,,$math{int{du/cos^2(a*u)} = (1/a)*tan(a*u) + C},
+,,$math{int{du/cos^3(a*u)} = (sin(a*u))/(2*a*cos^2(a*u)) + 1/(2*a)*ln(tan(\p/4 + a*u/2)) + C},
+,,$math{int{tan^n(u) du} = 1/(n-1)*tan^(n-1)(u) - int{tan^(n-2)(u) du}},
+,,$math{int{tan^2(u) du} = tan(u) - u + C},
+,,$math{int{tan^3(u) du} = 1/2*tan^2(u) + ln|cos(u)| + C},
+,,$math{int{cot^n(u) du} = -1/(n-1)*cot^(n-1)(u) - int{cot^(n-2)(u) du}},
+,,$math{int{cot^2(u) du} = -cot(u) - u + C},
+,,$math{int{cot^3(u) du} = -1/2*cot^2(u) - ln|sin(u)| + C},
+,,$math{int{sec^n(u) du} = 1/(n-1)*tan(u)*sec^(n-2)(u) + (n-2)/(n-1)*int{sec^(n-2)(u) du}},
+,,$math{int{sec^3(u) du} = 1/2*sec(u)*tan(u) + 1/2*ln|sec(u) + tan(u)| + C},
+,,$math{int{csc^n(u) du} = -1/(n-1)*cot(u)*csc^(n-2)(u) + (n-2)/(n-1)*int{csc^(n-2)(u) du}},
+,,$math{int{csc^3(u) du} = -1/2*csc(u)*cot(u) + 1/2*ln|csc(u) - cot(u)| + C},
+,,"$math{\int{cos(x^(1/n))*dx} = [t=x^(1/n), dx=nt^(n-1)*dt] = PARTIALINT[\int{n*t^(n-1)*cos(t)*dt}, \int{cos(t)dt}]}",
+,,$math{int{sin(a*u)/u^n du} = -(sin(a*u))/((n-1)*u^(n-1)) + (a/(n-1))*int{cos(a*u)/u^(n-1) du}},
+,,$math{int{du/sin^n(a*u)} = (cos(a*u))/(a*(n-1)*sin^(n-1)(a*u)) + ((n-2)/(n-1))*int{du/sin^(n-2)(a*u)}},
+,,$math{int{u du/sin^n(a*u)} = (u*cos(a*u))/(a*(n-1)*sin^(n-1)(a*u)) - 1/(a^2*(n-1)*(n-2)*sin^(n-2)(a*u)) + ((n-2)/(n-1))*int{u du/sin^(n-2)(a*u)}},
+,,$math{int{du/(1 - cos(a*u))} = -(1/a)*cot(a*u/2) + C},
+,,$math{int{du/(1 - sin(a*u))} = (1/a)*tan(\p/4 + a*u/2) + C},
+,,$math{int{du/(1 - sin(a*u))^2} = (1/(2*a))*tan(\p/4 + a*u/2) + (1/(6*a))*tan^3(\p/4 + a*u/2) + C},
+,,$math{int{u du/(1 - sin(a*u))} = u/a*tan(\p/4 + a*u/2) + (2/a^2)*ln(sin(\p/4 - a*u/2)) + C},
+,,$math{int{du/(1 + cos(a*u))} = (1/a)*tan(a*u/2) + C},
+,,$math{int{u du/(1 - cos(a*u))} = -(u/a)*cot(a*u/2) + (2/a^2)*ln(sin(a*u/2)) + C},
+,,$math{int{u du/(1 + cos(a*u))} = (u/a)*tan(a*u/2) + (2/a^2)*ln(cos(a*u/2)) + C},
+,,$math{int{cos(a*u)/u^n du} = -(cos(a*u))/((n-1)*u^(n-1)) - (a/(n-1))*int{sin(a*u)/u^(n-1) du}},
+,,$math{int{du/cos^n(a*u)} = (sin(a*u))/(a*(n-1)*cos^(n-1)(a*u)) + ((n-2)/(n-1))*int{du/cos^(n-2)(a*u)}},
+,,$math{int{u du/cos^n(a*u)} = (u*sin(a*u))/(a*(n-1)*cos^(n-1)(a*u)) + 1/(a^2*(n-1)*(n-2)*cos^(n-2)(a*u)) + ((n-2)/(n-1))*int{u du/cos^(n-2)(a*u)}},
+,,$math{int{tan^n(a*u)*sec^2(a*u) du} = tan^(n+1)(a*u)/(a*(n+1)) + C},
+,,$math{int{sec^2(a*u)/tan(a*u) du} = (1/a)*ln(tan(a*u)) + C},
 ,,,
 ,,,
 ,,,
@@ -226,96 +222,100 @@ Trigonometrical,Trigonometrical expressions,"int{sin^n(u) du} = -1/n*sin^(n-1)(u
 ,,,
 ,,,
 ,,,
-,,\int{sqrt(1+cos(x))dx} = \int{sqrt(2cos^2(x/2)dx},
-,,\int{sqrt(1-cos(x))dx} = \int{sqrt(2sin^2(x/2)dx},
-,,\int{sqrt(1+sin(x))dx} = \int{sqrt((sin(x/2)+cos(x/2))^2)dx},
-,,\int{sqrt(1-sin(x))dx} = \int{sqrt((sin(x/2)-cos(x/2))^2)dx},
-,,"\int{e^(2x)*cos(x)*dx}, \int{x/cos^2(x)*dx} -> PARTIALINT",
-,,int{e^(a*u)*sin(b*u) du} = e^(a*u)/(a^2 + b^2) * (a*sin(b*u) - b*cos(b*u)) + C,
-,,int{e^(a*u)*cos(b*u) du} = e^(a*u)/(a^2 + b^2) * (a*cos(b*u) + b*sin(b*u)) + C,
-,,int{e^(a*u)*sin^n(b*u) du} = (e^(a*u)*sin^(n-1)(b*u))/(a^2 + n^2*b^2)*(a*sin(b*u) - n*b*cos(b*u)) + (n*(n-1)*b^2)/(a^2 + n^2*b^2)*int{e^(a*u)*sin^(n-2)(b*u) du},
-,,int{e^(a*u)*cos^n(b*u) du} = (e^(a*u)*cos^(n-1)(b*u))/(a^2 + n^2*b^2)*(a*cos(b*u) + n*b*sin(b*u)) + (n*(n-1)*b^2)/(a^2 + n^2*b^2)*int{e^(a*u)*cos^(n-2)(b*u) du},
-,,int{sin(a*u)*sin(b*u) du} = sin((a-b)*u)/(2*(a-b)) - sin((a+b)*u)/(2*(a+b)) + C,
-,,int{cos(a*u)*cos(b*u) du} = sin((a-b)*u)/(2*(a-b)) + sin((a+b)*u)/(2*(a+b)) + C,
-,,int{sin(a*u)*cos(b*u) du} = -cos((a-b)*u)/(2*(a-b)) - cos((a+b)*u)/(2*(a+b)) + C,
-,,\int{sin(Ax)*cos(Bx)*dx} = \int{(sin(Ax+Bx)+sin(Ax-Bx))/2*dx},
-,,int{sin^n(u)*cos^m(u) du} = -sin^(n-1)(u)*cos^(m+1)(u)/(n+m) + (n-1)/(n+m)*int{sin^(n-2)(u)*cos^m(u) du} = sin^(n+1)(u)*cos^(m-1)(u)/(n+m) + (m-1)/(n+m)*int{sin^n(u)*cos^(m-2)(u) du},
-,,"\int{cos^n(x)*sin^m(x)*dx}=…
-\int{sin^4(x)*cos^2(x)*dx} = \int{sin^4(x)*(1-sin^2(x))*dx} = \int{(sin^4(x)-sin^6(x))dx}
-\int{sin^3(x)cos^4(x)dx} = \int{(1-cos^2(x))cos^4(x)*sin^4(x)dx}",
+,,,
+,,,
+,,,
+,,,
+,,$math{\int{sqrt(1+cos(x))dx} = \int{sqrt(2cos^2(x/2)dx}},
+,,$math{\int{sqrt(1-cos(x))dx} = \int{sqrt(2sin^2(x/2)dx}},
+,,$math{\int{sqrt(1+sin(x))dx} = \int{sqrt((sin(x/2)+cos(x/2))^2)dx}},
+,,$math{\int{sqrt(1-sin(x))dx} = \int{sqrt((sin(x/2)-cos(x/2))^2)dx}},
+,,"$math{\int{e^(2x)*cos(x)*dx}, \int{x/cos^2(x)*dx} -> PARTIALINT}",
+,,$math{int{e^(a*u)*sin(b*u) du} = e^(a*u)/(a^2 + b^2) * (a*sin(b*u) - b*cos(b*u)) + C},
+,,$math{int{e^(a*u)*cos(b*u) du} = e^(a*u)/(a^2 + b^2) * (a*cos(b*u) + b*sin(b*u)) + C},
+,,$math{int{e^(a*u)*sin^n(b*u) du} = (e^(a*u)*sin^(n-1)(b*u))/(a^2 + n^2*b^2)*(a*sin(b*u) - n*b*cos(b*u)) + (n*(n-1)*b^2)/(a^2 + n^2*b^2)*int{e^(a*u)*sin^(n-2)(b*u) du}},
+,,$math{int{e^(a*u)*cos^n(b*u) du} = (e^(a*u)*cos^(n-1)(b*u))/(a^2 + n^2*b^2)*(a*cos(b*u) + n*b*sin(b*u)) + (n*(n-1)*b^2)/(a^2 + n^2*b^2)*int{e^(a*u)*cos^(n-2)(b*u) du}},
+,,$math{int{sin(a*u)*sin(b*u) du} = sin((a-b)*u)/(2*(a-b)) - sin((a+b)*u)/(2*(a+b)) + C},
+,,$math{int{cos(a*u)*cos(b*u) du} = sin((a-b)*u)/(2*(a-b)) + sin((a+b)*u)/(2*(a+b)) + C},
+,,$math{int{sin(a*u)*cos(b*u) du} = -cos((a-b)*u)/(2*(a-b)) - cos((a+b)*u)/(2*(a+b)) + C},
+,,$math{\int{sin(Ax)*cos(Bx)*dx} = \int{(sin(Ax+Bx)+sin(Ax-Bx))/2*dx}},
+,,$math{int{sin^n(u)*cos^m(u) du} = -sin^(n-1)(u)*cos^(m+1)(u)/(n+m) + (n-1)/(n+m)*int{sin^(n-2)(u)*cos^m(u) du} = sin^(n+1)(u)*cos^(m-1)(u)/(n+m) + (m-1)/(n+m)*int{sin^n(u)*cos^(m-2)(u) du}},
+,,"$math{\int{cos^n(x)*sin^m(x)*dx}=…}
+$math{\int{sin^4(x)*cos^2(x)*dx} = \int{sin^4(x)*(1-sin^2(x))*dx} = \int{(sin^4(x)-sin^6(x))dx}}
+$math{\int{sin^3(x)cos^4(x)dx} = \int{(1-cos^2(x))cos^4(x)*sin^4(x)dx}}",
 ,,"Chains:
-\int{(4sin(x)/(1+cos(x))^2*dx}
-\int{sin^3(x)/cos^5(x)*dx}=\int{tan^3(x)*1/cos^2(x)*dx}
-\int{e^sin(x)*sin(2x)*dx} = \int{2*sin(x)*e^sin(x)*cos(x)*dx}",
-,,int{u*sin(u) du} = [PARTIALINT] = sin(u) - u*cos(u) + C,
-,,int{u*cos(u) du} = [PARTIALINT] = cos(u) + u*sin(u) + C,
-,,int{u^n*sin(u) du} = [PARTIALINT] = -u^n*cos(u) + n*int{u^(n-1)*cos(u) du},
-,,int{u^n*cos(u) du} = [PARTIALINT] = u^n*sin(u) - n*int{u^(n-1)*sin(u) du},
+$math{\int{(4sin(x)/(1+cos(x))^2*dx}}
+$math{\int{sin^3(x)/cos^5(x)*dx}=\int{tan^3(x)*1/cos^2(x)*dx}}
+$math{\int{e^sin(x)*sin(2x)*dx} = \int{2*sin(x)*e^sin(x)*cos(x)*dx}}",
+,,$math{int{u*sin(u) du} = [PARTIALINT] = sin(u) - u*cos(u) + C},
+,,$math{int{u*cos(u) du} = [PARTIALINT] = cos(u) + u*sin(u) + C},
+,,$math{int{u^n*sin(u) du} = [PARTIALINT] = -u^n*cos(u) + n*int{u^(n-1)*cos(u) du}},
+,,$math{int{u^n*cos(u) du} = [PARTIALINT] = u^n*sin(u) - n*int{u^(n-1)*sin(u) du}},
 ,,"Tangentification [t=tan(x/2)]
-sin(x) = 2t/(1+t^2)
-cos(x)=(1-t^2)/(1+t^2)
-dx=2/(1+t^2)*dt","\int{1/(1+cos(x)+sin(x))dx}=(x=2v, dx=2dv)=\int{1/(1+(1-tan^2(v))/(1+tan^2(v))+2tan(v)/(1+tan^2(v)))2dv}=\int{(1+tan^2(v))/(1+tan(v))dv}=(t=tan(v), dv=1/(t^2+1)dt)=…
-\int{1/(5-4cos(v)dv}=…
-\int{sin(v)/(1+sin(v))dv}=\int{(1-1/(1+sin(v)))dv}"
-,,Other tangentifications,"\int{1/(1+cos^2(v))dv}=\int{(tan^2(v)+1)/(tan^2(v)+2)dv}=(t=tan(v), dv=1/(t^2+1)}=…"
+$math{sin(x) = 2t/(1+t^2)}
+$math{cos(x)=(1-t^2)/(1+t^2)}
+$math{dx=2/(1+t^2)*dt}","$math{\int{1/(1+cos(x)+sin(x))dx}=(x=2v, dx=2dv)=\int{1/(1+(1-tan^2(v))/(1+tan^2(v))+2tan(v)/(1+tan^2(v)))2dv}=\int{(1+tan^2(v))/(1+tan(v))dv}=(t=tan(v), dv=1/(t^2+1)dt)=…}
+$math{\int{1/(5-4cos(v)dv}=…}
+$math{\int{sin(v)/(1+sin(v))dv}=\int{(1-1/(1+sin(v)))dv}}"
+,,Other tangentifications,"$math{\int{1/(1+cos^2(v))dv}=\int{(tan^2(v)+1)/(tan^2(v)+2)dv}=(t=tan(v), dv=1/(t^2+1)}=…}"
 ,,"Tangent target
-\int{(tan^3(x)+tan^4(x))*dx} = [t=tan(x)] = \int{(t^3+t^4)/(t^2+1)dt}",
-,,Simplifications tan(x) -> sin(x)/cos(x),"tan(x)+1/tan(x)=sin(x)/cos(x)+cos(x)/sin(x)
-(1-tan(x))/(1+tan(x)) = (cos(x)/cos(x)-sin(x)/cos(x))/(cos(x)/cos(x)+sin(x)/cos(x))"
-,Inverse trigonometrical expressions,"\int{arcsin^2(x)*dx} = [t=arcsin(x)] = \int{t^2*cos(t)*dt}
-\int{x*sqrt(1-x^2)*arcsin(x)*dx} = [t=arcsin(x)] = \int{sin(t)*sqrt(1-sin^2(t))*t*cos(t)*dt}",
-,,int{arcsin(u) du} = u*arcsin(u) + sqrt(1 - u^2) + C,
-,,int{arccos(u) du} = u*arccos(u) - sqrt(1 - u^2) + C,
-,,int{arctan(u) du} = u*arctan(u) - (1/2)*ln(1 + u^2) + C,
-,,int{u*arctan(u) du} = (u^2 + 1)/2 * arctan(u) - u/2 + C,
-,,int{u*arccos(u) du} = (2*u^2 - 1)/4 * arccos(u) - (u*sqrt(1 - u^2))/4 + C,
-,,int{u*arcsin(u) du} = (2*u^2 - 1)/4 * arcsin(u) + (u*sqrt(1 - u^2))/4 + C,
-,,"int{u^n * arcsin(u) du} = (1/(n+1)) * [ u^(n+1)*arcsin(u) - int{u^(n+1)/sqrt(1 - u^2) du} ],  n != -1",
-,,"int{u^n * arccos(u) du} = (1/(n+1)) * [ u^(n+1)*arccos(u) + int{u^(n+1)/sqrt(1 - u^2) du} ],  n != -1",
-,,"int{u^n * arctan(u) du} = (1/(n+1)) * [ u^(n+1)*arctan(u) - int{u^(n+1)/(1 + u^2) du} ],  n != -1",
-,,"int{arcsec(u/a) du} = u*arcsec(u/a) \pm a*ln(u + sqrt(u^2 - a^2)) + C, [ + if \p/2 < arcsec(u/a) < \p,  - if 0 < arcsec(u/a) < \p/2 ]",
-,,"int{arccsc(u/a) du} = u*arccsc(u/a) \pm a*ln(u + sqrt(u^2 - a^2)) + C, [ + if 0 < arccsc(u/a) < \p/2,  - if -\p/2 < arccsc(u/a) < 0 ]",
+$math{\int{(tan^3(x)+tan^4(x))*dx} = [t=tan(x)] = \int{(t^3+t^4)/(t^2+1)dt}}",
+,,Simplifications tan(x) -> sin(x)/cos(x),"$math{tan(x)+1/tan(x)=sin(x)/cos(x)+cos(x)/sin(x)}
+$math{(1-tan(x))/(1+tan(x)) = (cos(x)/cos(x)-sin(x)/cos(x))/(cos(x)/cos(x)+sin(x)/cos(x))}"
+,Inverse trigonometrical expressions,"$math{\int{arcsin^2(x)*dx} = [t=arcsin(x)] = \int{t^2*cos(t)*dt}}
+$math{\int{x*sqrt(1-x^2)*arcsin(x)*dx} = [t=arcsin(x)] = \int{sin(t)*sqrt(1-sin^2(t))*t*cos(t)*dt}}",
+,,$math{int{arcsin(u) du} = u*arcsin(u) + sqrt(1 - u^2) + C},
+,,$math{int{arccos(u) du} = u*arccos(u) - sqrt(1 - u^2) + C},
+,,$math{int{arctan(u) du} = u*arctan(u) - (1/2)*ln(1 + u^2) + C},
+,,$math{int{u*arctan(u) du} = (u^2 + 1)/2 * arctan(u) - u/2 + C},
+,,$math{int{u*arccos(u) du} = (2*u^2 - 1)/4 * arccos(u) - (u*sqrt(1 - u^2))/4 + C},
+,,$math{int{u*arcsin(u) du} = (2*u^2 - 1)/4 * arcsin(u) + (u*sqrt(1 - u^2))/4 + C},
+,,"$math{int{u^n * arcsin(u) du} = (1/(n+1)) * [ u^(n+1)*arcsin(u) - int{u^(n+1)/sqrt(1 - u^2) du} ],  n != -1}",
+,,"$math{int{u^n * arccos(u) du} = (1/(n+1)) * [ u^(n+1)*arccos(u) + int{u^(n+1)/sqrt(1 - u^2) du} ],  n != -1}",
+,,"$math{int{u^n * arctan(u) du} = (1/(n+1)) * [ u^(n+1)*arctan(u) - int{u^(n+1)/(1 + u^2) du} ],  n != -1}",
+,,"$math{int{arcsec(u/a) du} = u*arcsec(u/a) \pm a*ln(u + sqrt(u^2 - a^2)) + C, [ + if \p/2 < arcsec(u/a) < \p,  - if 0 < arcsec(u/a) < \p/2 ]}",
+,,"$math{int{arccsc(u/a) du} = u*arccsc(u/a) \pm a*ln(u + sqrt(u^2 - a^2)) + C, [ + if 0 < arccsc(u/a) < \p/2,  - if -\p/2 < arccsc(u/a) < 0 ]}",
 ,,,
-,,int{arcsin(u/a)/u du} = u/a + (u/a)^3/(2*3*3) + (1*3(u/a)^5)/(2*4*5*5) + (1*3*5(u/a)^7)/(2*4*6*7*7) + ...,
-,,int{arcsin(u/a)/u^2 du} = -arcsin(u/a)/u - (1/a)*ln((a + sqrt(a^2 - u^2))/u) + C,
-,,int{(arcsin(u/a))^2 du} = u*(arcsin(u/a))^2 - 2u + 2sqrt(a^2 - u^2)*arcsin(u/a) + C,
-,,int{arccos(u/a)/u du} = (\p/2)*ln(u) - int{arcsin(u/a)/u du},
-,,int{arccos(u/a)/u^2 du} = -arccos(u/a)/u + (1/a)*ln((a + sqrt(a^2 - u^2))/u) + C,
-,,int{(arccos(u/a))^2 du} = u*(arccos(u/a))^2 - 2u - 2sqrt(a^2 - u^2)*arccos(u/a) + C,
-,,int{arctan(u/a)/u du} = u/a - (u/a)^3/3^2 + (u/a)^5/5^2 - (u/a)^7/7^2 + ...,
-,,int{arctan(u/a)/u^2 du} = -(1/u)arctan(u/a) - (1/(2a))*ln((u^2 + a^2)/u^2) + C,
+,,$math{int{arcsin(u/a)/u du} = u/a + (u/a)^3/(2*3*3) + (1*3(u/a)^5)/(2*4*5*5) + (1*3*5(u/a)^7)/(2*4*6*7*7) + ...},
+,,$math{int{arcsin(u/a)/u^2 du} = -arcsin(u/a)/u - (1/a)*ln((a + sqrt(a^2 - u^2))/u) + C},
+,,$math{int{(arcsin(u/a))^2 du} = u*(arcsin(u/a))^2 - 2u + 2sqrt(a^2 - u^2)*arcsin(u/a) + C},
+,,$math{int{arccos(u/a)/u du} = (\p/2)*ln(u) - int{arcsin(u/a)/u du}},
+,,$math{int{arccos(u/a)/u^2 du} = -arccos(u/a)/u + (1/a)*ln((a + sqrt(a^2 - u^2))/u) + C},
+,,$math{int{(arccos(u/a))^2 du} = u*(arccos(u/a))^2 - 2u - 2sqrt(a^2 - u^2)*arccos(u/a) + C},
+,,$math{int{arctan(u/a)/u du} = u/a - (u/a)^3/3^2 + (u/a)^5/5^2 - (u/a)^7/7^2 + ...},
+,,$math{int{arctan(u/a)/u^2 du} = -(1/u)arctan(u/a) - (1/(2a))*ln((u^2 + a^2)/u^2) + C},
 ,,,
-,Hyperbolic trigonometrical expressions,\int{1/cosh(x)*dx} = \int{1/((e^x+e^(-x))/2)*dx} = \int{2/(e^x)^2+1*e^x*dx} = [2arctan(e^x)],
-,,int{u^n * sinh(au) du} = (u^n * cosh(au))/a - (n/a) * int{u^(n-1) * cosh(au) du},
-,,int{sinh^n(au) du} = (sinh^(n-1)(au) * cosh(au))/(an) - (n-1)/n * int{sinh^(n-2)(au) du},
-,,int{u^n * cosh(au) du} = (u^n * sinh(au))/a - (n/a) * int{u^(n-1) * sinh(au) du},
-,,int{cosh^n(au) du} = (cosh^(n-1)(au) * sinh(au))/(a*n) - (n-1)/n * int{cosh^(n-2)(au) du},
-,,int{sinh(a*u)*cosh(b*u) du} = cosh((a+b)*u)/(2*(a+b)) + cosh((a-b)*u)/(2*(a-b)) + C,
-,,"int{sinh^n(a*u) * cosh(au) du} = (sinh^(n+1)(a*u))/(a*(n+1)) + C, n != -1",
-,,"int{cosh^n(a*u) * sinh(au) du} = (cosh^(n+1)(a*u))/(a*(n+1)) + C, n != -1",
-,,"int{tanh^n(a*u) * sech^2(a*u) du} = -(tanh^(n+1)(a*u))/(a*(n+1)) + C, n != -1",
-,,"int{tanh^n(a*u) du} = -(tanh^(n-1)(a*u))/(a*(n-1)) + int{tanh^(n-2)(a*u) du}, n != 1",
-,,"int{coth^n(a*u) * csch^2(a*u) du} = -(coth^(n+1)(a*u))/(a*(n+1)) + C, n != -1",
-,,"int{coth^n(a*u) du} = -(coth^(n-1)(a*u))/(a*(n-1)) + int{coth^(n-2)(a*u) du}, n != 1",
-,,int{sech^n(a*u) * tanh(a*u) du} = -(sech^n(a*u))/(na) + C,
-,,"int{sech^n(a*u) du} = (sech^(n-2)(a*u) * tanh(a*u))/(a*(n-1)) + (n-2)/(n-1) * int{sech^(n-2)(a*u) du}, n != 1",
-,,int{csch^n(a*u) * coth(a*u) du} = -(csch^n(a*u))/(na) + C,
-,,"int{csch^n(a*u) du} = -(csch^(n-2)(a*u) * coth(a*u))/(a*(n-1)) - (n-2)/(n-1) * int{csch^(n-2)(a*u) du}, n != 1",
+,Hyperbolic trigonometrical expressions,$math{\int{1/cosh(x)*dx} = \int{1/((e^x+e^(-x))/2)*dx} = \int{2/(e^x)^2+1*e^x*dx} = [2arctan(e^x)]},
+,,$math{int{u^n * sinh(au) du} = (u^n * cosh(au))/a - (n/a) * int{u^(n-1) * cosh(au) du}},
+,,$math{int{sinh^n(au) du} = (sinh^(n-1)(au) * cosh(au))/(an) - (n-1)/n * int{sinh^(n-2)(au) du}},
+,,$math{int{u^n * cosh(au) du} = (u^n * sinh(au))/a - (n/a) * int{u^(n-1) * sinh(au) du}},
+,,$math{int{cosh^n(au) du} = (cosh^(n-1)(au) * sinh(au))/(a*n) - (n-1)/n * int{cosh^(n-2)(au) du}},
+,,$math{int{sinh(a*u)*cosh(b*u) du} = cosh((a+b)*u)/(2*(a+b)) + cosh((a-b)*u)/(2*(a-b)) + C},
+,,"$math{int{sinh^n(a*u) * cosh(au) du} = (sinh^(n+1)(a*u))/(a*(n+1)) + C, n != -1}",
+,,"$math{int{cosh^n(a*u) * sinh(au) du} = (cosh^(n+1)(a*u))/(a*(n+1)) + C, n != -1}",
+,,"$math{int{tanh^n(a*u) * sech^2(a*u) du} = -(tanh^(n+1)(a*u))/(a*(n+1)) + C, n != -1}",
+,,"$math{int{tanh^n(a*u) du} = -(tanh^(n-1)(a*u))/(a*(n-1)) + int{tanh^(n-2)(a*u) du}, n != 1}",
+,,"$math{int{coth^n(a*u) * csch^2(a*u) du} = -(coth^(n+1)(a*u))/(a*(n+1)) + C, n != -1}",
+,,"$math{int{coth^n(a*u) du} = -(coth^(n-1)(a*u))/(a*(n-1)) + int{coth^(n-2)(a*u) du}, n != 1}",
+,,$math{int{sech^n(a*u) * tanh(a*u) du} = -(sech^n(a*u))/(na) + C},
+,,"$math{int{sech^n(a*u) du} = (sech^(n-2)(a*u) * tanh(a*u))/(a*(n-1)) + (n-2)/(n-1) * int{sech^(n-2)(a*u) du}, n != 1}",
+,,$math{int{csch^n(a*u) * coth(a*u) du} = -(csch^n(a*u))/(na) + C},
+,,"$math{int{csch^n(a*u) du} = -(csch^(n-2)(a*u) * coth(a*u))/(a*(n-1)) - (n-2)/(n-1) * int{csch^(n-2)(a*u) du}, n != 1}",
 ,,,
 ,,,
 ,,,
-,Inverse hyperbolic integrals,int{u^n*arcsinh(u/a) du} = (u^(n+1)/(n+1))*arcsinh(u/a) - (1/a)*(1/(n+1))*int{u^(n+1)/sqrt(u^2 + a^2) du},
-,,"int{u^n*arccosh(u/a) du}
-= (u^(n+1)/(n+1))*arccosh(u/a) - (1/a)*(1/(n+1))*int{u^(n+1)/sqrt(u^2 - a^2) du}, arccosh(u/a) > 0
-= (u^(n+1)/(n+1))*arccosh(u/a) + (1/a)*/(n+1)*int{u^(n+1)/sqrt(a^2 - u^2) du}, arccosh(u/a) < 0",
-,,int{u^n*arctanh(u/a) du} = (u^(n+1)/(n+1))*arctanh(u/a) - (a/(n+1))*int{u^n/(a^2 - u^2) du},
-,,int{u^n*arccoth(u/a) du} = (u^(n+1)/(n+1))*arccoth(u/a) - (a/(n+1))*int{u^n/(a^2 - u^2) du},
-,,"int{u^n*arcsech(u/a) du}
-= (u^(n+1)/(n+1))*arcsech(u/a) + (a/(n+1))*int{u^n/sqrt(a^2 - u^2) du}, arcsech(u/a) > 0
-= (u^(n+1)/(n+1))*arcsech(u/a) - (a/(n+1))*int{u^n/sqrt(a^2 - u^2) du}, arcsech(u/a) < 0",
-,,"int{u^n*arccsch(u/a) du} = (u^(n+1)/(n+1))*arccsch(u/a) \pm (a/(n+1))*int{u^n/sqrt(u^2 + a^2) du}  (+ for u > 0, - for u < 0)",
-,,int{arccoth(u/a)/u du} = -[a/u + (a/u)^3/3^2 + (a/u)^5/5^2 + ... ],
-,,"int{arcsech(u/a)/u du} = -(1/2)*ln(a/u)*ln(4a/u) - (u/a)^2/(2*2*2) - (1*3*(u/a)^4)/(2*4*4*4) - ...,  arcsech(u/a) > 0 = (1/2)*ln(a/u)*ln(4a/u) + (u/a)^2/(2*2*2) + (1*3*(u/a)^4)/(2*4*4*4) + ...,  arcsech(u/a) < 0",
+,Inverse hyperbolic integrals,$math{int{u^n*arcsinh(u/a) du} = (u^(n+1)/(n+1))*arcsinh(u/a) - (1/a)*(1/(n+1))*int{u^(n+1)/sqrt(u^2 + a^2) du}},
+,,"$math{int{u^n*arccosh(u/a) du}}
+$math{= (u^(n+1)/(n+1))*arccosh(u/a) - (1/a)*(1/(n+1))*int{u^(n+1)/sqrt(u^2 - a^2) du}, arccosh(u/a) > 0}
+$math{= (u^(n+1)/(n+1))*arccosh(u/a) + (1/a)*/(n+1)*int{u^(n+1)/sqrt(a^2 - u^2) du}, arccosh(u/a) < 0}",
+,,$math{int{u^n*arctanh(u/a) du} = (u^(n+1)/(n+1))*arctanh(u/a) - (a/(n+1))*int{u^n/(a^2 - u^2) du}},
+,,$math{int{u^n*arccoth(u/a) du} = (u^(n+1)/(n+1))*arccoth(u/a) - (a/(n+1))*int{u^n/(a^2 - u^2) du}},
+,,"$math{int{u^n*arcsech(u/a) du}}
+$math{= (u^(n+1)/(n+1))*arcsech(u/a) + (a/(n+1))*int{u^n/sqrt(a^2 - u^2) du}, arcsech(u/a) > 0}
+$math{= (u^(n+1)/(n+1))*arcsech(u/a) - (a/(n+1))*int{u^n/sqrt(a^2 - u^2) du}, arcsech(u/a) < 0}",
+,,"$math{int{u^n*arccsch(u/a) du} = (u^(n+1)/(n+1))*arccsch(u/a) \pm (a/(n+1))*int{u^n/sqrt(u^2 + a^2) du}  (+ for u > 0, - for u < 0)}",
+,,$math{int{arccoth(u/a)/u du} = -[a/u + (a/u)^3/3^2 + (a/u)^5/5^2 + ... ]},
+,,"$math{int{arcsech(u/a)/u du} = -(1/2)*ln(a/u)*ln(4a/u) - (u/a)^2/(2*2*2) - (1*3*(u/a)^4)/(2*4*4*4) - ...,  arcsech(u/a) > 0 = (1/2)*ln(a/u)*ln(4a/u) + (u/a)^2/(2*2*2) + (1*3*(u/a)^4)/(2*4*4*4) + ...,  arcsech(u/a) < 0}",
 ,,,
 ,,,
 ,,,
@@ -338,8 +338,8 @@ dx=2/(1+t^2)*dt","\int{1/(1+cos(x)+sin(x))dx}=(x=2v, dx=2dv)=\int{1/(1+(1-tan^2(
 ,,,
 ,,,
 Indefinite integral,,"If F(x) + C has the derivative f(x), then F(x) + C is the anti-derivative or the indefinite integral of f(x).
-Given d/dx [F(x) + C] = f(x) (= derivative), then [F(x) + C] = int{f(x) dx} = anti-derivative or indefinite integral where: C = integration constant, f(x) = integrand, F(x) = particular integral","Given d/dx [x^4 + C] = 4x^3 (= derivative), then
-[x^4 + C] = int{4x^3 dx} = anti-derivative or indefinite integral"
+$math{Given d/dx [F(x) + C] = f(x) (= derivative), then [F(x) + C] = int{f(x) dx} = anti-derivative or indefinite integral where: C = integration constant, f(x) = integrand, F(x) = particular integral}","$math{Given d/dx [x^4 + C] = 4x^3 (= derivative), then}
+$math{[x^4 + C] = int{4x^3 dx} = anti-derivative or indefinite integral}"
 ,,,
 ,,,
 ,,,
@@ -353,10 +353,10 @@ Given d/dx [F(x) + C] = f(x) (= derivative), then [F(x) + C] = int{f(x) dx} = an
 ,,,
 ,,,
 ,,,
-Definite integral,,"Given the indefinite integral int{f(x) dx} = F(x) + C
-int{a, b, f(x)dx} = {[F(x)], a, b} = F(b)-F(a)
-where int{a, b, f(x) dx} = definite integral from a to b of f(x) dx
-(a, b) = lower and upper limits of integration, x = variable of integration
+Definite integral,,"$math{Given the indefinite integral int{f(x) dx} = F(x) + C}
+$math{int{a, b, f(x)dx} = {[F(x)], a, b} = F(b)-F(a)}
+$math{where int{a, b, f(x) dx} = definite integral from a to b of f(x) dx}
+$math{(a, b) = lower and upper limits of integration, x = variable of integration}
 
 Integral as the area under the curve. Curve above x-axis has positive integral while curve below x-axis has negative integral",
 ,,,
@@ -367,60 +367,60 @@ Integral as the area under the curve. Curve above x-axis has positive integral w
 ,,,
 ,,,
 ,Primitive function with condition,,
-,Areas (Area under a curve),"A = \int{a, b, f(x)} (if above x-axis)
-A = -\int{a, b, f(x)} (if below x-axis)",
-,,"y = f(x), x = g(y)
-A_x = int{x_1, x_2, y dx} = int{x_1, x_2, f(x) dx}
-A_y = int{y_1, y_2, x dy} = int{y_1, y_2, g(y) dy}",
-,,"r = h(\t)
-A_\t = (1/2)*int{\t_1, \t_2, r^2 d\t} = (1/2)*int{\t_1, \t_2, [h(\t)]^2 d\t}",
-,Area between two curves,"A = \int{a, b}(f(x)-g(x)) (f is above g)",
-,,"A_x = \int{x_1, x_2, y*dx}
-A_y = \int{y_1, y_2, x*dy}",
-,,"A_\t = 1/2*\int{\t_1, \t_2, r^2*d\t}",
+,Areas (Area under a curve),"$math{A = \int{a, b, f(x)} (if above x-axis)}
+$math{A = -\int{a, b, f(x)} (if below x-axis)}",
+,,"$math{y = f(x), x = g(y)}
+$math{A_x = int{x_1, x_2, y dx} = int{x_1, x_2, f(x) dx}}
+$math{A_y = int{y_1, y_2, x dy} = int{y_1, y_2, g(y) dy}}",
+,,"$math{r = h(\t)}
+$math{A_\t = (1/2)*int{\t_1, \t_2, r^2 d\t} = (1/2)*int{\t_1, \t_2, [h(\t)]^2 d\t}}",
+,Area between two curves,"$math{A = \int{a, b}(f(x)-g(x)) (f is above g)}",
+,,"$math{A_x = \int{x_1, x_2, y*dx}}
+$math{A_y = \int{y_1, y_2, x*dy}}",
+,,"$math{A_\t = 1/2*\int{\t_1, \t_2, r^2*d\t}}",
 ,,,
-,Integral of stepcase function,"D_s = [a, b] -> a=x_0 < x_1 < … < x_(k-1) < x_k < ... < x_n
-s(x) = h_k (x_(k-1) <= x < x_k, k=1..n)
-\int{a, b, s(x)dx} = \S{k=1, n, h_k(x_k-x_k-1)}",
-,Addition,"\int{a, b, (s(x)+t(x))dx} = (s(x) = h_k , t(x) = l_k (x_(k-1) <= x < x_k, k=0..n), \S{k=1, n, h_k(x_k-x_(k-1))} + \S{k=1, n, l_k(x_k-x_(k-1))}) = \int{a, b, s(x)dx} + \int{a, b, t(x)dx}",
-,Constant multiplication,"\int{a, b, k*s(x)dx} = (\S{k=0, n, k*h_k}) = k\int{a, b, s(x)dx}",
-,Interval linking,"\int{a, c, s(x)dx} + \int{c, b, s(x)dx} = (a=x_0 < x1 < … < x_(m-1) <= c < x_m < … < x_n, \S{k=1, m-1, h_k(x_k-x_(k-1)} + h_m(c-x_(m-1)) + h_m(x_m-c) + \S{k=m+1, n, (x_k-x_(k-1))} = \S{k=1, n, h_k(x_k-x_(k-1))}) = \int{a, b, s(x)dx} (a <= c <= b)",
-,Integral comparasion,"s(x) <= t(x), a<=x<=b -> \int{a, b, s(x)dx} <= \int{a, b, t(x)dx}",
-Riemann integral,Riemann-integral/Riemann-integrable,"int{a, b, f(x)dx} -> \int{a, b, l(x)dx} <= I <= \int{a, b, u(x)dx} -> I_l = I_u = I
-(Arbitrary u(x) to f(x), \int{a, b, l(x)dx} <= \int{a, b, u(x)dx} for any l(x)) -> SET(l(x)) Upper bound, minimum majorant I_u, SET(u(x)) largest minorant I_u -> I_l = I_u = I",
-,,"f(x) Riemann-integrable [a, b] -> \int{a, b, u(x)dx} - \int{a, b, l(x)dx} < \e (\e >0)
-(f not Riemann-integrable) -> \int{a, b, l(x)dx} <= I_1 < I_2 <= \int{a, b, u(x)dx} -> \int{a, b, u(x)dx} - \int{a, b, l(x)dx} >= I_2 - \int{a, b, u(x)dx} >= I_2 - I_1 > 0 -> (I_2-I_1 not arbitrary small)",
-,,"f continous [a, b] -> f integrable in [a, b]
+,Integral of stepcase function,"$math{D_s = [a, b] -> a=x_0 < x_1 < … < x_(k-1) < x_k < ... < x_n}
+$math{s(x) = h_k (x_(k-1) <= x < x_k, k=1..n)}
+$math{\int{a, b, s(x)dx} = \S{k=1, n, h_k(x_k-x_k-1)}}",
+,Addition,"$math{\int{a, b, (s(x)+t(x))dx} = (s(x) = h_k , t(x) = l_k (x_(k-1) <= x < x_k, k=0..n), \S{k=1, n, h_k(x_k-x_(k-1))} + \S{k=1, n, l_k(x_k-x_(k-1))}) = \int{a, b, s(x)dx} + \int{a, b, t(x)dx}}",
+,Constant multiplication,"$math{\int{a, b, k*s(x)dx} = (\S{k=0, n, k*h_k}) = k\int{a, b, s(x)dx}}",
+,Interval linking,"$math{\int{a, c, s(x)dx} + \int{c, b, s(x)dx} = (a=x_0 < x1 < … < x_(m-1) <= c < x_m < … < x_n, \S{k=1, m-1, h_k(x_k-x_(k-1)} + h_m(c-x_(m-1)) + h_m(x_m-c) + \S{k=m+1, n, (x_k-x_(k-1))} = \S{k=1, n, h_k(x_k-x_(k-1))}) = \int{a, b, s(x)dx} (a <= c <= b)}",
+,Integral comparasion,"$math{s(x) <= t(x), a<=x<=b -> \int{a, b, s(x)dx} <= \int{a, b, t(x)dx}}",
+Riemann integral,Riemann-integral/Riemann-integrable,"$math{int{a, b, f(x)dx} -> \int{a, b, l(x)dx} <= I <= \int{a, b, u(x)dx} -> I_l = I_u = I}
+$math{(Arbitrary u(x) to f(x), \int{a, b, l(x)dx} <= \int{a, b, u(x)dx} for any l(x)) -> SET(l(x)) Upper bound, minimum majorant I_u, SET(u(x)) largest minorant I_u -> I_l = I_u = I}",
+,,"$math{f(x) Riemann-integrable [a, b] -> \int{a, b, u(x)dx} - \int{a, b, l(x)dx} < \e (\e >0)}
+$math{(f not Riemann-integrable) -> \int{a, b, l(x)dx} <= I_1 < I_2 <= \int{a, b, u(x)dx} -> \int{a, b, u(x)dx} - \int{a, b, l(x)dx} >= I_2 - \int{a, b, u(x)dx} >= I_2 - I_1 > 0 -> (I_2-I_1 not arbitrary small)}",
+,,"$math{f continous [a, b] -> f integrable in [a, b]}
 <Proof missing>",
 ,Riemann-sums/Riemann-summa,"The limit of the sum of inscribed or circumscribed rectangles equals the area under f(x) between a and b and is given by the definite integral between a and b
 
-\int{a, b, f(x)dx} = lim{n->\inf, (b-a)/n*\S{k=1, n, f(a+k(b-a)/n)}}
-\S{k=1, n, f(S_k)(x_k-x_k-1)} -> \S{k=1, n, m_k(x_k-x_k-1)} <= \S{k=1, n, f(S_k)(x_k-x_k-1)} <= \S{k=1, n, M_k(x_k-x_k-1)} -> d=max{k=1..n, x_k-x_(k-1)}, d->0",
-Numerical approximations,,,"f(x) = 1/x, a=1, b=5, c=3"
-,Integral mean-value theorem/Integralens medelvärdesats,"(f, g continous [a,b], g not changing sign [a, b]) \int{a, b, f(x)g(x)dx} = f(S)\int{a, b, g(x)dx} (S in [a, b])
-g(x)=0 [a, b]
-g(x)>=0 [a, b], g(x)!=0 x in [a, b] -> m\int{a, b, g(x)dx} <= \int{a, b, f(x)g(x)dx} <= M\int{a, b, g(x)dx} -> (A = \int{a, b, g(x)dx}) m <= 1/A\int{a, b, f(x)g(x)dx}  <= M -> f(S)=1/A\int{a, b, f(x)g(x)dx}
-g(x)<=0 -> g(x)=-g(x)",
-,,"\int{a, b, f(x)dx} = f(S)(b-a)","(f=x^3, a=0, b=1)"
-,,"lim{n->\inf, \int{A(n), B(n), f(x)dx}} = lim{n->\inf, S->\inf, f(S)(B(n)-A(n))}","(f=e^(1/x), A=n, B=n+1)"
-,The fundamental theorem of calculus/Integralkalkylens huvudsats,"(f continous in [a, b]), F(x)=\int{a, x, f(t)dt}, x in [a, b], derivable and F'(x)=f(x)
+$math{\int{a, b, f(x)dx} = lim{n->\inf, (b-a)/n*\S{k=1, n, f(a+k(b-a)/n)}}}
+$math{\S{k=1, n, f(S_k)(x_k-x_k-1)} -> \S{k=1, n, m_k(x_k-x_k-1)} <= \S{k=1, n, f(S_k)(x_k-x_k-1)} <= \S{k=1, n, M_k(x_k-x_k-1)} -> d=max{k=1..n, x_k-x_(k-1)}, d->0}",
+Numerical approximations,,,"$math{f(x) = 1/x, a=1, b=5, c=3}"
+,Integral mean-value theorem/Integralens medelvärdesats,"$math{(f, g continous [a,b], g not changing sign [a, b]) \int{a, b, f(x)g(x)dx} = f(S)\int{a, b, g(x)dx} (S in [a, b])}
+$math{g(x)=0 [a, b]}
+$math{g(x)>=0 [a, b], g(x)!=0 x in [a, b] -> m\int{a, b, g(x)dx} <= \int{a, b, f(x)g(x)dx} <= M\int{a, b, g(x)dx} -> (A = \int{a, b, g(x)dx}) m <= 1/A\int{a, b, f(x)g(x)dx}  <= M -> f(S)=1/A\int{a, b, f(x)g(x)dx}}
+$math{g(x)<=0 -> g(x)=-g(x)}",
+,,"$math{\int{a, b, f(x)dx} = f(S)(b-a)}","$math{(f=x^3, a=0, b=1)}"
+,,"$math{lim{n->\inf, \int{A(n), B(n), f(x)dx}} = lim{n->\inf, S->\inf, f(S)(B(n)-A(n))}}","$math{(f=e^(1/x), A=n, B=n+1)}"
+,The fundamental theorem of calculus/Integralkalkylens huvudsats,"$math{(f continous in [a, b]), F(x)=\int{a, x, f(t)dt}, x in [a, b], derivable and F'(x)=f(x)}
 
-F(x+h)-F(x)=\int{a, x, f(t)dt} + \int{x, x+h, f(t)dt} - \int{a, x, f(t)dt} = f(S)(x+h-x), F'(x)=lim{h->0, (F(x+h)-F(x))/h}=lim{S->x, f(S)=f(x)}
-d/dx(\int{a, x, f(t)dt}) = lim{h->0, (\int{a, x+h, f(t)dt}-\int{a, x, f(t)dt})/h} = lim{h->0, \int{x, x+h, f(t)dt}/h} = lim{h->0, (f(c)*(x+h-x))/h} [x<c<x+h] = f(x)",
-,Integration formula/Insättningsformel,"\int{a, b, f(x)dx} = {[F(x)], a, b} = F(b)-F(a)
-\int{a, a, f(t)dt} = -\int{a, a, f(t)dt} -> 2\int{a, a, f(t)dt}=0 -> \int{a, a, f(t)dt}=0 -> \int{a, a, f(t)dt}=F(a)+C=0 -> C=-F(a)
--> \int{a, x, f(t)dt} = F(x)-F(a)","(f=3x^2, a=-3, b=6), (f=cos(x), a=pi/2, b=0), (f=|x|, a=-1, b=3)"
-,,,"\int{0, pi/2, cos^n(x)} = [t=pi/2-x, dx=-dt] = \int{pi/2, 0, cos^n(pi/2-t)(-dt)} = \int{sin^n(t)dt}"
-,"Integral with variable limits, Integraler med variabla gränser","S(x) = \int{v(x), u(x), f(t)dt}, s'(t) = f(u(x))u'(x)-f(v(x))v'(x)","(f=sin(t)/t, v=x^2, u=x^3), (f=e^(2t)/t, v=1/2, u=ln(x))"
+$math{F(x+h)-F(x)=\int{a, x, f(t)dt} + \int{x, x+h, f(t)dt} - \int{a, x, f(t)dt} = f(S)(x+h-x), F'(x)=lim{h->0, (F(x+h)-F(x))/h}=lim{S->x, f(S)=f(x)}}
+$math{d/dx(\int{a, x, f(t)dt}) = lim{h->0, (\int{a, x+h, f(t)dt}-\int{a, x, f(t)dt})/h} = lim{h->0, \int{x, x+h, f(t)dt}/h} = lim{h->0, (f(c)*(x+h-x))/h} [x<c<x+h] = f(x)}",
+,Integration formula/Insättningsformel,"$math{\int{a, b, f(x)dx} = {[F(x)], a, b} = F(b)-F(a)}
+$math{\int{a, a, f(t)dt} = -\int{a, a, f(t)dt} -> 2\int{a, a, f(t)dt}=0 -> \int{a, a, f(t)dt}=0 -> \int{a, a, f(t)dt}=F(a)+C=0 -> C=-F(a)}
+$math{-> \int{a, x, f(t)dt} = F(x)-F(a)}","$math{(f=3x^2, a=-3, b=6), (f=cos(x), a=pi/2, b=0), (f=|x|, a=-1, b=3)}"
+,,,"$math{\int{0, pi/2, cos^n(x)} = [t=pi/2-x, dx=-dt] = \int{pi/2, 0, cos^n(pi/2-t)(-dt)} = \int{sin^n(t)dt}}"
+,"Integral with variable limits, Integraler med variabla gränser","$math{S(x) = \int{v(x), u(x), f(t)dt}, s'(t) = f(u(x))u'(x)-f(v(x))v'(x)}","$math{(f=sin(t)/t, v=x^2, u=x^3), (f=e^(2t)/t, v=1/2, u=ln(x))}"
 ,Approximations,,
-,"Midpoint Rule, Mittpunktsformeln","\int{a, b, f(x)dx} = (b-a)/n*\S{k=1, n, f(1/2(x_(k-1)+x_k))} = (b-a)/n*\S{k=1, n, f(a+(2k-1)/(2n)(b-a)}",
-,"Error in midpoint rule, felet i mittpunktsformeln","\e_M_n = \int{a, b, f(x)dx}-M_n = (b-a)^3/(24n^2)f''(S), S in [a, b], f''(x) continous in [a, b]",
-,"Trapezoid rule, Trapetsformeln","\int{a, b, f(x)dx} = (b-a)/n(1/2f(a)+\S{k=1, n-1, f(a+k(b-a)/n)+1/2f(b))",
-,"Error in trapezoid rule, Felet i trapetsformeln","\e_T_n = \int{a, b, f(x)dx-T_n = -(b-a)^3/(12n^2)f''(S)",
-,"Simpsons rule, Simpsons formel","\int{a, b, f(x)dx} = (b-a)/(3n)(1/2f(x_0)+2\S{k=1, n, f(x_(2k-1))+\S{k=1, n-1, f(x_(2k))}+1/2f(x_(2n)))",
-,"Error in Simpsons rule, felet i Simpsons formel","\e_S_2n = \int{a, b, f(x)dx}-S_(2n) = -(b-a)^5/(180(2n)^4)*f^(4')(S), (S in [a, b], f^(4')(S) continous in [a, b])",
+,"Midpoint Rule, Mittpunktsformeln","$math{\int{a, b, f(x)dx} = (b-a)/n*\S{k=1, n, f(1/2(x_(k-1)+x_k))} = (b-a)/n*\S{k=1, n, f(a+(2k-1)/(2n)(b-a)}}",
+,"Error in midpoint rule, felet i mittpunktsformeln","$math{\e_M_n = \int{a, b, f(x)dx}-M_n = (b-a)^3/(24n^2)f''(S), S in [a, b], f''(x) continous in [a, b]}",
+,"Trapezoid rule, Trapetsformeln","$math{\int{a, b, f(x)dx} = (b-a)/n(1/2f(a)+\S{k=1, n-1, f(a+k(b-a)/n)+1/2f(b))}",
+,"Error in trapezoid rule, Felet i trapetsformeln","$math{\e_T_n = \int{a, b, f(x)dx-T_n = -(b-a)^3/(12n^2)f''(S)}",
+,"Simpsons rule, Simpsons formel","$math{\int{a, b, f(x)dx} = (b-a)/(3n)(1/2f(x_0)+2\S{k=1, n, f(x_(2k-1))+\S{k=1, n-1, f(x_(2k))}+1/2f(x_(2n)))}",
+,"Error in Simpsons rule, felet i Simpsons formel","$math{\e_S_2n = \int{a, b, f(x)dx}-S_(2n) = -(b-a)^5/(180(2n)^4)*f^(4')(S), (S in [a, b], f^(4')(S) continous in [a, b])}",
 ,GAUSSIAN QUADRATURE,"Polynomial approximation of unequally spaced intervals, use:
-(b - a)/2 * \S{i=1, n, w_i*f(x_i)} and x_i = (b + a)/2 + ((b - a)/2)*\bar{x}_i
+$math{(b - a)/2 * \S{i=1, n, w_i*f(x_i)} and x_i = (b + a)/2 + ((b - a)/2)*\bar{x}_i}
 
 Where: w_i = weights; \bar{x}_i = zeros; a, b = interval of integration
 For n = 4, numerical values of w_i and \bar{x}_i are as follows:
@@ -429,84 +429,84 @@ w_i
 0.347855   0.652145   0.652145   0.347855
 \bar{x}_i
 -0.861136  -0.339981   0.339981   0.861136",
-,Generalized integral/Generalized integral,"Undefined values of start/end points: \int{0, 1, ln(x)dx}, \int{0, pi/2, tan(x)dx} -> lim{l->0+, \int{l, 1, ln(x)}}
-Unlimited integration interval: \int{-\inf, \inf, 1/(x^2+1)}
-Both: \int{1, \inf, 1/(x-1)dx}
+,Generalized integral/Generalized integral,"$math{Undefined values of start/end points: \int{0, 1, ln(x)dx}, \int{0, pi/2, tan(x)dx} -> lim{l->0+, \int{l, 1, ln(x)}}}
+$math{Unlimited integration interval: \int{-\inf, \inf, 1/(x^2+1)}}
+$math{Both: \int{1, \inf, 1/(x-1)dx}}
 
 Suppose that the function f is continuous on a < x < b, where a and b may be finite or infinite, if both limits exists, the integral is convergent, otherwise divergent
-\int{a, b, f(x)dx} = lim{x->b-, F(x)} - lim{x->a+, F(x)}",
-,,"\int{0, 1, x^pdx}, \int{1, \inf, x^pdx}, …",
-,,"\int{1, \inf, 1/(x-1)dx} = lim{t->\inf-, ln|t-1|} - lim{x->1-, ln|t-1|} = \inf",
-,,"\int{0, 1, ln(x)} = 1ln(1)-1-lim{x->0, xln(x)-x} = (x=e^(-y), y=-ln(x)) = -1-lim{y->\inf, e^(-y)(-y)}-0",
-,,"\int{a, b, f...(x)} = {a, b, [F(x)]} = ...
-\int{f…(x)} = … = F(x)","a=2, b=\inf, f=(8x+8)/(x^4+4x^2) -> F=ln|x^2/(x^2+4)|-2/x-arctan(x/2)+C, 1+ln(2)+pi/4
-a=0, b=pi/2, f=2/(1+tan(x)) -> F=ln|tanx+1|-1/2ln|tan^2(x)+1|+arctan(tan(x))+C, \pi/2"
-,,"Others: \int{…, f(x)dx} -> Indefinite integral -> …",
+$math{\int{a, b, f(x)dx} = lim{x->b-, F(x)} - lim{x->a+, F(x)}}",
+,,"$math{\int{0, 1, x^pdx}, \int{1, \inf, x^pdx}, …}",
+,,"$math{\int{1, \inf, 1/(x-1)dx} = lim{t->\inf-, ln|t-1|} - lim{x->1-, ln|t-1|} = \inf}",
+,,"$math{\int{0, 1, ln(x)} = 1ln(1)-1-lim{x->0, xln(x)-x} = (x=e^(-y), y=-ln(x)) = -1-lim{y->\inf, e^(-y)(-y)}-0}",
+,,"$math{\int{a, b, f...(x)} = {a, b, [F(x)]} = ...}
+$math{\int{f…(x)} = … = F(x)}","$math{a=2, b=\inf, f=(8x+8)/(x^4+4x^2) -> F=ln|x^2/(x^2+4)|-2/x-arctan(x/2)+C, 1+ln(2)+pi/4}
+$math{a=0, b=pi/2, f=2/(1+tan(x)) -> F=ln|tanx+1|-1/2ln|tan^2(x)+1|+arctan(tan(x))+C, \pi/2}"
+,,"$math{Others: \int{…, f(x)dx} -> Indefinite integral -> …}",
 ,Integral applications,,
 ,Integral areas,"The integral of the area forms the ordinate set. In a pair (x, y) of orthorectified coordinates (ortonormerade koordinater) on the plane, the first horizontal coordinate x is called the abscissa (abskissa) and the second vertical coordinate y is called the ordinate (ordinata).
-Y_f = {(x, y): a <= x <= b, 0 <= y <= f(x)} -> A=m(Y_f)=\int{a, b, f(x)dx}
-m(Y_(-f)) = \int{a, b, -f(x)dx} = -\int{a, b, f(x)dx} = -m(D)",
+$math{Y_f = {(x, y): a <= x <= b, 0 <= y <= f(x)} -> A=m(Y_f)=\int{a, b, f(x)dx}}
+$math{m(Y_(-f)) = \int{a, b, -f(x)dx} = -\int{a, b, f(x)dx} = -m(D)}",
 ,Cropped area,"f and g are continous and f(x) >= g(x) on [a, b], D: {(x, y): a <= x <= b, g(X) <= y <= f(x)}
-m(Y_f\Y_g) = m(Y_f)-m(Y_g) = \int{a, b, f(x)dx}-\int{a, b, g(x)dx} =\int{a, b, (f(x)-g(x))dx}
-A=m(D)-m(E) = m(Y_(f+k))-m(Y_(g+k)) = \int{a, b, (f(x)+k)dx} - \int{a, b, (g(x)+k)dx}",
-,,"f(x) >= g(x) -> f(x) - g(x) >= 0 -> FAC[f(x) - g(x)] >= 0 -> SIGN[f(x)-g(x)] -> x1<x<x2
-A = \int{a, x1, f(x)-g(x)} + \int{…} + \int{…}","f(x) = 2x^2-3x-2, g(x)=-x^2+6x-2
-f(x)=x^3, g(x)=x"
-,Function symmetry,"Odd function: f(-x)=-f(x)
-Even function: f(-x)=f(x)
-even*even = even, even*odd = odd, odd*odd=even",
-,,"f(x) even -> F(x)=\int{0, x, f(t)dt} odd
-F(-x) = \int{0, -x, f(t)dt} = [t=-u, dt/du=-1] = \int{0, x, -f(-u)du} = -\int{0, x, f(u)du}=-F(x)",
-,,,"\int{-a, a, xsin(x)dx} = 2\int{0, a, xsin(x)dx}"
-,,,"\int{-\pi/6, \pi/6, (x^3sin^2(x)-cos(x))/cos^3(x)dx} = \int{-\pi/6, \pi/6, (x^3sin^2(x))/cos^3(x)-cos(x)/cos^3(x)dx} = \int{0, \pi/6, -2/cos^2(x)}
-\int{-\pi/3, \pi/3, x^9sin^4(x)/cos^5(x)dx}
-\int{-1, 1, 2z^97/(z^2+1)+1/(z^2+1)dx}
-\int{-\pi/3, \pi/3, (cos(x)/cos^3(x)+sin(x)/cos^3(x))dx}"
-,Parameterized,"K={x=x(t), y=y(t), t in I}
-K={x=R*cos(t), y=R*sin(t)}",
+$math{m(Y_f\Y_g) = m(Y_f)-m(Y_g) = \int{a, b, f(x)dx}-\int{a, b, g(x)dx} =\int{a, b, (f(x)-g(x))dx}}
+$math{A=m(D)-m(E) = m(Y_(f+k))-m(Y_(g+k)) = \int{a, b, (f(x)+k)dx} - \int{a, b, (g(x)+k)dx}}",
+,,"$math{f(x) >= g(x) -> f(x) - g(x) >= 0 -> FAC[f(x) - g(x)] >= 0 -> SIGN[f(x)-g(x)] -> x1<x<x2}
+$math{A = \int{a, x1, f(x)-g(x)} + \int{…} + \int{…}}","$math{f(x) = 2x^2-3x-2, g(x)=-x^2+6x-2}
+$math{f(x)=x^3, g(x)=x}"
+,Function symmetry,"$math{Odd function: f(-x)=-f(x)}
+$math{Even function: f(-x)=f(x)}
+$math{even*even = even, even*odd = odd, odd*odd=even}",
+,,"$math{f(x) even -> F(x)=\int{0, x, f(t)dt} odd}
+$math{F(-x) = \int{0, -x, f(t)dt} = [t=-u, dt/du=-1] = \int{0, x, -f(-u)du} = -\int{0, x, f(u)du}=-F(x)}",
+,,,"$math{\int{-a, a, xsin(x)dx} = 2\int{0, a, xsin(x)dx}}"
+,,,"$math{\int{-\pi/6, \pi/6, (x^3sin^2(x)-cos(x))/cos^3(x)dx} = \int{-\pi/6, \pi/6, (x^3sin^2(x))/cos^3(x)-cos(x)/cos^3(x)dx} = \int{0, \pi/6, -2/cos^2(x)}}
+$math{\int{-\pi/3, \pi/3, x^9sin^4(x)/cos^5(x)dx}}
+$math{\int{-1, 1, 2z^97/(z^2+1)+1/(z^2+1)dx}}
+$math{\int{-\pi/3, \pi/3, (cos(x)/cos^3(x)+sin(x)/cos^3(x))dx}}"
+,Parameterized,"$math{K={x=x(t), y=y(t), t in I}}
+$math{K={x=R*cos(t), y=R*sin(t)}}",
 ,Multiple point/Multipelpunkt,Multiple parameter values give the same point on the curve,
-,,"x(t_1)=x(t_2) -> REMOVE[t_2=t_1], t_2 = A[:](t_1)
-y(t_1)=y(t_2) -> y(t_1)=y(A(t_1)) -> t_1, t_2=A(t_1)","x=t^2, y=t^3-4t, A=-t_1 -> t_1=-2, 2, 0"
-,Parameterized tangent,"K{x=x(t), y=y(t), t in I}, x'(t), y'(t) continous, x'(t)>0 or x'(t)<0
-y'(x)[=(dy/dt)/(dx/dt)]=y'(t)/x'(t)",
-,,y'(x)=0,"{x=t^2, y=FAC[t^3-4t]} -> t=2/sqrt(3), -2/sqrt(3)"
-,Area of parameterized function,"K{x=x(t), y=y(t), t in I}, x'(t), y'(t) continous [a, b], x'(t)>0 on (a, b), f(t)>=0 on [a, b]
-A=\int{a, b, f(t)g'(t)dt}
-Y_K = {(x, y): g(a)<=x<=g(b), 0<=y<=f(g^(-1)(x))}
-m(Y_K)=\int{g(a), g(b), f(g^(-1)(x))dx} = [t=g^(-1)(x), x=g(t), dx/dt=g'(t), x=g(a) -> t=a, x=g(b) -> t=b] = \int{a, b, f(t)g'(t)}","{x=e^t, y=2t}, t in [0, 1]"
-,,"(Counterclockwise curve): x'(t)<0 on (a, b) -> m(Y_K)=\int{b, a, f(t)g'(t)dt} = -\int{a, b, f(t)g'(t)dt}",
+,,"$math{x(t_1)=x(t_2) -> REMOVE[t_2=t_1], t_2 = A[:](t_1)}
+$math{y(t_1)=y(t_2) -> y(t_1)=y(A(t_1)) -> t_1, t_2=A(t_1)}","$math{x=t^2, y=t^3-4t, A=-t_1 -> t_1=-2, 2, 0}"
+,Parameterized tangent,"$math{K{x=x(t), y=y(t), t in I}, x'(t), y'(t) continous, x'(t)>0 or x'(t)<0}
+$math{y'(x)[=(dy/dt)/(dx/dt)]=y'(t)/x'(t)}",
+,,$math{y'(x)=0},"$math{{x=t^2, y=FAC[t^3-4t]} -> t=2/sqrt(3), -2/sqrt(3)}"
+,Area of parameterized function,"$math{K{x=x(t), y=y(t), t in I}, x'(t), y'(t) continous [a, b], x'(t)>0 on (a, b), f(t)>=0 on [a, b]}
+$math{A=\int{a, b, f(t)g'(t)dt}}
+$math{Y_K = {(x, y): g(a)<=x<=g(b), 0<=y<=f(g^(-1)(x))}}
+$math{m(Y_K)=\int{g(a), g(b), f(g^(-1)(x))dx} = [t=g^(-1)(x), x=g(t), dx/dt=g'(t), x=g(a) -> t=a, x=g(b) -> t=b] = \int{a, b, f(t)g'(t)}}","$math{{x=e^t, y=2t}, t in [0, 1]}"
+,,"$math{(Counterclockwise curve): x'(t)<0 on (a, b) -> m(Y_K)=\int{b, a, f(t)g'(t)dt} = -\int{a, b, f(t)g'(t)dt}}",
 ,Rotational volume/Rotationsvolym,,
-,Disc method/Skivmetoden,"Y_f={(x, y): a<=x<=b, 0<=y<=f(x)}, V=\int{\pi*y^2*dx} = \int{\pi*f^2(x)*dx}
-a=x_0<x_1<…<x_(k-1)<x_k<…<x_n=b, \Dx_k = x_k-x_(k-1), d=max{k=1,2…n, \Dx_k}, f continous [x_(k-1, x_k], max M_k=f(\b_k), min m_k=f(\a_k), \a_k, \b_k in [x_(k-1), x_k]
-\S{k=1, n, \pi*f^2(\a_k)\Dx_k} <= \S{k=1, n, m(D_k)} <= \S{k=1, n, pi*f^2(\b_k)\Dx_k} (lim d->0) -> V_x = \int{\pi*f^2(x)*dx}","Cone volume: y=x, a=0, b=3 -> x-axis
-Sphere: y=sqrt(R^2-x^2), a=-R, b=R -> x-axis -> =4/3\piR^3
-Hyperbola: y^2=b^2(x^2/a^2-1), a=a, b=2a -> x-axis -> 4/3\pi*ab^2"
-,,"Y_f={(x, y): a<=x<=b, 0<=y<=f(x)}, V=\int{\pi*x^2*dy} = \int{\pi*(f^(-1)(y))^2*dy}","Arbitrary: y=sqrt(x), 0<=x<=a -> a=0, b=sqrt(a) -> y-axis"
-,,"{x=x(t), y=y(t)}, V=\int{x(a), x(b), y^2(x^(-1)(x))dx}=\int{a, b, y^2(t)x'(t)dt} ","x=2t^2-1, y=3t^3-3t, a=0, b=1"
-,Shell method/Skalmetoden/Hålcylindermetoden,"Y_f={(x, y): a<=x<=b, 0<=y<=f(x)}, V=\int{a, b, 2\pi*xydx}=\int{a, b, 2\pi*xf(x)dx}
-[x, x+\Dx] (\Dx>0) -> max: M_k = f(d_k), min: m_k=f(c_k), c_k, d_k in [x, x+\Dx], \DV(x) = V(x+\Dx)-V(x), B=\pi(x+\Dx)^2-\pi*x^2=\pi(2x+\Dx)\Dx
-Bm_k <= \DV(x) <= BM_k -> lim{x->0, \pi(2x+\Dx)f(c_k) <= \DV(x)/\Dx <= \pi(2x+\Dx)f(d_k)} -> \pi*2x*f(x) <= dV/dx <= \pi*2x*f(x)","Torus: y=\pm\sqrt(R^2-(x-x_0)^2), a=x_0-R, b=x_0+R -> 2\int{x_0-R, x_0+R, 2\pi*x\sqrt(R^2-(x-x_0)^2)dx} = [u=x-x_0] = \int{-R, R, 4\pi*u\sqrt(R^2-(x-x_0)^2)du} + \int{-R, R, 4\pi\sqrt(R^2-(x-x_0)^2)du} = 0+2\pi^2x_0R^2
-Arbitrary: y=sqrt(x), a=0, b=a"
-,Arc length/Båglängd,"f continous derivable in [a, b], a<=x<=b, l=\int{a, b, sqrt(1+f'(x))dx}
-\Ds_x=sqrt((x_k-x_(k-1))^2+(f(x_k)-f(x_(k-1))), [f(x_k)-f(x_(k-1))=f'(S_k)(x_k-x_(k-1))], \Ds_x=sqrt(\x_k^2+f'(S_k)^2\Dx_k^2)=sqrt(1+f'(S_k)^2)\Dx_k, l=\S{k=1, n, \Ds_x}...","f(x)=ln(x), a=sqrt(3), b=sqrt(8)"
-,,"K={x=x(t), y=y(t)}, a<=<=b, l=m(K)=\int{a, b, sqrt((x'(t))^2+(y'(t))^2)dt}
-\Ds=sqrt((x(t+\Dt)-x(t))^2+(y(t+\Dt)-y(t))","{x=a*sin(t), y=b*cos(t)}, a=-\pi, b=\pi -> \int{-\pi, \pi, sqrt(a^2-(a^2-b^2)sin^2(t)dt} = \int{-\pi, \pi, a*sqrt(1-(a/c)^2*sin^2(t))dt}"
-,Surface of revolution/Rotationsarea,"A = 2\pi\int{a, b, f(x)sqrt(1+f'(x)^2)dx}
-(Cone s_1, r_1, s_2, r_2) -> r_2/s_2=r_1/s_1, s_1=s_2+\Ds, A = \pi*r_1*s_1-\pi*r_2*s_2 = \pi(r_1*s_1-s_2/s_1*r_1*s_2) = \pi*r_1(s_1^2-s_2^2) = \pi*(r_1+s_2/s_1*r_1)\Ds = \pi(r_1+r_2)\Ds=\pi(f(x)+f(x+\Dx))\Ds",
-,,"A = 2\pi\int{a, b, y(t)sqrt(x'(t)^2+y'(t)^2)dt}",
-,Volume with cross‑sectional area/Volym med tvärsnittsarea,"\int{0, n, A(x)dx}
-A(x)=… (Shape area with x), A(x)=2xh/2",
+,Disc method/Skivmetoden,"$math{Y_f={(x, y): a<=x<=b, 0<=y<=f(x)}, V=\int{\pi*y^2*dx} = \int{\pi*f^2(x)*dx}}
+$math{a=x_0<x_1<…<x_(k-1)<x_k<…<x_n=b, \Dx_k = x_k-x_(k-1), d=max{k=1,2…n, \Dx_k}, f continous [x_(k-1, x_k], max M_k=f(\b_k), min m_k=f(\a_k), \a_k, \b_k in [x_(k-1), x_k]}
+$math{\S{k=1, n, \pi*f^2(\a_k)\Dx_k} <= \S{k=1, n, m(D_k)} <= \S{k=1, n, pi*f^2(\b_k)\Dx_k} (lim d->0) -> V_x = \int{\pi*f^2(x)*dx}}","$math{Cone volume: y=x, a=0, b=3 -> x-axis}
+$math{Sphere: y=sqrt(R^2-x^2), a=-R, b=R -> x-axis -> =4/3\piR^3}
+$math{Hyperbola: y^2=b^2(x^2/a^2-1), a=a, b=2a -> x-axis -> 4/3\pi*ab^2}"
+,,"$math{Y_f={(x, y): a<=x<=b, 0<=y<=f(x)}, V=\int{\pi*x^2*dy} = \int{\pi*(f^(-1)(y))^2*dy}}","$math{Arbitrary: y=sqrt(x), 0<=x<=a -> a=0, b=sqrt(a) -> y-axis}"
+,,"$math{{x=x(t), y=y(t)}, V=\int{x(a), x(b), y^2(x^(-1)(x))dx}=\int{a, b, y^2(t)x'(t)dt} }","$math{x=2t^2-1, y=3t^3-3t, a=0, b=1}"
+,Shell method/Skalmetoden/Hålcylindermetoden,"$math{Y_f={(x, y): a<=x<=b, 0<=y<=f(x)}, V=\int{a, b, 2\pi*xydx}=\int{a, b, 2\pi*xf(x)dx}}
+$math{[x, x+\Dx] (\Dx>0) -> max: M_k = f(d_k), min: m_k=f(c_k), c_k, d_k in [x, x+\Dx], \DV(x) = V(x+\Dx)-V(x), B=\pi(x+\Dx)^2-\pi*x^2=\pi(2x+\Dx)\Dx}
+$math{Bm_k <= \DV(x) <= BM_k -> lim{x->0, \pi(2x+\Dx)f(c_k) <= \DV(x)/\Dx <= \pi(2x+\Dx)f(d_k)} -> \pi*2x*f(x) <= dV/dx <= \pi*2x*f(x)}","$math{Torus: y=\pm\sqrt(R^2-(x-x_0)^2), a=x_0-R, b=x_0+R -> 2\int{x_0-R, x_0+R, 2\pi*x\sqrt(R^2-(x-x_0)^2)dx} = [u=x-x_0] = \int{-R, R, 4\pi*u\sqrt(R^2-(x-x_0)^2)du} + \int{-R, R, 4\pi\sqrt(R^2-(x-x_0)^2)du} = 0+2\pi^2x_0R^2}
+$math{Arbitrary: y=sqrt(x), a=0, b=a}"
+,Arc length/Båglängd,"$math{f continous derivable in [a, b], a<=x<=b, l=\int{a, b, sqrt(1+f'(x))dx}}
+$math{\Ds_x=sqrt((x_k-x_(k-1))^2+(f(x_k)-f(x_(k-1))), [f(x_k)-f(x_(k-1))=f'(S_k)(x_k-x_(k-1))], \Ds_x=sqrt(\x_k^2+f'(S_k)^2\Dx_k^2)=sqrt(1+f'(S_k)^2)\Dx_k, l=\S{k=1, n, \Ds_x}...}","$math{f(x)=ln(x), a=sqrt(3), b=sqrt(8)}"
+,,"$math{K={x=x(t), y=y(t)}, a<=<=b, l=m(K)=\int{a, b, sqrt((x'(t))^2+(y'(t))^2)dt}}
+$math{\Ds=sqrt((x(t+\Dt)-x(t))^2+(y(t+\Dt)-y(t))}","$math{{x=a*sin(t), y=b*cos(t)}, a=-\pi, b=\pi -> \int{-\pi, \pi, sqrt(a^2-(a^2-b^2)sin^2(t)dt} = \int{-\pi, \pi, a*sqrt(1-(a/c)^2*sin^2(t))dt}}"
+,Surface of revolution/Rotationsarea,"$math{A = 2\pi\int{a, b, f(x)sqrt(1+f'(x)^2)dx}}
+$math{(Cone s_1, r_1, s_2, r_2) -> r_2/s_2=r_1/s_1, s_1=s_2+\Ds, A = \pi*r_1*s_1-\pi*r_2*s_2 = \pi(r_1*s_1-s_2/s_1*r_1*s_2) = \pi*r_1(s_1^2-s_2^2) = \pi*(r_1+s_2/s_1*r_1)\Ds = \pi(r_1+r_2)\Ds=\pi(f(x)+f(x+\Dx))\Ds}",
+,,"$math{A = 2\pi\int{a, b, y(t)sqrt(x'(t)^2+y'(t)^2)dt}}",
+,Volume with cross‑sectional area/Volym med tvärsnittsarea,"$math{\int{0, n, A(x)dx}}
+$math{A(x)=… (Shape area with x), A(x)=2xh/2}",
 ,Volume of sphere,,
 ,Volume of cone,,
 ,Volume of torus,,
 ,,,
 ,,,
 ,,,
-Mass and mass center,Mass,m=\int{dm} = \int{\'1r(x)*dx},
-,,m=\int{dm} = \int{\r(x)*A(x)*dx},
-,Tyngdpunkt,x_m = 1/m*\int{x*dm},
-,,"x_m = 1/(\r*A*h)*\int{x*\r*f(x)*h*dx}
-y_m = 1/(\r*A*h)*\int{f(x)*\r*f(x)*h*dx}",
+Mass and mass center,Mass,$math{m=\int{dm} = \int{\'1r(x)*dx}},
+,,$math{m=\int{dm} = \int{\r(x)*A(x)*dx}},
+,Tyngdpunkt,$math{x_m = 1/m*\int{x*dm}},
+,,"$math{x_m = 1/(\r*A*h)*\int{x*\r*f(x)*h*dx}}
+$math{y_m = 1/(\r*A*h)*\int{f(x)*\r*f(x)*h*dx}}",
 ,,,
 ,,,
 ,,,
@@ -515,58 +515,58 @@ y_m = 1/(\r*A*h)*\int{f(x)*\r*f(x)*h*dx}",
 "Moments, centroids, moments of inertia",,"Moment M = mass of a particle * distance from an axis or plane
 Moment of Inertia I = mass of a particle * distance squared from an axis or plane
 Centroid \bar{x}, \bar{y}, \bar{z} = center of gravity
-\r = density = 1",
+$math{\r = density = 1}",
 ,Plane Revolution,"Moment:
-M_x = int{y dA}
-M_y = int{x dA}
-M_(xz)= \int{y dV}
+$math{M_x = int{y dA}}
+$math{M_y = int{x dA}}
+$math{M_(xz)= \int{y dV}}
 
 Centroid:
-\bar{x} = (1/A)*M_y
-\bar{y} = (1/A)*M_x
+$math{\bar{x} = (1/A)*M_y}
+$math{\bar{y} = (1/A)*M_x}
 
 Moment of Inertia:
-I_x = int{y^2 dA}
-I_y = int{x^2 dA}",
+$math{I_x = int{y^2 dA}}
+$math{I_y = int{x^2 dA}}",
 ,Solid of Region,"Moment:
-M_(xz) = int{y dV}
-M_(yz) = int{x dV}   (\r = 1)
+$math{M_(xz) = int{y dV}}
+$math{M_(yz) = int{x dV}   (\r = 1)}
 
 Centroid:
-\bar{x} = (1/V)*M_(yz)
-\bar{y} = (1/V)*M_(xz)
+$math{\bar{x} = (1/V)*M_(yz)}
+$math{\bar{y} = (1/V)*M_(xz)}
 
 Moment of Inertia:
-I_(xz) = int{\r*y^2 dV}
-I_(yz) = int{\r*x^2 dV}",
+$math{I_(xz) = int{\r*y^2 dV}}
+$math{I_(yz) = int{\r*x^2 dV}}",
 ,General Solid,"Moment:
-M_(xz) = intintint{y\r dV}
-M_(yz) = intintint{x\r dV}
-M_(xy) = intintint{z\r dV}
+$math{M_(xz) = intintint{y\r dV}}
+$math{M_(yz) = intintint{x\r dV}}
+$math{M_(xy) = intintint{z\r dV}}
 
 Centroid:
-\bar{x} = (1/m)*M_(yz)
-\bar{y} = (1/m)*M_(xz)
-\bar{z} = (1/m)*M_(xy)
+$math{\bar{x} = (1/m)*M_(yz)}
+$math{\bar{y} = (1/m)*M_(xz)}
+$math{\bar{z} = (1/m)*M_(xy)}
 
 Moment of Inertia:
-I_(xz) = intintint{\r*(y^2 + z^2) dV}
-I_(yz) = intintint{\r*(x^2 + z^2) dV}
-I_(xy) = intintint{\r*(x^2 + y^2) dV}
+$math{I_(xz) = intintint{\r*(y^2 + z^2) dV}}
+$math{I_(yz) = intintint{\r*(x^2 + z^2) dV}}
+$math{I_(xy) = intintint{\r*(x^2 + y^2) dV}}
 
 * dV is evaluated by Method of Cross Sections or Method of Cylindrical Shells",
-Application of integrals,WORK TO EXTEND A SPRING,"Variable Force F(x): Work W = int{a, b, f(x)dx}, Hooke's Law: F = kx",
-,WORK TO LAUNCH A SATELLITE,"* Gravitational Force: F = k/r^2, (r = distance from Earth's center)
-W = int{a, b, F(r)dr}",
-,FORCE DUE TO LIQUID PRESSURE,"Force on differential surface: dF = \r*g*x*dA
-F = int{a, b, \r*g*x*dA}",
-,ENERGY REQUIREMENT FOR HEATING A GAS,"Q = nC\DT  = n*int{T_1, T_2, C(T)dT}",
+Application of integrals,WORK TO EXTEND A SPRING,"Variable Force F(x): $math{Work W = int{a, b, f(x)dx}}, Hooke's Law: $math{F = kx}",
+,WORK TO LAUNCH A SATELLITE,"* Gravitational Force: $math{F = k/r^2}, (r = distance from Earth's center)
+$math{W = int{a, b, F(r)dr}}",
+,FORCE DUE TO LIQUID PRESSURE,"Force on differential surface: $math{dF = \r*g*x*dA}
+$math{F = int{a, b, \r*g*x*dA}}",
+,ENERGY REQUIREMENT FOR HEATING A GAS,"$math{Q = nC\DT  = n*int{T_1, T_2, C(T)dT}}",
 ,CAPACITANCE OF CO-AXIAL CYLINDER,"CAPACITANCE OF CO-AXIAL CYLINDER, RADII R1, R2, LENGTH L
-* Electric Field: E (force per charge) = q/(2\p*\e_0*r*L)
-* Potential Difference: V = E\Dr => int{r_1, r_2, E(r)dr}",
-,FIRST ORDER CHEMICAL KINETICS,"Rate of reaction: -(dC/dt) = kC
-Cross-multiply into differentials and integrate:  -dC = kCdt or int{C_0, C, dC/C} = -k*int{0, t, dt}
-Therefore: ln(C/C_0) = -kt or C/C_0 = e^(-kt)",
-,WORK OF ISOTHERMAL COMPRESSION,"Work of Compression: W = P\DV => W = int{V_1, V_2, P(V)dV}
-Ideal Gas Law: PV = nRT
-Then for n = 1: W = int{V_1, V_2, RT/V dV} = RT*ln(V_2/V_1) = RT*ln(P_1/P_2)",
+* Electric Field: E (force per charge) $math{= q/(2\p*\e_0*r*L)}
+* Potential Difference: $math{V = E\Dr => int{r_1, r_2, E(r)dr}}",
+,FIRST ORDER CHEMICAL KINETICS,"Rate of reaction: $math{-(dC/dt) = kC}
+Cross-multiply into differentials and integrate: $math{-dC = kCdt} or $math{int{C_0, C, dC/C} = -k*int{0, t, dt}}
+Therefore: $math{ln(C/C_0) = -kt} or $math{C/C_0 = e^(-kt)}",
+,WORK OF ISOTHERMAL COMPRESSION,"Work of Compression: $math{W = P\DV => W = int{V_1, V_2, P(V)dV}}
+Ideal Gas Law: $math{PV = nRT}
+Then for n = 1: $math{W = int{V_1, V_2, RT/V dV} = RT*ln(V_2/V_1) = RT*ln(P_1/P_2)}",

@@ -1,36 +1,36 @@
 Name,Basic relationship,Presetted values
 rich,rich,rich
-Common notations,"\\E: There exists
-\\A: For all",
+Common notations,"$math{\\E}: There exists
+$math{\\A}: For all",
 Verification of proof,"(Verification of a mathematical statement for acceptance as truth)
 (Axioms function as true, unprovable fundamental rules of mathematics)
 (Statements can be disproved with just one counterexample)
-Implication: P => Q, Equivalence: P <=> Q
-Direct proof: P=>Q, indirect proof: !P=>!Q
+Implication: $math{P => Q}, Equivalence: $math{P <=> Q}
+Direct proof: $math{P=>Q}, indirect proof: $math{!P=>!Q}
 Proof by contradiction: Assume the opposite of the proof and show a contradiction",
-Statements,P: … => Q: …,
+Statements,$math{P: … => Q: …},
 Implications,"P, Q, P->Q
 True, True, True
 True, False, False
 False, True, True
 False, False, False",
-Direct proof,"$t_a={a=2n,2n+1}: a^2-2a+7",
-Indirect proof: !Q=>!P,"(P: a^2=2k+1, Q: a=2m+1, !P: a=2k, a^2=(2k)^2=2*2k^2=>!Q)",
-,"P: Infinite prime numbers, !P: Finite prime number set P, q=\\P{k=0, n, P_k}+1 does not include in P",
-,"P: a>0, b>0, ab>100, Q: A>10 | B>10
-!Q: A<=10, b<=10 => ab <=100 !P",
+Direct proof,"$math{$t_a={a=2n,2n+1}: a^2-2a+7}",
+Indirect proof: !Q=>!P,"($math{P: a^2=2k+1, Q: a=2m+1, !P: a=2k, a^2=(2k)^2=2*2k^2=>!Q})",
+,"$math{P}: Infinite prime numbers, $math{!P}: Finite prime number set P, $math{q=\\P{k=0, n, P_k}+1} does not include in P",
+,"$math{P: a>0, b>0, ab>100}, $math{Q: A>10 | B>10}
+$math{!Q: A<=10, b<=10 => ab <=100} !P",
 Mathematical induction,"Proof that equality holds for/Bevis gäller för
-1 Base step/Bassteg (1st, n=b)
-2 Induction hypothesis/Antagande (n=n)
-3 Induction step/steg (n=n+1) baserad på 2
+$math{1 Base step/Bassteg (1st, n=b)}
+$math{2 Induction hypothesis/Antagande (n=n)}
+$math{3 Induction step/steg (n=n+1)} baserad på 2
 4 Conclusion/Slutsats (1st step/steg, 2 consecutive integer/påföljande heltal) => all/alla n",
-,"\\S{k=b, n, A_n) = B_n
-n=b => (1) = \\S{k=b, b, A_n) = A_b, (2) = B_b, Comp[A_b, B_b]
-n=n+1 => (1) = \\S{k=b, n+1, A_n} = \\S{k=b, n, A_n) + A_(n+1) = B_n + A_(n+1), (2) = B_(n+1), Comp[B_n + A_(n+1), B_(n+1)]","A_n = 2n+1, B_n=n(2+n), b=1"
-,"A^n-B^n=Ck,
-n=b => (1) = A^1-B^1, (div C?)
-n=n+1 => (1) = A^(n+1)-B^(n+1) = A*A^n-B*B^n = (A-B)A^n+B(A^n-B^n) = (A-B)A^n+C(Bk) (div C?)","A = 13, B = 8, C = 5"
-,,"2^n>n^2 (n>4), (2^5=32, 5^2=25, 2^5>5^2), (2^(n+1)>(n+1)^2=>2^(n+1)-(n+1)^2>0, 2^(n+1)-(n+1)^2=n^2-2n-1=(n-1)^2-2>0)"
+,"$math{\\S{k=b, n, A_n) = B_n}
+$math{n=b => (1) = \\S{k=b, b, A_n) = A_b, (2) = B_b, Comp[A_b, B_b]}
+$math{n=n+1 => (1) = \\S{k=b, n+1, A_n} = \\S{k=b, n, A_n) + A_(n+1) = B_n + A_(n+1), (2) = B_(n+1), Comp[B_n + A_(n+1), B_(n+1)]}","$math{A_n = 2n+1, B_n=n(2+n), b=1}"
+,"$math{A^n-B^n=Ck},
+$math{n=b => (1) = A^1-B^1}, (div C?)
+$math{n=n+1 => (1) = A^(n+1)-B^(n+1) = A*A^n-B*B^n = (A-B)A^n+B(A^n-B^n) = (A-B)A^n+C(Bk)} (div C?)","$math{A = 13, B = 8, C = 5}"
+,,"$math{2^n>n^2 (n>4)}, $math{(2^5=32, 5^2=25, 2^5>5^2)}, $math{(2^(n+1)>(n+1)^2=>2^(n+1)-(n+1)^2>0, 2^(n+1)-(n+1)^2=n^2-2n-1=(n-1)^2-2>0)}"
 ,,
 ,,
 DIGITS,"The digits of a number are its unitary building blocks (e.g., 124 consists of 1, 2, 4).
@@ -38,25 +38,25 @@ Digit: Terminal member of the hand, Finger excludes thumb.
 The 10 digits are (0, 1, 2, 3, 4, 5, 6, 7, 8, 9), which are historical digits because (0 digit) was used for counting.",
 Decimal system,"Base 10, We count in base 10 because we have 10 digits.
 Value of numbered depends upon positioning; it increases leftward with every step to left in each column (e.g., 5 is 5, but 50 is 5 ten's).",
-Number set,"\\N: Natural numbers/Naturliga tal = {0, 1, 2, 3, 4, 5, …}, Positive whole numbers
-\\Z: Integers/Heltal = {…, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, ...}, Whole numbers without fractions
-\\Q: Rational numbers/Rationella tal = {... -1/2, 1/4, ...}, Any number that can be expressed in the form of a fraction
+Number set,"$math{\\N}: Natural numbers/Naturliga tal = {0, 1, 2, 3, 4, 5, …}, Positive whole numbers
+$math{\\Z}: Integers/Heltal = {…, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, ...}, Whole numbers without fractions
+$math{\\Q}: Rational numbers/Rationella tal = {... -1/2, 1/4, ...}, Any number that can be expressed in the form of a fraction
 Irrational numbers: Numbers that cannot be expressed with terminating or recurring (infinite) repetition.
-\\R: Real numbers/Reela tal = {..., 0, 1, sqrt(2), e, \pi, ...}, The union of rational and irrational numbers.
-\\C: Complex numbers/Komplexa tal, An extension of real and rational numbers and imaginary numbers (e.g., 3 + 4i).",
+$math{\\R}: Real numbers/Reela tal = {..., 0, 1, sqrt(2), e, \pi, ...}, The union of rational and irrational numbers.
+$math{\\C}: Complex numbers/Komplexa tal, An extension of real and rational numbers and imaginary numbers (e.g., 3 + 4i).",
 Number systems,"Olika talsystem:
 Romerska tal, e.g. XXI
 Fibonacci Pisano introducerade arabiska tal i Europa (Liber de abacco, 1202)
-e.g. 123.45 = 1*10^2+2*10^1+3*10^0+4*10^-1+5*10^-2",
+$math{e.g. 123.45 = 1*10^2+2*10^1+3*10^0+4*10^-1+5*10^-2}",
 ,"2.75 to trinary
-Integer part: 2 = 2_3 (Successive divide by 3)
-Fractional part: 0.75 = 0.[20]_3 (Successive multiply with 3)",
-,"517/81 -> trinary
-517=201011_3/10000_3=20.1011",
+Integer part: $math{2 = 2_3} (Successive divide by 3)
+Fractional part: $math{0.75 = 0.[20]_3} (Successive multiply with 3)",
+,"$math{517/81 -> trinary}
+$math{517=201011_3/10000_3=20.1011}",
 Prime numbers,"Integers >= , can only divide with self or 1
 Each integer can be written as a product of prime in an unique form
 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ...",
-Intervals,"Closed interval/Slutet intervall: [a, b] <=> {x: a<=x<=b}
-Open interval/Öppet intervall: (a, b) <=> {x: a<x<b}
-Halvöppen intervall/Half-open interval: [a, b) <=> {x: a<=x<b}, (a, b] <=> {x: a<x<=b}
+Intervals,"Closed interval/Slutet intervall: $math{[a, b] <=> {x: a<=x<=b}}
+Open interval/Öppet intervall: $math{(a, b) <=> {x: a<x<b}}
+Halvöppen intervall/Half-open interval: $math{[a, b) <=> {x: a<=x<b}}, $math{(a, b] <=> {x: a<x<=b}}
 Infinity always form open interval, since infinity is not a number",

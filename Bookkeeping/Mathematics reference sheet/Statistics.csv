@@ -15,63 +15,63 @@ Combinatorics,General combination concept,Tree diagram,
 ,Complementary event/Komplementhändelse,,(1~5)(1~4)-(2~5)(2~4)
 ,Nested combinations,,(1~4)(1~4)(1~4)(1~3)-(1~4)(3)(1~4)(1)
 ,,,((1~4)(1 2 4)+(3)(3))((1~4)(1 2)+(3)(3))
-,"Permutation (order, no repeat)","P(n, k)=n!/(n-k)!","(3~8) 3, 6 3"
-,,,"P(4, 4)(5)"
-,,,"((3)+(4)+(5)+(6))P((3~8)-[1], 2)"
-,,,"P(1 2 3*2 4*3, 2)=P(7, 2)/(2!3!)"
-,,,"P(1*3 2*8)=C(11, 3), P((1*11 2*1), 13)=1^11*2^1*C(13, 1)
-P(1*7 2*7 3*4 4*4)=C(22, 7)*C(15, 7)*…
-P((P(4, 4))P(6, 6))=...*7, P((P(1~2)) (P(3~5)) (P(6~12)))=...*P(3, 3)"
-,Cyclic permutation,,"P~(6, 6)=P(6, 6)/6"
-,"Combination/Kombination (no order, no repeat","C(n, k)=n!/((n-k)!k!)=P(n, k)/k!","n=6, k=3"
-,,,"3C(7, 3)"
-,,,"C(10, 2)C(10, 3)C(10, 1)
-C(1~10, 2)C(11~30, 4)"
-,"Repetitions (order, repeat)",x^n,"x=(1~5) y=3, 6 4, 20 3"
-,"Stars and bars (no order, repeat)",,"C*(7, 3)=C(9, 2) (e.g. **|****|*, 7 stars and 2 bars (for 3 segments))"
-,Nested combinations,,"P(4, 4)P(9, 9)+P(9, 9)P(4, 4)"
-,,,"\\S{k=1, 5, P(5, k)}
-\\S{k=4, 6, C(1~6, k)C(7~12, 6-k)}"
-,,,P(1~5)-(4)P(1~2)P(3~5)
-,,,"C(1~5 6*2, 2)=C(1~5, 3)+C(1~5, 2)(6)+(1~5)(6)(7)"
-,,,"C(1~12, 3)-C(1~6, 3)"
-,,,"C(23, 9)-(1)(2)(3)C(4~23, 6)"
-,,,"C(1~12, 2)-C(1~2, 2)-C(3~5, 2)-C(6~7, 2)-C(8~12, 2)"
-,,,"P(C(1, 1)*2 C(2, 1)*2)=*C(4, 2)
-P(C(10, 2) C(10, 3) C(10, 1))=*P(6, 6)"
+,"Permutation (order, no repeat)",$math{P(n, k)=n!/(n-k)!},"(3~8) 3, 6 3"
+,,,$math{P(4, 4)(5)}
+,,,"$math{((3)+(4)+(5)+(6))P((3~8)-[1], 2)}"
+,,,"$math{P(1 2 3*2 4*3, 2)=P(7, 2)/(2!3!)}"
+,,,"$math{P(1*3 2*8)=C(11, 3)}, $math{P((1*11 2*1), 13)=1^11*2^1*C(13, 1)}
+$math{P(1*7 2*7 3*4 4*4)=C(22, 7)*C(15, 7)*…}
+$math{P((P(4, 4))P(6, 6))=...*7}, $math{P((P(1~2)) (P(3~5)) (P(6~12)))=...*P(3, 3)}"
+,Cyclic permutation,,"$math{P~(6, 6)=P(6, 6)/6}"
+,"Combination/Kombination (no order, no repeat",$math{C(n, k)=n!/((n-k)!k!)=P(n, k)/k!},"$math{n=6, k=3}"
+,,,$math{3C(7, 3)}
+,,,"$math{C(10, 2)C(10, 3)C(10, 1)}
+$math{C(1~10, 2)C(11~30, 4)}"
+,"Repetitions (order, repeat)",$math{x^n},"$math{x=(1~5) y=3}, 6 4, 20 3"
+,"Stars and bars (no order, repeat)",,"$math{C*(7, 3)=C(9, 2)} (e.g. **|****|*, 7 stars and 2 bars (for 3 segments))"
+,Nested combinations,,"$math{P(4, 4)P(9, 9)+P(9, 9)P(4, 4)}"
+,,,"$math{\\S{k=1, 5, P(5, k)}}
+$math{\\S{k=4, 6, C(1~6, k)C(7~12, 6-k)}}"
+,,,$math{P(1~5)-(4)P(1~2)P(3~5)}
+,,,"$math{C(1~5 6*2, 2)=C(1~5, 3)+C(1~5, 2)(6)+(1~5)(6)(7)}"
+,,,$math{C(1~12, 3)-C(1~6, 3)}
+,,,$math{C(23, 9)-(1)(2)(3)C(4~23, 6)}
+,,,$math{C(1~12, 2)-C(1~2, 2)-C(3~5, 2)-C(6~7, 2)-C(8~12, 2)}
+,,,"$math{P(C(1, 1)*2 C(2, 1)*2)=*C(4, 2)}
+$math{P(C(10, 2) C(10, 3) C(10, 1))=*P(6, 6)}"
 ,Combinations with choises,"Pool section: [1, 2, 3, 4, …] -> Holding section: [1, 3, 4]",
-,,"P(8**4 10**3)=*C(7, 4) (2 color with reset)",
-,,"P(C(8, 4)C(10, 3)) (2 color without reset)",
+,,$math{P(8**4 10**3)=*C(7, 4)} (2 color with reset),
+,,$math{P(C(8, 4)C(10, 3))} (2 color without reset),
 ,Poker,"(Poker: Pool(52 kort, 4 färger, 13 valörer), hand: 5 kort, ingen ordning",
-,Antal hand,"C(52, 5)=",
-,Ett par,"C2(4).(13) ((4)(4)(4)).C3(12) => C(13, 1)C(4, 2)C(12, 3)C(4, 1)^3=...",
-,Tvåpar,"(C2(4)C2(4)).C2(13) (4).(11)=> C(13, 2)C(4, 2)*C(4, 2)*C(4, 1)*C(11, 1)=...",
-,Tretal/Triss,"(C3(4)).(13) ((4)(4)).(C2(12))=>C(4, 3)13*4^2C(12, 2)=54912",
-,Fyrtal,"(C4(4)).(13) (4).C1(12)=>C(4, 4)*13*4C(12, 1)=624",
-,Stege,(4)*5.(10)=>4^5*10=10240,
-,Stege i färg,"[1~4].[1~10] => 4C(10, 1)=40",
-,Färg,"(4).(C5(13)![[n][n+1][n+2][n+3][n+4]]) => 4(C(13, 5)-10)=5108",
-,Kåk,"C3[1~4].(13) C2[1~4].(12) => C(4, 3)C(13, 1)C(4, 2)C(12, 1)=3744",
-,1[10],"(4).[10] C4[(4).(12)]=>4C(48, 4)=778320",
-,2[10],"C2(4).[10] C3[(4).(12)]=>C(4, 2)P(48, 3)=103776",
+,Antal hand,$math{C(52, 5)=},
+,Ett par,"$math{C(13, 1)C(4, 2)C(12, 3)C(4, 1)^3=...}",
+,Tvåpar,"$math{C(13, 2)C(4, 2)*C(4, 2)*C(4, 1)*C(11, 1)=...}",
+,Tretal/Triss,"$math{C(4, 3)13*4^2C(12, 2)=54912}",
+,Fyrtal,"$math{C(4, 4)*13*4C(12, 1)=624}",
+,Stege,$math{4^5*10=10240},
+,Stege i färg,$math{4C(10, 1)=40},
+,Färg,"$math{4(C(13, 5)-10)=5108}",
+,Kåk,"$math{C(4, 3)C(13, 1)C(4, 2)C(12, 1)=3744}",
+,1[10],"$math{4C(48, 4)=778320}",
+,2[10],"$math{C(4, 2)P(48, 3)=103776}",
 ,Yatzy/Tärningsspel,"Pool(6 valörer 1~6), kast",
-,Antal hand,"6^5= (5 tärningar, med ordning)",
-,Ett par,"Pn[P(6)*2, P3(5)]=>C(6, 1)C(5, 2)P(5, 3)=3600",
-,Tvåpar,"Pn[C2(6)*(2, 2) (4)]=> C(6, 2)C(5, 2)C(3, 2)C(4, 1)=1800",
-,Tretal,"Pn[(6)*3 (5)(4)]=>C(6, 1)C(5, 3)C(5, 1)C(4, 1)=1200",
-,Fyrtal,"Pn[(6)*4 (5)]=>C(6, 1)C(5, 4)C(5, 1)=150",
-,Kåk,"Pn[(6)*3 (5)*2]=>C(6, 1)C(5, 3)C(5, 1)=300",
-,Stege,P[1~5]|P[2~6]=>2*5!=240),
-,Yatzy,[1~6] => 6,
-,3[6],"P[[6]*3, (5)*2]=>5*5C(5, 2)=250",
-,Permutation arithmetics,n!+(n+1)!=n!+(n+1)n!=(n+2)n!,
-,,n!+(n-1)!=n(n-1)!+(n-1)!=(n+1)(n-1)!=(n^2-1)(n-2)!,
-,,"C(n, k)=n!/((n-k)!k!)=n!/((n-k)!(n-(n-k)!))=C(n, n-k)",
-,,(n+1)!/((n-1)!n)=((n+1)n(n-1)!)/((n-1)!n)=n+1,
-,,"6n!C(n+3, 3)=6n!(n+3)!/((n+3-3)!3!)=(n+3)!",
-,,"P(8, n)>10000=>n>6",
-,,"k*C(7, 5)=P(11, 9)=>k=P(11, 9)/C(7, 5)=950400",
-,,"C(8, 5)=P(8, k)=>8!/((8-5)!5!)=8!/(8-k)!=>k=2",
+,Antal hand,"$math{6^5=} (5 tärningar, med ordning)",
+,Ett par,"$math{C(6, 1)C(5, 2)P(5, 3)=3600}",
+,Tvåpar,"$math{C(6, 2)C(5, 2)C(3, 2)C(4, 1)=1800}",
+,Tretal,"$math{C(6, 1)C(5, 3)C(5, 1)C(4, 1)=1200}",
+,Fyrtal,"$math{C(6, 1)C(5, 4)C(5, 1)=150}",
+,Kåk,"$math{C(6, 1)C(5, 3)C(5, 1)=300}",
+,Stege,$math{2*5!=240},
+,Yatzy,$math{6},
+,3[6],"$math{5*5C(5, 2)=250}",
+,Permutation arithmetics,$math{n!+(n+1)!=n!+(n+1)n!=(n+2)n!},
+,,$math{n!+(n-1)!=n(n-1)!+(n-1)!=(n+1)(n-1)!=(n^2-1)(n-2)!},
+,,"$math{C(n, k)=n!/((n-k)!k!)=n!/((n-k)!(n-(n-k)!))=C(n, n-k)}",
+,,$math{(n+1)!/((n-1)!n)=((n+1)n(n-1)!)/((n-1)!n)=n+1},
+,,"$math{6n!C(n+3, 3)=6n!(n+3)!/((n+3-3)!3!)=(n+3)!}",
+,,"$math{P(8, n)>10000=>n>6}",
+,,"$math{k*C(7, 5)=P(11, 9)=>k=P(11, 9)/C(7, 5)=950400}",
+,,"$math{C(8, 5)=P(8, k)=>8!/((8-5)!5!)=8!/(8-k)!=>k=2}",
 ,The pigeonhole principle/Dirichlets lådprincip,"(Om n föremål placeras i m lådor (m, n\in\Zp, n>m), innehåller minst en låda mer än ett föremål)
 Om n+1 objekt placeras i n lådor innehåller en låda minst 2 objekt
 Om n*k+1 föremål placeras i n lådor så måste en låda innehålla minst k+1 föremål",
@@ -79,13 +79,13 @@ Om n*k+1 föremål placeras i n lådor så måste en låda innehålla minst k+1 
 ,,"\[604616, 200000, 1, 1*404616] => \1",
 ,,"- 103 points, 100cm => \[103, 100, 1, 1(4)] => \1",
 ,,"\[n, 12, 2, 1(3)] => n=11*2+3=25",
-,,"40 elever, 4 i samma månad (12 lådor, 40 elever), 40>12*3+1",
+,,"40 elever, 4 i samma månad (12 lådor, 40 elever), $math{40>12*3+1}",
 ,,"200000 hårstrå, 3 Göteborgare (500000) med exakt antal hårstrå, (200000 lådor (0-200000), 500000 Göteborgare",
-,,"5 punkter placeras i liksidig triangel längd 2a, (4 lådor, 5 punkter), 5=1*4+1",
+,,"5 punkter placeras i liksidig triangel längd 2a, (4 lådor, 5 punkter), $math{5=1*4+1}",
 Possibility calculation,Possibility/Sannolikhet,"(P: Sannolikhet, n: gynsamma utfall, N: möjliga utfall)",
-,,P(A) = n(A)/N(A) = 8/20 = 2/5 = 40%,
-,Partial probabilities,"C(5, 2)*.7^2*.3^3=13.32%",
-,,"\\S{k=1, 3, C(8, k)*.35^(8-k)*.65^}k=11%",
+,,$math{P(A) = n(A)/N(A) = 8/20 = 2/5 = 40%},
+,Partial probabilities,"$math{C(5, 2)*.7^2*.3^3=13.32%}",
+,,"$math{\\S{k=1, 3, C(8, k)*.35^(8-k)*.65^k}=11%}",
 ,,,
 ,,,
 ,,,
@@ -99,13 +99,13 @@ Possibility calculation,Possibility/Sannolikhet,"(P: Sannolikhet, n: gynsamma ut
 ,,,
 ,,,
 ,,,
-Measures of central tendency/Lägesmått,Arithmetic mean,"\bar{x}=\S{i, x_i/n}",
-,Geometric mean,\gmean{x}=n^\sqrt{\P{x}},
+Measures of central tendency/Lägesmått,Arithmetic mean,$math{\bar{x}=\S{i, x_i/n}},
+,Geometric mean,$math{\gmean{x}=n^\sqrt{\P{x}}},
 ,Mode/Typvärde,,
-,Standard Deviation,"s = sqrt( \S{i=1, n, (x_i - \bar{x})^2} / (n - 1) )",
-,Variance,"s^2 = \S{i=1, n, (x_i - \bar{x})^2} / (n - 1)",
-,"Population Mean, \m",\m = \bar{x} \pm z_c * (s / sqrt(n)),
-,"Population Standard Deviation, \s",\s = s \pm z_c * (s / sqrt(2n)),
+,Standard Deviation,"$math{s = sqrt( \S{i=1, n, (x_i - \bar{x})^2} / (n - 1) )}",
+,Variance,"$math{s^2 = \S{i=1, n, (x_i - \bar{x})^2} / (n - 1)}",
+,"Population Mean, \m",$math{\m = \bar{x} \pm z_c * (s / sqrt(n))},
+,"Population Standard Deviation, \s",$math{\s = s \pm z_c * (s / sqrt(2n))},
 ,Critical values Z_c,"Confidence value -> Critical value (Z_c)
 0.995 -> 2.81
 0.99 -> 2.58
@@ -117,21 +117,21 @@ Measures of central tendency/Lägesmått,Arithmetic mean,"\bar{x}=\S{i, x_i/n}",
 0.80 -> 1.28
 0.50 -> 0.6745",
 Distribution equations,Discrete Distributions,,
-,Binomial Distribution,"f(x) = (n! / (x! * (n - x)!)) * p^x * (1 - p)^(n - x)
-Mean = np
-Variance = np*(1 - p)",
-,Poisson Distribution,"f(x) = ( (np)^x * e^(-np) ) / x!
-Mean = np
-Variance = np",
-,Continuous Distributions,"f(x) = (1 / (\s * sqrt(2\pi))) * exp( -(1/2) * ((x - \m)/\s)^2 )
-Mean = \m
-Variance = \s^2",
-,Gaussian/Normal distribution,"f(z) = (1 / sqrt(2\pi)) * \exp( -(1/2) * z^2 )
-z = (x - \m) / \s
+,Binomial Distribution,"$math{f(x) = (n! / (x! * (n - x)!)) * p^x * (1 - p)^(n - x)}
+$math{Mean = np}
+$math{Variance = np*(1 - p)}",
+,Poisson Distribution,"$math{f(x) = ( (np)^x * e^(-np) ) / x!}
+$math{Mean = np}
+$math{Variance = np}",
+,Continuous Distributions,"$math{f(x) = (1 / (\s * sqrt(2\pi))) * exp( -(1/2) * ((x - \m)/\s)^2 )}
+$math{Mean = \m}
+$math{Variance = \s^2}",
+,Gaussian/Normal distribution,"$math{f(z) = (1 / sqrt(2\pi)) * \exp( -(1/2) * z^2 )}
+$math{z = (x - \m) / \s}
 p = probability of success in a single trial",
 ,,,
-Measures of dispersion/Spridningsmått,Range/Variationsbredd,x_max-x_min,
-,Standard deviation/Standardavvikelse,\sigma=\sqrt{\S{x-\mean{x}^2}/n},
-,Variance/Varians,\sigma²=\sqrt{\S{(x-\mean{x})^2}/n},
+Measures of dispersion/Spridningsmått,Range/Variationsbredd,$math{x_max-x_min},
+,Standard deviation/Standardavvikelse,$math{\sigma=\sqrt{\S{x-\mean{x}^2}/n}},
+,Variance/Varians,$math{\sigma²=\sqrt{\S{(x-\mean{x})^2}/n}},
 ,Median,,
 ,Interquartile range(IQR)/Kvartilavstånd,"Percentile (Pn), Median (P50), Quartile (P25/P75)",
