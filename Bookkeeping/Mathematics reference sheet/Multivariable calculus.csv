@@ -1,8 +1,6 @@
 Group,Name,Basic relationship,Presetted values
 rich,rich,rich,rich
-,,,
-,,,
-Multivariable concepts,Neighbourhood/Omgivning,"$math{B_r([a]) = {[x] \in \\R^n: |[x]-[a]|<r}}
+Multivariable concepts,Neighbourhood/Omgivning,"$math{B_r([a]) = {[x] \in \\R^n, |[x]-[a]|<r}}
 
 n=1: open interval (a-r, a+r)
 n=2: open disk
@@ -21,20 +19,12 @@ Varje omgivning innehåller inre och yttre punkter",
 Exterior point/Yttre punkt: ext(S), Utifrån mängden (omgivning som ligger utanför mängden)
 Both are open sets",
 ,,,
-Koordinater,Polära koordinater (\\R^2),"[Image]
-$math{x = r*cos(\t)}, $math{y = r*sin(\t)}
-$math{r = sqrt(x^2+y^2)}, $math{tan(\t) = y/x}",
-,Cylindriska koordinater (\\R^3),"[Image]
-$math{x = r*cos(\t)}, $math{y = r*sin(\t)}, $math{z = z}
-$math{r = sqrt(x^2+y^2)}, $math{tan(\t) = y/x}, $math{z=z}",
-,Sfäriska koordinater (\\R^3),"\f: R-line-z, \t -> x-y plane
-$math{x = R*sin(\f)*cos(\t)}, $math{y = R*sin(\f)*sin(\t)}, $math{z = R*cos(\f)}
-$math{R = sqrt(x^2+y^2+z^2)}, $math{tan(\f) = sqrt(x^2+y^2)/z}, $math{tan(\t) = y/x}",
 ,,,
 ,,,
-,Vektorvärda funktioner av en variabel,"$math{f(t) = (x(t), y(t), z(t)) [Image]}
-$math{f'(t_0) = lim{h->0, (f(t_0+h) - f(t_0))/h} = (x'(t_0), y'(t_0), z'(t_0))}",
-,Reelvärda funktioner av flera variabler,"$math{graf: {(x, y, z): z = f(x, y)}, nivåkurva/höjdkurva: {(x, y): f(x, y) = C} [Image]}
+,Vektorvärda funktioner av en variabel,"$math{f(t) = (x(t), y(t), z(t))}, [Image]
+$math{f'(t_0) = \lim{h->0, (f(t_0+h) - f(t_0))/h} = (x'(t_0), y'(t_0), z'(t_0))}",
+,Reelvärda funktioner av flera variabler,"[Image]
+graf: $math{{(x, y, z), z = f(x, y)}}, nivåkurva/höjdkurva: $math{{(x, y), f(x, y) = C}}
 Kontinuerlig i (a, b): $math{\lim{(x, y) -> (a, b), f(x, y) = f(a, b)}}","$math{f(x, y)=x^2+y^2}"
 ,,,
 Vector function with one variable,,"$math{[f](x) = (x, y, z) = x*[i] + y*[j] + z*[k]}
@@ -71,13 +61,13 @@ $math{x+y=1, x^2+y^2=z}
 $math{x^2+y+z=2, xy+z=1 -> x^2+y-xy=1 (x=t)}"
 ,,"$math{e.g. x^2+y^2+z^2 = 1, [eq with z]}
 $math{Substitute x=a*cos(t)}, $math{y=b*sin(t)}","$math{x+2y+4z=4, x^2+4y^2=4}"
-,,"$math{L1: x+y+z=1, L2: x^2+y^2+z^2 = 1, [n] = (1, 1, 1)}
-$math{-> (1, 0, 0), (0, 1, 0), (0, 0, 1) intersections -> midpoint [r_0]=(1/3, 1/3, 1/3), radius: r=sqrt(2/3)}
-$math{[v_1] = (1, -1, 0), [v_2]=[v_1].[n] = (-1, -1, 2), [e_1] = 1/sqrt(2)*(1, -1, 0), [e_2] = 1/sqrt(6)*(-1, -1, 2) -> [r] = [r_0] + [r]([e_1]cos(t) + [e_2]sin(t))}",
+,,"$math{L1={x+y+z=1}, L2={x^2+y^2+z^2 = 1}, [n] = (1, 1, 1)}
+$math{""Intersections: "" (1, 0, 0), (0, 1, 0), (0, 0, 1) -> ""midpoint"" [r_0]=(1/3, 1/3, 1/3), ""radius:"" r=sqrt(2/3)}
+$math{[v_1] = (1, -1, 0), [v_2]=[v_1].[n] = (-1, -1, 2), [e_1] = 1/\sqrt{2}*(1, -1, 0), [e_2] = 1/\sqrt{6}*(-1, -1, 2) -> [r] = [r_0] + [r]([e_1]cos(t) + [e_2]sin(t))}",
 ,Arc length,"$math{\int{t_1, t_2, |d*[r]/(dt)|dt}}",
-,Piecewise smooth curves,"$math{[r](t) fail to be smooth where d[r]/dt = 0}
-$math{-> Curve: C = \S{k=1, n, C_k} with parametrization {k=1, n, [r_k]}}
-$math{-> \S{1, k, \int{a_i, b_i, |d*[r_i]/dt|*dt}}}",
+,Piecewise smooth curves,"[r](t) ""fail to be smooth where"" (d[r])/(dt) = 0
+-> Curve: C = \S{k=1, n, C_k} with parametrization {k=1, n, [r_k]}
+-> $math{\S{1, k, \int{a_i, b_i, |d*[r_i]/(dt)|*dt}}}",
 ,Arc length parametrization,"$math{s(t) = \int{t_0, t, |d/(dt)([r](t))|dt}}
 $math{[r](s) = [r](t(s)) -> Speed 1}",
 ,Unit tangent vector,$math{[T] = [v](t)/v(t) = (d[r]/dt)/|d[r]/dt| = d[r]/ds},
@@ -85,7 +75,7 @@ $math{[r](s) = [r](t(s)) -> Speed 1}",
 $math{[T](s).[T](s)=1 -> 2[T](s).d[T]/(ds) = 0}",
 ,Curvature ,$math{\k(s) = |d[T]/(ds)|},
 ,Radius of curvature,$math{\r(s) = 1/\k(s)},
-,,$math{[N](s) = 1/\k(s)*d[T]/(ds) = (d[T]/(ds))/|d[T]/(ds)|},
+,,$math{[N](s) = 1/\k(s)*(d[T]/(ds)) = (d[T]/(ds))/|d[T]/(ds)|},
 ,,"Curvature as rate of turning of unit tangent
 $math{\k > 0 on interval containing s, \D\t angle between [T](s+\D*s) and [T](s) -> \k(s) = lim{\D*s->0, (\D*\t)/(\D*s)}}
 
@@ -334,20 +324,64 @@ f(x, y, z)=0->f_(1')+f_(2')((dy)/(dx))=0
 \e=1/50 -> y=x^2-ln(1+x^2)/50+ln(1+x^2)/(2500(1+x^2))}",
 ,Newton's method,"$math{f(x, y)=0, g(x, y)=0 -> (x=x_0, y=y_0) -> x_1=x_0-|[[f, f_(2')], [g, g_(2')]]|/|[[f_(1'), f_(2')], [g_(1'), g_(2')]]|, y_1=y_0-|[[f_(1'), f], [g_(1'), g]]|/|[[f_(1'), f_(2')], [g_(1'), g_(2')]]|
 z=f(x_0, y_0)+f_(1')(x_0, y_0)(x-x_0)+f_(2')(x_0, y_0)(y-y_0), z=f(x_0, y_0)+g_(1')(x_0, y_0)(x-x_0)+g_(2')(x_0, y_0)(y-y_0) -> ""Cramer's rule""}",
+,Multiple integrals,,
+,Double integrals,"[Image, (a=x_0, x_1, x_2, ..., x_i, x_m=b), (c=y_0, ..., y_j, ..., y_n)]
+$math{\DA_(ij)=\D x_i\D y_j=(x_i-x_(i-1))(y_j-y_(j-1)) -> (R(f, P)=\S{i=1, m, \S{j=1, n, f(x_(ij), y_(ij))\D*A_(ij)}}, |R(f, P)-I|<\e) -> I=\int2{D, f(x, y)dA}}
+Diagonal length: $math{\diam(R_(ij))=\sqrt((\D*x_i)^2+(\D*x_j)^2)=sqrt((x_i-x_(i-1)^2+(y_j-y_(j-1)^2)))}
+",
+,Bounded D domain,"[Image, [Axis aligned R domain [D domain]]]
+$math{\hat{f}(x, y)=\cases{((x, y) \in D): f(x, y), ((x, y) \notin D): f(x, y)} -> \int2{D, f(x, y)dA}=\int2{R, \hat{f}(x, y)dA}}
+Something more",
+,,"$math{f "" continous "" D (""closed, bounded domain D with finite curves, finite length"") -> f "" integrable "" D}",
+,,"$math{D=0 -> \int2{D, f(x, y)dA}=0}",
+,,"$math{\int2{D, 1*dA}=S_D} (Area/surface of D)",
+,,"$math{f(x, y)>=0 "" on "" D -> \int2{D, f(x, y)}=V>=0}
+$math{f(x, y)<=0 "" on "" D -> \int2{D, f(x, y)}=-V<=0}",
+,,"$math{\int2{D, (L*f(x, y)+M*g(x, y))dA}=L\int2{D, f(x, y)dA}+M\int2{D, g(x, y)dA}}",
+,,"$math{f(x, y)<=g(x, y) -> \int2{D, f(x, y)dA} <= \int2{D, g(x, y)dA}}",
+,,"$math{|\int2{D, f(x, y)dA}|<=\int2{|f(x, y)|dA}}",
+,,"$math{{i=1, k, D_i \non-overlapping, f \integrable, \union{i=1, k, D_i} -> \int2{f(x, y)dA}=\S{j=1, k, \int2{D, f(x, y)dA}}}}",
+,,"Inspection
+1. Odd-even component: $math{\int2{x^2+y^2<=1, (sin(x)+y^3+4)dA}}
+2. Geometrical figures: $math{\int2{D, \sqrt{1-x^2-y^2}dA}=2\p/3}",
+,,"[Image, x-side], [Image, y-side]
+$math{\int2{D, f(x, y)dA}=\int{a, b, A(x)dx}=\int{a, b, \int{c(x), d(x), f(x, y)dy}dx}=\int{c, d, \int{a(x), b(x), f(x, y)dx}dy}=\int{a, b, dx}\int{c(x), d(x), f(x, y)dx}}","$math{\int{0, 1, \int{\sqrt{x}, 1, e^ydy}dx}=\int{0, 1, \int{0, y^2, e^y^3dx}dy}}"
+,Improper integrals/Generalized integrals,"$math{\int2{R, e^-(x^2)dA}, R={-x<=y<=x} -> \int{0, \inf, \int{-x, x, e^-(x^2)dy}dx}}",
+,Mean value theorem for double integrals,"$math{D (\closed, \bounded), ""Area: "" A_D=\int2{D, dA}, f \continous D, (x_0, y_0) \in D -> \int2{D, f(x, y)dA}=f(x_0, y_0)*A_D
+f(x_1, y_1)<=f(x, y)<=f(x_2, y_2) -> \int2{D, f(x_1, y_1)dA}<=\int2{D, f(x, y)dA}<=\int2{D, f(x_2, y_2)} -> f(x_1, y_1)A<=f(x_0, y_0)A<=f(x_2, y_2)A}",
+,,"$math{D \connected -> g(t)=f(x(t), y(t)), 0<=t<=1, (t=0, x_1, y_1) -> (t=1, x_2, y_2), ((x(0)=x_1, y(0)=y_1, x(1)=x_2, y(1)=y_2) -> g(0)=f(x_1, y_1), g(1)=f(x_2, y_2))
+""Intermediate-value theorem"" -> 0<=t_0<=1 -> \bar{f}=g(t_0)=f(x_0, y_0)}",
+,"Coordinate change
+Chain rule/variable change","[Image, strech fabric cloth transformation, (u, u+du, v, v+dv, P=(u, v), Q=(u+du, v), R=(v, v+dv), dA=[PQ][PR])]
+$math{((x=x(u, v), y=y(u, v)) (\onetoone) -> (u=u(x, y), v=v(x, y)), D -> S) -> \int2{D, f(x, y)dxdy}=\int2{S, g(u, v)|\\d(x, y)/\\d(u, v)|dudv}}
+
+$math{dx=(\\dx)/(\\du)du+(\\dx)/(\\dv)dv, dy=(\\dy)/(\\du)du+(\\dy)/(\\dv)dv -> ([PQ]=dx*[i]+dy*[j]=(\\dx)/(\\du)du*[i](\\dy)/(\\du)du, (dv=0)), ([PQ]=dx*[i]+dy*[j]=(\\dx)/(\\dv)dv*[i]+(\\dy)/(\\dv)dv*[j], (du=0)), dA=[PQ]*[PR]=|\\d(x, y)/\\d(u, v)|dudv}",
+Koordinater,Polära koordinater (\\R^2),"[Image]
+$math{x = r*cos(\t), y = r*sin(\t), r = sqrt(x^2+y^2), tan(\t) = y/x}
+$math{dxdy=dA=rdrd\t}",
+,,"[Image]
+","$math{I=\int{-\inf, \inf, e^-(x^2)}, I^2=(\int{-\inf, \inf, e^-(x^2)dx})(\int{-\inf, \inf, e^-(y^2)dy})=\int{-\inf, \inf, \int{-\inf, \inf, e^-(x^2+y^2)dx}dy}=\int{-0, 2\p, \int{0, \inf, e^-(r^2)rdr}d\t}}"
+,Triple integration,"$math{\int{0, c, \int{0, b, \int{0, a, (xy^2+z^3)dx}dy}dz}}",
+,Triple outsubstitution,"$math{\int{0, 1, \int{x, 1, \int{x, y, f(x, y, z)dz}dy}dx}, (0<=x<=1, x<=y<=1, x<=z<=y) -""Splice inequalities""-> (0<=x<=z, z<=y<=1) -> (0<=z<=1, z<=y<=1, 0<=x<=z)}",
+,Triple coordinate change,"[Image, strech fabric cloth transformation, (u, u+du, v, v+dv, P=(u, v), Q=(u+du, v), R=(v, v+dv), dA=[PQ][PR])]
+$math{((x=x(u, v, w), y=y(u, v, w), z=z(u, v, w)) (\onetoone) -> (u=u(x, y, z), v=v(x, y, z), w=w(x, y, z)), D -> S) -> \int2{D, f(x, y, z)dxdydz}=\int2{S, g(u, v, w)|\\d(x, y, z)/\\d(u, v, w)|dudvdw}}",
+,Cylindriska koordinater (\\R^3),"[Image]
+$math{x = r*cos(\t), y = r*sin(\t), z = z}, $math{r = sqrt(x^2+y^2), tan(\t) = y/x, z=z}
+$math{dV=rdrd\tdz}",
+,Spherical coordinates,"[Image, \f: R-line-z, \t -> x-y plane]
+$math{x = R*sin(\f)*cos(\t), y = R*sin(\f)*sin(\t), z = R*cos(\f)}
+$math{R = sqrt(x^2+y^2+z^2)}, $math{tan(\f) = sqrt(x^2+y^2)/z}, $math{tan(\t) = y/x}
+$math{dV=R^2sin(\f)dRd\f*d\t}",
 ,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
+,Applications of multiple integrals,,
+,Moment of inertia,"$math{I=\int3{R, (x^2+y^2)\r*dV}}",
+,Gravitational attraction of disk,"[Image, disk, Spherical coordiates(r, \t, \f), diagonal: \sqrt{r^2+b^2}, gravitation point: P=(0, 0, b)]
+$math{F=(km_1m_2)/s^2, \S*F=-Fk, D={x^2+y^2<=a^2}, dF=(km\sdA)/(r^2+b^2)cos(\f)=(km\sbdA)/(r^2+b^2)^(3/2), F=km\sb\int2{D, 1/(r^2+b^2)^(3/2)dA}=km\sb\int{0, 2\p, \int{0, a, 1/(r^2+b^2)^(3/2)}rdr}d\q=2\p*km\s(1-1/\sqrt{a^2+b^2})}",
+,Moments and mass centres,"$math{M_(x=x_0)=\int3{R, (x-x_0)\r(x, y, z)dV}=M_(x=0)-x_0m, M_(y=y_0)=\int3{R, (y-y_0)\r(x, y, z)dV}=M_(y=0)-y_0m, M_(z=z_0)=\int3{R, (z-z_0)\r(x, y, z)dV}=M_(z=0)-z_0m}
+$math{\bar{x}=M_(x=0)/m, \bar{y}=M_(y=0)/m, \bar{z}=M_(z=0)/m}",
+,Moments of inertia,"$math{E_k=1/2mv^2, v=\W*D, D=\sqrt{x^2+y^2}, dE_k=1/2v^2dm=1/2\r*\W^2D^2dV -> E_K=1/2*\W^2\int3{R, D^2*\r*dV}=1/2I\W^2 -> I=\int3{R, D^2\r*dV}}",
+,Radius of gyration,"Entire body mass concentreated radius \bar{D}=D_0
+$math{E_k=1/2mD_0^2*\W^2=1/2*I\W^2 -> I=m\bar{D}^2 -> \bar{D}=\sqrt{I/m}}",
 ,,,
 Vector fields,,"$math{f(x, y, z) = (x*y, y+z-1)}",
 ,Vector fields/Vektorfält,"$math{[F](x, y, z) = -k/(x^2+y^2+z^2)^(3/2)(x, y, z)}
