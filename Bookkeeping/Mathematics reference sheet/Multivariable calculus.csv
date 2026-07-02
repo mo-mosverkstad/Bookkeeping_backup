@@ -28,14 +28,14 @@ graf: $math{{(x, y, z), z = f(x, y)}}, nivåkurva/höjdkurva: $math{{(x, y), f(x
 Kontinuerlig i (a, b): $math{\lim{(x, y) -> (a, b), f(x, y) = f(a, b)}}","$math{f(x, y)=x^2+y^2}"
 ,,,
 Vector function with one variable,,"$math{[f](x) = (x, y, z) = x*[i] + y*[j] + z*[k]}
-$math{f(x) = (cos(x), sin(x))}, $math{\\R -> \\R^2}
-$math{|f| = sqrt(x^2+y^2+z^2)}
+$math{f(x) = (\cos(x), \sin(x))}, $math{\\R -> \\R^2}
+$math{|f| = \sqrt{x^2+y^2+z^2}}
 $math{|f-g|}",
 ,Derivatives,$math{d/(dx)*([u](t) + [v](t)) = [u]'(t) + [v]'(t)},
 ,,$math{d/(dx)*(\l(t)*[u](t)) = \l'(t)*[u](t) + \l(t)*[u]'(t)},
 ,,$math{d/(dx)*([u](t).[v](t)) = [u](t).[v]'(t) + [u]'(t).[v](t)},
 ,,$math{d/(dx)*([u](t)*[v](t)) = [u](t)*[v]'(t) + [u]'(t)*[v](t)},
-,,$math{d/(dx)([u](\l(t))) = \l'(t)*[u](\l(t))},
+,,$math{d/(dx)*([u](\l(t))) = \l'(t)*[u](\l(t))},
 ,,$math{d/(dt)|[u](t)| = [u](t).[u]'(t)/|[u](t)|},
 ,Momentum $math{`1p},$math{F = d*[`1p]/dt = d/dt(m*[v])},
 ,,"$math{`1p_10 + `1p_20 + `1I = `1p_11 + `1p_21}
@@ -47,11 +47,11 @@ $math{[\O]} axis of rotation, point upward",
 ,Rotational frames,"Inertial frame: $math{{[`3I], [`3J], [`3K]}}
 Rotational frame: $math{{[`3i], [`3j], [`3k]}}, offset [R_0], rotation axis: [\O]
 Position (rotational): [r], (inertial): [R]",
-,,"$math{d[i]/dt = [\O]*[`3i], d[j]/dt = [\O]*[`3j], d[k]/(dt) = [\O]*[`3k], d[R_0]/(dt) = [\O]*[R_0]}",
-,,$math{[V] = d*[R]/(dt) = d/(dt)([R_0] + [R]) = d[R_0]/(dt) + dx/(dt)*[`3i] + x*d[`3i]/(dt) + dy/(dt)*[`3j] + y*d[`3j]/(dt) + dz/(dt)*[`3k] + z*d[`3k]/(dt) = [v] + [\O]*[R_0] + x[\O]*[i] + y[O]*[j] + z[\O]*[k] = [v] + [\O]*[R_0] + [O]*[r] = [v] + [\O]*[R]},
-,,"$math{[A] = d[V]/dt = d/(dt)([v] + [\O]*[R]) = d^2x/(dt^2)[`3i] + dx/(dt)*d*[`3i]/(dt) + d^2y/(dt^2)[`3j] + dy/(dt)*d*[`3j]/(dt) + d^2z/(dt^2)[`3k] + dz/(dt)*d*[`3k]/(dt) + [\O]*d*[R]/(dt) = [a] + [\O]*[v] + [\O]*[V] = [a] + 2[\O]*v + [\O]*([O]*R)}
-Coriolis acceleration: 2[\O]*[v]
-Centripetal acceleration: [\O]*([O]*[R])",
+,,"$math{d[i]/dt = [\W]*[`3i], d[j]/dt = [\W]*[`3j], d[k]/(dt) = [\W]*[`3k], d[R_0]/(dt) = [\W]*[R_0]}",
+,,$math{[V] = d*[R]/(dt) = d/(dt)*([R_0] + [R]) = d*[R_0]/(dt) + dx/(dt)*[`3i] + x*d[`3i]/(dt) + dy/(dt)*[`3j] + y*d[`3j]/(dt) + dz/(dt)*[`3k] + z*d[`3k]/(dt) = [v] + [\W]*[R_0] + x*[\W]*[i] + y*[\W]*[j] + z*[\W]*[k] = [v] + [\W]*[R_0] + [W]*[r] = [v] + [\W]*[R]},
+,,"$math{[A] = d[V]/dt = d/(dt)*([v] + [\W]*[R]) = d^2x/(dt^2)*[`3i] + dx/(dt)*(d*[`3i]/(dt)) + d^2y/(dt^2)*[`3j] + dy/(dt)*(d*[`3j]/(dt)) + d^2z/(dt^2)[`3k] + dz/(dt)*(d*[`3k]/(dt)) + [\W]*d*[R]/(dt) = [a] + [\W]*[v] + [\W]*[V] = [a] + 2[\W]*v + [\W]*([\W]*R)}
+Coriolis acceleration: 2[\W]*[v]
+Centripetal acceleration: [\W]*([\W]*[R])",
 ,,"$math{m[a] = [F] - 2m[\O]*[v] - m[\O]*([\O]*[R])}
 Coriolis force: - 2m[\O]*[v]
 Centrifugal force: - m[\O]*([\O]*[R])",
@@ -60,7 +60,7 @@ $math{Substitute t=x}, $math{t=y}, $math{t=z}","$math{y=2x-4}, $math{z=3x+1}
 $math{x+y=1, x^2+y^2=z}
 $math{x^2+y+z=2, xy+z=1 -> x^2+y-xy=1 (x=t)}"
 ,,"$math{e.g. x^2+y^2+z^2 = 1, [eq with z]}
-$math{Substitute x=a*cos(t)}, $math{y=b*sin(t)}","$math{x+2y+4z=4, x^2+4y^2=4}"
+Substitute : $math{x=a*cos(t)}, $math{y=b*sin(t)}","$math{x+2y+4z=4, x^2+4y^2=4}"
 ,,"$math{L1={x+y+z=1}, L2={x^2+y^2+z^2 = 1}, [n] = (1, 1, 1)}
 $math{""Intersections: "" (1, 0, 0), (0, 1, 0), (0, 0, 1) -> ""midpoint"" [r_0]=(1/3, 1/3, 1/3), ""radius:"" r=sqrt(2/3)}
 $math{[v_1] = (1, -1, 0), [v_2]=[v_1].[n] = (-1, -1, 2), [e_1] = 1/\sqrt{2}*(1, -1, 0), [e_2] = 1/\sqrt{6}*(-1, -1, 2) -> [r] = [r_0] + [r]([e_1]cos(t) + [e_2]sin(t))}",
@@ -68,9 +68,9 @@ $math{[v_1] = (1, -1, 0), [v_2]=[v_1].[n] = (-1, -1, 2), [e_1] = 1/\sqrt{2}*(1, 
 ,Piecewise smooth curves,"[r](t) ""fail to be smooth where"" (d[r])/(dt) = 0
 -> Curve: C = \S{k=1, n, C_k} with parametrization {k=1, n, [r_k]}
 -> $math{\S{1, k, \int{a_i, b_i, |d*[r_i]/(dt)|*dt}}}",
-,Arc length parametrization,"$math{s(t) = \int{t_0, t, |d/(dt)([r](t))|dt}}
-$math{[r](s) = [r](t(s)) -> Speed 1}",
-,Unit tangent vector,$math{[T] = [v](t)/v(t) = (d[r]/dt)/|d[r]/dt| = d[r]/ds},
+,Arc length parametrization,"$math{s(t) = \int{t_0, t, |d/(dt)*([r](t))|dt}}
+$math{[r](s) = [r](t(s)) -> ""Speed 1""}",
+,Unit tangent vector,$math{[T] = [v](t)/v(t) = (d[r]/(dt))/|d[r]/(dt)| = d[r]/(ds)},
 ,Unit normal vector,"$math{[N](s) = d[T]/(ds)}
 $math{[T](s).[T](s)=1 -> 2[T](s).d[T]/(ds) = 0}",
 ,Curvature ,$math{\k(s) = |d[T]/(ds)|},
@@ -90,7 +90,7 @@ $math{[r_c](s) = [r](s) + \r(s)[N](s)}",
 
 $math{d[B]/(ds) = d[T]/(ds)*[N] + [T]*d[N]/(ds) = \k[N]*[N] + [T]*d[N]/(ds) = [T]*d[N]/(ds)}
 $math{d[B]/(ds) both perpendicular to [T] and [B] -> parallel with [N]}",
-,,"$math{lim{\Ds->0, |\D\phi/\D*s|} = |\t(s)|}",
+,,"$math{\lim{\D*s->0, |\D\f/(\D*s)|} = |\t(s)|}",
 ,Frenet-Serret frame,"$math{{[T], [N], [B]}}",
 ,Frenet-Serret formulas,"$math{d[T]/(ds) = \k[N]}
 $math{d[N]/(ds) = -\k[T] + \t[B]}
@@ -98,12 +98,13 @@ $math{d[B]/(ds) = -\t[N]}",
 ,The fundamental theorem of space curves,"C_1 and C_2 curves with same \k(s) != 0, \t(s) -> Congruent curves (moved rigidly, only translate and rotate to coincide)
 s=0 -> coinciding frames
 
-$math{[N], [B] undefined \k=0, (C_1: [T_1](s), [N_1](s), [B_1](s)), (C_2: [T_2](s), [N_2](s), [B_2](s))}
+$math{[N], [B] \undefined \k=0, (C_1={[T_1](s), [N_1](s), [B_1](s)}), (C_2={[T_2](s), [N_2](s), [B_2](s)})}
 $math{f(s) = [T_1](s).[T_2](s) + [N_1](s).[N_2](s) + [B_1](s).[B_2](s)}
 $math{f'(s) = [T_1]'(s).[T_2](s) + [T_1](s).[T_2]'(s) + [N_1]'(s).[N_2](s) + [N_1](s).[N_2]'(s) + [B_1]'(s).[B_2](s) + [B_1](s).[B_2]'(s) = \k*[N_1].[T_2] + [T_1].(\k*[N_2]) + (-\k*[T_1] + \t*[B_1]).[N_2] + [N_1].(-\k[T_2] + \t[B_2]) + (-\t*[N_1]).[B_2] + [B_1](-\t*[N_2]) = 0 -> Coinciding curve frames, coinciding curve -> f(s)=3 -> [T_1](s).[T_2](s) = 1 -> d[r_1]/(ds) = [T_1] = [T_2] = d[r_2]/(ds) -> [r_1](s) = [r_2](s) (s=0 coinciding point)}",
-,General parametrization,"$math{[v] = d*[r]/(dt) = d*[r]/(ds)*(ds)/(dt) = v[T]}
-$math{[a] = d*[v]/(dt) = (dv)/(dt)*[T] + v*d*[T]/(dt) = (dv)/(dt)*[T] + v*d*[T]/(ds)*(ds)/dt) = (dv)/(dt)[T] + v^2\k*[N] <- Tangental + normal acceleration}
-$math{[v]*[a] = v[T]*(dv/(dt)[T]) + v^3\k[T]*[N] = v^3\k*[B]}",
+,General parametrization,"Frenet-Serret frame
+$math{[v] = (d*[r])/(dt) = (d*[r])/(ds)*((ds)/(dt)) = v*[T]}
+$math{[a] = (d*[v])/(dt) = (dv)/(dt)*[T] + v*(d*[T])/(dt) = (dv)/(dt)*[T] + v*(d*[T])/(ds)*(ds)/(dt) = (dv)/(dt)*[T] + v^2\k*[N] ""<- Tangental + normal acceleration""}
+$math{[v]*[a] = v*[T]*(dv)/(dt)*[T] + v^3\k*[T]*[N] = v^3\k*[B]}",
 ,,"$math{-> [T] = [v]/v, [B] = ([v]*[a])/|[v]*[a]|, \k = |[v]*[a]|/[v]^3}",
 ,,"$math{(d*[T])/(dt) = (d*[T])/(ds)*(ds)/(dt) = v*(d*[T])/(ds) = v\k*[N]}
 $math{-> [N]=[B]*[T] = 1/(v\k)*(d*[T])/(dt) = \r/v*(d*[T])/(dt) = ((d*[T])/(dt))/|(d*[T])/(dt)|}",
@@ -189,8 +190,8 @@ E(h, k)=(f(p+h, q+k)-f(p, q)-h*f_(1')(p, q)-k*f_(2')(p, q))/\sqrt{h^2+k^2} -> f(
 \D*x = dx + ""error""
 }
 [Image]",
-,Total derivative,"$math{dz/(dx) = \\dz/(\\dx) + \\dz/(\\dy)*((dy)/(dx))
-dz/(dy) = (\\dz)/(\\dx)*((dx)/(dy)) + \\dz/(\\dy)}",
+,Total derivative,"$math{(dz)/(dx) = (\\dz)/(\\dx) + (\\dz)/(\\dy)*(dy)/(dx)
+(dz)/(dy) = (\\dz)/(\\dx)*(dx)/(dy) + (\\dz)/(\\dy)}",
 ,Legendre transformation,"$math{f(x), p=f'(x), u=px-f(x), du = p*dx+x*dp-f'(x)dx = x*dp}",
 ,,"$math{u=f(x, y), p=f_(1')(x, y), q=f_(2')(x, y), dw = pdx+xdp+qdy+ydq-f_(1')(x, y)dx-f_(2')(x, y)dy = x*dp+y*dq}",
 ,,,
@@ -201,7 +202,7 @@ dz/(dy) = (\\dz)/(\\dx)*((dx)/(dy)) + \\dz/(\\dy)}",
 Gradient and directional derivatives","$math{f(x, y) = x^2y}, $math{grad f = \nabla f = (\\df/\\dx, \\df/\\dy) = (2xy, x^2)}",
 ,Directional directive/Riktningskurva,"[Image]
 f deriverbar och |[u]| = 1
-$math{D_([u])(f(a, b)) = \lim{h->0, (f([a]+h*[u_1], [b]+h*[u_2]) - f([a], [b]))/h}=d/(dt)f([a]+t*[u_1], [b]+t*[u_2]), t=0",
+$math{D_([u])(f(a, b)) = \lim{h->0, (f([a]+h*[u_1], [b]+h*[u_2]) - f([a], [b]))/h}=d/(dt)f([a]+t*[u_1], [b]+t*[u_2]), t=0}",
 ,,"$math{D_uf(a, b)=\lim{h->+0, (f([a]+h*[u], [b]+h*[v])-f([a], [b]))/h}=d/(dt)f([a]+t*[u], [b]+t*[v]), t=0, |[u]|=1}",
 ,,"$math{D_([u])(f(a, b)) = [u] . \nabla f(a, b)
 
@@ -258,9 +259,9 @@ Positive definite -> Local maximum (\D<0, A>0)
 Negative definite -> Local minimum (\D<0, A<0)
 Indefinite -> Saddle point (\D>0)
 Else -> Test no information (\D=0)",
-,"f(a, b) maximum","f_(x)'(a, b) = f_(y)'(a, b) = 0, (f_(xy)')^2(a, b) - f_(xx)'(a, b)*f_(yy)'(a, b) < 0",
-,"f(a, b) minimum","f_(xx)'(a, b) < 0, f_(yy)'(a, b) < 0",
-,,"f_(xx)'(a, b) > 0, f_(yy)'(a, b) > 0",
+,"f(a, b) maximum","$math{f_(x')(a, b) = f_(y')(a, b) = 0, (f_(xy')^2)(a, b) - f_(xx')(a, b)*f_(yy')(a, b) < 0}",
+,"f(a, b) minimum","$math{f_(xx')(a, b) < 0, f_(yy')(a, b) < 0}",
+,,"$math{f_(xx')(a, b) > 0, f_(yy')(a, b) > 0}",
 ,Restricted domains,"Restricted domains/Non-empty interior
 1. Find any critical/singular points inside D
 2. Find extreme values on boundary paths (as 1 variable)
@@ -383,45 +384,75 @@ $math{\bar{x}=M_(x=0)/m, \bar{y}=M_(y=0)/m, \bar{z}=M_(z=0)/m}",
 ,Radius of gyration,"Entire body mass concentreated radius \bar{D}=D_0
 $math{E_k=1/2mD_0^2*\W^2=1/2*I\W^2 -> I=m\bar{D}^2 -> \bar{D}=\sqrt{I/m}}",
 ,,,
-Vector fields,,"$math{f(x, y, z) = (x*y, y+z-1)}",
-,Vector fields/Vektorfält,"$math{[F](x, y, z) = -k/(x^2+y^2+z^2)^(3/2)(x, y, z)}
+Vector fields/Vektorfält,Vector fields/Vektorfält,"$math{[F](x, y, z)=F_1(x, y, z)*[i]+F_2(x, y, z)*[j]+F_3(x, y, z)*[k], [F](x, y)=F_1(x, y)*[i]+F_2(x, y)*[j]}
+$math{[F](x, y, z) = -k/(x^2+y^2+z^2)^(3/2)(x, y, z)}
 $math{[F](x, y) = k/(x^2+y^2)(-y, x)}
 $math{[F]([r]) = -k/|[r]|^3[r]}",
-,Konservativ vektorfält,"$math{[F](x, y, z) = \nabla f(x, y, z), [F] med potential f}
-$math{[F] = (P, Q, R) = ((\\df)/(//dx), (\\df)/(//dy), (\\df)/(//dz))}
-$math{(\\dP)/(\\dy) = (\\dQ)/(\\dx)}, $math{(\\dQ)/(\\dz) = (\\dR)/(\\dy)}, $math{(\\dP)/(\\dz) = (\\dR)/(\\dx)}
-
-Blandade andraderivatorna lika:
-$math{\\f_('xy) = \\f_('yx) -> (\\dP)/(\\dy) = (\\dQ)/(\\dx)}
-
+,,"$math{[F](r, \q)=F_r(r, \q)*[r]+F_\q(r, \q)*[\q]}
+$math{[r]=[r](\t)}","$math{F(x, y, z)=-km*((x-x_0)*[i]+(y-y_0)*[j]+(z-z_0)*[k])/((x-x_0)^2+(y-y_0)^2+(z-z_0)^2)^(3/2) -> (dx)/(x-x_0)=(dy)/(y-y_0)=(dz)/(z-z_0)}"
+,Field lines/integral curves/trajectories,"Tangent parallel to field line: $math{(d[r])/(dt)=\l(t)[F]([r](t)), [r](t) \path, \l(t) \scalarfield}
+$math{(dx)/(dt)=\l(t)F_1(x, y, z), (dy)/(dt)=\l(t)F_2(x, y, z), (dz)/(dt)=\l(t)F_3(x, y, z) -> (dx)/F_1(x, y, z)=(dy)/F_2(x, y, z)=(dz)/F_3(x, y, z)}",
+,,"$math{[s]=[s](\q) \path -> d*[r]=dr*\hat{r}+r*(d*[r])/(d\q)*d\hat{\q}=dr*\hat{r}+r*d\q*\hat{\q} -> (dr)/F_r(r, \q)=(rd\q)/F_\q(r, \q)}",
+,Konservativ vektorfält,"$math{[F](x, y, z) = \nabla f(x, y, z), [F] \potential f}
+$math{[F] = (F_1, F_2, F_3) = ((\\df)/(\\dx), (\\df)/(\\dy), (\\df)/(\\dz))}
 Fältlinjer, potential, ekvipotentiallinjer",
-,Kurvintegraler av vektorfält,"$math{[F] = (P, Q), [r](t) = (x(t), y(t))}
-$math{int2{\g, [F].[dr]} = int2{\g, Pdx+Qdy} = int{a, b, (P(x(t), y(t))x'(t) + Q(x(t), y(t))y'(t))dt}}",
-,,"$math{Konservativ vektorfält, [F]=(y^2, 2xy) -> f=xy^2, [r](t) = (t, t^2) r(0) -> r(1)}
-$math{int2{\g, [F].[dr]} = f(1, 1^2) - f(0, 0^2)}",
-,Ytintegral,"$math{Y: x^2+y^2+z^2=1, z>=0 -> [r](sin(\p)cos(\t), sin(\p)sin(\t), cos(\p))}
-$math{dS = |[r_('\p)]*[r_('\t)]|d\p*d\t, int2{Y, z^2*dS} = int{0, 2\pi, int{0, \pi/2, cos^2(\p)*sin(\p)d\p}d\t}}",
-,Flödesintegral,"$math{[F](x, y, z) = (x, y, 0), Y: x^2+y^2<=1, 0<=x<=1}
-$math{int2{Y, [F].[N]dS} = int2{Y, (cos(\t), sin(\t), 0).(cos(\t), sin(\t), 0)|[r_('\t)*r_('z)]|d\t*d\z}}",
-,Green's formel i planet,"$math{ringint{\g, (P*dx+Q*dy)} = int2{D, ((\\dQ)/(\\dx) - (\\dP)/(\\dy))dxdy}}
-(Under vissa förutsättningar, positivt orienterad)
-\g en kurva runt område D","$math{\g: x^2+y^2=1}, $math{x=0}, $math{y=0}, $math{x>=0}, $math{y>=0}
-$math{ringint{\g, -y^3dx + x^3dy} = int{D, (3x^2+3y^2)dxdy}}"
-,Divergenssatsen/Gauss sats,"(Under vissa förutsättningar på [F], K)
-$math{int2(\\dK, [F].[N]dS) = int3{K, div[F]dV}}
+,,"Necessary condition for conservative plane vector field: 
+2-space: $math{(\\dF_1)/(\\dy) = (\\dF_2)/(\\dx)}
+3-space: $math{(\\dF_1)/(\\dy) = (\\dF_2)/(\\dx), (\\dF_2)/(\\dz) = (\\dF_3)/(\\dy), (\\dF_1)/(\\dz) = (\\dF_3)/(\\dx)}, Blandade andraderivatorna lika: $math{\\f_(xy') = \\f_(yx') -> (\\dF_1)/(\\dy) = (\\dF_2)/(\\dx)}
+",
+,,"Equipotential surfaces and curves (Level surface of f), perpendicular with field lines",
+,Line integrals/Kurvintegraler av vektorfält,"[Image]
+$math{[F] = (F_1, F_2), [r](t) = (x(t), y(t)) \path, \hat{T}=[r]'(t)/|[r]'(t)|, C={[r](t)}}
+$math{\intl{C, [F].d*[r]} = \intl{C, [F].\hat{T}dS} = \intl{C, F_1*dx+F_2*dy} = \int{a, b, (F_1(x(t), y(t))x'(t) + F_2(x(t), y(t))y'(t))dt}}
+$math{\intl{C, F_1*dx+F_2*dy+F_3*dz} = \int{a, b, (F_1(x(t), y(t), z(t))x'(t) + F_2(x(t), y(t), z(t))y'(t) + F_3(x(t), y(t), z(t))z'(t))dt}}",
+,,"Conservative vector fields/Konservativ vektorfält: $math{[F]=(y^2, 2xy) -> f=xy^2, [r](t) = (t, t^2) r(0) -> r(1)}
+$math{\int2{\g, [F].[dr]} = f(1, 1^2) - f(0, 0^2)}",
+,,"Connected domain: Every pair P, Q can be joined by a piecewise smooth curve in D
+Simple curve: No self-intersections other than beginning/end
+Simply connected domain: D connected domain, every simply closed curve shrunk to D, without pass D
+Connected domains:
+1. Simply closed curve in D is boundary of surface in D
+2. C_1, C_2, 2 curves in D with same endpoints -> C_1 continously deformed into C_2, remaining in D",
+,,"Independence of path (Equivalent elements in parenthesis (A <-> B <-> C)):
+$math{D (\open, \connected \domain), [F] \smooth D, C (\piecewise \smooth, \closed D) -> (F \conservative D, \intl{C, [F].d*[r]}=0, \intl{P0->P1, [F].d*[r]} ""Any path"")}
 
-$math{K: x^2+y^2+z^2 = 1}
-$math{[F](x, y, z) = (x+y, y, 0), int2{\\dK, [F].[N]dS} = int3{K, div[F]dV} = int3{K, 3dV}}",
+A -> B: $math{[F]=\nabla f -> [F].d*[r]=((\\df)/(\\dx)*[i]+(\\df)/(\\dy)*[j]+(\\df)/(\\dz)*[k]).(dx*[i]+dy*[j]+dz*[k])=(\\df)/(\\dx)dx+(\\df)/(\\dy)dy+(\\df)/(\\dz)dz=df
+C (\piecewise, \smooth, \closed D) -> [r](t) \path, a<=t<=b, [r](a)=[r](b), \intl{C, [F].d[r]}=\int{a, b, (df([r](t)))/(dt)}=f(r(b))-f(r(a))=0}
+B -> C: $math{C_1-C_2=C -> \intl{C, [F].d[r]}=\intl{C1, F.d*[r]}-\intl{C2, F.d*[r]}=0 -> \intl{C1, F.d*[r]}=\intl{C2, F.d*[r]}}
+C -> A: $math{C_1={(x_0, y_0, z_0)->(x_1, y, z)}, C_2={(x_1, y, z)->(x, y, z)}, C=C_1+C_2, f(x, y, z)=\intl{C, [F].d*[r]}=\intl{C_1, [F].d[r]}+\intl{C_2, [F].d[r]}
+(\\df)/(\\dx)=(\\d)/(\\dx)*(\intl{C_1, [F].d*[r]}+\intl{C_2, [F].d*[r]})=0+(\\d)/(\\dx)*\int{x_1, x, F_1(t, y, z)dt}=F_1(x, y, z) -> [F]=\nabla f}",
+,,"Near-conservative: $math{C \closed -> \intl{C, [F].d*[r]}=\intl{C, \nabla f.d*[r]}+\intl{C, [G].d*[r]}=0+\intl{C, [G].d*[r]}}","$math{[F]=(e^x\sin(y)+3y, e^x\cos(y)+2x-2y), f=e^x\sin(y)+2xy-y^2, [G]=(y, 0)}"
+,Surface integral/Ytintegral,"Surface integrals (Parametric surfaces: $math{[r](u, v)=x(u, v)*[i]+y(u, v)*[j]+z(u, v)*[k], [r] \onetoone})
+Sphere: $math{[r]=a\cos(u)\sin(v)*[i]+a\sin(u)\sin(v)*[j]+a\cos(v)*[k]}
+Tube around curve: $math{[r]=[F](t), a<=t<=b, C={[r]}, s=[F](u)+s\cos(v)\hat{N}(t)+s\sin(v)\hat{B}(u), a<=u<=b, 0<=v<=2\p}",
+,,"Surface integrals:
+[Image, f(x, y, z) bounded, S smooth surface]
+$math{R_n=\S{i=1, n, f(x_i, y_i, z_i)\D*S_i}=\int2{S, f(x, y, z)dS}
+[r](t)=(x(t), y(t), z(t))
+(\\d*[r])/(\\du)=(\\dx)/(\\du)*[i]+(\\dy)/(\\du)*[j]+(\\dz)/(\\du)*[k], (\\d*[r])/(\\dv)=(\\dx)/(\\dv)*[i]+(\\dy)/(\\dv)*[j]+(\\dz)/(\\dv)*[k], [n]=(\\d*[r])/(\\du)\cross(\\d*[r])/(\\dv)=|[[i, j, k], [(\\dx)/(\\du), (\\dy)/(\\du), (\\dz)/(\\du)], [(\\dx)/(\\dv), (\\dy)/(\\dv), (\\dz)/(\\dv)]]|=(\\d(y, z))/(\\d(u, v))*[i]+(\\d(y, z))/(\\d(u, v))*[j]+(\\d(y, z))/(\\d(u, v))*[k]}
+$math{dS=|(\\d*[r])/(\\du)*(\\d*[r])/(\\dv)|dudv=\sqrt{((\\d(y, z))/(\\d(u, v)))^2+((\\d(z, x))/(\\d(u, v)))^2+((\\d(x, y))/(\\d(u, v)))^2}dudv}
+$math{S={[r]}, D={[r] \proj \xy}, \int2{S, fdS}=\int2{D, [r](u, v)|(\\d[r])/(\\du)*(\\d[r])/(\\dv)|dudv}=\int2{D, f(x(u, v), y(u, v), z(u, v))\sqrt{((\\d(y, z))/(\\d(u, v)))^2+((\\d(z, x))/(\\d(u, v)))^2+((\\d(x, y))/(\\d(u, v)))^2}dudv}}
+$math{x=u, y=v, z=g(u, v), (u, v)\in D -> (\\d(y, z))/(\\d(u, v))=-g_(1')(u, v), (\\d(z, x))/(\\d(u, v))=-g_(2')(u, v), (\\d(x, y))/(\\d(u, v))=1
+\int2{S, fdS}=\int2{D, f(x(u, v), y(u, v), z(u, v))\sqrt{1+g_(1')(x, y)^2+g_(2')(x, y)^2}dudv}
+dS=1/\cos(\g)dxdy=|[n]|/|[n].[k]|dxdy=|(\nabla G(x, y, z))/G_(3')(x, y, z)|
+\int2{S, fdS}=\int2{D, f(x(u, v), y(u, v), z(u, v))|(\nabla G(x, y, z))/G_(3')(x, y, z)|dudv}}","$math{Y={x^2+y^2+z^2=1}, z>=0 -> [r]=(sin(\f)cos(\q), sin(\f)sin(\q), cos(\q))}
+$math{dS = |[r_(\f')]*[r_(\q')]|d\f*d\q, \int2{Y, z^2*dS} = \int{0, 2\p, \int{0, \p/2, cos^2*(\f)*sin(\f)d\f}d\q}}"
+,,,
+,,,
+,Flux integral/Flödesintegral,"[Image, \pm symbol depends on orientation, positive orientation the same side as normla vector stick out]
+Normal field: $math{S={z=f(x, y)}, \hat{N}=(-f_(1')(x, y)*[i]-f_(2')(x, y)*[j]+[k])/\sqrt{1+(f_(1')(x, y))^2+(f_(2')(x, y))^2}}, normal vector field exist -> orientable
+$math{dV=[F](P).\hat{N}(P)dS -> \int2{S, [F].\hat{N}dS=\int2{[F].d*[S]}=\int2{[F]([r](u, v)).(\pm*(\\d*[r])/(\\du) \cross (\\d*[r])/(\\dv))dudv}}=\int2{[F]([r](u, v)).((\nabla G(x, y, z))/G_(3')(x, y, z))dxdy}}","$math{[F](x, y, z) = (x, y, 0), Y={x^2+y^2<=1}, 0<=x<=1}
+$math{\int2{Y, [F].[N]dS} = \int2{Y, (cos(\q), sin(\q), 0).(cos(\q), sin(\q), 0)|[r_(\q') \cross r_(z')]|d\q*dz}}"
 ,,,
 ,,,
 ,,,
 ,,,
 ,Derivative of vectors,"$math{[A]([u]) = [[A_1([u])], [A_2([u])], [A_3([u])]]}
-$math{d[A]/du = lim{\Du->0, (A(u+\Du)-A(u))/(\Du)} = [[dA_1/du], [dA_2/du], [dA_3/du]]}",
-,Nabla operator/del operator,"$math{\nabla = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]}",
-,,"$math{grad f = (\nabla)f = [[\\d/\\dx], [\\d/\\dy], [\\d/\\dz]]}",
-,,$math{div [F] = \nabla.[F] = \\dF_1/\\dx + \\dF_2/\\dx + \\dF_3/\\dx},
-,,"$math{curl [F] = \nabla*[F] = [[\\dF_3/\\dy-\\dF_2/\\dz], [\\dF_1/\\dz-\\dF_3/\\dx], [\\dF_2/\\dx-\\dF_1/\\dy]]}",
+$math{d[A]/(du) = \lim{\D*u->0, (A(u+\Du)-A(u))/(\Du)} = [[dA_1/du], [dA_2/du], [dA_3/du]]}",
+,Nabla operator/del operator,"$math{\nabla = [[\\d/(\\dx)], [\\d/(\\dy)], [\\d/(\\dz)]]}",
+,Gradient (Scalar field),"$math{grad f = (\nabla)f = [[\\d/(\\dx)], [\\d/(\\dy)], [\\d/(\\dz)]]}",
+,Divergence (Vector field),$math{div([F]) = \nabla.[F] = (\\dF_1)/(\\dx) + (\\dF_2)/(\\dx) + (\\dF_3)/(\\dx)},
+,Curl (Vector field),"$math{curl [F] = \nabla*[F] = [[(\\dF_3)/(\\dy)-(\\dF_2)/(\\dz)], [(\\dF_1)/(\\dz)-(\\dF_3)/(\\dx)], [(\\dF_2)/(\\dx)-(\\dF_1)/(\\dy)]]}",
 ,Derivative rules for vectors,$math{d/(dx)([F].[G]) = [F].(d[G])/(dx) + (d[F])/(du).[G]},
 ,,$math{d/(dx)([F]*[G]) = [F]*(d[G])/(dx) + (d[F])/(dx)*[G]},
 ,,$math{d/(dx)([F].([G]*[H])) = (d[F])/(dx).([G]*[H]) + [F].((d[G])/(dx)*[H]) + [F].([G]*(d[H]/dx))},
@@ -440,6 +471,15 @@ $math{d[A]/du = lim{\Du->0, (A(u+\Du)-A(u))/(\Du)} = [[dA_1/du], [dA_2/du], [dA_
 ,,$math{\nabla.(\nabla*[F]) = 0},
 ,,$math{\nabla.((\nabla)f) = (\nabla^2)U},
 ,,$math{\nabla*(\nabla*[F]) = \nabla(\nabla.[F])-\nabla^2[F]},
+,Green's formel i planet,"$math{ringint{\g, (P*dx+Q*dy)} = int2{D, ((\\dQ)/(\\dx) - (\\dP)/(\\dy))dxdy}}
+(Under vissa förutsättningar, positivt orienterad)
+\g en kurva runt område D","$math{\g={x^2+y^2=1}, x=0, y=0, x>=0, y>=0}
+$math{\ringint{\g, -y^3dx + x^3dy} = int{D, (3x^2+3y^2)dxdy}}"
+,Divergenssatsen/Gauss sats,"(Under vissa förutsättningar på [F], K)
+$math{int2(\\dK, [F].[N]dS) = int3{K, div[F]dV}}
+
+$math{K={x^2+y^2+z^2 = 1}}
+$math{[F](x, y, z) = (x+y, y, 0), \int2{\\dK, [F].[N]dS} = int3{K, div[F]dV} = int3{K, 3dV}}",
 ,,,
 ,,,
 ,,,
@@ -450,6 +490,8 @@ $math{= int{(g_1), (g_2), \df(x,\a)/\d\a*dx} (if g_1, g_2 = constant), formula o
 ,,"$math{f(x, y)} harmonic -> $math{f(x^2-y^2, 2xy)} harmonic",
 ,Wave equation,$math{\\d^2w/(\\dt^2) = c^2*(\\d^2w/(\\dx^2)) -> w=f(x-ct)+g(x+ct)},
 ,Laplace equation in polar coordinates,$math{(\\d^2z)/(\\dr^2)+1/r*((\\dz)/(\\dr))+1/r^2*((\\d^2z)/(\\dr^2)) = (\\d^2z)/(\\dx^2)+(\\d^2z)/(\\dy^2)},
+,,,
+,,,
 ,,,
 ,,,
 ,,,
