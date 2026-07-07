@@ -3,5 +3,135 @@ Unnamed: 0,Unnamed: 1,Unnamed: 2
 (...) GROUP BY <coloumnnames>;
 (...) ORDER BY <coloumnnames>;
 (...) LIMIT <number>;"
-,Select/Insert,"SELECT * FROM <database>.<tablename>;
-INSERT INTO <database>.<tablename> VALUES <values>;"
+SQL language,Select,SELECT * FROM <database>.<tablename>;
+,Insert,INSERT INTO <database>.<tablename> VALUES <values>;
+,,
+,,
+Data normalization,,"Flat diagram (naive): Book(Title, Author, Genre, Height, Publisher, Copies, ...)
+Nonflat (Better design):
+Sales(ID, Name, Date, Customer, Book, Amount)
+Customer(ID, Name, Personal number, Address)
+Author(ID, Name, Nationality)
+Book(ISBN, Title, Author, Genre, Height, Publisher, Copies, RetailPrice)
+Publisher(ID, Name, Website)
+Supplier(ID, Name, Website)
+Order(Supplier, Book, Quantity)"
+,,"1. Remove redundancy (Publisher site/row, book entry/author)
+2. Anomalies:
+INSERT: How to add authors with no registered/multi-author books
+UPDATE: Update publisher website per publisher reference
+DELETE: Hard to consistently delete"
+,,"Normalisation is the process of making a good schema design (Principles + methodologies)
+- Objective: Generate tables whose attributes depend on the complete primary key and nothing else.
+- Constraint: Maintain all dependencies between attributes in a database decomposition.
+Attribute dependencies are also known as functional dependencies."
+,,"Composition vs decomposition:
+Top down (most common): Using scientific/mathematical solution
+Bottom-up (less common): Requires some domain knowledge + intuition"
+,,
+,Empirical,"- Each table schema describes one entity or relationship between entities with a PK each.
+- Further split schemas (and conquer) until no anomalies are possible.
+- Avoid attributes which can be often NULL.
+- Link schemas via PK and FK attributes only."
+,Scientific,"- Analyse exhaustively hidden dependencies in data.
+- Eliminate redundancy using math.
+- Prove that your database schema is minimal."
+,Functional dependencies,"$math{(X, Y) \attribute, (X->Y) -> f(x)=y, y \in Y, \any x \in X}
+(Any instance R), $math{r_1, r_2 \in r(R) -> (r_1.X=r_2.X -> r_1.Y=r_2.Y)}
+e.g.
+personal number -> address, ISBN -> Title,
+{TVShowID, EpisodeID} -> {AiredStartTime, AiredEndTime}, {ssn} -> {birthdate, name, phone, address,meritalstatus, salary}"
+,Keys as FDs,"Superkey: any attribute set K of $math{R(A_1, A_2, ..., A_n), K -> {A_1, ..., A_n}}
+Candidate keys: Superkeys + minimal |K| (irreducible)
+Primary key: One candidate key chosen by designer"
+,Closures,"Set of FDs: F = {A->{B, C}, B->E, {C, D}->{E, F}}
+F+: Implied FDs, closure of F: systematically compute all implied FDs"
+,,"F implies a FD X->Y <-> any extension r(R) satisfy any FD in F also satisfy X -> Y
+F \imp X -> Y"
+,Armstrong's axioms,$math{X \supe Y \imp X -> Y} (Reflexive)
+,,$math{{X->Y} \imp XZ -> YZ} (Augmentation)
+,,"$math{{X->Y, Y->Z} \imp X->Z} (Transitive)"
+,Derived,"$math{{X->YZ} \imp {X->Y, X->Z}} (Decomposition)"
+,,"$math{{X->Y, X->Z} \imp {X->YZ}} (Union)"
+,,"$math{{X->Y, WY->Z} \imp WX->Z} (Pseudo-transitive)"
+,Computing closures,"$math{X \sube R, X^S={A, {X->A}\in F}
+F = {A -> {B,C}, B -> D, {C, E} -> {D,G},D -> {C,G}}
+{A, B}^S = {A, B, C, D, G}}
+"
+,,"$math{F={A->{B, C}, B->E, {C, D}->{E, F}}
+A -> {B,C} \imp {A->B, A->C}
+A -> C \imp {{A,D} -> {C,D}}
+{{A,D} -> {C,D}, {C,D} -> {E, F}} \imp {{A,D} -> {E, F}}
+{A,D} -> {E, F} \imp {{A,D} -> F}}
+..."
+,,"Compute all closures:
+$math{
+FD = {F1, F2} = {A->B, B->C}
+F3 \imp A ->C
+F^S = {A->B, B->C, A->C, A->A, B->B, C->C, AB->C, AB->B, ...}}"
+,,"Given schema and Compute R(A, B,C,D, E, F)
+F = {A->{B,C}, B->E, {C,D}->{E, F}} 
+
+A->BC: A->B, A->C
+B->E: A->E
+CD->EF: CD->E, CD->F
+A->C: AD->CD, CD->E: AD->E, AD->F, AD->EF
+
+F+ = {A->BC, A->B, A->C
+B->E, A->E
+CD->EF, CD->E, CD->F
+AD->CD, CD->E, AD->E, AD->F, AD->EF
+...
+}
+
+Given and F we compute closure: X \sube R
+X+ = {A|{X->A} \in F+} 
+
+A+={B, C, E}"
+,Cover,"Cover: $math{F cover E \iff E^S \imp F} (Every FD in F can be derived by E+/E^S)
+Equivalent: $math{F=E \iff F^S \imp E \and \E^S \imp F}"
+,,"R(A, B, C, D, E)
+F = {A->B, B->C, C->D, D->E}
+F+ = {A->B, B->C, A->C, C->D, A->D, B->D, …} // CLOSURES 
+A+ = {B, C, D} // DETERMINING CLOSURES 
+"
+,Canonical cover,"$math{F={...}, F=G, |G| \minimal} (G as smallest possible cover of F, canonical cover of F), X: Candidate key
+Characteristics:
+- Canonical form: $math{\every {x->A}\in G, |A|=1} (A as single attribute)
+- Irreducibility: $math{\every {x->A}\in G} X cannot be replaced Y \sub X,
+- No redundancy: $math{{G-FD}^S !=F^S, \any FD \in G} (FD: functional dependency, x->A)"
+,,"Canonical form algorithm:
+Steps to go from F to its minimal cover G.
+1. Bring every FD to canonical form (decomposition)
+2. Remove redundant attributes on left side (don’t change F+/F^S)
+3. Remove redundant FDs (don’t change F+/F^S)"
+,,"canonical cover
+
+F = {A->BC, B->C, A->B, AB->C}
+G = {A->B, A->C, B->C, A->B, AB->C} = {A->B, A->C, B->C, AB->C} 
+G = {A->B, A->C, B->C, A->C} = {A->B, A->C, B->C}
+G = {A->B, B->C}
+G = F"
+,Normalization forms,"1NF (Atomic Attributes (no sets), “Attribute-level Normalisation”): 
+Set/Multi-valued attribute should not appear
+e.g. (ISBN, Title, AuthorId), (42342345356, 'Fundamentals of Databases', {3433,5522})"
+,,"2NF (Strict key dependencies): require 1NF
+No non-prime (not part of candidate key) attribute Y dpeends on a subset Z \sub X of a candidate key X
+e.g.
+NOT FULFILL: (Candidate key: {ISBN, AuthorId}, AuthorId -> AuthorName)
+(ISBN, AuthorId, Author name), (423423453, 3433, Elmari), (423423453, 5522, Navathe)
+-(Decompose without loss, Heath's theorem, based on AuthorId -> AuthorName)>
+FULFILL:
+(ISBN, AuthorId), (423423453, 3433), (423423453, 5522)
+(AuthorId, Author Name), (3433, Elmari), (5522, Navathe)"
+,,"3NF (Decomposition (lossless) of transitive FDs): require 2NF
+All non-prime attributes Y are defined by a candidate key/prime key
+NOT FULFILL: (Candidate key: {ISBN}, ISBN -> (PublisherID -> PublisherName))
+(ISBN, Title, PublisherID, PublisherName), (423423453, 'Fundamentals of Databases', 3234, 'Pearson')
+-(Decompose without loss (Heath's theorem) based on PublisherId -> PublisherName)->
+(ISBN, Title, PublisherID), (423423453, 'Fundamentals of Databases', 3234)
+(PublisherID, PublisherName), (3234, Pearson)"
+,Full process,...
+,,
+,,
+,,

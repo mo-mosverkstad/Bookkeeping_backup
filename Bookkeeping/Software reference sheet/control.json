@@ -1,0 +1,95 @@
+{
+  "version": "1.0",
+  "entries": [
+    {
+      "id": "ai",
+      "view": "table",
+      "file": "AI.csv"
+    },
+    {
+      "id": "algorithms_and_datastructure",
+      "view": "table",
+      "file": "Algorithms and datastructure.csv"
+    },
+    {
+      "id": "assembly_asm_ref",
+      "view": "table",
+      "file": "Assembly (asm) ref.csv"
+    },
+    {
+      "id": "c_ref",
+      "view": "table",
+      "file": "C ref.csv"
+    },
+    {
+      "id": "common_patterns",
+      "view": "table",
+      "file": "Common patterns.csv"
+    },
+    {
+      "id": "io_system",
+      "view": "table",
+      "file": "IO system.csv"
+    },
+    {
+      "id": "java_ref",
+      "view": "table",
+      "file": "Java ref.csv"
+    },
+    {
+      "id": "javascript_typescript_ref",
+      "view": "table",
+      "file": "JavaScript TypeScript ref.csv"
+    },
+    {
+      "id": "network",
+      "view": "table",
+      "file": "Network.csv"
+    },
+    {
+      "id": "numpy_ref",
+      "view": "table",
+      "file": "Numpy ref.csv"
+    },
+    {
+      "id": "ooa_d",
+      "view": "table",
+      "file": "OOA&D.csv"
+    },
+    {
+      "id": "parsers",
+      "view": "table",
+      "file": "Parsers.csv"
+    },
+    {
+      "id": "php",
+      "view": "table",
+      "file": "PHP.csv"
+    },
+    {
+      "id": "python_ref",
+      "view": "table",
+      "file": "Python ref.csv"
+    },
+    {
+      "id": "rust_ref",
+      "view": "table",
+      "file": "Rust ref.csv"
+    },
+    {
+      "id": "sheet2",
+      "view": "table",
+      "file": "Sheet2.csv"
+    },
+    {
+      "id": "sql_database",
+      "view": "table",
+      "file": "SQL database.csv"
+    },
+    {
+      "id": "system_architecture",
+      "view": "table",
+      "file": "System architecture.csv"
+    }
+  ]
+}

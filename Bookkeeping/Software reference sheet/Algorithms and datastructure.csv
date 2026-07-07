@@ -1,4 +1,5 @@
 Group,Name,Program structure,Conceptual structure/Complexity analysis
+rich,rich,rich,rich
 ,Complexity functions,"An estimate of the change in execution time when the data set grows large.
 A functions upper bound is limited by O(g(n)).
 Its lower bound is limited by Ω(g(n)).
