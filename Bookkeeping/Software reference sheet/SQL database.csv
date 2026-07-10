@@ -140,6 +140,79 @@ Data storage,,"Most database as disk-oriented databases
 
 Storage Manager: Module that maintains/organises files of a database.
 Buffer Manager: Module that decides how data moves between volatile and non-volatile memory."
+,,"Primary Storage(active processing layer) 
+- Goal: Fast Random Access  
+- Volatile, Electronic Storage (e.g., Registers, Cache, DRAM) 
+Secondary Storage (persistence layer) 
+- Goal: High Throughput, Sequential Access 
+- Non-Volatile Magnetic Storage (e.g., HDD, SSD etc.) 
+Tertiary Storage (archiving layer): 
+ALL database data is stored on disk files
+- Goal: Longevity
+- Robust Magnetic Storage (Magnetic Tapes, Glass etc.)"
+,Mirroring/Shadowing,"Write both storages -> (Slow disk -> Read if other disk fails, Faster disk -> Read always)"
+,RAID,"(Internal bus) -> (RAID Controller, as 1 logical HDD) -> (Peripheral buses, many physical HDDs)...
+Stripping as bit, Data: (A0..A7, B0..B7), Disk0: ((A0, A4), (B0, B4)), Disk1: ((A1, A5), (B1, B5)), Disk2: ((A2, A6), (B2, B6)), Disk3: ((A3, A7), (B3, B7))
+Stripping at block, File: (Block A1, Block A2, Block A3, Block A4), Disk0: A1, Disk1: A2, Disk2: A3, Disk3: A4"
+,RAID0,"Block stripping, File: [A, B, C, D], Disks: [A, C], [B, D]
+x2 speed on sequential reads, No Reliability, No Gain for random block access"
+,RAID1,"Block mirroring/shadowing, File: [A, B, C, D], Disks: [A, B, C, D], [A, B, C, D]
+Faster Reads from disk with lowest seek/rot. IO, Reliable to x1 disk failure, No Gain for random block access."
+,RAID 0+1,"File: [A, B, C, D], Disk: [A, C], [B, D], [A, C], [B, D]
+Faster than x2 seq. reads, As Reliable as RAID 1, Random Block Reads still not improved"
+,RAID 5,"Disk0: [A1, B1, C1, D_p]
+Disk1: [A2, B2, C_p, D1]
+Disk2: [A3, B_p, C2, D2]
+Disk3: [A_p, B3, C3, D3]
+A_p=A1 xor A2 xor A3, D_p=D1 xor D2 xor D3
+
+Block-Level Stripping, Distributed Parity per Stripe group, Reliable, Balanced parity Load, (no need to duplicate all data)"
+,<Buffer management>,"Pages ~blocks, (Memory([Page]), frame array, DB Buffer (fixed number of pages)) <-(modified pages have to be persisted)-> Disk file ([Page])"
+,,"Memory[-, -] <-> Disk file[1, 2, 3], (Fetch 1)-> Memory[1, -], (Fetch 3)-> Memory[1, 3], (Fetch2)-> Full memory, evict -> e.g. Memory[2, 3] using LRU"
+,,"The OS can give the illusion of “infinite” memory through memory mapping (mmap). OS can swap pages on disk automatically. 
+BUT 
+- The OS is agnostic of page access patterns (reads,writes). 
+- The DBMS can do better page prefetching knowing what it needs next 
+- The DBMS knows which thread/process is using which page and thus it can apply an 
+optimal buffer replacement policy. 
+- Virtual Memory is scarcely used for in-memory databases only 
+- Disk-oriented databases do memory management manually."
+,,"Memory: [1, 3, 2], Disk: [1, 2, 3], Page table: (page num, pin-count, dirty bit), (1, 1, 1)<- Should be written but not yet, (3, 2, 0)<- cannot evict, (2, 0, 0)<- can evict)
+Pin count: Current requests per page. Pinned pages (>0) cannot be evicted/written back to disk.
+Dirty Bit : Set to 1 whenever page is updated by  application (query engine). Dirty pages have to eventually swap to disk"
+,LRU Policy,"Data-agnostic, similar to OS virtual memory
+(page-number, pin-count, dirty-bit, access-time), (1, 1, 1, 23), (3, 0, 0, 34)<-evict, (2, 0, 0, 48)
+Can be optimised by keeping pages in sorted order"
+,Clock,"Alternative to LRU without timestamp
+[(page num, pin-bit), <(1, 1)>, (4, 0), (2, 1), (3, 0)]
+Fetch page 5
+[(page num, pin-bit), <(1, 0)>, (4, 0), (2, 1), (3, 0)]
+[(page num, pin-bit), (1, 1), <(5, 1)>, (2, 1), (3, 0)]
+<(...)> pointed, wrap around
+
+- Sequential Flooding : Some queries access pages only once (e.g. block join, select whole table). That bloats buffer with unneeded pages. 
+- LRU, Clock strategies are susceptible to sequential flooding"
+,FIFO,"Evict page that is loaded for longest time
+[page-num, pin-count, dirty-bit, when-loaded], [1, 1, 1, 45], [3, 0, 0, 12]<-evict, [2, 0, 0, 23]
+- Less maintenance than LRU (no access timestamps) 
+- Problematic for very popular pages"
+,Toss immediate,"It could be that the latest page will not be used again (e.g., on sequential block scans)
+Page table: [page-num, pin-count, dirty-bit, access-time], [1, 1, 1, 23], [3, 4, 0, 34], [2, 0, 0, 48]<-evict
+Simple but effective if the access pattern is known (e.g., equijoin on blocks)"
+,Expected reuse,"Statistic about page popularity
+Evict least popular page
+[page-number, pin-count, dirty-bit, access-count], [1, 1, 1, 2], [3, 4, 0, 5654], [2, 0, 0, 3]<-evict"
+,<File organization>,"- The relational model makes no assumptions on the physical data structure.
+- Each DBMS is free to make its own file management
+- Typically a file per relation or database (risk of file limit)
+- Key to good performance: Minimum IO -> Depends on workload
+e.g.
+best organisation when queries access related attributes only (file paged by relation arranged by row?)
+best organisation when queries need OLAP aggregates? (file paged by relation arranged by column?) etc"
+,Fixed page array,
+,Slotted page array,
+,Log-structured page array,
+,File organization,
 ,,
 ,,
 ,,
@@ -204,6 +277,11 @@ Otherwise? The index can have one level of indirection."
 ,Extendible hashing,
 ,Linear hashing,
 ,B tree,
+,,
+,,
+,,
+,,
+,,
 Transactions,,"- Concurrent Accessibility / scalability
 - Consistent recovery from failures.
 - Isolation Guarantees"
@@ -328,11 +406,73 @@ UPDATE bank SET Balance = Balance + 50 WHERE Balance < 1500
 Serial: [r_1(X), w_1(X), r_1(Q), w_1(Q), r_2(X), w_2(X), r_2(Q), w_2(Q)]
 [r_2(X), r_1(X), w_2(X), r_2(Q), w_1(X), w_2(Q), r_1(Q), w_1(Q)] -> Non-conflict serializable
 [r_2(X), w_2(X), r_1(X), r_2(Q), w_1(X), w_2(Q), r_1(Q), w_1(Q)] -> Conflict serializable"
-,,"T1: [r_1(X) w_1(X) r_1(Q) w_1(Q)], (X=1000, Q=100 -> X=900, Q=200)
+,Blind writes,"T1: [r_1(X) w_1(X) r_1(Q) w_1(Q)], (X=1000, Q=100 -> X=900, Q=200)
 T2: [r_2(A) w_2(A) r_2(B) w_2(B) r_2(x) w_2(X) r_2(Q) w_2(Q) ...], (X=1000 Q=100 => X=1050 Q=150)
-T2 -> T1: [r_2(A), r_1(X) w_1(X) r_1(Q) w_1(Q), r_2(A) w_2(A) r_2(B) w_2(B) r_2(x) w_2(X) r_2(Q) w_2(Q) ...] -> View serializable"
-,,
-,,
-,,
+T2 -> T1: [r_2(A), r_1(X) w_1(X) r_1(Q) w_1(Q), r_2(A) w_2(A) r_2(B) w_2(B) r_2(x) w_2(X) r_2(Q) w_2(Q) ...] -> View serializable, not conflict serializable"
+,"Lock mechanism
+Pessimistic","Txn1: r_1(A), w_1(A), r_1(X), w_1(X), r_1(B), w_1(B), r_1(Q), w(Q)
+Txn2: r_2(X), w_2(X), r_2(Q) w_2(Q)
+
+1[L(A)[r_1(A), w_1(A)]U(A)], 3[L(X) ... [r_1(X), w_1(X)]U(X)], 5[L(B)[r_1(B), w_1(B)]U(B)], 6[L(Q)[r_1(Q), w_1(Q)]U(Q)]
+2[L(X)[r_2(X), ..., w(X)]U(X)], 4[L(Q)[r_2(Q), w_2(Q)]U(Q)]"
+,,"Read lock(read lock: RL(X), read unlock: RU(X)), write lock(write lock: WL(X), write unlock: WU(X))
+-> Splitting locks causes side effects
+Txn1: r_1(Q), w_1(Q)
+Txn2: w_2(Q), r_2(Q)
+
+Schedule 0 (Serial):
+[Txn1[r_1(Q), w_1(Q)], Txn2[r_2(Q), w_2(Q)]], [T1 -> T2]
+
+Schedule 1, [T1 -> T2, T2 -> T1]:
+1[RL(Q)[r_1(Q)]RU(Q)], ... 3[WL(Q)[w_1(Q)]WU(Q)]
+2[WL(Q)[w_2(Q)]WR(Q)], ... 4[RL(Q)[r_2(Q)]RU(Q)] <- 4 read out the written in 3"
+,2 phase locking (2PL),"Growing phase (only aquiring locks) and shrinking phase (only releasing locks), cannot release one lock and aquire another one
+Txn1: r_1(Q) w_1(Q)
+Txn2: w_2(Q) r_2(Q)
+
+Schedule 0 (Serial): [Txn1[r_1(Q) w_1(Q)], Txn2[w_2(Q), r_2(Q)]], [T1 -> T2]
+1[RL(Q)WL(Q)[r_1(Q), w_1(Q)]RU(Q)WU(Q)]
+2[RL(Q)WL(Q)...[w_2(Q), r_2(Q)]RU(Q)WU(Q)]"
+,,"Txn1: r_1(Q) w_1(Q) r_1(X) w_1(X)
+Txn2: w_2(Y) r_2(Q) w_2(Q)
+Txn3: r_3(Y) w_3(Y)
+Schedule 0:[Txn1, Txn2, Txn3]
+Schedule 1:
+1[RL(Q, X)WL(Q, X)[r_1(Q), w_1(Q)]RU(Q)WU(Q)] 4[[r_1(X), w_1(X)]RU(X)WU(X)]
+2[RL(Q)WL(Q, Y)...(Q)[w_2(Y)]RU(Y)] 5[[r_2(Q), w_2(Q)]RU(Q)WU(Q)]
+3[RL(Y)WL(Y)...(Y)[r_3(Y), w_3(Y)]RU(Y)WU(Y)]
+
+Aborting on 1st line cascades abort on 2nd and 3rd line"
+,2PL deadlocks,"1[WL(Q)[W(Q)]WL(X)...(X)[...]...] <- Read lock held by 2nd line
+2[RL(X)[R(X)]RL(Q)...(Q)[...]...] <- Write lock held by 1st line
+-> Deadlock"
+,,"RL(...)WL(...)...RU(...)WU(...)
+RL(...)WL(...)...RU(...)...WU(...) <- Cascading aborts
+RL(...)...WL(...)...RU(...)WU(...) <- Deadlock
+RL(...)...WL(...)...RU(...)...WU(...)"
+,Strong strict 2PL,"All locks are released only after the transaction has completed (abort/commit) 
++) Enforces conflict serializable schedules with no cascading aborts.
+-) It makes 2PL stricter and limits performance.
+
+1[RL(Q, X)WL(Q, X)[r_1(Q), w_1(Q), r_1(X) w_1(X)]CRU(Q, X)WU(Q, X)]
+2[RL(Q)WL(Q, Y)...(Q)[w_2(Y), r_2(Q), w_2(Q)]CRU(Q),WU(Q, Y)]
+3[RL(Y)WL(Y)...(Y)[r_3(Y), w_3(Y)]RU(Y)WU(Y)]"
+,,"SS2PL is used nowadays as the default 2PL protocol.
+Strict 2PL is a weaker variant that considers only write locks"
+,Optimistic concurrency,"T1 read A, compute
+T2 read B, compute
+T1 validate: no conflict -> commit
+T2 validate: no conflict -> commit
+
+T1 read Q
+T2 write Q and commit
+T1 detects Q has been modified during validation
+T1 abort/retry
+"
+,Multi-version concurrency,"Q (version 1) = 100 at time stamp 10
+T1 starts at time stamp 12, sees Q=100
+T2 starts at time stamp 13
+T2 updates Q=200 and commits at time stamp 14
+T1 Read again Q: Q = 100"
 ,,
 ,,
