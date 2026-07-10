@@ -204,11 +204,133 @@ Otherwise? The index can have one level of indirection."
 ,Extendible hashing,
 ,Linear hashing,
 ,B tree,
-,,
-,,
-,,
-,,
-,,
+Transactions,,"- Concurrent Accessibility / scalability
+- Consistent recovery from failures.
+- Isolation Guarantees"
+,Transaction,"Transaction data scope
+The scope at which people model/explain transactions is at a relational table cell level.
+e.g., object Q = 100 Q while object X = 1000
+An alternative scope is to scope data by row. Then Q.Balance = 1000 and X.Balance=100. For simplicity we do not go with this scope.
+
+e.g.
+(UserID, AccountID, Balance)
+X(5, 113333, 1000)
+(9, 237765, 3222)
+Q(13, 332588, 100)
+(22, 574888, 48733)
+"
+,,"T1: Transfer balance 100 from X to Q
+1. read(X)
+2. X:=X-100
+3. write(X)
+4. read(Q)
+5. Q:=Q+100
+6. write(Q)"
+,,"Non-conflicting (Run in parallel): T1(Read A, Write A), T2(Read B, Write B)
+Conflicting (Must be managed): T1(Read A, Write B), T2(Read B, Write B)
+
+DBMS cannot know before executing the transactions
+T1: UPDATE Accounts SET balance = balance + 10 WHERE balance < 100;
+T2: UPDATE Accounts SET balance = balance * 2 WHERE id = 2;
+(AccountID, Balance)
+(1, 50 000)
+(2, 50)
+(3, 75 000)"
+,ACID,"Atomicity : ""all or none""
+If a database crashes or fails to execute completely all transaction commands then we end up in an inconsistent state (e.g., lost 100)
+The atomicity property promises that either:
+- All transaction commands are executed
+- None of the transaction commands is executed.
+(In both cases the sum of the two accounts is 1100sek)
+
+Balance = (X=1000, Q=100)
+Not ok: Balance=(X=900, Y=100), Ok: Balance = (X=1000, Q=100)"
+,,"Durability: ""all updates are persisted""
+Committing/Completing a transaction should ensure that the state updates are preserved!
+Database Systems ensure durability by precommitting state or updates (write ahead log) on non-volatile storage-before saying “done”, in a recoverable manner.
+
+Transaction -> Done
+-> (1. Write-ahead log, logged updates can be used to reconstruct the database upon restart, (write(T, 23), write(X, 900), write(Q=200), write(V=223)))
+-> (2. Shadow paging, copy-on-write, uncommited copy=(X=900, Q=200), actual page=(X=1000, Q=100))"
+,,"Isolation: ""single-transaction view""
+Can we let transactions access uncommitted updates?
+Serial: Tx1 -> Tx2
+Concurrent (with Isolation): (Tx1 (Read (X) -> Write(X, 1)), Tx2 (Write(X, 200)))"
+,,"Consistency: ""no inconsistent states""
+If the database is in a valid state before the transaction (PK, FK constraints, application invariants etc.) it remains valid after the transaction completes.
+-Validity in example (X+Q=1100)"
+,Transaction State diagram,"Active -(All statements executed)-> Partially committed -(Changes persisted)-> Committed
+Active -(Violation/crash)-> Failed -(Changes rolled-back)-> Aborted
+Partially committed -(Violation/crash)-> Failed
+Aborted -(1. Start new transaction)-> Active
+Aborted -(2. Give up)-> Give up transaction"
+,Schedules,"Query execution engine -(Tx1, Tx2) -> Transaction manager
+Transaction manager -(Schedule)-> Query execution engine
+
+Tx1: (1. read(X), 2. X:=X-100, 3. write(X), 4. read(Q), 5. Q:=Q+100, 6. write(Q))
+Tx2: (1. read(X), 2. diff=0.2*X, 3. X:=X-diff, 4. write(X), 5. read(Q), 6. Q:=Q+diff, 7. write(Q))"
+,,"Serial schedules:
+Most restricted type of schedule, non-concurrent execution, always atomic/consistent/isolated, not performance-friendly"
+,,"Concurrent schedules: The space of concurrent schedules is vast!
+e.g.
+Tx1(1. read(X), 2. X:=X-100, 3. write(X)), Tx2(4. read(X), 5. diff=0.2*X, 6. X:=X-diff, 7. write(X)),
+Tx1(8. read(Q), 9. Q:=Q+100, 10. write(Q), 11. commit), Tx2(12. read(Q), 13. Q:=Q+diff, 14. write(Q), 15. commit)"
+,,"Concurrent equivalent:
+- Two schedules with the same operations are equivalent if respective read and therefore, write operations have the same values.
+- Two equivalent schedules lead to the same database instance (state).
+- A schedule that has an equivalent serial schedule is called serialisable"
+,,"Conflicting operations: (r(Q), w(Q)), (w(Q), r(Q))
+o_i, o_j \in S \conflicting:
+- originate from different transactions (o_i \in T_i, o_j \in T_j, T_i!=T_j)
+- access same object Q
+- At least one write (o_i = w(Q) \or o_j = w(Q))"
+,Conflict equivalent,"Conflict equivalent schedules
+<-> same set of transaction operations, conflicting operations match and have the same order"
+,,"1 conflict:
+Txn1: r_1(Q), r_1(X), w_1(X), w_1(Q)
+Txn2: w_2(Y), r_2(Y), w_2(X)
+
+Schedule 1: [r_1(Q), r_1(X), w_2(Y), w_1(X), r_2(Y), w_1(Q), w_2(X)], [[r_1(X), w_1(X)], [w_1(X), w_2(X)]]
+Schedule 2: [r_1(Q), r_1(X), w_1(X), w_2(Y), w_1(Q), r_2(Y), w_2(X)], [[r_1(X), w_1(X)], [w_1(X), w_2(X)]]
+Schedule 3: [r_1(Q), w_2(Y), r_1(X), r_2(Y), w_2(X), w_1(X), w_1(Q)], [[r_1(X), w_2(X)], [w_2(X), w_1(X)]]"
+,,"2 conflict:
+Txn1: r_1(Q), r_1(X), w_1(X), w_1(Q)
+Txn2: w_2(Y), r_2(Y), w_2(Q), w_2(X)
+
+Schedule 1: [r_1(Q), r_1(X), w_2(Y), w_1(X), r_2(Y), w_2(Q), w_1(Q), w_2(X)], [[r_1(X), w_2(X)], [w_1(X), w_2(X)], [r_1(Q), w_2(Q)], [w_2(Q), w_1(Q)]]
+Schedule 2: [r_1(Q), r_1(X), w_2(Y), r_2(Y), w_2(Q), w_1(X), w_1(Q), w_2(X)], [[r_1(X), w_2(X)], [w_1(X), w_2(X)], [r_1(Q), w_2(Q)], [w_2(Q), w_1(Q)]]
+Schedule 3: [r_1(Q), w_2(Y), r_1(X), r_2(Y), w_2(Q), w_2(X), w_1(X), w_1(Q)], [[r_1(X), w_2(X)], [w_2(X), w_1(X)], [r_1(Q), w_2(Q)], [w_2(Q), w_1(Q)]] -> Not equivalent
+Schedule 0 (Serial): [r_1(Q), r_1(X), w_1(X), w_1(Q), w_2(Y), r_2(Y), w_2(Q), w_2(X)], [[r_1(X), w_2(X)], [w_1(X), w_2(X)], [r_1(Q), w_2(Q)], [w_1(Q), w_2(Q)]] -> Not equivalent"
+,,"Move conflict if locking (r(Q), w(Q)), (w(Q), r(Q)), (w(Q), w(Q))
+Txn1: r_1(Q), r_1(X), w_1(X), w_1(Q)
+Txn2: w_2(Y), r_2(Y), w_2(Q), w_2(X)
+
+[r_1(Q), r_1(X), w_2(Y), w_1(X), r_2(Y), w_1(Q), w_2(Q), w_2(X)], [[r_1(X), w_2(X)], [w_1(X), w_2(X)], [r_1(Q), w_2(Q)], [w_1(Q), w_2(Q)]]
+[r_1(Q), r_1(X), w_1(X), w_2(Y), r_2(Y), w_1(Q), w_2(Q), w_2(X)]
+[r_1(Q), r_1(X), w_1(X), w_2(Y), w_1(Q), r_2(Y), w_2(Q), w_2(X)]
+[r_1(Q), r_1(X), w_1(X), w_1(Q), w_2(Y), r_2(Y), w_2(Q), w_2(X)]
+Schedule 0 (Serial): [r_1(Q), r_1(X), w_1(X), w_1(Q), w_2(Y), r_2(Y), w_2(Q), w_2(X)], [[r_1(X), w_2(X)], [w_1(X), w_2(X)], [r_1(Q), w_2(Q)], [w_1(Q), w_2(Q)]]"
+,Dependency graph,"Txn1: r_1(Q), r_1(X), w_1(X), w_1(Q)
+Txn2: w_2(Y), r_2(Y), w_2(Q), w_2(X)
+
+Schedule 1: [r_1(Q), r_1(X), w_2(Y), w_1(X), r_2(Y), w_2(Q), w_1(Q), w_2(X)], [T1 -> T2, T2 -> T1]
+Schedule 2: [r_1(Q), r_1(X), w_2(Y), r_2(Y), w_2(Q), w_1(X), w_1(Q), w_2(X)], [T1 -> T2, T2 -> T1]
+Schedule 3: [r_1(Q), w_2(Y), r_1(X), r_2(Y), w_2(Q), w_2(X), w_1(X), w_1(Q)], [T1 -> T2, T2 -> T1]
+Schedule 0 (Serial): [r_1(Q), r_1(X), w_1(X), w_1(Q), w_2(Y), r_2(Y), w_2(Q), w_2(X)], [T1 -> T2]"
+,,"T1 [r_1(X), w_1(X), r_1(Q), w_1(Q)]:
+START TRANSACTION;
+UPDATE bank SET Balance = Balance - 100 WHERE UserId=5;
+UPDATE bank SET Balance = Balance + 100 WHERE UserId=13
+COMMIT
+T2 [r_2(X), w_2(X), r_2(Q), w_2(Q)]:
+UPDATE bank SET Balance = Balance + 50 WHERE Balance < 1500
+
+Serial: [r_1(X), w_1(X), r_1(Q), w_1(Q), r_2(X), w_2(X), r_2(Q), w_2(Q)]
+[r_2(X), r_1(X), w_2(X), r_2(Q), w_1(X), w_2(Q), r_1(Q), w_1(Q)] -> Non-conflict serializable
+[r_2(X), w_2(X), r_1(X), r_2(Q), w_1(X), w_2(Q), r_1(Q), w_1(Q)] -> Conflict serializable"
+,,"T1: [r_1(X) w_1(X) r_1(Q) w_1(Q)], (X=1000, Q=100 -> X=900, Q=200)
+T2: [r_2(A) w_2(A) r_2(B) w_2(B) r_2(x) w_2(X) r_2(Q) w_2(Q) ...], (X=1000 Q=100 => X=1050 Q=150)
+T2 -> T1: [r_2(A), r_1(X) w_1(X) r_1(Q) w_1(Q), r_2(A) w_2(A) r_2(B) w_2(B) r_2(x) w_2(X) r_2(Q) w_2(Q) ...] -> View serializable"
 ,,
 ,,
 ,,
