@@ -150,6 +150,20 @@ Tertiary Storage (archiving layer):
 ALL database data is stored on disk files
 - Goal: Longevity
 - Robust Magnetic Storage (Magnetic Tapes, Glass etc.)"
+,,"Non-Volatile Memory:
+- can be used for persistence as well as fast random access 
+- orders of magnitude faster than SSDs 
+- 10x slower than RAM. 
+- Database Storage Management is undergoing a paradigm shift. 
+- Non-volatile memory can simplify : buffer management (dirty pages are now persisted) as well as fault tolerance of databases."
+,,"Glass for data archiving:
+Project Silica shows the potential to replace magnetic mediums for archiving
+Density: 7TB per small glass plate 
+Longevity: centuries (10k years) vs decades (magnetic) 
+Sustainability: no power necessary 
+Durability: information survives in other planets (permanent quartz engravings not lost due to excessive heat, cold)
+High-throughput writes (voxels of bits in glass)
+Slower reads: laser scanning, image analysis, decoding etc. but random reads potentially faster than magnetic tapes"
 ,Mirroring/Shadowing,"Write both storages -> (Slow disk -> Read if other disk fails, Faster disk -> Read always)"
 ,RAID,"(Internal bus) -> (RAID Controller, as 1 logical HDD) -> (Peripheral buses, many physical HDDs)...
 Stripping as bit, Data: (A0..A7, B0..B7), Disk0: ((A0, A4), (B0, B4)), Disk1: ((A1, A5), (B1, B5)), Disk2: ((A2, A6), (B2, B6)), Disk3: ((A3, A7), (B3, B7))
@@ -209,13 +223,64 @@ Evict least popular page
 e.g.
 best organisation when queries access related attributes only (file paged by relation arranged by row?)
 best organisation when queries need OLAP aggregates? (file paged by relation arranged by column?) etc"
-,Fixed page array,
-,Slotted page array,
-,Log-structured page array,
-,File organization,
-,,
-,,
-,,
+,Tuple serialization,"TYPE author = RECORD
+  ID : CHAR(10);     
+  name  : CHAR(22);
+  age : INT;
+END
+-> 36 Bytes"
+,Fixed page array,"Page[count=4, Tuple 1, Tuple 2, Tuple 3, Tuple 4]
+Delete Tuple 3
+Page[count=3, Tuple 1, Tuple 2, -, Tuple 4]
+
+Problems:
+  Deletions leave empty space in pages
+  Tuple size can be variable (e.g. variable attributes, cross-relation rows)"
+,Slotted page array,"(Mostly used)
+Page: [Header, slot 1, slot 2, slot 3, ..., Tuple 4, Tuple 2, Tuple 1]
+
+Slots contain offsets to tuples (from page end) 
+Deletions just empty slots. 
+Header keeps track of #tuples + offset to last updated slot
+"
+,,"Pages not enough:
+Unspanned Organisation does not split overflow tuples, New Page is used and complete tuple is added there 
+Spanned Organisation allows pointers across pages to split tuples, New Page is used and remaining tuple is added there, Pointer from old tuple to new tuple 
+Overflow page (extra page to add big values), overflow pages can be used e.g., for very large varchar etc., each DBMS has different default overflow page size 
+BLOB/CLOB types are kept separately and tuple Page points to it"
+,,"Slotted array capacity
+How many tuples can we fit (completely) in a 8KB unspanned slotted page array with a 100B header and slot references of 3B each. (integers take 4 bytes each)
+TYPE videogame = RECORD
+  ID : CHAR(20);     
+  Console  : CHAR(6);
+  Price : INT;
+END
+-(#Tuples?)->
+8KB Page[Header, ref, ref, ref, ref, ..., rec, rec, rec, rec]
+floor((8000-100)/((20+6+4)+3))=239"
+,Log-structured page array,"Used for embedded databases (rocksdb, leveldb)
+Page[..., (ID=1, Y=1), (ID=1, X=3), (ID=2, X=4), (ID=1, Y=2), ...] -> Tuples
+Best option for append/write workloads (e.g. logging)
+Reads have to “reconstruct” tuples backwards e.g., <ID=1, X:3. Y:2>. 
+Older values written are deleted on compaction"
+,<File organization>,"- Files are organised into pages. 
+- Files support page operations (e.g., create, write, get, delete page) 
+- Files hold metadata about pages."
+,Heap files,"Heap file: An unordered file organization for storing database records, not heap data structure
+- Tuples added to pages (B pages) by creation order. 
+- Ultra Fast inserts: pointer to last page + offset are known, O(1) 
+- Slow Reads: Finding a tuple requires a linear scan, O(B)
+- Slow Deletes: Involves finding page O(B) and a write (deletion marker)
+- Heap Files are used well in combination with Indexes (more later)"
+,Sorted files,"Also clustered indices
+- Records are ordered by an attribute/key. 
+- Reads : O(logB), ~ Binary Search 
+- Writes/Deletes: O(logB)"
+,,"Other:
+- We mainly covered the N-ary storage model. (Pages of tuples) 
+- The N-ary storage model is optimal for OLTP workloads. 
+- OLAP queries involve access to columns of attributes (e.g., AVG age per country).  
+- For OLAP databases the Decomposition Storage Model (DSM) is used. Pages contain values of a single column across tuples."
 ,,
 ,,
 Indexing,,Storage as paging + indexing
