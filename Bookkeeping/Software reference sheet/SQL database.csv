@@ -283,7 +283,19 @@ Older values written are deleted on compaction"
 - For OLAP databases the Decomposition Storage Model (DSM) is used. Pages contain values of a single column across tuples."
 ,,
 ,,
-Indexing,,Storage as paging + indexing
+Indexing,,"Storage as paging + indexing
+Clustered / Non-clustered describe how index entries relate to actual table data.
+Sparse / Dense describe how many index entries exist.
+B+ Tree / Hash Table describe the data structure used to implement the index."
+,,"PK: Primary key
+Rows ordered by PK -> PK sorted -> Primary index -> Clustered
+Unordered rows by PK -> PK unsorted -> Primary Index -> Non-clustered
+Ordered by non-key -> Sorted attribute -> Secondary index -> Clustered
+Non-key/non-ordering attribute -> Unsorted attribute -> Secondary index -> Non-clustered
+Clustered -> (Sparse (index), Dense)
+Non-clustered -> Dense
+Sparse (index) -> B+ tree
+Dense -> (Hash table, B+ tree)"
 ,Indexing,"An organised data structure of <Key, Pointer> pairs.
 - Key contains a field ‘value’ for which an index is created
 - Pointer is a reference to “anchoring” block/record or tuple itself (if it’s few attributes).
@@ -339,8 +351,17 @@ Most often physical blocks are order by primary index. A sparse/clustered index 
 If field is unique then #unique values = # anchoring tuples = # tuples…
 Otherwise? The index can have one level of indirection."
 ,Hashmap,
-,Extendible hashing,
-,Linear hashing,
+,Extendible hashing,"[(d=2)(Hash, LD), (00, 0), (01, 0), (10, 1), (11, 1)], 0[(d'=1) (Hash, Bucket), (00101, 2)], 1[(d'=1) (Hash, Bucket), (10101, 1)]
+Insert 01001
+[(d=2)(Hash, LD), (00, 00), (01, 01), (10, 1), (11, 1)], 00[(d'=2) (Hash, Bucket), (00101, 2)], 01[(d'=2) (Hash, Bucket), (01001, 3)], 1[(d'=1) (Hash, Bucket), (10101, 1)]"
+,Linear hashing,"M=4, split pointer=0, hash_L(x)=k%(L*M), hash1=k%M=k%4
+Split pointer = 0[(Hash, bucket), (0, [20, 40, -]), (1, [21, 5, -]), (2, [6, 18, -]), (3, [7, 39, 47])]
+Insert 51 -> Overflow page 51, increment split pointer, rehash 0 with hash2
+Split pointer 1[(Hash, bucket), (0, [-, 40, -]), (1, [21, 5, -]), (2, [6, 18, -]), (3, ([7, 39, 47], [51, -, -])), (4, [20, -, -])]
+Insert X and Y with same hash1 value
+Split pointer 3[(Hash, bucket), (0, [-, 40, -]), (1, [-, -, -]), (2, [-, 18, -]), (3, ([7, 39, 47], [51, X, Y])), (4, [20, -, -]), (5, [21, 5, -]), (6, [6, -, -])]
+Insert Z -> Split the overflown page, split pointer wrap back to 0 and increment in hash2 (higher hash level)
+"
 ,B tree,
 ,,
 ,,
@@ -539,5 +560,6 @@ T1 starts at time stamp 12, sees Q=100
 T2 starts at time stamp 13
 T2 updates Q=200 and commits at time stamp 14
 T1 Read again Q: Q = 100"
+,,
 ,,
 ,,
