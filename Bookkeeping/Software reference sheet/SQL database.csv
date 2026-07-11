@@ -362,8 +362,24 @@ Insert X and Y with same hash1 value
 Split pointer 3[(Hash, bucket), (0, [-, 40, -]), (1, [-, -, -]), (2, [-, 18, -]), (3, ([7, 39, 47], [51, X, Y])), (4, [20, -, -]), (5, [21, 5, -]), (6, [6, -, -])]
 Insert Z -> Split the overflown page, split pointer wrap back to 0 and increment in hash2 (higher hash level)
 "
-,B tree,
-,,
+,B tree,"Self-balancing trees
+[[3, -], 5, [6, 8], 9, [11, -]], get 8, get x in [7, 15]
+Insert 4
+[[3, 4], 5, [6, 8], 9, [11, -]]
+Insert 7, overflow -> Propagate middle towards root
+[[3, -], 5, [[6, -], 7, [8, -], -], 9, [11, -]] -> [[[3, 4], 5, [6, -]], 7, [[8, -], 9, [11, -], -], -]
+
+Limitations:  
+- Values are scattered in the tree (not all in leaves) 
+- Data Access is not uniform / balanced 
+- To do a sequential/range scan in the index we need to traverse nodes "
+,B+ trees,"Same balance invariants as B-Trees 
+Node \approx Block: n+1 pointers, n search keys 
+Differences to B-Trees 
+Nodes != Leaves 
+- Values only on leaves 
+- Leaves are linked (sibling pointers)
+"
 ,,
 ,,
 ,,
@@ -561,5 +577,187 @@ T2 starts at time stamp 13
 T2 updates Q=200 and commits at time stamp 14
 T1 Read again Q: Q = 100"
 ,,
-,,
-,,
+Query optimization,Query processing,"SQL query (SELECT B.ISBN, A.NAME FROM Book as B JOIN Author as A ON B.AuthorID = A.ID WHERE B.publicationYear > 200)
+-> Query execution engine
+-> \p_(B.ISBN, A.Name)((\s_(publicationYear > 2000)(B))\join_(B.AuthorID = A.ID)(A))
+
+Query parsing -(Initial plan)-> (Optimizer: Query re-writing (heuristics), cost estimation + DB catalog) -(Optimised evaluation plan)-> Query execution
+- Query parsing converts (SQL) query into query blocks and their relational algebra operators. 
+- Query blocks have to be optimised and executed separately. 
+- Optimiser defines the order Rel.Alg. operators are going to be executed. 
+- The final optimised plan defines order of operators and specific algorithm that will be used for each operator (e.g., join, select implementation)"
+,Blocking operators,"“Data” flows upwards in the query plan execution. 
+There are two types of operators in query execution: 
+- Non-Blocking - Pipelined:
+executed incrementally - per block/tuple, e.g., select, project 
+intermediate results can be “streamed” 
+- Blocking - Staged, e.g., JOIN, UNION, INTERSECTION, DISTINCT:
+intermediate results materialised (and sorted) in files"
+,Select execution,"Select queries often require a full relational or index scan operation. 
+The cost depends on the available underlying files/indexes. 
+- Linear File Search ~ O(B) 
+- Primary-Clustered Index Lookup ~ O (logB)  
+- HashTable point lookup ~ O(1) or 0 if hash index is in memory. 
+- Range Scans: Secondary Index Lookup (B+ Tree)
+
+B+ Tree index scan costs (#blocks) depend on tree height h and the part of the tree that is already in memory."
+,Conditional select,"\s_(a \and b): \s_a(\s_b) if |\s_b|<|\s_a| else \s_b(\s_a)
+relation/index scan on more restrictive selectivity first is preferred. 
+second conditional match can happen in memory.
+
+\s_(a \or b): Full scan + union of record IDs matched across conditions (harder)"
+,,"DB System Catalog can maintain the following per relation/table: 
+- cardinalities (#records) 
+- tuple size 
+- B blocks 
+- # distinct values 
+- min, max values 
+- histograms (good for non-uniformly distributed values)"
+,Sorting,"Most blocking operators (e.g., JOINS) require input relations to be sorted. 
+Problem:  
+- In order to sort data we need to load data in memory first.
+- if Working Memory > Number of File Pages then no problem (e.g., quicksort) 
+- However typically: Working Memory < Number of File Pages. 
+Solutions: 
+1. If B+ Tree with clustered index on leaves is available we use that. 
+2. If not we perform external sorting (i.e., external merge sort)"
+,External 2-way merge sort,"Given a file with B pages and M>=3 working memory
+Phase 1 - Sorting:
+- Load, Sort and Store each page (Loads B pages in memory (one at a time)), Any in-Memory (Internal) sorting algorithm used.
+- Repeat until all B pages are internally sorted, B reads, B writes.
+Phase 2 - Merging: 
+- Merge and sort 2 runs (page-at-a-time) into 1 run, Repeat until 1 run = B pages
+3 pages in working memory, (2 in, 1 out)
+[A1, A2], [B1, B2]
+[C1, C2, C3, C4]
+([A1], [B1], [C1]) -> ([A1], [B1], [C2]) -> ([A2], [B2], [C3]) -> ([A2], [B2], [C4])
+
+B=16, unsorted (M=3)
+0th run (sort phase) (Sort pages from 1..16)
+-> 1st run: [1, 2], [3, 4], [5, 6], ..., [15, 16]
+-> 2nd run: [1, 2, 3, 4], ..., [13, 14, 15, 16]
+-> 3rd run: [1, ..., 8], [9, ..., 16]
+-> 4th run: [1, ..., 16]
+
+#DataPasses: 1 (sort) + log_2(B) (merge), Total IO Cost: 2B * #DataPasses "
+,External M-way merge sort,"Given a file with B pages and M working memory
+Phase 1 - Sorting:
+- Load, Sort and Store B/M pages
+- Repeat until B/M sorted runs are stored 
+Phase 2 - Merging: 
+- Merge and sort M-1 runs into 1 run, M=5 A1..D1 as unsorted, E1 as sorted([A1], [B1], [C1], [D1], [E1])
+- Repeat until 1 run = B pages
+
+#DataPasses: 1 (sort) + ceil(log_(M-1)(ceil(B/M))) (merge)
+Total IO Cost: 2B * #DataPasses
+
+e.g.
+Sort File with B=2367 on working memory M = 9 
+- Phase 1 (SORT):  #runs: ceil(2367/9) = 263 having 9 pages per run (max) 
+- Phase2  (MERGE): 
+Merge 1: #runs: ceil(263/8) = 33 having 72 pages per run (max)
+Merge 2: #runs: ceil(33/8) = 5 having 576 pages per run (max) 
+Merge 3: 1 run of 2367 Pages (sorted file)
+
+Optimization:
+if M>3 -> double buffering while sorting, fetch next pages from disk while sorting"
+,Joins,"Demanding in IO costs
+2-way joins are relatively simple
+Multi-way joins can be too complicated to optimize (NP-hard)
+Optimisation Strategies rely on commutativity/associativity."
+,<2way join-strategy>,"If data tables are tiny or already fully in memory: nested block join 
+If appropriate primary index - secondary index exists: sort-merge/hash join 
+If data is non-uniform / duplicated:  sort-merge join  
+Otherwise: partition hash join"
+,Nested loop join,"foreach record r in R do
+    foreach record s in S do
+        if \q(r, s), then add <r, s> to result buffer
+
+Worst disk performance. Scans all pages of S for every tuple in R.
+IO Cost: scan R once + scan S once per R tuple = [R]+|R|[S]
+Better if [R]<[S] (Choose smaller relation as the outer one)
+[R]: #pages to store R, p_R: #records per page of R, |R|: #records of R"
+,Page nested loop join,"[R4] [->] [->] [->]
+[R3] [->] [->] [->]
+[R2] [->] [->] [->]
+[R1] [->] [->] [->]
+[-] [S1] [S2] [S3]
+
+for each rpage in R:
+    for each spage in S:
+        for each rtuple in rpage:
+            if \q(rtuple, stuple):
+                add <rtuple, stuple> to result buffer
+
+Cost = Scan R once, and Scan S per page of R = [R] + ([R]*[S])
+(Cost can reach [R]+[S] if everything fits in memory)"
+,Block nested loop join,"Extending even further using a lock or chunk of S pages at a time
+[R3, 4] [->] [->] [->]
+[R1, 2] [->] [->] [->]
+[-] [S1] [S2] [S3]
+
+for each rchunk of B-2 pages of R:
+    for each spage of S:
+        for all matching tuples in spage and rchunk:
+            add <rtuple, stuple> to result buffer
+
+Cost = Scan R once, plus scan S as many times as there are chunks = [R]+ceil([R]/(B-2))*[S]"
+,Index-based nested loop join,"Inner table matching can be executed on an index (hash, b+tree).
+R \join Index(S)
+S \join Index(R)
+
+We avoid each sequential scan of the indexed relation. 
+If an existing index exists for either relation use that otherwise create a new one for the join (yes sometimes this is worth it!)"
+,Sort-merge join,"Sorted R and S tables (r pointer in R, s pointer in S, mark pointer in S)
+R[(sid, sname), (22, dustin), (28, yuppy), (31, lubber), (31, lubber2), (44, guppy), (58, rusty)]
+S[(sid, bid), (28, 103), (28, 104), (31, 101), (31, 102), (42, 142), (58, 107)]
+-> [(sid, sname, bid), (28, yuppy, 103), (28, yuppy, 104), ...]
+
+do{
+    if (!mark){
+        while (r < s){ advance r }
+        while (r > s){ advance s }
+        // mark start of ""block"" of S
+        mark = s
+    }
+    if (r == s){
+        result = <r, s>
+        advance s
+        return result
+    }
+    else{
+        result s to mark
+        advance r
+        mark = NULL
+    }
+}"
+,Hash join,"Equi-join only: if r.key = s.key, then h(r.key) = h(s.key). Therefore matches are in the same bucket.
+1. Partitioning phase (Use hashing function h on R (outer relation) to re-partition tuples to b buckets (should fit in memory))
+R -> Partition-> [B1, B2, B3, B4]
+S -> Partition-> [S1, S2, S3, S4]
+
+2. Probing phase (Use h on S to map tuples to b and check for matches)
+[B1, B2, B3, B4]
+[B1, B2, B3, B4]
+
+Cost = Read + write both inputs into partitions + read partitions to probe ~ 2([B]+[S]) + ([R]+[S]) = 3([R]+[S])"
+,<Query re-writing>,"Given a query plan (tree) apply transformations that are: 
+- 1.Correct: correspond to equivalent relational algebra operations, so they always yield the same output tuples. 
+- 2.Better: guarantee (heuristically) lower combined selectivity. "
+,Predicate pushdown,"SELECT B.ISBN, A.NAME 
+FROM Book as B JOIN Author as A 
+ON B.AuthorID = A.ID 
+WHERE B.publicationYear > 2000
+
+\p(\s_(publicationYear > 2000)(B \join A)) = \p(A \join \s_(publicationYear > 2000)(B))"
+,Eliminating Redundant Predicates,"(e.g., WHERE 1=1)"
+,Merging Predicates,Vetween 1 and 10 OR between 2 and 12 = between 1 and 12
+,Removing unnecessary joins,
+,<Cost-model approaches>,"Most complicated part of a database optimiser (and a DBMS in general) 
+Massive Search Space: Query Plans + Algorithms e.g. M-way Join dimensions
+Finding the optimal plan is NP-Complete!  
+But the Cost-Model based optimiser can approximate good-enough plans via: 
+1. Efficient Search Space Exploration 
+  1.1 Dynamic Programming / Genetic Programming (Postgres) 
+  1.2 Cost Table for inferred selectivities 
+2. Live Statistics (DB Catalogue) for approximating base selectivities"
